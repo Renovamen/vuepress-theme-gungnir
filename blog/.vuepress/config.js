@@ -1,7 +1,8 @@
+const path = require('path')
+
 module.exports = {
   title: "vuepress-theme-gungnir",
   description: "Renovamen's blog, also VuePress theme Gungnir.",
-  dest: "dist",
   head: [
     ["link", { rel: "icon", href: "/img/logo.svg"}],
     ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css' }],
@@ -10,6 +11,7 @@ module.exports = {
     ["link", { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/font-awesome-animation@0.2.1/dist/font-awesome-animation.min.css"}],
     ["meta", { name: "viewport", content: "width=device-width,initial-scale=1,user-scalable=no"}]
   ],
+  theme: path.resolve(__dirname, '../../theme-gungnir'),
   themeConfig: {
     search: true,
     searchMaxSuggestions: 10,

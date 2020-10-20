@@ -10,8 +10,8 @@
   "bugs": "https://github.com/Renovamen/vuepress-theme-gungnir/issues",
   "license": "MIT",
   "scripts": {
-    "dev": "vuepress dev . --host 0.0.0.0 --port 4000",
-    "build": "vuepress build ."
+    "dev": "vuepress dev blog . --host 0.0.0.0 --port 4000",
+    "build": "vuepress build blog . --dest dist"
   },
   "devDependencies": {
     "vuepress": "^1.6.0"
