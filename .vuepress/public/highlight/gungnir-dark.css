@@ -1,0 +1,130 @@
+/**
+$highlight-background   : #282c34;
+$highlight-foreground   : #fff;
+$highlight-comment      : #7d8391;
+$highlight-red          : #e67b70;
+$highlight-orange       : #fec28c;
+$highlight-yellow       : #fee89c;
+$highlight-green        : #a2ce83;
+$highlight-aqua         : #56b6c2;
+$highlight-blue         : #87befd;
+$highlight-purple       : #dd85f8;
+$highlight-ln-number    : #818896;
+$highlight-ln-highlight : rgba(255, 255, 255, .1);
+*/
+
+code[class*="language-"],
+pre[class*="language-"] {
+    color: #ccc;
+    background: none;
+    font-family: 'Source Code Pro', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+}
+
+/* :not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    background: #282c34;
+} */
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    padding: .1em;
+    border-radius: .3em;
+    white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #7d8391;
+}
+
+.token.punctuation {
+    color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+    color: #e67b70;
+}
+
+.token.function-name {
+    color: #87befd;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+    color: #fec28c;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+    color: #fee89c;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+    color: #dd85f8;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+    color: #a2ce83;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+    color: #56b6c2;
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+.token.inserted {
+    color: green;
+}

@@ -1,0 +1,40 @@
+transition(value) {
+    transition: value;
+    -webkit-transition: value;
+    -moz-transition: value;
+    -o-transition: value;
+    -ms-transition: value;
+}
+
+transform(value) {
+    transform: value;
+    -webkit-transform: value;
+    -moz-transform: value;
+    -o-transform: value;
+    -ms-transform: value;
+}
+
+hide-scrollbar() {
+    ::-webkit-scrollbar { // Chrome, Safari
+        width: 0;
+        display: none;
+    }
+    -ms-overflow-style: none; // IE
+    scrollbar-width: none; // Firefox
+}
+
+serif() {
+	font-family: 'Lora', 'Times New Roman', serif;
+}
+
+sans-serif() {
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC",
+                "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei",
+                "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC",
+                "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+	line-height: 1.7;
+}
+
+gungnir-font() {
+	font-family: "Montserrat", sans-serif;
+}
