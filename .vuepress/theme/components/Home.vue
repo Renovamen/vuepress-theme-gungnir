@@ -4,7 +4,7 @@
       <div class="header-mask" v-if="$themeConfig.bgImage[this.bgImageID].mask" :style="{background: $withBase($themeConfig.bgImage[this.bgImageID].mask)}"></div>
       <div class="header-content" :style="{'opacity': headerOpacity}">
         
-        <div class="hero-avatar">
+        <div class="hero-avatar hide-on-mobile">
           <img :src="$withBase($themeConfig.authorAvatar)" alt="hero" />
         </div>
 
@@ -15,16 +15,16 @@
           </div>
         </div>
 
-        <SNS />
+        <SNS class="hide-on-mobile" />
 
-        <button class="img-prev" @click="switchImage(-1)">
+        <button class="img-prev hide-on-mobile" @click="switchImage(-1)">
           <i class="fas fa-chevron-left"></i>
         </button>
-        <button class="img-next" @click="switchImage(1)">
+        <button class="img-next hide-on-mobile" @click="switchImage(1)">
           <i class="fas fa-chevron-right"></i>
         </button>
 
-        <div class="arrow faa-float animated" @click="scrollToPost()"> 
+        <div class="arrow faa-float animated hide-on-mobile" @click="scrollToPost()"> 
           <i class="fas fa-chevron-down"></i>
         </div>
 
@@ -132,7 +132,6 @@ export default {
     justify-content: center;
     text-align: center;
     overflow: hidden;
-    background-attachment: fixed;
     background-position: center;
     background-size: cover;
     .header-mask {
@@ -185,7 +184,6 @@ export default {
           padding-top: 0;
           padding-bottom: 0;
           color: white;
-          gungnir-font();
           h1 {
             display: block;
             font-size: 25px;
@@ -248,9 +246,6 @@ export default {
           }
         }
       }
-      @media (max-width: $MQIpad) {
-        display: none
-      }
     }
   }
   .home-blog-wrapper {
@@ -259,53 +254,44 @@ export default {
   }
 }
 
+@media (min-width: $MQIpad) {
+  .home-blog .hero {
+    background-attachment: fixed;
+    .hero-info__text {
+      gungnir-font();
+    }
+  }
+}
+
 @media (max-width: $MQIpad) {
-  .home-blog-wrapper {
-    padding: 0 14px 0 15px;
+  .home-blog {
+    .hide-on-mobile {
+      display: none
+    }
+    .hero {
+      height: auto !important;
+      padding: 150px 0;
+      .hero-info {
+        background: transparent !important;
+        width: auto !important;
+        position: relative !important;
+        &__text h1 {
+          font-size: 80px !important;
+        }
+      }
+    }
+    .home-blog-wrapper {
+      padding: 0 14px;
+    }
   }
 }
 
 @media (max-width: $MQMobile) {
   .home-blog {
     .hero {
-      height 450px
-      img {
-        max-height: 210px;
-        margin: 2rem auto 1.2rem;
-      }
-
-      h1 {
-        margin: 0 auto 1.8rem ;
-        font-size: 2rem;
-      }
-
-      .description {
-        font-size: 1.2rem;
-      }
-    }
-  }
-}
-
-@media (max-width: $MQMobileNarrow) {
-  .home-blog {
-    .hero {
-      height 450px
-      img {
-        max-height: 210px;
-        margin: 2rem auto 1.2rem;
-      }
-
-      h1 {
-        margin: 0 auto 1.8rem ;
-        font-size: 2rem;
-      }
-
-      h1, .description, .action {
-        // margin: 1.2rem auto;
-      }
-
-      .description {
-        font-size: 1.2rem;
+      padding: 80px 0 60px;
+      .hero-info__text h1 {
+        font-size: 50px !important;
       }
     }
   }

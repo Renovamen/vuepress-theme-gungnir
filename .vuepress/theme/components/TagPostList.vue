@@ -61,20 +61,15 @@ export default {
             &__subtitle {
                 font-size: 14px;
             }
-            // @include mobile-minus {
-            //     margin-left: 0;
-            //     > a {
-            //         > .post-title {
-            //             font-size: 16px;
-            //         }
-            //         > .post-subtitle {
-            //             font-size: 13px;
-            //         }
-            //     }
-            //     .post-meta {
-            //         font-size: 12px;
-            //     }
-            // }
+            @media (max-width: $MQMobile) {
+                margin-left: 0;
+                &__title {
+                    font-size: 16px;
+                }
+                &__subtitle {
+                    font-size: 13px;
+                }
+            }
         }
     }
 }

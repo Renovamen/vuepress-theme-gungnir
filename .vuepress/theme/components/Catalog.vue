@@ -51,11 +51,17 @@ export default {
   font-size: 14px;
   bottom: 40px !important;
   top: 120px !important;
+  overflow-x: hidden;
   li {
     cursor: pointer;
     border-left: 2px solid var(--border-color);
     a {
-      padding: 0.35rem 1rem 0.35rem 0rem;
+      padding: 0.4rem 1rem 0.4rem 0rem;
+      display: inline-block;
+      vertical-align: middle;
+      overflow-x: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
       color: var(--text-color);
       &:hover {
         color var(--accent-color)

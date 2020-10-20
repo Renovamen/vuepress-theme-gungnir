@@ -38,11 +38,11 @@ module.exports = {
         icon: "fas fa-book",
         items: [
           {
-            text: "jekyll-theme-gungnir",
+            text: "Jekyll",
             link: "/docs/jekyll-theme-gungnir/"
           },
           {
-            text: "vuepress-theme-gungnir",
+            text: "VuePress",
             link: "/docs/vuepress-theme-gungnir/"
           }
         ]
@@ -124,7 +124,7 @@ module.exports = {
         }])
   },
   markdown: {
-    lineNumbers: true,
+    // lineNumbers: true,
     extendMarkdown: md => {
       md.set({
         html: true

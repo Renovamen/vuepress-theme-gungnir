@@ -65,5 +65,5 @@ export default {
 
 @media (max-width: $MQMobile)
   .tags-wrapper
-    padding: 5rem 0.6rem 0;
+    padding: 5rem 0.9rem 0;
 </style>

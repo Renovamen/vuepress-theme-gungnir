@@ -46,7 +46,7 @@ export default {
   span
     vertical-align: middle;
     display: inline-block;
-    margin: 0 4px 8px;
+    margin: 0 8px 8px 0;
     padding: 0 10px 0 12px;
     border-radius: 999em;
     cursor: pointer;
@@ -64,12 +64,12 @@ export default {
     &:hover:not(.tag-all),
     &.active:not(.tag-all),
     &.focus:not(.tag-all)
-      background-color: var(--accent-color) !important;
+      background-color: $accentColor !important;
     &.active, &.focus
       box-shadow: rgba(0,0,0,.117647) 0 1px 6px, rgba(0,0,0,.239216) 0 1px 4px;
   .tag-all
     font-weight: 700;
-    color: var(--accent-color) !important;
+    color: $accentColor !important;
     background-color: #f3f5f5 !important;
     &:hover, &:active, &.focus
       background-color: #e4e4e4 !important;

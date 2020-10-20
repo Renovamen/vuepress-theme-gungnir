@@ -10,6 +10,5 @@ export function registerCodeThemeCss (theme = 'tomorrow') {
   else {
     var href = `//prismjs.com/themes/prism${prismThemes.indexOf(theme) > -1 ? `-${theme}` : ''}.css`
   }
-  console.log(href)
   addLinkToHead(href)
 }
