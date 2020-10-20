@@ -3,6 +3,7 @@
   "description": "VuePress theme Gungnir.",
   "version": "1.0.0",
   "author": "Renovamen <renovamenzxh@gmail.com>",
+  "keywords": ["vuepress", "blog", "theme"],
   "repository": {
     "type": "git",
     "url": "https://github.com/Renovamen/vuepress-theme-gungnir"
@@ -11,7 +12,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "vuepress dev blog . --host 0.0.0.0 --port 4000",
-    "build": "vuepress build blog . --dest dist"
+    "build": "vuepress build blog . --dest dist",
+    "preview": "cd dist && http-server"
   },
   "devDependencies": {
     "vuepress": "^1.6.0"
