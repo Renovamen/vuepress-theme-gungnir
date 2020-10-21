@@ -46,7 +46,7 @@ export default {
         max-width: $contentWidth;
         margin-left: 14rem !important;
         padding-bottom: 5rem;
-        @media (max-width: 1024px) {
+        @media (max-width: ($MQIpad + 1px)) {
             max-width: auto;
             margin: 0 auto !important;
         }

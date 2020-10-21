@@ -94,6 +94,7 @@ i
   .page-tag
     border: 1px solid var(--text-color);
     color: var(--text-color);
+    background-color: transparent;
     font-size: 12px;
     line-height: 24px;
     padding: 0 10px;

@@ -12,7 +12,4 @@ bgImage:
         mask: rgba(68, 74, 83, .1)
     -   path: /img/home-bg/4.jpg
         mask: rgba(19, 75, 50, .2)
-isShowTitleInHome: false
-actionText: Guide
-actionLink: /views/other/guide
 ---

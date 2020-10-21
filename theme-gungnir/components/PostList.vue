@@ -2,26 +2,36 @@
   <div class="postlist-wrapper">
     <PostListItem v-for="(item) in data" :key="item.path"
                   :item="item" :currentTag="currentTag" />
-    
-    <ul class="pager">
-      <li v-if="$pagination.hasPrev" class="previous">
-        <router-link :to="$pagination.prevLink">&larr; Newer Posts</router-link>
-      </li>
-      <li v-if="$pagination.hasNext" class="next">
-        <router-link :to="$pagination.nextLink">Older Posts &rarr;</router-link>
-      </li>
-    </ul>
+    <Pager :data="getPagerData" />
   </div>
 </template>
 
 <script>
-import PostListItem from './PostListItem'
+import PostListItem from '@theme/components/PostListItem'
+import Pager from '@theme/components/Pager'
 
 export default {
   components: {
-    PostListItem
+    PostListItem,
+    Pager
   },
   props: ['data', 'currentTag'],
+  computed: {
+    getPagerData () {
+      var pagerData = {}
+      if(this.$pagination.hasPrev) {
+        pagerData.prev = {}
+        pagerData.prev.text = '← Newer Posts'
+        pagerData.prev.link = this.$pagination.prevLink
+      }
+      if(this.$pagination.hasNext) {
+        pagerData.next = {}
+        pagerData.next.text = 'Older Posts →'
+        pagerData.next.link = this.$pagination.nextLink
+      }
+      return pagerData
+    }
+  }
 }
 </script>
 

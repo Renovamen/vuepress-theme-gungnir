@@ -285,54 +285,6 @@ th, td
   }
 }
 
-.pager {
-  margin: 20px auto 0;
-  padding: 0px;
-  list-style: none;
-  display: block;
-  li {
-    &.next {
-      float: right;
-    }
-    &.previous {
-      float: left;
-    }
-    > a, > span {
-      sans-serif();
-      text-transform: uppercase;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      padding: 15px;
-      background-color: transparent;
-      border-radius: 3px;
-      border: 1px solid var(--border-color-sub);
-      @media (max-width: $MQMobile) {
-        font-size: 14px;
-        padding: 15px 25px;
-      }
-    }
-
-    > a {
-      color: var(--text-color);
-      > span {
-        color: var(--text-color-sub) !important;
-      }
-    }
-    > a:hover,
-    > a:focus {
-      color: white;
-      background-color: $accentColor;
-      border: 1px solid $accentColor;
-
-      // V1.6 display title
-      > span {
-        color: white !important;
-      }
-    }
-  }
-}
-
 @media (min-width: ($MQMobile + 1px))
   .theme-container.no-sidebar
     .sidebar

@@ -281,7 +281,7 @@ export default {
       }
     }
     .home-blog-wrapper {
-      padding: 0 14px;
+      padding: 0 13px 0 14px;
     }
   }
 }
