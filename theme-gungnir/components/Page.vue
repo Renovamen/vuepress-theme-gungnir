@@ -1,11 +1,6 @@
 <template>
   <main class="page" :style="pageStyle">
-    <div v-show="$page.title" class="page-title">
-      <h1 class="title">{{$page.title}}</h1>
-      <h3 v-if="$page.frontmatter.subtitle" class="subtitle">{{$page.frontmatter.subtitle}}</h3>
-      <PageInfo :pageInfo="$page"></PageInfo>
-    </div>
-
+    <PageHeader v-show="$page.title" :pageInfo="$page" class="page-title" />
     <Content class="theme-content" />
     <PageEdit />
     <PageNav v-if="sidebarItems" v-bind="{ sidebarItems }" />
@@ -13,13 +8,13 @@
 </template>
 
 <script>
-import PageInfo from '@theme/components/PageInfo'
+import PageHeader from '@theme/components/PageHeader'
 import PageNav from '@theme/components/PageNav'
 import PageEdit from '@theme/components/PageEdit'
 
 export default {
   components: {
-    PageInfo,
+    PageHeader,
     PageNav,
     PageEdit
   },
@@ -82,6 +77,7 @@ export default {
 @media (max-width: $MQMobile)
   .page
     padding-right: 0;
+    padding-top 3rem
     .page-title
       padding: 0 1rem;
 </style>

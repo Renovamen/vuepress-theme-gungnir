@@ -1,5 +1,17 @@
 <template>
   <div>
+    <div v-if="pageInfo.frontmatter.tags" class="tags">
+      <span
+        v-for="(subItem, subIndex) in pageInfo.frontmatter.tags"
+        :key="subIndex"
+        class="page-tag"
+        :class="{ 'active': currentTag == subItem }"
+        @click.stop="goTags(subItem)">{{subItem}}</span>
+    </div>
+    
+    <h1 class="title">{{pageInfo.title}}</h1>
+    <h3 v-if="pageInfo.frontmatter.subtitle" class="subtitle">{{$page.frontmatter.subtitle}}</h3>
+
     <i v-if="pageInfo.frontmatter.author || $themeConfig.author || $site.title"
        class="far fa-user">
       <span>{{ pageInfo.frontmatter.author || $themeConfig.author || $site.title }}</span>
@@ -7,15 +19,6 @@
 
     <i v-if="pageInfo.frontmatter.date" class="fas fa-clock">
       <span>{{ pageInfo.frontmatter.date | formatDateValue }}</span>
-    </i>
-
-    <i v-if="pageInfo.frontmatter.tags" class="fas fa-tag tags">
-      <span
-        v-for="(subItem, subIndex) in pageInfo.frontmatter.tags"
-        :key="subIndex"
-        class="tag-item"
-        :class="{ 'active': currentTag == subItem }"
-        @click.stop="goTags(subItem)">{{subItem}}</span>
     </i>
   </div>
 </template>
@@ -87,15 +90,19 @@ i
     font-size: 13px;
     font-weight: normal;
 .tags
-  .tag-item
-    font-family Ubuntu, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif
-    cursor pointer
-    &.active
-      color var(-accent-color)
-    &:hover
-      color var(-accent-color)
+  margin-bottom: -20px;
+  .page-tag
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    font-size: 12px;
+    line-height: 24px;
+    padding: 0 10px;
+    &.active, &:hover
+      // color: #fff;
+      // border-color: transparent;
+      background-color: rgba(0, 0, 0, 0.05) !important;
 @media (max-width: $MQMobile)
   .tags
-    display block
-    margin-left 0 !important
+    margin-left: 0 !important;
+    margin-bottom: 0;
 </style>

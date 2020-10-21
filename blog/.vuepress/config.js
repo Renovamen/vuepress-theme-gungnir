@@ -20,6 +20,7 @@ module.exports = {
     smoothScroll: true,
     sidebarDepth: 5,
     repo: 'Renovamen/vuepress-theme-gungnir',
+    docsDir: 'blog',
     editLinks: true,
     editLinkText: 'Edit this page on GitHub',
     lastUpdated: "Last Updated",
@@ -133,5 +134,5 @@ module.exports = {
       })
       md.use(require('@liradb2000/markdown-it-katex'))
     }
-  },
+  }
 }
