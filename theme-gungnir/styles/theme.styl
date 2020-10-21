@@ -21,65 +21,55 @@ body
   background-color var(--bg-color)
 
 .page, .password-wrapper-in
-  overflow-x: hidden
+  overflow-x hidden
   margin-left $sidebarWidth
 
 .page
-  font-size: 1rem
+  font-size 1rem
 
-.navbar {
+.navbar
   // position fixed
-  z-index: 10;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: $navbarHeight;
-  box-sizing: border-box;
-  background-color: transparent;
-  position: absolute;
+  z-index 10
+  top 0
+  left 0
+  right 0
+  height $navbarHeight
+  box-sizing border-box
+  background-color transparent
+  position absolute
 
   transition(background-color 0.3s)
   transform(translate3d(0, 0, 0))
 
-  a {
-    color: #fff;
-    gungnir-font();
-    font-weight: bold;
+  a
+    color #fff
+    gungnir-font()
+    font-weight bold
     &:hover,
-    &:focus {
-      color: rgba(#fff, .8);
-    }
-  }
-  @media (min-width: $MQMobile) {
-    &.is-fixed {
-      /* when the user scrolls down, we hide the header right above the viewport */
-      position: fixed;
-      top: (0 - $navbarHeight);
-      background-color var(--bg-color-transparent)
-      border-bottom: 1px solid var(--border-color);
-      box-shadow: var(--box-shadow);
-      transition(transform .3s);
+    &:focus
+      color rgba(#fff, .8)
 
-      a {
-        color: var(--text-color);
-        &:hover, &:focus {
-          color: var(--accent-color);
-        }
-      }
-    }
-    &.is-visible {
-      transform(translateY(100%));
-    }
-  }
-  &.invert {
-    a {
-      color: var(--text-color);
-      &:hover, &:focus {
-        color: var(--accent-color);
-      }
-    }
-  }
-}
+  @media (min-width: $MQMobile)
+    &.is-fixed
+      /* when the user scrolls down, we hide the header right above the viewport */
+      position fixed
+      top (0 - $navbarHeight)
+      background-color var(--bg-color-transparent)
+      border-bottom 1px solid var(--border-color)
+      box-shadow var(--box-shadow)
+      transition(transform .3s)
+      a
+        color var(--text-color)
+        &:hover, &:focus
+          color var(--accent-color)
+    &.is-visible
+      transform(translateY(100%))
+  
+  &.invert
+    a
+      color var(--text-color)
+      &:hover, &:focus
+        color var(--accent-color)
 
 .sidebar-mask
   position fixed
@@ -89,7 +79,7 @@ body
   width 100vw
   height 100vh
   display none
-  background-color: rgba(0,0,0,.65);
+  background-color rgba(0,0,0,.65)
 
 .sidebar
   font-size 16px
@@ -104,10 +94,6 @@ body
   box-sizing border-box
   border-right 1px solid var(--border-color)
   overflow-y auto
-
-.abstract
-  img
-    max-width 100%
 
 a
   // font-weight 500
@@ -156,7 +142,7 @@ h1, h2, h3, h4, h5, h6
       + p, + pre, + .custom-block
         margin-top 2rem
   &:hover .header-anchor
-    opacity: 1
+    opacity 1
 
 h1
   display none
@@ -171,20 +157,17 @@ h2
 h3
   font-size 1.35rem
 
-a.header-anchor {
-  font-size: inherit;
-  font-weight: bold;
-  float: left;
-  margin-left: -0.87em;
-  padding-right: 0.23em;
-  opacity: 0;
-  @media (max-width: $MQMobileNarrow) {
-    display: none;
-  }
-  &:hover {
-    text-decoration: none;
-  }
-}
+a.header-anchor
+  font-size inherit
+  font-weight bold
+  float left
+  margin-left -0.87em
+  padding-right 0.23em
+  opacity 0
+  @media (max-width: $MQMobileNarrow)
+    display none
+  &:hover
+    text-decoration none
 
 code, kbd, .line-number
   font-family source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
@@ -199,8 +182,8 @@ hr
 table
   border-collapse collapse
   margin 1rem 0
-  display: block
-  overflow-x: auto
+  display block
+  overflow-x auto
 
 tr
   border-top 1px solid var(--border-color)
@@ -214,7 +197,7 @@ th, td
 .theme-container
   &.sidebar-open
     .sidebar-mask
-      display: block
+      display block
   &.no-navbar
     .content__default:not(.custom) > h1, h2, h3, h4, h5, h6
         margin-top 1.5rem
@@ -222,68 +205,52 @@ th, td
     .sidebar
       top 0
 
-.content__default:not(.custom) {
+.content__default:not(.custom)
   @extend $wrapper
-  a:hover {
-    text-decoration: underline;
-  }
-  p.demo {
-    padding: 1rem 1.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  p.desc {
-    color: var(--text-color-sub);
-    font-size: 14px;
-    margin-top: -20px;
-  }
-  .custom-block p {
-    margin: 15px 0;
-  }
-  img {
-    max-width: 100%;
-    display: block;
-    margin: 1.5em auto 1.6em auto;
-  }
-  p {
-    font-size 16px;
-    margin: 25px 0;
-    line-height: 1.7;
-  }
-  ul, ol {
-    margin-bottom: 40px;
-    padding-left: 40px;
-    @media (max-width: $MQMobile) {
-      padding-left: 30px;
-    }
-    @media (max-width: $MQMobileNarrow) {
-      padding-left: 20px;
-    }
-  }
+  a:hover
+    text-decoration underline
+  p.demo
+    padding 1rem 1.5rem
+    border 1px solid #ddd
+    border-radius 4px
+  p.desc
+    color var(--text-color-sub)
+    font-size 14px
+    margin-top -20px
+  .custom-block p
+    margin 15px 0
+  img
+    max-width 100%
+    display block
+    margin 1.5em auto 1.6em auto
+  p
+    font-size 16px
+    margin 25px 0
+    line-height 1.7
+  ul, ol
+    margin-bottom 40px
+    padding-left 40px
+    @media (max-width: $MQMobile)
+      padding-left 30px
+    @media (max-width: $MQMobileNarrow)
+      padding-left 20px
   ol ol, ol ul,
-  ul ol, ul ul {
-    margin-bottom: 5px;
-  }
-  li {
-    line-height: 1.7;
-    p {
-      margin: 0;
-      margin-bottom: 5px;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      line-height: 2;
-      margin-top: 20px;
-    }
-  }
-}
+  ul ol, ul ul
+    margin-bottom 5px
+  li
+    line-height 1.7
+    p
+      margin 0
+      margin-bottom 5px
+    h1, h2, h3, h4, h5, h6
+      line-height 2
+      margin-top 20px
 
-.content__default.custom {
-  padding: 0;
-  margin: 0;
-  img {
-    max-width: 100%;
-  }
-}
+.content__default.custom
+  padding 0
+  margin 0
+  img
+    max-width 100%
 
 @media (min-width: ($MQMobile + 1px))
   .theme-container.no-sidebar
@@ -295,50 +262,47 @@ th, td
 @require 'mobile.styl'
 
 /************* Katex overflow *************/
-.katex-display {
-  ::-webkit-scrollbar {
-    display: none
-  }
-  .katex-html {
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-  }
-}
+.katex-display
+  ::-webkit-scrollbar
+    display none
+  .katex-html
+    overflow-x auto
+    overflow-y hidden
+    -webkit-overflow-scrolling touch
 
 /************** hide scrollbar **************/
 hide-scrollbar()
 
 // ::-webkit-scrollbar
-//   width: 5px;
-//   height: 5px;
+//   width 5px
+//   height 5px
 
 // ::-webkit-scrollbar-track-piece
-//   // background-color: rgba(0, 0, 0, 0.2);
+//   // background-color rgba(0, 0, 0, 0.2)
 
 // ::-webkit-scrollbar-thumb:vertical
-//   height: 5px;
-//   background-color: $accentColor;
+//   height 5px
+//   background-color $accentColor
 
 // ::-webkit-scrollbar-thumb:horizontal
-//   width: 5px;
-//   background-color: $accentColor;
+//   width 5px
+//   background-color $accentColor
 
 /************** 流程图的滚动条 **************/
 .vuepress-flowchart
-  overflow: auto
+  overflow auto
 
 /************** SW-Update Popup **************/
 
 .sw-update-popup
-  border-radius: $borderRadius!important;
-  box-shadow: var(--box-shadow)!important;
-  color: var(--text-color)!important;
-  background: var(--bg-color)!important;
-  border: none!important;
+  border-radius $borderRadius!important
+  box-shadow var(--box-shadow)!important
+  color var(--text-color)!important
+  background var(--bg-color)!important
+  border none!important
   > button
-    background: $accentColor;
-    border-radius: $borderRadius;
-    color: #fff;
+    background $accentColor
+    border-radius $borderRadius
+    color #fff
     -webkit-tap-highlight-color:rgba(0, 0, 0, 0)
-    border: none;
+    border none

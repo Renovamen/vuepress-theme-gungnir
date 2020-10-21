@@ -30,87 +30,65 @@ export default {
 <style lang="stylus">
 @require '../styles/mixins.styl'
 
-.post-container {
-    .side-catalog {
+.post-container
+    .side-catalog
         position fixed
         top 10rem
         bottom 10rem
         right 2rem
         overflow-y scroll
-        &::-webkit-scrollbar {
+        &::-webkit-scrollbar
             width: 0
             height: 0
-        }
-    }
-    .page {
+    .page
         max-width: $contentWidth;
-        margin-left: 14rem !important;
+        margin-left: 13rem !important;
         padding-bottom: 5rem;
-        @media (max-width: ($MQIpad + 1px)) {
+        @media (max-width: ($MQIpad + 1px))
             max-width: auto;
             margin: 0 auto !important;
-        }
-        .page-title {
+        .page-title
             padding: 1rem 2.5rem;
-        }
-        h1 {
+        h1
             font-size: 50px;
-        }
-        h2, h3, h4, h5, h6 {
+        h2, h3, h4, h5, h6
             font-weight: bold;
-        }
-        h2 {
+        h2
             font-size: 30px;
-        }
-        h3 {
+        h3
             font-size: 24px;
-        }
-        h4 {
+        h4
             font-size: 21px;
-        }
-        h5 {
+        h5
             font-size: 19px;
             color: var(--text-color-sub);
-        }
-        h6 {
+        h6
             font-size: 16px;
             color: var(--text-color-sub);
-        }
-        a.header-anchor {
+        a.header-anchor
             opacity: 1;
-        }
-    }
-}
-@media (max-width: $MQMobile) {
-    .post-container {
-        .page {
-            .page-title {
+
+@media (max-width: $MQMobile)
+    .post-container
+        .page
+            .page-title
                 padding: 1rem 1rem 0;
-                .subtitle {
+                .subtitle
                     font-size: 20px;
                     margin-top: -5px;
-                }
-            }
-            h1 {
+            h1
                 font-size: 30px;
-            }
-            h2 {
+            h2
                 font-size: 25px;
-            }
-            h3 {
+            h3
                 font-size: 22px;
-            }
-            h4 {
+            h4
                 font-size: 21px;
-            }
-            h5 {
+            h5
                 font-size: 19px;
-            }
-            h6 {
+            h6
                 font-size: 16px;
-            }
-        }
-        .side-catalog {
+        .side-catalog
             transition(transform .5s);
             transform(translateX(calc(100% + 2rem)));
             position: fixed;
@@ -121,18 +99,12 @@ export default {
             height: 100%;
             background-color: var(--bg-color);
             z-index: 5;
-            &.open {
+            &.open
                 transform(translateX(0));
                 box-shadow: var(--box-shadow);
-            }
-            li {
+            li
                 border-left: none;
-                &.active {
+                &.active
                     border-left: 2px solid var(--accent-color);
-                }
-            }
-        }
-    }
-}
 </style>
 <style src="../styles/theme.styl" lang="stylus"></style>

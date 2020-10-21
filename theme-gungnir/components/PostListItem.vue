@@ -56,5 +56,5 @@ export default {
   .tags
     display block
     margin-top 1rem;
-    margin-left: 0!important;
+    margin-left 0 !important
 </style>

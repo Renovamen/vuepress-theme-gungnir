@@ -22,37 +22,37 @@ export default {
 @require '../styles/mixins.styl'
 
 .pager
-    margin: 20px auto 0;
-    padding: 0px;
-    list-style: none;
+    margin 20px auto 0
+    padding 0px
+    list-style none
     a
-        border: 1px solid var(--border-color-sub);
-        border-radius: 3px;
-        background-color: transparent;
-        padding: 15px 20px;
-        max-width: 48%;
-        sans-serif();
-        text-transform: uppercase;
-        font-size: 13px;
-        font-weight: 800;
-        letter-spacing: 1px;
-        color: var(--text-color);
+        border 1px solid var(--border-color-sub)
+        border-radius 3px
+        background-color transparent
+        padding 15px 20px
+        max-width 48%
+        sans-serif()
+        text-transform uppercase
+        font-size 13px
+        font-weight 800
+        letter-spacing 1px
+        color var(--text-color)
         &.next
-            float: right;
+            float right
         &.previous
-            float: left;
+            float left
         span
-            font-weight: normal;
-            color: var(--text-color-sub);
+            font-weight normal
+            color var(--text-color-sub)
         @media (max-width: $MQMobile)
-            padding: 15px 25px;
+            padding 15px 25px
         @media (max-width: $MQMobileNarrow)
-            padding: 12px 8px;
+            padding 12px 8px
 
         &:hover, &:focus
-            color: white;
-            background-color: $accentColor;
-            border: 1px solid $accentColor;
+            color white
+            background-color $accentColor
+            border 1px solid $accentColor
             > span
-                color: white !important;
+                color white !important
 </style>

@@ -83,7 +83,7 @@ export default {
     text-transform uppercase
     margin-left 25px
     i
-      width: 18px;
+      width 18px
     &:first-child
       margin-left 0
   .repo-link

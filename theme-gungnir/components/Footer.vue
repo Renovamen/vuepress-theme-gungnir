@@ -11,18 +11,15 @@
 <style lang="stylus" scoped>
 @require '../styles/mixins.styl'
 
-.footer-wrapper {
-  padding: 1.5rem 2.5rem;
-  text-align: center;
-  line-height: 1.5rem;
-  font-size: 14px;
-  color: var(--text-color-sub);
-  a {
-    transition(color .2s ease);
-    color: var(--text-color-sub);
-    &:hover {
-      color: var(--accent-color);
-    }
-  }
-}
+.footer-wrapper
+  padding 1.5rem 2.5rem
+  text-align center
+  line-height 1.5rem
+  font-size 14px
+  color var(--text-color-sub)
+  a
+    transition(color .2s ease)
+    color var(--text-color-sub)
+    &:hover
+      color var(--accent-color)
 </style>

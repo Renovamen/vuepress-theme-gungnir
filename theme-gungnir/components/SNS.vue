@@ -45,24 +45,19 @@ export default {
 <style lang="stylus">
 @require '../styles/mixins.styl'
 
-.sns-wrapper {
-    margin-top: 270px;
-    padding: 0;
-    font-size: 14px;
-    .fa-stack {
-        width: 50px;
-        transition(all ease 0.4s);
-        &:hover {
-            position: relative;
-            cursor: pointer;
-            transform(translateY(-0.35em));
-        }
-        .fa-circle {
-            color: rgba(0, 0, 0, .5);
-        }
-        .icon-sns {
-            padding-top: 1px;
-        }
-    }
-}
+.sns-wrapper
+    margin-top 270px
+    padding 0
+    font-size 14px
+    .fa-stack
+        width 50px
+        transition(all ease 0.4s)
+        &:hover
+            position relative
+            cursor pointer
+            transform(translateY(-0.35em))
+        .fa-circle
+            color rgba(0, 0, 0, .5)
+        .icon-sns
+            padding-top 1px
 </style>

@@ -44,42 +44,34 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.catalog-wrapper {
-  width: 12rem;
-  padding-left: 0;
-  list-style: none;
-  font-size: 14px;
-  bottom: 40px !important;
-  top: 120px !important;
-  overflow-x: hidden;
-  li {
-    cursor: pointer;
-    border-left: 2px solid var(--border-color);
-    a {
-      padding: 0.4rem 1rem 0.4rem 0rem;
-      display: inline-block;
-      vertical-align: middle;
-      overflow-x: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      color: var(--text-color);
-      &:hover {
+.catalog-wrapper
+  width 12rem
+  padding-left 0
+  list-style none
+  font-size 14px
+  bottom 40px !important
+  top 120px !important
+  overflow-x hidden
+  li
+    cursor pointer
+    border-left 2px solid var(--border-color)
+    a
+      padding 0.4rem 1rem 0.4rem 0rem
+      display inline-block
+      vertical-align middle
+      overflow-x hidden
+      white-space nowrap
+      text-overflow ellipsis
+      color var(--text-color)
+      &:hover
         color var(--accent-color)
-      }
-    }
-    &.active {
-      border-left: 2px solid var(--accent-color);
-      a {
-        color: var(--accent-color);
-        font-weight: bold;
-      }
-    }
-    &.level-2 {
+    &.active
+      border-left 2px solid var(--accent-color)
+      a
+        color var(--accent-color)
+        font-weight bold
+    &.level-2
       padding-left .4rem
-    }
-    &.level-3 {
+    &.level-3
       padding-left 1.2rem
-    }
-  }
-}
 </style>

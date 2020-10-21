@@ -145,5 +145,4 @@ export default {
       font-size 0.8em
       float none
       text-align left
-
 </style>

@@ -72,21 +72,21 @@ export default {
             var docuHeight = document.body.offsetHeight
             var windowHeight = document.documentElement.clientHeight
 
-            var percent = currentTop / (docuHeight - windowHeight) * 100;
-            if (percent > 100) percent = 100;
+            var percent = currentTop / (docuHeight - windowHeight) * 100
+            if (percent > 100) percent = 100
 
             if (isNaN(percent) || Math.round(percent) <= 0) {
-                percent = 0;
-                this.isTextVisible = false;
-                this.isBtnIconVisible = true;
+                percent = 0
+                this.isTextVisible = false
+                this.isBtnIconVisible = true
             } 
             else {
-                this.isTextVisible = true;
-                this.menuText = Math.round(percent) + '%';
-                this.isBtnIconVisible = false;
+                this.isTextVisible = true
+                this.menuText = Math.round(percent) + '%'
+                this.isBtnIconVisible = false
             }
 
-            this.borderLen = 3.1415926 * (percent || 0) + '% 314.15926%';
+            this.borderLen = 3.1415926 * (percent || 0) + '% 314.15926%'
         },
         toggleMenu() {
             this.isMenuOpen = !this.isMenuOpen

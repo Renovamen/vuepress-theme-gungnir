@@ -1,9 +1,6 @@
 <template>
-  <!-- 公共布局 -->
   <Common class="tag-wrapper" :sidebar="false">
-    <!-- 标签集合 -->
     <TagList class="tags" :currentTag="$currentTags.key" @getCurrentTag="tagClick" />
-    <!-- 博客列表 -->
     <TagPostList :data="posts" class="list" @currentTag="$currentTags.key" />
   </Common>
 </template>
@@ -35,7 +32,6 @@ export default {
   },
 
   methods: {
-    // 获取当前tag
     getCurrentTag (tag) {
       this.$emit('currentTag', tag)
     },

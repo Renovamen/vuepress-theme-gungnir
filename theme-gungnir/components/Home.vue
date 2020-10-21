@@ -117,183 +117,148 @@ export default {
 @require '../styles/mixins.styl'
 @require '../styles/mode.styl'
 
-.home-blog {
-  padding: 0;
-  padding-bottom: 150px;
-  margin: 0px auto;
-  .hero { 
-    margin: 0 auto;
-    position: relative;
-    box-sizing: border-box;
-    padding: 0 20px;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
-    background-position: center;
-    background-size: cover;
-    .header-mask {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      z-index: 1;
-    }
-    .header-content {
-      z-index: 2;
+.home-blog
+  padding 0
+  padding-bottom 150px
+  margin 0px auto
+  .hero
+    margin 0 auto
+    position relative
+    box-sizing border-box
+    padding 0 20px
+    height 100vh
+    display flex
+    align-items center
+    justify-content center
+    text-align center
+    overflow hidden
+    background-position center
+    background-size cover
+    .header-mask
+      width 100%
+      height 100%
+      position absolute
+      z-index 1
+
+    .header-content
+      z-index 2
+      .hero-avatar
+        position absolute
+        top 50%
+        margin-top -140px
+        left 50%
+        margin-left -65px
+        width 120px
+        height 120px
+        img
+          cursor auto
+          padding 5px
+          border-radius 100%
+          max-width 100%
+          transition(all ease 1s)
+          box-shadow inset 0 0 10px #000
+          &:hover
+            transform(rotate(360deg))
       
-      .hero-avatar {
-        position: absolute;
-        top: 50%;
-        margin-top: -140px;
-        left: 50%;
-        margin-left: -65px;
-        width: 120px;
-        height: 120px;
+      .hero-info
+        background rgba(0, 0, 0, .5)
+        padding 17px
+        letter-spacing 0
+        border-radius 10px
+        box-sizing initial
+        white-space nowrap
+        width 36%
+        max-width 500px
+        position absolute
+        left 0
+        right 0
+        margin auto
+        top 50%
+        margin-top 15px
+        &__text
+          padding-top 0
+          padding-bottom 0
+          color white
+          h1
+            display block
+            font-size 25px
+            font-weight 700
+            line-height 20px
+            margin-top 0
+          p
+            font-size 18px
+            font-weight 300
+            line-height 15px
+            margin-bottom 0
 
-        img {
-          cursor: auto;
-          padding: 5px;
-          border-radius: 100%;
-          max-width: 100%;
-          transition(all ease 1s);
-          box-shadow: inset 0 0 10px #000;
-          &:hover {
-            transform(rotate(360deg));
-          }
-        }
-      }
-      
-      .hero-info {
-        background: rgba(0, 0, 0, .5);
-        padding: 17px;
-        letter-spacing: 0;
-        border-radius: 10px;
-        box-sizing: initial;
-        white-space: nowrap;
-        width: 36%;
-        max-width: 500px;
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: auto;
-        top: 50%;
-        margin-top: 15px;
-        &__text {
-          padding-top: 0;
-          padding-bottom: 0;
-          color: white;
-          h1 {
-            display: block;
-            font-size: 25px;
-            font-weight: 700;
-            line-height: 20px;
-            margin-top: 0;
-          }
-          p {
-            font-size: 18px;
-            font-weight: 300;
-            line-height: 15px;
-            margin-bottom: 0;
-          }
-        }
-      }
+      .img-prev, .img-next
+        cursor pointer
+        position absolute
+        top 50%
+        margin-top -30px
+        width auto
+        padding 17px 12px
+        color rgba(255, 255, 255, 0.6)
+        background-color rgba(0, 0, 0, .3)
+        border none
+        outline none
+        transition(.6s ease)
+        i
+          font-size 16px
+        &:hover
+          color #fff
+          background-color rgba(0, 0, 0, .6)
+      .img-prev
+        left 0
+        border-radius 0 3px 3px 0
+      .img-next
+        right 0
+        border-radius 3px 0 0 3px
 
-      .img-prev, 
-      .img-next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        margin-top: -30px;
-        width: auto;
-        padding: 17px 12px;
-        color: rgba(255, 255, 255, 0.6);
-        background-color: rgba(0, 0, 0, .3);
-        border: none;
-        outline: none;
-        transition(.6s ease);
-        i {
-          font-size: 16px;
-        }
-        &:hover {
-          color: #fff;
-          background-color: rgba(0, 0, 0, .6);
-        }
-      }
-      .img-prev {
-        left: 0;
-        border-radius: 0 3px 3px 0;
-      }
-      .img-next {
-        right: 0;
-        border-radius: 3px 0 0 3px;
-      }
-
-      .arrow {
-        position: absolute;
-        bottom: 50px;
-        left: 50%;
-        margin-left: -14px;
-        cursor: pointer;
-        i {
-          font-size: 28px;
-          color: #ffffff;
-          transition(.4s ease);
+      .arrow
+        position absolute
+        bottom 50px
+        left 50%
+        margin-left -14px
+        cursor pointer
+        i
+          font-size 28px
+          color #ffffff
+          transition(.4s ease)
           &:active,
-          &:hover {
-            color: #a7a7a7;
-          }
-        }
-      }
-    }
-  }
-  .home-blog-wrapper {
+          &:hover
+            color #a7a7a7
+
+  .home-blog-wrapper
     margin 20px auto 0
     max-width $homePageWidth
-  }
-}
 
-@media (min-width: $MQIpad) {
-  .home-blog .hero {
-    background-attachment: fixed;
-    .hero-info__text {
-      gungnir-font();
-    }
-  }
-}
+@media (min-width: $MQIpad)
+  .home-blog .hero
+    background-attachment fixed
+    .hero-info__text
+      gungnir-font()
 
-@media (max-width: $MQIpad) {
-  .home-blog {
-    .hide-on-mobile {
-      display: none
-    }
-    .hero {
-      height: auto !important;
-      padding: 150px 0;
-      .hero-info {
-        background: transparent !important;
-        width: auto !important;
-        position: relative !important;
-        &__text h1 {
-          font-size: 80px !important;
-        }
-      }
-    }
-    .home-blog-wrapper {
-      padding: 0 13px 0 14px;
-    }
-  }
-}
+@media (max-width: $MQIpad)
+  .home-blog
+    .hide-on-mobile
+      display none
+    .hero
+      height auto !important
+      padding 150px 0
+      .hero-info
+        background transparent !important
+        width auto !important
+        position relative !important
+        &__text h1
+          font-size 80px !important
+    .home-blog-wrapper
+      padding 0 13px 0 14px
 
-@media (max-width: $MQMobile) {
-  .home-blog {
-    .hero {
-      padding: 80px 0 60px;
-      .hero-info__text h1 {
-        font-size: 50px !important;
-      }
-    }
-  }
-}
+@media (max-width: $MQMobile)
+  .home-blog
+    .hero
+      padding 80px 0 60px
+      .hero-info__text h1
+        font-size 50px !important
 </style>

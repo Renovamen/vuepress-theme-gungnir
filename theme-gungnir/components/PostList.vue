@@ -37,14 +37,11 @@ export default {
 
 <style lang="stylus">
 // pager
-.postlist-wrapper .pager {
-  width: inherit;
-  padding: 0px 40px;
-}
+.postlist-wrapper .pager
+  width inherit
+  padding 0px 40px
 
-@media (max-width: $MQMobile) {
-  .postlist-wrapper .pager {
-    padding: 0 !important;
-  }
-}
+@media (max-width: $MQMobile)
+  .postlist-wrapper .pager
+    padding 0 !important
 </style>

@@ -95,9 +95,9 @@ export default {
       else {
         //if scrolling down...
         this.isVisible = false
-        if (currentTop > this.navHeight && !this.isFixed) this.isFixed = true;
+        if (currentTop > this.navHeight && !this.isFixed) this.isFixed = true
       }
-      this.previousTop = currentTop;
+      this.previousTop = currentTop
     }
   }
 }
@@ -139,7 +139,7 @@ $navbar-horizontal-padding = 1.5rem
     top $navbar-vertical-padding
     display flex
     background-color transparent
-    // text-transform: uppercase;
+    // text-transform: uppercase
     .search-box
       flex: 0 0 auto
       vertical-align top
@@ -154,7 +154,7 @@ $navbar-horizontal-padding = 1.5rem
 @media (max-width: $MQMobile)
   .navbar
     .site-name
-      margin-left: -0.5rem;
+      margin-left: -0.5rem
     .can-hide
       display none
     .links

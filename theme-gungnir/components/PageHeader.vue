@@ -82,28 +82,26 @@ export default {
 i
   display inline-block
   line-height 1.5rem
-  color: var(--text-color-sub);
+  color var(--text-color-sub)
   &:not(:last-child)
     margin-right 1rem
   span
     margin-left 0.5rem
-    font-size: 13px;
-    font-weight: normal;
+    font-size 13px
+    font-weight normal
 .tags
-  margin-bottom: -20px;
+  margin-bottom -20px
   .page-tag
-    border: 1px solid var(--text-color);
-    color: var(--text-color);
-    background-color: transparent;
-    font-size: 12px;
-    line-height: 24px;
-    padding: 0 10px;
+    border 1px solid var(--text-color)
+    color var(--text-color)
+    background-color transparent
+    font-size 12px
+    line-height 24px
+    padding 0 10px
     &.active, &:hover
-      // color: #fff;
-      // border-color: transparent;
-      background-color: rgba(0, 0, 0, 0.05) !important;
+      background-color rgba(0, 0, 0, 0.05) !important
 @media (max-width: $MQMobile)
   .tags
-    margin-left: 0 !important;
-    margin-bottom: 0;
+    margin-left 0 !important
+    margin-bottom 0
 </style>

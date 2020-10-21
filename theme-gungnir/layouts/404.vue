@@ -36,30 +36,24 @@ export default {
 <style lang="stylus">
 @require '../styles/mixins.styl'
 
-.error-container {
+.error-container
   padding $navbarHeight 2rem 0
   height 100vh - $navbarHeight - 19rem
-  .error-content {
+  .error-content
     text-align: center;
     margin-top: 11rem;
-    h2 {
+    h2
       font-size: 30px;
       font-weight: bold;
       margin-bottom: -15px;
       gungnir-font();
-    }
-    .error-emoji {
+    .error-emoji
       font-size: 50px;
       margin-bottom: 10px;
-    }
-    a {
+    a
       color: var(--text-color);
-      :hover {
+      :hover
         color: var(--accent-color);
-      }
-    }
-  }
-}
 </style>
 
 <style src="../styles/theme.styl" lang="stylus"></style>

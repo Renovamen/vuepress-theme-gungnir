@@ -82,31 +82,31 @@ export default {
   padding-right 14rem
   display block
   .page-title
-    max-width: $contentWidth;
-    margin: 0 auto;
-    padding: 0rem 2.5rem;
+    max-width $contentWidth
+    margin 0 auto
+    padding 0rem 2.5rem
     color var(--text-color)
     .title
-      font-weight: bold
-      line-height: 1.1
+      font-weight bold
+      line-height 1.1
     .subtitle
-      margin-top: -10px;
-      font-weight: 400;
-      font-size: 30px;
+      margin-top -10px
+      font-weight 400
+      font-size 30px
   .pager
-    padding: 0rem 2.5rem;
-    margin-top: 30px;
+    padding 0rem 2.5rem
+    margin-top 30px
     a
-      text-align: center;
-      width: 45%;
-      padding: 10px 5px;
+      text-align center
+      width 45%
+      padding 10px 5px
   .comments-wrapper
     @extend $wrapper
 
 @media (max-width: $MQMobile)
   .page
-    padding-right: 0;
+    padding-right 0
     padding-top 3rem
     .page-title, .pager
-      padding: 0 1rem;
+      padding 0 1rem
 </style>
