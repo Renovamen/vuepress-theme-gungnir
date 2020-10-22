@@ -3,9 +3,12 @@ title: 介绍
 date: 2020-10-18
 ---
 
-![theme-gungnir](/img/docs/gungnir.jpg)
+Gungnir 是一个基于 [Jekyll](https://jekyllrb.com/) 的博客主题。同时我现在正在尝试开发它的 [VuePress 版本](/docs/vuepress-theme-gungnir)。
 
 Github: [Renovamen/renovamen.github.io](https://github.com/Renovamen/renovamen.github.io)
+
+![theme-gungnir](/img/docs/gungnir.jpg)
+
 
 ## 灵感来源
 

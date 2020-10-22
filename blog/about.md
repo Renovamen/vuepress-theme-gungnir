@@ -1,6 +1,6 @@
 ---
 layout: About
-avatar: /img/avatar.jpeg
+avatar: /img/about-avatar.png
 name: Xiaohan Zou
 subname: 邹笑寒
 
@@ -22,7 +22,7 @@ education:
 
 ## Miscellaneous
 
-- [This blog](https://github.com/Renovamen/renovamen.github.io) is derived from [Huxpro/huxpro.github.io](https://github.com/Huxpro/huxpro.github.io), powered by [Jekyll](https://jekyllrb.com/), and hosted by [Github Pages](https://pages.github.com/) and [Vercel](https://vercel.com). Know more about this theme [here](/theme).
+- [This blog](https://github.com/Renovamen/vuepress-theme-gungnir) is powered by [Jekyll](https://jekyllrb.com/) and [VuePress](https://vuepress.vuejs.org/), themed by [Gungnir](https://github.com/Renovamen/vuepress-theme-gungnir), and hosted by [Github Pages](https://pages.github.com/) and [Vercel](https://vercel.com). Know more about theme Gungnir [here](/docs/vuepress-theme-gungnir/).
 
 - *Renovamen* is an Latin word means *renewal*.
 

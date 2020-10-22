@@ -145,4 +145,6 @@ function flatten (items, res) {
     overflow auto // clear float
   .next
     float right
+  @media (max-width: ($MQIpad + 1px))
+    padding-bottom 2rem
 </style>

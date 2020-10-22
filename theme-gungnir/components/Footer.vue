@@ -16,6 +16,7 @@
   text-align center
   line-height 1.5rem
   font-size 14px
+  sans-serif()
   color var(--text-color-sub)
   a
     transition(color .2s ease)

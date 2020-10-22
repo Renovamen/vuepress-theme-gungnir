@@ -8,6 +8,18 @@
             </div>
             <h3 class="title">{{ $page.frontmatter.name }}</h3>
             <p class="subname">{{ $page.frontmatter.subname }}</p>
+            <div class="sns">
+              <div
+                v-for="(user, platform) in $themeConfig.SNS"
+                class="sns__item">
+                <a
+                  v-html="snsIcon(platform)"
+                  target="_blank"
+                  :href="snsLink(user, platform)">
+                  {{ snsIcon(platform) }}
+                </a>
+              </div>
+            </div>
           </div>
           <div class="header__info col-md-8">
             <h3 class="title">Biography</h3>
@@ -45,6 +57,7 @@
           </div>
         </div>
       </div>
+
       <Content class="theme-content" />
     </Common>
 </template>
@@ -52,16 +65,36 @@
 <script>
 import Common from '@theme/components/Common.vue'
 
+const platform_links = {
+  "github": "https://github.com/",
+  "linkedin": "https://www.linkedin.com/in/",
+  "facebook": "https://www.facebook.com/",
+  "twitter": "https://www.twitter.com/",
+  "zhihu": "https://www.zhihu.com/people/",
+  "weibo": "http://weibo.com/",
+  "email": "mailto:"
+}
+
+const platform_icons = {
+  "github": "<i class='fab fa-github' />",
+  "linkedin": "<i class='fab fa-linkedin' />",
+  "facebook": "<i class='fab fa-facebook-square' />",
+  "twitter": "<i class='fab fa-twitter' />",
+  "zhihu": "<i class='icon-zhihu'>知</i>",
+  "weibo": "<i class='fab fa-weibo' />",
+  "email": "<i class='fas fa-envelope' />"
+}
+
 export default {
-  components: {
-    Common
-  },
-
-  mounted () {
-    console.log(this)
-  },
-
+  components: { Common },
   methods: {
+    snsLink(user, platform) {
+      return platform_links[platform] + user
+    },
+    snsIcon(platform) {
+      console.log(platform_icons[platform])
+      return platform_icons[platform]
+    }
   }
 }
 </script>
@@ -70,8 +103,6 @@ export default {
 @require '../styles/mixins.styl'
 
 .about-page
-  gungnir-font()
-  
   .col-md-4
     width 34%
     float left
@@ -88,11 +119,12 @@ export default {
   .header
     height 100vh
     position relative
+    gungnir-font()
     .title
-      font-weight: 600;
-      font-size: 2em;
-      line-height: 1.4em;
-      margin-bottom: 30px;
+      font-weight 600
+      font-size 2em
+      line-height 1.4em
+      margin-bottom 30px
       text-align center
     &__content
       position absolute
@@ -104,66 +136,84 @@ export default {
       top 50%
       margin-top -200px
       .avatar
-        width: 140px;
-        height: 140px;
-        margin: 0 auto;
-        border-radius: 100%;
-        box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2);
+        width 140px
+        height 140px
+        margin 0 auto
+        border-radius 100%
         img
-          cursor: auto;
-          padding: 5px;
-          border-radius: 100%;
-          max-width: 100%;
-          transition(transform 1s);
-          box-shadow: inset 0 0 10px rgba(179, 179, 179, 0.6);
+          cursor auto
+          padding 5px
+          border-radius 100%
+          max-width 100%
+          transition(transform 1s)
+          box-shadow inset 0 0 10px rgba(179, 179, 179, 0.6)
           &:hover
-            transform(rotate(360deg));
+            transform(rotate(360deg))
       .subname
-        font-weight: 700;
-        color: var(--text-color-sub);
-        text-align: center;
-        margin-top: -25px;
+        font-weight 700
+        color var(--text-color-sub)
+        text-align center
+        margin-top -25px
+      .sns
+        text-align center
+        margin 55px 0
+        &__item
+          width 11%
+          display inline-block
+          > a
+            text-decoration none
+            color var(--accent-color)
+            i
+              font-size 33px
+              transition(transform .1s)
+            .icon-zhihu
+              font-style normal
+              font-weight bold
+            &:hover i
+              transform(scale(1.3))
+
     &__info
       .title
-        max-width: 720px;
+        max-width 720px
       .bio-info
-        max-width: 720px;
-        font-size: 19px;
-        text-align: left;
-        margin: 20px 10px 75px;
-        font-weight: 400;
+        max-width 720px
+        font-size 19px
+        text-align left
+        margin 20px 10px 75px
+        font-weight 400
       .personal-info
-        margin: -50px 15px auto;
-        width: 100%;
+        margin -50px 15px auto
+        width 100%
         .subtitle
-          margin: 15px 0 -10px 0;
-          font-weight: bold;
-          font-size: 20px;
-          letter-spacing: 1.14px
+          margin 15px 0 -10px 0
+          font-weight bold
+          font-size 20px
+          letter-spacing 1.14px
         ul
-          padding-left: 15px;
+          padding-left 15px
         .interests li
-          margin-bottom: -17px;
+          margin-bottom -17px
           .item
-            font-size: 16px;
+            font-size 16px
         .education
           .degree
-            font-size: 18px;
+            font-size 18px
             line-height 30px
           .school
-            font-size: 15px;
+            font-size 15px
             line-height 24px
-            margin-top: -15px;
-            color: var(--text-color-sub);
+            margin-top -15px
+            color var(--text-color-sub)
   
   .theme-content
     min-height 80vh
+    gungnir-font()
     h2, h3, h4, h5, h6
       font-weight 700
       text-align center
     p
       font-size 18px !important
-      line-height 30px !important
+      line-height 28px !important
     a.header-anchor
       display none
 
@@ -180,21 +230,23 @@ export default {
         position relative
       &__info
         .title, .bio-info
-          max-width: 100%
+          max-width 100%
     .theme-content
       min-height auto
-      padding-top 200px !important
+      padding-top 300px !important
       padding-bottom 100px !important
   
   @media (max-width: $MQMobileNarrow)
     .header
       padding 0 .8rem
+      .sns__item
+        min-width 13%
       .bio-info
         font-size 18px
       .education
         margin-top 20px
     .theme-content
-      padding-top 400px !important
+      padding-top 550px !important
       padding-bottom 50px !important
       
 </style>
