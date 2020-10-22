@@ -3,7 +3,11 @@
   "description": "VuePress theme Gungnir.",
   "version": "1.0.0",
   "author": "Renovamen <renovamenzxh@gmail.com>",
-  "keywords": ["vuepress", "blog", "theme"],
+  "keywords": [
+    "vuepress",
+    "blog",
+    "theme"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Renovamen/vuepress-theme-gungnir"

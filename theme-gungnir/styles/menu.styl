@@ -84,7 +84,6 @@ $longer-time = ($time*2)
 				opacity 1
 				color #fff
 				visibility visible
-			&:not(:first-of-type) i
 				transition-delay $delay
 			&:nth-child(2)
 				transform(rotate(45deg))
@@ -165,7 +164,6 @@ $longer-time = ($time*2)
 		i
 			transform(rotate(-90deg))
 
-	i, .icon-theme:before
+	i
 		opacity 0
 		visibility hidden
-		transition(all $longer-time $bezier (- $delay/2))

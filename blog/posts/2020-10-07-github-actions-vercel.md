@@ -18,7 +18,7 @@ tags:
 我的博客最初 fork 自 [Huxpro/huxpro.github.io](Huxpro/huxpro.github.io)，用了一段时间之后开始瞎改，把别人干净的代码改得乱七八糟。博客用的是 Jekyll 框架，而 Jekyll 就是 Github Pages 的默认引擎，所以在部署的时候 Github Pages 连 build 这一步都帮你省了。于是在很长一段时间内，作为一只懒惰的菜鸡，我并没有什么动力来折腾这些东西。而现在之所以要折腾，是因为不折腾的确不行了。
 
 ::: warning WARNING
-不过你们现在看到的博客已经是用 VuePress 重写过后的版本了...
+不过这版博客已经是用 VuePress 重写过后的版本了...
 :::
 
 
@@ -76,6 +76,8 @@ $("script[type='math/tex; mode=display']").replaceWith(function() {
 
 在 repo 下建一个目录 `.github/workflow`，在这个目录下放一个 `.yaml` 格式的 workflow 文件。GitHub 只要发现 `.github/workflows` 下有 `.yaml` 文件，就会自动运行它们。[这里](https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions)是 workflow 文件的详细文档。
 
+### Jekyll
+
 [Jekyll 官方](https://jekyllrb.com/docs/continuous-integration/github-actions/)已经给了一个现成的 [action](https://github.com/helaili/jekyll-action)，直接引用它就好：
 
 
@@ -132,6 +134,113 @@ gem 'jekyll-paginate', '~> 1.1.0'
 
 如果用了自定义域名，那就还需要在 `master` 分支放一个 `CNAME`，这样 [helaili/jekyll-action](https://github.com/helaili/jekyll-action) 就会把 `CNAME` 也推到 `gh-pages` 分支去。直接在 `gh-pages` 分支加 `CNAME` 是没有什么用的，因为下次自动推送时它就会被清掉...
 
+
+### Node.js
+
+所有能用 Node.js 搞定的东西（比如这个基于 VuePress 的博客）都能用这个工作流处理：
+
+```yaml
+name: build and deploy
+
+# 检测 master 分支上的推送和 pr
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-and-deploy-vuepress:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Node.js 环境
+      - name: Setup Node
+        uses: actions/setup-node@v2.1.0
+        with:
+          node-version: '12.x'
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      
+      # npm run build
+      - name: Build
+        run: |
+          npm ci
+          npm run build
+      
+      # 推送到同一个 repo 的 gh-pages 分支
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist # build 输出文件夹
+          cname: renovamen.ink  # 如果用了自定义域名，在这里设置
+```
+
+其中 [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) 也是一个别人写好的 action，能把指定路径的文件推到 `gh-pages` 分支。
+
+也可以用 [JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action)，它是一个能把指定路径的文件推到指定分支的 action：
+
+```yaml
+name: build and deploy
+
+# 检测 master 分支上的推送和 pr
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      # 检测 node_modules 下有没有已经安装好的包
+      # 如果有的话就不用再 npm install 了，节省时间和资源
+      - name: Check Cache
+        uses: actions/cache@v1
+        id: cache-dependencies
+        with:
+          path: node_modules
+          key: runner.OS−{{ hashFiles('**/package-lock.json') }}
+
+      # 如果没有缓存，就 npm install
+      - name: Install Dependencies
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+        run: |
+          npm install
+      
+      # npm run build
+      - name: Build
+        run: npm run build
+      
+      # 推送到同一个 repo 的 gh-pages 分支
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist  # npm run build 的输出文件夹
+```
+
+不过虽然作者在[表示](https://github.com/JamesIves/github-pages-deploy-action#additional-build-files-)在 `gh-pages` 分支手动 commit 一个 `CNAME` 之后，`CNAME` 不会在后面的部署中被清掉，但我不管怎么试都会被清掉，所以就没用了...大概是我的方式不太对...
+
+
 ## Vercel
 
 我一直以来都在听说双线部署甚至多线部署这种提高访问速度的操作，但一直没有去折腾。因为 Github Pages 虽然国内访问慢了点，但至少还是能访问的，那么能用就行了。直到几个月前，我发现 Github Pages 国内完全访问不上了...
@@ -142,6 +251,6 @@ gem 'jekyll-paginate', '~> 1.1.0'
 
 直到不久之前，我发现新版 Coding Pages 的静态网站合并到腾讯云静态网站，并开始收费了...之前旧版的静态网站表面上看上去好像还能正常部署，实际上并不能访问了。
 
-于是就手忙脚乱的把境内线路的博客扔到了 Vercel 上。只能说 Vercel 至少到目前为止的确是真香，有境内节点，而且是直接从 Github 仓库上拉代码然后自动给你部署，对菜鸡相当友好。
+于是就手忙脚乱的把境内线路的博客扔到了 Vercel 上。只能说 Vercel 至少到目前为止还没发现什么毛病，有境内节点（不过感觉还是没有 Coding Pages 快就是了），而且是直接自动从 Github 仓库上拉代码然后打包加部署，对菜鸡相当友好。
 
 以前为啥就没发现呢。

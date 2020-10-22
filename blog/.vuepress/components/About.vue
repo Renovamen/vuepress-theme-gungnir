@@ -80,7 +80,7 @@ const platform_icons = {
   "linkedin": "<i class='fab fa-linkedin' />",
   "facebook": "<i class='fab fa-facebook-square' />",
   "twitter": "<i class='fab fa-twitter' />",
-  "zhihu": "<i class='icon-zhihu'>知</i>",
+  "zhihu": "<i class='fas icon-zhihu'>知</i>",
   "weibo": "<i class='fab fa-weibo' />",
   "email": "<i class='fas fa-envelope' />"
 }
@@ -104,10 +104,10 @@ export default {
 
 .about-page
   .col-md-4
-    width 34%
+    width 35%
     float left
   .col-md-8
-    width: 64%
+    width: 63%
     float right
   .col-md-5
     width 36%
@@ -134,7 +134,8 @@ export default {
     &__basic
       position absolute
       top 50%
-      margin-top -200px
+      margin-top -190px
+      padding-left 1.5rem
       .avatar
         width 140px
         height 140px
@@ -149,11 +150,13 @@ export default {
           box-shadow inset 0 0 10px rgba(179, 179, 179, 0.6)
           &:hover
             transform(rotate(360deg))
+      .title
+        margin-top 65px
       .subname
         font-weight 700
         color var(--text-color-sub)
         text-align center
-        margin-top -25px
+        margin-top -30px
       .sns
         text-align center
         margin 55px 0
@@ -228,6 +231,8 @@ export default {
       &__content
         margin-top 350px
         position relative
+      &__basic
+        padding-left 0
       &__info
         .title, .bio-info
           max-width 100%
