@@ -32,6 +32,11 @@ module.exports = {
         icon: 'fab fa-fort-awesome'
       },
       {
+        text: "About",
+        link: '/about/',
+        icon: 'fas fa-paw'
+      },
+      {
         text: "Tags",
         link: '/tag/',
         icon: 'fas fa-tag'
