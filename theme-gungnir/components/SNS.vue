@@ -1,6 +1,12 @@
 <template>
     <div class="sns-wrapper">
-        <a v-for="(user, platform) in $themeConfig.SNS" target="_blank" :href="snsLink(user, platform)">
+        <a
+            v-for="(user, platform) in $themeConfig.SNS"
+            :key="`${platform}-${user}`"
+            :href="snsLink(user, platform)"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
             <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fa-stack-1x fa-inverse icon-sns" :class="snsIcon(platform)"></i>

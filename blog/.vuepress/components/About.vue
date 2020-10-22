@@ -1,5 +1,5 @@
 <template>
-    <Common class="about-page">
+    <Common class="about-wrapper">
       <div class="header">
         <div class="header__content">
           <div class="header__basic col-md-4">
@@ -102,7 +102,7 @@ export default {
 <style lang="stylus">
 @require '../styles/mixins.styl'
 
-.about-page
+.about-wrapper
   .col-md-4
     width 35%
     float left

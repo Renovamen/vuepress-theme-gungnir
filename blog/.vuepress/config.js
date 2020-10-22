@@ -43,6 +43,11 @@ module.exports = {
         icon: 'fas fa-tag'
       },
       {
+        text: "Links",
+        link: '/links',
+        icon: 'fas fa-link'
+      },
+      {
         text: "Docs",
         icon: "fas fa-book",
         items: [
