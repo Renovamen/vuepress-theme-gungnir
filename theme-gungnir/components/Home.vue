@@ -8,6 +8,13 @@
           <img :src="$withBase($themeConfig.authorAvatar)" alt="hero" />
         </div>
 
+        <div v-if="$themeConfig.hitokoto" class="hero-bubble">
+          <div class="hero-bubble__body">
+            <p ref="hitokoto">正在加载一言...</p>
+          </div>
+          <div class="hero-bubble__tile"></div>
+        </div>
+
         <div class="hero-info">
           <div class="hero-info__text">
             <h1>{{ $themeConfig.author || $title }}</h1>
@@ -69,6 +76,14 @@ export default {
   mounted() {
     this.bgImageID = Math.floor(Math.random() * this.$themeConfig.bgImage.length)
     window.addEventListener('scroll', this.throttle(this.handleScroll, 50))
+
+    fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = this.$refs.hitokoto
+      hitokoto.innerText = data.hitokoto
+    })
+    .catch(console.error)
   },
 
   beforeDestroy () {
@@ -159,7 +174,60 @@ export default {
           box-shadow inset 0 0 10px #000
           &:hover
             transform(rotate(360deg))
+        &:hover + .hero-bubble
+          opacity 1
       
+      .hero-bubble
+        opacity 0
+        position absolute
+        left 50%
+        margin-left 100px
+        top 50%
+        margin-top -200px
+        // float up and down
+        animation bubbleFloat 2s infinite
+        -webkit-animation bubbleFloat 2s infinite
+        animation-timing-function ease-in-out
+        -webkit-animation-timing-function ease-in-out
+        -webkit-animation-direction alternate
+        animation-direction alternate
+        transition(opacity .4s)
+        &__body
+          min-width 150px
+          max-width 250px
+          min-height 80px
+          background rgba(0, 0, 0, .5)
+          border-radius 10px
+          p
+            font-size 15px
+            padding 10px 20px
+            color #fff
+            text-align left
+            line-height 1.7
+        &__tile
+          position absolute
+          content ''
+          margin-left -23px
+          top 0
+          margin-top 60px
+          width 23px
+          height 44px
+          border-width 0
+          border-style solid
+          border-top-width 20px
+          border-radius 56px 0 0 0
+          color rgba(0, 0, 0, .5)
+      @keyframes bubbleFloat
+        0%
+          transform(translateY(0))
+        100%
+          transform(translateY(10px))
+      @-webkit-keyframes bubbleFloat
+        0%
+          transform(translateY(0))
+        100%
+          transform(translateY(10px))
+
       .hero-info
         background rgba(0, 0, 0, .5)
         padding 17px

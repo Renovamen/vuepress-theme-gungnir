@@ -25,6 +25,7 @@ module.exports = {
     editLinkText: 'Edit this page on GitHub',
     lastUpdated: "Last Updated",
     codeTheme: "gungnir-dark",
+    hitokoto: true,  // Enable hitokoto (一言) or not?
     nav: [
       {
         text: "Home",
