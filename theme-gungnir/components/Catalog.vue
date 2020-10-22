@@ -56,8 +56,9 @@ export default {
     cursor pointer
     border-left 2px solid var(--border-color)
     a
-      padding 0.4rem 1rem 0.4rem 0rem
-      display inline-block
+      padding-left 0
+      padding-right 1rem
+      line-height 1
       vertical-align middle
       overflow-x hidden
       white-space nowrap

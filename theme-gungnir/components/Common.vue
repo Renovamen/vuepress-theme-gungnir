@@ -90,8 +90,8 @@ export default {
 
   mounted () {
     this.$router.afterEach(() => {
-      this.isSidebarOpen = false,
-      this.isCatalogOpen = false
+      this.isSidebarOpen = false
+      // this.isCatalogOpen = false
     })
   },
 

@@ -34,15 +34,13 @@ tags:
 
 **Algorithmic Inferencing of Aesthetics and Emotion in Natural Images: An Exposition.** *Ritendra Datta, Jia Li, and James Z. Wang.* ICIP 2008. [[Paper]](https://www.ri.cmu.edu/pub_files/pub4/datta_ritendra_2008_2/datta_ritendra_2008_2.pdf)
 
-共 20,278 张图片[^deng_2017]，平均每张图片 12 个评分，评分范围为 0-7，分越高说明图片质量越高。所有图片的平均得分的峰值在分布右侧，说明整体评价偏高。
+共 20,278 张图片（[Deng et al. 2017](https://arxiv.org/pdf/1610.00838.pdf)），平均每张图片 12 个评分，评分范围为 0-7，分越高说明图片质量越高。所有图片的平均得分的峰值在分布右侧，说明整体评价偏高。
 
 ![photo-net-distribution](/img/in-post/2020-02-29/photo-net-distribution.png)
 
-PN 数据集的图片平均得分分布
-{:.desc}
+<p class="desc">PN 数据集的图片平均得分分布</p>
 
-
-论文[^marchesotti_2011]认为 PN 数据集中超过 30% 的图片都被其拍摄者 P 上了一个相框以让它更好看一些，这会导致这些图片的评分偏高。
+有论文认为 PN 数据集中超过 30% 的图片都被其拍摄者 P 上了一个相框以让它更好看一些，这会导致这些图片的评分偏高（[Marchesotti, et al. 2011](https://ieeexplore.ieee.org/abstract/document/6126444)）。
 
 下载：需要根据 [Dataset File](http://ritendra.weebly.com/aesthetics-datasets.html) 中的索引号去 [photo.net](http://photo.net) 上找图片，有的图片已经被从网上移除了。
 
@@ -57,8 +55,7 @@ PN 数据集的图片平均得分分布
 
 ![dpchallenge-distribution](/img/in-post/2020-02-29/dpchallenge-distribution.png)
 
-DPChallenge 数据集的图片平均得分分布
-{:.desc}
+<p class="desc">DPChallenge 数据集的图片平均得分分布</p>
 
 **现在大概已经可以被 AVA 数据集所取代。**
 
@@ -71,7 +68,7 @@ DPChallenge 数据集的图片平均得分分布
 
 **Content-based Photo Quality Assessment.** *Xiaoou Tang, Wei Luo, and Xiaogang Wang.* TMM 2013. [[IEEE]](https://ieeexplore.ieee.org/document/6544270) [[Paper]](http://mmlab.ie.cuhk.edu.hk/archive/2011/cvpr11_WLuo_XWang_XTang.pdf)
 
-现在有 30,000 左右张图片，每张图片被按内容分为了 7 个类别。美学标注只有“高质量”和“低质量”两个，高低质量图片比例约为 1:3[^deng_2017]。所以该数据集很难被用来进行评分任务的训练，而且分类难度不算大。因为是直接把从专业摄影网站（dpchallenge.com）和从业余摄影师处收集到的图片混在了一起，所以可能不能代表真实场景。[^murray_2012]
+现在有 30,000 左右张图片，每张图片被按内容分为了 7 个类别。美学标注只有“高质量”和“低质量”两个，高低质量图片比例约为 1:3（[Deng et al. 2017](https://arxiv.org/pdf/1610.00838.pdf)）。所以该数据集很难被用来进行评分任务的训练，而且分类难度不算大。因为是直接把从专业摄影网站（dpchallenge.com）和从业余摄影师处收集到的图片混在了一起，所以可能不能代表真实场景（[Murray et al. 2012](http://refbase.cvc.uab.es/files/MMP2012a.pdf)）。
 
 下载：[<i class="fas fa-link"></i> Multimedia Laboratory, CUHK](http://mmlab.ie.cuhk.edu.hk/archive/CUHKPQ/Dataset.htm)
 
@@ -86,13 +83,11 @@ DPChallenge 数据集的图片平均得分分布
 
 ![compare](/img/in-post/2020-02-29/ava-compare.png)
 
-AVA 与其他数据集的比较
-{:.desc}
+<p class="desc">AVA 与其他数据集的比较</p>
 
-对于二分类任务，一般认为平均得分高于 $$5 + \sigma$$ 的图片质量高，低于 $$5 + \sigma$$ 的图片质量低。
+对于二分类任务，一般认为平均得分高于 $5 + \sigma$ 的图片质量高，低于 $5 + \sigma$ 的图片质量低。
 
-但 AVA 的很多图片后期处理痕迹太重。且绝大多数图片来自于专业摄影者而非普通人，所以 AVA 有较大的 bias。[^kong_2016]
-
+但 AVA 的很多图片后期处理痕迹太重。且绝大多数图片来自于专业摄影者而非普通人，所以 AVA 有较大的 bias（[Kone et al. 2016](https://arxiv.org/pdf/1606.01621.pdf)）。
 
 下载：[<i class="fas fa-link"></i> Github](https://github.com/mtobeiyf/ava_downloader)
 
@@ -109,8 +104,7 @@ AVA 与其他数据集的比较
 
 ![compare](/img/in-post/2020-02-29/aadb-compare.png)
 
-AADB 与其他数据集的比较
-{:.desc}
+<p class="desc">AADB 与其他数据集的比较</p>
 
 但 AADB 的数据量过小，且标注人员过少。
 
@@ -128,7 +122,7 @@ $$
 S(i) \sim \frac{\log F(i)}{\log V(i)}
 $$
 
-其中 $$V(i)$$ 为每张图片的 views，$$F(i)$$ 为 faves。
+其中 $V(i)$ 为每张图片的 views，$F(i)$ 为 faves。
 
 相当于用一种类似于无监督标注的方法在试图解决 AVA 的 bias 太重和 AADB 数据量和标注人员过少的问题。
 
@@ -136,8 +130,7 @@ $$
 
 ![compare](/img/in-post/2020-02-29/arod-compare.png)
 
-AROD 与其他数据集的比较
-{:.desc}
+<p class="desc">AROD 与其他数据集的比较</p>
 
 下载：[<i class="fas fa-link"></i> Github](https://github.com/cgtuebingen/will-people-like-your-image)，`arod/list.txt` 中给出了图片的 URL，格式为 `url;faves;views`。
 
@@ -185,7 +178,7 @@ AROD 与其他数据集的比较
     \text{score} = \log_2 (n_{\text{views}} + \frac{1}{n_{\text{days}}} + 1)
     $$
 
-    其中 $$n_{\text{views}}$$ 是图片浏览量，$$n_{\text{days}}$$ 是距离图片上传日期的天数。
+    其中 $n_{\text{views}}$ 是图片浏览量，$n_{\text{days}}$ 是距离图片上传日期的天数。
 
     然而该论文最后给出的数据集地址已经失效了......
 
@@ -353,7 +346,7 @@ Aesthetics.** *Subhabrata Bhattacharya, et al.* ACM MM 2010. [[Paper]](http://ww
 
     在每个角度的数据集上跑了一个图像描述模型（直接用了 [NeuralTalk2](#show-and-tell)），然后用 Attention 把所有模型输出的隐状态融合起来，作为另一个新的 LSTM 的输入，新的 LSTM 的输出就是涵盖了多个角度的描述。（但从论文给的结果来看角度还是比较单一？）
 
-    ![pccd](/img/in-post/2020-02-29/pccd.png){:width="400px"}
+    <img src="/img/in-post/2020-02-29/pccd.png" width="400px" alt="pccd" />
 
 - **Aesthetic Attributes Assessment of Images.** *Xin Jin, et al.* ACM MM 2019. [[arxiv]](https://arxiv.org/pdf/1907.04983.pdf) [[Dataset]](https://github.com/BestiVictory/DPC-Captions)
 
@@ -365,15 +358,3 @@ Aesthetics.** *Subhabrata Bhattacharya, et al.* ACM MM 2010. [[Paper]](http://ww
 - **Neural Aesthetic Image Reviewer.** *Wenshan Wang, et al.* IET Computer Vision 2019. [[arxiv]](https://arxiv.org/pdf/1802.10240.pdf)
 
 - **Aesthetic Image Captioning From Weakly-Labelled Photographs.** *Koustav Ghosal, Aakanksha Rana, and Aljosa Smolic.* ICCV Workshop 2019. [[Paper]](http://openaccess.thecvf.com/content_ICCVW_2019/papers/CROMOL/Ghosal_Aesthetic_Image_Captioning_From_Weakly-Labelled_Photographs_ICCVW_2019_paper.pdf) [[Code]](https://github.com/V-Sense/Aesthetic-Image-Captioning-ICCVW-2019)
-
-
-## Reference
-
-[^deng_2017]: **Image Aesthetic Assessment: An Experimental Survey.** *Yubin Deng, et al.* IEEE Signal Processing Magazine 2017. [[IEEE]](https://ieeexplore.ieee.org/abstract/document/7974874) [[arxiv]](https://arxiv.org/pdf/1610.00838.pdf)
-
-[^murray_2012]: **AVA: A Large-Scale Database for Aesthetic Visual Analysis.** *Naila Murray, Luca Marchesotti, Florent Perronnin.* CVPR 2012. [[IEEE]](https://ieeexplore.ieee.org/document/6247954) [[Paper]](http://refbase.cvc.uab.es/files/MMP2012a.pdf) [[Dataset]](https://github.com/mtobeiyf/ava_downloader)
-
-
-[^marchesotti_2011]: **Assessing the Aesthetic Quality of Photographs Using Generic Image Descriptors.** *Luca Marchesotti, et al.* ICCV 2011. [[IEEE]](https://ieeexplore.ieee.org/abstract/document/6126444) [[Paper]](http://www.tamaraberg.com/teaching/Fall_13/papers/Marchesotti2011.pdf)
-
-[^kong_2016]: **Photo Aesthetics Ranking Network with Attributes and Content Adaptation.** *Shu Kong, et al.* ECCV 2016. [[arxiv]](https://arxiv.org/pdf/1606.01621.pdf) [[Project]](https://www.ics.uci.edu/~skong2/aesthetics.html) [[Code]](https://github.com/aimerykong/deepImageAestheticsAnalysis) [[Dataset & Model]](https://drive.google.com/open?id=0BxeylfSgpk1MOVduWGxyVlJFUHM)

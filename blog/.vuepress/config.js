@@ -33,7 +33,7 @@ module.exports = {
       },
       {
         text: "About",
-        link: '/about/',
+        link: '/about',
         icon: 'fas fa-paw'
       },
       {
