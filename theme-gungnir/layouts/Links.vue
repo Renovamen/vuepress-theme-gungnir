@@ -45,10 +45,12 @@ export default {
     h2, span, .desc
         gungnir-font()
     .links-group
-        min-height calc(86vh - 100px)
+        min-height calc(86vh - 100px - 50px)
         padding-top 100px
+        padding-bottom 50px
         width 60%
         margin 0 auto
+        overflow-x hidden
         .title
             font-weight 400
             font-size 18px
@@ -59,17 +61,18 @@ export default {
         ul
             list-style none
             width 100%
+            display inline-block
             li
                 width calc((100% - 210px) / 3)
                 height 80px
-                display inline-block
+                float left
                 border 1px solid var(--border-color)
                 padding 10px 30px 10px 20px
-                margin 0 4px
+                margin 4px 4px
                 position relative
                 overflow hidden
                 border-radius 10px
-                transition(transform .3s)
+                transition(all ease .3s)
                 a
                     text-decoration none
                     img
@@ -78,12 +81,12 @@ export default {
                         border-radius 100%
                         max-width 100%
                         float right
-                        box-shadow inset 0 0 10px var(--body-color)
+                        box-shadow inset 0 0 10px var(--text-color)
                         margin-top 5px
                         margin-right -15px
                         width 65px
                         height 65px
-                        transition(transform 1s)
+                        // transition(transform 1s)
                     span.sitename
                         color var(--accent-color)
                         padding-bottom 10px
@@ -103,9 +106,9 @@ export default {
                         line-height 15px
                 &:hover
                     border 1px solid transparent
-                    img
-                        transform(rotate(360deg))
-                    transform(translate(0px, -2px))
+                    // img
+                    //     transform(rotate(360deg))
+                    transform(translate(0px, -3px))
                     box-shadow var(--box-shadow-hover)
 
     @media (max-width $MQLarge)
