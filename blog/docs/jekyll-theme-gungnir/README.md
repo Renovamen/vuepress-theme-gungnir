@@ -7,9 +7,9 @@ Gungnir 是一个基于 [Jekyll](https://jekyllrb.com/) 的博客主题。同时
 
 ![theme-gungnir](/img/docs/gungnir.jpg)
 
-Github: [Renovamen/renovamen.github.io](https://github.com/Renovamen/renovamen.github.io)
+Github: [Renovamen/jekyll-theme-gungnir](https://github.com/Renovamen/jekyll-theme-gungnir)
 
-演示站点：[renovamen.ink](https://renovamen.ink)
+演示站点：[jekyll-theme-gungnir.vercel.app](https://jekyll-theme-gungnir.vercel.app/)
 
 
 ## 灵感来源

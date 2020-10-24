@@ -144,6 +144,7 @@ module.exports = {
         html: true
       })
       md.use(require('@liradb2000/markdown-it-katex'))
-    }
+    },
+    extractHeaders: [ 'h2', 'h3', 'h4', 'h5' ]
   }
 }

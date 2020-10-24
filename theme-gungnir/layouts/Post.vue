@@ -42,7 +42,7 @@ export default {
             height: 0
     .page
         max-width: $contentWidth;
-        margin-left: 14rem !important;
+        margin-left: $catalogWidth !important;
         padding-bottom: 5rem;
         @media (max-width: ($MQIpad + 1px))
             max-width: auto;

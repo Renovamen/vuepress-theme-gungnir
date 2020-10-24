@@ -6,8 +6,8 @@ date: 2020-10-18
 从 GitHub 克隆项目：
 
 ```bash
-git clone https://github.com/Renovamen/renovamen.github.io.git
-cd renovamen.github.io
+git clone https://github.com/Renovamen/jekyll-theme-gungnir.git
+cd jekyll-theme-gungnir
 ```
 
 本地运行主题需要参考[这里](https://jekyllrb.com/docs/installation/)安装 Ruby 和 Jekyll。然后安装依赖包：

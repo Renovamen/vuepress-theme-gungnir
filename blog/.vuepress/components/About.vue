@@ -92,7 +92,6 @@ export default {
       return platform_links[platform] + user
     },
     snsIcon(platform) {
-      console.log(platform_icons[platform])
       return platform_icons[platform]
     }
   }

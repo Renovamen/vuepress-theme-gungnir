@@ -5,6 +5,9 @@ export default {
   computed: {
     headers () {
       return this.$showCatalog ? this.$page.headers : []
+    },
+    widthStyle () {
+      return this.headers.length > 0 ? {} : { width: '0' }
     }
   },
   methods: {
@@ -21,7 +24,7 @@ export default {
   render (h) {
     return h('ul', {
       class: { 'catalog-wrapper': true },
-      style: { width: this.headers.length > 0 ? '12rem' : '0' }
+      style: this.headers.length > 0 ? {} : { width: '0' }
     }, [
       ...this.headers.map(header => {
         return h('li', {
@@ -45,7 +48,7 @@ export default {
 
 <style lang="stylus" scoped>
 .catalog-wrapper
-  width 12rem
+  width ($catalogWidth - 2rem)
   padding-left 0
   list-style none
   font-size 14px
@@ -75,4 +78,8 @@ export default {
       padding-left .4rem
     &.level-3
       padding-left 1.2rem
+    &.level-4
+      padding-left 2rem
+    &.level-5
+      padding-left 2.8rem
 </style>

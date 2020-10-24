@@ -42,8 +42,6 @@ export default {
 @require '../styles/mode.styl'
 
 .links-wrapper
-    h2, span, .desc
-        gungnir-font()
     .links-group
         min-height calc(86vh - 100px - 50px)
         padding-top 100px
@@ -51,6 +49,8 @@ export default {
         width 60%
         margin 0 auto
         overflow-x hidden
+        h2, span, .desc
+            gungnir-font()
         .title
             font-weight 400
             font-size 18px

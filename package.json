@@ -1,7 +1,7 @@
 {
   "name": "vuepress-theme-gungnir",
   "description": "VuePress theme Gungnir.",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "Renovamen <renovamenzxh@gmail.com>",
   "keywords": [
     "vuepress",
@@ -23,12 +23,12 @@
     "vuepress": "^1.6.0"
   },
   "dependencies": {
+    "@liradb2000/markdown-it-katex": "^2.0.7",
     "@vuepress/plugin-blog": "1.9.2",
     "@vuepress/plugin-medium-zoom": "1.5.0",
     "docsearch.js": "2.6.3",
+    "markdown-it-chain": "^1.3.0",
     "md5": "2.2.1",
-    "vuepress-plugin-smooth-scroll": "^0.0.9",
-    "@liradb2000/markdown-it-katex": "^2.0.7",
-    "markdown-it-chain": "^1.3.0"
+    "vuepress-plugin-smooth-scroll": "^0.0.9"
   }
 }

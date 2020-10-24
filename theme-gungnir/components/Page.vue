@@ -79,7 +79,7 @@ export default {
   position relative
   padding-top 5rem
   padding-bottom 2rem
-  padding-right 14rem
+  padding-right $catalogWidth
   display block
   .page-title
     max-width $contentWidth

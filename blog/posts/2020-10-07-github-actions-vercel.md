@@ -64,7 +64,7 @@ $("script[type='math/tex; mode=display']").replaceWith(function() {
 
 虽然看上去不太优雅，但好歹能用，本菜鸡的理念是能用就行，于是就这样过了一段时间。直到几个月前，我发现我博客的公式不对劲了，它们突然都变成了这样：`\(a + b\)`。
 
-我一脸懵逼，第一反应是我是不是又把博客哪儿的代码搞崩了，但想了想我似乎也有动过公式那部分的代码？而且当时我部署在 Coding Pages 上的博客公式还是正常的，那么大概率就是 Github Pages 哪里不对劲了。
+我一脸懵逼，第一反应是我是不是又把博客哪儿的代码搞崩了，但想了想我似乎也没有动过公式那部分的代码？而且当时我部署在 Coding Pages 上的博客公式还是正常的，那么大概率就是 Github Pages 哪里不对劲了。
 
 搜了一下发现 Github Pages 把 kramdown 的版本更新到了 `v2.2.0`，从这一版开始，为了兼容 Mathjax `v3.x`，kramdown 会把 inline math 转换成 `\(a + b\)` 的形式，把 block math 转换成 `\[a + b\]` 的形式（参考[这个 commit](https://github.com/gettalong/kramdown/commit/c3acf8df1db49d2456050f4456f3f542294e2e8f)），于是上面那段脚本就坏掉了。
 
