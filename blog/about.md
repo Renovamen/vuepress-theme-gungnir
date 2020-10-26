@@ -1,5 +1,6 @@
 ---
 layout: About
+title: About
 avatar: /img/about-avatar.png
 name: Xiaohan Zou
 subname: 邹笑寒

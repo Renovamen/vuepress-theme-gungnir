@@ -4,7 +4,6 @@ title: "元学习：一种套娃算法"
 subtitle: 'Meta Learning: Learning to Learn'
 author: "Renovamen"
 date: 2020-08-05
-header_style: text
 header_img: /img/in-post/2020-08-05/header.jpg
 catalog: true
 tags:

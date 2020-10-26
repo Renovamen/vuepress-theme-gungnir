@@ -4,7 +4,6 @@ title: "线性代数笔记"
 subtitle: 'Note of Linear Algebra'
 author: "Renovamen"
 date: 2018-12-22
-header_style: text
 header_img: /img/in-post/2018-12-22/header.jpg
 catalog: true
 tags:

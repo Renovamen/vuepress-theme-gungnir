@@ -1,25 +1,28 @@
 <template>
   <div>
-    <div v-if="pageInfo.frontmatter.tags" class="tags">
-      <span
-        v-for="(subItem, subIndex) in pageInfo.frontmatter.tags"
-        :key="subIndex"
-        class="page-tag"
-        :class="{ 'active': currentTag == subItem }"
-        @click.stop="goTags(subItem)">{{subItem}}</span>
+    <slot></slot>
+    <div class="header-content">
+      <div v-if="pageInfo.frontmatter.tags" class="tags">
+        <span
+          v-for="(subItem, subIndex) in pageInfo.frontmatter.tags"
+          :key="subIndex"
+          class="page-tag"
+          :class="{ 'active': currentTag == subItem }"
+          @click.stop="goTags(subItem)">{{subItem}}</span>
+      </div>
+      
+      <h1 class="title">{{pageInfo.title}}</h1>
+      <h3 v-if="pageInfo.frontmatter.subtitle" class="subtitle">{{$page.frontmatter.subtitle}}</h3>
+
+      <i v-if="pageInfo.frontmatter.author || $themeConfig.author || $site.title"
+        class="far fa-user">
+        <span>{{ pageInfo.frontmatter.author || $themeConfig.author || $site.title }}</span>
+      </i>
+
+      <i v-if="pageInfo.frontmatter.date" class="fas fa-clock">
+        <span>{{ pageInfo.frontmatter.date | formatDateValue }}</span>
+      </i>
     </div>
-    
-    <h1 class="title">{{pageInfo.title}}</h1>
-    <h3 v-if="pageInfo.frontmatter.subtitle" class="subtitle">{{$page.frontmatter.subtitle}}</h3>
-
-    <i v-if="pageInfo.frontmatter.author || $themeConfig.author || $site.title"
-       class="far fa-user">
-      <span>{{ pageInfo.frontmatter.author || $themeConfig.author || $site.title }}</span>
-    </i>
-
-    <i v-if="pageInfo.frontmatter.date" class="fas fa-clock">
-      <span>{{ pageInfo.frontmatter.date | formatDateValue }}</span>
-    </i>
   </div>
 </template>
 

@@ -5,7 +5,6 @@ subtitle: "Papers Reading: Machine Translation / Text Classification / Image Cap
 author: "Renovamen"
 date: 2020-03-17
 header_img: /img/in-post/2020-03-17/header.jpg
-header_style: text
 catalog: true
 tags:
   - NLP

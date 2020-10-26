@@ -5,7 +5,6 @@ subtitle: 部署、优化以及乱七八糟的事
 author: "Renovamen"
 date: 2020-10-07
 header_img: /img/in-post/2020-10-07/header.jpg
-header_style: text
 catalog: true
 tags:
   - 摸鱼

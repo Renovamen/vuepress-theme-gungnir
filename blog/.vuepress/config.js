@@ -53,10 +53,12 @@ module.exports = {
         items: [
           {
             text: "Jekyll",
+            icon: "fas fa-meteor",
             link: "/docs/jekyll-theme-gungnir/"
           },
           {
             text: "VuePress",
+            icon: "fas fa-rocket",
             link: "/docs/vuepress-theme-gungnir/"
           }
         ]

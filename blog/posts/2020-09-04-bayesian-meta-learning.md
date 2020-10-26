@@ -5,7 +5,6 @@ subtitle: MAML 的贝叶斯解释
 author: "Renovamen"
 date: 2020-09-04
 header_img: /img/in-post/2020-09-04/header.jpg
-header_style: text
 catalog: true
 tags:
   - Deep Learning

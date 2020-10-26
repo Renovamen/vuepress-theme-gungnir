@@ -4,7 +4,6 @@ title: "RACF 实验"
 subtitle: 'RACF Experiments'
 author: "Renovamen"
 date: 2019-04-03
-header_style: text
 header_img: /img/in-post/2019-04-03/header.png
 catalog: true
 tags:

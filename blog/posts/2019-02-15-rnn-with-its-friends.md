@@ -5,7 +5,6 @@ subtitle: RNN, LSTM, GRU ...
 author: "Renovamen"
 date: 2019-02-15
 header_img: /img/in-post/2019-02-15/header.jpg
-header_style: text
 catalog: true
 tags:
   - Deep Learning

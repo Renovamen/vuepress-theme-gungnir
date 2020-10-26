@@ -5,7 +5,6 @@ subtitle: "试图理一理 Transformer"
 author: "Renovamen"
 date: 2020-07-17
 header_img: /img/in-post/2020-07-17/header.jpg
-header_style: text
 catalog: true
 tags:
   - NLP

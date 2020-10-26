@@ -5,7 +5,6 @@ subtitle: A Survey on Image Aesthetic Assessment
 author: "Renovamen"
 date: 2020-02-29
 header_img: /img/in-post/2020-02-29/header.jpeg
-header_style: text
 catalog: true
 tags:
   - CV

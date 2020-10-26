@@ -4,8 +4,9 @@ title: "《塞尔达传说：荒野之息》&《地平线：黎明时分》联�
 subtitle: "The Legend of Zelda: Breath of the Wild & Horizon: Zero Dawn"
 author: "Renovamen"
 date: 2018-11-11
-header_img: "/img/in-post/2018-11-11/header.jpg"
-header-mask: rgb(71, 108, 152, .2)
+header_style: image
+header_img: /img/in-post/2018-11-11/header.jpg
+header_mask: rgb(71, 108, 152, .2)
 tags:
   - 摸鱼
 ---

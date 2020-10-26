@@ -1,11 +1,24 @@
 <template>
     <Common class="post-container">
+        <PageHeader
+            v-show="$page.title"
+            class="page-header"
+            :pageInfo="$page"
+            :class="{ 'style-img': $page.frontmatter.header_style == 'image' }"
+            :style="pageHeaderStyle">
+            <div
+                v-if="($page.frontmatter.header_style == 'image') && $page.frontmatter.header_mask"
+                class="header-mask"
+                :style="{ 'background': $page.frontmatter.header_mask }">
+            </div>
+        </PageHeader>
         <Page :pageStyle="pageStyle" />
         <Catalog class="side-catalog" />
     </Common>
 </template>
 
 <script>
+import PageHeader from '@theme/components/PageHeader'
 import Footer from '@theme/components/Footer'
 import Common from '@theme/components/Common.vue'
 import Catalog from '@theme/components/Catalog'
@@ -14,6 +27,7 @@ import Page from '@theme/components/Page.vue'
 export default {
     name: 'Post',
     components: {
+        PageHeader,
         Footer,
         Common,
         Catalog,
@@ -22,7 +36,15 @@ export default {
     computed: {
         pageStyle () {
             return this.$showCatalog ? {} : { paddingRight: '0' }
-        }
+        },
+        pageHeaderStyle () {
+            var style = {}
+            if (this.$page.frontmatter.header_style == 'image' 
+                && this.$page.frontmatter.header_img) 
+                style = { backgroundImage: "url(" + this.$withBase(this.$page.frontmatter.header_img) + ")" }
+            if (!this.$showCatalog) style.paddingRight = '0'
+            return style
+        },
     }
 }
 </script>
@@ -40,15 +62,50 @@ export default {
         &::-webkit-scrollbar
             width: 0
             height: 0
+    .page-header
+        margin-top -2rem
+        padding-top 8rem
+        position relative
+        padding-right $catalogWidth
+        background-repeat no-repeat
+        background-position center
+        background-size cover
+        .header-content
+            max-width $contentWidth
+            margin-left $catalogWidth !important
+            z-index 2
+            position relative
+            .title, .subtitle, .tags, i:first-of-type
+                padding-left 2.5rem
+                padding-right 2.5rem
+            .title
+                font-size 50px
+                font-weight bold
+            .subtitle
+                margin-top -10px
+                font-weight 400
+                font-size 30px
+        &.style-img
+            padding-top 150px
+            padding-bottom 150px
+            .title,
+            .subtitle,
+            .page-tag, 
+            i
+                color #fff
+                border-color #fff
+        .header-mask
+            width 100%
+            height 100%
+            position absolute
+            margin-top -9.4rem
+            z-index 1
+
     .page
         max-width: $contentWidth;
         margin-left: $catalogWidth !important;
         padding-bottom: 5rem;
-        @media (max-width: ($MQIpad + 1px))
-            max-width: auto;
-            margin: 0 auto !important;
-        .page-title
-            padding: 1rem 2.5rem;
+        padding-top 1rem
         h1
             font-size: 50px;
         h2, h3, h4, h5, h6
@@ -68,14 +125,33 @@ export default {
         a.header-anchor
             opacity: 1;
 
+@media (max-width: ($MQIpad + 1px))
+    .post-container
+        .page, .page-header .header-content
+            max-width auto
+            margin: 0 auto !important;
+
 @media (max-width: $MQMobile)
     .post-container
-        .page
-            .page-title
-                padding: 1rem 1rem 0;
+        .page-header
+            padding-top 6rem
+            padding-bottom 0
+            padding-right 0
+            .header-content
+                .title, .subtitle, .tags, i:first-of-type
+                    padding-left 1rem
+                    padding-right 1rem
+                .title
+                    font-size: 30px;
                 .subtitle
-                    font-size: 20px;
+                    font-size: 16px;
                     margin-top: -5px;
+            &.style-img
+                padding-top 85px
+                padding-bottom 45px
+            .header-mask
+                margin-top -5.4rem
+        .page
             h1
                 font-size: 30px;
             h2

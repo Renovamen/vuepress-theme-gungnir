@@ -1,10 +1,18 @@
 <template>
   <main class="page" :style="pageStyle">
-    <PageHeader v-show="$page.title" :pageInfo="$page" class="page-title" />
+    <PageHeader
+      v-if="$page.id != 'posts'"
+      v-show="$page.title"
+      :pageInfo="$page"
+      class="page-header" />
     <Content class="theme-content" />
     <PageEdit />
-    <PageNav v-if="sidebarItems" v-bind="{ sidebarItems }" />
-    <Pager v-if="getPostIndex != -1" :data="getPostPager" />
+    <PageNav
+      v-if="($page.id != 'posts') & sidebarItems"
+      v-bind="{ sidebarItems }" />
+    <Pager
+      v-if="getPostIndex != -1"
+      :data="getPostPager" />
   </main>
 </template>
 
@@ -74,14 +82,13 @@ export default {
 
 <style lang="stylus">
 @require '../styles/wrapper.styl'
-
 .page
   position relative
   padding-top 5rem
   padding-bottom 2rem
   padding-right $catalogWidth
   display block
-  .page-title
+  .page-header
     max-width $contentWidth
     margin 0 auto
     padding 0rem 2.5rem
@@ -89,10 +96,6 @@ export default {
     .title
       font-weight bold
       line-height 1.1
-    .subtitle
-      margin-top -10px
-      font-weight 400
-      font-size 30px
   .pager
     padding 0rem 2.5rem
     margin-top 30px
@@ -107,6 +110,6 @@ export default {
   .page
     padding-right 0
     padding-top 3rem
-    .page-title, .pager
+    .page-header, .pager
       padding 0 1rem
 </style>

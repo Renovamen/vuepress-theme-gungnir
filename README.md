@@ -1,6 +1,6 @@
 # Gungnir
 
-This is an ongoing VuePress version of the blog theme Gungnir. The Jekyll version of it is available [here](https://github.com/Renovamen/renovamen.github.io).
+This is an ongoing VuePress version of the blog theme Gungnir. The Jekyll version of it is available [here](https://github.com/Renovamen/jekyll-theme-gungnir).
 
 **Gungnir** is the spear of the god Odin in Norse mythology.
 

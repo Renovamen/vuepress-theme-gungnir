@@ -5,7 +5,6 @@ subtitle: "Messy Notes (NLP)"
 author: "Renovamen"
 date: 2020-07-10
 header_img: /img/in-post/2020-07-10/header.jpg
-header_style: text
 catalog: true
 tags:
   - NLP

@@ -62,8 +62,10 @@ export default {
 
     this.navHeight = this.$refs.navbar.offsetHeight
 
-    var currentPath = this.$route.path
-    if(currentPath == '/' || currentPath.search('/page/') != -1) this.isInvert = false
+    if(
+      this.$page.path == '/' 
+      || (this.$page.id == 'posts' && this.$page.frontmatter.header_style == 'image')
+    ) this.isInvert = false
   },
 
   beforeDestroy () {
