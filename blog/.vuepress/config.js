@@ -45,7 +45,7 @@ module.exports = {
       {
         text: "Links",
         link: '/links',
-        icon: 'fas fa-link'
+        icon: 'fas fa-satellite-dish'
       },
       {
         text: "Docs",
@@ -127,7 +127,7 @@ module.exports = {
         subtitle: 'When you are looking at the stars, please put the brightest star shining night sky as my soul.',
         bgImage: {
           "path": "/img/pages/links.jpg",
-          "mask": "rgba(236, 168, 78, 0.3)"
+          "mask": "rgba(236, 168, 78, 0.2)"
         }
       }
     },

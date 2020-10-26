@@ -50,8 +50,8 @@ export default {
 
 .links-wrapper
     .links-group
-        min-height calc(86vh - 100px - 50px)
-        padding-top 50px
+        min-height calc(86vh - 290px)
+        padding-top 10px
         padding-bottom 50px
         width 60%
         margin 0 auto

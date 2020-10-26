@@ -2,9 +2,7 @@
   <div>
     <PageHeader :pageInfo="$themeConfig.pageConfig.tags" />
     <Common class="tags-wrapper" :sidebar="false">
-      <!-- 标签集合 -->
       <TagList :currentTag="currentTag" @getCurrentTag="tagClick" />
-      <!-- 博客列表 -->
       <TagPostList :data="posts" :currentTag="currentTag" @currentTag="getCurrentTag" />
     </Common>
   </div>

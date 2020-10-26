@@ -60,12 +60,13 @@ export default {
         background-position center
         background-size cover
         position relative
-        padding 5px 0 65px
+        padding 55px 0
+        margin-top (- $navbarHeight)
         .header-mask
             width 100%
             height 100%
             position absolute
-            margin-top -5px
+            margin-top -55px
             z-index 1
         .title, .subtitle
             color #fff
@@ -79,9 +80,10 @@ export default {
     .page-header
         &.style-img
             padding 25px 15px 55px
+            margin-top 0
             .header-mask
                 margin-top -25px
                 margin-left -15px
             .title
-                font-size 55px
+                font-size 50px
 </style>

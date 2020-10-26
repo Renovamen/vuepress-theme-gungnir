@@ -35,7 +35,10 @@ export default {
     },
     computed: {
         pageStyle () {
-            return this.$showCatalog ? {} : { paddingRight: '0' }
+            return this.$showCatalog ? {} : { 
+                paddingRight: '0',
+                margin: '0 auto !important'
+            }
         },
         pageHeaderStyle () {
             var style = {}
