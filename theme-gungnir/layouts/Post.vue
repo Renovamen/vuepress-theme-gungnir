@@ -54,6 +54,7 @@ export default {
 
 <style lang="stylus">
 @require '../styles/mixins.styl'
+@require '../styles/wrapper.styl'
 
 .post-container
     .side-catalog
@@ -127,6 +128,10 @@ export default {
             color: var(--text-color-sub);
         a.header-anchor
             opacity: 1;
+        .vssue-comment-wrapper
+            @extend $wrapper
+            margin-top 10rem
+            margin-bottom -3rem
 
 @media (max-width: ($MQIpad + 1px))
     .post-container

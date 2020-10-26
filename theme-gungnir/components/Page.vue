@@ -13,6 +13,9 @@
     <Pager
       v-if="getPostIndex != -1"
       :data="getPostPager" />
+    <Vssue
+      :title="$page.title + ' - ' + $site.title"
+      class="vssue-comment-wrapper" />
   </main>
 </template>
 
@@ -82,6 +85,8 @@ export default {
 
 <style lang="stylus">
 @require '../styles/wrapper.styl'
+@require '../styles/mixins.styl'
+
 .page
   position relative
   padding-top 5rem
@@ -103,8 +108,15 @@ export default {
       text-align center
       width 45%
       padding 10px 5px
-  .comments-wrapper
+  .vssue-comment-wrapper
     @extend $wrapper
+    padding 2rem 0
+    margin-top 3rem
+    @media (max-width: $MQLarge)
+      padding 2rem
+    @media (max-width: $MQMobileNarrow)
+      padding 1rem
+
 
 @media (max-width: $MQMobile)
   .page

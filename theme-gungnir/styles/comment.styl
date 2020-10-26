@@ -1,0 +1,79 @@
+.vssue-comment-wrapper
+    .vssue-icon
+        fill var(--accent-color)
+    .vssue-comment-avatar img
+        border-radius 3px
+    .vssue-header
+        color var(--text-color)
+        border-color var(--border-color-sub)
+        a
+            color var(--accent-color)
+    .vssue-body
+        .vssue-status
+            color var(--accent-color)
+            a
+                color var(--accent-color)
+        .vssue-new-comment
+            border-color var(--border-color-sub)
+            .vssue-comment-avatar
+                svg
+                    fill var(--text-color)
+            .vssue-new-comment-body
+                .vssue-new-comment-input
+                    background-color var(--bg-color-teritary)
+                    border-color var(--border-color-sub)
+                    color var(--text-color)
+                    transition(all 0.25s ease)
+                    &:hover
+                        background-color transparent
+            .vssue-new-comment-footer
+                span
+                    color var(--text-color-sub)
+                a
+                    color var(--accent-color)
+                button
+                    color var(--accent-color)
+                    border 1px solid var(--accent-color)
+                    border-radius 5px
+                    &:disabled
+                        color var(--border-color-sub)
+                        border-color var(--border-color-sub)
+                    &:hover
+                        background-color var(--bg-color-teritary)
+        .vssue-comments
+            .vssue-pagination
+                span
+                    color var(--text-color-sub)
+                .vssue-pagination-select
+                    border-color var(--text-color-sub)
+                    color var(--text-color)
+                    border-radius 3px
+            .vssue-comment
+                a
+                    color var(--accent-color)
+                .vssue-comment-header, .vssue-comment-main, .vssue-comment-footer
+                    border-color var(--border-color-sub)
+                .vssue-comment-header
+                    .vssue-comment-created-at
+                        color var(--text-color-sub)
+                .vssue-comment-footer
+                    span
+                        color var(--accent-color)
+                .vssue-comment-main
+                    p, h1, h2, h3, h4, h5, h6
+                        color var(--text-color)
+                        border-color var(--border-color-sub)
+                    hr
+                        background-color var(--border-color-sub)
+                        border-color var(--border-color-sub)
+                    table
+                        color var(--text-color)
+                        th, td, tr
+                            border-color var(--border-color-sub)
+                        tr
+                            background-color transparent
+                            &:nth-child(2n)
+                                background-color var(--bg-color-teritary)
+                    code
+                        color var(--inline-code-text)
+                        background-color var(--inline-code-bg)

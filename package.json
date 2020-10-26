@@ -24,6 +24,8 @@
   },
   "dependencies": {
     "@liradb2000/markdown-it-katex": "^2.0.7",
+    "@vssue/api-github-v3": "^1.4.0",
+    "@vssue/vuepress-plugin-vssue": "^1.4.6",
     "@vuepress/plugin-blog": "1.9.2",
     "@vuepress/plugin-medium-zoom": "1.5.0",
     "docsearch.js": "2.6.3",
