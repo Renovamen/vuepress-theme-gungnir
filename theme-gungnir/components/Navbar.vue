@@ -61,17 +61,13 @@ export default {
     window.addEventListener('scroll', this.handleScroll)
 
     this.navHeight = this.$refs.navbar.offsetHeight
+    this.handleInvert()
+  },
 
-    if(
-      this.$page.path == '/' 
-      || (this.$page.id == 'posts' && this.$page.frontmatter.header_style == 'image')
-      || (this.$page.path == '/tags/'
-          && this.$themeConfig.pageConfig.tags
-          && this.$themeConfig.pageConfig.tags.bgImage)
-      || (this.$page.path == '/links.html'
-          && this.$themeConfig.pageConfig.links
-          && this.$themeConfig.pageConfig.links.bgImage)
-    ) this.isInvert = false
+  watch: {
+    '$route' () {
+      this.handleInvert()
+    }
   },
 
   beforeDestroy () {
@@ -106,6 +102,19 @@ export default {
         if (currentTop > this.navHeight && !this.isFixed) this.isFixed = true
       }
       this.previousTop = currentTop
+    },
+    handleInvert () {
+      if(
+        this.$page.path == '/' 
+        || (this.$page.id == 'posts' && this.$page.frontmatter.header_style == 'image')
+        || (this.$page.path == '/tags/'
+            && this.$themeConfig.pageConfig.tags
+            && this.$themeConfig.pageConfig.tags.bgImage)
+        || (this.$page.path == '/links.html'
+            && this.$themeConfig.pageConfig.links
+            && this.$themeConfig.pageConfig.links.bgImage)
+      ) this.isInvert = false
+      else this.isInvert = true
     }
   }
 }
