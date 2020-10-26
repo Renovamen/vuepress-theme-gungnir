@@ -1,23 +1,28 @@
 <template>
-  <Common  class="tags-wrapper" :sidebar="false">
-    <!-- 标签集合 -->
-    <TagList :currentTag="currentTag" @getCurrentTag="tagClick" />
-    <!-- 博客列表 -->
-    <TagPostList :data="posts" :currentTag="currentTag" @currentTag="getCurrentTag" />
-  </Common>
+  <div>
+    <PageHeader :pageInfo="$themeConfig.pageConfig.tags" />
+    <Common class="tags-wrapper" :sidebar="false">
+      <!-- 标签集合 -->
+      <TagList :currentTag="currentTag" @getCurrentTag="tagClick" />
+      <!-- 博客列表 -->
+      <TagPostList :data="posts" :currentTag="currentTag" @currentTag="getCurrentTag" />
+    </Common>
+  </div>
 </template>
 
 <script>
 import Common from '@theme/components/Common'
 import TagList from '@theme/components/TagList'
 import TagPostList from '@theme/components/TagPostList'
+import PageHeader from '@theme/components/PageHeader'
 import { getPostsByYear } from '@theme/utils/posts'
 
 export default {
   components: {
     Common,
     TagPostList,
-    TagList
+    TagList,
+    PageHeader
   },
   data () {
     return {
@@ -59,11 +64,11 @@ export default {
 
 <style lang="stylus" scoped>
 .tags-wrapper
-  max-width: $contentWidth
-  margin: 0 auto;
-  padding: 4.6rem 2.5rem 0;
+  max-width $contentWidth
+  margin 0 auto
+  padding 1.6rem 2.5rem 0
 
 @media (max-width: $MQMobile)
   .tags-wrapper
-    padding: 5rem 0.9rem 0;
+    padding 1rem 0.9rem 0
 </style>

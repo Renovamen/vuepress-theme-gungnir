@@ -43,7 +43,7 @@ module.exports = (options, ctx) => {
             {
               id: 'tags',
               keys: ['tags'],
-              path: '/tag/',
+              path: '/tags/',
               layout: 'Tags',
               scopeLayout: 'Tag'
             }

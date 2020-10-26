@@ -1,39 +1,46 @@
 <template>
-    <Common class="links-wrapper">
-        <div class="links-group">
-            <div
-                v-for="(group, groupId) in $page.frontmatter.links"
-                :key="`link-group-${groupId}`"
-                class="section"
-            >
-                <h2 class="title">{{group.title}}</h2>
-                <ul>
-                    <li
-                        v-for="(item, itemId) in group.items"
-                        :key="`link-${itemId}`"
-                    >
-                        <a
-                            :href="item.url"
-                            target="_blank"
-                            rel="noopener noreferrer"
+    <div>
+        <PageHeader :pageInfo="$themeConfig.pageConfig.links" />
+        <Common class="links-wrapper">
+            <div class="links-group">
+                <div
+                    v-for="(group, groupId) in $page.frontmatter.links"
+                    :key="`link-group-${groupId}`"
+                    class="section"
+                >
+                    <h2 class="title">{{group.title}}</h2>
+                    <ul>
+                        <li
+                            v-for="(item, itemId) in group.items"
+                            :key="`link-${itemId}`"
                         >
-                            <img :src="item.img ? item.img : '/img/links/default.jpg'">
-                            <span class="sitename">{{ item.sitename }}</span>
-                            <div class="desc">{{ item.desc }}</div>
-                        </a>
-                    </li>
-                </ul>
-                <hr style="visibility: hidden;">
+                            <a
+                                :href="item.url"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img :src="item.img ? item.img : '/img/links/default.jpg'">
+                                <span class="sitename">{{ item.sitename }}</span>
+                                <div class="desc">{{ item.desc }}</div>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr style="visibility: hidden;">
+                </div>
             </div>
-        </div>
-    </Common>
+        </Common>
+    </div>
 </template>
 
 <script>
 import Common from '@theme/components/Common.vue'
+import PageHeader from '@theme/components/PageHeader'
 
 export default {
-  components: { Common },
+    components: {
+        Common,
+        PageHeader
+    },
 }
 </script>
 
@@ -44,7 +51,7 @@ export default {
 .links-wrapper
     .links-group
         min-height calc(86vh - 100px - 50px)
-        padding-top 100px
+        padding-top 50px
         padding-bottom 50px
         width 60%
         margin 0 auto

@@ -39,7 +39,7 @@ module.exports = {
       },
       {
         text: "Tags",
-        link: '/tag/',
+        link: '/tags/',
         icon: 'fas fa-tag'
       },
       {
@@ -112,7 +112,25 @@ module.exports = {
         "path": "/img/home-bg/4.jpg",
         "mask": "rgba(19, 75, 50, .2)"
       }
-    ]
+    ],
+    pageConfig: {
+      tags: {
+        title: 'Tags',
+        subtitle: 'Black Sheep Wall',
+        bgImage: {
+          "path": "/img/pages/tags.jpg",
+          "mask": "rgba(211, 136, 37, .5)"
+        }
+      },
+      links: {
+        title: 'Links',
+        subtitle: 'When you are looking at the stars, please put the brightest star shining night sky as my soul.',
+        bgImage: {
+          "path": "/img/pages/links.jpg",
+          "mask": "rgba(236, 168, 78, 0.3)"
+        }
+      }
+    },
   },
   chainMarkdown(config) {
     const { PLUGINS } = require('@vuepress/markdown')

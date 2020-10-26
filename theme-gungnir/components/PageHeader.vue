@@ -1,110 +1,87 @@
 <template>
-  <div>
-    <slot></slot>
-    <div class="header-content">
-      <div v-if="pageInfo.frontmatter.tags" class="tags">
-        <span
-          v-for="(subItem, subIndex) in pageInfo.frontmatter.tags"
-          :key="subIndex"
-          class="page-tag"
-          :class="{ 'active': currentTag == subItem }"
-          @click.stop="goTags(subItem)">{{subItem}}</span>
-      </div>
-      
-      <h1 class="title">{{pageInfo.title}}</h1>
-      <h3 v-if="pageInfo.frontmatter.subtitle" class="subtitle">{{$page.frontmatter.subtitle}}</h3>
-
-      <i v-if="pageInfo.frontmatter.author || $themeConfig.author || $site.title"
-        class="far fa-user">
-        <span>{{ pageInfo.frontmatter.author || $themeConfig.author || $site.title }}</span>
-      </i>
-
-      <i v-if="pageInfo.frontmatter.date" class="fas fa-clock">
-        <span>{{ pageInfo.frontmatter.date | formatDateValue }}</span>
-      </i>
+    <div
+        class="page-header"
+        :style="headerImage"
+        :class="{ 'style-img': pageInfo.bgImage }"
+    >
+        <div
+            v-if="pageInfo.bgImage && pageInfo.bgImage.mask"
+            class="header-mask"
+            :style="{ 'background': pageInfo.bgImage.mask }">
+        </div>
+        <h1 class="title">
+            {{ pageInfo.title || $page.frontmatter.title }}
+        </h1>
+        <h3 v-if="pageInfo.subtitle" class="subtitle">
+            {{ pageInfo.subtitle }}
+        </h3>
     </div>
-  </div>
 </template>
 
 <script>
-import { formatDate } from '@theme/utils/time'
-
 export default {
-  props: {
-    pageInfo: {
-      type: Object,
-      default () {
-        return {}
-      }
+    props: {
+        pageInfo: {
+            type: Object,
+            default () {
+                return {}
+            }
+        }
     },
-    currentTag: {
-      type: String,
-      default: ''
+    computed: {
+        headerImage () {
+            console.log(this.$page.frontmatter)
+            return this.pageInfo.bgImage ? { 
+                backgroundImage: "url(" + this.$withBase(this.pageInfo.bgImage.path) + ")"
+            } : {}
+        }
     }
-  },
-  data () {
-    return {
-      numStyle: {
-        fontSize: '.9rem',
-        fontWeight: 'normal',
-        color: '#999'
-      }
-    }
-  },
-  filters: {
-    // format the original time value: 2019-09-20T18:22:30.000Z
-    // to: 2019-09-20 18:22:30
-    formatDateValue (value) {
-      if (!value) return ''
-    
-      value = value.replace('T', ' ').slice(0, value.lastIndexOf('.'))
-      const h = Number(value.substr(11, 2))  // hours
-      const m = Number(value.substr(14, 2))  // minutes
-      const s = Number(value.substr(17, 2))  // seconds
-
-      if (h > 0 || m > 0 || s > 0) {
-        // if user set hours, minutes or seconds manully
-        return formatDate(value)
-      }
-      else {
-        return formatDate(value, 'yyyy-MM-dd')
-      }
-    }
-  },
-  methods: {
-    goTags (tag) {
-      if (this.$route.path !== `/tag/${tag}/`) {
-        this.$router.push({ path: `/tag/${tag}/` })
-      }
-    }
-  }
 }
 </script>
 
 <style lang="stylus" scoped>
-i
-  display inline-block
-  line-height 1.5rem
-  color var(--text-color-sub)
-  &:not(:last-child)
-    margin-right 1rem
-  span
-    margin-left 0.5rem
-    font-size 13px
-    font-weight normal
-.tags
-  margin-bottom -20px
-  .page-tag
-    border 1px solid var(--text-color)
-    color var(--text-color)
-    background-color transparent
-    font-size 12px
-    line-height 24px
-    padding 0 10px
-    &.active, &:hover
-      background-color rgba(0, 0, 0, 0.05) !important
+.page-header
+    position relative
+    padding 55px 0 0
+    .title, .subtitle
+        position relative
+        text-align center
+        z-index 2
+        color var(--text-color)
+    .title
+        font-size 50px
+        font-weight bold
+        margin-bottom 0
+    .subtitle
+        font-weight 300
+        font-size 18px
+    &.style-img
+        background-repeat no-repeat
+        background-position center
+        background-size cover
+        position relative
+        padding 5px 0 65px
+        .header-mask
+            width 100%
+            height 100%
+            position absolute
+            margin-top -5px
+            z-index 1
+        .title, .subtitle
+            color #fff
+        .title
+            font-size 80px
+            margin-bottom -15px
+        .subtitle
+            margin-bottom 0
+
 @media (max-width: $MQMobile)
-  .tags
-    margin-left 0 !important
-    margin-bottom 0
+    .page-header
+        &.style-img
+            padding 25px 15px 55px
+            .header-mask
+                margin-top -25px
+                margin-left -15px
+            .title
+                font-size 55px
 </style>

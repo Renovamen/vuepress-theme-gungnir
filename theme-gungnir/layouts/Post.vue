@@ -1,9 +1,9 @@
 <template>
     <Common class="post-container">
-        <PageHeader
+        <ArticleHeader
             v-show="$page.title"
-            class="page-header"
-            :pageInfo="$page"
+            class="article-header"
+            :articleInfo="$page"
             :class="{ 'style-img': $page.frontmatter.header_style == 'image' }"
             :style="pageHeaderStyle">
             <div
@@ -11,14 +11,14 @@
                 class="header-mask"
                 :style="{ 'background': $page.frontmatter.header_mask }">
             </div>
-        </PageHeader>
+        </ArticleHeader>
         <Page :pageStyle="pageStyle" />
         <Catalog class="side-catalog" />
     </Common>
 </template>
 
 <script>
-import PageHeader from '@theme/components/PageHeader'
+import ArticleHeader from '@theme/components/ArticleHeader'
 import Footer from '@theme/components/Footer'
 import Common from '@theme/components/Common.vue'
 import Catalog from '@theme/components/Catalog'
@@ -27,7 +27,7 @@ import Page from '@theme/components/Page.vue'
 export default {
     name: 'Post',
     components: {
-        PageHeader,
+        ArticleHeader,
         Footer,
         Common,
         Catalog,
@@ -62,7 +62,7 @@ export default {
         &::-webkit-scrollbar
             width: 0
             height: 0
-    .page-header
+    .article-header
         margin-top -2rem
         padding-top 8rem
         position relative
@@ -127,13 +127,13 @@ export default {
 
 @media (max-width: ($MQIpad + 1px))
     .post-container
-        .page, .page-header .header-content
+        .page, .article-header .header-content
             max-width auto
             margin: 0 auto !important;
 
 @media (max-width: $MQMobile)
     .post-container
-        .page-header
+        .article-header
             padding-top 6rem
             padding-bottom 0
             padding-right 0

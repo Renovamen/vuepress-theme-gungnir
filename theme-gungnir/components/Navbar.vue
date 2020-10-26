@@ -65,6 +65,12 @@ export default {
     if(
       this.$page.path == '/' 
       || (this.$page.id == 'posts' && this.$page.frontmatter.header_style == 'image')
+      || (this.$page.path == '/tags/'
+          && this.$themeConfig.pageConfig.tags
+          && this.$themeConfig.pageConfig.tags.bgImage)
+      || (this.$page.path == '/links.html'
+          && this.$themeConfig.pageConfig.links
+          && this.$themeConfig.pageConfig.links.bgImage)
     ) this.isInvert = false
   },
 

@@ -1,10 +1,10 @@
 <template>
   <main class="page" :style="pageStyle">
-    <PageHeader
+    <ArticleHeader
       v-if="$page.id != 'posts'"
       v-show="$page.title"
-      :pageInfo="$page"
-      class="page-header" />
+      :articleInfo="$page"
+      class="article-header" />
     <Content class="theme-content" />
     <PageEdit />
     <PageNav
@@ -17,14 +17,14 @@
 </template>
 
 <script>
-import PageHeader from '@theme/components/PageHeader'
+import ArticleHeader from '@theme/components/ArticleHeader'
 import PageNav from '@theme/components/PageNav'
 import PageEdit from '@theme/components/PageEdit'
 import Pager from '@theme/components/Pager'
 
 export default {
   components: {
-    PageHeader,
+    ArticleHeader,
     PageNav,
     PageEdit,
     Pager
@@ -88,7 +88,7 @@ export default {
   padding-bottom 2rem
   padding-right $catalogWidth
   display block
-  .page-header
+  .article-header
     max-width $contentWidth
     margin 0 auto
     padding 0rem 2.5rem
@@ -110,6 +110,6 @@ export default {
   .page
     padding-right 0
     padding-top 3rem
-    .page-header, .pager
+    .article-header, .pager
       padding 0 1rem
 </style>

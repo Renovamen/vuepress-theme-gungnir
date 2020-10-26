@@ -1,5 +1,6 @@
 ---
 layout: Links
+title: Links
 links:
   - title: 咸鱼翻滚
     items:
