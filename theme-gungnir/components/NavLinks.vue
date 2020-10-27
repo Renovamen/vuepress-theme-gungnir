@@ -1,8 +1,22 @@
 <template>
   <nav class="nav-links" v-if="userLinks.length">
+    <!-- navbar link buttons -->
     <div class="nav-item" v-for="item in userLinks" :key="item.link">
       <DropdownLink v-if="item.type === 'links'" :item="item"/>
       <NavLink v-else :item="item"/>
+    </div>
+    <!-- search button -->
+    <div
+      v-if="$themeConfig.search !== false && $frontmatter.search !== false"
+      class="nav-item">
+      <a
+        class="nav-link faa-parent animated-hover"
+        @click="$emit('toggle-search')"
+        style="cursor: pointer;"
+      >
+        <i class="fa fa-search faa-wrench" style="font-size: 15px" />
+        Search
+      </a>
     </div>
   </nav>
 </template>

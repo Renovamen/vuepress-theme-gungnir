@@ -14,6 +14,7 @@
       v-if="getPostIndex != -1"
       :data="getPostPager" />
     <Vssue
+      v-if="$themeConfig.comment"
       :title="$page.title + ' - ' + $site.title"
       class="vssue-comment-wrapper" />
   </main>

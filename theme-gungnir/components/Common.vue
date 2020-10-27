@@ -5,11 +5,15 @@
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
-    <Navbar v-if="shouldShowNavbar" :isSidebar="shouldShowSidebar" />
+    <Navbar
+      v-if="shouldShowNavbar"
+      :isSidebar="shouldShowSidebar"
+      @toggle-search="toggleSearch(true)"
+    />
 
     <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
 
-    <Sidebar :items="sidebarItems">
+    <Sidebar :items="sidebarItems" @toggle-search="toggleSearch(true)">
       <template slot="top">
         <!-- <PersonalInfo /> -->
       </template>
@@ -18,6 +22,9 @@
 
     <slot></slot>
 
+    <SearchPage
+      v-if="$themeConfig.search !== false && $frontmatter.search !== false"
+      @toggle-search="toggleSearch(false)" />
     <Menu @toggle-sidebar="toggleSidebar" @toggle-catalog="toggleCatalog" />
     <Footer v-if="!shouldShowSidebar" class="footer" />
   </div>
@@ -26,6 +33,7 @@
 <script>
 import Navbar from '@theme/components/Navbar'
 import Sidebar from '@theme/components/Sidebar'
+import SearchPage from '@theme/components/SearchPage'
 import Menu from '@theme/components/Menu'
 import Footer from '@theme/components/Footer'
 
@@ -33,6 +41,7 @@ export default {
   components: {
     Sidebar,
     Navbar,
+    SearchPage,
     Menu,
     Footer
   },
@@ -48,6 +57,7 @@ export default {
     return {
       isSidebarOpen: false,
       isCatalogOpen: false,
+      isSearchOpen: false,
     }
   },
 
@@ -82,6 +92,7 @@ export default {
           'sidebar-open': this.isSidebarOpen,
           'no-sidebar': !this.shouldShowSidebar,
           'catalog-open': this.isCatalogOpen,
+          'search-open': this.isSearchOpen
         },
         userPageClass
       ]
@@ -91,6 +102,7 @@ export default {
   mounted () {
     this.$router.afterEach(() => {
       this.isSidebarOpen = false
+      this.isSearchOpen = false
       // this.isCatalogOpen = false
     })
   },
@@ -104,6 +116,17 @@ export default {
     toggleCatalog (to) {
       this.isCatalogOpen = typeof to === 'boolean' ? to : !this.isCatalogOpen
       this.$emit('toggle-catalog', this.isCatalogOpen)
+    },
+
+    toggleSearch (to) {
+      this.isSearchOpen = typeof to === 'boolean' ? to : !this.isSearchOpen
+      this.$emit('toggle-search', this.isSearchOpen)
+      // auto focus
+      if (this.isSearchOpen) {
+        setTimeout(function () {
+          document.querySelector('.search-page input').focus();
+        }, 400);
+      }
     },
 
     // side swipe

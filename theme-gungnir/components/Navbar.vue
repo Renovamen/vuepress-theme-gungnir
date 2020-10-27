@@ -15,21 +15,20 @@
       <!-- <AlgoliaSearchBox
         v-if="isAlgoliaSearch"
         :options="algolia"/> -->
-      <!-- <SearchBox v-else-if="$themeConfig.search !== false && $frontmatter.search !== false"/> -->
-      <NavLinks class="can-hide"/>
+      <NavLinks
+        class="can-hide"
+        @toggle-search="$emit('toggle-search')" />
     </div>
   </header>
 </template>
 
 <script>
 import AlgoliaSearchBox from '@AlgoliaSearchBox'
-import SearchBox from '@SearchBox'
 import NavLinks from '@theme/components/NavLinks'
 
 export default {
   components: {
     NavLinks,
-    SearchBox,
     AlgoliaSearchBox
   },
   props: ['isSidebar'],

@@ -15,6 +15,7 @@ module.exports = {
   themeConfig: {
     search: true,
     searchMaxSuggestions: 10,
+    searchPlaceholder: "$ grep ...",
     author: "Renovamen",
     authorAvatar: "/img/avatar.jpeg",
     smoothScroll: true,
@@ -26,6 +27,7 @@ module.exports = {
     lastUpdated: "Last Updated",
     codeTheme: "gungnir-dark",
     hitokoto: true,  // Enable hitokoto (一言) or not?
+    comment: true,  // Enable comment system or not?
     nav: [
       {
         text: "Home",

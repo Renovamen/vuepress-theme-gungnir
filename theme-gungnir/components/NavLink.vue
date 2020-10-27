@@ -7,6 +7,7 @@
   <a v-else class="nav-link external" :href="link"
      :target="isMailto(link) || isTel(link) ? null : '_blank'"
      :rel="isMailto(link) || isTel(link) ? null : 'noopener noreferrer'">
+    <i v-if="item.icon" :class="item.icon" class="faa-wrench" style="font-size: 15px" />
     {{ item.text }}
   </a>
 </template>

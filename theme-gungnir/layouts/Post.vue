@@ -132,6 +132,10 @@ export default {
             @extend $wrapper
             margin-top 10rem
             margin-bottom -3rem
+            @media (max-width: $MQMobile)
+                padding 1rem
+                margin-top 13rem
+                margin-bottom -5rem
 
 @media (max-width: ($MQIpad + 1px))
     .post-container

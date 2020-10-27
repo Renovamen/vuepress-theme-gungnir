@@ -2,7 +2,7 @@
   <aside class="sidebar">
     <slot name="top" />
     
-    <NavLinks/>
+    <NavLinks @toggle-search="$emit('toggle-search')" />
     
     <SidebarLinks
       :depth="0"

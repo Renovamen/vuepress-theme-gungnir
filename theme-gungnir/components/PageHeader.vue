@@ -30,7 +30,6 @@ export default {
     },
     computed: {
         headerImage () {
-            console.log(this.$page.frontmatter)
             return this.pageInfo.bgImage ? { 
                 backgroundImage: "url(" + this.$withBase(this.pageInfo.bgImage.path) + ")"
             } : {}
