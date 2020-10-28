@@ -3,11 +3,11 @@
     <span
       v-for="(item, index) in tags"
       :key="index"
-      :class="{'active': item.name == currentTag, 'tag-all': item.path == '/tag/'}"
+      :class="{'active': item.name == currentTag, 'tag-all': item.path == '/tags/'}"
       :style="{ 'backgroundColor': item.tagColor }"
       @click="tagClick(item)">
       {{item.name}}
-      <sup v-if="item.path == '/tag/'">{{ $getAllPosts.length }}</sup>
+      <sup v-if="item.path == '/tags/'">{{ $getAllPosts.length }}</sup>
       <sup v-else>{{ item.pages.length }}</sup>
     </span>
   </div>
@@ -26,7 +26,7 @@ export default {
   computed: {
     tags () {
       var tagList = tagCloud(this.$tags.list)
-      return [{ name: this.$themeLocales.tag.all, path: '/tag/' }, ...tagList]
+      return [{ name: this.$themeLocales.tag.all, path: '/tags/' }, ...tagList]
     }
   },
   methods: {

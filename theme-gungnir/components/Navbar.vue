@@ -104,9 +104,14 @@ export default {
     },
     handleInvert () {
       if(
-        this.$page.path == '/' 
+        // home page
+        this.$page.path == '/'
+        // pagination on home page
+        || this.$page.path.indexOf('/page/') != -1
+        // posts with header image
         || (this.$page.id == 'posts' && this.$page.frontmatter.header_style == 'image')
-        || (this.$page.path == '/tags/'
+        // pages with header image
+        || (this.$page.path.indexOf('/tags/') != -1
             && this.$themeConfig.pageConfig.tags
             && this.$themeConfig.pageConfig.tags.bgImage)
         || (this.$page.path == '/links.html'
