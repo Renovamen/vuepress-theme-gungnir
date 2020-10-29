@@ -44,7 +44,7 @@ export default {
             var style = {}
             if (this.$page.frontmatter.header_style == 'image' 
                 && this.$page.frontmatter.header_img) 
-                style = { backgroundImage: "url(" + this.$withBase(this.$page.frontmatter.header_img) + ")" }
+                style = { backgroundImage: `url(${this.$withBase(this.$page.frontmatter.header_img, this.$themeConfig)})` }
             if (!this.$showCatalog) style.paddingRight = '0'
             return style
         },

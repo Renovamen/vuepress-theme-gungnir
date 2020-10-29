@@ -1,11 +1,18 @@
 <template>
   <div class="home-blog">
     <div class="hero" :style="{ 'background-image': bgImagePath }">
-      <div class="header-mask" v-if="$themeConfig.bgImage[this.bgImageID].mask" :style="{background: $withBase($themeConfig.bgImage[this.bgImageID].mask)}"></div>
+      <div
+        class="header-mask"
+        v-if="$themeConfig.bgImage[this.bgImageID].mask"
+        :style="{background: $themeConfig.bgImage[this.bgImageID].mask}"
+      >
+      </div>
       <div class="header-content" :style="{'opacity': headerOpacity}">
         
         <div class="hero-avatar hide-on-mobile">
-          <img :src="$withBase($themeConfig.authorAvatar)" alt="hero" />
+          <img
+            :src="$withBase($themeConfig.authorAvatar)" 
+            alt="hero" />
         </div>
 
         <div v-if="$themeConfig.hitokoto" class="hero-bubble">
@@ -56,17 +63,18 @@ export default {
       currentPage: 1,
       tags: [],
       bgImageID: 0,
-      headerOpacity: 1,
+      headerOpacity: 1
     }
   },
   computed: {
     bgImagePath () {
       if(this.$themeConfig.bgImage) {
-        var bgPath = "url(" + this.$withBase(this.$themeConfig.bgImage[this.bgImageID].path) + ")"
+        var bgPath = `url(${this.$withBase(this.$themeConfig.bgImage[this.bgImageID].path)})`
         return bgPath
       }
       else {
-        return 'url(/img/home-bg/default.svg)'
+        const defaultImg = require('@theme/assets/default-home-bg.svg')
+        return `url(${defaultImg})`
       }
     },
     heroHeight () {
@@ -123,7 +131,7 @@ export default {
           timer = setTimeout(func, remaining)
         }
       }
-    },
+    }
   }
 }
 </script>
@@ -327,6 +335,8 @@ export default {
   .home-blog
     .hero
       padding 80px 0 60px
+      .header-mask
+        margin-top -1.2rem
       .hero-info__text h1
         font-size 50px !important
 </style>

@@ -219,6 +219,7 @@ export default {
     background-color var(--bg-color)
     position fixed
     bottom 0
+    left 0
     width 100%
     height 100vh
     overflow hidden
@@ -251,13 +252,13 @@ export default {
             background transparent
             color var(--text-color)
             &::-webkit-input-placeholder
-                color var(--text-color)
+                color var(--text-color-sub)
             &::-moz-placeholder
-                color var(--text-color)
+                color var(--text-color-sub)
             &:-moz-placeholder
-                color var(--text-color)
+                color var(--text-color-sub)
             &:-ms-input-placeholder
-                color var(--text-color)
+                color var(--text-color-sub)
         .suggestions
             gungnir-font()
             height 70%

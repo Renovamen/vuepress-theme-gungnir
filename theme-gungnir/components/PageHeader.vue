@@ -31,7 +31,7 @@ export default {
     computed: {
         headerImage () {
             return this.pageInfo.bgImage ? { 
-                backgroundImage: "url(" + this.$withBase(this.pageInfo.bgImage.path) + ")"
+                backgroundImage: `url(${this.$withBase(this.pageInfo.bgImage.path)})`
             } : {}
         }
     }

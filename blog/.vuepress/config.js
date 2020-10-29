@@ -134,6 +134,15 @@ module.exports = {
       }
     },
   },
+  plugins: {
+    '@vssue/vuepress-plugin-vssue': {
+      platform: 'github',
+      owner: 'This-is-an-Apple',
+      repo: 'gitalk-comments',
+      clientId: '0a24dcc429074a13836a',
+      clientSecret: '7b17864fc9d9aa5fd8d6ac00198aaa07d899bd84',
+    }
+  },
   chainMarkdown(config) {
     const { PLUGINS } = require('@vuepress/markdown')
     const originalLinkPlugin = require('@vuepress/markdown/lib/link.js');

@@ -19,7 +19,9 @@
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <img :src="item.img ? item.img : '/img/links/default.jpg'">
+                                <img :src="item.img
+                                            ? $withBase(item.img)
+                                            : require('@theme/assets/default-link-avatar.jpg')">
                                 <span class="sitename">{{ item.sitename }}</span>
                                 <div class="desc">{{ item.desc }}</div>
                             </a>
@@ -40,7 +42,7 @@ export default {
     components: {
         Common,
         PageHeader
-    },
+    }
 }
 </script>
 
