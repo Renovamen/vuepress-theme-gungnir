@@ -73,8 +73,8 @@ export default {
   },
   methods: {
     goTags (tag) {
-      if (this.$route.path !== `/tag/${tag}/`) {
-        this.$router.push({ path: `/tag/${tag}/` })
+      if (this.$route.path !== `/tags/${tag}/`) {
+        this.$router.push({ path: `/tags/${tag}/` })
       }
     }
   }
