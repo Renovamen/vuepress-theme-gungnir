@@ -54,11 +54,11 @@ export default {
 <style lang="stylus" scoped>
 @require '../styles/mode.styl'
 .tag-wrapper
-  max-width: $contentWidth;
-  margin: 0 auto;
-  padding: 1.6rem 2.5rem 0;
+  max-width $contentWidth
+  margin 0 auto
+  padding 1.6rem 2.5rem 0
 
 @media (max-width: $MQMobile)
   .tag-wrapper
-    padding: 1rem 0.9rem 0;
+    padding 1rem 0.9rem 0
 </style>

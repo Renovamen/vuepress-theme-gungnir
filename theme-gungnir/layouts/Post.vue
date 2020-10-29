@@ -13,7 +13,7 @@
             </div>
         </ArticleHeader>
         <Page :pageStyle="pageStyle" />
-        <Catalog class="side-catalog" />
+        <Catalog class="side-catalog" :class="{ fixed: isFixed }" />
     </Common>
 </template>
 
@@ -23,15 +23,29 @@ import Footer from '@theme/components/Footer'
 import Common from '@theme/components/Common.vue'
 import Catalog from '@theme/components/Catalog'
 import Page from '@theme/components/Page.vue'
+import { throttle } from '@theme/utils/time'
 
 export default {
     name: 'Post',
+    data () {
+        return {
+            navHeight: 0,
+            isFixed: false
+        }
+    },
     components: {
         ArticleHeader,
         Footer,
         Common,
         Catalog,
         Page
+    },
+    mounted () {
+        this.navHeight = this.$children[0].$children[0].$refs.navbar.offsetHeight
+        window.addEventListener('scroll', throttle(this.handleScroll, 50))
+    },
+    beforeDestroy () {
+        window.removeEventListener('scroll', throttle(this.handleScroll, 50))
     },
     computed: {
         pageStyle () {
@@ -48,6 +62,14 @@ export default {
             if (!this.$showCatalog) style.paddingRight = '0'
             return style
         },
+    },
+    methods: {
+        handleScroll () {
+            var currentTop = window.pageYOffset
+            console.log(currentTop, this.navHeight + 41 + 100)
+            if (currentTop > 340) this.isFixed = true
+            else this.isFixed = false
+        }
     }
 }
 </script>
@@ -58,14 +80,19 @@ export default {
 
 .post-container
     .side-catalog
-        position fixed
-        top 10rem
-        bottom 10rem
+        position absolute
         right 2rem
+        top 26rem !important
+        height 100%
         overflow-y scroll
+        &.fixed
+            position fixed
+            height auto
+            top 5rem !important
+            bottom 10rem
         &::-webkit-scrollbar
-            width: 0
-            height: 0
+            width 0
+            height 0
     .article-header
         margin-top -2rem
         padding-top 8rem
@@ -106,28 +133,28 @@ export default {
             z-index 1
 
     .page
-        max-width: $contentWidth;
-        margin-left: $catalogWidth !important;
-        padding-bottom: 5rem;
+        max-width $contentWidth
+        margin-left $catalogWidth !important
+        padding-bottom 5rem
         padding-top 1rem
         h1
-            font-size: 50px;
+            font-size 50px
         h2, h3, h4, h5, h6
-            font-weight: bold;
+            font-weight bold
         h2
-            font-size: 30px;
+            font-size 30px
         h3
-            font-size: 24px;
+            font-size 24px
         h4
-            font-size: 21px;
+            font-size 21px
         h5
-            font-size: 19px;
-            color: var(--text-color-sub);
+            font-size 19px
+            color var(--text-color-sub)
         h6
-            font-size: 16px;
-            color: var(--text-color-sub);
+            font-size 16px
+            color var(--text-color-sub)
         a.header-anchor
-            opacity: 1;
+            opacity 1
         .vssue-comment-wrapper
             @extend $wrapper
             margin-top 10rem
@@ -141,7 +168,7 @@ export default {
     .post-container
         .page, .article-header .header-content
             max-width auto
-            margin: 0 auto !important;
+            margin 0 auto !important
 
 @media (max-width: $MQMobile)
     .post-container
@@ -154,10 +181,10 @@ export default {
                     padding-left 1rem
                     padding-right 1rem
                 .title
-                    font-size: 30px;
+                    font-size 30px
                 .subtitle
-                    font-size: 16px;
-                    margin-top: -5px;
+                    font-size 16px
+                    margin-top -5px
             &.style-img
                 padding-top 85px
                 padding-bottom 45px
@@ -165,34 +192,37 @@ export default {
                 margin-top -5.4rem
         .page
             h1
-                font-size: 30px;
+                font-size 30px
             h2
-                font-size: 25px;
+                font-size 25px
             h3
-                font-size: 22px;
+                font-size 22px
             h4
-                font-size: 21px;
+                font-size 21px
             h5
-                font-size: 19px;
+                font-size 19px
             h6
-                font-size: 16px;
+                font-size 16px
         .side-catalog
-            transition(transform .5s);
-            transform(translateX(calc(100% + 2rem)));
-            position: fixed;
-            top: -15px !important;
-            right: -2px;
-            padding-top: 2rem;
-            width: 15rem !important;
-            height: 100%;
-            background-color: var(--bg-color);
-            z-index: 5;
+            transition(transform .5s)
+            transform(translateX(calc(100% + 2rem)))
+            position fixed
+            top -15px !important
+            right -2px
+            padding-top 2rem
+            width 15rem !important
+            height 100%
+            background-color var(--bg-color)
+            z-index 5
             &.open
-                transform(translateX(0));
-                box-shadow: var(--box-shadow);
+                transform(translateX(0))
+                box-shadow var(--box-shadow)
+            &.fixed
+                height 100%
+                top -15px !important
             li
-                border-left: none;
+                border-left none
                 &.active
-                    border-left: 2px solid var(--accent-color);
+                    border-left 2px solid var(--accent-color)
 </style>
 <style src="../styles/theme.styl" lang="stylus"></style>

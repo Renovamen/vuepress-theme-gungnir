@@ -52,6 +52,7 @@
 <script>
 import PostList from '@theme/components/PostList'
 import SNS from '@theme/components/SNS'
+import { throttle } from '@theme/utils/time'
 
 export default {
   components: {
@@ -83,7 +84,7 @@ export default {
   },
   mounted() {
     this.bgImageID = Math.floor(Math.random() * this.$themeConfig.bgImage.length)
-    window.addEventListener('scroll', this.throttle(this.handleScroll, 50))
+    window.addEventListener('scroll', throttle(this.handleScroll, 50))
 
     fetch('https://v1.hitokoto.cn')
     .then(response => response.json())
@@ -95,7 +96,7 @@ export default {
   },
 
   beforeDestroy () {
-    window.removeEventListener('scroll', this.throttle(this.handleScroll, 50))
+    window.removeEventListener('scroll', throttle(this.handleScroll, 50))
   },
 
   methods: {
@@ -111,26 +112,6 @@ export default {
       var currentTop = window.pageYOffset
       var windowHeight = document.documentElement.clientHeight
       this.headerOpacity = 1 - currentTop * 1.2 / windowHeight
-    },
-    throttle (func, delay) {
-      let timer = null
-      let startTime = Date.now()
-
-      return function () {
-        const curTime = Date.now()
-        const remaining = delay - (curTime - startTime)
-        const context = this
-        const args = arguments
-
-        clearTimeout(timer)
-        if (remaining <= 0) {
-          func.apply(context, args)
-          startTime = Date.now()
-        }
-        else {
-          timer = setTimeout(func, remaining)
-        }
-      }
     }
   }
 }
