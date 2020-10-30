@@ -2,16 +2,17 @@ export function tagCloud (tagList) {
     const tagOpts = {
         color: {start: '#a5a5e4', end: '#4388c4'},
     }
-  
+
+    if (tagList.length == 0) return []
+    
     tagList.sort((prev, next) => {
         return (next.pages.length - prev.pages.length)
     })
-  
-    const lowest = tagList.pop().pages.length
+    const lowest = tagList[tagList.length - 1].pages.length
     const highest = tagList[0].pages.length
     const range = Math.max(highest - lowest, 1)
-    
-    var colorIncr = colorIncrement (tagOpts.color, range);
+
+    const colorIncr = colorIncrement (tagOpts.color, range);
   
     for (let item of tagList) {
         var weighting = item.pages.length - lowest

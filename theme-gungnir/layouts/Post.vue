@@ -13,7 +13,10 @@
             </div>
         </ArticleHeader>
         <Page :pageStyle="pageStyle" />
-        <Catalog class="side-catalog" :class="{ fixed: isFixed }" />
+        <Catalog
+            class="side-catalog"
+            :class="{ 'fixed': isFixed }"
+            :style="{ 'top': `${catalogTop}px !important` }" />
     </Common>
 </template>
 
@@ -25,12 +28,16 @@ import Catalog from '@theme/components/Catalog'
 import Page from '@theme/components/Page.vue'
 import { throttle } from '@theme/utils/time'
 
+const catalopTopAbsolute = 40
+const catalopTopFixed = 80
+
 export default {
     name: 'Post',
     data () {
         return {
             navHeight: 0,
-            isFixed: false
+            isFixed: false,
+            catalogTop: 0,
         }
     },
     components: {
@@ -42,6 +49,8 @@ export default {
     },
     mounted () {
         this.navHeight = this.$children[0].$children[0].$refs.navbar.offsetHeight
+        this.headerHeight = document.querySelector('.article-header').offsetHeight
+        this.catalogTop = this.headerHeight + catalopTopAbsolute
         window.addEventListener('scroll', throttle(this.handleScroll, 50))
     },
     beforeDestroy () {
@@ -61,13 +70,20 @@ export default {
                 style = { backgroundImage: `url(${this.$withBase(this.$page.frontmatter.header_img, this.$themeConfig)})` }
             if (!this.$showCatalog) style.paddingRight = '0'
             return style
-        },
+        }
     },
     methods: {
         handleScroll () {
             var currentTop = window.pageYOffset
-            if (currentTop > 340) this.isFixed = true
-            else this.isFixed = false
+            // console.log(currentTop, currentTop - this.headerHeight)
+            if (currentTop > (this.headerHeight + catalopTopAbsolute - catalopTopFixed)) {
+                this.isFixed = true
+                this.catalogTop = catalopTopFixed
+            }
+            else {
+                this.isFixed = false
+                this.catalogTop = this.headerHeight + catalopTopAbsolute
+            }
         }
     }
 }
@@ -81,13 +97,11 @@ export default {
     .side-catalog
         position absolute
         right 2rem
-        top 26rem !important
         height 100%
         overflow-y scroll
         &.fixed
             position fixed
             height auto
-            top 5rem !important
             bottom 10rem
         &::-webkit-scrollbar
             width 0
