@@ -110,11 +110,12 @@ export default {
         || this.$page.path.indexOf('/page/') != -1
         // posts with header image
         || (this.$page.id == 'posts' && this.$page.frontmatter.header_style == 'image')
-        // pages with header image
-        || (this.$page.path.indexOf('/tags/') != -1
+        // tags page with header image
+        || (['Tags', 'Tag'].indexOf(this.$page.frontmatter.layout) != -1
             && this.$themeConfig.pageConfig.tags
             && this.$themeConfig.pageConfig.tags.bgImage)
-        || (this.$page.path == '/links.html'
+        // links page with header image
+        || (this.$page.frontmatter.layout == 'Links'
             && this.$themeConfig.pageConfig.links
             && this.$themeConfig.pageConfig.links.bgImage)
       ) this.isInvert = false

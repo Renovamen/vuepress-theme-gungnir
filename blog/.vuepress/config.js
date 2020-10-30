@@ -35,18 +35,13 @@ module.exports = {
         icon: 'fab fa-fort-awesome'
       },
       {
-        text: "About",
-        link: '/about',
-        icon: 'fas fa-paw'
-      },
-      {
         text: "Tags",
         link: '/tags/',
         icon: 'fas fa-tag'
       },
       {
         text: "Links",
-        link: '/links',
+        link: '/links/',
         icon: 'fas fa-satellite-dish'
       },
       {
