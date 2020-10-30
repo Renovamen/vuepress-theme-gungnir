@@ -38,6 +38,7 @@ export default {
             navHeight: 0,
             isFixed: false,
             catalogTop: 0,
+            screenWidth: 0
         }
     },
     components: {
@@ -51,6 +52,16 @@ export default {
         this.navHeight = this.$children[0].$children[0].$refs.navbar.offsetHeight
         this.headerHeight = document.querySelector('.article-header').offsetHeight
         this.catalogTop = this.headerHeight + catalopTopAbsolute
+        this.screenWidth = document.body.clientWidth
+
+        const that = this
+        window.onresize = () => {
+            return (() => {
+                that.headerHeight = document.querySelector('.article-header').offsetHeight
+                that.catalogTop = that.headerHeight + catalopTopAbsolute
+                that.screenWidth = document.body.clientWidth
+            })()
+        }
         window.addEventListener('scroll', throttle(this.handleScroll, 50))
     },
     beforeDestroy () {
@@ -75,7 +86,6 @@ export default {
     methods: {
         handleScroll () {
             var currentTop = window.pageYOffset
-            // console.log(currentTop, currentTop - this.headerHeight)
             if (currentTop > (this.headerHeight + catalopTopAbsolute - catalopTopFixed)) {
                 this.isFixed = true
                 this.catalogTop = catalopTopFixed
@@ -84,6 +94,8 @@ export default {
                 this.isFixed = false
                 this.catalogTop = this.headerHeight + catalopTopAbsolute
             }
+            // $MQMobile
+            if (this.screenWidth <= 719) this.catalogTop = -15
         }
     }
 }
@@ -222,7 +234,6 @@ export default {
             transition(transform .5s)
             transform(translateX(calc(100% + 2rem)))
             position fixed
-            top -15px !important
             right -2px
             padding-top 2rem
             width 15rem !important
@@ -234,7 +245,6 @@ export default {
                 box-shadow var(--box-shadow)
             &.fixed
                 height 100%
-                top -15px !important
             li
                 border-left none
                 &.active
