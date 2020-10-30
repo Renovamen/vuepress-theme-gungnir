@@ -54,7 +54,7 @@ export default {
 <style lang="stylus" scoped>
 @require '../styles/mode.styl'
 .tag-wrapper
-  max-width $contentWidth
+  max-width 760px
   margin 0 auto
   padding 1.6rem 2.5rem 0
 

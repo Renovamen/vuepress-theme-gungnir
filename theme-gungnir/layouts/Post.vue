@@ -66,7 +66,6 @@ export default {
     methods: {
         handleScroll () {
             var currentTop = window.pageYOffset
-            console.log(currentTop, this.navHeight + 41 + 100)
             if (currentTop > 340) this.isFixed = true
             else this.isFixed = false
         }
