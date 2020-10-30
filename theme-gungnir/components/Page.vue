@@ -56,24 +56,14 @@ export default {
   },
 
   mounted() {
-    // full screen the code blocks
-    const codeBlocks = document.querySelectorAll("div[class*='language-']")
-    const htmlDom = document.querySelector('html')
-    for (let block of codeBlocks) {
-      let btn = document.createElement('div')
-      btn.classList.add('code-button')
-      // click to full screen the code block
-      btn.onclick = function() {
-        if (block.classList.contains('code-block-fullscreen')) {
-          block.classList.remove('code-block-fullscreen')
-          htmlDom.classList.remove('screen-fixed')
-        }
-        else {
-          block.classList.add('code-block-fullscreen')
-          htmlDom.classList.add('screen-fixed')
-        }
-      }
-      block.appendChild(btn)
+    this.codeFullScreen()
+  },
+
+  watch: {
+    '$route' () {
+      this.$nextTick(() => {
+        this.codeFullScreen()
+      })
     }
   },
 
@@ -100,6 +90,29 @@ export default {
           subtext: allPosts[postId + 1].title,
           link: allPosts[postId + 1].path
         } : null
+      }
+    }
+  },
+  methods: {
+    codeFullScreen (){
+      // full screen the code blocks
+      const codeBlocks = document.querySelectorAll("div[class*='language-']")
+      const htmlDom = document.querySelector('html')
+      for (let block of codeBlocks) {
+        let btn = document.createElement('div')
+        btn.classList.add('code-button')
+        // click to full screen the code block
+        btn.onclick = function() {
+          if (block.classList.contains('code-block-fullscreen')) {
+            block.classList.remove('code-block-fullscreen')
+            htmlDom.classList.remove('screen-fixed')
+          }
+          else {
+            block.classList.add('code-block-fullscreen')
+            htmlDom.classList.add('screen-fixed')
+          }
+        }
+        block.appendChild(btn)
       }
     }
   }
