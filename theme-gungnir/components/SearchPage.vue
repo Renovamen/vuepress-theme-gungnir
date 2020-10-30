@@ -221,7 +221,8 @@ export default {
     bottom 0
     left 0
     width 100%
-    height 100vh
+    height 100%
+    margin 0
     overflow hidden
     z-index 50
     transition(transform .25s)
@@ -291,4 +292,22 @@ export default {
     .search-page
         .search-box
             width 80%
+
+@media (max-width: $MQMobileNarrow)
+    .search-page
+        .search-box
+            input
+                font-size 24px
+            .suggestions
+                margin-top 20px
+                padding 0
+                .suggestion
+                    padding 0.4rem 0
+                    a
+                        .page-title
+                            font-size 18px
+                            line-height 1.3
+                        .header
+                            font-size 14px
+                            line-height 1.3
 </style>
