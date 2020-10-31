@@ -30,6 +30,8 @@ export default {
 
 <style lang="stylus">
 .sidebar
+  .personal-info-wrapper
+    display none
   ul
     padding 0
     margin 0
@@ -68,6 +70,8 @@ export default {
 
 @media (max-width: $MQMobile)
   .sidebar
+    .personal-info-wrapper
+      display block
     .nav-links
       display block
       .dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active::after

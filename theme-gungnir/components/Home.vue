@@ -247,7 +247,10 @@ export default {
             font-weight 300
             line-height 15px
             margin-bottom 0
-
+      
+      .sns-wrapper
+        margin-top 270px
+      
       .img-prev, .img-next
         cursor pointer
         position absolute

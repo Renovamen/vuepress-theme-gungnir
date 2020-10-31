@@ -15,7 +15,16 @@
 
     <Sidebar :items="sidebarItems" @toggle-search="toggleSearch(true)">
       <template slot="top">
-        <!-- <PersonalInfo /> -->
+        <div class="personal-info-wrapper">
+          <div class="mobile-hero-avatar">
+            <img
+              :src="$withBase($themeConfig.authorAvatar)" 
+              alt="hero" />
+          </div>
+          <p class="mobile-heading">{{ $themeConfig.author }}</p>
+          <SNS />
+          <hr>
+        </div>
       </template>
       <slot name="sidebar-bottom" slot="bottom"/>
     </Sidebar>
@@ -36,6 +45,7 @@ import Sidebar from '@theme/components/Sidebar'
 import SearchPage from '@theme/components/SearchPage'
 import Menu from '@theme/components/Menu'
 import Footer from '@theme/components/Footer'
+import SNS from '@theme/components/SNS'
 
 export default {
   components: {
@@ -43,7 +53,8 @@ export default {
     Navbar,
     SearchPage,
     Menu,
-    Footer
+    Footer,
+    SNS
   },
 
   props: {
@@ -155,8 +166,42 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@require '../styles/mixins.styl'
+@require '../styles/mode.styl'
+
 .theme-container
   .hide
     height 100vh
     overflow hidden
+  .sidebar
+    gungnir-font()
+    .mobile-hero-avatar
+      margin 0 auto
+      width 90px
+      height 90px
+      border-radius 100%
+      padding 2px
+      box-shadow 0px 10px 25px 0px rgba(lighten($accentColor, 40%), 0.27)
+      img
+        border-radius 100%
+        max-width 100%
+    .mobile-heading
+      text-align center
+      font-size 17px
+      line-height 1
+      font-weight bold
+      // margin-top -5px
+    & >>> .sns-wrapper
+      margin -10px auto 0
+      text-align center
+      font-size 11px
+      position relative
+      a
+        font-size 13px
+        .fa-stack
+          width 25px
+          .fa-circle
+            display none
+          .icon-sns
+            color var(--text-color)
 </style>

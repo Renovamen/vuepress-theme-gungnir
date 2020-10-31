@@ -58,8 +58,8 @@ export default {
         window.onresize = () => {
             return (() => {
                 that.headerHeight = document.querySelector('.article-header').offsetHeight
-                that.catalogTop = that.headerHeight + catalopTopAbsolute
                 that.screenWidth = document.body.clientWidth
+                that.handleScroll()
             })()
         }
         window.addEventListener('scroll', throttle(this.handleScroll, 50))
