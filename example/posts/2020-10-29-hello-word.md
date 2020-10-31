@@ -43,7 +43,7 @@ Most people would find the picture of our universe as an infinite tower of torto
 
 Click the red button on the upper-right corner to make the code block full screen.
 
-```python
+```python{1,6-8}
 import food
 
 class Dragon:
