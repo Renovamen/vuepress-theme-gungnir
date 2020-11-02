@@ -181,7 +181,7 @@ export default {
       height 90px
       border-radius 100%
       padding 2px
-      box-shadow 0px 10px 25px 0px rgba(lighten($accentColor, 40%), 0.27)
+      box-shadow var(--box-shadow-hover)
       img
         border-radius 100%
         max-width 100%

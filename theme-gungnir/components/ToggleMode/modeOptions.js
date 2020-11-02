@@ -25,6 +25,7 @@ const modeOptions = {
     '--inline-code-bg': '#f9f2f4',
     '--mask-color': '#888',
     '--accent-color':  '#377bb5',
+    '--image-mask-color': 'transparent'
   },
   dark: {
     '--default-color-10': 'rgba(27, 35, 47, 1)',
@@ -52,6 +53,7 @@ const modeOptions = {
     '--inline-code-bg': 'rgba(76, 86, 128, 0.4)',
     '--mask-color': '#000',
     '--accent-color':  '#74b3eb',
+    '--image-mask-color': 'rgba(27, 35, 47, .4)'
   }
 }
 
