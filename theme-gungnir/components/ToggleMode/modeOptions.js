@@ -53,7 +53,7 @@ const modeOptions = {
     '--inline-code-bg': 'rgba(76, 86, 128, 0.4)',
     '--mask-color': '#000',
     '--accent-color':  '#74b3eb',
-    '--image-mask-color': 'rgba(27, 35, 47, .4)'
+    '--image-mask-color': 'rgba(27, 35, 47, .3)'
   }
 }
 

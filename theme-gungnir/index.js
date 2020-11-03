@@ -32,11 +32,6 @@ module.exports = (options, ctx) => {
         options.activeHeaderLinks
       ],
       [
-        '@vuepress/medium-zoom', {
-          selector: '.theme-content :not(a) > img'
-        }
-      ],
-      [
         '@vuepress/plugin-blog', {
           permalink: '/:regular',
           frontmatters: [

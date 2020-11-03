@@ -28,7 +28,6 @@
     "@vssue/vuepress-plugin-vssue": "^1.4.6",
     "@vuepress/plugin-blog": "1.9.2",
     "@vuepress/plugin-google-analytics": "^1.7.1",
-    "@vuepress/plugin-medium-zoom": "1.5.0",
     "docsearch.js": "2.6.3",
     "markdown-it-chain": "^1.3.0",
     "md5": "2.2.1",
