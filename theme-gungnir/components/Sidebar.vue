@@ -44,6 +44,8 @@ export default {
     padding 0.5rem 0 0.75rem 0
     a
       font-weight 600
+      &.router-link-active
+        color var(--accent-color)
     .nav-item, .repo-link
       display block
       line-height 1.25rem

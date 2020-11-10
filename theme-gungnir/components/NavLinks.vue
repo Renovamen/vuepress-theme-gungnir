@@ -82,9 +82,10 @@ export default {
 </script>
 
 <style lang="stylus">
-.navbar.invert
-  .nav-links a.router-link-active
-    color var(--accent-color)
+.navbar
+  &.invert, &.is-fixed
+    .nav-links a.router-link-active
+      color var(--accent-color)
 
 .nav-links
   display inline-block

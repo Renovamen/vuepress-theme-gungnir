@@ -15,8 +15,6 @@
             display block
             height 100%
             transition(all .6s)
-            &:hover
-                transform(scale(1.1))
         &::after
             content ""
             width 100%
@@ -25,7 +23,10 @@
             left 0
             position absolute
             background var(--image-mask-color)
-            
+        &:hover
+            img
+                transform(scale(1.1))
+
     &:nth-child(odd)
         text-align left
         .else

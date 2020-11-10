@@ -41,7 +41,7 @@ export default {
   height 100vh - $navbarHeight - 19rem
   .error-content
     text-align center 
-    margin-top 11rem 
+    margin-top 28vh
     h2
       font-size 30px 
       font-weight bold 
@@ -53,7 +53,15 @@ export default {
     a
       color var(--text-color) 
       :hover
-        color var(--accent-color) 
+        color var(--accent-color)
+
+  @media (max-width: $MQMobileNarrow)
+    .error-content
+      h2
+        font-size 25px
+      .error-emoji
+        font-size 45px
+
 </style>
 
 <style src="../styles/theme.styl" lang="stylus"></style>
