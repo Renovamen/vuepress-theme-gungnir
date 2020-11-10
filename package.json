@@ -20,7 +20,8 @@
     "preview": "cd dist && http-server"
   },
   "devDependencies": {
-    "vuepress": "^1.6.0"
+    "vuepress": "^1.6.0",
+    "vuepress-plugin-rss": "./packages/vuepress-plugin-rss"
   },
   "dependencies": {
     "@liradb2000/markdown-it-katex": "^2.0.7",

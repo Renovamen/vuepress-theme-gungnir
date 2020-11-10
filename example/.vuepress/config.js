@@ -11,7 +11,7 @@ module.exports = {
     ["link", { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/font-awesome-animation@0.2.1/dist/font-awesome-animation.min.css"}],
     ["meta", { name: "viewport", content: "width=device-width,initial-scale=1,user-scalable=no"}]
   ],
-  theme: path.resolve(__dirname, '../../theme-gungnir'),
+  theme: path.resolve(__dirname, '../../packages/theme-gungnir'),
   themeConfig: {
     search: true,
     searchMaxSuggestions: 10,
@@ -28,6 +28,7 @@ module.exports = {
     codeTheme: "gungnir-dark",
     hitokoto: true,  // Enable hitokoto (一言) or not?
     comment: true,  // Enable comment system or not?
+    rss: true, // Enable RSS or not?
     nav: [
       {
         text: "Home",
@@ -139,6 +140,11 @@ module.exports = {
     },
     '@vuepress/google-analytics': {
       'ga': 'UA-146858305-4'
+    },
+    'vuepress-plugin-rss': {
+      site_url: 'https://vuepress-theme-gungnir.vercel.app',
+      copyright: 'Renovamen 2018-2020',
+      count: 20
     }
   },
   chainMarkdown(config) {

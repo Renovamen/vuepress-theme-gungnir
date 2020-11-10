@@ -12,6 +12,17 @@
                 <i class="fa-stack-1x fa-inverse icon-sns" :class="snsIcon(platform)"></i>
             </span>
         </a>
+        <a
+            v-if="$themeConfig.rss"
+            href="/rss.xml"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fa-stack-1x fa-inverse fas fa-rss icon-sns"></i>
+            </span>
+        </a>
     </div>
 </template>
 
@@ -64,6 +75,4 @@ export default {
             transform(translateY(-0.35em))
         .fa-circle
             color rgba(0, 0, 0, .5)
-        .icon-sns
-            padding-top 1px
 </style>

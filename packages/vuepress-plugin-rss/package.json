@@ -1,0 +1,13 @@
+{
+  "name": "vuepress-plugin-rss",
+  "version": "0.0.1",
+  "description": "RSS plugin for vuepress-theme-gungnir.",
+  "main": "index.js",
+  "author": "Renovamen <renovamenzxh@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "fs-extra": "^5.0.0",
+    "rss": "^1.2.2"
+  }
+}
