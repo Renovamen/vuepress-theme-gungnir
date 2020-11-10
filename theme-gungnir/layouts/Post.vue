@@ -28,8 +28,8 @@ import Catalog from '@theme/components/Catalog'
 import Page from '@theme/components/Page.vue'
 import { throttle } from '@theme/utils/time'
 
-const catalopTopAbsolute = 40
-const catalopTopFixed = 80
+const catalogTopAbsolute = 40
+const catalogTopFixed = 80
 
 export default {
     name: 'Post',
@@ -51,8 +51,9 @@ export default {
     mounted () {
         this.navHeight = this.$children[0].$children[0].$refs.navbar.offsetHeight
         this.headerHeight = document.querySelector('.article-header').offsetHeight
-        this.catalogTop = this.headerHeight + catalopTopAbsolute
         this.screenWidth = document.body.clientWidth
+        if (this.screenWidth <= 719) this.catalogTop = -15  // $MQMobile
+        else this.catalogTop = this.headerHeight + catalogTopAbsolute
 
         const that = this
         window.onresize = () => {
@@ -86,13 +87,13 @@ export default {
     methods: {
         handleScroll () {
             var currentTop = window.pageYOffset
-            if (currentTop > (this.headerHeight + catalopTopAbsolute - catalopTopFixed)) {
+            if (currentTop > (this.headerHeight + catalogTopAbsolute - catalogTopFixed)) {
                 this.isFixed = true
-                this.catalogTop = catalopTopFixed
+                this.catalogTop = catalogTopFixed
             }
             else {
                 this.isFixed = false
-                this.catalogTop = this.headerHeight + catalopTopAbsolute
+                this.catalogTop = this.headerHeight + catalogTopAbsolute
             }
             // $MQMobile
             if (this.screenWidth <= 719) this.catalogTop = -15
