@@ -8,12 +8,18 @@ This is an ongoing VuePress version of the blog theme Gungnir. The Jekyll versio
 
 
 &nbsp;
+
 ## Demo
 
-See the live demo [here](https://vuepress-theme-gungnir.vercel.app/) (hosted by [Vercel](https://vercel.com)).
+Here are some live demos:
+
+- [vuepress-theme-gungnir.vercel.app](https://vuepress-theme-gungnir.vercel.app/)
+
+- [renovamen.ink](https://renovamen.ink) (my blog)
 
 
 &nbsp;
+
 ## License
 
 VuePress theme Gungnir is [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) licensed, see the [LICENSE](LICENSE) file for details.

@@ -857,13 +857,6 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@liradb2000/markdown-it-katex@^2.0.7":
-  version "2.0.7"
-  resolved "https://registry.npm.taobao.org/@liradb2000/markdown-it-katex/download/@liradb2000/markdown-it-katex-2.0.7.tgz#130dae7ce4ae7d546f5b6486f3b5ef66af91c8b2"
-  integrity sha1-Ew2ufOSufVRvW2SG87XvZq+RyLI=
-  dependencies:
-    katex "^0.11.1"
-
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.npm.taobao.org/@mrmlnc/readdir-enhanced/download/@mrmlnc/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -4682,10 +4675,10 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-katex@^0.11.1:
-  version "0.11.1"
-  resolved "https://registry.npm.taobao.org/katex/download/katex-0.11.1.tgz#df30ca40c565c9df01a466a00d53e079e84ffaa2"
-  integrity sha1-3zDKQMVlyd8BpGagDVPgeehP+qI=
+katex@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.npm.taobao.org/katex/download/katex-0.12.0.tgz#2fb1c665dbd2b043edcf8a1f5c555f46beaa0cb9"
+  integrity sha1-L7HGZdvSsEPtz4ofXFVfRr6qDLk=
   dependencies:
     commander "^2.19.0"
 
@@ -4957,6 +4950,11 @@ markdown-it-emoji@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npm.taobao.org/markdown-it-emoji/download/markdown-it-emoji-1.4.0.tgz#9bee0e9a990a963ba96df6980c4fddb05dfb4dcc"
   integrity sha1-m+4OmpkKljupbfaYDE/dsF37Tcw=
+
+markdown-it-katex@./packages/markdown-it-katex:
+  version "0.0.1"
+  dependencies:
+    katex "^0.12.0"
 
 markdown-it-table-of-contents@^0.4.0:
   version "0.4.4"

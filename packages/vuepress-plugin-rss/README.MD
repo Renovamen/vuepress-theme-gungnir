@@ -2,6 +2,7 @@
 
 RSS Plugin for Vuepress theme Gungnir, forked from [youngtailors/vuepress-plugin-rss](https://github.com/youngtailors/vuepress-plugin-rss).
 
+&nbsp;
 
 ## Configuration
 
@@ -24,6 +25,8 @@ module.exports = {
     ]
 }
 ```
+
+&nbsp;
 
 ## License
 
