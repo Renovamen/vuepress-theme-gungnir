@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-katex",
-  "version": "0.0.1",
+  "version": "2.1.0",
   "description": "Add Katex to your Markdown.",
   "main": "index.js",
   "scripts": {

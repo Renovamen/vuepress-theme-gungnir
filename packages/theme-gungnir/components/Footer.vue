@@ -1,10 +1,6 @@
 <template>
   <div class="footer-wrapper">
-    <span>
-      &copy; <a href="https://github.com/Renovamen" target="_blank">Renovamen</a> 2018-2020
-      <br>
-      Powered by <a href="https://vuepress.vuejs.org/" target="_blank">VuePress</a> & <a href="https://github.com/Renovamen/vuepress-theme-gungnir" target="_blank">Gungnir</a>
-    </span>
+    <span v-html="$themeConfig.footer"></span>
   </div>
 </template>
 
@@ -18,9 +14,10 @@
   font-size 14px
   sans-serif()
   color var(--text-color-sub)
-  a
-    transition(color .2s ease)
-    color var(--text-color-sub)
-    &:hover
-      color var(--accent-color)
+  span 
+    & >>> a
+      transition(color .2s ease)
+      color var(--text-color-sub)
+      &:hover
+        color var(--accent-color)
 </style>

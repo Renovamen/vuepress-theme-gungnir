@@ -129,6 +129,12 @@ module.exports = {
         }
       }
     },
+    footer: `
+      &copy; <a href="https://github.com/Renovamen" target="_blank">Renovamen</a> 2018-2020
+      <br>
+      Powered by <a href="https://vuepress.vuejs.org" target="_blank">VuePress</a> &
+      <a href="https://github.com/Renovamen/vuepress-theme-gungnir" target="_blank">Gungnir</a>
+    `
   },
   plugins: {
     '@vssue/vuepress-plugin-vssue': {

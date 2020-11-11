@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-rss",
-  "version": "0.0.1",
+  "version": "2.1.0",
   "description": "RSS plugin for vuepress-theme-gungnir.",
   "main": "index.js",
   "author": "Renovamen <renovamenzxh@gmail.com>",
