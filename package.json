@@ -21,7 +21,8 @@
   },
   "devDependencies": {
     "vuepress": "^1.6.0",
-    "vuepress-plugin-rss": "./packages/vuepress-plugin-rss"
+    "vuepress-plugin-rss": "./packages/vuepress-plugin-rss",
+    "vuepress-plugin-reading-time": "./packages/vuepress-plugin-reading-time"
   },
   "dependencies": {
     "@vssue/api-github-v3": "^1.4.0",

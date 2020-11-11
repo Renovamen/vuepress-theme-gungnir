@@ -136,23 +136,30 @@ module.exports = {
       <a href="https://github.com/Renovamen/vuepress-theme-gungnir" target="_blank">Gungnir</a>
     `
   },
-  plugins: {
-    '@vssue/vuepress-plugin-vssue': {
-      platform: 'github',
-      owner: 'This-is-an-Apple',
-      repo: 'gitalk-comments',
-      clientId: '0a24dcc429074a13836a',
-      clientSecret: '7b17864fc9d9aa5fd8d6ac00198aaa07d899bd84',
-    },
-    '@vuepress/google-analytics': {
-      'ga': 'UA-146858305-4'
-    },
-    'vuepress-plugin-rss': {
-      site_url: 'https://vuepress-theme-gungnir.vercel.app',
-      copyright: 'Renovamen 2018-2020',
-      count: 20
-    }
-  },
+  plugins: [
+    [
+      '@vssue/vuepress-plugin-vssue', {
+        platform: 'github',
+        owner: 'This-is-an-Apple',
+        repo: 'gitalk-comments',
+        clientId: 'd6247712dc288a5a60ca',
+        clientSecret: 'ed1ec72417828343c79ed910a1b77d140fa715a7',
+      }
+    ],
+    [
+      '@vuepress/google-analytics', {
+        'ga': 'UA-146858305-1'
+      }
+    ],
+    [
+      'vuepress-plugin-rss', {
+        site_url: 'https://renovamen.ink',
+        copyright: 'Renovamen 2018-2020',
+        count: 20
+      }
+    ],
+    ['vuepress-plugin-reading-time']
+  ],
   chainMarkdown(config) {
     const { PLUGINS } = require('@vuepress/markdown')
     const originalLinkPlugin = require('@vuepress/markdown/lib/link.js');

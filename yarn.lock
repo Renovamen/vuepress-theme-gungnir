@@ -7860,6 +7860,9 @@ vuepress-plugin-mailchimp@^1.4.1:
     jsonp "^0.2.1"
     query-string "^6.9.0"
 
+vuepress-plugin-reading-time@./packages/vuepress-plugin-reading-time:
+  version "0.0.1"
+
 vuepress-plugin-rss@./packages/vuepress-plugin-rss:
   version "2.1.0"
   dependencies:

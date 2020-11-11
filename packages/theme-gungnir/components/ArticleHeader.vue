@@ -14,14 +14,20 @@
       <h1 class="title">{{articleInfo.title}}</h1>
       <h3 v-if="articleInfo.frontmatter.subtitle" class="subtitle">{{$page.frontmatter.subtitle}}</h3>
 
-      <i v-if="articleInfo.frontmatter.author || $themeConfig.author || $site.title"
-        class="far fa-user">
-        <span>{{ articleInfo.frontmatter.author || $themeConfig.author || $site.title }}</span>
-      </i>
+      <div class="icons">
+        <i v-if="articleInfo.frontmatter.author || $themeConfig.author || $site.title"
+          class="far fa-user">
+          <span>{{ articleInfo.frontmatter.author || $themeConfig.author || $site.title }}</span>
+        </i>
 
-      <i v-if="articleInfo.frontmatter.date" class="fas fa-clock">
-        <span>{{ articleInfo.frontmatter.date | formatDateValue }}</span>
-      </i>
+        <i v-if="articleInfo.frontmatter.date" class="far fa-calendar">
+          <span>{{ articleInfo.frontmatter.date | formatDateValue }}</span>
+        </i>
+
+        <i v-if="articleInfo.readingTime" class="far fa-clock">
+          <span>{{ articleInfo.readingTime.minutes }} min</span>
+        </i>
+      </div>
     </div>
   </div>
 </template>
@@ -82,16 +88,17 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-i
-  display inline-block
-  line-height 1.5rem
-  color var(--text-color-sub)
-  &:not(:last-child)
-    margin-right 1rem
-  span
-    margin-left 0.5rem
-    font-size 13px
-    font-weight normal
+.icons
+  i
+    display inline-block
+    line-height 1.5rem
+    color var(--text-color-sub)
+    &:not(:last-child)
+      margin-right 1rem
+    span
+      margin-left 0.5rem
+      font-size 13px
+      font-weight normal
 .tags
   margin-bottom -20px
   .page-tag

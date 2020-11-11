@@ -132,11 +132,9 @@ export default {
             margin-left $catalogWidth !important
             z-index 2
             position relative
-            .title, .subtitle, .tags
+            .title, .subtitle, .tags, .icons
                 padding-left 2.5rem
                 padding-right 2.5rem
-            i:first-of-type
-                padding-left 2.5rem
             .title
                 font-size 50px
                 font-weight bold
@@ -205,7 +203,7 @@ export default {
             padding-bottom 0
             padding-right 0
             .header-content
-                .title, .subtitle, .tags, i:first-of-type
+                .title, .subtitle, .tags, .icons
                     padding-left 1rem
                     padding-right 1rem
                 .title
