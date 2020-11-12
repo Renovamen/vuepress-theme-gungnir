@@ -92,6 +92,11 @@ module.exports = (options, ctx) => {
           after: () => '</details>\n'
         }
       ],
+      [
+        '@renovamen/vuepress-plugin-reading-time', {
+          excludes: ['/about', '/tags/.*', '/links']
+        }
+      ]
     ]
   }
 }

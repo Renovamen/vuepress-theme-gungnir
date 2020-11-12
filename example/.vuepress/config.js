@@ -152,13 +152,12 @@ module.exports = {
       }
     ],
     [
-      'vuepress-plugin-rss', {
+      '@renovamen/vuepress-plugin-rss', {
         site_url: 'https://renovamen.ink',
         copyright: 'Renovamen 2018-2020',
         count: 20
       }
-    ],
-    ['vuepress-plugin-reading-time']
+    ]
   ],
   chainMarkdown(config) {
     const { PLUGINS } = require('@vuepress/markdown')
@@ -191,7 +190,7 @@ module.exports = {
       md.set({
         html: true
       })
-      md.use(require('markdown-it-katex'))
+      md.use(require('@renovamen/markdown-it-katex'))
     },
     extractHeaders: [ 'h2', 'h3', 'h4', 'h5' ]
   }

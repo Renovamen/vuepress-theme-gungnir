@@ -12,7 +12,7 @@ Update your `.vuepress/config.js`:
 module.exports = {
     ...
     plugins: [
-      ['vuepress-plugin-rss',
+      ['@renovamen/vuepress-plugin-rss',
         {
           site_url: 'https://renovamen.ink',  // required
           copyright: 'Renovamen 2018-2020',  // optional
@@ -30,4 +30,4 @@ module.exports = {
 
 ## License
 
-MIT
+[MIT](LICENSE)

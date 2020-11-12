@@ -1,5 +1,5 @@
 {
-  "name": "markdown-it-katex",
+  "name": "@renovamen/markdown-it-katex",
   "version": "2.1.0",
   "description": "Add Katex to your Markdown.",
   "main": "index.js",

@@ -14,7 +14,6 @@ This is an ongoing VuePress version of the blog theme Gungnir. The Jekyll versio
 Here are some live demos:
 
 - [vuepress-theme-gungnir.vercel.app](https://vuepress-theme-gungnir.vercel.app/)
-
 - [renovamen.ink](https://renovamen.ink) (my blog)
 
 

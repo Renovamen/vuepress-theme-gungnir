@@ -8,7 +8,7 @@ A plugin for displaying the number of words and how long a post takes to read in
 
 ```js
 module.exports = {
-  plugins: ['vuepress-plugin-reading-time']
+  plugins: ['@renovamen/vuepress-plugin-reading-time']
 }
 ```
 
@@ -51,7 +51,7 @@ Example:
 ```js
 plugins: [
   [
-    'vuepress-plugin-reading-time', {
+    '@renovamen/vuepress-plugin-reading-time', {
       excludes: ['/about', '/tag/.*']
     }
   ]
@@ -72,7 +72,7 @@ Example:
 ```js
 plugins: [
   [
-    'vuepress-plugin-reading-time', {
+    '@renovamen/vuepress-plugin-reading-time', {
       wordsPerMinuteCN: 500
     }
   ]
@@ -93,9 +93,15 @@ Example:
 ```js
 plugins: [
   [
-    'vuepress-plugin-reading-time', {
+    '@renovamen/vuepress-plugin-reading-time', {
       wordsPerMinuteEN: 200
     }
   ]
 ]
 ```
+
+&nbsp;
+
+## License
+
+[MIT](LICENSE)
