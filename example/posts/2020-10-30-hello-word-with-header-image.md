@@ -87,16 +87,20 @@ $$
 
 ## Containers
 
+::: info
+This is an info.
+:::
+
 ::: tip
-This is a tip
+This is a tip.
 :::
 
 ::: warning
-This is a warning
+This is a warning.
 :::
 
 ::: danger
-This is a dangerous warning
+This is a dangerous warning.
 :::
 
 ::: details Show me the code.

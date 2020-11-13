@@ -2,26 +2,45 @@
   .custom-block-title
     font-weight 600
     margin-bottom -0.4rem
-  &.tip, &.warning, &.danger
+  &.info, &.tip, &.warning, &.danger
     padding .1rem 1.5rem
     border-left-width .5rem
     border-left-style solid
     margin 1rem 0
-  &.tip
+    &::before
+      position absolute
+      height 22px
+      width 22px
+      margin-left -2.54rem
+      margin-top 0.9rem
+      border 2px solid var(--bg-color)
+      border-radius 50%
+  &.info
+    border-color #007bff
     background-color var(--bg-color-secondary)
+    &::before
+      content url('../assets/icons/info.svg')
+  &.tip
     border-color #42b983
+    background-color var(--bg-color-secondary)
+    .custom-block-title
+      color darken(#42b983, 20%)
+    &::before
+      content url('../assets/icons/tip.svg')
   &.warning
-    background-color #fffae6
-    border-color darken(#ffe564, 35%)
-    color darken(#ffe564, 75%)
+    border-color #f4cd00
+    background-color #fff9dc
     .custom-block-title
-      color darken(#ffe564, 60%)
+      color darken(#f4cd00, 25%)
+    &::before
+      content url('../assets/icons/warning.svg')
   &.danger
+    border-color #f55
     background-color #ffe6e6
-    border-color darken(red, 20%)
-    color darken(red, 70%)
     .custom-block-title
-      color darken(red, 40%)
+      color #a33
+    &::before
+      content url('../assets/icons/danger.svg')
   &.details
     display block
     position relative
@@ -39,3 +58,9 @@
     summary
       outline none
       cursor pointer
+
+// dark mode
+html.dark
+  .custom-block
+    &.warning, &.danger
+      background-color var(--bg-color-secondary)

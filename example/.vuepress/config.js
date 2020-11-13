@@ -5,10 +5,6 @@ module.exports = {
   description: "Renovamen's blog, also VuePress theme Gungnir.",
   head: [
     ["link", { rel: "icon", href: "/img/logo.svg"}],
-    ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css' }],
-    ["link", { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Montserrat:200,400,500,700"}],
-    ["link", { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css"}],
-    ["link", { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/font-awesome-animation@0.2.1/dist/font-awesome-animation.min.css"}],
     ["meta", { name: "viewport", content: "width=device-width,initial-scale=1,user-scalable=no"}]
   ],
   theme: path.resolve(__dirname, '../../packages/theme-gungnir'),

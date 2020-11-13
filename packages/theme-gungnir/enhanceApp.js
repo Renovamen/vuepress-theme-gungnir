@@ -1,6 +1,6 @@
 import postMixin from '@theme/mixins/posts'
 import localMixin from '@theme/mixins/locales'
-import { registerCodeThemeCss } from '@theme/utils/other'
+import { registerCodeThemeCss, registerLinks } from '@theme/utils/other'
 
 export default ({
   Vue,
@@ -11,5 +11,6 @@ export default ({
   Vue.mixin(localMixin)
   if (!isServer) {
     registerCodeThemeCss(siteData.themeConfig.codeTheme)
+    registerLinks()
   }
 }

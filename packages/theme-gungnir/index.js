@@ -59,6 +59,15 @@ module.exports = (options, ctx) => {
         }
       ],
       [
+        "container", {
+          type: "info",
+          defaultTitle: {
+            '/': 'INFO',
+            '/zh/': '信息'
+          }
+        },
+      ],
+      [
         'container', {
           type: 'tip',
           defaultTitle: {
