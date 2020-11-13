@@ -7,6 +7,14 @@
     border-left-width .5rem
     border-left-style solid
     margin 1rem 0
+    &::after
+      content ''
+      position absolute
+      width 1rem
+      height 1rem
+      margin-left -2.3rem
+      margin-top -5rem
+      background var(--bg-color)
     &::before
       position absolute
       height 22px
@@ -15,6 +23,7 @@
       margin-top 0.9rem
       border 2px solid var(--bg-color)
       border-radius 50%
+      z-index 2
   &.info
     border-color #007bff
     background-color var(--bg-color-secondary)

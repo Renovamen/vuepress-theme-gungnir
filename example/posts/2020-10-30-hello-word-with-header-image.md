@@ -46,7 +46,7 @@ Most people would find the picture of our universe as an infinite tower of torto
 
 Click the red button on the upper-right corner to make the code block full screen.
 
-```python
+```python{8}
 import food
 
 class Dragon:
@@ -89,19 +89,19 @@ $$
 ## Containers
 
 ::: info
-This is an info.
+This is an info message.
 :::
 
 ::: tip
-This is a tip.
+This is a tip message.
 :::
 
 ::: warning
-This is a warning.
+This is a warning message.
 :::
 
 ::: danger
-This is a dangerous warning.
+This is a dangerous warning message.
 :::
 
 ::: details Show me the code.
