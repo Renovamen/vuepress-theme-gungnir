@@ -4,7 +4,7 @@ const chalk = require('chalk')
 
 module.exports = (pluginOptions, ctx) => {
   return {
-    name: 'rss',
+    name: '@renovamen/vuepress-plugin-rss',
     
     generated () {
       const fs = require('fs-extra')

@@ -153,41 +153,11 @@ module.exports = {
         copyright: 'Renovamen 2018-2020',
         count: 20
       }
-    ]
+    ],
+    '@renovamen/vuepress-plugin-katex'
   ],
-  chainMarkdown(config) {
-    const { PLUGINS } = require('@vuepress/markdown')
-    const originalLinkPlugin = require('@vuepress/markdown/lib/link.js');
-
-    config
-      .plugins
-        .delete(PLUGINS.CONVERT_ROUTER_LINK)
-
-    const linkPlugin = function (md) {
-      const result = originalLinkPlugin.apply(this, arguments);
-      const close = md.renderer.rules.link_close;
-      md.renderer.rules.link_close = function() {
-        return close.apply(this, arguments).replace('<OutboundLink/>', '');
-      }
-      return result;
-    };
-
-    config
-      .plugin(PLUGINS.CONVERT_ROUTER_LINK)
-        .use(linkPlugin, [{
-          // The config.markdown.externalLinks options https://vuepress.vuejs.org/config/#markdown-externallinks
-          target: '_blank',
-          rel: 'noopener noreferrer'
-        }])
-  },
   markdown: {
     // lineNumbers: true,
-    extendMarkdown: md => {
-      md.set({
-        html: true
-      })
-      md.use(require('@renovamen/markdown-it-katex'))
-    },
     extractHeaders: [ 'h2', 'h3', 'h4', 'h5' ]
   }
 }

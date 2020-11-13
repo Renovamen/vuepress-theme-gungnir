@@ -15,8 +15,8 @@
   "bugs": "https://github.com/Renovamen/vuepress-theme-gungnir/issues",
   "license": "MIT",
   "scripts": {
-    "dev": "vuepress dev example . --host 0.0.0.0 --port 4000",
-    "build": "vuepress build example . --dest dist",
+    "dev": "vuepress dev example --no-cache --host 0.0.0.0 --port 4000",
+    "build": "vuepress build example --dest dist",
     "preview": "cd dist && http-server"
   },
   "devDependencies": {
@@ -25,7 +25,7 @@
     "@renovamen/vuepress-plugin-reading-time": "./packages/@renovamen/vuepress-plugin-reading-time"
   },
   "dependencies": {
-    "@renovamen/markdown-it-katex": "./packages/@renovamen/markdown-it-katex",
+    "@renovamen/vuepress-plugin-katex": "./packages/@renovamen/vuepress-plugin-katex",
     "@vssue/api-github-v3": "^1.4.0",
     "@vssue/vuepress-plugin-vssue": "^1.4.6",
     "@vuepress/plugin-blog": "1.9.2",

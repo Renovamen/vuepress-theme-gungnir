@@ -1,0 +1,18 @@
+{
+  "name": "@renovamen/vuepress-plugin-katex",
+  "version": "0.0.1",
+  "description": "A plugin for adding Katex in VuePress.",
+  "main": "index.js",
+  "keywords": [
+    "vuepress",
+    "vuepress-plugin",
+    "LaTex",
+    "KaTeX",
+    "markdown"
+  ],
+  "author": "Renovamen <renovamenzxh@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "katex": "^0.12.0"
+  }
+}
