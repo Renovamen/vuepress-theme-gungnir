@@ -92,11 +92,17 @@ export default {
             this.isMenuOpen = !this.isMenuOpen
         },
         goToTop() {
-            window.scrollTo(0, 0)
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            })
         },
         goToBottom() {
             var docuHeight = document.body.offsetHeight
-            window.scrollTo(0, docuHeight)
+            window.scrollTo({
+                top: docuHeight,
+                behavior: 'smooth',
+            })
         }
     }
 }

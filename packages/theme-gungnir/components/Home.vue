@@ -106,7 +106,10 @@ export default {
       this.bgImageID = (this.bgImageID + n + len) % len
     },
     scrollToPost() {
-      window.scrollTo(0, this.heroHeight)
+      window.scrollTo({
+        top: this.heroHeight,
+        behavior: 'smooth',
+      })
     },
     handleScroll () {
       var currentTop = window.pageYOffset
