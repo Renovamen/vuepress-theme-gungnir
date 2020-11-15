@@ -21,4 +21,4 @@ Here are some live demos:
 
 ## License
 
-VuePress theme Gungnir is [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) licensed, see the [LICENSE](LICENSE) file for details.
+VuePress theme Gungnir is [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) licensed, see the [LICENSE](packages/theme-gungnir/LICENSE) file for details.

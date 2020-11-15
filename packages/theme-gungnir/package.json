@@ -1,0 +1,40 @@
+{
+  "name": "vuepress-theme-gungnir",
+  "description": "Gungnir is a blog theme for VuePress.",
+  "version": "0.0.1",
+  "author": "Renovamen <renovamenzxh@gmail.com>",
+  "main": "index.js",
+  "keywords": [
+    "vuepress",
+    "blog",
+    "theme"
+  ],
+  "homepage": "https://vuepress-theme-gungnir.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Renovamen/vuepress-theme-gungnir"
+  },
+  "bugs": "https://github.com/Renovamen/vuepress-theme-gungnir/issues",
+  "license": "MIT",
+  "devDependencies": {
+    "@renovamen/vuepress-plugin-rss": "^2.1.0",
+    "@renovamen/vuepress-plugin-reading-time": "^0.0.1"
+  },
+  "dependencies": {
+    "@renovamen/vuepress-plugin-katex": "^0.0.1",
+    "@renovamen/vuepress-plugin-baidu-tongji": "^0.0.1",
+    "@renovamen/vuepress-plugin-md-plus": "^0.0.1",
+    "@vssue/api-github-v3": "^1.4.0",
+    "@vssue/vuepress-plugin-vssue": "^1.4.6",
+    "@vuepress/plugin-blog": "1.9.2",
+    "@vuepress/plugin-google-analytics": "^1.7.1",
+    "docsearch.js": "2.6.3",
+    "markdown-it-chain": "^1.3.0",
+    "md5": "2.2.1",
+    "vuepress-plugin-container": "^2.1.5",
+    "vuepress-plugin-smooth-scroll": "^0.0.9"
+  },
+  "peerDependencies": {
+    "vuepress": "^1.6.0"
+  }
+}

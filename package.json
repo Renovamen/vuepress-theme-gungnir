@@ -1,19 +1,13 @@
 {
   "name": "vuepress-theme-gungnir",
-  "description": "VuePress theme Gungnir.",
-  "version": "0.0.1",
   "author": "Renovamen <renovamenzxh@gmail.com>",
-  "keywords": [
-    "vuepress",
-    "blog",
-    "theme"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Renovamen/vuepress-theme-gungnir"
-  },
-  "bugs": "https://github.com/Renovamen/vuepress-theme-gungnir/issues",
   "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/@renovamen/*",
+    "packages/theme-gungnir"
+  ],
+  "useWorkspaces": true,
   "scripts": {
     "dev": "vuepress dev example --no-cache --host 0.0.0.0 --port 4000",
     "build": "vuepress build example --dest dist",
@@ -21,20 +15,6 @@
   },
   "devDependencies": {
     "vuepress": "^1.6.0",
-    "@renovamen/vuepress-plugin-rss": "./packages/@renovamen/vuepress-plugin-rss",
-    "@renovamen/vuepress-plugin-reading-time": "./packages/@renovamen/vuepress-plugin-reading-time"
-  },
-  "dependencies": {
-    "@renovamen/vuepress-plugin-katex": "./packages/@renovamen/vuepress-plugin-katex",
-    "@renovamen/vuepress-plugin-baidu-tongji": "./packages/@renovamen/vuepress-plugin-baidu-tongji",
-    "@vssue/api-github-v3": "^1.4.0",
-    "@vssue/vuepress-plugin-vssue": "^1.4.6",
-    "@vuepress/plugin-blog": "1.9.2",
-    "@vuepress/plugin-google-analytics": "^1.7.1",
-    "docsearch.js": "2.6.3",
-    "markdown-it-chain": "^1.3.0",
-    "md5": "2.2.1",
-    "vuepress-plugin-container": "^2.1.5",
-    "vuepress-plugin-smooth-scroll": "^0.0.9"
+    "vuepress-theme-gungnir": "^0.0.1"
   }
 }

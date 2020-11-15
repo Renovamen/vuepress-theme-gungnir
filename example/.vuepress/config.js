@@ -1,5 +1,3 @@
-const path = require('path')
-
 module.exports = {
   title: "vuepress-theme-gungnir",
   description: "Renovamen's blog, also VuePress theme Gungnir.",
@@ -7,7 +5,7 @@ module.exports = {
     ["link", { rel: "icon", href: "/img/logo.svg"}],
     ["meta", { name: "viewport", content: "width=device-width,initial-scale=1,user-scalable=no"}]
   ],
-  theme: path.resolve(__dirname, '../../packages/theme-gungnir'),
+  theme: 'gungnir',
   themeConfig: {
     search: true,
     searchMaxSuggestions: 10,
@@ -144,7 +142,7 @@ module.exports = {
     ],
     [
       '@vuepress/google-analytics', {
-        'ga': 'UA-146858305-1'
+        'ga': 'UA-146858305-4'
       }
     ],
     [
@@ -154,12 +152,17 @@ module.exports = {
     ],
     [
       '@renovamen/vuepress-plugin-rss', {
-        site_url: 'https://renovamen.ink',
+        site_url: 'https://vuepress-theme-gungnir.vercel.app',
         copyright: 'Renovamen 2018-2020',
         count: 20
       }
     ],
-    '@renovamen/vuepress-plugin-katex'
+    [
+      '@renovamen/vuepress-plugin-md-plus', {
+        all: true
+      }
+    ],
+    '@renovamen/vuepress-plugin-katex',
   ],
   markdown: {
     // lineNumbers: true,

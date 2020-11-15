@@ -24,8 +24,8 @@ module.exports = {
     plugins: [
         [
             '@renovamen/vuepress-plugin-katex', {
-                "throwOnError": false,  // (optional)
-                "errorColor": " #cc0000"  // (optional)
+                'throwOnError': false,  // (optional)
+                'errorColor': '#cc0000'  // (optional)
             }
         ]
     ]
