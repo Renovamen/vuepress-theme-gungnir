@@ -1,0 +1,25 @@
+{
+  "name": "@renovamen/vuepress-plugin-baidu-tongji",
+  "version": "0.0.1",
+  "description": "A plugin for adding Baidu Tongji to VuePress.",
+  "author": "Renovamen <renovamenzxh@gmail.com>",
+  "main": "index.js",
+  "keywords": [
+    "vue",
+    "vuepress",
+    "vuepress-plugin",
+    "baidu-tongji",
+    "baidu-analytics",
+    "analytics"
+  ],
+  "homepage": "https://github.com/Renovamen/vuepress-theme-gungnir/tree/main/packages/@renovamen/vuepress-plugin-baidu-tongji",
+  "bugs": {
+    "url": "https://github.com/Renovamen/vuepress-theme-gungnir/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Renovamen/vuepress-theme-gungnir.git",
+    "directory": "packages/@renovamen/vuepress-plugin-baidu-tongji"
+  },
+  "license": "MIT"
+}

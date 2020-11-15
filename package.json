@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@renovamen/vuepress-plugin-katex": "./packages/@renovamen/vuepress-plugin-katex",
+    "@renovamen/vuepress-plugin-baidu-tongji": "./packages/@renovamen/vuepress-plugin-baidu-tongji",
     "@vssue/api-github-v3": "^1.4.0",
     "@vssue/vuepress-plugin-vssue": "^1.4.6",
     "@vuepress/plugin-blog": "1.9.2",

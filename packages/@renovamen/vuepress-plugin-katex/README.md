@@ -1,6 +1,6 @@
 # @renovamen/vuepress-plugin-katex
 
-A plugin for adding KaTeX in VuePress. This plugin is based on [waylonflinn/markdown-it-katex](https://github.com/waylonflinn/markdown-it-katex).
+A plugin for adding KaTeX to VuePress. This plugin is based on [waylonflinn/markdown-it-katex](https://github.com/waylonflinn/markdown-it-katex).
 
 [KaTeX](https://katex.org/) is a faster alternative to MathJax (see [here](https://www.intmath.com/cg5/katex-mathjax-comparison.php)).
 
@@ -21,7 +21,6 @@ Enable this plugin in VuePress with `KaTeX` options:
 
 ```js
 module.exports = {
-    ...
     plugins: [
         [
             '@renovamen/vuepress-plugin-katex', {

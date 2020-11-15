@@ -148,6 +148,11 @@ module.exports = {
       }
     ],
     [
+      '@renovamen/vuepress-plugin-baidu-tongji', {
+        'ba': '0958eaa31f4f4656f36bd33673332939'
+      }
+    ],
+    [
       '@renovamen/vuepress-plugin-rss', {
         site_url: 'https://renovamen.ink',
         copyright: 'Renovamen 2018-2020',

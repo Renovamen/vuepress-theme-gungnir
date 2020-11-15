@@ -1,6 +1,6 @@
 # @renovamen/vuepress-plugin-rss
 
-RSS Plugin for Vuepress theme Gungnir, forked from [youngtailors/vuepress-plugin-rss](https://github.com/youngtailors/vuepress-plugin-rss).
+A plugin for adding RSS to Vuepress theme Gungnir, forked from [youngtailors/vuepress-plugin-rss](https://github.com/youngtailors/vuepress-plugin-rss).
 
 &nbsp;
 
@@ -10,7 +10,6 @@ Update your `.vuepress/config.js`:
 
 ``` js
 module.exports = {
-  ...
   plugins: [
     [
       '@renovamen/vuepress-plugin-rss', {
