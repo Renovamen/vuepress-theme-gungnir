@@ -96,7 +96,7 @@ module.exports = {
       },
       {
         "path": "/img/home-bg/2.jpg",
-        "mask": "rgba(31, 64, 87, .2)"
+        "mask": "rgb(251, 170, 152, .2)"
       },
       {
         "path": "/img/home-bg/3.jpg",
@@ -121,7 +121,7 @@ module.exports = {
         subtitle: 'When you are looking at the stars, please put the brightest star shining night sky as my soul.',
         bgImage: {
           "path": "/img/pages/links.jpg",
-          "mask": "rgba(236, 168, 78, 0.2)"
+          "mask": "rgba(64, 118, 190, 0.5)"
         }
       }
     },
