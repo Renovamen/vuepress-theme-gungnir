@@ -119,15 +119,12 @@ export default {
             height 0
     .post-header
         max-width 100%
-        margin-top -2rem
-        padding-top 8rem
         position relative
+        padding-top 6rem
         background-repeat no-repeat
         background-position center
         background-size cover
         .header-content
-            max-width $contentWidth
-            margin 0 auto !important
             z-index 2
             position relative
             .title, .subtitle, .tags, .icons
@@ -140,19 +137,16 @@ export default {
                 font-weight 400
                 font-size 30px
         &.style-img
-            padding-top 150px
-            padding-bottom 150px
-            .title,
-            .subtitle,
-            .page-tag, 
-            i
+            padding-top 7.5rem
+            padding-bottom 9rem
+            .title, .subtitle, .tag, i
                 color #fff
                 border-color #fff
         .header-mask
             width 100%
             height 100%
             position absolute
-            margin-top -9.4rem
+            margin-top -7.6rem
             z-index 1
 
     .page
@@ -193,41 +187,34 @@ export default {
                 padding 1rem
                 margin-top 13rem
                 margin-bottom -5rem
-
-@media (min-width: ($MQMobile + 1))
-    .post-container 
-        .page, .post-header
-            padding 0
-
+  
 @media (max-width: $MQLarge)
     .post-container 
-        .page, .post-header
+        .page
             padding-right $catalogWidth
-
-@media (max-width: ($MQIpad + 1px))
-    .post-container
-        .page, .post-header .header-content
-            max-width auto
+        .page
+            max-width 100%
+        .post-header .header-content
+            max-width 100%
+            .title, .subtitle, .tags, .icons
+                padding 0
 
 @media (max-width: $MQMobile)
     .post-container
         .post-header
-            padding-top 6rem
+            padding-top 4rem
             padding-bottom 0
-            padding-right 0
             .header-content
-                .title, .subtitle, .tags, .icons
-                    padding 0
                 .title
                     font-size 30px
                 .subtitle
                     font-size 16px
                     margin-top -5px
             &.style-img
-                padding-top 85px
-                padding-bottom 45px
+                padding-top 3rem
+                padding-bottom 4rem
             .header-mask
-                margin-top -5.4rem
+                margin-top -3.1rem
         .page
             padding-right 0
             h1

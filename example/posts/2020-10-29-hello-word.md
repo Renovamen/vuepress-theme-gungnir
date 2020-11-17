@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hello Word 1
-subtitle: Welcome to Jekyll Theme Gungnir
+subtitle: Welcome to VuePress Theme Gungnir
 author: Renovamen
 date: 2020-10-29
 header_img: /img/in-post/2020-10-29/header.jpg

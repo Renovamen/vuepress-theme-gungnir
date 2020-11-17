@@ -1,12 +1,12 @@
 <template>
-  <div class="article-header">
+  <div>
     <slot></slot>
     <div class="header-content">
       <div v-if="articleInfo.frontmatter.tags" class="tags">
         <span
           v-for="(subItem, subIndex) in articleInfo.frontmatter.tags"
           :key="subIndex"
-          class="page-tag"
+          class="tag"
           :class="{ 'active': currentTag == subItem }"
           @click.stop="goTags(subItem)">{{subItem}}</span>
       </div>
@@ -90,8 +90,10 @@ export default {
 <style lang="stylus" scoped>
 @require '../styles/wrapper.styl'
 
-.article-header
+.header-content
   @extend $wrapper
+  padding-top 0
+  padding-bottom 0
   .icons
     i
       display inline-block
@@ -105,7 +107,7 @@ export default {
         font-weight normal
   .tags
     margin-bottom -20px
-    .page-tag
+    .tag
       border 1px solid var(--text-color)
       color var(--text-color)
       background-color transparent

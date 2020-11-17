@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hello Word 2
-subtitle: Welcome to Jekyll Theme Gungnir Again
+subtitle: Welcome to VuePress Theme Gungnir Again
 author: Renovamen
 date: 2020-10-30
 header_style: image
