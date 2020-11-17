@@ -8,10 +8,10 @@
     <Content class="theme-content" />
     <PageEdit />
     <PageNav
-      v-if="($page.id != 'posts') & sidebarItems"
+      v-if="($page.id != 'posts') && sidebarItems"
       v-bind="{ sidebarItems }" />
     <Pager
-      v-if="($page.id == 'posts') & getPostIndex != -1"
+      v-if="($page.id == 'posts') && getPostIndex != -1"
       :data="getPostPager" />
     <Vssue
       v-if="$themeConfig.comment"
