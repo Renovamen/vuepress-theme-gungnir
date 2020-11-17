@@ -59,7 +59,7 @@ export default {
 
 <style lang="stylus" scoped>
 .catalog-wrapper
-  width ($catalogWidth - 2rem)
+  width ($catalogWidth - 1rem)
   padding-left 0
   list-style none
   font-size 14px

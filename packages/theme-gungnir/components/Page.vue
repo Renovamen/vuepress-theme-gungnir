@@ -4,14 +4,14 @@
       v-if="$page.id != 'posts'"
       v-show="$page.title"
       :articleInfo="$page"
-      class="article-header" />
+      class="doc-header" />
     <Content class="theme-content" />
     <PageEdit />
     <PageNav
       v-if="($page.id != 'posts') & sidebarItems"
       v-bind="{ sidebarItems }" />
     <Pager
-      v-if="getPostIndex != -1"
+      v-if="($page.id == 'posts') & getPostIndex != -1"
       :data="getPostPager" />
     <Vssue
       v-if="$themeConfig.comment"
@@ -127,23 +127,14 @@ export default {
   position relative
   padding-top 5rem
   padding-bottom 2rem
-  padding-right $catalogWidth
   display block
-  .article-header
-    max-width $contentWidth
-    margin 0 auto
-    padding 0rem 2.5rem
+  .doc-header
     color var(--text-color)
+    padding-top 0
+    padding-bottom 0
     .title
       font-weight bold
       line-height 1.1
-  .pager
-    padding 0rem 2.5rem
-    margin-top 30px
-    a
-      text-align center
-      width 45%
-      padding 10px 5px
   .vssue-comment-wrapper
     @extend $wrapper
     padding 2rem 0
@@ -153,11 +144,7 @@ export default {
     @media (max-width: $MQMobileNarrow)
       padding 1rem
 
-
 @media (max-width: $MQMobile)
   .page
-    padding-right 0
     padding-top 3rem
-    .article-header, .pager
-      padding 0 1rem
 </style>
