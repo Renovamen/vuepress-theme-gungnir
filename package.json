@@ -1,7 +1,7 @@
 {
   "name": "vuepress-theme-gungnir",
   "author": "Renovamen <renovamenzxh@gmail.com>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "private": true,
   "workspaces": [
     "packages/@renovamen/*",
@@ -15,6 +15,6 @@
   },
   "devDependencies": {
     "vuepress": "^1.6.0",
-    "vuepress-theme-gungnir": "^0.0.1"
+    "vuepress-theme-gungnir": "^0.1.1"
   }
 }

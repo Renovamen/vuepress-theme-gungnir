@@ -6,6 +6,16 @@ A plugin for displaying the number of words and how long a post takes to read in
 
 ## Usage
 
+Install:
+
+```bash
+yarn add @renovamen/vuepress-plugin-reading-time
+# or
+npm install @renovamen/vuepress-plugin-reading-time
+```
+
+Then:
+
 ```js
 module.exports = {
   plugins: ['@renovamen/vuepress-plugin-reading-time']

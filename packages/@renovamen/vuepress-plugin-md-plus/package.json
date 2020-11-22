@@ -1,6 +1,6 @@
 {
   "name": "@renovamen/vuepress-plugin-md-plus",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A plugin for enhancing Markdown in VuePress.",
   "author": "Renovamen <renovamenzxh@gmail.com>",
   "main": "index.js",
