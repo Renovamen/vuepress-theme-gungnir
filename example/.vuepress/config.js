@@ -25,54 +25,34 @@ module.exports = {
     rss: true, // Enable RSS or not?
     nav: [
       {
-        text: "Home",
-        link: "/",
+        text: 'Home',
+        link: '/',
         icon: 'fab fa-fort-awesome'
       },
       {
-        text: "Tags",
+        text: 'Tags',
         link: '/tags/',
         icon: 'fas fa-tag'
       },
       {
-        text: "Links",
+        text: 'Links',
         link: '/links/',
         icon: 'fas fa-satellite-dish'
       },
       {
-        text: "Docs",
-        icon: "fas fa-book",
-        items: [
-          {
-            text: "Jekyll",
-            icon: "fas fa-meteor",
-            link: "/docs/jekyll-theme-gungnir/"
-          },
-          {
-            text: "VuePress",
-            icon: "fas fa-rocket",
-            link: "/docs/vuepress-theme-gungnir/"
-          }
-        ]
+        text: 'Docs',
+        link: '/docs/',
+        icon: 'fas fa-book'
       }
     ],
     sidebar: {
-      "/docs/jekyll-theme-gungnir/": [
+      "/docs/": [
         {
           title: '基础',
           collapsable: false,
           children: [
             '',
             'basic/installation',
-          ],
-        }
-      ],
-      "/docs/vuepress-theme-gungnir/": [
-        {
-          title: '基础',
-          collapsable: false,
-          children: [
-            '',
           ],
         }
       ]
