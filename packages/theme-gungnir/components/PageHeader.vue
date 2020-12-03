@@ -60,7 +60,6 @@ export default {
         background-size cover
         position relative
         padding 55px 0
-        margin-top (- $navbarHeight)
         &::after
             content ""
             width 100%
@@ -80,16 +79,16 @@ export default {
         .title
             font-size 80px
             margin-bottom -15px
+            margin-top 0
         .subtitle
             margin-bottom 0
 
 @media (max-width: $MQMobile)
     .page-header
         &.style-img
-            padding 25px 15px 55px
-            margin-top 0
+            padding-left 15px
+            padding-right 15px
             .header-mask
-                margin-top -25px
                 margin-left -15px
             .title
                 font-size 50px
