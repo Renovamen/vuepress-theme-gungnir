@@ -1,6 +1,6 @@
 <template>
     <div class="search-page">
-        <i class="fas fa-chevron-down" @click="$emit('toggle-search')" />
+        <v-icon name="fa/chevron-down" scale="1.9" @click="$emit('toggle-search')" />
         <div class="search-box">
             <input
                 ref="input"
@@ -47,6 +47,8 @@
 
 <script>
 import matchQuery from '@vuepress/plugin-search/match-query'
+// icon
+import 'oh-vue-icons/icons/fa/chevron-down'
 
 /* global SEARCH_MAX_SUGGESTIONS, SEARCH_PATHS, SEARCH_HOTKEYS */
 export default {
@@ -227,11 +229,10 @@ export default {
     z-index 50
     transition(transform .25s)
     transform(translateY(100%))
-    .fa-chevron-down
+    .v-icon
         float right
         margin-right 30px
         margin-top 30px
-        font-size 30px
         color #bdbbbb
         transition(.3s ease)
         &:hover

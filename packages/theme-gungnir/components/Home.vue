@@ -29,17 +29,17 @@
           </div>
         </div>
 
-        <SNS class="hide-on-mobile" />
+        <SNS class="hide-on-mobile" large />
 
         <button class="img-prev hide-on-mobile" @click="switchImage(-1)">
-          <i class="fas fa-chevron-left"></i>
+          <v-icon name="fa/chevron-left" />
         </button>
         <button class="img-next hide-on-mobile" @click="switchImage(1)">
-          <i class="fas fa-chevron-right"></i>
+          <v-icon name="fa/chevron-right" />
         </button>
 
         <div class="arrow faa-float animated hide-on-mobile" @click="scrollToPost()"> 
-          <i class="fas fa-chevron-down"></i>
+          <v-icon name="fa/chevron-down" scale="1.8" />
         </div>
 
       </div>
@@ -53,6 +53,10 @@
 import PostList from '@theme/components/PostList'
 import SNS from '@theme/components/SNS'
 import { throttle } from '@theme/utils/time'
+// icons
+import 'oh-vue-icons/icons/fa/chevron-left'
+import 'oh-vue-icons/icons/fa/chevron-right'
+import 'oh-vue-icons/icons/fa/chevron-down'
 
 export default {
   components: {
@@ -266,8 +270,6 @@ export default {
         border none
         outline none
         transition(.6s ease)
-        i
-          font-size 16px
         &:hover
           color #fff
           background-color rgba(0, 0, 0, .6)
@@ -284,7 +286,7 @@ export default {
         left 50%
         margin-left -14px
         cursor pointer
-        i
+        .v-icon
           font-size 28px
           color #ffffff
           transition(.4s ease)

@@ -2475,6 +2475,11 @@ core-js-compat@^3.6.5, core-js-compat@^3.7.0:
     browserslist "^4.14.6"
     semver "7.0.0"
 
+core-js@^3.4.4:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.8.0.tgz#0fc2d4941cadf80538b030648bb64d230b4da0ce"
+  integrity sha512-W2VYNB0nwQQE7tKS7HzXd7r2y/y2SVJl4ga6oH/dnaLFzM0o2lB2P3zCkWj5Wc/zyMYjtgd5Hmhk0ObkQFZOIA==
+
 core-js@^3.6.4, core-js@^3.6.5:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.7.0.tgz#b0a761a02488577afbf97179e4681bf49568520f"
@@ -5491,6 +5496,13 @@ obuf@^1.0.0, obuf@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/obuf/-/obuf-1.1.2.tgz#09bea3343d41859ebd446292d11c9d4db619084e"
   integrity sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==
+
+oh-vue-icons@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/oh-vue-icons/-/oh-vue-icons-0.1.1.tgz#10c0c2ddd190f30faa34ec515eb1cb6a78e1f6de"
+  integrity sha512-tvOCra/IEM7X1nOaPg1huTF9FNGunrBUrM6u2PFO3+0zYiJZwGi1/t2sv5n63sQwdAggACI9mZVAJ58watTwDQ==
+  dependencies:
+    core-js "^3.4.4"
 
 on-finished@~2.3.0:
   version "2.3.0"

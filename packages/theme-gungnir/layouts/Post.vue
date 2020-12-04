@@ -139,14 +139,14 @@ export default {
         &.style-img
             padding-top 7.5rem
             padding-bottom 9rem
-            .title, .subtitle, .tag, i
+            .title, .subtitle, .tag, .icon
                 color #fff
                 border-color #fff
         .header-mask
             width 100%
             height 100%
             position absolute
-            margin-top -7.6rem
+            margin-top -7.5rem
             z-index 1
 
     .page

@@ -2,7 +2,7 @@
   <footer class="page-edit">
     <div v-if="editLink" class="edit-link">
       <a :href="editLink" target="_blank" rel="noopener noreferrer">
-        <i class="fas fa-pencil-alt" style="font-size: 15px" />
+        <v-icon name="fa/pencil-alt" scale="0.9"/>
         {{ editLinkText }}
       </a>
     </div>
@@ -17,6 +17,8 @@
 <script>
 import isNil from 'lodash/isNil'
 import { endingSlashRE, outboundRE } from '@theme/utils/utils'
+// icon
+import 'oh-vue-icons/icons/fa/pencil-alt'
 
 export default {
   name: 'PageEdit',

@@ -15,18 +15,21 @@
       <h3 v-if="articleInfo.frontmatter.subtitle" class="subtitle">{{$page.frontmatter.subtitle}}</h3>
 
       <div class="icons">
-        <i v-if="articleInfo.frontmatter.author || $themeConfig.author || $site.title"
-          class="far fa-user">
+
+        <div class="icon" v-if="articleInfo.frontmatter.author || $themeConfig.author || $site.title">
+          <v-icon name="fa/regular/user" scale="0.9" />
           <span>{{ articleInfo.frontmatter.author || $themeConfig.author || $site.title }}</span>
-        </i>
+        </div>
 
-        <i v-if="articleInfo.frontmatter.date" class="far fa-calendar">
+        <div class="icon" v-if="articleInfo.frontmatter.date">
+          <v-icon name="fa/regular/calendar" scale="0.9" />
           <span>{{ articleInfo.frontmatter.date | formatDateValue }}</span>
-        </i>
+        </div>
 
-        <i v-if="articleInfo.readingTime" class="far fa-clock">
+        <div class="icon" v-if="articleInfo.readingTime">
+          <v-icon name="fa/regular/clock" scale="0.9" />
           <span>{{ articleInfo.readingTime.minutes }} min</span>
-        </i>
+        </div>
       </div>
     </div>
   </div>
@@ -34,6 +37,10 @@
 
 <script>
 import { formatDate } from '@theme/utils/time'
+// icons
+import 'oh-vue-icons/icons/fa/regular/user'
+import 'oh-vue-icons/icons/fa/regular/calendar'
+import 'oh-vue-icons/icons/fa/regular/clock'
 
 export default {
   props: {
@@ -95,14 +102,14 @@ export default {
   padding-top 0
   padding-bottom 0
   .icons
-    i
+    .icon
       display inline-block
       line-height 1.5rem
       color var(--text-color-sub)
       &:not(:last-child)
         margin-right 1rem
       span
-        margin-left 0.5rem
+        margin-left 0.3rem
         font-size 13px
         font-weight normal
   .tags

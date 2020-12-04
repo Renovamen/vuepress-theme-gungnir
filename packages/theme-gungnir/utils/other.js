@@ -12,7 +12,6 @@ export function registerCodeThemeCss (theme = 'tomorrow') {
 }
 
 export function registerLinks () {
-  addLinkToHead('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css')
   addLinkToHead('https://cdn.jsdelivr.net/npm/font-awesome-animation@0.2.1/dist/font-awesome-animation.min.css')
   addLinkToHead('https://fonts.googleapis.com/css?family=Montserrat:200,400,500,700')
 }

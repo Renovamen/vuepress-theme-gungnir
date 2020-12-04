@@ -7,10 +7,10 @@
             target="_blank"
             rel="noopener noreferrer"
         >
-            <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fa-stack-1x fa-inverse icon-sns" :class="snsIcon(platform)"></i>
-            </span>
+            <v-icon class="icon-stack">
+                <v-icon v-if="large" name="fa/circle" scale="2.3" class="icon-circle"/>
+                <v-icon :name="snsIcon(platform)" scale="1.1" inverse class="icon-sns"/>
+            </v-icon>
         </a>
         <a
             v-if="$themeConfig.rss"
@@ -18,15 +18,26 @@
             target="_blank"
             rel="noopener noreferrer"
         >
-            <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fa-stack-1x fa-inverse fas fa-rss icon-sns"></i>
-            </span>
+            <v-icon class="icon-stack">
+                <v-icon v-if="large" name="fa/circle" scale="2.3" class="icon-circle"/>
+                <v-icon name="fa/rss" scale="1.15" inverse class="icon-sns"/>
+            </v-icon>
         </a>
     </div>
 </template>
 
 <script>
+// icons
+import 'oh-vue-icons/icons/fa/circle'
+import 'oh-vue-icons/icons/fa/rss'
+import 'oh-vue-icons/icons/fa/brands/github-alt'
+import 'oh-vue-icons/icons/fa/brands/linkedin-in'
+import 'oh-vue-icons/icons/fa/brands/facebook-f'
+import 'oh-vue-icons/icons/fa/brands/twitter'
+import 'oh-vue-icons/icons/ri/zhihu-line'
+import 'oh-vue-icons/icons/fa/brands/weibo'
+import 'oh-vue-icons/icons/fa/envelope'
+
 const platform_links = {
     'github': 'https://github.com/',
     'linkedin': 'https://www.linkedin.com/in/',
@@ -38,16 +49,19 @@ const platform_links = {
 }
 
 const platform_icons = {
-    'github': 'fab fa-github-alt',
-    'linkedin': 'fab fa-linkedin-in',
-    'facebook': 'fab fa-facebook-f',
-    'twitter': 'fab fa-twitter',
-    'zhihu': 'fab fa-zhihu',
-    'weibo': 'fab fa-weibo',
-    'email': 'fas fa-envelope'
+    'github': 'fa/brands/github-alt',
+    'linkedin': 'fa/brands/linkedin-in',
+    'facebook': 'fa/brands/facebook-f',
+    'twitter': 'fa/brands/twitter',
+    'zhihu': 'ri/zhihu-line',
+    'weibo': 'fa/brands/weibo',
+    'email': 'fa/envelope'
 }
 
 export default {
+    props: {
+        large: Boolean
+    },
     methods: {
         snsLink(user, platform) {
             return platform_links[platform] + user
@@ -65,14 +79,13 @@ export default {
 .sns-wrapper
     margin-top 270px
     padding 0
-    font-size 14px
-    .fa-stack
-        width 50px
+    .icon-stack
+        min-width 50px
         transition(all ease 0.4s)
         &:hover
             position relative
             cursor pointer
             transform(translateY(-0.35em))
-        .fa-circle
+        .icon-circle
             color rgba(0, 0, 0, .5)
 </style>

@@ -192,16 +192,11 @@ export default {
       font-weight bold
       // margin-top -5px
     & >>> .sns-wrapper
-      margin -10px auto 0
+      margin 0 auto
       text-align center
-      font-size 11px
       position relative
-      a
-        font-size 13px
-        .fa-stack
-          width 25px
-          .fa-circle
-            display none
-          .icon-sns
-            color var(--text-color)
+      .icon-stack
+        min-width 25px
+        .icon-sns
+          color var(--text-color)
 </style>

@@ -14,7 +14,7 @@
         @click="$emit('toggle-search')"
         style="cursor: pointer;"
       >
-        <i class="fa fa-search faa-wrench" style="font-size: 15px" />
+        <v-icon name="fa/search" scale="0.9" class="faa-wrench"/>
         Search
       </a>
     </div>
@@ -25,6 +25,8 @@
 import DropdownLink from '@theme/components/DropdownLink'
 import NavLink from '@theme/components/NavLink'
 import { resolveNavLinkItem } from '@theme/utils/utils'
+// icon
+import 'oh-vue-icons/icons/fa/search'
 
 export default {
   components: {
@@ -101,7 +103,7 @@ export default {
     line-height 2rem
     text-transform uppercase
     margin-left 25px
-    i
+    .v-icon
       width 18px
     &:first-child
       margin-left 0

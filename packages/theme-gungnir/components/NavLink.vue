@@ -1,13 +1,13 @@
 <template>
   <router-link class="nav-link faa-parent animated-hover" :to="link"
                v-if="!isExternal(link)" :exact="exact">
-    <i v-if="item.icon" :class="item.icon" class="faa-wrench" style="font-size: 15px" />
+    <v-icon v-if="item.icon" :name="item.icon" class="faa-wrench" scale="0.9" />
     {{ item.text }}
   </router-link>
   <a v-else class="nav-link external" :href="link"
      :target="isMailto(link) || isTel(link) ? null : '_blank'"
      :rel="isMailto(link) || isTel(link) ? null : 'noopener noreferrer'">
-    <i v-if="item.icon" :class="item.icon" class="faa-wrench" style="font-size: 15px" />
+    <v-icon v-if="item.icon" :name="item.icon" class="faa-wrench" scale="0.9" />
     {{ item.text }}
   </a>
 </template>
