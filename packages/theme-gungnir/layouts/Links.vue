@@ -52,7 +52,7 @@ export default {
 
 .links-wrapper
     .links-group
-        min-height calc(86vh - 290px)
+        min-height calc(100vh - 155px - 235px)
         padding-top 10px
         padding-bottom 50px
         width 60%

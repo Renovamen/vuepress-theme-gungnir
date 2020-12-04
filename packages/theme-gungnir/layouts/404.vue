@@ -38,10 +38,14 @@ export default {
 
 .error-container
   padding $navbarHeight 2rem 0
-  height 100vh - $navbarHeight - 19rem
+  min-height calc(100vh - 155px)
   .error-content
-    text-align center 
-    margin-top 28vh
+    position absolute
+    text-align center
+    left 0
+    right 0
+    top 50%
+    margin-top -140px
     h2
       font-size 30px 
       font-weight bold 
