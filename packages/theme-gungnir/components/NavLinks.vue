@@ -14,7 +14,7 @@
         @click="$emit('toggle-search')"
         style="cursor: pointer;"
       >
-        <v-icon name="fa/search" scale="0.9" class="faa-wrench"/>
+        <v-icon name="fa/search" class="faa-wrench"/>
         Search
       </a>
     </div>
@@ -104,7 +104,9 @@ export default {
     text-transform uppercase
     margin-left 25px
     .v-icon
-      width 18px
+      width 17px
+      margin-bottom -2px
+      margin-right 1px
     &:first-child
       margin-left 0
   .repo-link

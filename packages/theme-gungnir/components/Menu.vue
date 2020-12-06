@@ -30,7 +30,7 @@
                     <v-icon name="fa/list-ul" />
                 </div>
                 <div class="menu-btn-child menu-btn-sidebar" @click="$emit('toggle-sidebar')">
-                    <v-icon name="ri/side-bar-line" scale="1.1" />
+                    <v-icon name="ri/side-bar-line" />
                 </div>
             </div>
         </div>

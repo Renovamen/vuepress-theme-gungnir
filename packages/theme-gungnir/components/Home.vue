@@ -39,7 +39,7 @@
         </button>
 
         <div class="arrow faa-float animated hide-on-mobile" @click="scrollToPost()"> 
-          <v-icon name="fa/chevron-down" scale="1.8" />
+          <v-icon name="fa/chevron-down" scale="1.7" />
         </div>
 
       </div>
@@ -264,7 +264,7 @@ export default {
         top 50%
         margin-top -30px
         width auto
-        padding 17px 12px
+        padding 15px 7px
         color rgba(255, 255, 255, 0.6)
         background-color rgba(0, 0, 0, .3)
         border none
@@ -284,7 +284,7 @@ export default {
         position absolute
         bottom 50px
         left 50%
-        margin-left -14px
+        margin-left -18px
         cursor pointer
         .v-icon
           font-size 28px

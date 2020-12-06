@@ -5,7 +5,7 @@
   >
     <a class="dropdown-title" @click="toggle">
       <span class="title faa-parent animated-hover">
-        <v-icon v-if="item.icon" :name="item.icon" class="faa-wrench" scale="0.9" />
+        <v-icon v-if="item.icon" :name="item.icon" class="faa-wrench" />
         {{ item.text }}
       </span>
       <span

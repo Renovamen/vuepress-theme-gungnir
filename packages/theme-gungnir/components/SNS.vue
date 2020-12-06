@@ -9,7 +9,7 @@
         >
             <v-icon class="icon-stack">
                 <v-icon v-if="large" name="fa/circle" scale="2.3" class="icon-circle"/>
-                <v-icon :name="snsIcon(platform)" scale="1.1" inverse class="icon-sns"/>
+                <v-icon :name="snsIcon(platform)" inverse class="icon-sns"/>
             </v-icon>
         </a>
         <a
@@ -20,7 +20,7 @@
         >
             <v-icon class="icon-stack">
                 <v-icon v-if="large" name="fa/circle" scale="2.3" class="icon-circle"/>
-                <v-icon name="fa/rss" scale="1.15" inverse class="icon-sns"/>
+                <v-icon name="fa/rss" inverse class="icon-sns"/>
             </v-icon>
         </a>
     </div>

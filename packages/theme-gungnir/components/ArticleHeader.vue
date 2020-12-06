@@ -17,17 +17,17 @@
       <div class="icons">
 
         <div class="icon" v-if="articleInfo.frontmatter.author || $themeConfig.author || $site.title">
-          <v-icon name="fa/regular/user" scale="0.9" />
+          <v-icon name="fa/regular/user" />
           <span>{{ articleInfo.frontmatter.author || $themeConfig.author || $site.title }}</span>
         </div>
 
         <div class="icon" v-if="articleInfo.frontmatter.date">
-          <v-icon name="fa/regular/calendar" scale="0.9" />
+          <v-icon name="fa/regular/calendar" />
           <span>{{ articleInfo.frontmatter.date | formatDateValue }}</span>
         </div>
 
         <div class="icon" v-if="articleInfo.readingTime">
-          <v-icon name="fa/regular/clock" scale="0.9" />
+          <v-icon name="ri/timer-line" />
           <span>{{ articleInfo.readingTime.minutes }} min</span>
         </div>
       </div>
@@ -40,7 +40,7 @@ import { formatDate } from '@theme/utils/time'
 // icons
 import 'oh-vue-icons/icons/fa/regular/user'
 import 'oh-vue-icons/icons/fa/regular/calendar'
-import 'oh-vue-icons/icons/fa/regular/clock'
+import 'oh-vue-icons/icons/ri/timer-line'
 
 export default {
   props: {
@@ -108,6 +108,10 @@ export default {
       color var(--text-color-sub)
       &:not(:last-child)
         margin-right 1rem
+      .v-icon
+        width 17px
+        height auto
+        margin-right -3px
       span
         margin-left 0.3rem
         font-size 13px

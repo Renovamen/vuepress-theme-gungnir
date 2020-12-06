@@ -2,7 +2,7 @@
   <footer class="page-edit">
     <div v-if="editLink" class="edit-link">
       <a :href="editLink" target="_blank" rel="noopener noreferrer">
-        <v-icon name="fa/pencil-alt" scale="0.9"/>
+        <v-icon name="fa/pencil-alt" />
         {{ editLinkText }}
       </a>
     </div>

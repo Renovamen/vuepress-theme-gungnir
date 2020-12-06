@@ -1,6 +1,6 @@
 <template>
     <div class="search-page">
-        <v-icon name="fa/chevron-down" scale="1.9" @click="$emit('toggle-search')" />
+        <v-icon name="fa/chevron-down" scale="1.8" @click="$emit('toggle-search')" />
         <div class="search-box">
             <input
                 ref="input"
@@ -231,8 +231,8 @@ export default {
     transform(translateY(100%))
     .v-icon
         float right
-        margin-right 30px
-        margin-top 30px
+        margin-right 25px
+        margin-top 25px
         color #bdbbbb
         transition(.3s ease)
         &:hover
