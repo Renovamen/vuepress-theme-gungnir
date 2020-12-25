@@ -1,4 +1,3 @@
-import 'oh-vue-icons/icons/fa/brands/fort-awesome'
-import 'oh-vue-icons/icons/fa/tag'
-import 'oh-vue-icons/icons/fa/satellite-dish'
-import 'oh-vue-icons/icons/fa/book'
+import VueIcon from 'oh-vue-icons/components/Icon'
+import { FaFortAwesome, FaTag, FaSatelliteDish, FaBook } from 'oh-vue-icons/icons'
+VueIcon.add([ FaFortAwesome, FaTag, FaSatelliteDish, FaBook ])

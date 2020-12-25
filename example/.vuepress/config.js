@@ -27,22 +27,22 @@ module.exports = {
       {
         text: 'Home',
         link: '/',
-        icon: 'fa/brands/fort-awesome'
+        icon: 'fa-fort-awesome'
       },
       {
         text: 'Tags',
         link: '/tags/',
-        icon: 'fa/tag'
+        icon: 'fa-tag'
       },
       {
         text: 'Links',
         link: '/links/',
-        icon: 'fa/satellite-dish'
+        icon: 'fa-satellite-dish'
       },
       {
         text: 'Docs',
         link: '/docs/',
-        icon: 'fa/book'
+        icon: 'fa-book'
       }
     ],
     sidebar: {

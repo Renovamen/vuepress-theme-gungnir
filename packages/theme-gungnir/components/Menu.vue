@@ -17,20 +17,20 @@
             <div class="menu-btn-child-wrapper">
                 <ToggleMode class="menu-btn-child" />
                 <div class="menu-btn-child" @click="goToBottom">
-                    <v-icon name="fa/chevron-down" />
+                    <v-icon name="fa-chevron-down" />
                 </div>
                 <div class="menu-btn-child" @click="goToTop">
-                    <v-icon name="fa/chevron-up" />
+                    <v-icon name="fa-chevron-up" />
                 </div>
                 <div
                     v-if="$page.frontmatter.catalog"
                     class="menu-btn-child menu-toc-btn"
                     @click="$emit('toggle-catalog')"
                 >
-                    <v-icon name="fa/list-ul" />
+                    <v-icon name="fa-list-ul" />
                 </div>
                 <div class="menu-btn-child menu-btn-sidebar" @click="$emit('toggle-sidebar')">
-                    <v-icon name="ri/side-bar-line" />
+                    <v-icon name="ri-side-bar-line" />
                 </div>
             </div>
         </div>
@@ -39,11 +39,6 @@
 
 <script>
 import ToggleMode from '@theme/components/ToggleMode'
-// icons
-import 'oh-vue-icons/icons/fa/chevron-down'
-import 'oh-vue-icons/icons/fa/chevron-up'
-import 'oh-vue-icons/icons/fa/list-ul'
-import 'oh-vue-icons/icons/ri/side-bar-line'
 
 export default {
     components: {

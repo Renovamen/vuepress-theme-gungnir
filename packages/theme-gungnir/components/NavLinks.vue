@@ -14,7 +14,7 @@
         @click="$emit('toggle-search')"
         style="cursor: pointer;"
       >
-        <v-icon name="fa/search" class="faa-wrench"/>
+        <v-icon name="fa-search" class="faa-wrench"/>
         Search
       </a>
     </div>
@@ -25,8 +25,6 @@
 import DropdownLink from '@theme/components/DropdownLink'
 import NavLink from '@theme/components/NavLink'
 import { resolveNavLinkItem } from '@theme/utils/utils'
-// icon
-import 'oh-vue-icons/icons/fa/search'
 
 export default {
   components: {
