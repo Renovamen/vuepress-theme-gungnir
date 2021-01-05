@@ -23,7 +23,7 @@
                     <v-icon name="fa-chevron-up" />
                 </div>
                 <div
-                    v-if="$page.frontmatter.catalog"
+                    v-if="$page.frontmatter.catalog && $page.headers"
                     class="menu-btn-child menu-toc-btn"
                     @click="$emit('toggle-catalog')"
                 >
