@@ -23,7 +23,7 @@
     "@renovamen/vuepress-plugin-reading-time": "^0.1.0"
   },
   "dependencies": {
-    "oh-vue-icons": "^0.1.5",
+    "oh-vue-icons": "^0.1.7",
     "@renovamen/vuepress-plugin-katex": "^0.1.0",
     "@renovamen/vuepress-plugin-baidu-tongji": "^0.1.0",
     "@renovamen/vuepress-plugin-md-plus": "^0.1.0",
