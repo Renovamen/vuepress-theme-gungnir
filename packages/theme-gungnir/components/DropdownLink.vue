@@ -3,15 +3,20 @@
     class="dropdown-wrapper"
     :class="{ open }"
   >
-    <a class="dropdown-title" @click="toggle">
-      <span class="title faa-parent animated-hover">
-        <v-icon v-if="item.icon" :name="item.icon" class="faa-wrench" />
+    <a
+      class="dropdown-title"
+      @click="toggle"
+    >
+      <span class="title v-parent v-hover">
+        <v-icon
+          v-if="item.icon"
+          :name="item.icon"
+          animation="wrench"
+          hover
+        />
         {{ item.text }}
       </span>
-      <span
-        class="arrow"
-        :class="open ? 'down' : 'right'"
-      ></span>
+      <span class="arrow" :class="open ? 'down' : 'right'"></span>
     </a>
 
     <DropdownTransition>

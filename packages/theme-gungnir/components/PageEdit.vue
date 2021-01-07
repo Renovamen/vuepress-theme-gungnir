@@ -1,13 +1,23 @@
 <template>
   <footer class="page-edit">
-    <div v-if="editLink" class="edit-link">
-      <a :href="editLink" target="_blank" rel="noopener noreferrer">
+    <div
+      v-if="editLink"
+      class="edit-link"
+    >
+      <a
+        :href="editLink"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <v-icon name="fa-pencil-alt" />
         {{ editLinkText }}
       </a>
     </div>
 
-    <div v-if="lastUpdated" class="last-updated">
+    <div
+      v-if="lastUpdated"
+      class="last-updated"
+    >
       <span class="prefix">{{ lastUpdatedText }}:</span>
       <span class="time">{{ lastUpdated }}</span>
     </div>

@@ -1,20 +1,36 @@
 <template>
-  <nav class="nav-links" v-if="userLinks.length">
+  <nav
+    class="nav-links"
+    v-if="userLinks.length"
+  >
     <!-- navbar link buttons -->
-    <div class="nav-item" v-for="item in userLinks" :key="item.link">
-      <DropdownLink v-if="item.type === 'links'" :item="item"/>
+    <div
+      v-for="item in userLinks"
+      :key="item.link"
+      class="nav-item"
+    >
+      <DropdownLink
+        v-if="item.type === 'links'"
+        :item="item"
+      />
       <NavLink v-else :item="item"/>
     </div>
+
     <!-- search button -->
     <div
       v-if="$themeConfig.search !== false && $frontmatter.search !== false"
-      class="nav-item">
+      class="nav-item"
+    >
       <a
-        class="nav-link faa-parent animated-hover"
+        class="nav-link v-parent v-hover"
         @click="$emit('toggle-search')"
         style="cursor: pointer;"
       >
-        <v-icon name="fa-search" class="faa-wrench"/>
+        <v-icon
+          name="fa-search"
+          animation="wrench"
+          hover
+        />
         Search
       </a>
     </div>
@@ -97,6 +113,7 @@ export default {
   .nav-item
     position relative
     display inline-block
+    vertical-align middle
     margin-left 1.5rem
     line-height 2rem
     text-transform uppercase

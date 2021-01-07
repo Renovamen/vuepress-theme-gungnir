@@ -1,16 +1,29 @@
 <template>
     <div class="tag-postlist-wrapper">
-
-        <section v-for="(item, index) in data" :key="index">
+        <section
+            v-for="(item, index) in data"
+            :key="index"
+        >
             <span class="fa listing-seperator">
                 <span class="year">{{ item.year }}</span>
             </span>
 
-            <div v-for="(subItem, subIndex) in item.data" :key="subIndex"
-                :currentTag="currentTag" class="post-item">
+            <div
+                v-for="(subItem, subIndex) in item.data"
+                :key="subIndex"
+                :currentTag="currentTag"
+                class="post-item"
+            >
                 <router-link :to="subItem.path">
-                    <h2 class="post-item__title">{{ subItem.frontmatter.title }}</h2>
-                    <h3 v-if="subItem.frontmatter.subtitle" class="post-item__subtitle">{{ subItem.frontmatter.subtitle }}</h3>
+                    <h2 class="post-item__title">
+                        {{ subItem.frontmatter.title }}
+                    </h2>
+                    <h3
+                        v-if="subItem.frontmatter.subtitle"
+                        class="post-item__subtitle"
+                    >
+                        {{ subItem.frontmatter.subtitle }}
+                    </h3>
                 </router-link>
                 <hr>
             </div>

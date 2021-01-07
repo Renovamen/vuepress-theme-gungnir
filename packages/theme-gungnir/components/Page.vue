@@ -4,19 +4,23 @@
       v-if="$page.id != 'posts'"
       v-show="$page.title"
       :articleInfo="$page"
-      class="doc-header" />
+      class="doc-header"
+    />
     <Content class="theme-content" />
     <PageEdit />
     <PageNav
       v-if="($page.id != 'posts') && sidebarItems"
-      v-bind="{ sidebarItems }" />
+      v-bind="{ sidebarItems }"
+    />
     <Pager
       v-if="($page.id == 'posts') && getPostIndex != -1"
-      :data="getPostPager" />
+      :data="getPostPager"
+    />
     <Vssue
       v-if="$themeConfig.comment"
       :title="$page.title + ' - ' + $site.title"
-      class="vssue-comment-wrapper" />
+      class="vssue-comment-wrapper"
+    />
   </main>
 </template>
 

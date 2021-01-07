@@ -11,15 +11,22 @@
       @toggle-search="toggleSearch(true)"
     />
 
-    <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
+    <div
+      class="sidebar-mask"
+      @click="toggleSidebar(false)"
+    />
 
-    <Sidebar :items="sidebarItems" @toggle-search="toggleSearch(true)">
+    <Sidebar
+      :items="sidebarItems"
+      @toggle-search="toggleSearch(true)"
+    >
       <template slot="top">
         <div class="personal-info-wrapper">
           <div class="mobile-hero-avatar">
             <img
               :src="$withBase($themeConfig.authorAvatar)" 
-              alt="hero" />
+              alt="hero"
+            />
           </div>
           <p class="mobile-heading">{{ $themeConfig.author }}</p>
           <SNS />
@@ -33,9 +40,16 @@
 
     <SearchPage
       v-if="$themeConfig.search !== false && $frontmatter.search !== false"
-      @toggle-search="toggleSearch(false)" />
-    <Menu @toggle-sidebar="toggleSidebar" @toggle-catalog="toggleCatalog" />
-    <Footer v-if="!shouldShowSidebar" class="footer" />
+      @toggle-search="toggleSearch(false)"
+    />
+    <Menu
+      @toggle-sidebar="toggleSidebar"
+      @toggle-catalog="toggleCatalog"
+    />
+    <Footer
+      v-if="!shouldShowSidebar"
+      class="footer"
+    />
   </div>
 </template>
 

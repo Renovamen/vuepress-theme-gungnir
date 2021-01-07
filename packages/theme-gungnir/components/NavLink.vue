@@ -1,13 +1,30 @@
 <template>
-  <router-link class="nav-link faa-parent animated-hover" :to="link"
-               v-if="!isExternal(link)" :exact="exact">
-    <v-icon v-if="item.icon" :name="item.icon" class="faa-wrench" />
+  <router-link
+    v-if="!isExternal(link)"
+    class="nav-link v-parent v-hover"
+    :to="link"
+    :exact="exact"
+  >
+    <v-icon
+      v-if="item.icon"
+      :name="item.icon"
+      animation="wrench"
+      hover
+    />
     {{ item.text }}
   </router-link>
-  <a v-else class="nav-link external" :href="link"
-     :target="isMailto(link) || isTel(link) ? null : '_blank'"
-     :rel="isMailto(link) || isTel(link) ? null : 'noopener noreferrer'">
-    <v-icon v-if="item.icon" :name="item.icon" class="faa-wrench" />
+  <a
+    v-else class="nav-link external v-parent v-hover"
+    :href="link"
+    :target="isMailto(link) || isTel(link) ? null : '_blank'"
+    :rel="isMailto(link) || isTel(link) ? null : 'noopener noreferrer'"
+  >
+    <v-icon
+      v-if="item.icon"
+      :name="item.icon"
+      animation="wrench"
+      hover
+    />
     {{ item.text }}
   </a>
 </template>

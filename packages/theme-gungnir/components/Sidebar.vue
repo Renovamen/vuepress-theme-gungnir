@@ -9,7 +9,7 @@
       :items="items"
     />
 
-    <slot name="bottom"/>
+    <slot name="bottom" />
   </aside>
 </template>
 

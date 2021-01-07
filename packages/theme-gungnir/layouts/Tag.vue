@@ -1,9 +1,20 @@
 <template>
   <div>
     <PageHeader :pageInfo="$themeConfig.pageConfig.tags" />
-    <Common class="tag-wrapper" :sidebar="false">
-      <TagList class="tags" :currentTag="$currentTags.key" @getCurrentTag="tagClick" />
-      <TagPostList :data="posts" class="list" @currentTag="$currentTags.key" />
+    <Common
+      class="tag-wrapper"
+      :sidebar="false"
+    >
+      <TagList
+        class="tags"
+        :currentTag="$currentTags.key"
+        @getCurrentTag="tagClick"
+      />
+      <TagPostList
+        :data="posts"
+        class="list"
+        @currentTag="$currentTags.key"
+      />
     </Common>
   </div>
 </template>

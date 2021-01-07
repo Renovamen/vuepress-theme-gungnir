@@ -1,9 +1,23 @@
 <template>
-  <header class="navbar" ref="navbar"
-          :class="{'is-fixed': (isFixed || isSidebar), 'is-visible': (isVisible || isSidebar), 'invert': isInvert}">
-
-    <router-link :to="$localePath" class="home-link">
-      <span ref="siteName" class="site-name">$ cd /home/</span>
+  <header
+    class="navbar"
+    ref="navbar"
+    :class="{
+      'is-fixed': (isFixed || isSidebar),
+      'is-visible': (isVisible || isSidebar),
+      'invert': isInvert
+    }"
+  >
+    <router-link
+      :to="$localePath"
+      class="home-link"
+    >
+      <span
+        ref="siteName"
+        class="site-name"
+      >
+        $ cd /home/
+      </span>
     </router-link>
 
     <div
@@ -17,7 +31,8 @@
         :options="algolia"/> -->
       <NavLinks
         class="can-hide"
-        @toggle-search="$emit('toggle-search')" />
+        @toggle-search="$emit('toggle-search')"
+      />
     </div>
   </header>
 </template>

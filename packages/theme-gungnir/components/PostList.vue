@@ -1,7 +1,11 @@
 <template>
   <div class="postlist-wrapper">
-    <PostListItem v-for="(item) in data" :key="item.path"
-                  :item="item" :currentTag="currentTag" />
+    <PostListItem
+      v-for="(item) in data"
+      :key="item.path"
+      :item="item"
+      :currentTag="currentTag"
+    />
     <Pager :data="getPagerData" />
   </div>
 </template>

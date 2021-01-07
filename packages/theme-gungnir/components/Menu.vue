@@ -1,25 +1,47 @@
 <template>
     <div class="menu-btn-container" :class="{'open': isMenuOpen}">
         <div class="menu-btn-wrapper">
-            <div class="menu-btn" @click="toggleMenu">
-                <div v-show="isBtnIconVisible" class="menu-btn-icon">
+            <div
+                class="menu-btn"
+                @click="toggleMenu"
+            >
+                <div
+                    v-show="isBtnIconVisible"
+                    class="menu-btn-icon"
+                >
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
-                <div v-show="isTextVisible" class="menu-text">{{ menuText }}</div>
+                <div
+                    v-show="isTextVisible"
+                    class="menu-text"
+                >
+                    {{ menuText }}
+                </div>
                 <svg class="menu-svg">
-                    <circle class="menu-border" ref="menu_border" cx="50%" cy="50%" r="48%"
-                            :style="{'stroke-dasharray': borderLen}">
-                    </circle>
+                    <circle
+                        class="menu-border"
+                        ref="menu_border"
+                        cx="50%"
+                        cy="50%"
+                        r="48%"
+                        :style="{'stroke-dasharray': borderLen}"
+                    />
                 </svg>
             </div>
             <div class="menu-btn-child-wrapper">
                 <ToggleMode class="menu-btn-child" />
-                <div class="menu-btn-child" @click="goToBottom">
+                <div
+                    class="menu-btn-child"
+                    @click="goToBottom"
+                >
                     <v-icon name="fa-chevron-down" />
                 </div>
-                <div class="menu-btn-child" @click="goToTop">
+                <div
+                    class="menu-btn-child"
+                    @click="goToTop"
+                >
                     <v-icon name="fa-chevron-up" />
                 </div>
                 <div
@@ -29,7 +51,10 @@
                 >
                     <v-icon name="fa-list-ul" />
                 </div>
-                <div class="menu-btn-child menu-btn-sidebar" @click="$emit('toggle-sidebar')">
+                <div
+                    class="menu-btn-child menu-btn-sidebar"
+                    @click="$emit('toggle-sidebar')"
+                >
                     <v-icon name="ri-side-bar-line" />
                 </div>
             </div>

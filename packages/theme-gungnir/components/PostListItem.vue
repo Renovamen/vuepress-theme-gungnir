@@ -4,16 +4,37 @@
   -->
 
   <div class="post-item-img">
-    <div class="post-item-img__img" @click="$router.push(item.path)">
-      <img :src="$withBase(item.frontmatter.header_img)" class="cover" />
+    <div
+      class="post-item-img__img"
+      @click="$router.push(item.path)"
+    >
+      <img
+        :src="$withBase(item.frontmatter.header_img)"
+        class="cover"
+      />
     </div>
     <div class="else">
-      <p v-if="item.frontmatter.date" class="post-item-img__date">{{ item.frontmatter.date | formatDateValue }}</p>
-      <router-link :to="item.path" class="post-item-img__title">
-        <h2>{{ item.frontmatter.title }}</h2>
-        <h3 v-if="item.frontmatter.subtitle">{{ item.frontmatter.subtitle }}</h3>
+      <p
+        v-if="item.frontmatter.date"
+        class="post-item-img__date"
+      >
+        {{ item.frontmatter.date | formatDateValue }}
+      </p>
+      <router-link
+        :to="item.path"
+        class="post-item-img__title"
+      >
+        <h2>
+          {{ item.frontmatter.title }}
+        </h2>
+        <h3 v-if="item.frontmatter.subtitle">
+          {{ item.frontmatter.subtitle }}
+        </h3>
       </router-link>
-      <div v-html="item.excerpt" class="post-item-img__content"></div>
+      <div
+        v-html="item.excerpt"
+        class="post-item-img__content"
+      />
     </div>
   </div>
 </template>

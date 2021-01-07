@@ -8,8 +8,17 @@
             rel="noopener noreferrer"
         >
             <v-icon class="icon-stack">
-                <v-icon v-if="large" name="fa-circle" scale="2.3" class="icon-circle"/>
-                <v-icon :name="snsIcon(platform)" inverse class="icon-sns"/>
+                <v-icon
+                    v-if="large"
+                    name="fa-circle"
+                    scale="2.3"
+                    class="icon-circle"
+                />
+                <v-icon
+                    :name="snsIcon(platform)"
+                    class="icon-sns"
+                    inverse
+                />
             </v-icon>
         </a>
         <a
@@ -19,8 +28,17 @@
             rel="noopener noreferrer"
         >
             <v-icon class="icon-stack">
-                <v-icon v-if="large" name="fa-circle" scale="2.3" class="icon-circle"/>
-                <v-icon name="fa-rss" inverse class="icon-sns"/>
+                <v-icon
+                    v-if="large"
+                    name="fa-circle"
+                    scale="2.3"
+                    class="icon-circle"
+                />
+                <v-icon
+                    name="fa-rss"
+                    class="icon-sns"
+                    inverse
+                />
             </v-icon>
         </a>
     </div>

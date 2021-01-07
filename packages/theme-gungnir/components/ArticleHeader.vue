@@ -1,32 +1,52 @@
 <template>
   <div>
     <slot></slot>
+
     <div class="header-content">
-      <div v-if="articleInfo.frontmatter.tags" class="tags">
+      <div
+        v-if="articleInfo.frontmatter.tags"
+        class="tags"
+      >
         <span
           v-for="(subItem, subIndex) in articleInfo.frontmatter.tags"
           :key="subIndex"
           class="tag"
           :class="{ 'active': currentTag == subItem }"
-          @click.stop="goTags(subItem)">{{subItem}}</span>
+          @click.stop="goTags(subItem)"
+        >
+          {{subItem}}
+        </span>
       </div>
       
       <h1 class="title">{{articleInfo.title}}</h1>
-      <h3 v-if="articleInfo.frontmatter.subtitle" class="subtitle">{{$page.frontmatter.subtitle}}</h3>
+      <h3
+        v-if="articleInfo.frontmatter.subtitle"
+        class="subtitle"
+      >
+        {{$page.frontmatter.subtitle}}
+      </h3>
 
       <div class="icons">
-
-        <div class="icon" v-if="articleInfo.frontmatter.author || $themeConfig.author || $site.title">
+        <div
+          class="icon"
+          v-if="articleInfo.frontmatter.author || $themeConfig.author || $site.title"
+        >
           <v-icon name="fa-regular-user" />
           <span>{{ articleInfo.frontmatter.author || $themeConfig.author || $site.title }}</span>
         </div>
 
-        <div class="icon" v-if="articleInfo.frontmatter.date">
+        <div
+          class="icon"
+          v-if="articleInfo.frontmatter.date"
+        >
           <v-icon name="fa-regular-calendar" />
           <span>{{ articleInfo.frontmatter.date | formatDateValue }}</span>
         </div>
 
-        <div class="icon" v-if="articleInfo.readingTime">
+        <div
+          class="icon"
+          v-if="articleInfo.readingTime"
+        >
           <v-icon name="ri-timer-line" />
           <span>{{ articleInfo.readingTime.minutes }} min</span>
         </div>

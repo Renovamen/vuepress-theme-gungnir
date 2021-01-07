@@ -1,5 +1,8 @@
 <template>
-  <div v-if="prev || next" class="page-nav">
+  <div
+    v-if="prev || next"
+    class="page-nav"
+  >
     <p class="inner">
       <span v-if="prev" class="prev">
         ←
@@ -13,12 +16,18 @@
           {{ prev.title || prev.path }}
         </a>
 
-        <RouterLink v-else class="prev" :to="prev.path">
+        <RouterLink
+          v-else class="prev"
+          :to="prev.path"
+        >
           {{ prev.title || prev.path }}
         </RouterLink>
       </span>
 
-      <span v-if="next" class="next">
+      <span
+        v-if="next"
+        class="next"
+      >
         <a
           v-if="next.type === 'external'"
           :href="next.path"
@@ -28,7 +37,10 @@
           {{ next.title || next.path }}
         </a>
 
-        <RouterLink v-else :to="next.path">
+        <RouterLink
+          v-else
+          :to="next.path"
+        >
           {{ next.title || next.path }}
         </RouterLink>
         →

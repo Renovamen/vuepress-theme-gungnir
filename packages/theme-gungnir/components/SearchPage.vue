@@ -1,6 +1,10 @@
 <template>
     <div class="search-page">
-        <v-icon name="fa-chevron-down" scale="1.8" @click="$emit('toggle-search')" />
+        <v-icon
+            name="fa-chevron-down"
+            scale="1.8"
+            @click="$emit('toggle-search')"
+        />
         <div class="search-box">
             <input
                 ref="input"
@@ -32,11 +36,18 @@
                     @mouseenter="focus(i)"
                 >
                     <a
-                    :href="s.path"
-                    @click.prevent
+                        :href="s.path"
+                        @click.prevent
                     >
-                        <span class="page-title">{{ s.title || s.path }}</span>
-                        <span v-if="s.frontmatter.subtitle" class="header">{{ s.frontmatter.subtitle }}</span>
+                        <span class="page-title">
+                            {{ s.title || s.path }}
+                        </span>
+                        <span 
+                            v-if="s.frontmatter.subtitle"
+                            class="header"
+                        >
+                            {{ s.frontmatter.subtitle }}
+                        </span>
                     </a>
                 </li>
             </ul>

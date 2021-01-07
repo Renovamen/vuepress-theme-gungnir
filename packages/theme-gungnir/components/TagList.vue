@@ -3,9 +3,13 @@
     <span
       v-for="(item, index) in tags"
       :key="index"
-      :class="{'active': item.name == currentTag, 'tag-all': item.path == '/tags/'}"
+      :class="{
+        'active': item.name == currentTag,
+        'tag-all': item.path == '/tags/'
+      }"
       :style="{ 'backgroundColor': item.tagColor }"
-      @click="tagClick(item)">
+      @click="tagClick(item)"
+    >
       {{item.name}}
       <sup v-if="item.path == '/tags/'">{{ $getAllPosts.length }}</sup>
       <sup v-else>{{ item.pages.length }}</sup>

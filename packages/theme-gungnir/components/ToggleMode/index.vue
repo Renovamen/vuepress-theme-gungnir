@@ -1,11 +1,23 @@
 <template>
-	<a role="button" @click.prevent="toggleMode()"  
-        :aria-label="'Toggle ' + nextMode" :title="'Toggle ' + nextMode"
-        class="toggle-mode"
-    >
-		<v-icon name="fa-sun" v-if="currentMode === 'light'" />
-    	<v-icon name="fa-moon" v-else-if="currentMode === 'dark'" />
-		<v-icon name="fa-magic" v-else-if="currentMode === 'auto'" />
+	<a
+		role="button"
+		class="toggle-mode"
+    :aria-label="'Toggle ' + nextMode"
+		:title="'Toggle ' + nextMode"
+		@click.prevent="toggleMode()"
+  >
+		<v-icon
+			name="fa-sun"
+			v-if="currentMode === 'light'"
+		/>
+    <v-icon
+			name="fa-moon"
+			v-else-if="currentMode === 'dark'"
+		/>
+		<v-icon
+			name="fa-magic"
+			v-else-if="currentMode === 'auto'"
+		/>
 	</a>
 </template>
 

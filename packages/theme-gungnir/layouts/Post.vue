@@ -5,17 +5,19 @@
             class="post-header"
             :articleInfo="$page"
             :class="{ 'style-img': $page.frontmatter.header_style == 'image' }"
-            :style="pageHeaderStyle">
+            :style="pageHeaderStyle"
+        >
             <div
                 v-if="($page.frontmatter.header_style == 'image') && $page.frontmatter.header_mask"
                 class="header-mask"
-                :style="{ 'background': $page.frontmatter.header_mask }">
-            </div>
+                :style="{ 'background': $page.frontmatter.header_mask }"
+            />
         </ArticleHeader>
         <Page :pageStyle="pageStyle" />
         <Catalog
             :class="{ 'fixed': isFixed }"
-            :style="{ 'top': `${catalogTop}px !important` }" />
+            :style="{ 'top': `${catalogTop}px !important` }"
+        />
     </Common>
 </template>
 

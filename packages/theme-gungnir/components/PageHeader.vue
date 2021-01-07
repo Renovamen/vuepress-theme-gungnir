@@ -12,7 +12,10 @@
         <h1 class="title">
             {{ pageInfo.title || $page.frontmatter.title }}
         </h1>
-        <h3 v-if="pageInfo.subtitle" class="subtitle">
+        <h3
+            v-if="pageInfo.subtitle"
+            class="subtitle"
+        >
             {{ pageInfo.subtitle }}
         </h3>
     </div>

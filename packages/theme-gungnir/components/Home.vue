@@ -1,21 +1,29 @@
 <template>
   <div class="home-blog">
-    <div class="hero" :style="{ 'background-image': bgImagePath }">
+    <div
+      class="hero"
+      :style="{ 'background-image': bgImagePath }"
+    >
       <div
         class="header-mask"
         v-if="$themeConfig.bgImage[this.bgImageID].mask"
         :style="{background: $themeConfig.bgImage[this.bgImageID].mask}"
+      />
+      <div
+        class="header-content"
+        :style="{'opacity': headerOpacity}"
       >
-      </div>
-      <div class="header-content" :style="{'opacity': headerOpacity}">
-        
         <div class="hero-avatar hide-on-mobile">
           <img
             :src="$withBase($themeConfig.authorAvatar)" 
-            alt="hero" />
+            alt="hero"
+          />
         </div>
 
-        <div v-if="$themeConfig.hitokoto" class="hero-bubble">
+        <div
+          v-if="$themeConfig.hitokoto"
+          class="hero-bubble"
+        >
           <div class="hero-bubble__body">
             <p ref="hitokoto">正在加载一言...</p>
           </div>
@@ -31,21 +39,35 @@
 
         <SNS class="hide-on-mobile" large />
 
-        <button class="img-prev hide-on-mobile" @click="switchImage(-1)">
+        <button
+          class="img-prev hide-on-mobile"
+          @click="switchImage(-1)"
+        >
           <v-icon name="fa-chevron-left" />
         </button>
-        <button class="img-next hide-on-mobile" @click="switchImage(1)">
+        <button
+          class="img-next hide-on-mobile"
+          @click="switchImage(1)"
+        >
           <v-icon name="fa-chevron-right" />
         </button>
 
-        <div class="arrow faa-float animated hide-on-mobile" @click="scrollToPost()"> 
-          <v-icon name="fa-chevron-down" scale="1.7" />
+        <div
+          class="arrow faa-float animated hide-on-mobile"
+          @click="scrollToPost()"
+        > 
+          <v-icon
+            name="fa-chevron-down"
+            scale="1.7"
+          />
         </div>
-
       </div>
     </div>
 
-    <PostList class="home-blog-wrapper" :data="$pagination.pages" />
+    <PostList
+      class="home-blog-wrapper"
+      :data="$pagination.pages"
+    />
   </div>
 </template>
 
