@@ -52,28 +52,53 @@
                 a
                     color var(--accent-color)
                 .vssue-comment-header, .vssue-comment-main, .vssue-comment-footer
-                    border-color var(--border-color-sub)
+                    border-color var(--border-color)
                 .vssue-comment-header
                     .vssue-comment-created-at
                         color var(--text-color-sub)
+                        font-size 14px
+                        line-height 27px
                 .vssue-comment-footer
                     span
                         color var(--accent-color)
                 .vssue-comment-main
-                    p, h1, h2, h3, h4, h5, h6
-                        color var(--text-color)
-                        border-color var(--border-color-sub)
-                    hr
-                        background-color var(--border-color-sub)
-                        border-color var(--border-color-sub)
-                    table
-                        color var(--text-color)
-                        th, td, tr
+                    .markdown-body
+                        p, h1, h2, h3, h4, h5, h6, li
+                            color var(--text-color)
+                        h1, h2, h3, h4, h5, h6
                             border-color var(--border-color-sub)
-                        tr
-                            background-color transparent
-                            &:nth-child(2n)
-                                background-color var(--bg-color-teritary)
-                    code
-                        color var(--inline-code-text)
-                        background-color var(--inline-code-bg)
+                        hr
+                            background-color var(--border-color-sub)
+                            border-color var(--border-color-sub)
+                            border-top none
+                        table
+                            color var(--text-color)
+                            th, td, tr
+                                border-color var(--border-color-sub)
+                            tr
+                                background-color transparent
+                                &:nth-child(2n)
+                                    background-color var(--bg-color-teritary)
+                        code
+                            color var(--inline-code-text)
+                            background-color var(--inline-code-bg)
+                        ul, ol
+                            line-height 1.7
+    
+    @media (max-width: $MQMobileNarrow)
+        .vssue-new-comment
+            .vssue-comment-avatar,
+            .vssue-comment-avatar img,
+            .vssue-comment-avatar svg
+                width 37px
+                height 37px
+            .vssue-new-comment-body
+                margin-left 50px
+        .vssue-comments .vssue-comment
+            .vssue-comment-avatar,
+            .vssue-comment-avatar img
+                width 37px
+                height 37px
+            .vssue-comment-body
+                margin-left 50px
+        
