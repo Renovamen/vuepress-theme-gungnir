@@ -12,6 +12,5 @@ export function registerCodeThemeCss (theme = 'tomorrow') {
 }
 
 export function registerLinks () {
-  addLinkToHead('https://cdn.jsdelivr.net/npm/font-awesome-animation@0.2.1/dist/font-awesome-animation.min.css')
   addLinkToHead('https://fonts.googleapis.com/css?family=Montserrat:200,400,500,700')
 }
