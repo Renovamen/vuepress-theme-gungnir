@@ -16,10 +16,16 @@
       v-if="($page.id == 'posts') && getPostIndex != -1"
       :data="getPostPager"
     />
+    <!-- 
+      Use prop `key` to update vssue when navigating directly from one
+      <Page> to another.
+      See here: https://github.com/meteorlxy/vssue/issues/87
+    -->
     <Vssue
       v-if="$themeConfig.comment"
-      :title="$page.title + ' - ' + $site.title"
       class="vssue-comment-wrapper"
+      :title="$page.title + ' - ' + $site.title"
+      :key="$route.path"
     />
   </main>
 </template>
