@@ -1,6 +1,6 @@
 <template>
   <div class="vuepress-chartjs">
-    <canvas ref="chartjs"></canvas>
+    <canvas :id="id" ref="chartjs"></canvas>
   </div>
 </template>
 
@@ -10,6 +10,10 @@ import Chart from 'chart.js'
 export default {
   name: 'chart',
   props: {
+    id: {
+      type: String,
+      required: true
+    },
     code: {
       type: String,
       required: true

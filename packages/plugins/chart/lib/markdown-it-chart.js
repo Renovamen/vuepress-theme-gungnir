@@ -11,7 +11,7 @@ const chart = (md) => {
         const code = token.content.trim();
 
         md.$dataBlock[key] = code;
-        return `<Chart :code="$dataBlock.${key}"></Chart>`;
+        return `<Chart id="${key}" :code="$dataBlock.${key}"></Chart>`;
       }
       catch (err) {
         return `<pre>${err}</pre>`
