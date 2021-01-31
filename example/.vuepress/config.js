@@ -143,6 +143,7 @@ module.exports = {
       }
     ],
     '@renovamen/vuepress-plugin-katex',
+    '@renovamen/vuepress-plugin-chart'
   ],
   markdown: {
     // lineNumbers: true,
