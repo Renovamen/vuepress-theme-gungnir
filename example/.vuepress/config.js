@@ -143,6 +143,7 @@ module.exports = {
       }
     ],
     '@renovamen/vuepress-plugin-katex',
+    '@renovamen/vuepress-plugin-mermaid',
     'vuepress-plugin-chart'
   ],
   markdown: {

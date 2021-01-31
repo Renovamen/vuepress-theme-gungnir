@@ -1,0 +1,26 @@
+{
+  "name": "@renovamen/vuepress-plugin-mermaid",
+  "version": "0.1.0",
+  "description": "A plugin for adding Mermaid to VuePress.",
+  "author": "Renovamen <renovamenzxh@gmail.com>",
+  "main": "index.js",
+  "keywords": [
+    "vue",
+    "vuepress",
+    "vuepress-plugin",
+    "mermaid"
+  ],
+  "homepage": "https://github.com/Renovamen/vuepress-theme-gungnir/tree/main/packages/plugins/mermaid",
+  "bugs": {
+    "url": "https://github.com/Renovamen/vuepress-theme-gungnir/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Renovamen/vuepress-theme-gungnir.git",
+    "directory": "packages/plugins/mermaid"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "mermaid": "^8.9.0"
+  }
+}
