@@ -1,4 +1,4 @@
-# @renovamen/vuepress-plugin-chart
+# vuepress-plugin-chart
 
 A plugin for adding [Chart.js](https://www.chartjs.org) to VuePress.
 
@@ -9,9 +9,9 @@ A plugin for adding [Chart.js](https://www.chartjs.org) to VuePress.
 Install:
 
 ```bash
-yarn add @renovamen/vuepress-plugin-chart
+yarn add vuepress-plugin-chart
 # or
-npm install @renovamen/vuepress-plugin-chart
+npm install vuepress-plugin-chart
 ```
 
 Add this plugin to your `.vuepress/config.js`:
@@ -20,7 +20,7 @@ Add this plugin to your `.vuepress/config.js`:
 module.exports = {
   plugins: [
     [
-      '@renovamen/vuepress-plugin-chart'
+      'vuepress-plugin-chart'
     ]
   ]
 }

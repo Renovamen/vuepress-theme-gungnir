@@ -1,27 +1,28 @@
 {
-  "name": "@renovamen/vuepress-plugin-chart",
+  "name": "@renovamen/vuepress-plugin-rss",
   "version": "0.1.0",
-  "description": "A plugin for adding Chart.js to VuePress.",
+  "description": "A plugin for adding RSS to vuepress-theme-gungnir.",
   "author": "Renovamen <renovamenzxh@gmail.com>",
   "main": "index.js",
   "keywords": [
     "vue",
     "vuepress",
     "vuepress-plugin",
-    "chart",
-    "chartjs"
+    "rss"
   ],
-  "homepage": "https://github.com/Renovamen/vuepress-theme-gungnir/tree/main/packages/@renovamen/vuepress-plugin-chart",
+  "homepage": "https://github.com/Renovamen/vuepress-theme-gungnir/tree/main/packages/plugins/rss",
   "bugs": {
     "url": "https://github.com/Renovamen/vuepress-theme-gungnir/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Renovamen/vuepress-theme-gungnir.git",
-    "directory": "packages/@renovamen/vuepress-plugin-chart"
+    "directory": "packages/plugins/rss"
   },
   "license": "MIT",
   "dependencies": {
-    "chart.js": "^2.9.4"
+    "chalk": "^4.1.0",
+    "fs-extra": "^9.1.0",
+    "rss": "^1.2.2"
   }
 }
