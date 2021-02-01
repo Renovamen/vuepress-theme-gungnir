@@ -1,33 +1,36 @@
 .tags
-    margin 30px 0
-    span
-        vertical-align: middle;
-        display: inline-block;
-        margin: 0 8px 8px 0;
-        padding: 0 10px 0 12px;
-        border-radius: 999em;
-        cursor: pointer;
-        text-decoration: none;
-        background: #fff;
-        color: #fff;
-        font-size: 14px;
-        border: none;
-        line-height: 28px;
-        &:not(.page-tag)
-            transition(all .5s ease);
-        > sup
-            margin-top: -5px;
-            font-weight: 700;
-            display: inline-block;
-        &:hover:not(.tag-all):not(.page-tag),
-        &.active:not(.tag-all):not(.page-tag),
-        &.focus:not(.tag-all):not(.page-tag)
-            background-color: $accentColor !important;
-        &.active, &.focus
-            box-shadow: rgba(0,0,0,.117647) 0 1px 6px, rgba(0,0,0,.239216) 0 1px 4px;
-    .tag-all
-        font-weight: 700;
-        color: $accentColor !important;
-        background-color: #f3f5f5 !important;
-        &:hover, &:active, &.focus
-            background-color: #e4e4e4 !important;
+  margin 30px 0
+  span
+    vertical-align middle
+    display inline-block
+    margin 0 8px 8px 0
+    padding 0 10px 0 12px
+    border-radius 999em
+    cursor pointer
+    text-decoration none
+    background #fff
+    color #fff
+    font-size 14px
+    border none
+    line-height 28px
+    &:not(.page-tag)
+      transition(all .5s ease)
+    > sup
+      margin-top -5px
+      font-weight 700
+      display inline-block
+    &:hover:not(.tag-all):not(.page-tag),
+    &.active:not(.tag-all):not(.page-tag),
+    &.focus:not(.tag-all):not(.page-tag)
+      background-color $accentColor !important
+    &.active, &.focus
+      box-shadow rgba(0, 0, 0, .117647) 0 1px 6px,
+                rgba(0, 0, 0, .239216) 0 1px 4px
+  .tag-all
+    font-weight 700
+    color $accentColor !important
+    background-color #f3f5f5 !important
+    &:hover,
+    &:active,
+    &.focus
+      background-color #e4e4e4 !important
