@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-chart",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A plugin for adding Chart.js to VuePress.",
   "author": "Renovamen <renovamenzxh@gmail.com>",
   "main": "index.js",
