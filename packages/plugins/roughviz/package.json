@@ -1,0 +1,28 @@
+{
+  "name": "vuepress-plugin-roughviz",
+  "version": "0.1.0",
+  "description": "A plugin for adding roughViz.js to VuePress.",
+  "author": "Renovamen <renovamenzxh@gmail.com>",
+  "main": "index.js",
+  "keywords": [
+    "vue",
+    "vuepress",
+    "vuepress-plugin",
+    "rough-viz",
+    "roughviz",
+    "roughviz.js"
+  ],
+  "homepage": "https://github.com/Renovamen/vuepress-theme-gungnir/tree/main/packages/plugins/roughviz",
+  "bugs": {
+    "url": "https://github.com/Renovamen/vuepress-theme-gungnir/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Renovamen/vuepress-theme-gungnir.git",
+    "directory": "packages/plugins/roughviz"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "rough-viz": "^1.0.6"
+  }
+}

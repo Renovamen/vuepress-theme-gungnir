@@ -32,7 +32,8 @@ module.exports = {
 
 Then you can use [Chart.js](https://www.chartjs.org) in Markdown:
 
-<pre><code>```chart
+~~~json
+```chart
 {
   "type": "bar",
   "data": {
@@ -70,7 +71,7 @@ Then you can use [Chart.js](https://www.chartjs.org) in Markdown:
   }
 }
 ```
-</code></pre>
+~~~
 
 &nbsp;
 

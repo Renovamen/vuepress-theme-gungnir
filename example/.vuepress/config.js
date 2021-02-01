@@ -144,7 +144,8 @@ module.exports = {
     ],
     '@renovamen/vuepress-plugin-katex',
     '@renovamen/vuepress-plugin-mermaid',
-    'vuepress-plugin-chart'
+    'vuepress-plugin-chart',
+    'vuepress-plugin-roughviz'
   ],
   markdown: {
     // lineNumbers: true,

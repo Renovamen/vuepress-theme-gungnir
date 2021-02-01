@@ -119,6 +119,20 @@ sequenceDiagram
     end
 ```
 
+### roughViz.js
+
+```roughviz-donut
+{
+    "data": {
+        "labels": ["North", "South", "East", "West"],
+        "values": [10, 5, 8, 3]
+    },
+    "title": "Regions",
+    "colors": ["red", "orange", "blue", "skyblue"],
+    "roughness": 4
+}
+```
+
 
 ## Images
 

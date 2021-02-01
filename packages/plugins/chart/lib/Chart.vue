@@ -8,7 +8,7 @@
 import Chart from 'chart.js'
 
 export default {
-  name: 'chart',
+  name: 'Chart',
   props: {
     id: {
       type: String,

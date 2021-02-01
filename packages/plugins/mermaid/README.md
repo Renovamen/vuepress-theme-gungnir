@@ -32,14 +32,15 @@ module.exports = {
 
 Then you can use [Mermaid](https://mermaid-js.github.io) in Markdown:
 
-<pre><code>```mermaid
+~~~markdown
+```mermaid
 sequenceDiagram
   Alice->John: Hello John, how are you?
   loop Every minute
     John-->Alice: Great!
   end
 ```
-</code></pre>
+~~~
 
 &nbsp;
 
