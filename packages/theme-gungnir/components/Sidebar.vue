@@ -29,7 +29,21 @@ export default {
 </script>
 
 <style lang="stylus">
+@require '../styles/mixins.styl'
+
 .sidebar
+  font-size 16px
+  background-color var(--bg-color)
+  width $sidebarWidth
+  position fixed
+  z-index 20
+  margin 0
+  top $navbarHeight
+  left 0
+  bottom 0
+  box-sizing border-box
+  border-right 1px solid var(--border-color)
+  overflow-y auto
   .personal-info-wrapper
     display none
   ul
@@ -70,8 +84,17 @@ export default {
     li.sidebar-header > a.sidebar-link.active
       background-color var(--bg-color-secondary)
 
+@media (max-width: $MQNarrow)
+  .sidebar
+    font-size 15px
+    width $mobileSidebarWidth
+
 @media (max-width: $MQMobile)
   .sidebar
+    top 0
+    padding-top $navbarHeight
+    transform(translateX(-100%))
+    transition(transform .2s ease)
     .personal-info-wrapper
       display block
     .nav-links

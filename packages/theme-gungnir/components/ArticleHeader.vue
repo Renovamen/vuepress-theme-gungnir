@@ -144,7 +144,8 @@ export default {
       &.active, &:hover
         background-color rgba(0, 0, 0, 0.05) !important
 
-  @media (max-width: $MQMobile)
+@media (max-width: $MQMobile)
+  .header-content
     .tags
       margin-left 0 !important
       margin-bottom 0

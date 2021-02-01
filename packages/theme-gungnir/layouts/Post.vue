@@ -185,16 +185,11 @@ export default {
       @extend $wrapper
       margin-top 10rem
       margin-bottom -3rem
-      @media (max-width: $MQMobile)
-        padding 1rem
-        margin-top 13rem
-        margin-bottom -5rem
   
 @media (max-width: $MQLarge)
   .post-container 
     .page
       padding-right $catalogWidth
-    .page
       max-width 100%
     .post-header .header-content
       max-width 100%
@@ -233,6 +228,10 @@ export default {
         font-size 16px
       .pager
         padding 0 2rem
+      .vssue-comment-wrapper
+        padding 1rem
+        margin-top 13rem
+        margin-bottom -5rem
     .catalog-wrapper
       transition(transform .5s)
       transform(translateX(calc(100% + 2rem)))

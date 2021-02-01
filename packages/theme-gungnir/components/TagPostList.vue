@@ -46,13 +46,11 @@ export default {
 .tag-postlist-wrapper
   width 100%
   margin-bottom 100px
-
   .listing-seperator
     color var(--accent-color)
     font-size 21px !important
     &::before
       margin-right 5px
-
   section
     margin-bottom 30px
     .year
@@ -61,16 +59,30 @@ export default {
     .post-item
       position relative
       margin-left 20px
+      > a
+        color var(--text-color)
+        &:hover, &:focus
+          text-decoration none
+          color var(--accent-color)
       &__title
         font-size 18px
         font-weight 500
+        line-height 1.3
         margin-top 20px
+        margin-bottom 10px
       &__subtitle
         font-size 14px
-      @media (max-width: $MQMobile)
-        margin-left 0
-        &__title
-          font-size 16px
-        &__subtitle
-          font-size 13px
+        line-height 1.3
+        margin 0
+        font-weight 300
+        margin-bottom 10px
+
+@media (max-width: $MQMobile)
+  .tag-postlist-wrapper section
+    .post-item
+      margin-left 0
+      &__title
+        font-size 16px
+      &__subtitle
+        font-size 13px
 </style>

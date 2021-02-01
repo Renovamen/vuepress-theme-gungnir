@@ -5,8 +5,6 @@
 @require './arrow'
 @require './wrapper'
 @require './toc'
-@require './menu'
-@require './postlist'
 @require './tags'
 @require './comment'
 @require './md-plus'
@@ -24,83 +22,7 @@ body
   color var(--text-color)
   background-color var(--bg-color)
 
-.page, .password-wrapper-in
-  overflow-x hidden
-  margin-left $sidebarWidth
-
-.page
-  font-size 1rem
-
-.navbar
-  // position fixed
-  z-index 10
-  top 0
-  left 0
-  right 0
-  height $navbarHeight
-  box-sizing border-box
-  background-color transparent
-  position absolute
-
-  transition(background-color 0.3s)
-  transform(translate3d(0, 0, 0))
-
-  a
-    color #fff
-    gungnir-font()
-    font-weight bold
-    &:hover,
-    &:focus
-      color rgba(#fff, .8)
-
-  @media (min-width: $MQMobile)
-    &.is-fixed
-      /* when the user scrolls down, we hide the header right above the viewport */
-      position fixed
-      top (- $navbarHeight)
-      background-color var(--bg-color-transparent)
-      border-bottom 1px solid var(--border-color)
-      box-shadow var(--box-shadow)
-      transition(transform .3s)
-      a
-        color var(--text-color)
-        &:hover, &:focus
-          color var(--accent-color)
-    &.is-visible
-      transform(translateY(100%))
-  
-  &.invert
-    a
-      color var(--text-color)
-      &:hover, &:focus
-        color var(--accent-color)
-
-.sidebar-mask
-  position fixed
-  z-index 9
-  top 0
-  left 0
-  width 100vw
-  height 100vh
-  display none
-  background-color rgba(0,0,0,.65)
-
-.sidebar
-  font-size 16px
-  background-color var(--bg-color)
-  width $sidebarWidth
-  position fixed
-  z-index 20
-  margin 0
-  top $navbarHeight
-  left 0
-  bottom 0
-  box-sizing border-box
-  border-right 1px solid var(--border-color)
-  overflow-y auto
-
 a
-  // font-weight 500
   color var(--accent-color)
   text-decoration none
 
@@ -199,17 +121,10 @@ th, td
   padding .6em 1em
 
 .theme-container
-  &.sidebar-open
-    .sidebar-mask
-      display block
   &.no-navbar
     .content__default:not(.custom) > h1, h2, h3, h4, h5, h6
-        margin-top 1.5rem
-        padding-top 0
-    .sidebar
-      top 0
-  &.search-open .search-page
-    transform(translateY(0))
+      margin-top 1.5rem
+      padding-top 0
 
 .content__default:not(.custom)
   @extend $wrapper
@@ -258,21 +173,23 @@ th, td
   img
     max-width 100%
 
-@media (min-width: ($MQMobile + 1px))
-  .theme-container.no-sidebar
-    .sidebar
-      display none
-    .page, .password-wrapper-in
-      margin-left 0
+@media (max-width: $MQMobileNarrow)
+  h1
+    font-size 1.9rem
+  .content__default
+    div[class*="language-"]
+      // margin 0.85rem -1.5rem
+      border-radius 4px
+      box-shadow none
+      &.code-block-fullscreen
+        margin 0
 
-@require 'mobile.styl'
-
-/************* Katex overflow *************/
+/* ------- Katex overflow ------- */
 .katex-display
   ::-webkit-scrollbar
     display none
 
-/************** hide scrollbar **************/
+/* ------- hide scrollbar ------- */
 hide-scrollbar()
 
 // ::-webkit-scrollbar
@@ -289,22 +206,3 @@ hide-scrollbar()
 // ::-webkit-scrollbar-thumb:horizontal
 //   width 5px
 //   background-color $accentColor
-
-/************** 流程图的滚动条 **************/
-.vuepress-flowchart
-  overflow auto
-
-/************** SW-Update Popup **************/
-
-.sw-update-popup
-  border-radius $borderRadius!important
-  box-shadow var(--box-shadow)!important
-  color var(--text-color)!important
-  background var(--bg-color)!important
-  border none!important
-  > button
-    background $accentColor
-    border-radius $borderRadius
-    color #fff
-    -webkit-tap-highlight-color:rgba(0, 0, 0, 0)
-    border none

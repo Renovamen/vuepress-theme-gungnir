@@ -16,7 +16,6 @@ This is a test post with a header image.
 
 <!-- more -->
 
-
 ## Paragraphs
 
 ### English

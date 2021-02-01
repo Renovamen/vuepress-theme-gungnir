@@ -58,6 +58,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@require '../styles/mixins.styl'
+
 .catalog-wrapper
   width ($catalogWidth - 1rem)
   padding-left 0
@@ -89,4 +91,21 @@ export default {
       padding-left 2.2rem
     &.level-5
       padding-left 3rem
+
+@media (max-width: $MQMobile)
+  .catalog-wrapper
+    transition(transform .5s)
+    transform(translateX(calc(100% + 2rem)))
+    position fixed
+    top -15px !important
+    right -2px
+    padding-top 2rem
+    width $catalogWidth !important
+    height 100%
+    background-color var(--bg-color)
+    z-index 5
+    li
+      border-left none
+      &.active
+        border-left 2px solid var(--accent-color)
 </style>

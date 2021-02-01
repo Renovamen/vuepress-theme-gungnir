@@ -157,10 +157,25 @@ $navbar-horizontal-padding = 1.5rem
 .navbar
   padding $navbar-vertical-padding $navbar-horizontal-padding
   line-height $navbarHeight - 1.4rem
-  // box-shadow var(--box-shadow)
-  // background transparent
+  z-index 10
+  top 0
+  left 0
+  right 0
+  height $navbarHeight
+  box-sizing border-box
+  background-color transparent
+  position absolute
+  transition(background-color 0.3s)
+  transform(translate3d(0, 0, 0))
   a, span, img
     display inline-block
+  a
+    color #fff
+    gungnir-font()
+    font-weight bold
+    &:hover,
+    &:focus
+      color rgba(#fff, .8)
   .site-name
     font-size 1.1rem
     font-weight 600
@@ -187,6 +202,28 @@ $navbar-horizontal-padding = 1.5rem
         background-color transparent
         &:focus
           border 1px solid var(--accent-color)
+  &.invert
+    a
+      color var(--text-color)
+      &:hover, &:focus
+        color var(--accent-color)
+
+@media (min-width: $MQMobile)
+  .navbar
+    &.is-fixed
+      /* when the user scrolls down, we hide the header right above the viewport */
+      position fixed
+      top (- $navbarHeight)
+      background-color var(--bg-color-transparent)
+      border-bottom 1px solid var(--border-color)
+      box-shadow var(--box-shadow)
+      transition(transform .3s)
+      a
+        color var(--text-color)
+        &:hover, &:focus
+          color var(--accent-color)
+    &.is-visible
+      transform(translateY(100%))
 
 @media (max-width: $MQMobile)
   .navbar

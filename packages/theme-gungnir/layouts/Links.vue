@@ -124,11 +124,13 @@ export default {
           transform(translate(0px, -3px))
           box-shadow var(--box-shadow-hover)
 
-  @media (max-width $MQLarge)
+@media (max-width $MQLarge)
+  .links-wrapper
     .links-group
       width 75%
 
-  @media (max-width $MQIpad)
+@media (max-width $MQIpad)
+  .links-wrapper
     .links-group
       width 85%
       ul li
@@ -136,7 +138,8 @@ export default {
         &:before
           display none
 
-  @media (max-width $MQMobileNarrow)
+@media (max-width $MQMobileNarrow)
+  .links-wrapper
     .links-group
       width 100%
       ul li

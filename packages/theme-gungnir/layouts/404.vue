@@ -59,13 +59,13 @@ export default {
       :hover
         color var(--accent-color)
 
-  @media (max-width: $MQMobileNarrow)
+@media (max-width: $MQMobileNarrow)
+  .error-container
     .error-content
       h2
         font-size 25px
       .error-emoji
         font-size 45px
-
 </style>
 
 <style src="../styles/theme.styl" lang="stylus"></style>

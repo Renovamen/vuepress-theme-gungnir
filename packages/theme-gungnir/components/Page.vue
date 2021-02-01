@@ -138,6 +138,8 @@ export default {
   padding-top 5rem
   padding-bottom 2rem
   display block
+  overflow-x hidden
+  margin-left $sidebarWidth
   .doc-header
     color var(--text-color)
     padding-top 0
@@ -149,12 +151,23 @@ export default {
     @extend $wrapper
     padding 2rem 0
     margin-top 3rem
-    @media (max-width: $MQLarge)
+
+@media (max-width: $MQLarge)
+  .page
+    .vssue-comment-wrapper
       padding 2rem
-    @media (max-width: $MQMobileNarrow)
-      padding 1rem
+
+@media (max-width: $MQNarrow)
+  .page
+    margin-left $mobileSidebarWidth
 
 @media (max-width: $MQMobile)
   .page
     padding-top 3rem
+    margin-left 0
+    
+@media (max-width: $MQMobileNarrow)
+  .page
+    .vssue-comment-wrapper
+      padding 1rem
 </style>

@@ -56,15 +56,18 @@ export default {
     span
       font-weight normal
       color var(--text-color-sub)
-    @media (max-width: $MQMobile)
-      padding 15px 25px
-    @media (max-width: $MQMobileNarrow)
-      padding 12px 8px
-
     &:hover, &:focus
       color white
       background-color $accentColor
       border 1px solid $accentColor
       > span
         color white !important
+
+@media (max-width: $MQMobile)
+  .pager a
+    padding 15px 25px
+
+@media (max-width: $MQMobileNarrow)
+  .pager a
+    padding 12px 8px
 </style>
