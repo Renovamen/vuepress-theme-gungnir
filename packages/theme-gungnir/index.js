@@ -4,33 +4,12 @@ const path = require('path')
 module.exports = (options, ctx) => {
   const { themeConfig, siteConfig } = ctx
 
-  // resolve algolia
-  const isAlgoliaSearch = (
-    themeConfig.algolia
-    || Object
-      .keys(siteConfig.locales && themeConfig.locales || {})
-      .some(base => themeConfig.locales[base].algolia)
-  )
-
-  const enableSmoothScroll = themeConfig.smoothScroll === true
-
   return {
-    alias() {
-      return {
-        '@AlgoliaSearchBox': isAlgoliaSearch
-          ? path.resolve(__dirname, 'components/AlgoliaSearchBox.vue')
-          : path.resolve(__dirname, 'noopModule.js')
-      }
-    },
-
     plugins: [
       '@vuepress/search',
       '@vuepress/plugin-nprogress',
-      ['smooth-scroll', enableSmoothScroll],
-      [
-        '@vuepress/active-header-links', 
-        options.activeHeaderLinks
-      ],
+      ['smooth-scroll', options.smoothScroll === true],
+      ['@vuepress/active-header-links', options.activeHeaderLinks],
       [
         '@vuepress/plugin-blog', {
           permalink: '/:regular',

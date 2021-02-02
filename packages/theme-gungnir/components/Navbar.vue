@@ -26,9 +26,6 @@
         'max-width': linksWrapMaxWidth + 'px'
       } : {}">
 
-      <!-- <AlgoliaSearchBox
-        v-if="isAlgoliaSearch"
-        :options="algolia"/> -->
       <NavLinks
         class="can-hide"
         @toggle-search="$emit('toggle-search')"
@@ -38,13 +35,11 @@
 </template>
 
 <script>
-import AlgoliaSearchBox from '@AlgoliaSearchBox'
 import NavLinks from '@theme/components/NavLinks'
 
 export default {
   components: {
-    NavLinks,
-    AlgoliaSearchBox
+    NavLinks
   },
   props: ['isSidebar'],
   data () {
@@ -86,16 +81,6 @@ export default {
 
   beforeDestroy () {
     window.removeEventListener('scroll', this.handleScroll)
-  },
-
-  computed: {
-    algolia () {
-      return this.$themeLocaleConfig.algolia || this.$themeConfig.algolia || {}
-    },
-
-    isAlgoliaSearch () {
-      return this.algolia && this.algolia.apiKey && this.algolia.indexName
-    }
   },
 
   methods: {

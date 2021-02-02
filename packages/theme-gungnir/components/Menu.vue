@@ -306,7 +306,7 @@ $longer-time = ($time*2)
 		.v-icon
 			transform(rotate(-90deg))
 
-	.v-icon
+	& >>> .v-icon
 		opacity 0
 		visibility hidden
 </style>

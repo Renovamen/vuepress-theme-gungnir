@@ -106,6 +106,7 @@ export default {
     z-index 5
     li
       border-left none
+      color var(--text-color)
       &.active
         border-left 2px solid var(--accent-color)
 </style>
