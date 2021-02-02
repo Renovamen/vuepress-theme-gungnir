@@ -1,54 +1,64 @@
 ---
-title: 介绍
+title: Introduction
 date: 2020-10-18
 ---
 
-Gungnir 是一个正在开发中~~并且随时都有可能因为被导师发现我没有好好搬砖而是在折腾博客而停止开发~~的基于 [VuePress](https://vuepress.vuejs.org/) 的博客主题。
+Gungnir is a blog theme for [VuePress](https://vuepress.vuejs.org/).
+
+<p>
+  <a href="https://www.npmjs.com/package/vuepress-theme-gungnir" target="_blank">
+    <img src="https://img.shields.io/npm/v/vuepress-theme-gungnir.svg?style=flat-square&logo=npm" style="display: inline; margin: 0" alt="npm">
+  </a>
+  <a href="https://github.com/Renovamen/vuepress-theme-gungnir" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-Gungnir-26A2FF?style=flat-square&logo=github" style="display: inline; margin: 0" alt="github">
+  </a>
+  <a href="https://github.com/Renovamen/renovamen.github.io/blob/master/LICENSE" target="_blank">
+    <img src="https://img.shields.io/badge/License-Apache--2.0-green?style=flat-square" style="display: inline; margin: 0" alt="license">
+  </a>
+</p>
 
 ![theme-gungnir](/img/docs/gungnir.jpg)
 
-## 资源
+## Live Demos
 
-- [Github](https://github.com/Renovamen/vuepress-theme-gungnir)
-- [主页 / 演示站点](https://vuepress-theme-gungnir.vercel.app)
-- [文档](https://vuepress-theme-gungnir.vercel.app/docs/)
-- [npm](https://www.npmjs.com/package/vuepress-theme-gungnir)
-- [基于本主题的我的博客](https://renovamen.ink)
+- [vuepress-theme-gungnir.vercel.app](https://vuepress-theme-gungnir.vercel.app)
+- [My blog](https://renovamen.ink)
 
 
-## 灵感来源
+## Inspirations
 
-Gungnir 最初是一个基于 [Jekyll](https://jekyllrb.com/) 的主题，在 [Huxpro/huxpro.github.io](https://github.com/Huxpro/huxpro.github.io) 的基础上瞎改而成，同时~~照搬~~借鉴了很多其他主题的代码或设计，包括但不限于 [mashirozx/Sakura](https://github.com/mashirozx/Sakura/)、[kitian616/jekyll-TeXt-theme](https://github.com/kitian616/jekyll-TeXt-theme)、[Fechin/hexo-theme-diaspora](https://github.com/Fechin/hexo-theme-diaspora)、[liuzc/LeaveIt](https://github.com/liuzc/LeaveIt) 等（这么看来似乎也没多少东西是我自己写的了，逃
+Gungnir was originally a [Jekyll](https://jekyllrb.com/) theme dirived from [Huxpro/huxpro.github.io](https://github.com/Huxpro/huxpro.github.io). Some of the designs and code are borrowed from other themes, including but not limited to [mashirozx/Sakura](https://github.com/mashirozx/Sakura/), [kitian616/jekyll-TeXt-theme](https://github.com/kitian616/jekyll-TeXt-theme), [Fechin/hexo-theme-diaspora](https://github.com/Fechin/hexo-theme-diaspora), [liuzc/LeaveIt](https://github.com/liuzc/LeaveIt), et al.
 
-总之感谢上面提到或没有提到的所有给过我灵感与帮助的项目。
+Anyway, many thanks for all of these nice work.
 
-后来出于一些说来话长的理由，我决定把它用 VuePress 重写一遍。
+And one one day, I decided to rebuild it with [VuePress](https://vuepress.vuejs.org/)...
 
-**Gungnir**，冈格尼尔，北欧神话中主神奥丁使用的用世界树树枝做成的武器，和本主题并没有什么关系但我就是用了这个名字。
+Gungnir is the spear of the god Odin in Norse mythology, made from the wood of the world tree Yggdrasil. It has nothing to do with this theme, but I still use this name.
 
 
-## 特性
+## Features
 
-实际上下面有几点在 Jekyll 主题中大概还勉强能算是特性，但在 VuePress 主题中就完全不算了，不过我还是写在这了：
-
-- 响应式
-- 多级目录
-- 可切换的首页大图
-- 明亮和夜间模式：识别系统的外观设置并自动切换模式，也支持用户手动切换
-- 搜索
-- 文章目录
-- 代码高亮渲染，支持代码块全屏（从 WordPress 主题 [Sakura](https://github.com/mashirozx/Sakura) 搬过来的功能）
-- 基于 [Katex](https://github.com/KaTeX/KaTeX) 的公式支持
-- 在文章中使用图表：[Chart.js](https://www.chartjs.org)、[Mermaid](https://mermaid-js.github.io) 和 [roughViz.js](https://github.com/jwilber/roughViz)
-- 文章中的一些附加样式，目前支持：
-  - 脚注（基于 [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)）
-  - 高亮（基于 [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark)）
-- 站点统计（[Google Analytics](https://analytics.google.com/) 和 [百度统计](https://tongji.baidu.com/)）
-- 评论（基于 [Vssue](https://github.com/meteorlxy/vssue)）
+- Simple and beautiful
+- Responsive design
+- Multi-level navigation
+- Switchable cover images for home page
+- Dark and light mode: system theme detection with a theme-switcher to set the theme as per the user preference
+- Search
+- Table of contents
+- Syntax highlighting, support full screening the code blocks (inspired by WordPress theme [Sakura](https://github.com/mashirozx/Sakura))
+- Tex support ([Katex](https://github.com/KaTeX/KaTeX))
+- Draw charts in Markdown easily: [Chart.js](https://www.chartjs.org), [Mermaid](https://mermaid-js.github.io) and [roughViz.js](https://github.com/jwilber/roughViz)
+- Markdown enhancements:
+  - Footnote ([markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote))
+  - Mark ([markdown-it-mark](https://github.com/markdown-it/markdown-it-mark))
+- Analytics ([Google Analytics](https://analytics.google.com/) and [Baidu Tongji](https://tongji.baidu.com/))
+- Comment ([Vssue](https://github.com/meteorlxy/vssue))
 - RSS
-- 带标签的归档页、链接页
+- Reading time
+- Multi-language support (English, Simplified Chinese)
+- Archive page with tags, links page
 
 
-## 其他版本
+## Other Resources
 
-如上所述，Gungnir 最初是一个基于 [Jekyll](https://jekyllrb.com/) 的主题：🖥️ [[主页 / 演示站点]](https://jekyll-theme-gungnir.vercel.app) 📖 [[文档]](https://jekyll-theme-gungnir.vercel.app/theme/) 🧐 [[Github]](https://github.com/Renovamen/jekyll-theme-gungnir)
+As mentioned above, Gungnir was originally a [Jekyll](https://jekyllrb.com/) theme: 🖥️ [[Home Page / Demo Site]](https://jekyll-theme-gungnir.vercel.app) 📖 [[Docs]](https://jekyll-theme-gungnir.vercel.app/theme/) 🧐 [[Github]](https://github.com/Renovamen/jekyll-theme-gungnir)

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PageHeader :pageInfo="$themeConfig.pages.links" />
+    <PageHeader :pageInfo="getPageInfo" />
     <Common class="links-wrapper">
       <div class="links-group">
         <div
@@ -46,6 +46,14 @@ export default {
   components: {
     Common,
     PageHeader
+  },
+  computed: {
+    getPageInfo() {
+      let info = this.$themeConfig.pages && this.$themeConfig.pages.links
+                  ? this.$themeConfig.pages.links : {}
+      info.title = this.$themeLocales.links
+      return info
+    }
   }
 }
 </script>

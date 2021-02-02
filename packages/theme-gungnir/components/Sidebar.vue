@@ -97,8 +97,10 @@ export default {
     transition(transform .2s ease)
     .personal-info-wrapper
       display block
+      gungnir-font()
     .nav-links
       display block
+      gungnir-font()
       .dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active::after
         top calc(1rem - 2px)
     .nav-buttons

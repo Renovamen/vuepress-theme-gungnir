@@ -130,6 +130,7 @@ export default {
       this.isSearchOpen = false
       // this.isCatalogOpen = false
     })
+    console.log(this.$themeConfig)
   },
 
   methods: {
@@ -194,7 +195,6 @@ export default {
     display none
     background-color rgba(0,0,0,.65)
   .sidebar
-    gungnir-font()
     .mobile-hero-avatar
       margin 0 auto
       width 90px

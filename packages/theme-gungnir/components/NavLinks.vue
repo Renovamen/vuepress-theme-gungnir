@@ -57,6 +57,9 @@ export default {
       const { $site: { locales }, userNav } = this
       if (locales && Object.keys(locales).length > 1) {
         const currentLink = this.$page.path
+
+        if(!this.isLanguageSwitcher) return userNav
+
         const routes = this.$router.options.routes
         const themeLocales = this.$themeConfig.locales || {}
         const languageDropdown = {
@@ -68,7 +71,7 @@ export default {
             // Stay on the current page
             if (locale.lang === this.$lang) {
               link = currentLink
-            } 
+            }
             else {
               // Try to stay on the same page
               link = currentLink.replace(this.$localeConfig.path, path)
@@ -78,7 +81,8 @@ export default {
               }
             }
             return { text, link }
-          })
+          }),
+          icon: 'ri-earth-fill'
         }
         return [...userNav, languageDropdown]
       }
@@ -92,6 +96,11 @@ export default {
           items: (link.items || []).map(resolveNavLinkItem)
         })
       })
+    },
+
+    isLanguageSwitcher() {
+      // show language switcher only on docs page
+      return this.$page.frontmatter.layout === undefined
     }
   }
 }

@@ -91,12 +91,12 @@ export default {
       const postId = this.getPostIndex
       return {
         next: postId > 0 ? {
-          text: 'Previous',
+          text: this.$themeLocales.postNext,
           subtext: allPosts[postId - 1].title,
           link: allPosts[postId - 1].path
         } : null,
         prev: postId < (allPosts.length - 1) ? {
-          text: 'Previous',
+          text: this.$themeLocales.postPrev,
           subtext: allPosts[postId + 1].title,
           link: allPosts[postId + 1].path
         } : null

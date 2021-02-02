@@ -9,20 +9,27 @@ module.exports = (options, ctx) => {
     search: true,
     searchMaxSuggestions: 10,
     searchPlaceholder: '$ grep ...',
+    editLinks: true,
+    lastUpdated: true,
     smoothScroll: true,
     sidebarDepth: 5,
-    codeTheme: 'gungnir-dark',
+    codeTheme: 'default',
     hitokoto: false,
     comment: false,
     analytics: false,
     rss: false,
+    katex: false,
+    mermaid: false,
+    chartjs: false,
+    roughviz: false,
+    mdPlus: false,
     personalInfo: {},
     homeHeaderImages: {},
     pages: {},
     footer: ''
   }, options))
 
-  const { comment, analytics, rss } = options
+  const { comment, analytics } = options
 
   return {
     name: 'vuepress-theme-gungnir',
@@ -124,7 +131,12 @@ module.exports = (options, ctx) => {
           ? { 'ba': analytics.ba }
           : false
       ],
-      ['@renovamen/vuepress-plugin-rss', rss ? rss : false],
+      ['@renovamen/vuepress-plugin-rss', options.rss ? options.rss : false],
+      ['@renovamen/vuepress-plugin-md-plus', options.mdPlus ? options.mdPlus : false],
+      ['@renovamen/vuepress-plugin-katex', options.katex],
+      ['@renovamen/vuepress-plugin-mermaid', options.mermaid],
+      ['vuepress-plugin-chart', options.chartjs],
+      ['vuepress-plugin-roughviz', options.roughviz]
     ],
 
     chainMarkdown(config) {

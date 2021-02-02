@@ -6,21 +6,57 @@ import { registerCodeThemeCss, registerLinks } from '@theme/utils/other'
 import VueIcon from 'oh-vue-icons/components/Icon'
 
 import {
-  FaRegularUser, FaRegularCalendar, RiTimerLine,
-  FaSun, FaMoon, FaMagic,
-  FaChevronLeft, FaChevronRight, FaChevronUp, FaChevronDown,
-  FaListUl, RiSideBarLine,
-  FaSearch, FaPencilAlt,
-  FaCircle, FaRss, FaGithubAlt, FaLinkedinIn, FaFacebookF, FaTwitter, RiZhihuLine, FaWeibo, FaEnvelope
+  FaRegularUser,
+  FaRegularCalendar,
+  RiTimerLine,
+  FaSun,
+  FaMoon,
+  FaMagic,
+  FaChevronLeft,
+  FaChevronRight,
+  FaChevronUp,
+  FaChevronDown,
+  FaListUl,
+  RiSideBarLine,
+  FaSearch,
+  FaPencilAlt,
+  FaCircle,
+  FaRss,
+  FaGithubAlt,
+  FaLinkedinIn,
+  FaFacebookF,
+  FaTwitter,
+  RiZhihuLine,
+  FaWeibo,
+  FaEnvelope,
+  RiEarthFill
 } from 'oh-vue-icons/icons'
 
 VueIcon.add([
-  FaRegularUser, FaRegularCalendar, RiTimerLine,
-  FaSun, FaMoon, FaMagic,
-  FaChevronLeft, FaChevronRight, FaChevronUp, FaChevronDown,
-  FaListUl, RiSideBarLine,
-  FaSearch, FaPencilAlt,
-  FaCircle, FaRss, FaGithubAlt, FaLinkedinIn, FaFacebookF, FaTwitter, RiZhihuLine, FaWeibo, FaEnvelope
+  FaRegularUser,
+  FaRegularCalendar,
+  RiTimerLine,
+  FaSun,
+  FaMoon,
+  FaMagic,
+  FaChevronLeft,
+  FaChevronRight,
+  FaChevronUp,
+  FaChevronDown,
+  FaListUl,
+  RiSideBarLine,
+  FaSearch,
+  FaPencilAlt,
+  FaCircle,
+  FaRss,
+  FaGithubAlt,
+  FaLinkedinIn,
+  FaFacebookF,
+  FaTwitter,
+  RiZhihuLine,
+  FaWeibo,
+  FaEnvelope,
+  RiEarthFill
 ])
 
 export default ({

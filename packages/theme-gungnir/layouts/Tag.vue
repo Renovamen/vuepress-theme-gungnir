@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PageHeader :pageInfo="$themeConfig.pages.tags" />
+    <PageHeader :pageInfo="getPageInfo" />
     <Common
       class="tag-wrapper"
       :sidebar="false"
@@ -41,17 +41,23 @@ export default {
   },
 
   computed: {
-    posts () {
+    posts() {
       let posts = getPostsByYear(this.$currentTags.pages)
       return posts
+    },
+    getPageInfo() {
+      let info = this.$themeConfig.pages && this.$themeConfig.pages.tags
+                  ? this.$themeConfig.pages.tags : {}
+      info.title = this.$themeLocales.tags
+      return info
     }
   },
 
   methods: {
-    getCurrentTag (tag) {
+    getCurrentTag(tag) {
       this.$emit('currentTag', tag)
     },
-    tagClick (tagInfo) {
+    tagClick(tagInfo) {
       if (this.$route.path !== tagInfo.path) {
         this.$router.push({ path: tagInfo.path })
       }

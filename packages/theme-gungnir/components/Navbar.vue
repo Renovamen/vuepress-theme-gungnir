@@ -105,13 +105,11 @@ export default {
     handleInvert () {
       if(
         // home page
-        this.$page.path == '/'
-        // pagination on home page
-        || this.$page.path.indexOf('/page/') != -1
+        this.$page.frontmatter.layout === 'HomePage'
         // posts with header image
         || (this.$page.id == 'posts' && this.$page.frontmatter.header_style == 'image')
         // tags page with header image
-        || (['Tags', 'Tag'].indexOf(this.$page.frontmatter.layout) != -1
+        || (['Tags', 'Tag'].includes(this.$page.frontmatter.layout)
             && this.$themeConfig.pages.tags
             && this.$themeConfig.pages.tags.bgImage)
         // links page with header image

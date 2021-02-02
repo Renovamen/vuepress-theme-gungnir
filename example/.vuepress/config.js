@@ -6,13 +6,21 @@ module.exports = {
     ["meta", { name: "viewport", content: "width=device-width,initial-scale=1,user-scalable=no"}]
   ],
   theme: 'gungnir',
+  locales: {
+    '/': {
+      lang: 'en-US'
+    },
+    '/zh/': {
+      lang: 'zh-CN'
+    }
+  },
   themeConfig: {
     repo: 'Renovamen/vuepress-theme-gungnir',
     docsDir: 'example',
     editLinks: true,
-    editLinkText: 'Edit this page on GitHub',
-    lastUpdated: "Last Updated",
-    hitokoto: true,  // Enable hitokoto (一言) or not?
+    lastUpdated: true,
+    hitokoto: true,  // enable hitokoto (一言) or not?
+    codeTheme: 'gungnir-dark',
     rss: {
       site_url: 'https://vuepress-theme-gungnir.vercel.app',
       copyright: 'Renovamen 2018-2021',
@@ -28,39 +36,26 @@ module.exports = {
       ga: 'UA-146858305-4',
       ba: '0958eaa31f4f4656f36bd33673332939'
     },
-    nav: [
-      {
-        text: 'Home',
-        link: '/',
-        icon: 'fa-fort-awesome'
+    katex: true,
+    mermaid: true,
+    chartjs: true,
+    roughviz: true,
+    mdPlus: {
+      all: true
+    },
+    locales: {
+      '/': {
+        label: 'English',
+        selectText: 'Languages',
+        nav: require('./nav/en'),
+        sidebar: require('./sidebar/en')
       },
-      {
-        text: 'Tags',
-        link: '/tags/',
-        icon: 'fa-tag'
-      },
-      {
-        text: 'Links',
-        link: '/links/',
-        icon: 'fa-satellite-dish'
-      },
-      {
-        text: 'Docs',
-        link: '/docs/',
-        icon: 'fa-book'
+      '/zh/': {
+        label: '简体中文',
+        selectText: '选择语言',
+        nav: require('./nav/zh'),
+        sidebar: require('./sidebar/zh')
       }
-    ],
-    sidebar: {
-      "/docs/": [
-        {
-          title: '基础',
-          collapsable: false,
-          children: [
-            '',
-            'basic/installation',
-          ],
-        }
-      ]
     },
     personalInfo: {
       name: "Gungnir",
@@ -118,17 +113,6 @@ module.exports = {
       <a href="https://github.com/Renovamen/vuepress-theme-gungnir" target="_blank">Gungnir</a>
     `
   },
-  plugins: [
-    [
-      '@renovamen/vuepress-plugin-md-plus', {
-        all: true
-      }
-    ],
-    '@renovamen/vuepress-plugin-katex',
-    '@renovamen/vuepress-plugin-mermaid',
-    'vuepress-plugin-chart',
-    'vuepress-plugin-roughviz'
-  ],
   markdown: {
     // lineNumbers: true,
     extractHeaders: [ 'h2', 'h3', 'h4', 'h5' ]

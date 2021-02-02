@@ -1,7 +1,4 @@
-import zhHans from './zh-hans.js'
-import zhHant from './zh-hant.js'
-import en from './en.js'
-import ja from './ja.js'
-import ko from './ko.js'
+import enUS from './en-US.js'
+import zhCN from './zh-CN.js'
 
-export { zhHans, zhHant, en, ja, ko }
+export { enUS, zhCN }

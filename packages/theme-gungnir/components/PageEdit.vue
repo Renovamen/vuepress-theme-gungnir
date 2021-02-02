@@ -37,13 +37,7 @@ export default {
     },
 
     lastUpdatedText () {
-      if (typeof this.$themeLocaleConfig.lastUpdated === 'string') {
-        return this.$themeLocaleConfig.lastUpdated
-      }
-      if (typeof this.$site.themeConfig.lastUpdated === 'string') {
-        return this.$site.themeConfig.lastUpdated
-      }
-      return 'Last Updated'
+      return this.$themeLocales.lastUpdated
     },
 
     editLink () {
@@ -71,11 +65,7 @@ export default {
     },
 
     editLinkText () {
-      return (
-        this.$themeLocaleConfig.editLinkText
-        || this.$site.themeConfig.editLinkText
-        || `Edit this page`
-      )
+      return this.$themeLocales.editLinkText
     }
   },
 

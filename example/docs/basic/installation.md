@@ -1,16 +1,16 @@
 ---
-title: 安装
+title: Installation
 date: 2020-10-18
 ---
 
-创建一个项目 `blog`（或者叫别的什么名字）：
+Create a new project `blog` (or any other name you want):
 
 ```bash
 mkdir blog && cd blog
 yarn init  # or: npm init
 ```
 
-安装 VuePress 和主题 Gungnir：
+Install VuePress and theme Gungnir:
 
 ```bash
 yarn add -D vuepress vuepress-theme-gungnir
@@ -18,7 +18,7 @@ yarn add -D vuepress vuepress-theme-gungnir
 npm install -D vuepress vuepress-theme-gungnir
 ```
 
-参考 [VuePress 文档](https://vuepress.vuejs.org/guide/) 搭建目录结构，然后在 `.vuepress/config.js` 中指定主题：
+Build your directory structure follow the guide of [VuePress's official documentation](https://vuepress.vuejs.org/guide/) and specify this theme in `.vuepress/config.js`:
 
 ```js{3}
 module.exports = {

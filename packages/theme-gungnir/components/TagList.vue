@@ -30,7 +30,7 @@ export default {
   computed: {
     tags () {
       var tagList = tagCloud(this.$tags.list)
-      return [{ name: this.$themeLocales.tag.all, path: '/tags/' }, ...tagList]
+      return [{ name: this.$themeLocales.tagAll, path: '/tags/' }, ...tagList]
     }
   },
   methods: {
