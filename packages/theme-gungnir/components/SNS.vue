@@ -1,7 +1,7 @@
 <template>
   <div class="sns-wrapper">
     <a
-      v-for="(user, platform) in $themeConfig.SNS"
+      v-for="(user, platform) in $themeConfig.personalInfo.sns"
       :key="`${platform}-${user}`"
       :href="snsLink(user, platform)"
       target="_blank"

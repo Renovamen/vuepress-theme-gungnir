@@ -143,7 +143,7 @@ export default {
   },
 
   mounted () {
-    this.placeholder = this.$site.themeConfig.searchPlaceholder || '$ grep ...'
+    this.placeholder = this.$site.themeConfig.searchPlaceholder || ''
     document.addEventListener('keydown', this.onHotkey)
   },
 

@@ -112,12 +112,12 @@ export default {
         || (this.$page.id == 'posts' && this.$page.frontmatter.header_style == 'image')
         // tags page with header image
         || (['Tags', 'Tag'].indexOf(this.$page.frontmatter.layout) != -1
-            && this.$themeConfig.pageConfig.tags
-            && this.$themeConfig.pageConfig.tags.bgImage)
+            && this.$themeConfig.pages.tags
+            && this.$themeConfig.pages.tags.bgImage)
         // links page with header image
         || (this.$page.frontmatter.layout == 'Links'
-            && this.$themeConfig.pageConfig.links
-            && this.$themeConfig.pageConfig.links.bgImage)
+            && this.$themeConfig.pages.links
+            && this.$themeConfig.pages.links.bgImage)
       ) this.isInvert = false
       else this.isInvert = true
     }

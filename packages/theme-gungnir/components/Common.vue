@@ -24,11 +24,11 @@
         <div class="personal-info-wrapper">
           <div class="mobile-hero-avatar">
             <img
-              :src="$withBase($themeConfig.authorAvatar)" 
+              :src="$withBase($themeConfig.personalInfo.avatar)" 
               alt="hero"
             />
           </div>
-          <p class="mobile-heading">{{ $themeConfig.author }}</p>
+          <p class="mobile-heading">{{ $themeConfig.personalInfo.name }}</p>
           <SNS />
           <hr>
         </div>
@@ -39,7 +39,7 @@
     <slot></slot>
 
     <SearchPage
-      v-if="$themeConfig.search !== false && $frontmatter.search !== false"
+      v-if="$themeConfig.search && $frontmatter.search !== false"
       @toggle-search="toggleSearch(false)"
     />
     <Menu

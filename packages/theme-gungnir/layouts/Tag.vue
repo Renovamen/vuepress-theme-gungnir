@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PageHeader :pageInfo="$themeConfig.pageConfig.tags" />
+    <PageHeader :pageInfo="$themeConfig.pages.tags" />
     <Common
       class="tag-wrapper"
       :sidebar="false"

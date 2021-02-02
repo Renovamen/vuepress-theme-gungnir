@@ -4,7 +4,28 @@ const path = require('path')
 module.exports = (options, ctx) => {
   const { themeConfig, siteConfig } = ctx
 
+  // default theme config
+  Object.assign(options, Object.assign({
+    search: true,
+    searchMaxSuggestions: 10,
+    searchPlaceholder: '$ grep ...',
+    smoothScroll: true,
+    sidebarDepth: 5,
+    codeTheme: 'gungnir-dark',
+    hitokoto: false,
+    comment: false,
+    analytics: false,
+    rss: false,
+    personalInfo: {},
+    homeHeaderImages: {},
+    pages: {},
+    footer: ''
+  }, options))
+
+  const { comment, analytics, rss } = options
+
   return {
+    name: 'vuepress-theme-gungnir',
     plugins: [
       '@vuepress/search',
       '@vuepress/plugin-nprogress',
@@ -81,10 +102,29 @@ module.exports = (options, ctx) => {
         }
       ],
       [
+        '@vssue/vuepress-plugin-vssue', 
+        comment ? Object.assign({
+          platform: 'github',
+        }, comment) : false
+      ],
+      [
         '@renovamen/vuepress-plugin-reading-time', {
           excludes: ['/about', '/tags/.*', '/links']
         }
-      ]
+      ],
+      [
+        '@vuepress/google-analytics',
+        analytics && analytics.ga
+          ? { 'ga': analytics.ga }
+          : false
+      ],
+      [
+        '@renovamen/vuepress-plugin-baidu-tongji',
+        analytics && analytics.ba
+          ? { 'ba': analytics.ba }
+          : false
+      ],
+      ['@renovamen/vuepress-plugin-rss', rss ? rss : false],
     ],
 
     chainMarkdown(config) {

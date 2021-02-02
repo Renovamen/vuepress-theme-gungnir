@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PageHeader :pageInfo="$themeConfig.pageConfig.links" />
+    <PageHeader :pageInfo="$themeConfig.pages.links" />
     <Common class="links-wrapper">
       <div class="links-group">
         <div

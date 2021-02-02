@@ -6,8 +6,8 @@
     >
       <div
         class="header-mask"
-        v-if="$themeConfig.bgImage[this.bgImageID].mask"
-        :style="{background: $themeConfig.bgImage[this.bgImageID].mask}"
+        v-if="$themeConfig.homeHeaderImages[this.bgImageID].mask"
+        :style="{background: $themeConfig.homeHeaderImages[this.bgImageID].mask}"
       />
       <div
         class="header-content"
@@ -15,7 +15,7 @@
       >
         <div class="hero-avatar hide-on-mobile">
           <img
-            :src="$withBase($themeConfig.authorAvatar)" 
+            :src="$withBase($themeConfig.personalInfo.avatar)" 
             alt="hero"
           />
         </div>
@@ -32,8 +32,8 @@
 
         <div class="hero-info">
           <div class="hero-info__text">
-            <h1>{{ $themeConfig.author || $title }}</h1>
-            <p class="description">{{ $themeConfig.tagline || $description }}</p>
+            <h1>{{ $themeConfig.personalInfo.name || $title }}</h1>
+            <p class="description">{{ $themeConfig.personalInfo.description || $description }}</p>
           </div>
         </div>
 
@@ -91,8 +91,8 @@ export default {
   },
   computed: {
     bgImagePath () {
-      if(this.$themeConfig.bgImage) {
-        var bgPath = `url(${this.$withBase(this.$themeConfig.bgImage[this.bgImageID].path)})`
+      if(this.$themeConfig.homeHeaderImages) {
+        var bgPath = `url(${this.$withBase(this.$themeConfig.homeHeaderImages[this.bgImageID].path)})`
         return bgPath
       }
       else {
@@ -105,7 +105,7 @@ export default {
     }
   },
   mounted() {
-    this.bgImageID = Math.floor(Math.random() * this.$themeConfig.bgImage.length)
+    this.bgImageID = Math.floor(Math.random() * this.$themeConfig.homeHeaderImages.length)
     window.addEventListener('scroll', throttle(this.handleScroll, 50))
 
     fetch('https://v1.hitokoto.cn')
@@ -124,7 +124,7 @@ export default {
   methods: {
     // switch to the next header image
     switchImage(n) {
-      let len = this.$themeConfig.bgImage.length
+      let len = this.$themeConfig.homeHeaderImages.length
       this.bgImageID = (this.bgImageID + n + len) % len
     },
     scrollToPost() {

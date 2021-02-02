@@ -18,7 +18,7 @@
 
     <!-- search button -->
     <div
-      v-if="$themeConfig.search !== false && $frontmatter.search !== false"
+      v-if="$themeConfig.search && $frontmatter.search !== false"
       class="nav-item"
     >
       <a

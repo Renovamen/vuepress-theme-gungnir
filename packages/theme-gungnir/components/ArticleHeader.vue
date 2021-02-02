@@ -29,10 +29,10 @@
       <div class="icons">
         <div
           class="icon"
-          v-if="articleInfo.frontmatter.author || $themeConfig.author || $site.title"
+          v-if="articleInfo.frontmatter.author || $themeConfig.personalInfo.name || $site.title"
         >
           <v-icon name="fa-regular-user" />
-          <span>{{ articleInfo.frontmatter.author || $themeConfig.author || $site.title }}</span>
+          <span>{{ articleInfo.frontmatter.author || $themeConfig.personalInfo.name || $site.title }}</span>
         </div>
 
         <div
