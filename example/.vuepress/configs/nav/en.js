@@ -29,7 +29,7 @@ module.exports = [
         icon: 'oi-repo'
       },
       {
-        text: 'Chore Changelog',
+        text: 'Changelog',
         link: 'https://github.com/Renovamen/vuepress-theme-gungnir/blob/main/CHANGELOG.md',
         icon: 'oi-git-compare'
       }
