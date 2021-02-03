@@ -26,7 +26,7 @@
         class="suggestions"
         :class="{ 'align-right': alignRight }"
         @mouseleave="unfocus"
-        >
+      >
         <li
           v-for="(s, i) in suggestions"
           :key="i"

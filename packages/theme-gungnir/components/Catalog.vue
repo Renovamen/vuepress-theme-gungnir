@@ -5,12 +5,6 @@ export default {
       activeLink: ''
     }
   },
-  mounted () {
-    window.addEventListener('scroll', this.handleScroll)
-  },
-  beforeDestroy () {
-    window.removeEventListener('scroll', this.handleScroll)
-  },
   computed: {
     headers () {
       return this.$showCatalog ? this.$page.headers : []
@@ -18,6 +12,12 @@ export default {
     widthStyle () {
       return this.headers.length > 0 ? {} : { width: '0' }
     }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
     handleScroll () {

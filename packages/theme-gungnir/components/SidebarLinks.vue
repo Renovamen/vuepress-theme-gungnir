@@ -35,12 +35,26 @@ export default {
 
   components: { SidebarGroup, SidebarLink },
 
-  props: [
-    'items',
-    'depth',  // depth of current sidebar links
-    'sidebarDepth', // depth of headers to be extracted
-    'initialOpenGroupIndex'
-  ],
+  props: {
+    items: {
+      type: Array,
+      default: () => []
+    },
+    // depth of current sidebar links
+    depth: {
+      type: Number,
+      required: true
+    },
+    // depth of headers to be extracted
+    sidebarDepth: {
+      type: Number,
+      default: undefined
+    },
+    initialOpenGroupIndex: {
+      type: Number,
+      default: 0
+    }
+  },
 
   data () {
     return {

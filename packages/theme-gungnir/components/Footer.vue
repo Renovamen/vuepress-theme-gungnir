@@ -1,6 +1,6 @@
 <template>
   <div class="footer-wrapper">
-    <span v-html="$themeConfig.footer"></span>
+    <span v-html="$themeConfig.footer" />
   </div>
 </template>
 

@@ -7,16 +7,16 @@
     @click.prevent="toggleMode()"
   >
     <v-icon
-      name="fa-sun"
       v-if="currentMode === 'light'"
+      name="fa-sun"
     />
     <v-icon
-      name="fa-moon"
       v-else-if="currentMode === 'dark'"
+      name="fa-moon"
     />
     <v-icon
-      name="fa-magic"
       v-else-if="currentMode === 'auto'"
+      name="fa-magic"
     />
   </a>
 </template>

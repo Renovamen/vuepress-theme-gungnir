@@ -4,7 +4,6 @@
       v-for="(item) in data"
       :key="item.path"
       :item="item"
-      :currentTag="currentTag"
     />
     <Pager :data="getPagerData" />
   </div>
@@ -19,7 +18,14 @@ export default {
     PostListItem,
     Pager
   },
-  props: ['data', 'currentTag'],
+
+  props: {
+    data: {
+      type: Array,
+      default: () => []
+    }
+  },
+
   computed: {
     getPagerData () {
       var pagerData = {}

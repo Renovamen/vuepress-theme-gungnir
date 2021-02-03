@@ -66,7 +66,7 @@ export default ({
 }) => {
   Vue.mixin(postMixin)
   Vue.mixin(localMixin)
-  Vue.component('v-icon', VueIcon)
+  Vue.component('VIcon', VueIcon)
   if (!isServer) {
     registerCodeThemeCss(siteData.themeConfig.codeTheme)
     registerLinks()

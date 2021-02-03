@@ -1,7 +1,7 @@
 <template>
   <header
-    class="navbar"
     ref="navbar"
+    class="navbar"
     :class="{
       'is-fixed': (isFixed || isSidebar),
       'is-visible': (isVisible || isSidebar),
@@ -24,8 +24,8 @@
       class="links"
       :style="linksWrapMaxWidth ? {
         'max-width': linksWrapMaxWidth + 'px'
-      } : {}">
-
+      } : {}"
+    >
       <NavLinks
         class="can-hide"
         @toggle-search="$emit('toggle-search')"
@@ -41,7 +41,14 @@ export default {
   components: {
     NavLinks
   },
-  props: ['isSidebar'],
+
+  props: {
+    isSidebar: {
+      type: Boolean,
+      required: true
+    }
+  },
+
   data () {
     return {
       linksWrapMaxWidth: null,
@@ -51,6 +58,12 @@ export default {
       isFixed: false,
       isVisible: false,
       isInvert: true
+    }
+  },
+
+  watch: {
+    '$route' () {
+      this.handleInvert()
     }
   },
 
@@ -73,12 +86,6 @@ export default {
     this.handleInvert()
   },
 
-  watch: {
-    '$route' () {
-      this.handleInvert()
-    }
-  },
-
   beforeDestroy () {
     window.removeEventListener('scroll', this.handleScroll)
   },
@@ -86,7 +93,7 @@ export default {
   methods: {
     handleScroll () {
       var currentTop = window.pageYOffset
-    
+
       if (currentTop < this.previousTop) {
         //if scrolling up...
         if (currentTop > 0 && this.isFixed) this.isVisible = true

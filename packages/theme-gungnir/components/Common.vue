@@ -7,7 +7,7 @@
   >
     <Navbar
       v-if="shouldShowNavbar"
-      :isSidebar="shouldShowSidebar"
+      :is-sidebar="shouldShowSidebar"
       @toggle-search="toggleSearch(true)"
     />
 
@@ -24,19 +24,24 @@
         <div class="personal-info-wrapper">
           <div class="mobile-hero-avatar">
             <img
-              :src="$withBase($themeConfig.personalInfo.avatar)" 
+              :src="$withBase($themeConfig.personalInfo.avatar)"
               alt="hero"
-            />
+            >
           </div>
-          <p class="mobile-heading">{{ $themeConfig.personalInfo.name }}</p>
+          <p class="mobile-heading">
+            {{ $themeConfig.personalInfo.name }}
+          </p>
           <SNS />
           <hr>
         </div>
       </template>
-      <slot name="sidebar-bottom" slot="bottom"/>
+      <slot
+        slot="bottom"
+        name="sidebar-bottom"
+      />
     </Sidebar>
 
-    <slot></slot>
+    <slot />
 
     <SearchPage
       v-if="$themeConfig.search && $frontmatter.search !== false"
@@ -232,7 +237,7 @@ export default {
   .theme-container.no-sidebar
     .sidebar
       display none
-      
+
 @media (max-width: $MQMobile)
   .theme-container
     &.sidebar-open .sidebar

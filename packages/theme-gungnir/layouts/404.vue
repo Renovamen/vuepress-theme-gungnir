@@ -2,7 +2,9 @@
   <Common>
     <div class="error-container">
       <article class="error-content">
-        <h2 class="error-emoji">{{ getEmoji() }}</h2>
+        <h2 class="error-emoji">
+          {{ getEmoji() }}
+        </h2>
         <h2>404 - {{ $themeLocales.notFound }}</h2>
         <router-link to="/">
           <h2>$ cd /home/</h2>

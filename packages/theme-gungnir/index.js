@@ -1,9 +1,5 @@
-const path = require('path')
-
 // Theme API.
 module.exports = (options, ctx) => {
-  const { themeConfig, siteConfig } = ctx
-
   // default theme config
   Object.assign(options, Object.assign({
     search: true,
@@ -109,7 +105,7 @@ module.exports = (options, ctx) => {
         }
       ],
       [
-        '@vssue/vuepress-plugin-vssue', 
+        '@vssue/vuepress-plugin-vssue',
         comment ? Object.assign({
           platform: 'github',
         }, comment) : false
@@ -142,11 +138,11 @@ module.exports = (options, ctx) => {
     chainMarkdown(config) {
       const { PLUGINS } = require('@vuepress/markdown')
       const originalLinkPlugin = require('@vuepress/markdown/lib/link.js');
-  
+
       config
         .plugins
           .delete(PLUGINS.CONVERT_ROUTER_LINK)
-  
+
       const linkPlugin = function (md) {
         const result = originalLinkPlugin.apply(this, arguments);
         const close = md.renderer.rules.link_close;
@@ -155,7 +151,7 @@ module.exports = (options, ctx) => {
         }
         return result;
       };
-  
+
       config
         .plugin(PLUGINS.CONVERT_ROUTER_LINK)
           .use(linkPlugin, [{

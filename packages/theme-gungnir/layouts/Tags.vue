@@ -1,19 +1,15 @@
 <template>
   <div>
-    <PageHeader :pageInfo="getPageInfo" />
+    <PageHeader :page-info="getPageInfo" />
     <Common
       class="tags-wrapper"
       :sidebar="false"
     >
       <TagList
-        :currentTag="currentTag"
+        :current-tag="currentTag"
         @getCurrentTag="tagClick"
       />
-      <TagPostList
-        :data="posts"
-        :currentTag="currentTag"
-        @currentTag="getCurrentTag"
-      />
+      <TagPostList :data="posts" />
     </Common>
   </div>
 </template>
@@ -40,14 +36,6 @@ export default {
     }
   },
 
-  created () {
-    this.currentTag = this.$themeLocales.tagAll
-    this.allTagName = this.$themeLocales.tagAll
-    if (this.$tags.list.length > 0) {
-      this.currentTag = this.$route.query.tag ? this.$route.query.tag : this.currentTag
-    }
-  },
-
   computed: {
     posts() {
       let posts = getPostsByYear(this.$getAllPosts)
@@ -58,6 +46,14 @@ export default {
                   ? this.$themeConfig.pages.tags : {}
       info.title = this.$themeLocales.tags
       return info
+    }
+  },
+
+  created () {
+    this.currentTag = this.$themeLocales.tagAll
+    this.allTagName = this.$themeLocales.tagAll
+    if (this.$tags.list.length > 0) {
+      this.currentTag = this.$route.query.tag ? this.$route.query.tag : this.currentTag
     }
   },
 

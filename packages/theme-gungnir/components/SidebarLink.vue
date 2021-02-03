@@ -4,7 +4,16 @@ import { isActive, hashRE, groupHeaders } from '@theme/utils/utils'
 export default {
   functional: true,
 
-  props: ['item', 'sidebarDepth'],
+  props: {
+    item: {
+      type: Object,
+      default: () => {}
+    },
+    sidebarDepth: {
+      type: Number,
+      default: undefined
+    }
+  },
 
   render (h,
     {

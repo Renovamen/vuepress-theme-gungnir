@@ -5,9 +5,9 @@
       :style="{ 'background-image': bgImagePath }"
     >
       <div
+        v-if="$themeConfig.homeHeaderImages[bgImageID].mask"
         class="header-mask"
-        v-if="$themeConfig.homeHeaderImages[this.bgImageID].mask"
-        :style="{background: $themeConfig.homeHeaderImages[this.bgImageID].mask}"
+        :style="{background: $themeConfig.homeHeaderImages[bgImageID].mask}"
       />
       <div
         class="header-content"
@@ -15,9 +15,9 @@
       >
         <div class="hero-avatar hide-on-mobile">
           <img
-            :src="$withBase($themeConfig.personalInfo.avatar)" 
+            :src="$withBase($themeConfig.personalInfo.avatar)"
             alt="hero"
-          />
+          >
         </div>
 
         <div
@@ -25,19 +25,26 @@
           class="hero-bubble"
         >
           <div class="hero-bubble__body">
-            <p ref="hitokoto">正在加载一言...</p>
+            <p ref="hitokoto">
+              正在加载一言...
+            </p>
           </div>
-          <div class="hero-bubble__tile"></div>
+          <div class="hero-bubble__tile" />
         </div>
 
         <div class="hero-info">
           <div class="hero-info__text">
             <h1>{{ $themeConfig.personalInfo.name || $title }}</h1>
-            <p class="description">{{ $themeConfig.personalInfo.description || $description }}</p>
+            <p class="description">
+              {{ $themeConfig.personalInfo.description || $description }}
+            </p>
           </div>
         </div>
 
-        <SNS class="hide-on-mobile" large />
+        <SNS
+          class="hide-on-mobile"
+          large
+        />
 
         <button
           v-if="$themeConfig.homeHeaderImages"
@@ -57,7 +64,7 @@
         <div
           class="arrow faa-float animated hide-on-mobile"
           @click="scrollToPost()"
-        > 
+        >
           <v-icon
             name="fa-chevron-down"
             scale="1.7"
@@ -192,7 +199,7 @@ export default {
             transform(rotate(360deg))
         &:hover + .hero-bubble
           opacity 1
-      
+
       .hero-bubble
         opacity 0
         position absolute
@@ -274,10 +281,10 @@ export default {
             font-weight 300
             line-height 15px
             margin-bottom 0
-      
+
       .sns-wrapper
         margin-top 270px
-      
+
       .img-prev, .img-next
         cursor pointer
         position absolute

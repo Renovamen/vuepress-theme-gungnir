@@ -1,9 +1,9 @@
 <template>
   <aside class="sidebar">
     <slot name="top" />
-    
+
     <NavLinks @toggle-search="$emit('toggle-search')" />
-    
+
     <SidebarLinks
       :depth="0"
       :items="items"
@@ -24,7 +24,12 @@ export default {
     SidebarLinks, NavLinks
   },
 
-  props: ['items']
+  props: {
+    items: {
+      type: Array,
+      default: () => []
+    }
+  }
 }
 </script>
 

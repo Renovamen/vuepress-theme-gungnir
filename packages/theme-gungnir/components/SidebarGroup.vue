@@ -65,12 +65,24 @@ export default {
     DropdownTransition
   },
 
-  props: [
-    'item',
-    'open',
-    'collapsable',
-    'depth'
-  ],
+  props: {
+    item: {
+      type: Object,
+      default: () => {}
+    },
+    open: {
+      type: Boolean,
+      required: true
+    },
+    collapsable: {
+      type: Boolean,
+      default: false
+    },
+    depth: {
+      type: Number,
+      required: true
+    }
+  },
 
   // ref: https://vuejs.org/v2/guide/components-edge-cases.html#Circular-References-Between-Components
   beforeCreate () {

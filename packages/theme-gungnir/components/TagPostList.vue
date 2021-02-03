@@ -11,7 +11,6 @@
       <div
         v-for="(subItem, subIndex) in item.data"
         :key="subIndex"
-        :currentTag="currentTag"
         class="post-item"
       >
         <router-link :to="subItem.path">
@@ -19,8 +18,8 @@
             {{ subItem.frontmatter.title }}
           </h2>
           <h3
-              v-if="subItem.frontmatter.subtitle"
-              class="post-item__subtitle"
+            v-if="subItem.frontmatter.subtitle"
+            class="post-item__subtitle"
           >
             {{ subItem.frontmatter.subtitle }}
           </h3>
@@ -33,10 +32,12 @@
 
 <script>
 export default {
-  props: [
-    'data',
-    'currentTag'
-  ],
+  props: {
+    data: {
+      type: Array,
+      default: () => []
+    }
+  }
 }
 </script>
 

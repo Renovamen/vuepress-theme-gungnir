@@ -4,7 +4,10 @@
     class="page-nav"
   >
     <p class="inner">
-      <span v-if="prev" class="prev">
+      <span
+        v-if="prev"
+        class="prev"
+      >
         ←
         <a
           v-if="prev.type === 'external'"
@@ -17,7 +20,8 @@
         </a>
 
         <RouterLink
-          v-else class="prev"
+          v-else
+          class="prev"
           :to="prev.path"
         >
           {{ prev.title || prev.path }}
@@ -57,7 +61,12 @@ import isNil from 'lodash/isNil'
 export default {
   name: 'PageNav',
 
-  props: ['sidebarItems'],
+  props: {
+    sidebarItems: {
+      type: Array,
+      default: () => []
+    }
+  },
 
   computed: {
     prev () {
@@ -90,7 +99,7 @@ const LINK_TYPES = {
   }
 }
 
-function resolvePageLink (linkType, { 
+function resolvePageLink (linkType, {
   $themeConfig,
   $page,
   $route,

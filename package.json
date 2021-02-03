@@ -12,9 +12,14 @@
     "dev": "vuepress dev example --no-cache --host 0.0.0.0 --port 4000",
     "build": "vuepress build example --dest dist",
     "preview": "cd dist && http-server",
+    "lint": "eslint --ext .js,.vue ./",
+    "lint-fix": "eslint --fix --ext .js,.vue ./",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.19.0",
+    "eslint-plugin-vue": "^7.5.0",
     "vuepress": "^1.8.0",
     "vuepress-theme-gungnir": "^0.1.2"
   }

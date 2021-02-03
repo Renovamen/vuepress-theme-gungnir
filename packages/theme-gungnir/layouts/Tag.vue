@@ -1,19 +1,18 @@
 <template>
   <div>
-    <PageHeader :pageInfo="getPageInfo" />
+    <PageHeader :page-info="getPageInfo" />
     <Common
       class="tag-wrapper"
       :sidebar="false"
     >
       <TagList
         class="tags"
-        :currentTag="$currentTags.key"
+        :current-tag="$currentTags.key"
         @getCurrentTag="tagClick"
       />
       <TagPostList
         :data="posts"
         class="list"
-        @currentTag="$currentTags.key"
       />
     </Common>
   </div>

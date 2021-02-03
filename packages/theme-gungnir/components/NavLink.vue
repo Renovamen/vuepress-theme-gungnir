@@ -14,7 +14,8 @@
     {{ item.text }}
   </router-link>
   <a
-    v-else class="nav-link external v-parent v-hover"
+    v-else
+    class="nav-link external v-parent v-hover"
     :href="link"
     :target="isMailto(link) || isTel(link) ? null : '_blank'"
     :rel="isMailto(link) || isTel(link) ? null : 'noopener noreferrer'"
@@ -35,6 +36,7 @@ import { isExternal, isMailto, isTel, ensureExt } from '@theme/utils/utils'
 export default {
   props: {
     item: {
+      type: Object,
       required: true
     }
   },

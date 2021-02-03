@@ -8,8 +8,7 @@
       v-if="pageInfo.bgImage && pageInfo.bgImage.mask"
       class="header-mask"
       :style="{ 'background': pageInfo.bgImage.mask }"
-    >
-    </div>
+    />
     <h1 class="title">
       {{ pageInfo.title || $page.frontmatter.title }}
     </h1>

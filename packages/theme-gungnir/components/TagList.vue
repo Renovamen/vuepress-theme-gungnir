@@ -10,7 +10,7 @@
       :style="{ 'backgroundColor': item.tagColor }"
       @click="tagClick(item)"
     >
-      {{item.name}}
+      {{ item.name }}
       <sup v-if="item.path == '/tags/'">{{ $getAllPosts.length }}</sup>
       <sup v-else>{{ item.pages.length }}</sup>
     </span>

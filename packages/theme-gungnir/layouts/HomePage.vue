@@ -6,14 +6,12 @@
 
 <script>
 import Home from '@theme/components/Home'
-import Footer from '@theme/components/Footer'
 import Common from '@theme/components/Common'
 
 export default {
   components: {
     Home,
-    Common,
-    Footer
+    Common
   },
 }
 </script>

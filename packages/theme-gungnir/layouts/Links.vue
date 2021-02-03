@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PageHeader :pageInfo="getPageInfo" />
+    <PageHeader :page-info="getPageInfo" />
     <Common class="links-wrapper">
       <div class="links-group">
         <div
@@ -8,7 +8,9 @@
           :key="`link-group-${groupId}`"
           class="section"
         >
-          <h2 class="title">{{group.title}}</h2>
+          <h2 class="title">
+            {{ group.title }}
+          </h2>
           <ul>
             <li
               v-for="(item, itemId) in group.items"
@@ -19,9 +21,11 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img :src="item.img
-                          ? $withBase(item.img)
-                          : require('@theme/assets/default-link-avatar.jpg')">
+                <img
+                  :src="item.img
+                    ? $withBase(item.img)
+                    : require('@theme/assets/default-link-avatar.jpg')"
+                >
                 <span class="sitename">
                   {{ item.sitename }}
                 </span>

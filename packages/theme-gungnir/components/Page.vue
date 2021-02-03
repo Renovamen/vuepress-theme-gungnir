@@ -1,9 +1,12 @@
 <template>
-  <main class="page" :style="pageStyle">
+  <main
+    class="page"
+    :style="pageStyle"
+  >
     <ArticleHeader
       v-if="$page.id != 'posts'"
       v-show="$page.title"
-      :articleInfo="$page"
+      :article-info="$page"
       class="doc-header"
     />
     <Content class="theme-content" />
@@ -23,9 +26,9 @@
     -->
     <Vssue
       v-if="$themeConfig.comment"
+      :key="$route.path"
       class="vssue-comment-wrapper"
       :title="$page.title + ' - ' + $site.title"
-      :key="$route.path"
     />
   </main>
 </template>
@@ -65,18 +68,6 @@ export default {
     }
   },
 
-  mounted() {
-    this.codeFullScreen()
-  },
-
-  watch: {
-    '$route' () {
-      this.$nextTick(() => {
-        this.codeFullScreen()
-      })
-    }
-  },
-
   computed: {
     shouldShowComments () {
       const { isShowComments } = this.$frontmatter
@@ -102,6 +93,18 @@ export default {
         } : null
       }
     }
+  },
+
+  watch: {
+    '$route' () {
+      this.$nextTick(() => {
+        this.codeFullScreen()
+      })
+    }
+  },
+
+  mounted() {
+    this.codeFullScreen()
   },
   methods: {
     codeFullScreen (){

@@ -3,7 +3,7 @@
     <ArticleHeader
       v-show="$page.title"
       class="post-header"
-      :articleInfo="$page"
+      :article-info="$page"
       :class="{ 'style-img': $page.frontmatter.header_style == 'image' }"
       :style="pageHeaderStyle"
     >
@@ -13,7 +13,7 @@
         :style="{ 'background': $page.frontmatter.header_mask }"
       />
     </ArticleHeader>
-    <Page :pageStyle="pageStyle" />
+    <Page :page-style="pageStyle" />
     <Catalog
       :class="{ 'fixed': isFixed }"
       :style="{ 'top': `${catalogTop}px !important` }"
@@ -23,7 +23,6 @@
 
 <script>
 import ArticleHeader from '@theme/components/ArticleHeader'
-import Footer from '@theme/components/Footer'
 import Common from '@theme/components/Common.vue'
 import Catalog from '@theme/components/Catalog'
 import Page from '@theme/components/Page.vue'
@@ -34,6 +33,12 @@ const catalogTopFixed = 80
 
 export default {
   name: 'Post',
+  components: {
+    ArticleHeader,
+    Common,
+    Catalog,
+    Page
+  },
   data () {
     return {
       navHeight: 0,
@@ -42,12 +47,20 @@ export default {
       screenWidth: 0
     }
   },
-  components: {
-    ArticleHeader,
-    Footer,
-    Common,
-    Catalog,
-    Page
+  computed: {
+    pageStyle () {
+      return this.$showCatalog ? {} : {
+        paddingRight: '0'
+      }
+    },
+    pageHeaderStyle () {
+      var style = {}
+      if (this.$page.frontmatter.header_style == 'image'
+          && this.$page.frontmatter.header_img)
+          style = { backgroundImage: `url(${this.$withBase(this.$page.frontmatter.header_img, this.$themeConfig)})` }
+      if (!this.$showCatalog) style.paddingRight = '0'
+      return style
+    }
   },
   mounted () {
     this.navHeight = this.$children[0].$children[0].$refs.navbar.offsetHeight
@@ -68,21 +81,6 @@ export default {
   },
   beforeDestroy () {
     window.removeEventListener('scroll', throttle(this.handleScroll, 50))
-  },
-  computed: {
-    pageStyle () {
-      return this.$showCatalog ? {} : { 
-        paddingRight: '0'
-      }
-    },
-    pageHeaderStyle () {
-      var style = {}
-      if (this.$page.frontmatter.header_style == 'image' 
-          && this.$page.frontmatter.header_img) 
-          style = { backgroundImage: `url(${this.$withBase(this.$page.frontmatter.header_img, this.$themeConfig)})` }
-      if (!this.$showCatalog) style.paddingRight = '0'
-      return style
-    }
   },
   methods: {
     handleScroll () {
@@ -185,9 +183,9 @@ export default {
       @extend $wrapper
       margin-top 10rem
       margin-bottom -3rem
-  
+
 @media (max-width: $MQLarge)
-  .post-container 
+  .post-container
     .page
       padding-right $catalogWidth
       max-width 100%

@@ -1,8 +1,4 @@
 <template>
-  <!--
-    <PageInfo :pageInfo="item" :currentTag="currentTag" />
-  -->
-
   <div class="post-item-img">
     <div
       class="post-item-img__img"
@@ -11,7 +7,7 @@
       <img
         :src="$withBase(item.frontmatter.header_img)"
         class="cover"
-      />
+      >
     </div>
     <div class="else">
       <p
@@ -32,8 +28,8 @@
         </h3>
       </router-link>
       <div
-        v-html="item.excerpt"
         class="post-item-img__content"
+        v-html="item.excerpt"
       />
     </div>
   </div>
@@ -43,11 +39,6 @@
 import { formatDate } from '@theme/utils/time'
 
 export default {
-  props: [
-    'item',
-    'currentTag'
-  ],
-
   filters: {
     // format the original time value: 2019-09-20T18:22:30.000Z
     // to: 2019-09-20 18:22:30
@@ -62,10 +53,17 @@ export default {
       if (h > 0 || m > 0 || s > 0) {
         // if user set hours, minutes or seconds manully
         return formatDate(value)
-      } 
+      }
       else {
         return formatDate(value, 'yyyy-MM-dd')
       }
+    }
+  },
+
+  props: {
+    item: {
+      type: Object,
+      required: true
     }
   }
 }

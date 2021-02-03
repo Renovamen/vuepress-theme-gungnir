@@ -1,6 +1,6 @@
 <template>
-  <Common :sidebarItems="sidebarItems">
-    <Page :sidebarItems="sidebarItems"/>
+  <Common :sidebar-items="sidebarItems">
+    <Page :sidebar-items="sidebarItems" />
   </Common>
 </template>
 
