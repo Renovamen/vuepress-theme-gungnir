@@ -8,7 +8,7 @@
 
 🇬🇧 [English Intro](README.md) | 🇨🇳 中文说明
 
-![preview](example/.vuepress/public/img/docs/gungnir.jpg)
+![preview](../../example/.vuepress/public/img/docs/gungnir.jpg)
 
 
 &nbsp;

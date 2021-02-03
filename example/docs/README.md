@@ -45,7 +45,7 @@ Gungnir is the spear of the god Odin in Norse mythology, made from the wood of t
 - Dark and light mode: system theme detection with a theme-switcher to set the theme as per the user preference
 - Search
 - Table of contents
-- Syntax highlighting, support full screening the code blocks (inspired by WordPress theme [Sakura](https://github.com/mashirozx/Sakura))
+- Multiple syntax highlighting themes, support full screening the code blocks (inspired by WordPress theme [Sakura](https://github.com/mashirozx/Sakura))
 - Tex support ([Katex](https://github.com/KaTeX/KaTeX))
 - Draw charts in Markdown easily: [Chart.js](https://www.chartjs.org), [Mermaid](https://mermaid-js.github.io) and [roughViz.js](https://github.com/jwilber/roughViz)
 - Markdown enhancements:

@@ -43,6 +43,10 @@ pre[class*="language-"] {
     overflow: auto;
 }
 
+pre code, pre[class*="language-"] code {
+    color: #fff;
+}
+
 /* :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
     background: #282c34;

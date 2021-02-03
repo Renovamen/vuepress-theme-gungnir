@@ -1,6 +1,6 @@
 # Gungnir
 
-[![npm](https://img.shields.io/npm/v/vuepress-theme-gungnir.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-theme-gungnir) [![docs](https://img.shields.io/badge/Docs-Gungnir-26A2FF?style=flat-square&logo=read-the-docs&logoColor=ffffff)](https://github.com/Renovamen/vuepress-theme-gungnir) [![license](https://img.shields.io/badge/License-Apache--2.0-green?style=flat-square)](LICENSE)
+[![npm](https://img.shields.io/npm/v/vuepress-theme-gungnir.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-theme-gungnir) [![docs](https://img.shields.io/badge/Docs-Gungnir-26A2FF?style=flat-square&logo=read-the-docs&logoColor=ffffff)](https://vuepress-theme-gungnir.vercel.app/docs/) [![license](https://img.shields.io/badge/License-Apache--2.0-green?style=flat-square)](LICENSE)
 
 A blog theme for [VuePress](https://vuepress.vuejs.org/). The [Jekyll](https://jekyllrb.com/) version of it is available [here](https://github.com/Renovamen/jekyll-theme-gungnir).
 
@@ -22,7 +22,7 @@ A blog theme for [VuePress](https://vuepress.vuejs.org/). The [Jekyll](https://j
 - Dark and light mode: system theme detection with a theme-switcher to set the theme as per the user preference
 - Search
 - Table of contents
-- Syntax highlighting, support full screening the code blocks (inspired by WordPress theme [Sakura](https://github.com/mashirozx/Sakura))
+- Multiple syntax highlighting themes, support full screening the code blocks (inspired by WordPress theme [Sakura](https://github.com/mashirozx/Sakura))
 - Tex support ([Katex](https://github.com/KaTeX/KaTeX))
 - Draw charts in Markdown easily: [Chart.js](https://www.chartjs.org), [Mermaid](https://mermaid-js.github.io) and [roughViz.js](https://github.com/jwilber/roughViz)
 - Markdown enhancements:
