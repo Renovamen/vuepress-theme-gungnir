@@ -7,6 +7,9 @@ export default {
   links: 'Links',
   tags: 'Tags',
 
+  // search button on navbar
+  search: 'Search',
+
   // tag button
   tagAll: 'Show All',
 

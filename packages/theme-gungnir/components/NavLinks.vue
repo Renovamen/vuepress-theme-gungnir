@@ -31,7 +31,7 @@
           animation="wrench"
           hover
         />
-        Search
+        {{ $themeLocales.search }}
       </a>
     </div>
   </nav>

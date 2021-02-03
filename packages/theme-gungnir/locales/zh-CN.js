@@ -7,6 +7,9 @@ export default {
   links: '链接',
   tags: '标签',
 
+  // search button on navbar
+  search: '搜索',
+
   // tag button
   tagAll: '全部',
 

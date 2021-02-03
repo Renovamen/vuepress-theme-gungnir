@@ -130,7 +130,6 @@ export default {
       this.isSearchOpen = false
       // this.isCatalogOpen = false
     })
-    console.log(this.$themeConfig)
   },
 
   methods: {

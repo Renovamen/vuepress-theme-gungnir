@@ -90,19 +90,17 @@ module.exports = {
     ],
     pages: {
       tags: {
-        title: 'Tags',
         subtitle: 'Black Sheep Wall',
         bgImage: {
-          "path": "/img/pages/tags.jpg",
-          "mask": "rgba(211, 136, 37, .5)"
+          path: '/img/pages/tags.jpg',
+          mask: 'rgba(211, 136, 37, .5)'
         }
       },
       links: {
-        title: 'Links',
         subtitle: 'When you are looking at the stars, please put the brightest star shining night sky as my soul.',
         bgImage: {
-          "path": "/img/pages/links.jpg",
-          "mask": "rgba(64, 118, 190, 0.5)"
+          path: '/img/pages/links.jpg',
+          mask: 'rgba(64, 118, 190, 0.5)'
         }
       }
     },

@@ -51,7 +51,7 @@ const platform_links = {
   'facebook': 'https://www.facebook.com/',
   'twitter': 'https://www.twitter.com/',
   'zhihu': 'https://www.zhihu.com/people/',
-  'weibo': 'http://weibo.com/',
+  'weibo': 'http://weibo.com/u/',
   'email': 'mailto:'
 }
 

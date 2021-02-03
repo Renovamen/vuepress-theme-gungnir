@@ -27,7 +27,7 @@ Gungnir is a blog theme for [VuePress](https://vuepress.vuejs.org/).
 
 ## Inspirations
 
-Gungnir was originally a [Jekyll](https://jekyllrb.com/) theme dirived from [Huxpro/huxpro.github.io](https://github.com/Huxpro/huxpro.github.io). Some of the designs and code are borrowed from other themes, including but not limited to [mashirozx/Sakura](https://github.com/mashirozx/Sakura/), [kitian616/jekyll-TeXt-theme](https://github.com/kitian616/jekyll-TeXt-theme), [Fechin/hexo-theme-diaspora](https://github.com/Fechin/hexo-theme-diaspora), [liuzc/LeaveIt](https://github.com/liuzc/LeaveIt), et al.
+Gungnir was originally a [Jekyll](https://jekyllrb.com/) theme derived from [Huxpro/huxpro.github.io](https://github.com/Huxpro/huxpro.github.io). Some of the designs and code are borrowed from other themes, including but not limited to [mashirozx/Sakura](https://github.com/mashirozx/Sakura/), [kitian616/jekyll-TeXt-theme](https://github.com/kitian616/jekyll-TeXt-theme), [Fechin/hexo-theme-diaspora](https://github.com/Fechin/hexo-theme-diaspora), [liuzc/LeaveIt](https://github.com/liuzc/LeaveIt), et al.
 
 Anyway, many thanks for all of these nice work.
 

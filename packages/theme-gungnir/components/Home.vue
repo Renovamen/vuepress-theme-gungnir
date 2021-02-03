@@ -40,12 +40,14 @@
         <SNS class="hide-on-mobile" large />
 
         <button
+          v-if="$themeConfig.homeHeaderImages"
           class="img-prev hide-on-mobile"
           @click="switchImage(-1)"
         >
           <v-icon name="fa-chevron-left" />
         </button>
         <button
+          v-if="$themeConfig.homeHeaderImages"
           class="img-next hide-on-mobile"
           @click="switchImage(1)"
         >
@@ -92,7 +94,7 @@ export default {
   computed: {
     bgImagePath () {
       if(this.$themeConfig.homeHeaderImages) {
-        var bgPath = `url(${this.$withBase(this.$themeConfig.homeHeaderImages[this.bgImageID].path)})`
+        const bgPath = `url(${this.$withBase(this.$themeConfig.homeHeaderImages[this.bgImageID].path)})`
         return bgPath
       }
       else {
