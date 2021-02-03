@@ -5933,10 +5933,10 @@ obuf@^1.0.0, obuf@^1.1.2:
   resolved "https://registry.npm.taobao.org/obuf/download/obuf-1.1.2.tgz#09bea3343d41859ebd446292d11c9d4db619084e"
   integrity sha1-Cb6jND1BhZ69RGKS0RydTbYZCE4=
 
-oh-vue-icons@^0.1.7:
-  version "0.1.7"
-  resolved "https://registry.npm.taobao.org/oh-vue-icons/download/oh-vue-icons-0.1.7.tgz#3e701ed7938f6de1661edf39249ab4e2763c5362"
-  integrity sha1-PnAe15OPbeFmHt85JJq04nY8U2I=
+oh-vue-icons@^0.1.8:
+  version "0.1.8"
+  resolved "https://registry.npm.taobao.org/oh-vue-icons/download/oh-vue-icons-0.1.8.tgz#eecba4c3b3651b8af1d54d5cc620f5e69aa72d05"
+  integrity sha1-7sukw7NlG4rx1U1cxiD15pqnLQU=
   dependencies:
     core-js "^3.4.4"
 

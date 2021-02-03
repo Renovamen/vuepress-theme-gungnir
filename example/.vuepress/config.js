@@ -47,14 +47,14 @@ module.exports = {
       '/': {
         label: 'English',
         selectText: 'Languages',
-        nav: require('./nav/en'),
-        sidebar: require('./sidebar/en')
+        nav: require('./configs/nav/en'),
+        sidebar: require('./configs/sidebar/en')
       },
       '/zh/': {
         label: '简体中文',
         selectText: '选择语言',
-        nav: require('./nav/zh'),
-        sidebar: require('./sidebar/zh')
+        nav: require('./configs/nav/zh'),
+        sidebar: require('./configs/sidebar/zh')
       }
     },
     personalInfo: {

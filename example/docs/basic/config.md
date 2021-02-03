@@ -75,7 +75,7 @@ The `mask` is a translucent overlay placed on the cover image. It will be helpfu
 
 Check the [home page](/) of this site to see the effect. Click the left and right button to switch among multiple cover images.
 
-If `homeHeaderImages` is not cofigured, a default cover image will be displayed on home page.
+If `homeHeaderImages` is not cofigured, a galaxy wallpaper returned by [Unsplash API](https://source.unsplash.com/) will be displayed on home page.
 
 
 ## Other Pages

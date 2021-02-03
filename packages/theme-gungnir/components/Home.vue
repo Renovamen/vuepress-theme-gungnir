@@ -98,8 +98,8 @@ export default {
         return bgPath
       }
       else {
-        const defaultImg = require('@theme/assets/default-home-bg.svg')
-        return `url(${defaultImg})`
+        const bgURL = 'url(https://source.unsplash.com/collection/1065374/1600x900)'
+        return bgURL
       }
     },
     heroHeight () {

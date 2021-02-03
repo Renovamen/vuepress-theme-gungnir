@@ -96,7 +96,7 @@ export default {
       margin-left 0.4rem
   .nav-dropdown
     .dropdown-item
-      line-height 1.7rem
+      line-height 1.9rem
       text-transform none
       h4
         margin 0.45rem 0 0
@@ -110,7 +110,7 @@ export default {
       a
         color var(--text-color)
         display block
-        line-height 1.7rem
+        line-height 1.9rem
         position relative
         border-bottom none
         margin-bottom 0
