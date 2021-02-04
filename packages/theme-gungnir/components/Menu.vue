@@ -97,11 +97,11 @@ export default {
 
   methods: {
     handleScroll () {
-      var currentTop = window.pageYOffset
-      var docuHeight = document.body.offsetHeight
-      var windowHeight = document.documentElement.clientHeight
+      const currentTop = window.pageYOffset
+      const docuHeight = document.getElementById('theme-container').offsetHeight
+      const windowHeight = document.documentElement.clientHeight
 
-      var percent = currentTop / (docuHeight - windowHeight) * 100
+      let percent = currentTop / (docuHeight - windowHeight) * 100
       if (percent > 100) percent = 100
 
       if (isNaN(percent) || Math.round(percent) <= 0) {

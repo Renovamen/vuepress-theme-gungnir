@@ -1,5 +1,6 @@
 <template>
   <div
+    id="theme-container"
     class="theme-container"
     :class="pageClasses"
     @touchstart="onTouchStart"
