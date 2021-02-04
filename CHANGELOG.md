@@ -1,5 +1,18 @@
 # Change Log
 
+## [0.1.4](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v0.1.3...v0.1.4) (2021-02-04)
+
+### Bug Fixes
+
+Bugs due to the refactoring in v0.1.3:
+
+- fix go to bottom ([5fad11c](https://github.com/Renovamen/vuepress-theme-gungnir/commit/5fad11c6cf3c6581de8f99d0a0d4eabb4cba4554))
+- fix tag page ([1af9f5b](https://github.com/Renovamen/vuepress-theme-gungnir/commit/1af9f5b0d2e306ad55d66658c9972fc51313dc0e))
+
+### Features
+
+- **reading-time:** allow to exclude code and tex blocks ([b8f7c78](https://github.com/Renovamen/vuepress-theme-gungnir/commit/b8f7c784773374366cc8c7f7c7171fcdd8c8a653))
+
 
 ## [0.1.3](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v0.1.2...v0.1.3) (2021-02-04)
 
