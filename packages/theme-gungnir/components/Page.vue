@@ -19,7 +19,7 @@
       v-if="($page.id == 'posts') && getPostIndex != -1"
       :data="getPostPager"
     />
-    <!-- 
+    <!--
       Use prop `key` to update vssue when navigating directly from one
       <Page> to another.
       See here: https://github.com/meteorlxy/vssue/issues/87
@@ -104,6 +104,7 @@ export default {
   },
 
   mounted() {
+    console.log(this.$page.readingTime)
     this.codeFullScreen()
   },
   methods: {
@@ -168,7 +169,7 @@ export default {
   .page
     padding-top 3rem
     margin-left 0
-    
+
 @media (max-width: $MQMobileNarrow)
   .page
     .vssue-comment-wrapper

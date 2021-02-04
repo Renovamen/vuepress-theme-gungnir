@@ -112,6 +112,48 @@ plugins: [
 
 &nbsp;
 
+### excludeCodeBlock
+
+Exclude all content inside code blocks or not.
+
+- Type: `boolean`
+- Default: `false`
+
+Example:
+
+```js
+plugins: [
+  [
+    '@renovamen/vuepress-plugin-reading-time', {
+      excludeCodeBlock: true
+    }
+  ]
+]
+```
+
+&nbsp;
+
+### excludeTexBlock
+
+Exclude all content inside tex blocks or not.
+
+- Type: `boolean`
+- Default: `false`
+
+Example:
+
+```js
+plugins: [
+  [
+    '@renovamen/vuepress-plugin-reading-time', {
+      excludeTexBlock: true
+    }
+  ]
+]
+```
+
+&nbsp;
+
 ## License
 
 [MIT](LICENSE)

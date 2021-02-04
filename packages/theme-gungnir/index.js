@@ -19,13 +19,14 @@ module.exports = (options, ctx) => {
     chartjs: false,
     roughviz: false,
     mdPlus: false,
+    readingTime: {},
     personalInfo: {},
     homeHeaderImages: {},
     pages: {},
     footer: ''
   }, options))
 
-  const { comment, analytics } = options
+  const { comment, analytics, readingTime } = options
 
   return {
     name: 'vuepress-theme-gungnir',
@@ -111,9 +112,10 @@ module.exports = (options, ctx) => {
         }, comment) : false
       ],
       [
-        '@renovamen/vuepress-plugin-reading-time', {
-          excludes: ['/about', '/tags/.*', '/links']
-        }
+        '@renovamen/vuepress-plugin-reading-time',
+        readingTime ? Object.assign({
+          excludes: ['/tags/.*', '/links']
+        }, readingTime) : false
       ],
       [
         '@vuepress/google-analytics',

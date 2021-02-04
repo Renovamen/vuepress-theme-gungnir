@@ -17,7 +17,7 @@
           {{ subItem }}
         </span>
       </div>
-      
+
       <h1 class="title">
         {{ articleInfo.title }}
       </h1>
@@ -66,7 +66,7 @@ export default {
     // to: 2019-09-20 18:22:30
     formatDateValue (value) {
       if (!value) return ''
-    
+
       value = value.replace('T', ' ').slice(0, value.lastIndexOf('.'))
       const h = Number(value.substr(11, 2))  // hours
       const m = Number(value.substr(14, 2))  // minutes
