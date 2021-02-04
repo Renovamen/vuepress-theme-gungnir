@@ -1,30 +1,30 @@
 {
   "name": "vuepress-theme-gungnir",
+  "version": "0.1.3",
   "description": "Gungnir is a blog theme for VuePress.",
-  "version": "0.1.2",
-  "author": "Renovamen <renovamenzxh@gmail.com>",
-  "main": "index.js",
   "keywords": [
     "vuepress",
     "blog",
     "theme"
   ],
   "homepage": "https://vuepress-theme-gungnir.vercel.app",
+  "bugs": {
+    "url": "https://github.com/Renovamen/vuepress-theme-gungnir/issues"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Renovamen/vuepress-theme-gungnir"
   },
-  "bugs": {
-    "url": "https://github.com/Renovamen/vuepress-theme-gungnir/issues"
-  },
   "license": "Apache-2.0",
+  "author": "Renovamen <renovamenzxh@gmail.com>",
+  "main": "index.js",
   "dependencies": {
-    "@renovamen/vuepress-plugin-katex": "^0.1.1",
     "@renovamen/vuepress-plugin-baidu-tongji": "^0.1.1",
+    "@renovamen/vuepress-plugin-katex": "^0.1.1",
     "@renovamen/vuepress-plugin-md-plus": "^0.1.1",
     "@renovamen/vuepress-plugin-mermaid": "^0.1.0",
-    "@renovamen/vuepress-plugin-rss": "^0.1.1",
     "@renovamen/vuepress-plugin-reading-time": "^0.1.1",
+    "@renovamen/vuepress-plugin-rss": "^0.1.1",
     "@vssue/api-github-v3": "^1.4.7",
     "@vssue/vuepress-plugin-vssue": "^1.4.7",
     "@vuepress/plugin-blog": "1.9.4",
