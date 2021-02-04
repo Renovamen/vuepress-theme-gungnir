@@ -67,9 +67,7 @@ export default {
 }
 </script>
 
-<style src="../styles/theme.styl" lang="stylus"></style>
-
-<style lang="stylus" scoped>
+<style lang="stylus">
 .tags-wrapper
   max-width 760px
   margin 0 auto
@@ -79,3 +77,5 @@ export default {
   .tags-wrapper
     padding 1rem 0.9rem 0
 </style>
+
+<style src="@theme/styles/theme.styl" lang="stylus"></style>

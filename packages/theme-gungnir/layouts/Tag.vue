@@ -3,22 +3,18 @@
     <PageHeader :page-info="getPageInfo" />
     <div class="tags-wrapper">
       <TagList
-        class="tags"
         :current-tag="$currentTags.key"
         @getCurrentTag="tagClick"
       />
-      <TagPostList
-        :data="posts"
-        class="list"
-      />
+      <TagPostList :data="posts" />
     </div>
   </Common>
 </template>
 
 <script>
 import Common from '@theme/components/Common'
-import TagPostList from '@theme/components/TagPostList'
 import TagList from '@theme/components/TagList'
+import TagPostList from '@theme/components/TagPostList'
 import PageHeader from '@theme/components/PageHeader'
 import { getPostsByYear } from '@theme/utils/posts'
 
@@ -62,16 +58,4 @@ export default {
 }
 </script>
 
-<style src="../styles/theme.styl" lang="stylus"></style>
-
-<style lang="stylus" scoped>
-@require '../styles/mode.styl'
-.tag-wrapper
-  max-width 760px
-  margin 0 auto
-  padding 1.6rem 2.5rem 0
-
-@media (max-width: $MQMobile)
-  .tag-wrapper
-    padding 1rem 0.9rem 0
-</style>
+<style src="@theme/styles/theme.styl" lang="stylus"></style>
