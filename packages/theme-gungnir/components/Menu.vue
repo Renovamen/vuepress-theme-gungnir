@@ -127,7 +127,7 @@ export default {
       })
     },
     goToBottom() {
-      var docuHeight = document.body.offsetHeight
+      var docuHeight = document.getElementById('theme-container').offsetHeight
       window.scrollTo({
         top: docuHeight,
         behavior: 'smooth'
