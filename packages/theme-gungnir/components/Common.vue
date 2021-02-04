@@ -41,7 +41,9 @@
       />
     </Sidebar>
 
-    <slot />
+    <div class="content">
+      <slot />
+    </div>
 
     <SearchPage
       v-if="$themeConfig.search && $frontmatter.search !== false"
@@ -189,6 +191,11 @@ export default {
 @require '../styles/mode.styl'
 
 .theme-container
+  display flex
+  flex-direction column
+  min-height 100%
+  .content
+    flex 1
   .sidebar-mask
     position fixed
     z-index 9
@@ -197,7 +204,7 @@ export default {
     width 100vw
     height 100vh
     display none
-    background-color rgba(0,0,0,.65)
+    background-color rgba(0, 0, 0, .65)
   .sidebar
     .mobile-hero-avatar
       margin 0 auto

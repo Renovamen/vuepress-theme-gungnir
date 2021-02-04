@@ -1,16 +1,14 @@
 <template>
   <Common>
-    <div class="error-container">
-      <article class="error-content">
-        <h2 class="error-emoji">
-          {{ getEmoji() }}
-        </h2>
-        <h2>404 - {{ $themeLocales.notFound }}</h2>
-        <router-link to="/">
-          <h2>$ cd /home/</h2>
-        </router-link>
-      </article>
-    </div>
+    <article class="error-content">
+      <h2 class="error-emoji">
+        {{ getEmoji() }}
+      </h2>
+      <h2>404 - {{ $themeLocales.notFound }}</h2>
+      <router-link to="/">
+        <h2>$ cd /home/</h2>
+      </router-link>
+    </article>
   </Common>
 </template>
 
@@ -20,7 +18,7 @@ import Common from '@theme/components/Common.vue'
 const emojiArray = [
   '\\(o_o)/', '(o^^)o', '(˚Δ˚)b', '(^-^*)', '(^_^)b', '(╯‵□′)╯',
   '(=\'X\'=)', '(>_<)', '\\(°ˊДˋ°)/', 'ㄟ(▔▽▔)ㄏ'
-] 
+]
 
 export default {
   components: {
@@ -29,7 +27,7 @@ export default {
 
   methods: {
     getEmoji () {
-      return emojiArray[Math.floor(Math.random() * emojiArray.length)] 
+      return emojiArray[Math.floor(Math.random() * emojiArray.length)]
     }
   }
 }
@@ -38,36 +36,32 @@ export default {
 <style lang="stylus">
 @require '../styles/mixins.styl'
 
-.error-container
-  padding $navbarHeight 2rem 0
-  min-height calc(100vh - 155px)
-  .error-content
-    position absolute
-    text-align center
-    left 0
-    right 0
-    top 50%
-    margin-top -140px
-    h2
-      font-size 30px 
-      font-weight bold 
-      margin-bottom -15px 
-      gungnir-font() 
-    .error-emoji
-      font-size 50px 
-      margin-bottom 10px 
-    a
-      color var(--text-color) 
-      :hover
-        color var(--accent-color)
+.error-content
+  position absolute
+  text-align center
+  left 0
+  right 0
+  top 50%
+  margin-top -140px
+  h2
+    font-size 30px
+    font-weight bold
+    margin-bottom -15px
+    gungnir-font()
+  .error-emoji
+    font-size 50px
+    margin-bottom 10px
+  a
+    color var(--text-color)
+    :hover
+      color var(--accent-color)
 
 @media (max-width: $MQMobileNarrow)
-  .error-container
-    .error-content
-      h2
-        font-size 25px
-      .error-emoji
-        font-size 45px
+  .error-content
+    h2
+      font-size 25px
+    .error-emoji
+      font-size 45px
 </style>
 
 <style src="../styles/theme.styl" lang="stylus"></style>

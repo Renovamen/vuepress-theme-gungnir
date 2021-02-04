@@ -1,10 +1,7 @@
 <template>
-  <div>
+  <Common :sidebar="false">
     <PageHeader :page-info="getPageInfo" />
-    <Common
-      class="tag-wrapper"
-      :sidebar="false"
-    >
+    <div class="tags-wrapper">
       <TagList
         class="tags"
         :current-tag="$currentTags.key"
@@ -14,8 +11,8 @@
         :data="posts"
         class="list"
       />
-    </Common>
-  </div>
+    </div>
+  </Common>
 </template>
 
 <script>

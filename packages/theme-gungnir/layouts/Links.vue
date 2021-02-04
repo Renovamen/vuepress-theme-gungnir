@@ -1,21 +1,21 @@
 <template>
-  <div>
+  <Common>
     <PageHeader :page-info="getPageInfo" />
-    <Common class="links-wrapper">
-      <div class="links-group">
-        <div
-          v-for="(group, groupId) in $page.frontmatter.links"
-          :key="`link-group-${groupId}`"
-          class="section"
-        >
-          <h2 class="title">
-            {{ group.title }}
-          </h2>
-          <ul>
-            <li
-              v-for="(item, itemId) in group.items"
-              :key="`link-${itemId}`"
-            >
+
+    <div class="links-wrapper">
+      <div
+        v-for="(group, groupId) in $page.frontmatter.links"
+        :key="`link-group-${groupId}`"
+        class="section"
+      >
+        <h2>{{ group.title }}</h2>
+        <div class="group">
+          <div
+            v-for="(item, itemId) in group.items"
+            :key="`link-${itemId}`"
+            class="item"
+          >
+            <div class="content">
               <a
                 :href="item.url"
                 target="_blank"
@@ -33,13 +33,13 @@
                   {{ item.desc }}
                 </div>
               </a>
-            </li>
-          </ul>
-          <hr style="visibility: hidden;">
+            </div>
+          </div>
         </div>
+        <hr style="visibility: hidden;">
       </div>
-    </Common>
-  </div>
+    </div>
+  </Common>
 </template>
 
 <script>
@@ -67,37 +67,35 @@ export default {
 @require '../styles/mode.styl'
 
 .links-wrapper
-  .links-group
-    min-height calc(100vh - 155px - 235px)
-    padding-top 10px
-    padding-bottom 50px
-    width 60%
-    margin 0 auto
-    overflow-x hidden
-    h2, span, .desc
-      gungnir-font()
-    .title
-      font-weight 400
-      font-size 18px
-      padding-left 10px
-      border-left 3px solid var(--accent-color)
-      margin-left 25px
-      margin-top 50px
-    ul
-      list-style none
-      width 100%
-      display inline-block
-      li
-        width calc((100% - 210px) / 3)
-        height 80px
-        float left
+  padding 10px 0 50px
+  width 60%
+  max-width 745px
+  margin 0 auto
+  h2, span, .desc
+    gungnir-font()
+  h2
+    font-weight 400
+    font-size 18px
+    border-left 3px solid var(--accent-color)
+    padding-left 10px
+    margin-left 5px
+    margin-top 50px
+  .group
+    width 100%
+    list-style none
+    display inline-block
+    margin-top 10px
+    .item
+      width calc(100% / 3 - 8px)
+      float left
+      margin 4px
+      position relative
+      .content
         border 1px solid var(--border-color)
-        padding 10px 30px 10px 20px
-        margin 4px 4px
-        position relative
-        overflow hidden
         border-radius 10px
         transition(all ease .3s)
+        padding 13px 30px 13px 20px
+        overflow hidden
         a
           text-decoration none
           img
@@ -114,7 +112,7 @@ export default {
             // transition(transform 1s)
           span.sitename
             color var(--accent-color)
-            padding-bottom 10px
+            padding-bottom 15px
             display block
             overflow hidden
             text-overflow ellipsis
@@ -138,24 +136,23 @@ export default {
 
 @media (max-width $MQLarge)
   .links-wrapper
-    .links-group
-      width 75%
+    width 75%
 
 @media (max-width $MQIpad)
   .links-wrapper
-    .links-group
-      width 85%
-      ul li
-        width calc((100% - 160px) / 2)
-        &:before
-          display none
+    width 85%
+    .group .item
+      width calc(100% / 2 - 8px)
 
 @media (max-width $MQMobileNarrow)
   .links-wrapper
-    .links-group
-      width 100%
-      ul li
-        width calc(100% - 43px - 50px)
+    width 100%
+    h2
+      margin-left 17px
+    .group .item
+      margin-left 15px
+      margin-right 15px
+      width calc(100% - 30px)
 </style>
 
 <style src="@theme/styles/theme.styl" lang="stylus"></style>

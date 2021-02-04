@@ -1,17 +1,14 @@
 <template>
-  <div>
+  <Common :sidebar="false">
     <PageHeader :page-info="getPageInfo" />
-    <Common
-      class="tags-wrapper"
-      :sidebar="false"
-    >
+    <div class="tags-wrapper">
       <TagList
         :current-tag="currentTag"
         @getCurrentTag="tagClick"
       />
       <TagPostList :data="posts" />
-    </Common>
-  </div>
+    </div>
+  </Common>
 </template>
 
 <script>
