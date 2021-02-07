@@ -41,7 +41,6 @@ export default {
   },
   data () {
     return {
-      navHeight: 0,
       isFixed: false,
       catalogTop: 0,
       screenWidth: 0
@@ -63,7 +62,6 @@ export default {
     }
   },
   mounted () {
-    this.navHeight = this.$children[0].$children[0].$refs.navbar.offsetHeight
     this.headerHeight = document.querySelector('.post-header').offsetHeight
     this.screenWidth = document.body.clientWidth
     if (this.screenWidth <= 719) this.catalogTop = -15  // $MQMobile

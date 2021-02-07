@@ -30,14 +30,14 @@ export default {
     getPagerData () {
       var pagerData = {}
       if(this.$pagination.hasPrev) {
-        pagerData.prev = {}
-        pagerData.prev.text = this.$themeLocales.homePrev
-        pagerData.prev.link = this.$pagination.prevLink
+        pagerData.next = {}
+        pagerData.next.text = this.$themeLocales.homePrev
+        pagerData.next.link = this.$pagination.prevLink
       }
       if(this.$pagination.hasNext) {
-        pagerData.next = {}
-        pagerData.next.text = this.$themeLocales.homeNext
-        pagerData.next.link = this.$pagination.nextLink
+        pagerData.prev = {}
+        pagerData.prev.text = this.$themeLocales.homeNext
+        pagerData.prev.link = this.$pagination.nextLink
       }
       return pagerData
     }

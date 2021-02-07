@@ -205,7 +205,7 @@ export default {
     width 100vw
     height 100vh
     display none
-    background-color rgba(0, 0, 0, .65)
+    background-color rgba(0, 0, 0, .55)
   .sidebar
     .mobile-hero-avatar
       margin 0 auto

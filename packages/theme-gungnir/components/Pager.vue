@@ -1,16 +1,6 @@
 <template>
   <div class="pager">
     <router-link
-      v-if="data.prev"
-      class="previous"
-      :to="data.prev.link"
-    >
-      {{ data.prev.text }}<br>
-      <span v-if="data.prev.subtext">
-        {{ data.prev.subtext }}
-      </span>
-    </router-link>
-    <router-link
       v-if="data.next"
       class="next"
       :to="data.next.link"
@@ -18,6 +8,16 @@
       {{ data.next.text }}<br>
       <span v-if="data.next.subtext">
         {{ data.next.subtext }}
+      </span>
+    </router-link>
+    <router-link
+      v-if="data.prev"
+      class="previous"
+      :to="data.prev.link"
+    >
+      {{ data.prev.text }}<br>
+      <span v-if="data.prev.subtext">
+        {{ data.prev.subtext }}
       </span>
     </router-link>
   </div>
@@ -55,9 +55,9 @@ export default {
     letter-spacing 1px
     color var(--text-color)
     &.next
-      float right
-    &.previous
       float left
+    &.previous
+      float right
     span
       font-weight normal
       color var(--text-color-sub)

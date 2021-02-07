@@ -16,8 +16,8 @@ export default {
   // post meta
   lastUpdated: 'Last Updated',
   editLinkText: 'Edit this page on GitHub',
-  postPrev: 'Next',
-  postNext: 'Previous',
+  postNext: 'Next',
+  postPrev: 'Previous',
 
   // home page pager
   homePrev: '← Newer Posts',

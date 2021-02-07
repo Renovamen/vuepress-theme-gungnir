@@ -104,7 +104,6 @@ export default {
   },
 
   mounted() {
-    console.log(this.$page.readingTime)
     this.codeFullScreen()
   },
   methods: {

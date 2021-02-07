@@ -16,8 +16,8 @@ export default {
   // post meta
   lastUpdated: '上次编辑于',
   editLinkText: '在 GitHub 上编辑此页',
-  postPrev: '下一篇',
-  postNext: '上一篇',
+  postNext: '下一篇',
+  postPrev: '上一篇',
 
   // home page pager
   homePrev: '← 较新的文章',
