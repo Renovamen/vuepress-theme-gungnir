@@ -33,19 +33,23 @@ const catalogTopFixed = 80
 
 export default {
   name: 'Post',
+
   components: {
     ArticleHeader,
     Common,
     Catalog,
     Page
   },
+
   data () {
     return {
       isFixed: false,
       catalogTop: 0,
+      headerHeight: 0,
       screenWidth: 0
     }
   },
+
   computed: {
     pageStyle () {
       return this.$showCatalog ? {} : {
@@ -61,28 +65,43 @@ export default {
       return style
     }
   },
+
+  watch: {
+    '$route' () {
+      this.$nextTick(() => {
+        this.initCatalog()
+      })
+    }
+  },
+
   mounted () {
-    this.headerHeight = document.querySelector('.post-header').offsetHeight
-    this.screenWidth = document.body.clientWidth
-    if (this.screenWidth <= 719) this.catalogTop = -15  // $MQMobile
-    else this.catalogTop = this.headerHeight + catalogTopAbsolute
+    this.initCatalog()
 
     const that = this
     window.onresize = () => {
       return (() => {
         that.headerHeight = document.querySelector('.post-header').offsetHeight
         that.screenWidth = document.body.clientWidth
+        that.initCatalog()
         that.handleScroll()
       })()
     }
     window.addEventListener('scroll', throttle(this.handleScroll, 50))
   },
+
   beforeDestroy () {
     window.removeEventListener('scroll', throttle(this.handleScroll, 50))
   },
+
   methods: {
+    initCatalog() {
+      this.headerHeight = document.querySelector('.post-header').offsetHeight
+      this.screenWidth = document.body.clientWidth
+      if (this.screenWidth <= 719) this.catalogTop = -15  // $MQMobile
+      else this.catalogTop = this.headerHeight + catalogTopAbsolute
+    },
     handleScroll () {
-      var currentTop = window.pageYOffset
+      const currentTop = window.pageYOffset
       if (currentTop > (this.headerHeight + catalogTopAbsolute - catalogTopFixed)) {
         this.isFixed = true
         this.catalogTop = catalogTopFixed
