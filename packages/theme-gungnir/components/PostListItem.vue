@@ -4,10 +4,7 @@
       class="post-item-img__img"
       @click="$router.push(item.path)"
     >
-      <img
-        :src="$withBase(item.frontmatter.header_img)"
-        class="cover"
-      >
+      <img :src="$withBase(item.frontmatter.header_img)">
     </div>
     <div class="else">
       <p
@@ -70,6 +67,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@require '../styles/mixins.styl'
+
 .post-item-img
   margin 80px auto 100px
   position relative
