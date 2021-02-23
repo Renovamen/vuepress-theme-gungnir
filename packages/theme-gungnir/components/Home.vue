@@ -133,7 +133,7 @@ export default {
   methods: {
     // switch to the next header image
     switchImage(n) {
-      let len = this.$themeConfig.homeHeaderImages.length
+      const len = this.$themeConfig.homeHeaderImages.length
       this.bgImageID = (this.bgImageID + n + len) % len
     },
     scrollToPost() {
@@ -143,8 +143,8 @@ export default {
       })
     },
     handleScroll () {
-      var currentTop = window.pageYOffset
-      var windowHeight = document.documentElement.clientHeight
+      const currentTop = window.pageYOffset
+      const windowHeight = document.documentElement.clientHeight
       this.headerOpacity = 1 - currentTop * 1.2 / windowHeight
     }
   }

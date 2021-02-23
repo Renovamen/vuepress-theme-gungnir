@@ -112,7 +112,7 @@ export default {
             // transition(transform 1s)
           span.sitename
             color var(--accent-color)
-            padding-bottom 15px
+            padding 5px 0 10px
             display block
             overflow hidden
             text-overflow ellipsis

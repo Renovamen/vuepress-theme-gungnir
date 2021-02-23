@@ -92,7 +92,7 @@ export default {
 
   methods: {
     handleScroll () {
-      var currentTop = window.pageYOffset
+      const currentTop = window.pageYOffset
 
       if (currentTop < this.previousTop) {
         //if scrolling up...
