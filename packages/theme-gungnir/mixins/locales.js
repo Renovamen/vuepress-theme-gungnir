@@ -1,13 +1,13 @@
-import { enUS, zhCN } from '../locales/index'
+import { enUS, zhCN } from "../locales/index";
 
 export default {
   computed: {
-    $themeLocales () {
-      const themeLocales = this.$themeLocaleConfig.themeLocales || {}
-      if (this.$lang === 'zh-CN') {
-        return { ...zhCN, ...themeLocales }
+    $themeLocales() {
+      const themeLocales = this.$themeLocaleConfig.themeLocales || {};
+      if (this.$lang === "zh-CN") {
+        return { ...zhCN, ...themeLocales };
       }
-      return { ...enUS, ...themeLocales }
+      return { ...enUS, ...themeLocales };
     }
   }
-}
+};

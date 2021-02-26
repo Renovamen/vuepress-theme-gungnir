@@ -1,13 +1,13 @@
 module.exports = {
   "/docs/": [
     {
-      title: 'Basic',
+      title: "Basic",
       collapsable: false,
       children: [
-        '',
-        'basic/installation',
-        'basic/config'
-      ],
+        "",
+        "basic/installation",
+        "basic/config"
+      ]
     }
   ]
-}
+};

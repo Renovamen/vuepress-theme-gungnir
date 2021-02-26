@@ -43,7 +43,9 @@ Most people would find the picture of our universe as an infinite **tower of tor
 
 
 
-## Code Blocks
+## Code
+
+### Code Blocks
 
 Click the red button on the upper-right corner to make the code block full screen.
 
@@ -51,21 +53,25 @@ Click the red button on the upper-right corner to make the code block full scree
 import food
 
 class Dragon:
-    def __init__(self, happiness):
-        self.happiness = happiness
-    def code(self):
-        """ just code """
-        self.happiness -= 60
-    def eat(self, n)
-        # just eat
-        self.happiness += n * food.size
+  def __init__(self, happiness):
+    self.happiness = happiness
+  def code(self):
+    """ just code """
+    self.happiness -= 60
+  def eat(self, n)
+    # just eat
+    self.happiness += n * food.size
 
 me = Dragon(100)
 
 while True:
-    me.code()
-    me.eat(10)
+  me.code()
+  me.eat(10)
 ```
+
+### Inline Code
+
+`const a = 1`
 
 
 ## Charts
@@ -74,40 +80,40 @@ while True:
 
 ```chart
 {
-    "type": "bar",
-    "data": {
-        "labels": ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-        "datasets": [{
-            "label": "# of Votes",
-            "data": [12, 19, 3, 5, 2, 3],
-            "backgroundColor": [
-                "rgba(255, 99, 132, 0.2)",
-                "rgba(54, 162, 235, 0.2)",
-                "rgba(255, 206, 86, 0.2)",
-                "rgba(75, 192, 192, 0.2)",
-                "rgba(153, 102, 255, 0.2)",
-                "rgba(255, 159, 64, 0.2)"
-            ],
-            "borderColor": [
-                "rgba(255, 99, 132, 1)",
-                "rgba(54, 162, 235, 1)",
-                "rgba(255, 206, 86, 1)",
-                "rgba(75, 192, 192, 1)",
-                "rgba(153, 102, 255, 1)",
-                "rgba(255, 159, 64, 1)"
-            ],
-            "borderWidth": 1
-        }]
-    },
-    "options": {
-        "scales": {
-            "yAxes": [{
-                "ticks": {
-                    "beginAtZero": true
-                }
-            }]
+  "type": "bar",
+  "data": {
+    "labels": ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    "datasets": [{
+      "label": "# of Votes",
+      "data": [12, 19, 3, 5, 2, 3],
+      "backgroundColor": [
+        "rgba(255, 99, 132, 0.2)",
+        "rgba(54, 162, 235, 0.2)",
+        "rgba(255, 206, 86, 0.2)",
+        "rgba(75, 192, 192, 0.2)",
+        "rgba(153, 102, 255, 0.2)",
+        "rgba(255, 159, 64, 0.2)"
+      ],
+      "borderColor": [
+        "rgba(255, 99, 132, 1)",
+        "rgba(54, 162, 235, 1)",
+        "rgba(255, 206, 86, 1)",
+        "rgba(75, 192, 192, 1)",
+        "rgba(153, 102, 255, 1)",
+        "rgba(255, 159, 64, 1)"
+      ],
+      "borderWidth": 1
+    }]
+  },
+  "options": {
+    "scales": {
+      "yAxes": [{
+        "ticks": {
+          "beginAtZero": true
         }
+      }]
     }
+  }
 }
 ```
 
@@ -115,23 +121,23 @@ while True:
 
 ```mermaid
 sequenceDiagram
-    Alice->John: Hello John, how are you?
-    loop Every minute
-        John-->Alice: Great!
-    end
+  Alice->John: Hello John, how are you?
+  loop Every minute
+    John-->Alice: Great!
+  end
 ```
 
 ### roughViz.js
 
 ```roughviz-donut
 {
-    "data": {
-        "labels": ["North", "South", "East", "West"],
-        "values": [10, 5, 8, 3]
-    },
-    "title": "Regions",
-    "colors": ["red", "orange", "blue", "skyblue"],
-    "roughness": 4
+  "data": {
+    "labels": ["North", "South", "East", "West"],
+    "values": [10, 5, 8, 3]
+  },
+  "title": "Regions",
+  "colors": ["red", "orange", "blue", "skyblue"],
+  "roughness": 4
 }
 ```
 

@@ -1,4 +1,4 @@
-import VueIcon from 'oh-vue-icons/components/Icon'
+import VueIcon from "oh-vue-icons/components/Icon";
 import {
   FaFortAwesome,
   FaTag,
@@ -7,7 +7,7 @@ import {
   FaGithub,
   OiRepo,
   OiGitCompare
-} from 'oh-vue-icons/icons'
+} from "oh-vue-icons/icons";
 
 VueIcon.add([
   FaFortAwesome,
@@ -17,4 +17,4 @@ VueIcon.add([
   FaGithub,
   OiRepo,
   OiGitCompare
-])
+]);

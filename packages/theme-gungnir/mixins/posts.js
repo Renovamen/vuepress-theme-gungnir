@@ -1,30 +1,30 @@
-import { filterPosts, sortPostsByDate } from '@theme/utils/posts'
+import { filterPosts, sortPostsByDate } from "@theme/utils/posts";
 
 export default {
   computed: {
-    $getAllPosts () {
+    $getAllPosts() {
       const {
         $tags: { list: articles }
-      } = this
+      } = this;
 
       let posts = articles.reduce((allData, currentData) => {
-        return [...allData, ...currentData.pages]
-      }, [])
+        return [...allData, ...currentData.pages];
+      }, []);
 
-      posts = filterPosts(posts, false)
-      sortPostsByDate(posts)
+      posts = filterPosts(posts, false);
+      sortPostsByDate(posts);
 
-      return posts
+      return posts;
     },
-    $showCatalog () {
+    $showCatalog() {
       const {
         $themeConfig: { catalog: themeCatalog },
         $frontmatter: { catalog: pageCatalog }
-      } = this
+      } = this;
 
-      const headers = this.$page.headers || []
+      const headers = this.$page.headers || [];
 
-      return (themeCatalog || pageCatalog) && headers.length > 0
+      return (themeCatalog || pageCatalog) && headers.length > 0;
     }
   }
-}
+};

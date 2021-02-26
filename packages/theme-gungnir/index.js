@@ -9,7 +9,6 @@ module.exports = (options, ctx) => {
     lastUpdated: true,
     smoothScroll: true,
     sidebarDepth: 5,
-    codeTheme: 'default',
     hitokoto: false,
     comment: false,
     analytics: false,
