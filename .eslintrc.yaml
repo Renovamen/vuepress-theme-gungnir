@@ -17,7 +17,6 @@ parserOptions:
 ignorePatterns:
   - dist/
   - node_modules/
-  - packages/plugins/
 
 rules:
   no-unused-vars:

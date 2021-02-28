@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import Chart from 'chart.js'
+import Chart from "chart.js";
 
 export default {
-  name: 'Chart',
+  name: "Chart",
   props: {
     id: {
       type: String,
@@ -19,12 +19,12 @@ export default {
       required: true
     }
   },
-  mounted () {
+  mounted() {
     const data = JSON.parse(this.code);
-    const ctx = this.$refs.chartjs.getContext('2d');
+    const ctx = this.$refs.chartjs.getContext("2d");
     new Chart(ctx, data);
   }
-}
+};
 </script>
 
 <style lang="stylus">

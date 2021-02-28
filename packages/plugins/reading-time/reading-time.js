@@ -1,8 +1,8 @@
-const getNumCN = function(text) {
+const getNumCN = function (text) {
   return (text.match(/[\u4E00-\u9FA5]/g) || []).length;
 };
 
-const getNumEN = function(text) {
+const getNumEN = function (text) {
   return (
     text
       .replace(/[\u4E00-\u9FA5]/g, "")
@@ -12,15 +12,15 @@ const getNumEN = function(text) {
   ).length;
 };
 
-const excludeCodeBlock = function(text) {
-  return text.replace(/```[\s\S]*?```/g, '');
+const excludeCodeBlock = function (text) {
+  return text.replace(/```[\s\S]*?```/g, "");
 };
 
-const excludeTexBlock = function(text) {
-  return text.replace(/\$\$[\s\S]*?\$\$/g, '');
+const excludeTexBlock = function (text) {
+  return text.replace(/\$\$[\s\S]*?\$\$/g, "");
 };
 
-const readingTime = function(text, options) {
+const readingTime = function (text, options) {
   options = options || {};
 
   // use default values if necessary
@@ -28,15 +28,17 @@ const readingTime = function(text, options) {
   options.wordsPerMinuteEN = options.wordsPerMinuteEN || 160;
 
   // exclude all content inside code blocks
-  if(options.excludeCodeBlock) text = excludeCodeBlock(text)
+  if (options.excludeCodeBlock) text = excludeCodeBlock(text);
   // exclude all content inside tex blocks
-  if(options.excludeTexBlock) text = excludeTexBlock(text)
+  if (options.excludeTexBlock) text = excludeTexBlock(text);
 
   // number of chinese words and english words
-  const cntCN = getNumCN(text || ""), cntEN = getNumEN(text || "");
+  const cntCN = getNumCN(text || ""),
+    cntEN = getNumEN(text || "");
 
   // compute reading time
-  var minutes = cntCN / options.wordsPerMinuteCN + cntEN / options.wordsPerMinuteEN;
+  var minutes =
+    cntCN / options.wordsPerMinuteCN + cntEN / options.wordsPerMinuteEN;
   minutes = minutes < 1 ? 1 : Math.ceil(minutes.toFixed(2));
 
   return {

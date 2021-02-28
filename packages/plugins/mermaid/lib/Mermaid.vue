@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'Mermaid',
+  name: "Mermaid",
   props: {
     id: {
       type: String,
@@ -17,15 +17,15 @@ export default {
       required: true
     }
   },
-  mounted () {
-    import('mermaid/dist/mermaid.min').then(mermaid => {
+  mounted() {
+    import("mermaid/dist/mermaid.min").then((mermaid) => {
       mermaid.initialize({
         startOnLoad: true
       });
-      mermaid.init(undefined, '#' + this.id);
-    })
+      mermaid.init(undefined, "#" + this.id);
+    });
   }
-}
+};
 </script>
 
 <style lang="stylus">

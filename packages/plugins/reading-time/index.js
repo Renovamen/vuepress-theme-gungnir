@@ -4,21 +4,23 @@ module.exports = (options = {}) => ({
   extendPageData($page) {
     const { regularPath, path, frontmatter, _strippedContent } = $page;
 
-    if(!_strippedContent) {
+    if (!_strippedContent) {
       return $page;
     }
 
-    if(frontmatter && frontmatter.readingTime) {
+    if (frontmatter && frontmatter.readingTime) {
       $page.readingTime = frontmatter.readingTime;
       return $page;
     }
 
-    const excludePage = options.excludes && options.excludes.some(p => {
-      const testRegex = new RegExp(p);
-      return testRegex.test(path) || testRegex.test(regularPath);
-    });
+    const excludePage =
+      options.excludes &&
+      options.excludes.some((p) => {
+        const testRegex = new RegExp(p);
+        return testRegex.test(path) || testRegex.test(regularPath);
+      });
 
-    if(excludePage) {
+    if (excludePage) {
       return $page;
     }
 

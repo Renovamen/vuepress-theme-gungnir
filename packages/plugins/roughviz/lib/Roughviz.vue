@@ -16,7 +16,7 @@ import {
 } from "rough-viz/dist/roughviz.min.js";
 
 export default {
-  name: 'Roughviz',
+  name: "Roughviz",
   props: {
     id: {
       type: String,
@@ -31,35 +31,35 @@ export default {
       required: true
     }
   },
-  mounted () {
+  mounted() {
     let data = JSON.parse(this.code);
     data.element = `#${this.id}`;
 
-    switch(this.chart) {
-      case 'bar':
+    switch (this.chart) {
+      case "bar":
         new Bar(data);
         break;
-      case 'barh':
+      case "barh":
         new BarH(data);
         break;
-      case 'donut':
+      case "donut":
         new Donut(data);
         break;
-      case 'line':
+      case "line":
         new Line(data);
         break;
-      case 'pie':
+      case "pie":
         new Pie(data);
         break;
-      case 'scatter':
+      case "scatter":
         new Scatter(data);
         break;
-      case 'stackedbar':
+      case "stackedbar":
         new StackedBar(data);
         break;
-    } 
+    }
   }
-}
+};
 </script>
 
 <style lang="stylus">
