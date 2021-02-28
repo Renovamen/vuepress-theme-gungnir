@@ -47,7 +47,7 @@
     "prettier": "^2.2.1",
     "sort-package-json": "^1.48.1",
     "vuepress": "^1.8.0",
-    "vuepress-theme-gungnir": "^0.1.4"
+    "vuepress-theme-gungnir": "^0.1.5"
   },
   "useWorkspaces": true
 }

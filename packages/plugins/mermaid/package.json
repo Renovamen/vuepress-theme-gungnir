@@ -1,9 +1,7 @@
 {
   "name": "@renovamen/vuepress-plugin-mermaid",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "description": "A plugin for adding Mermaid to VuePress.",
-  "author": "Renovamen <renovamenzxh@gmail.com>",
-  "main": "index.js",
   "keywords": [
     "vue",
     "vuepress",
@@ -20,6 +18,8 @@
     "directory": "packages/plugins/mermaid"
   },
   "license": "MIT",
+  "author": "Renovamen <renovamenzxh@gmail.com>",
+  "main": "index.js",
   "dependencies": {
     "mermaid": "^8.9.0"
   }

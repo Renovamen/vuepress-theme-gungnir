@@ -2958,7 +2958,7 @@ core-js-compat@^3.6.5, core-js-compat@^3.8.0:
     browserslist "^4.16.1"
     semver "7.0.0"
 
-core-js@^3.4.4, core-js@^3.6.1, core-js@^3.6.4, core-js@^3.6.5:
+core-js@^3.6.1, core-js@^3.6.4, core-js@^3.6.5:
   version "3.8.3"
   resolved "https://registry.npm.taobao.org/core-js/download/core-js-3.8.3.tgz?cache=0&sync_timestamp=1611038902573&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcore-js%2Fdownload%2Fcore-js-3.8.3.tgz#c21906e1f14f3689f93abcc6e26883550dd92dd0"
   integrity sha1-whkG4fFPNon5OrzG4miDVQ3ZLdA=
@@ -6979,12 +6979,10 @@ obuf@^1.0.0, obuf@^1.1.2:
   resolved "https://registry.npm.taobao.org/obuf/download/obuf-1.1.2.tgz#09bea3343d41859ebd446292d11c9d4db619084e"
   integrity sha1-Cb6jND1BhZ69RGKS0RydTbYZCE4=
 
-oh-vue-icons@^0.1.8:
-  version "0.1.8"
-  resolved "https://registry.npm.taobao.org/oh-vue-icons/download/oh-vue-icons-0.1.8.tgz#eecba4c3b3651b8af1d54d5cc620f5e69aa72d05"
-  integrity sha1-7sukw7NlG4rx1U1cxiD15pqnLQU=
-  dependencies:
-    core-js "^3.4.4"
+oh-vue-icons@^0.1.11:
+  version "0.1.11"
+  resolved "https://registry.npm.taobao.org/oh-vue-icons/download/oh-vue-icons-0.1.11.tgz?cache=0&sync_timestamp=1614401873752&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Foh-vue-icons%2Fdownload%2Foh-vue-icons-0.1.11.tgz#554b398bba877e2f1a22310f7a6edbccf06117cd"
+  integrity sha1-VUs5i7qHfi8aIjEPem7bzPBhF80=
 
 on-finished@~2.3.0:
   version "2.3.0"

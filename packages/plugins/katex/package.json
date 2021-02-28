@@ -1,9 +1,7 @@
 {
   "name": "@renovamen/vuepress-plugin-katex",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "A plugin for adding Katex to VuePress.",
-  "author": "Renovamen <renovamenzxh@gmail.com>",
-  "main": "index.js",
   "keywords": [
     "vue",
     "vuepress",
@@ -22,6 +20,8 @@
     "directory": "packages/plugins/katex"
   },
   "license": "MIT",
+  "author": "Renovamen <renovamenzxh@gmail.com>",
+  "main": "index.js",
   "dependencies": {
     "katex": "^0.12.0"
   }

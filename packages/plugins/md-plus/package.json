@@ -1,9 +1,7 @@
 {
   "name": "@renovamen/vuepress-plugin-md-plus",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "A plugin for enhancing Markdown in VuePress.",
-  "author": "Renovamen <renovamenzxh@gmail.com>",
-  "main": "index.js",
   "keywords": [
     "vue",
     "vuepress",
@@ -22,6 +20,8 @@
     "directory": "packages/plugins/md-plus"
   },
   "license": "MIT",
+  "author": "Renovamen <renovamenzxh@gmail.com>",
+  "main": "index.js",
   "dependencies": {
     "markdown-it-footnote": "^3.0.2",
     "markdown-it-mark": "^3.0.0"

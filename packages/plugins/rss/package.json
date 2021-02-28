@@ -1,9 +1,7 @@
 {
   "name": "@renovamen/vuepress-plugin-rss",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "A plugin for adding RSS to vuepress-theme-gungnir.",
-  "author": "Renovamen <renovamenzxh@gmail.com>",
-  "main": "index.js",
   "keywords": [
     "vue",
     "vuepress",
@@ -20,6 +18,8 @@
     "directory": "packages/plugins/rss"
   },
   "license": "MIT",
+  "author": "Renovamen <renovamenzxh@gmail.com>",
+  "main": "index.js",
   "dependencies": {
     "chalk": "^4.1.0",
     "fs-extra": "^9.1.0",

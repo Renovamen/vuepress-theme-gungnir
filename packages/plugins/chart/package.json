@@ -1,9 +1,7 @@
 {
   "name": "vuepress-plugin-chart",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "A plugin for adding Chart.js to VuePress.",
-  "author": "Renovamen <renovamenzxh@gmail.com>",
-  "main": "index.js",
   "keywords": [
     "vue",
     "vuepress",
@@ -21,6 +19,8 @@
     "directory": "packages/plugins/chart"
   },
   "license": "MIT",
+  "author": "Renovamen <renovamenzxh@gmail.com>",
+  "main": "index.js",
   "dependencies": {
     "chart.js": "^2.9.4"
   }
