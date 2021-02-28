@@ -8,17 +8,8 @@
       rel="noopener noreferrer"
     >
       <v-icon class="icon-stack">
-        <v-icon
-          v-if="large"
-          name="fa-circle"
-          scale="2.3"
-          class="icon-circle"
-        />
-        <v-icon
-          :name="snsIcon(platform)"
-          class="icon-sns"
-          inverse
-        />
+        <v-icon v-if="large" name="fa-circle" scale="2.3" class="icon-circle" />
+        <v-icon :name="snsIcon(platform)" class="icon-sns" inverse />
       </v-icon>
     </a>
     <a
@@ -28,17 +19,8 @@
       rel="noopener noreferrer"
     >
       <v-icon class="icon-stack">
-        <v-icon
-          v-if="large"
-          name="fa-circle"
-          scale="2.3"
-          class="icon-circle"
-        />
-        <v-icon
-          name="fa-rss"
-          class="icon-sns"
-          inverse
-        />
+        <v-icon v-if="large" name="fa-circle" scale="2.3" class="icon-circle" />
+        <v-icon name="fa-rss" class="icon-sns" inverse />
       </v-icon>
     </a>
   </div>
@@ -46,24 +28,24 @@
 
 <script>
 const platform_links = {
-  'github': 'https://github.com/',
-  'linkedin': 'https://www.linkedin.com/in/',
-  'facebook': 'https://www.facebook.com/',
-  'twitter': 'https://www.twitter.com/',
-  'zhihu': 'https://www.zhihu.com/people/',
-  'weibo': 'http://weibo.com/u/',
-  'email': 'mailto:'
-}
+  github: "https://github.com/",
+  linkedin: "https://www.linkedin.com/in/",
+  facebook: "https://www.facebook.com/",
+  twitter: "https://www.twitter.com/",
+  zhihu: "https://www.zhihu.com/people/",
+  weibo: "http://weibo.com/u/",
+  email: "mailto:"
+};
 
 const platform_icons = {
-  'github': 'fa-github-alt',
-  'linkedin': 'fa-linkedin-in',
-  'facebook': 'fa-facebook-f',
-  'twitter': 'fa-twitter',
-  'zhihu': 'ri-zhihu-line',
-  'weibo': 'fa-weibo',
-  'email': 'fa-envelope'
-}
+  github: "fa-github-alt",
+  linkedin: "fa-linkedin-in",
+  facebook: "fa-facebook-f",
+  twitter: "fa-twitter",
+  zhihu: "ri-zhihu-line",
+  weibo: "fa-weibo",
+  email: "fa-envelope"
+};
 
 export default {
   props: {
@@ -71,13 +53,13 @@ export default {
   },
   methods: {
     snsLink(user, platform) {
-      return platform_links[platform] + user
+      return platform_links[platform] + user;
     },
     snsIcon(platform) {
-      return platform_icons[platform]
+      return platform_icons[platform];
     }
   }
-}
+};
 </script>
 
 <style lang="stylus">

@@ -2,10 +2,10 @@
 layout: Links
 title: Links
 links:
-  - title: 咸鱼翻滚
+  - title: Live Demos
     items:
       - sitename: ME?
         url: https://renovamen.ink
         img: /img/links/me.png
-        desc: 我的博客
+        desc: My blog
 ---

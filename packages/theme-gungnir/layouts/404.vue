@@ -13,12 +13,20 @@
 </template>
 
 <script>
-import Common from '@theme/components/Common.vue'
+import Common from "@theme/components/Common.vue";
 
 const emojiArray = [
-  '\\(o_o)/', '(o^^)o', '(˚Δ˚)b', '(^-^*)', '(^_^)b', '(╯‵□′)╯',
-  '(=\'X\'=)', '(>_<)', '\\(°ˊДˋ°)/', 'ㄟ(▔▽▔)ㄏ'
-]
+  "\\(o_o)/",
+  "(o^^)o",
+  "(˚Δ˚)b",
+  "(^-^*)",
+  "(^_^)b",
+  "(╯‵□′)╯",
+  "(='X'=)",
+  "(>_<)",
+  "\\(°ˊДˋ°)/",
+  "ㄟ(▔▽▔)ㄏ"
+];
 
 export default {
   components: {
@@ -26,11 +34,11 @@ export default {
   },
 
   methods: {
-    getEmoji () {
-      return emojiArray[Math.floor(Math.random() * emojiArray.length)]
+    getEmoji() {
+      return emojiArray[Math.floor(Math.random() * emojiArray.length)];
     }
   }
-}
+};
 </script>
 
 <style lang="stylus">

@@ -28,16 +28,20 @@ export function getPostsByYear(pages) {
 
 export function filterPosts(posts, isGroupedByYear) {
   posts = posts.filter((item, index) => {
-    const { title, frontmatter: { home, date, publish } } = item;
+    const {
+      title,
+      frontmatter: { home, date, publish }
+    } = item;
     // deal with duplicated tags
     if (posts.indexOf(item) !== index) {
       return false;
-    }
-    else {
-      const someConditions = home == true || title == undefined || publish === false;
-      const boo = isGroupedByYear === true
-                ? !(someConditions || date === undefined)
-                : !someConditions;
+    } else {
+      const someConditions =
+        home == true || title == undefined || publish === false;
+      const boo =
+        isGroupedByYear === true
+          ? !(someConditions || date === undefined)
+          : !someConditions;
       return boo;
     }
   });

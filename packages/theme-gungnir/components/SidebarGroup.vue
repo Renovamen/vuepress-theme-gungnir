@@ -14,17 +14,13 @@
       class="sidebar-heading clickable"
       :class="{
         open,
-        'active': isActive($route, item.path)
+        active: isActive($route, item.path)
       }"
       :to="item.path"
       @click.native="$emit('toggle')"
     >
       <span>{{ item.title }}</span>
-      <span
-        v-if="collapsable"
-        class="arrow"
-        :class="open ? 'down' : 'right'"
-      />
+      <span v-if="collapsable" class="arrow" :class="open ? 'down' : 'right'" />
     </RouterLink>
 
     <p
@@ -34,11 +30,7 @@
       @click="$emit('toggle')"
     >
       <span>{{ item.title }}</span>
-      <span
-        v-if="collapsable"
-        class="arrow"
-        :class="open ? 'down' : 'right'"
-      />
+      <span v-if="collapsable" class="arrow" :class="open ? 'down' : 'right'" />
     </p>
 
     <DropdownTransition>
@@ -55,11 +47,11 @@
 </template>
 
 <script>
-import { isActive } from '@theme/utils/utils'
-import DropdownTransition from '@theme/components/DropdownTransition.vue'
+import { isActive } from "@theme/utils/utils";
+import DropdownTransition from "@theme/components/DropdownTransition.vue";
 
 export default {
-  name: 'SidebarGroup',
+  name: "SidebarGroup",
 
   components: {
     DropdownTransition
@@ -85,12 +77,12 @@ export default {
   },
 
   // ref: https://vuejs.org/v2/guide/components-edge-cases.html#Circular-References-Between-Components
-  beforeCreate () {
-    this.$options.components.SidebarLinks = require('@theme/components/SidebarLinks.vue').default
+  beforeCreate() {
+    this.$options.components.SidebarLinks = require("@theme/components/SidebarLinks.vue").default;
   },
 
   methods: { isActive }
-}
+};
 </script>
 
 <style lang="stylus">

@@ -2,21 +2,18 @@
   <Common :sidebar="false">
     <PageHeader :page-info="getPageInfo" />
     <div class="tags-wrapper">
-      <TagList
-        :current-tag="currentTag"
-        @getCurrentTag="tagClick"
-      />
+      <TagList :current-tag="currentTag" @getCurrentTag="tagClick" />
       <TagPostList :data="posts" />
     </div>
   </Common>
 </template>
 
 <script>
-import Common from '@theme/components/Common'
-import TagList from '@theme/components/TagList'
-import TagPostList from '@theme/components/TagPostList'
-import PageHeader from '@theme/components/PageHeader'
-import { getPostsByYear } from '@theme/utils/posts'
+import Common from "@theme/components/Common";
+import TagList from "@theme/components/TagList";
+import TagPostList from "@theme/components/TagPostList";
+import PageHeader from "@theme/components/PageHeader";
+import { getPostsByYear } from "@theme/utils/posts";
 
 export default {
   components: {
@@ -25,46 +22,50 @@ export default {
     TagList,
     PageHeader
   },
-  data () {
+  data() {
     return {
       tags: [],
-      currentTag: '',
-      allTagName: ''
-    }
+      currentTag: "",
+      allTagName: ""
+    };
   },
 
   computed: {
     posts() {
-      let posts = getPostsByYear(this.$getAllPosts)
-      return posts
+      let posts = getPostsByYear(this.$getAllPosts);
+      return posts;
     },
     getPageInfo() {
-      let info = this.$themeConfig.pages && this.$themeConfig.pages.tags
-                  ? this.$themeConfig.pages.tags : {}
-      info.title = this.$themeLocales.tags
-      return info
+      let info =
+        this.$themeConfig.pages && this.$themeConfig.pages.tags
+          ? this.$themeConfig.pages.tags
+          : {};
+      info.title = this.$themeLocales.tags;
+      return info;
     }
   },
 
-  created () {
-    this.currentTag = this.$themeLocales.tagAll
-    this.allTagName = this.$themeLocales.tagAll
+  created() {
+    this.currentTag = this.$themeLocales.tagAll;
+    this.allTagName = this.$themeLocales.tagAll;
     if (this.$tags.list.length > 0) {
-      this.currentTag = this.$route.query.tag ? this.$route.query.tag : this.currentTag
+      this.currentTag = this.$route.query.tag
+        ? this.$route.query.tag
+        : this.currentTag;
     }
   },
 
   methods: {
     tagClick(tagInfo) {
       if (this.$route.path !== tagInfo.path) {
-        this.$router.push({ path: tagInfo.path })
+        this.$router.push({ path: tagInfo.path });
       }
     },
     getCurrentTag(tag) {
-      this.$emit('currentTag', tag)
+      this.$emit("currentTag", tag);
     }
   }
-}
+};
 </script>
 
 <style lang="stylus">

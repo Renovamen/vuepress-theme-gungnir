@@ -1,13 +1,7 @@
 <template>
-  <div
-    v-if="prev || next"
-    class="page-nav"
-  >
+  <div v-if="prev || next" class="page-nav">
     <p class="inner">
-      <span
-        v-if="prev"
-        class="prev"
-      >
+      <span v-if="prev" class="prev">
         ←
         <a
           v-if="prev.type === 'external'"
@@ -19,19 +13,12 @@
           {{ prev.title || prev.path }}
         </a>
 
-        <RouterLink
-          v-else
-          class="prev"
-          :to="prev.path"
-        >
+        <RouterLink v-else class="prev" :to="prev.path">
           {{ prev.title || prev.path }}
         </RouterLink>
       </span>
 
-      <span
-        v-if="next"
-        class="next"
-      >
+      <span v-if="next" class="next">
         <a
           v-if="next.type === 'external'"
           :href="next.path"
@@ -41,10 +28,7 @@
           {{ next.title || next.path }}
         </a>
 
-        <RouterLink
-          v-else
-          :to="next.path"
-        >
+        <RouterLink v-else :to="next.path">
           {{ next.title || next.path }}
         </RouterLink>
         →
@@ -54,12 +38,12 @@
 </template>
 
 <script>
-import { resolvePage } from '@theme/utils/utils'
-import isString from 'lodash/isString'
-import isNil from 'lodash/isNil'
+import { resolvePage } from "@theme/utils/utils";
+import isString from "lodash/isString";
+import isNil from "lodash/isNil";
 
 export default {
-  name: 'PageNav',
+  name: "PageNav",
 
   props: {
     sidebarItems: {
@@ -69,21 +53,21 @@ export default {
   },
 
   computed: {
-    prev () {
-      return resolvePageLink(LINK_TYPES.PREV, this)
+    prev() {
+      return resolvePageLink(LINK_TYPES.PREV, this);
     },
-    next () {
-      return resolvePageLink(LINK_TYPES.NEXT, this)
+    next() {
+      return resolvePageLink(LINK_TYPES.NEXT, this);
     }
   }
+};
+
+function resolvePrev(page, items) {
+  return find(page, items, -1);
 }
 
-function resolvePrev (page, items) {
-  return find(page, items, -1)
-}
-
-function resolveNext (page, items) {
-  return find(page, items, 1)
+function resolveNext(page, items) {
+  return find(page, items, 1);
 }
 
 const LINK_TYPES = {
@@ -97,55 +81,49 @@ const LINK_TYPES = {
     getThemeLinkConfig: ({ prevLinks }) => prevLinks,
     getPageLinkConfig: ({ frontmatter }) => frontmatter.prev
   }
-}
+};
 
-function resolvePageLink (linkType, {
-  $themeConfig,
-  $page,
-  $route,
-  $site,
-  sidebarItems
-}) {
-  const { resolveLink, getThemeLinkConfig, getPageLinkConfig } = linkType
+function resolvePageLink(
+  linkType,
+  { $themeConfig, $page, $route, $site, sidebarItems }
+) {
+  const { resolveLink, getThemeLinkConfig, getPageLinkConfig } = linkType;
 
   // Get link config from theme
-  const themeLinkConfig = getThemeLinkConfig($themeConfig)
+  const themeLinkConfig = getThemeLinkConfig($themeConfig);
 
   // Get link config from current page
-  const pageLinkConfig = getPageLinkConfig($page)
+  const pageLinkConfig = getPageLinkConfig($page);
 
   // Page link config will overwrite global theme link config if defined
-  const link = isNil(pageLinkConfig) ? themeLinkConfig : pageLinkConfig
+  const link = isNil(pageLinkConfig) ? themeLinkConfig : pageLinkConfig;
 
   if (link === false) {
-    return
-  }
-  else if (isString(link)) {
-    return resolvePage($site.pages, link, $route.path)
-  }
-  else {
-    return resolveLink($page, sidebarItems)
+    return;
+  } else if (isString(link)) {
+    return resolvePage($site.pages, link, $route.path);
+  } else {
+    return resolveLink($page, sidebarItems);
   }
 }
 
-function find (page, items, offset) {
-  const res = []
-  flatten(items, res)
+function find(page, items, offset) {
+  const res = [];
+  flatten(items, res);
   for (let i = 0; i < res.length; i++) {
-    const cur = res[i]
-    if (cur.type === 'page' && cur.path === decodeURIComponent(page.path)) {
-      return res[i + offset]
+    const cur = res[i];
+    if (cur.type === "page" && cur.path === decodeURIComponent(page.path)) {
+      return res[i + offset];
     }
   }
 }
 
-function flatten (items, res) {
+function flatten(items, res) {
   for (let i = 0, l = items.length; i < l; i++) {
-    if (items[i].type === 'group') {
-      flatten(items[i].children || [], res)
-    }
-    else {
-      res.push(items[i])
+    if (items[i].type === "group") {
+      flatten(items[i].children || [], res);
+    } else {
+      res.push(items[i]);
     }
   }
 }

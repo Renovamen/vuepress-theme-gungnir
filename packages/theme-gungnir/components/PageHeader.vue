@@ -7,15 +7,12 @@
     <div
       v-if="pageInfo.bgImage && pageInfo.bgImage.mask"
       class="header-mask"
-      :style="{ 'background': pageInfo.bgImage.mask }"
+      :style="{ background: pageInfo.bgImage.mask }"
     />
     <h1 class="title">
       {{ pageInfo.title || $page.frontmatter.title }}
     </h1>
-    <h3
-      v-if="pageInfo.subtitle"
-      class="subtitle"
-    >
+    <h3 v-if="pageInfo.subtitle" class="subtitle">
       {{ pageInfo.subtitle }}
     </h3>
   </div>
@@ -26,19 +23,23 @@ export default {
   props: {
     pageInfo: {
       type: Object,
-      default () {
-        return {}
+      default() {
+        return {};
       }
     }
   },
   computed: {
-    headerImage () {
-      return this.pageInfo.bgImage ? { 
-        backgroundImage: `url(${this.$withBase(this.pageInfo.bgImage.path)})`
-      } : {}
+    headerImage() {
+      return this.pageInfo.bgImage
+        ? {
+            backgroundImage: `url(${this.$withBase(
+              this.pageInfo.bgImage.path
+            )})`
+          }
+        : {};
     }
   }
-}
+};
 </script>
 
 <style lang="stylus" scoped>

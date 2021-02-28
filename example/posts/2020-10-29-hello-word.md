@@ -7,7 +7,7 @@ date: 2020-10-29
 header_img: /img/in-post/2020-10-29/header.jpg
 catalog: true
 tags:
-  - 摸鱼
+  - test
 ---
 
 This is a test post without the header image.
@@ -40,30 +40,31 @@ Most people would find the picture of our universe as an infinite **tower of tor
 ###### H6 Heading
 
 
+## Code
 
-## Code Blocks
+Code block (click the red button on the upper-right corner to make the code block full screen):
 
-Click the red button on the upper-right corner to make the code block full screen.
-
-```python{1,6-8}
+```python{8}
 import food
 
 class Dragon:
-    def __init__(self, happiness):
-        self.happiness = happiness
-    def code(self):
-        """ just code """
-        self.happiness -= 60
-    def eat(self, n)
-        # just eat
-        self.happiness += n * food.size
+  def __init__(self, happiness):
+    self.happiness = happiness
+  def code(self):
+    """ just code """
+    self.happiness -= 60
+  def eat(self, n)
+    # just eat
+    self.happiness += n * food.size
 
 me = Dragon(100)
 
 while True:
-    me.code()
-    me.eat(10)
+  me.code()
+  me.eat(10)
 ```
+
+Inline code: `const a = 1`
 
 
 ## Charts

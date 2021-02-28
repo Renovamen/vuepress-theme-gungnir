@@ -12,34 +12,25 @@
       @toggle-search="toggleSearch(true)"
     />
 
-    <div
-      class="sidebar-mask"
-      @click="toggleSidebar(false)"
-    />
+    <div class="sidebar-mask" @click="toggleSidebar(false)" />
 
-    <Sidebar
-      :items="sidebarItems"
-      @toggle-search="toggleSearch(true)"
-    >
+    <Sidebar :items="sidebarItems" @toggle-search="toggleSearch(true)">
       <template slot="top">
         <div class="personal-info-wrapper">
           <div class="mobile-hero-avatar">
             <img
               :src="$withBase($themeConfig.personalInfo.avatar)"
               alt="hero"
-            >
+            />
           </div>
           <p class="mobile-heading">
             {{ $themeConfig.personalInfo.name }}
           </p>
           <SNS />
-          <hr>
+          <hr />
         </div>
       </template>
-      <slot
-        slot="bottom"
-        name="sidebar-bottom"
-      />
+      <slot slot="bottom" name="sidebar-bottom" />
     </Sidebar>
 
     <div class="content">
@@ -50,24 +41,18 @@
       v-if="$themeConfig.search && $frontmatter.search !== false"
       @toggle-search="toggleSearch(false)"
     />
-    <Menu
-      @toggle-sidebar="toggleSidebar"
-      @toggle-catalog="toggleCatalog"
-    />
-    <Footer
-      v-if="!shouldShowSidebar"
-      class="footer"
-    />
+    <Menu @toggle-sidebar="toggleSidebar" @toggle-catalog="toggleCatalog" />
+    <Footer v-if="!shouldShowSidebar" class="footer" />
   </div>
 </template>
 
 <script>
-import Navbar from '@theme/components/Navbar'
-import Sidebar from '@theme/components/Sidebar'
-import SearchPage from '@theme/components/SearchPage'
-import Menu from '@theme/components/Menu'
-import Footer from '@theme/components/Footer'
-import SNS from '@theme/components/SNS'
+import Navbar from "@theme/components/Navbar";
+import Sidebar from "@theme/components/Sidebar";
+import SearchPage from "@theme/components/SearchPage";
+import Menu from "@theme/components/Menu";
+import Footer from "@theme/components/Footer";
+import SNS from "@theme/components/SNS";
 
 export default {
   components: {
@@ -86,23 +71,21 @@ export default {
     }
   },
 
-  data () {
+  data() {
     return {
       isSidebarOpen: false,
       isCatalogOpen: false,
-      isSearchOpen: false,
-    }
+      isSearchOpen: false
+    };
   },
 
   computed: {
-    shouldShowNavbar () {
-      const { themeConfig } = this.$site
-      const { frontmatter } = this.$page
+    shouldShowNavbar() {
+      const { themeConfig } = this.$site;
+      const { frontmatter } = this.$page;
 
-      if (
-        frontmatter.navbar === false ||
-        themeConfig.navbar === false
-      ) return false
+      if (frontmatter.navbar === false || themeConfig.navbar === false)
+        return false;
 
       return (
         this.$title ||
@@ -110,81 +93,80 @@ export default {
         themeConfig.repo ||
         themeConfig.nav ||
         this.$themeLocaleConfig.nav
-      )
+      );
     },
 
-    shouldShowSidebar () {
-      return this.sidebarItems.length > 0
+    shouldShowSidebar() {
+      return this.sidebarItems.length > 0;
     },
 
-    pageClasses () {
-      const userPageClass = this.$frontmatter.pageClass
+    pageClasses() {
+      const userPageClass = this.$frontmatter.pageClass;
       return [
         {
-          'no-navbar': !this.shouldShowNavbar,
-          'sidebar-open': this.isSidebarOpen,
-          'no-sidebar': !this.shouldShowSidebar,
-          'catalog-open': this.isCatalogOpen,
-          'search-open': this.isSearchOpen
+          "no-navbar": !this.shouldShowNavbar,
+          "sidebar-open": this.isSidebarOpen,
+          "no-sidebar": !this.shouldShowSidebar,
+          "catalog-open": this.isCatalogOpen,
+          "search-open": this.isSearchOpen
         },
         userPageClass
-      ]
+      ];
     }
   },
 
-  mounted () {
+  mounted() {
     this.$router.afterEach(() => {
-      this.isSidebarOpen = false
-      this.isSearchOpen = false
+      this.isSidebarOpen = false;
+      this.isSearchOpen = false;
       // this.isCatalogOpen = false
-    })
+    });
   },
 
   methods: {
-    toggleSidebar (to) {
-      this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen
-      this.$emit('toggle-sidebar', this.isSidebarOpen)
+    toggleSidebar(to) {
+      this.isSidebarOpen = typeof to === "boolean" ? to : !this.isSidebarOpen;
+      this.$emit("toggle-sidebar", this.isSidebarOpen);
     },
 
-    toggleCatalog (to) {
-      this.isCatalogOpen = typeof to === 'boolean' ? to : !this.isCatalogOpen
-      this.$emit('toggle-catalog', this.isCatalogOpen)
+    toggleCatalog(to) {
+      this.isCatalogOpen = typeof to === "boolean" ? to : !this.isCatalogOpen;
+      this.$emit("toggle-catalog", this.isCatalogOpen);
     },
 
-    toggleSearch (to) {
-      this.isSearchOpen = typeof to === 'boolean' ? to : !this.isSearchOpen
-      this.$emit('toggle-search', this.isSearchOpen)
+    toggleSearch(to) {
+      this.isSearchOpen = typeof to === "boolean" ? to : !this.isSearchOpen;
+      this.$emit("toggle-search", this.isSearchOpen);
       // auto focus
       if (this.isSearchOpen) {
         setTimeout(function () {
-          document.querySelector('.search-page input').focus();
+          document.querySelector(".search-page input").focus();
         }, 400);
       }
     },
 
     // side swipe
-    onTouchStart (e) {
+    onTouchStart(e) {
       this.touchStart = {
         x: e.changedTouches[0].clientX,
         y: e.changedTouches[0].clientY
-      }
+      };
     },
 
-    onTouchEnd (e) {
-      const dx = e.changedTouches[0].clientX - this.touchStart.x
-      const dy = e.changedTouches[0].clientY - this.touchStart.y
+    onTouchEnd(e) {
+      const dx = e.changedTouches[0].clientX - this.touchStart.x;
+      const dy = e.changedTouches[0].clientY - this.touchStart.y;
 
       if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
         if (dx > 0 && this.touchStart.x <= 80) {
-          this.toggleSidebar(true)
-        }
-        else {
-          this.toggleSidebar(false)
+          this.toggleSidebar(true);
+        } else {
+          this.toggleSidebar(false);
         }
       }
     }
   }
-}
+};
 </script>
 
 <style lang="stylus" scoped>

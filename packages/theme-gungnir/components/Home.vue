@@ -1,33 +1,19 @@
 <template>
   <div class="home-blog">
-    <div
-      class="hero"
-      :style="{ 'background-image': bgImagePath }"
-    >
+    <div class="hero" :style="{ 'background-image': bgImagePath }">
       <div
         v-if="$themeConfig.homeHeaderImages[bgImageID].mask"
         class="header-mask"
-        :style="{background: $themeConfig.homeHeaderImages[bgImageID].mask}"
+        :style="{ background: $themeConfig.homeHeaderImages[bgImageID].mask }"
       />
-      <div
-        class="header-content"
-        :style="{'opacity': headerOpacity}"
-      >
+      <div class="header-content" :style="{ opacity: headerOpacity }">
         <div class="hero-avatar hide-on-mobile">
-          <img
-            :src="$withBase($themeConfig.personalInfo.avatar)"
-            alt="hero"
-          >
+          <img :src="$withBase($themeConfig.personalInfo.avatar)" alt="hero" />
         </div>
 
-        <div
-          v-if="$themeConfig.hitokoto"
-          class="hero-bubble"
-        >
+        <div v-if="$themeConfig.hitokoto" class="hero-bubble">
           <div class="hero-bubble__body">
-            <p ref="hitokoto">
-              正在加载一言...
-            </p>
+            <p ref="hitokoto">正在加载一言...</p>
           </div>
           <div class="hero-bubble__tile" />
         </div>
@@ -41,10 +27,7 @@
           </div>
         </div>
 
-        <SNS
-          class="hide-on-mobile"
-          large
-        />
+        <SNS class="hide-on-mobile" large />
 
         <button
           v-if="$themeConfig.homeHeaderImages"
@@ -65,90 +48,88 @@
           class="arrow faa-float animated hide-on-mobile"
           @click="scrollToPost()"
         >
-          <v-icon
-            name="fa-chevron-down"
-            scale="1.7"
-          />
+          <v-icon name="fa-chevron-down" scale="1.7" />
         </div>
       </div>
     </div>
 
-    <PostList
-      class="home-blog-wrapper"
-      :data="$pagination.pages"
-    />
+    <PostList class="home-blog-wrapper" :data="$pagination.pages" />
   </div>
 </template>
 
 <script>
-import PostList from '@theme/components/PostList'
-import SNS from '@theme/components/SNS'
-import { throttle } from '@theme/utils/time'
+import PostList from "@theme/components/PostList";
+import SNS from "@theme/components/SNS";
+import { throttle } from "@theme/utils/time";
 
 export default {
   components: {
     PostList,
     SNS
   },
-  data () {
+  data() {
     return {
       currentPage: 1,
       tags: [],
       bgImageID: 0,
       headerOpacity: 1
-    }
+    };
   },
   computed: {
-    bgImagePath () {
-      if(this.$themeConfig.homeHeaderImages) {
-        const bgPath = `url(${this.$withBase(this.$themeConfig.homeHeaderImages[this.bgImageID].path)})`
-        return bgPath
-      }
-      else {
-        const bgURL = 'url(https://source.unsplash.com/collection/1065374/1600x900)'
-        return bgURL
+    bgImagePath() {
+      if (this.$themeConfig.homeHeaderImages) {
+        const bgPath = `url(${this.$withBase(
+          this.$themeConfig.homeHeaderImages[this.bgImageID].path
+        )})`;
+        return bgPath;
+      } else {
+        const bgURL =
+          "url(https://source.unsplash.com/collection/1065374/1600x900)";
+        return bgURL;
       }
     },
-    heroHeight () {
-      return document.querySelector('.hero').clientHeight
+    heroHeight() {
+      return document.querySelector(".hero").clientHeight;
     }
   },
   mounted() {
-    this.bgImageID = Math.floor(Math.random() * this.$themeConfig.homeHeaderImages.length)
-    window.addEventListener('scroll', throttle(this.handleScroll, 50))
+    this.bgImageID = Math.floor(
+      Math.random() * this.$themeConfig.homeHeaderImages.length
+    );
+    window.addEventListener("scroll", throttle(this.handleScroll, 50));
 
-    fetch('https://v1.hitokoto.cn')
-    .then(response => response.json())
-    .then(data => {
-      const hitokoto = this.$refs.hitokoto
-      hitokoto.innerText = data.hitokoto
-    })
-    .catch(console.error)
+    fetch("https://v1.hitokoto.cn")
+      .then((response) => response.json())
+      .then((data) => {
+        const hitokoto = this.$refs.hitokoto;
+        hitokoto.innerText = data.hitokoto;
+      })
+      .catch(console.error);
   },
 
-  beforeDestroy () {
-    window.removeEventListener('scroll', throttle(this.handleScroll, 50))
+  beforeDestroy() {
+    window.removeEventListener("scroll", throttle(this.handleScroll, 50));
   },
 
   methods: {
     // switch to the next header image
     switchImage(n) {
-      const len = this.$themeConfig.homeHeaderImages.length
-      this.bgImageID = (this.bgImageID + n + len) % len
+      const len = this.$themeConfig.homeHeaderImages.length;
+      this.bgImageID = (this.bgImageID + n + len) % len;
     },
     scrollToPost() {
       window.scrollTo({
         top: this.heroHeight,
-        behavior: 'smooth',
-      })
+        behavior: "smooth"
+      });
     },
-    handleScroll () {
-      const currentTop = window.pageYOffset
-      const windowHeight = document.documentElement.clientHeight
-      this.headerOpacity = 1 - currentTop * 1.2 / windowHeight
+    handleScroll() {
+      const currentTop = window.pageYOffset;
+      const windowHeight = document.documentElement.clientHeight;
+      this.headerOpacity = 1 - (currentTop * 1.2) / windowHeight;
     }
   }
-}
+};
 </script>
 
 <style lang="stylus">

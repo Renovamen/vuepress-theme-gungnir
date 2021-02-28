@@ -5,12 +5,7 @@
     :to="link"
     :exact="exact"
   >
-    <v-icon
-      v-if="item.icon"
-      :name="item.icon"
-      animation="wrench"
-      hover
-    />
+    <v-icon v-if="item.icon" :name="item.icon" animation="wrench" hover />
     {{ item.text }}
   </router-link>
   <a
@@ -20,18 +15,13 @@
     :target="isMailto(link) || isTel(link) ? null : '_blank'"
     :rel="isMailto(link) || isTel(link) ? null : 'noopener noreferrer'"
   >
-    <v-icon
-      v-if="item.icon"
-      :name="item.icon"
-      animation="wrench"
-      hover
-    />
+    <v-icon v-if="item.icon" :name="item.icon" animation="wrench" hover />
     {{ item.text }}
   </a>
 </template>
 
 <script>
-import { isExternal, isMailto, isTel, ensureExt } from '@theme/utils/utils'
+import { isExternal, isMailto, isTel, ensureExt } from "@theme/utils/utils";
 
 export default {
   props: {
@@ -42,15 +32,17 @@ export default {
   },
 
   computed: {
-    link () {
-      return ensureExt(this.item.link)
+    link() {
+      return ensureExt(this.item.link);
     },
 
-    exact () {
+    exact() {
       if (this.$site.locales) {
-        return Object.keys(this.$site.locales).some(rootLink => rootLink === this.link)
+        return Object.keys(this.$site.locales).some(
+          (rootLink) => rootLink === this.link
+        );
       }
-      return this.link === '/'
+      return this.link === "/";
     }
   },
 
@@ -59,5 +51,5 @@ export default {
     isMailto,
     isTel
   }
-}
+};
 </script>

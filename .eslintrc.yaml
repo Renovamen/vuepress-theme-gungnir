@@ -7,6 +7,7 @@ env:
 extends:
   - eslint:recommended
   - plugin:vue/recommended
+  - plugin:prettier/recommended
 
 parserOptions:
   parser: babel-eslint
@@ -24,3 +25,6 @@ rules:
     - vars: all
       args: none
   vue/no-v-html: off
+  prettier/prettier:
+    - error
+    - trailingComma: none

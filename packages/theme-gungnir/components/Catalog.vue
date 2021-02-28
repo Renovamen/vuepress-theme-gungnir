@@ -1,60 +1,68 @@
 <script>
 export default {
-  data () {
+  data() {
     return {
-      activeLink: ''
-    }
+      activeLink: ""
+    };
   },
   computed: {
-    headers () {
-      return this.$showCatalog ? this.$page.headers : []
+    headers() {
+      return this.$showCatalog ? this.$page.headers : [];
     },
-    widthStyle () {
-      return this.headers.length > 0 ? {} : { width: '0' }
+    widthStyle() {
+      return this.headers.length > 0 ? {} : { width: "0" };
     }
   },
-  mounted () {
-    window.addEventListener('scroll', this.handleScroll)
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
   },
-  beforeDestroy () {
-    window.removeEventListener('scroll', this.handleScroll)
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
-    handleScroll () {
+    handleScroll() {
       for (let i = this.headers.length - 1; i >= 0; i--) {
-        var headerTop = document.querySelector(`#${this.headers[i].slug}`).getBoundingClientRect().top
-        if(headerTop <= 100){
-          this.activeLink = this.headers[i].slug
-          break
+        const headerTop = document
+          .querySelector(`#${this.headers[i].slug}`)
+          .getBoundingClientRect().top;
+        if (headerTop <= 100) {
+          this.activeLink = this.headers[i].slug;
+          break;
         }
       }
     }
   },
-  render (h) {
-    return h('ul', {
-      class: { 'catalog-wrapper': true },
-      style: this.headers.length > 0 ? {} : { width: '0' }
-    },
-    this.headers.map(header => {
-      return h('li', {
-        class: {
-          active: this.activeLink == header.slug,
-          [`level-${header.level}`]: true,
-          [`toc-link-${header.slug}`]: true
-        },
-        attr: { key: header.title },
-        on: {
-          click: () => {
-            if(this.$route.hash !== `#${header.slug}`) {
-              this.$router.push(`#${header.slug}`)
+  render(h) {
+    return h(
+      "ul",
+      {
+        class: { "catalog-wrapper": true },
+        style: this.headers.length > 0 ? {} : { width: "0" }
+      },
+      this.headers.map((header) => {
+        return h(
+          "li",
+          {
+            class: {
+              active: this.activeLink == header.slug,
+              [`level-${header.level}`]: true,
+              [`toc-link-${header.slug}`]: true
+            },
+            attr: { key: header.title },
+            on: {
+              click: () => {
+                if (this.$route.hash !== `#${header.slug}`) {
+                  this.$router.push(`#${header.slug}`);
+                }
+              }
             }
-          }
-        }
-      }, header.title)
-    }))
+          },
+          header.title
+        );
+      })
+    );
   }
-}
-
+};
 </script>
 
 <style lang="stylus" scoped>

@@ -14,7 +14,7 @@
   font-size 14px
   sans-serif()
   color var(--text-color-sub)
-  span 
+  span
     & >>> a
       transition(color .2s ease)
       color var(--text-color-sub)

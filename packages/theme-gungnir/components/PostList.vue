@@ -1,17 +1,13 @@
 <template>
   <div class="postlist-wrapper">
-    <PostListItem
-      v-for="(item) in data"
-      :key="item.path"
-      :item="item"
-    />
+    <PostListItem v-for="item in data" :key="item.path" :item="item" />
     <Pager :data="getPagerData" />
   </div>
 </template>
 
 <script>
-import PostListItem from '@theme/components/PostListItem'
-import Pager from '@theme/components/Pager'
+import PostListItem from "@theme/components/PostListItem";
+import Pager from "@theme/components/Pager";
 
 export default {
   components: {
@@ -27,22 +23,22 @@ export default {
   },
 
   computed: {
-    getPagerData () {
-      var pagerData = {}
-      if(this.$pagination.hasPrev) {
-        pagerData.next = {}
-        pagerData.next.text = this.$themeLocales.homePrev
-        pagerData.next.link = this.$pagination.prevLink
+    getPagerData() {
+      var pagerData = {};
+      if (this.$pagination.hasPrev) {
+        pagerData.next = {};
+        pagerData.next.text = this.$themeLocales.homePrev;
+        pagerData.next.link = this.$pagination.prevLink;
       }
-      if(this.$pagination.hasNext) {
-        pagerData.prev = {}
-        pagerData.prev.text = this.$themeLocales.homeNext
-        pagerData.prev.link = this.$pagination.nextLink
+      if (this.$pagination.hasNext) {
+        pagerData.prev = {};
+        pagerData.prev.text = this.$themeLocales.homeNext;
+        pagerData.prev.link = this.$pagination.nextLink;
       }
-      return pagerData
+      return pagerData;
     }
   }
-}
+};
 </script>
 
 <style lang="stylus">

@@ -4,24 +4,22 @@
 
     <NavLinks @toggle-search="$emit('toggle-search')" />
 
-    <SidebarLinks
-      :depth="0"
-      :items="items"
-    />
+    <SidebarLinks :depth="0" :items="items" />
 
     <slot name="bottom" />
   </aside>
 </template>
 
 <script>
-import SidebarLinks from '@theme/components/SidebarLinks'
-import NavLinks from '@theme/components/NavLinks'
+import SidebarLinks from "@theme/components/SidebarLinks";
+import NavLinks from "@theme/components/NavLinks";
 
 export default {
-  name: 'Sidebar',
+  name: "Sidebar",
 
   components: {
-    SidebarLinks, NavLinks
+    SidebarLinks,
+    NavLinks
   },
 
   props: {
@@ -30,7 +28,7 @@ export default {
       default: () => []
     }
   }
-}
+};
 </script>
 
 <style lang="stylus">

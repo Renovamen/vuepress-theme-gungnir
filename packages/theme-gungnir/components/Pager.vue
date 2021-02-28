@@ -1,21 +1,13 @@
 <template>
   <div class="pager">
-    <router-link
-      v-if="data.next"
-      class="next"
-      :to="data.next.link"
-    >
-      {{ data.next.text }}<br>
+    <router-link v-if="data.next" class="next" :to="data.next.link">
+      {{ data.next.text }}<br />
       <span v-if="data.next.subtext">
         {{ data.next.subtext }}
       </span>
     </router-link>
-    <router-link
-      v-if="data.prev"
-      class="previous"
-      :to="data.prev.link"
-    >
-      {{ data.prev.text }}<br>
+    <router-link v-if="data.prev" class="previous" :to="data.prev.link">
+      {{ data.prev.text }}<br />
       <span v-if="data.prev.subtext">
         {{ data.prev.subtext }}
       </span>
@@ -30,8 +22,8 @@ export default {
       type: Object,
       required: true
     }
-  },
-}
+  }
+};
 </script>
 
 <style lang="stylus">

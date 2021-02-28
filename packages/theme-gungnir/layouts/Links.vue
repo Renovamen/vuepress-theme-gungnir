@@ -16,16 +16,14 @@
             class="item"
           >
             <div class="content">
-              <a
-                :href="item.url"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a :href="item.url" target="_blank" rel="noopener noreferrer">
                 <img
-                  :src="item.img
-                    ? $withBase(item.img)
-                    : require('@theme/assets/default-link-avatar.jpg')"
-                >
+                  :src="
+                    item.img
+                      ? $withBase(item.img)
+                      : require('@theme/assets/default-link-avatar.jpg')
+                  "
+                />
                 <span class="sitename">
                   {{ item.sitename }}
                 </span>
@@ -36,15 +34,15 @@
             </div>
           </div>
         </div>
-        <hr style="visibility: hidden;">
+        <hr style="visibility: hidden" />
       </div>
     </div>
   </Common>
 </template>
 
 <script>
-import Common from '@theme/components/Common.vue'
-import PageHeader from '@theme/components/PageHeader'
+import Common from "@theme/components/Common.vue";
+import PageHeader from "@theme/components/PageHeader";
 
 export default {
   components: {
@@ -53,13 +51,15 @@ export default {
   },
   computed: {
     getPageInfo() {
-      let info = this.$themeConfig.pages && this.$themeConfig.pages.links
-                  ? this.$themeConfig.pages.links : {}
-      info.title = this.$themeLocales.links
-      return info
+      let info =
+        this.$themeConfig.pages && this.$themeConfig.pages.links
+          ? this.$themeConfig.pages.links
+          : {};
+      info.title = this.$themeLocales.links;
+      return info;
     }
   }
-}
+};
 </script>
 
 <style lang="stylus">

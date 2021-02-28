@@ -4,10 +4,10 @@
       v-for="(item, index) in tags"
       :key="index"
       :class="{
-        'active': item.name == currentTag,
+        active: item.name == currentTag,
         'tag-all': item.path == '/tags/'
       }"
-      :style="{ 'backgroundColor': item.tagColor }"
+      :style="{ backgroundColor: item.tagColor }"
       @click="tagClick(item)"
     >
       {{ item.name }}
@@ -18,25 +18,25 @@
 </template>
 
 <script>
-import { tagCloud } from '@theme/utils/tagCloud'
+import { tagCloud } from "@theme/utils/tagCloud";
 
 export default {
   props: {
     currentTag: {
       type: String,
-      default: ''
+      default: ""
     }
   },
   computed: {
-    tags () {
-      var tagList = tagCloud(this.$tags.list)
-      return [{ name: this.$themeLocales.tagAll, path: '/tags/' }, ...tagList]
+    tags() {
+      var tagList = tagCloud(this.$tags.list);
+      return [{ name: this.$themeLocales.tagAll, path: "/tags/" }, ...tagList];
     }
   },
   methods: {
-    tagClick (tag) {
-      this.$emit('getCurrentTag', tag)
-    },
+    tagClick(tag) {
+      this.$emit("getCurrentTag", tag);
+    }
   }
-}
+};
 </script>

@@ -1,22 +1,9 @@
 <template>
-  <nav
-    v-if="userLinks.length"
-    class="nav-links"
-  >
+  <nav v-if="userLinks.length" class="nav-links">
     <!-- navbar link buttons -->
-    <div
-      v-for="item in userLinks"
-      :key="item.link"
-      class="nav-item"
-    >
-      <DropdownLink
-        v-if="item.type === 'links'"
-        :item="item"
-      />
-      <NavLink
-        v-else
-        :item="item"
-      />
+    <div v-for="item in userLinks" :key="item.link" class="nav-item">
+      <DropdownLink v-if="item.type === 'links'" :item="item" />
+      <NavLink v-else :item="item" />
     </div>
 
     <!-- search button -->
@@ -26,14 +13,10 @@
     >
       <a
         class="nav-link v-parent v-hover"
-        style="cursor: pointer;"
+        style="cursor: pointer"
         @click="$emit('toggle-search')"
       >
-        <v-icon
-          name="fa-search"
-          animation="wrench"
-          hover
-        />
+        <v-icon name="fa-search" animation="wrench" hover />
         {{ $themeLocales.search }}
       </a>
     </div>
@@ -41,9 +24,9 @@
 </template>
 
 <script>
-import DropdownLink from '@theme/components/DropdownLink'
-import NavLink from '@theme/components/NavLink'
-import { resolveNavLinkItem } from '@theme/utils/utils'
+import DropdownLink from "@theme/components/DropdownLink";
+import NavLink from "@theme/components/NavLink";
+import { resolveNavLinkItem } from "@theme/utils/utils";
 
 export default {
   components: {
@@ -52,61 +35,64 @@ export default {
   },
 
   computed: {
-    userNav () {
-      return this.$themeLocaleConfig.nav || this.$themeConfig.nav || []
+    userNav() {
+      return this.$themeLocaleConfig.nav || this.$themeConfig.nav || [];
     },
 
-    nav () {
-      const { $site: { locales }, userNav } = this
+    nav() {
+      const {
+        $site: { locales },
+        userNav
+      } = this;
       if (locales && Object.keys(locales).length > 1) {
-        const currentLink = this.$page.path
+        const currentLink = this.$page.path;
 
-        if(!this.isLanguageSwitcher) return userNav
+        if (!this.isLanguageSwitcher) return userNav;
 
-        const routes = this.$router.options.routes
-        const themeLocales = this.$themeConfig.locales || {}
+        const routes = this.$router.options.routes;
+        const themeLocales = this.$themeConfig.locales || {};
         const languageDropdown = {
-          text: this.$themeLocaleConfig.selectText || 'Languages',
-          items: Object.keys(locales).map(path => {
-            const locale = locales[path]
-            const text = themeLocales[path] && themeLocales[path].label || locale.lang
-            let link
+          text: this.$themeLocaleConfig.selectText || "Languages",
+          items: Object.keys(locales).map((path) => {
+            const locale = locales[path];
+            const text =
+              (themeLocales[path] && themeLocales[path].label) || locale.lang;
+            let link;
             // Stay on the current page
             if (locale.lang === this.$lang) {
-              link = currentLink
-            }
-            else {
+              link = currentLink;
+            } else {
               // Try to stay on the same page
-              link = currentLink.replace(this.$localeConfig.path, path)
+              link = currentLink.replace(this.$localeConfig.path, path);
               // fallback to homepage
-              if (!routes.some(route => route.path === link)) {
-                link = path
+              if (!routes.some((route) => route.path === link)) {
+                link = path;
               }
             }
-            return { text, link }
+            return { text, link };
           }),
-          icon: 'ri-earth-fill'
-        }
-        return [...userNav, languageDropdown]
+          icon: "ri-earth-fill"
+        };
+        return [...userNav, languageDropdown];
       }
 
-      return userNav
+      return userNav;
     },
 
-    userLinks () {
-      return (this.nav || []).map(link => {
+    userLinks() {
+      return (this.nav || []).map((link) => {
         return Object.assign(resolveNavLinkItem(link), {
           items: (link.items || []).map(resolveNavLinkItem)
-        })
-      })
+        });
+      });
     },
 
     isLanguageSwitcher() {
       // show language switcher only on docs page
-      return this.$page.frontmatter.layout === undefined
+      return this.$page.frontmatter.layout === undefined;
     }
   }
-}
+};
 </script>
 
 <style lang="stylus">

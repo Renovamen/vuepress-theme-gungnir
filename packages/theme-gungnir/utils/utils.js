@@ -4,9 +4,7 @@ export const endingSlashRE = /\/$/;
 export const outboundRE = /^(https?:|mailto:|tel:)/;
 
 export function normalize(path) {
-  return decodeURI(path)
-    .replace(hashRE, "")
-    .replace(extRE, "");
+  return decodeURI(path).replace(hashRE, "").replace(extRE, "");
 }
 
 export function getHash(path) {
@@ -97,8 +95,7 @@ function resolvePath(relative, base, append) {
     const segment = segments[i];
     if (segment === "..") {
       stack.pop();
-    }
-    else if (segment !== ".") {
+    } else if (segment !== ".") {
       stack.push(segment);
     }
   }
@@ -129,22 +126,21 @@ export function resolveSidebarItems(page, regularPath, site, localePath) {
   const sidebarConfig = localeConfig.sidebar || themeConfig.sidebar;
 
   const { base, config } = resolveMatchingConfig(regularPath, sidebarConfig);
-  return config ? config.map(item => resolveItem(item, pages, base)) : [];
+  return config ? config.map((item) => resolveItem(item, pages, base)) : [];
 }
 
 export function groupHeaders(headers) {
   // group h3s under h2
-  headers = headers.map(h => Object.assign({}, h));
+  headers = headers.map((h) => Object.assign({}, h));
   let lastH2;
-  headers.forEach(h => {
+  headers.forEach((h) => {
     if (h.level === 2) {
       lastH2 = h;
-    }
-    else if (lastH2) {
+    } else if (lastH2) {
       (lastH2.children || (lastH2.children = [])).push(h);
     }
   });
-  return headers.filter(h => h.level === 2);
+  return headers.filter((h) => h.level === 2);
 }
 
 export function resolveNavLinkItem(linkItem) {
@@ -192,13 +188,11 @@ function ensureEndingSlash(path) {
 function resolveItem(item, pages, base, groupDepth = 1) {
   if (typeof item === "string") {
     return resolvePage(pages, item, base);
-  }
-  else if (Array.isArray(item)) {
+  } else if (Array.isArray(item)) {
     return Object.assign(resolvePage(pages, item[0], base), {
       title: item[1]
     });
-  }
-  else {
+  } else {
     if (groupDepth > 3) {
       console.error("[vuepress] detected a too deep nested sidebar group.");
     }
@@ -213,7 +207,7 @@ function resolveItem(item, pages, base, groupDepth = 1) {
       path: item.path,
       title: item.title,
       sidebarDepth: item.sidebarDepth,
-      children: children.map(child =>
+      children: children.map((child) =>
         resolveItem(child, pages, base, groupDepth + 1)
       ),
       collapsable: item.collapsable !== false

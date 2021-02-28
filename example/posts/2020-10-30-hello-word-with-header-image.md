@@ -9,7 +9,7 @@ header_img: /img/in-post/2020-10-30/header.jpg
 header_mask: rgba(40, 57, 101, .4)
 catalog: true
 tags:
-  - 摸鱼
+  - test
 ---
 
 This is a test post with a header image.
@@ -42,12 +42,9 @@ Most people would find the picture of our universe as an infinite **tower of tor
 ###### H6 Heading
 
 
-
 ## Code
 
-### Code Blocks
-
-Click the red button on the upper-right corner to make the code block full screen.
+Code block (click the red button on the upper-right corner to make the code block full screen):
 
 ```python{8}
 import food
@@ -69,9 +66,7 @@ while True:
   me.eat(10)
 ```
 
-### Inline Code
-
-`const a = 1`
+Inline code: `const a = 1`
 
 
 ## Charts

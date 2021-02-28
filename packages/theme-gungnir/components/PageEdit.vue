@@ -1,23 +1,13 @@
 <template>
   <footer class="page-edit">
-    <div
-      v-if="editLink"
-      class="edit-link"
-    >
-      <a
-        :href="editLink"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+    <div v-if="editLink" class="edit-link">
+      <a :href="editLink" target="_blank" rel="noopener noreferrer">
         <v-icon name="fa-pencil-alt" />
         {{ editLinkText }}
       </a>
     </div>
 
-    <div
-      v-if="lastUpdated"
-      class="last-updated"
-    >
+    <div v-if="lastUpdated" class="last-updated">
       <span class="prefix">{{ lastUpdatedText }}:</span>
       <span class="time">{{ lastUpdated }}</span>
     </div>
@@ -25,32 +15,32 @@
 </template>
 
 <script>
-import isNil from 'lodash/isNil'
-import { endingSlashRE, outboundRE } from '@theme/utils/utils'
+import isNil from "lodash/isNil";
+import { endingSlashRE, outboundRE } from "@theme/utils/utils";
 
 export default {
-  name: 'PageEdit',
+  name: "PageEdit",
 
   computed: {
-    lastUpdated () {
-      return this.$page.lastUpdated
+    lastUpdated() {
+      return this.$page.lastUpdated;
     },
 
-    lastUpdatedText () {
-      return this.$themeLocales.lastUpdated
+    lastUpdatedText() {
+      return this.$themeLocales.lastUpdated;
     },
 
-    editLink () {
+    editLink() {
       const showEditLink = isNil(this.$page.frontmatter.editLink)
-          ? this.$site.themeConfig.editLinks
-          : this.$page.frontmatter.editLink
+        ? this.$site.themeConfig.editLinks
+        : this.$page.frontmatter.editLink;
 
       const {
         repo,
-        docsDir = '',
-        docsBranch = 'main',
+        docsDir = "",
+        docsBranch = "main",
         docsRepo = repo
-      } = this.$site.themeConfig
+      } = this.$site.themeConfig;
 
       if (showEditLink && docsRepo && this.$page.relativePath) {
         return this.createEditLink(
@@ -59,56 +49,56 @@ export default {
           docsDir,
           docsBranch,
           this.$page.relativePath
-        )
+        );
       }
-      return null
+      return null;
     },
 
-    editLinkText () {
-      return this.$themeLocales.editLinkText
+    editLinkText() {
+      return this.$themeLocales.editLinkText;
     }
   },
 
   methods: {
-    createEditLink (repo, docsRepo, docsDir, docsBranch, path) {
-      const bitbucket = /bitbucket.org/
+    createEditLink(repo, docsRepo, docsDir, docsBranch, path) {
+      const bitbucket = /bitbucket.org/;
       if (bitbucket.test(docsRepo)) {
-        const base = docsRepo
+        const base = docsRepo;
         return (
-          base.replace(endingSlashRE, '')
-          + `/src`
-          + `/${docsBranch}/`
-          + (docsDir ? docsDir.replace(endingSlashRE, '') + '/' : '')
-          + path
-          + `?mode=edit&spa=0&at=${docsBranch}&fileviewer=file-view-default`
-        )
+          base.replace(endingSlashRE, "") +
+          `/src` +
+          `/${docsBranch}/` +
+          (docsDir ? docsDir.replace(endingSlashRE, "") + "/" : "") +
+          path +
+          `?mode=edit&spa=0&at=${docsBranch}&fileviewer=file-view-default`
+        );
       }
 
-      const gitlab = /gitlab.com/
+      const gitlab = /gitlab.com/;
       if (gitlab.test(docsRepo)) {
-        const base = docsRepo
+        const base = docsRepo;
         return (
-        base.replace(endingSlashRE, '')
-        + `/-/edit`
-        + `/${docsBranch}/`
-        + (docsDir ? docsDir.replace(endingSlashRE, '') + '/' : '')
-        + path
-        )
+          base.replace(endingSlashRE, "") +
+          `/-/edit` +
+          `/${docsBranch}/` +
+          (docsDir ? docsDir.replace(endingSlashRE, "") + "/" : "") +
+          path
+        );
       }
 
       const base = outboundRE.test(docsRepo)
         ? docsRepo
-        : `https://github.com/${docsRepo}`
+        : `https://github.com/${docsRepo}`;
       return (
-        base.replace(endingSlashRE, '')
-        + '/edit'
-        + `/${docsBranch}/`
-        + (docsDir ? docsDir.replace(endingSlashRE, '') + '/' : '')
-        + path
-      )
+        base.replace(endingSlashRE, "") +
+        "/edit" +
+        `/${docsBranch}/` +
+        (docsDir ? docsDir.replace(endingSlashRE, "") + "/" : "") +
+        path
+      );
     }
   }
-}
+};
 </script>
 
 <style lang="stylus">

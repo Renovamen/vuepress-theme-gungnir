@@ -1,8 +1,5 @@
 <template>
-  <main
-    class="page"
-    :style="pageStyle"
-  >
+  <main class="page" :style="pageStyle">
     <ArticleHeader
       v-if="$page.id != 'posts'"
       v-show="$page.title"
@@ -12,11 +9,11 @@
     <Content class="theme-content" />
     <PageEdit />
     <PageNav
-      v-if="($page.id != 'posts') && sidebarItems"
+      v-if="$page.id != 'posts' && sidebarItems"
       v-bind="{ sidebarItems }"
     />
     <Pager
-      v-if="($page.id == 'posts') && getPostIndex != -1"
+      v-if="$page.id == 'posts' && getPostIndex != -1"
       :data="getPostPager"
     />
     <!--
@@ -34,10 +31,10 @@
 </template>
 
 <script>
-import ArticleHeader from '@theme/components/ArticleHeader'
-import PageNav from '@theme/components/PageNav'
-import PageEdit from '@theme/components/PageEdit'
-import Pager from '@theme/components/Pager'
+import ArticleHeader from "@theme/components/ArticleHeader";
+import PageNav from "@theme/components/PageNav";
+import PageEdit from "@theme/components/PageEdit";
+import Pager from "@theme/components/Pager";
 
 export default {
   components: {
@@ -56,80 +53,92 @@ export default {
       type: Object,
       default() {
         return {
-          paddingRight: '0'
-        }
+          paddingRight: "0"
+        };
       }
     }
   },
 
-  data () {
+  data() {
     return {
       isHasKey: true
-    }
+    };
   },
 
   computed: {
-    shouldShowComments () {
-      const { isShowComments } = this.$frontmatter
-      const { showComment } = this.$themeConfig.valineConfig || { showComment: true }
-      return (showComment !== false && isShowComments !== false) || (showComment === false && isShowComments === true)
+    shouldShowComments() {
+      const { isShowComments } = this.$frontmatter;
+      const { showComment } = this.$themeConfig.valineConfig || {
+        showComment: true
+      };
+      return (
+        (showComment !== false && isShowComments !== false) ||
+        (showComment === false && isShowComments === true)
+      );
     },
-    getPostIndex () {
-      return this.$getAllPosts.findIndex(item => item.path == this.$page.path)
+    getPostIndex() {
+      return this.$getAllPosts.findIndex(
+        (item) => item.path == this.$page.path
+      );
     },
-    getPostPager () {
-      const allPosts = this.$getAllPosts
-      const postId = this.getPostIndex
+    getPostPager() {
+      const allPosts = this.$getAllPosts;
+      const postId = this.getPostIndex;
       return {
-        next: postId > 0 ? {
-          text: this.$themeLocales.postNext,
-          subtext: allPosts[postId - 1].title,
-          link: allPosts[postId - 1].path
-        } : null,
-        prev: postId < (allPosts.length - 1) ? {
-          text: this.$themeLocales.postPrev,
-          subtext: allPosts[postId + 1].title,
-          link: allPosts[postId + 1].path
-        } : null
-      }
+        next:
+          postId > 0
+            ? {
+                text: this.$themeLocales.postNext,
+                subtext: allPosts[postId - 1].title,
+                link: allPosts[postId - 1].path
+              }
+            : null,
+        prev:
+          postId < allPosts.length - 1
+            ? {
+                text: this.$themeLocales.postPrev,
+                subtext: allPosts[postId + 1].title,
+                link: allPosts[postId + 1].path
+              }
+            : null
+      };
     }
   },
 
   watch: {
-    '$route' () {
+    $route() {
       this.$nextTick(() => {
-        this.codeFullScreen()
-      })
+        this.codeFullScreen();
+      });
     }
   },
 
   mounted() {
-    this.codeFullScreen()
+    this.codeFullScreen();
   },
   methods: {
-    codeFullScreen (){
+    codeFullScreen() {
       // full screen the code blocks
-      const codeBlocks = document.querySelectorAll("div[class*='language-']")
-      const htmlDom = document.querySelector('html')
+      const codeBlocks = document.querySelectorAll("div[class*='language-']");
+      const htmlDom = document.querySelector("html");
       for (let block of codeBlocks) {
-        let btn = document.createElement('div')
-        btn.classList.add('code-button')
+        let btn = document.createElement("div");
+        btn.classList.add("code-button");
         // click to full screen the code block
-        btn.onclick = function() {
-          if (block.classList.contains('code-block-fullscreen')) {
-            block.classList.remove('code-block-fullscreen')
-            htmlDom.classList.remove('screen-fixed')
+        btn.onclick = function () {
+          if (block.classList.contains("code-block-fullscreen")) {
+            block.classList.remove("code-block-fullscreen");
+            htmlDom.classList.remove("screen-fixed");
+          } else {
+            block.classList.add("code-block-fullscreen");
+            htmlDom.classList.add("screen-fixed");
           }
-          else {
-            block.classList.add('code-block-fullscreen')
-            htmlDom.classList.add('screen-fixed')
-          }
-        }
-        block.appendChild(btn)
+        };
+        block.appendChild(btn);
       }
     }
   }
-}
+};
 </script>
 
 <style lang="stylus">

@@ -8,31 +8,34 @@
       :style="pageHeaderStyle"
     >
       <div
-        v-if="($page.frontmatter.header_style == 'image') && $page.frontmatter.header_mask"
+        v-if="
+          $page.frontmatter.header_style == 'image' &&
+          $page.frontmatter.header_mask
+        "
         class="header-mask"
-        :style="{ 'background': $page.frontmatter.header_mask }"
+        :style="{ background: $page.frontmatter.header_mask }"
       />
     </ArticleHeader>
     <Page :page-style="pageStyle" />
     <Catalog
-      :class="{ 'fixed': isFixed }"
-      :style="{ 'top': `${catalogTop}px !important` }"
+      :class="{ fixed: isFixed }"
+      :style="{ top: `${catalogTop}px !important` }"
     />
   </Common>
 </template>
 
 <script>
-import ArticleHeader from '@theme/components/ArticleHeader'
-import Common from '@theme/components/Common.vue'
-import Catalog from '@theme/components/Catalog'
-import Page from '@theme/components/Page.vue'
-import { throttle } from '@theme/utils/time'
+import ArticleHeader from "@theme/components/ArticleHeader";
+import Common from "@theme/components/Common.vue";
+import Catalog from "@theme/components/Catalog";
+import Page from "@theme/components/Page.vue";
+import { throttle } from "@theme/utils/time";
 
-const catalogTopAbsolute = 40
-const catalogTopFixed = 80
+const catalogTopAbsolute = 40;
+const catalogTopFixed = 80;
 
 export default {
-  name: 'Post',
+  name: "Post",
 
   components: {
     ArticleHeader,
@@ -41,80 +44,92 @@ export default {
     Page
   },
 
-  data () {
+  data() {
     return {
       isFixed: false,
       catalogTop: 0,
       headerHeight: 0,
       screenWidth: 0
-    }
+    };
   },
 
   computed: {
-    pageStyle () {
-      return this.$showCatalog ? {} : {
-        paddingRight: '0'
-      }
+    pageStyle() {
+      return this.$showCatalog
+        ? {}
+        : {
+            paddingRight: "0"
+          };
     },
-    pageHeaderStyle () {
-      var style = {}
-      if (this.$page.frontmatter.header_style == 'image'
-          && this.$page.frontmatter.header_img)
-          style = { backgroundImage: `url(${this.$withBase(this.$page.frontmatter.header_img, this.$themeConfig)})` }
-      if (!this.$showCatalog) style.paddingRight = '0'
-      return style
+    pageHeaderStyle() {
+      var style = {};
+      if (
+        this.$page.frontmatter.header_style == "image" &&
+        this.$page.frontmatter.header_img
+      )
+        style = {
+          backgroundImage: `url(${this.$withBase(
+            this.$page.frontmatter.header_img,
+            this.$themeConfig
+          )})`
+        };
+      if (!this.$showCatalog) style.paddingRight = "0";
+      return style;
     }
   },
 
   watch: {
-    '$route' () {
+    $route() {
       this.$nextTick(() => {
-        this.initCatalog()
-      })
+        this.initCatalog();
+      });
     }
   },
 
-  mounted () {
-    this.initCatalog()
+  mounted() {
+    this.initCatalog();
 
-    const that = this
+    const that = this;
     window.onresize = () => {
       return (() => {
-        that.headerHeight = document.querySelector('.post-header').offsetHeight
-        that.screenWidth = document.body.clientWidth
-        that.initCatalog()
-        that.handleScroll()
-      })()
-    }
-    window.addEventListener('scroll', throttle(this.handleScroll, 50))
+        that.headerHeight = document.querySelector(".post-header").offsetHeight;
+        that.screenWidth = document.body.clientWidth;
+        that.initCatalog();
+        that.handleScroll();
+      })();
+    };
+    window.addEventListener("scroll", throttle(this.handleScroll, 50));
   },
 
-  beforeDestroy () {
-    window.removeEventListener('scroll', throttle(this.handleScroll, 50))
+  beforeDestroy() {
+    window.removeEventListener("scroll", throttle(this.handleScroll, 50));
   },
 
   methods: {
     initCatalog() {
-      this.headerHeight = document.querySelector('.post-header').offsetHeight
-      this.screenWidth = document.body.clientWidth
-      if (this.screenWidth <= 719) this.catalogTop = -15  // $MQMobile
-      else this.catalogTop = this.headerHeight + catalogTopAbsolute
+      this.headerHeight = document.querySelector(".post-header").offsetHeight;
+      this.screenWidth = document.body.clientWidth;
+      if (this.screenWidth <= 719) this.catalogTop = -15;
+      // $MQMobile
+      else this.catalogTop = this.headerHeight + catalogTopAbsolute;
     },
-    handleScroll () {
-      const currentTop = window.pageYOffset
-      if (currentTop > (this.headerHeight + catalogTopAbsolute - catalogTopFixed)) {
-        this.isFixed = true
-        this.catalogTop = catalogTopFixed
-      }
-      else {
-        this.isFixed = false
-        this.catalogTop = this.headerHeight + catalogTopAbsolute
+    handleScroll() {
+      const currentTop = window.pageYOffset;
+      if (
+        currentTop >
+        this.headerHeight + catalogTopAbsolute - catalogTopFixed
+      ) {
+        this.isFixed = true;
+        this.catalogTop = catalogTopFixed;
+      } else {
+        this.isFixed = false;
+        this.catalogTop = this.headerHeight + catalogTopAbsolute;
       }
       // $MQMobile
-      if (this.screenWidth <= 719) this.catalogTop = -15
+      if (this.screenWidth <= 719) this.catalogTop = -15;
     }
   }
-}
+};
 </script>
 
 <style lang="stylus">

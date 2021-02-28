@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import Page from '@theme/components/Page'
-import Common from '@theme/components/Common'
-import { resolveSidebarItems } from '@theme/utils/utils'
+import Page from "@theme/components/Page";
+import Common from "@theme/components/Common";
+import { resolveSidebarItems } from "@theme/utils/utils";
 
 export default {
   components: {
@@ -15,16 +15,16 @@ export default {
     Common
   },
   computed: {
-    sidebarItems () {
+    sidebarItems() {
       return resolveSidebarItems(
         this.$page,
         this.$page.regularPath,
         this.$site,
         this.$localePath
-      )
+      );
     }
   }
-}
+};
 </script>
 
 <style src="../styles/theme.styl" lang="stylus"></style>

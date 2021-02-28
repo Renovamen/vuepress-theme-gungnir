@@ -51,7 +51,7 @@ export function throttle(func, delay) {
   let timer = null;
   let startTime = Date.now();
 
-  return function() {
+  return function () {
     const curTime = Date.now();
     const remaining = delay - (curTime - startTime);
     const context = this;

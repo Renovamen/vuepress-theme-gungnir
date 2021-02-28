@@ -1,32 +1,15 @@
 <template>
-  <div
-    class="dropdown-wrapper"
-    :class="{ open }"
-  >
-    <a
-      class="dropdown-title"
-      @click="toggle"
-    >
+  <div class="dropdown-wrapper" :class="{ open }">
+    <a class="dropdown-title" @click="toggle">
       <span class="title v-parent v-hover">
-        <v-icon
-          v-if="item.icon"
-          :name="item.icon"
-          animation="wrench"
-          hover
-        />
+        <v-icon v-if="item.icon" :name="item.icon" animation="wrench" hover />
         {{ item.text }}
       </span>
-      <span
-        class="arrow"
-        :class="open ? 'down' : 'right'"
-      />
+      <span class="arrow" :class="open ? 'down' : 'right'" />
     </a>
 
     <DropdownTransition>
-      <ul
-        v-show="open"
-        class="nav-dropdown"
-      >
+      <ul v-show="open" class="nav-dropdown">
         <li
           v-for="(subItem, index) in item.items"
           :key="subItem.link || index"
@@ -36,10 +19,7 @@
             {{ subItem.text }}
           </h4>
 
-          <ul
-            v-if="subItem.type === 'links'"
-            class="dropdown-subitem-wrapper"
-          >
+          <ul v-if="subItem.type === 'links'" class="dropdown-subitem-wrapper">
             <li
               v-for="childSubItem in subItem.items"
               :key="childSubItem.link"
@@ -49,10 +29,7 @@
             </li>
           </ul>
 
-          <NavLink
-            v-else
-            :item="subItem"
-          />
+          <NavLink v-else :item="subItem" />
         </li>
       </ul>
     </DropdownTransition>
@@ -60,8 +37,8 @@
 </template>
 
 <script>
-import NavLink from '@theme/components/NavLink'
-import DropdownTransition from '@theme/components/DropdownTransition'
+import NavLink from "@theme/components/NavLink";
+import DropdownTransition from "@theme/components/DropdownTransition";
 
 export default {
   components: { NavLink, DropdownTransition },
@@ -73,18 +50,18 @@ export default {
     }
   },
 
-  data () {
+  data() {
     return {
       open: false
-    }
+    };
   },
 
   methods: {
-    toggle () {
-      this.open = !this.open
+    toggle() {
+      this.open = !this.open;
     }
   }
-}
+};
 </script>
 
 <style lang="stylus">
