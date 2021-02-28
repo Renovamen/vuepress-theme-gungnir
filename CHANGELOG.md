@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.1.5](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v0.1.4...v0.1.5) (2021-02-28)
+
+### Bug Fixes
+
+- fix code theme ([cecf854](https://github.com/Renovamen/vuepress-theme-gungnir/commit/cecf854f84d00fed92e861fd0d75929e40635153))
+- fix hover effect of post list cover images (due to the refactoring in v0.1.3) ([4e79d99](https://github.com/Renovamen/vuepress-theme-gungnir/commit/4e79d995c47736e999e058ec611c63d1057e1961))
+- fix initial catalog position after router change ([b5bbf17](https://github.com/Renovamen/vuepress-theme-gungnir/commit/b5bbf17cb4e65a881ebf202cfd9233be8cf19b94))
+- fix links page item style ([38bc90c](https://github.com/Renovamen/vuepress-theme-gungnir/commit/38bc90c069f9016976c60c8f5c3d07247cd0b7dc))
+- fix pager ([0435bf6](https://github.com/Renovamen/vuepress-theme-gungnir/commit/0435bf60a5f77ecb06d14b2f62fb85aba43ab971))
+
+
 ## [0.1.4](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v0.1.3...v0.1.4) (2021-02-04)
 
 ### Bug Fixes
