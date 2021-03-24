@@ -1,4 +1,5 @@
-import VueIcon from "oh-vue-icons/components/Icon";
+import OhVueIcon from "oh-vue-icons/dist-css/v2/icon.umd.min";
+
 import {
   FaFortAwesome,
   FaTag,
@@ -9,7 +10,7 @@ import {
   OiGitCompare
 } from "oh-vue-icons/icons";
 
-VueIcon.add([
+OhVueIcon.add([
   FaFortAwesome,
   FaTag,
   FaSatelliteDish,

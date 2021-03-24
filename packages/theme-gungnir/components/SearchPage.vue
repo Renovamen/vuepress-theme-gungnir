@@ -1,10 +1,8 @@
 <template>
   <div class="search-page">
-    <v-icon
-      name="fa-chevron-down"
-      scale="1.8"
-      @click="$emit('toggle-search')"
-    />
+    <span class="search-close" @click="$emit('toggle-search')">
+      <v-icon name="fa-chevron-down" scale="1.8" />
+    </span>
     <div class="search-box">
       <input
         ref="input"
@@ -238,7 +236,7 @@ export default {
   z-index 50
   transition(transform .25s)
   transform(translateY(100%))
-  .v-icon
+  .search-close
     float right
     margin-right 25px
     margin-top 25px

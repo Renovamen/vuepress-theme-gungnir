@@ -44,10 +44,7 @@
           <v-icon name="fa-chevron-right" />
         </button>
 
-        <div
-          class="arrow faa-float animated hide-on-mobile"
-          @click="scrollToPost()"
-        >
+        <div class="arrow hide-on-mobile" @click="scrollToPost()">
           <v-icon name="fa-chevron-down" scale="1.7" />
         </div>
       </div>
@@ -294,7 +291,7 @@ export default {
         left 50%
         margin-left -18px
         cursor pointer
-        .v-icon
+        .ov-icon
           font-size 28px
           color #ffffff
           transition(.4s ease)

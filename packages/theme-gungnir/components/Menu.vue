@@ -200,7 +200,7 @@ $longer-time = ($time*2)
 
     .menu-btn-child
       transition-delay $delay
-      & >>> .v-icon
+      & >>> .ov-icon
         opacity 1
         color #fff
         visibility visible
@@ -279,14 +279,14 @@ $longer-time = ($time*2)
   transition(all $time $bezier)
 
   &:nth-child(2), &:nth-child(5)
-    .v-icon
+    .ov-icon
       transform(rotate(-45deg))
 
   &:nth-child(3), &:nth-child(4)
-    .v-icon
+    .ov-icon
       transform(rotate(-90deg))
 
-  & >>> .v-icon
+  & >>> .ov-icon
     opacity 0
     visibility hidden
 </style>

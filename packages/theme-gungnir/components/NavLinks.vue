@@ -116,7 +116,7 @@ export default {
     line-height 2rem
     text-transform uppercase
     margin-left 25px
-    .v-icon
+    .ov-icon
       width 17px
       margin-bottom -2px
       margin-right 1px

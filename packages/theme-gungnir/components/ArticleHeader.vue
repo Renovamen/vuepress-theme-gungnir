@@ -121,7 +121,7 @@ export default {
       color var(--text-color-sub)
       &:not(:last-child)
         margin-right 1rem
-      .v-icon
+      .ov-icon
         width 17px
         height auto
         margin-right -3px

@@ -20,7 +20,6 @@ module.exports = {
     editLinks: true,
     lastUpdated: true,
     hitokoto: true, // enable hitokoto (一言) or not?
-    codeTheme: "gungnir-dark",
     rss: {
       site_url: "https://vuepress-theme-gungnir.vercel.app",
       copyright: "Renovamen 2018-2021",

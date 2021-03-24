@@ -1,6 +1,6 @@
 # Gungnir
 
-[![npm](https://img.shields.io/npm/v/vuepress-theme-gungnir.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-theme-gungnir) [![docs](https://img.shields.io/badge/Docs-Gungnir-26A2FF?style=flat-square&logo=read-the-docs&logoColor=ffffff)](https://vuepress-theme-gungnir.vercel.app/docs/) [![license](https://img.shields.io/badge/License-Apache--2.0-green?style=flat-square)](LICENSE)
+[![npm](https://img.shields.io/npm/v/vuepress-theme-gungnir.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-theme-gungnir) [![docs](https://img.shields.io/badge/Docs-Gungnir-26A2FF?style=flat-square)](https://vuepress-theme-gungnir.vercel.app/docs/) [![license](https://img.shields.io/badge/License-Apache--2.0-green?style=flat-square)](LICENSE)
 
 一个基于 [VuePress](https://vuepress.vuejs.org/) 的博客主题。同时[这里](https://github.com/Renovamen/jekyll-theme-gungnir)还有一个它的 [Jekyll](https://jekyllrb.com/) 版本。
 

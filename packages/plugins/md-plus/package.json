@@ -24,6 +24,6 @@
   "main": "index.js",
   "dependencies": {
     "markdown-it-footnote": "^3.0.2",
-    "markdown-it-mark": "^3.0.0"
+    "markdown-it-mark": "^3.0.1"
   }
 }
