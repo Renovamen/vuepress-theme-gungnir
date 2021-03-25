@@ -40,7 +40,7 @@
           class="menu-btn-child menu-btn-sidebar"
           @click="$emit('toggle-sidebar')"
         >
-          <v-icon name="ri-side-bar-line" />
+          <v-icon name="bi-layout-sidebar-inset" />
         </div>
       </div>
     </div>

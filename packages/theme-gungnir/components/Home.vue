@@ -7,9 +7,13 @@
         :style="{ background: $themeConfig.homeHeaderImages[bgImageID].mask }"
       />
       <div class="header-content" :style="{ opacity: headerOpacity }">
-        <div class="hero-avatar hide-on-mobile">
-          <img :src="$withBase($themeConfig.personalInfo.avatar)" alt="hero" />
-        </div>
+        <!-- <div class="hero-avatar hide-on-mobile"> -->
+        <img
+          class="hero-avatar hide-on-mobile"
+          :src="$withBase($themeConfig.personalInfo.avatar)"
+          alt="hero"
+        />
+        <!-- </div> -->
 
         <div v-if="$themeConfig.hitokoto" class="hero-bubble">
           <div class="hero-bubble__body">
@@ -166,15 +170,13 @@ export default {
         margin-left -65px
         width 120px
         height 120px
-        img
-          cursor auto
-          padding 5px
-          border-radius 100%
-          max-width 100%
-          transition(all ease 1s)
-          box-shadow inset 0 0 10px #000
-          &:hover
-            transform(rotate(360deg))
+        cursor auto
+        padding 5px
+        border-radius 100%
+        transition(all ease 1s)
+        box-shadow inset 0 0 10px #000
+        &:hover
+          transform(rotate(360deg))
         &:hover + .hero-bubble
           opacity 1
 
