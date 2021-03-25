@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { tagCloud } from "@theme/utils/tagCloud";
+import { tagCloud } from "@theme/utils/tag-cloud";
 
 export default {
   props: {
