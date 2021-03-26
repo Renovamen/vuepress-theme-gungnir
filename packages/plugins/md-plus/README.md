@@ -5,6 +5,7 @@ A plugin for enhancing Markdown in VuePress. Now the following features are supp
 - footnote (supported by [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote))
 - mark (supported by [markdown-it-footnote](https://github.com/markdown-it/markdown-it-mark))
 
+[Demo](https://vuepress-theme-gungnir.vercel.app/zh/docs/plugins/md-plus.html)
 
 &nbsp;
 

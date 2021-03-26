@@ -19,13 +19,13 @@ Then:
 
 ```js
 module.exports = {
-    plugins: [
-        [
-            '@renovamen/vuepress-plugin-baidu-tongji', {
-                'ba': ''
-            }
-        ]
+  plugins: [
+    [
+      '@renovamen/vuepress-plugin-baidu-tongji', {
+        'ba': ''
+      }
     ]
+  ]
 }
 ```
 

@@ -11,7 +11,7 @@ module.exports = (options, ctx) => {
         editLinks: true,
         lastUpdated: true,
         smoothScroll: true,
-        sidebarDepth: 5,
+        sidebarDepth: 2,
         hitokoto: false,
         comment: false,
         analytics: false,

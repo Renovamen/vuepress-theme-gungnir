@@ -2,6 +2,8 @@
 
 A plugin for adding [Chart.js](https://www.chartjs.org) to [VuePress](https://vuepress.vuejs.org/).
 
+[Demo](https://vuepress-theme-gungnir.vercel.app/zh/docs/plugins/chart.html)
+
 &nbsp;
 
 ## Installation

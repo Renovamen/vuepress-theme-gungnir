@@ -7,13 +7,11 @@
         :style="{ background: $themeConfig.homeHeaderImages[bgImageID].mask }"
       />
       <div class="header-content" :style="{ opacity: headerOpacity }">
-        <!-- <div class="hero-avatar hide-on-mobile"> -->
         <img
           class="hero-avatar hide-on-mobile"
           :src="$withBase($themeConfig.personalInfo.avatar)"
           alt="hero"
         />
-        <!-- </div> -->
 
         <div v-if="$themeConfig.hitokoto" class="hero-bubble">
           <div class="hero-bubble__body">

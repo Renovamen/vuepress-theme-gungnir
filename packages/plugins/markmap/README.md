@@ -2,6 +2,8 @@
 
 A plugin for adding [markmap](https://github.com/gera2ld/markmap) to [VuePress](https://vuepress.vuejs.org/) to visualize your Markdown as mindmaps.
 
+[Demo](https://vuepress-theme-gungnir.vercel.app/zh/docs/plugins/markmap.html)
+
 &nbsp;
 
 ## Installation

@@ -2,6 +2,8 @@
 
 A plugin for adding [Mermaid](https://mermaid-js.github.io) to [VuePress](https://vuepress.vuejs.org/).
 
+[Demo](https://vuepress-theme-gungnir.vercel.app/zh/docs/plugins/mermaid.html)
+
 &nbsp;
 
 ## Installation

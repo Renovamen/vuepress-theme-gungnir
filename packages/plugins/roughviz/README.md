@@ -2,6 +2,8 @@
 
 A plugin for adding [roughViz.js](https://github.com/jwilber/roughViz) to [VuePress](https://vuepress.vuejs.org/).
 
+[Demo](https://vuepress-theme-gungnir.vercel.app/zh/docs/plugins/roughviz.html)
+
 &nbsp;
 
 ## Installation
