@@ -4,6 +4,9 @@ date: 2020-03-26
 ---
 
 <p>
+  <a href="https://www.npmjs.com/package/vuepress-plugin-markmap" target="_blank">
+    <img src="https://img.shields.io/npm/v/vuepress-plugin-markmap.svg?style=flat-square&logo=npm" style="display: inline; margin: 0" alt="npm">
+  </a>
   <a href="https://github.com/Renovamen/vuepress-theme-gungnir/tree/main/packages/plugins/markmap" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-vuepress--plugin--markmap-26A2FF?style=flat-square&logo=github" style="display: inline; margin: 0" alt="github">
   </a>

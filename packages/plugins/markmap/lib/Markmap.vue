@@ -21,6 +21,11 @@ export default {
       required: true
     }
   },
+  data() {
+    return {
+      mm: null
+    };
+  },
   mounted() {
     // transform markdown
     const { root, features } = transform(this.code);
@@ -33,14 +38,28 @@ export default {
 
     // create markmap
     const svg = this.$refs.markmap;
-    const mm = Markmap.create(svg, null, root);
+    this.mm = Markmap.create(svg, null, root);
+    this.rescale();
 
-    // resize svg and fit graph
-    // https://github.com/gera2ld/markmap/issues/63
-    mm.rescale(1).then(function () {
-      svg.style.height = svg.getBBox().height + 10 + "px";
-      mm.fit();
-    });
+    // rescale graph when window size changes
+    const that = this;
+    window.onresize = () => {
+      return (() => {
+        that.rescale();
+      })();
+    };
+  },
+  methods: {
+    rescale() {
+      // resize svg and fit graph
+      // https://github.com/gera2ld/markmap/issues/63
+      const svg = this.$refs.markmap;
+      const that = this;
+      this.mm.rescale(1).then(function () {
+        svg.style.height = svg.getBBox().height + 10 + "px";
+        that.mm.fit();
+      });
+    }
   }
 };
 </script>
