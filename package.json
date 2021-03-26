@@ -13,7 +13,8 @@
     "dev": "vuepress dev example --no-cache --host 0.0.0.0 --port 4000",
     "lint": "eslint --ext .js,.vue ./",
     "lint-fix": "eslint --fix --ext .js,.vue ./",
-    "preview": "cd dist && http-server"
+    "preview": "cd dist && http-server",
+    "cp-readme": "cp {README.md,README-CN.md} packages/theme-gungnir/"
   },
   "husky": {
     "hooks": {

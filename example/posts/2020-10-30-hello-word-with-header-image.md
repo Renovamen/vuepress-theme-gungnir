@@ -136,6 +136,27 @@ sequenceDiagram
 }
 ```
 
+### markmap
+
+```markmap
+# Fruit
+
+## Red
+
+- [Apple](https://en.wikipedia.org/wiki/Apple)
+- *Cherry*
+
+## Yellow
+
+- **Lemon**
+- Banana
+- ~~Pumpkin~~
+
+## Not related
+
+- $E = mc^2$
+```
+
 
 ## Images
 

@@ -1,0 +1,28 @@
+{
+  "name": "vuepress-plugin-markmap",
+  "version": "0.1.6",
+  "description": "A plugin for adding markmap to VuePress to visualize your Markdown as mindmaps.",
+  "keywords": [
+    "vue",
+    "vuepress",
+    "vuepress-plugin",
+    "markmap",
+    "mindmap",
+    "markdown"
+  ],
+  "homepage": "https://github.com/Renovamen/vuepress-theme-gungnir/tree/main/packages/plugins/markmap",
+  "bugs": {
+    "url": "https://github.com/Renovamen/vuepress-theme-gungnir/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Renovamen/vuepress-theme-gungnir.git",
+    "directory": "packages/plugins/markmap"
+  },
+  "license": "MIT",
+  "author": "Renovamen <renovamenzxh@gmail.com>",
+  "main": "index.js",
+  "dependencies": {
+    "markmap-lib": "^0.9.3"
+  }
+}

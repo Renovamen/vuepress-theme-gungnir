@@ -88,15 +88,6 @@ export default {
       default: ""
     }
   },
-  data() {
-    return {
-      numStyle: {
-        fontSize: ".9rem",
-        fontWeight: "normal",
-        color: "#999"
-      }
-    };
-  },
   methods: {
     goTags(tag) {
       if (this.$route.path !== `/tags/${tag}/`) {

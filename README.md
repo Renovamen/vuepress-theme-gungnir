@@ -24,7 +24,7 @@ A blog theme for [VuePress](https://vuepress.vuejs.org/). The [Jekyll](https://j
 - Table of contents
 - Multiple syntax highlighting themes, support full screening the code blocks (inspired by WordPress theme [Sakura](https://github.com/mashirozx/Sakura))
 - Tex support ([Katex](https://github.com/KaTeX/KaTeX))
-- Draw charts in Markdown easily: [Chart.js](https://www.chartjs.org), [Mermaid](https://mermaid-js.github.io) and [roughViz.js](https://github.com/jwilber/roughViz)
+- Draw charts and graphs in Markdown easily: [Chart.js](https://www.chartjs.org), [Mermaid](https://mermaid-js.github.io), [roughViz.js](https://github.com/jwilber/roughViz) and [markmap](https://github.com/gera2ld/markmap)
 - Markdown enhancements:
   - Footnote ([markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote))
   - Mark ([markdown-it-mark](https://github.com/markdown-it/markdown-it-mark))
