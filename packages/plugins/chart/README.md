@@ -1,8 +1,9 @@
 # vuepress-plugin-chart
 
-A plugin for adding [Chart.js](https://www.chartjs.org) to [VuePress](https://vuepress.vuejs.org/).
+A plugin for adding JavaScript charting library [Chart.js](https://www.chartjs.org) to [VuePress](https://vuepress.vuejs.org/) to create interactive charts in Markdown.
 
 [Demo](https://vuepress-theme-gungnir.vercel.app/zh/docs/plugins/chart.html)
+
 
 &nbsp;
 
@@ -16,7 +17,7 @@ yarn add vuepress-plugin-chart
 npm install vuepress-plugin-chart
 ```
 
-And add it to your `.vuepress/config.js`:
+Then add it to your `.vuepress/config.js`:
 
 ```js
 module.exports = {
@@ -28,11 +29,12 @@ module.exports = {
 }
 ```
 
+
 &nbsp;
 
 ## Usage
 
-Then you can use [Chart.js](https://www.chartjs.org) in Markdown:
+The token info of the code block should be `chart`, for example:
 
 ~~~json
 ```chart
@@ -74,6 +76,9 @@ Then you can use [Chart.js](https://www.chartjs.org) in Markdown:
 }
 ```
 ~~~
+
+Refer to the [documentation of Chart.js](https://www.chartjs.org/docs/latest/) for more information.
+
 
 &nbsp;
 

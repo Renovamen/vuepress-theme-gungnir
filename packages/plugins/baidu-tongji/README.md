@@ -1,13 +1,11 @@
 # @renovamen/vuepress-plugin-baidu-tongji
 
-A plugin for adding Baidu Tongji to VuePress. This plugin is based on [@vuepress/plugin-google-analytics](https://v1.vuepress.vuejs.org/plugin/official/plugin-google-analytics.html)
+A plugin for adding Baidu Tongji to VuePress. It is edited from [@vuepress/plugin-google-analytics](https://v1.vuepress.vuejs.org/plugin/official/plugin-google-analytics.html).
 
 
 &nbsp;
 
-## Usage
-
-Install:
+## Install
 
 ```bash
 yarn add @renovamen/vuepress-plugin-baidu-tongji
@@ -15,14 +13,17 @@ yarn add @renovamen/vuepress-plugin-baidu-tongji
 npm install @renovamen/vuepress-plugin-baidu-tongji
 ```
 
-Then:
+
+&nbsp;
+
+## Usage
 
 ```js
 module.exports = {
   plugins: [
     [
       '@renovamen/vuepress-plugin-baidu-tongji', {
-        'ba': ''
+        'ba': 'your-tracking-code'
       }
     ]
   ]

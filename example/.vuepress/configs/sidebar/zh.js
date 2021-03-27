@@ -13,14 +13,14 @@ module.exports = {
       title: "进阶",
       collapsable: false,
       children: [
-        "advanced/functions"
+        "advanced/features"
       ]
     },
     {
       title: "插件",
       collapsable: false,
       children: [
-        "plugins/plugins",
+        "plugins/",
         "plugins/chart",
         "plugins/mermaid",
         "plugins/roughviz",

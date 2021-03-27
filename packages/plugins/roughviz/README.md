@@ -1,8 +1,9 @@
 # vuepress-plugin-roughviz
 
-A plugin for adding [roughViz.js](https://github.com/jwilber/roughViz) to [VuePress](https://vuepress.vuejs.org/).
+A plugin for adding [roughViz.js](https://github.com/jwilber/roughViz) to [VuePress](https://vuepress.vuejs.org/) to create sketchy/hand-drawn styled charts in Markdown.
 
 [Demo](https://vuepress-theme-gungnir.vercel.app/zh/docs/plugins/roughviz.html)
+
 
 &nbsp;
 
@@ -16,7 +17,7 @@ yarn add vuepress-plugin-roughviz
 npm install vuepress-plugin-roughviz
 ```
 
-And add it to your `.vuepress/config.js`:
+Then add it to your `.vuepress/config.js`:
 
 ```js
 module.exports = {
@@ -27,6 +28,7 @@ module.exports = {
   ]
 }
 ```
+
 
 &nbsp;
 
@@ -59,6 +61,9 @@ So the format of your code block's `token.info` should be `roughviz-{ chart-type
 }
 ```
 ~~~
+
+Refer to the [documentation of roughViz.js](https://github.com/jwilber/roughViz) for more information.
+
 
 &nbsp;
 

@@ -35,7 +35,7 @@ themeConfig: {
 
 ## 站点统计
 
-目前支持谷歌统计（基于插件 [plugin-google-analytics](https://vuepress.vuejs.org/plugin/official/plugin-google-analytics.html)）和百度统计（基于插件 [plugin-baidu-tongji](/zh/docs/plugins/baidu-tongji)）。
+目前支持谷歌统计（基于插件 [plugin-google-analytics](https://vuepress.vuejs.org/plugin/official/plugin-google-analytics.html)）和百度统计（基于插件 [plugin-baidu-tongji](/zh/docs/plugins/baidu-tongji/)）。
 
 ### 谷歌统计
 
@@ -63,7 +63,7 @@ themeConfig: {
 
 ## RSS
 
-通过插件 [plugin-rss](/zh/docs/plugins/rss) 来提供 RSS 支持，生成的文件路径为 `./rss.xml`。插件配置：
+通过插件 [plugin-rss](/zh/docs/plugins/rss/) 来提供 RSS 支持，生成的文件路径为 `./rss.xml`。插件配置：
 
 ```js
 themeConfig: {
@@ -80,7 +80,7 @@ themeConfig: {
 
 ## 阅读时长估计
 
-主题默认在文章头部显示估计出的阅读时长，该功能基于插件 [plugin-reading-time](/zh/docs/plugins/reading-time)。
+主题默认在文章头部显示估计出的阅读时长，该功能基于插件 [plugin-reading-time](/zh/docs/plugins/reading-time/)。
 
 可以传入一些配置项来配置这个插件：
 
@@ -119,7 +119,7 @@ themeConfig: {
 
 ## 数学公式渲染
 
-通过插件 [plugin-katex](/zh/docs/plugins/katex) 来提供公式渲染支持。启用 KaTex：
+通过插件 [plugin-katex](/zh/docs/plugins/katex/) 来提供公式渲染支持。启用 KaTeX：
 
 ```js
 themeConfig: {
@@ -157,7 +157,7 @@ $$
 
 ### Chart.js
 
-通过插件 [plugin-chart](/zh/docs/plugins/chart) 来在 Markdown 中使用 JavaScript 图表库 [Chart.js](https://www.chartjs.org)：
+通过插件 [plugin-chart](/zh/docs/plugins/chart/) 来在 Markdown 中使用 JavaScript 图表库 [Chart.js](https://www.chartjs.org)：
 
 ```js
 themeConfig: {
@@ -214,7 +214,7 @@ key 值一定要加引号，否则会报错。
 
 ### Mermaid
 
-通过插件 [plugin-mermaid](/zh/docs/plugins/mermaid) 来在 Markdown 中使用 [Mermaid](https://mermaid-js.github.io)，从而在文章中加入流程图、状态图、时序图、甘特图等：
+通过插件 [plugin-mermaid](/zh/docs/plugins/mermaid/) 来在 Markdown 中使用 [Mermaid](https://mermaid-js.github.io)，从而在文章中加入流程图、状态图、时序图、甘特图等：
 
 ```js
 themeConfig: {
@@ -249,7 +249,7 @@ sequenceDiagram
 
 ### roughViz.js
 
-通过插件 [plugin-roughviz](/zh/docs/plugins/roughviz) 来在 Markdown 中使用 [roughViz.js](https://github.com/jwilber/roughViz)。与别的画出来的图看上去很标准的图表库不同，roughViz.js 的特性是绘制手绘样式的图表。
+通过插件 [plugin-roughviz](/zh/docs/plugins/roughviz/) 来在 Markdown 中使用 [roughViz.js](https://github.com/jwilber/roughViz)。与别的画出来的图看上去很标准的图表库不同，roughViz.js 的特性是绘制手绘样式的图表。
 
 ```js
 themeConfig: {
@@ -257,7 +257,7 @@ themeConfig: {
 }
 ```
 
-roughViz.js 支持以下五种图表类型：
+roughViz.js 支持以下七种图表类型：
 
 - Bar (`bar`)
 - Horizontal Bar (`barh`)
@@ -302,7 +302,7 @@ roughViz.js 支持以下五种图表类型：
 
 ### markmap
 
-通过插件 [plugin-markmap](/zh/docs/plugins/markmap) 来在 Markdown 中使用 [markmap](https://github.com/gera2ld/markmap)，从而在文章中加入思维导图。
+通过插件 [plugin-markmap](/zh/docs/plugins/markmap/) 来在 Markdown 中使用 [markmap](https://github.com/gera2ld/markmap)，从而在文章中加入思维导图。
 
 ```js
 themeConfig: {
@@ -329,17 +329,17 @@ themeConfig: {
 ::: details 代码
 ~~~
 ```markmap
-# Fruit
+# 水果
 
-## Red
+## 红的
 
-- Apple
-- Cherry
+- 苹果
+- 樱桃
 
-## Yellow
+## 黄的
 
-- Lemon
-- Banana
+- 柠檬
+- 香蕉
 ```
 ~~~
 :::
@@ -347,13 +347,13 @@ themeConfig: {
 更详细的用法可以参考 [markmap 文档](https://markmap.js.org/repl)。
 
 ::: danger
-markmap 还支持在思维导图中插入代码块（[见这里](https://markmap.js.org/repl)），但如果插入代码块，markmap 就会引入代码块样式文件，这会与主题本身的代码块样式冲突。我目前还没有想出这个问题的解决方案，所以请不要在本插件中使用代码块。
+markmap 还支持在思维导图中插入代码块（[见这里](https://markmap.js.org/repl)），并使用 [Prism.js](https://prismjs.com/) 进行高亮。但如果插入代码块，markmap 就会引入代码块样式文件，这会与主题本身的代码块样式冲突。我目前还没有想出这个问题的解决方案，所以请不要在本插件中使用代码块。
 :::
 
 
 ## Markdown 增强样式
 
-通过插件 [plugin-md-plus](/zh/docs/plugins/md-plus) 来在 Markdown 中加入更多语法和功能。目前支持：
+通过插件 [plugin-md-plus](/zh/docs/plugins/md-plus/) 来在 Markdown 中加入更多语法和功能。目前支持：
 
 - 脚注
 - 高亮标记
@@ -363,7 +363,7 @@ markmap 还支持在思维导图中插入代码块（[见这里](https://markmap
 ```js
 themeConfig: {
   mdPlus: {
-    all: true, // 全部启用
+    all: true,  // 全部启用
   }
 }
 ```

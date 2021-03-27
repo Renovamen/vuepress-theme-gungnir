@@ -1,12 +1,14 @@
 # @renovamen/vuepress-plugin-reading-time
 
-A plugin for displaying the number of words and how long a post takes to read in VuePress.
+A plugin for counting words and estimating reading time in VuePress. Compare to other similar VuePress plugins, this plugin supports:
+
+- Setting reading speed for English and Chinese separately
+- Excluding all content inside code blocks or tex blocks
+
 
 &nbsp;
 
-## Usage
-
-Install:
+## Install
 
 ```bash
 yarn add @renovamen/vuepress-plugin-reading-time
@@ -14,13 +16,18 @@ yarn add @renovamen/vuepress-plugin-reading-time
 npm install @renovamen/vuepress-plugin-reading-time
 ```
 
-Then:
+Then add it to your `.vuepress/config.js`:
 
 ```js
 module.exports = {
   plugins: ['@renovamen/vuepress-plugin-reading-time']
 }
 ```
+
+
+&nbsp;
+
+## Usage
 
 The `readingTime` data can be accessed by:
 
@@ -43,6 +50,7 @@ You can override by specifying `readingTime` data in frontmatter
 title: Hello Word
 readingTime: { minutes: 3, words: 1500 }
 ```
+
 
 &nbsp;
 

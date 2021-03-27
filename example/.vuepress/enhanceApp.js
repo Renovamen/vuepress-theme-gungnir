@@ -1,4 +1,4 @@
-import OhVueIcon from "oh-vue-icons/dist-css/v2/icon.umd.min";
+import OhVueIcon from "oh-vue-icons";
 
 import {
   FaFortAwesome,
@@ -10,7 +10,7 @@ import {
   OiGitCompare
 } from "oh-vue-icons/icons";
 
-OhVueIcon.add([
+OhVueIcon.add(
   FaFortAwesome,
   FaTag,
   FaSatelliteDish,
@@ -18,4 +18,4 @@ OhVueIcon.add([
   FaGithub,
   OiRepo,
   OiGitCompare
-]);
+);

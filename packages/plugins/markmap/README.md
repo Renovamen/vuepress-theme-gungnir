@@ -4,6 +4,7 @@ A plugin for adding [markmap](https://github.com/gera2ld/markmap) to [VuePress](
 
 [Demo](https://vuepress-theme-gungnir.vercel.app/zh/docs/plugins/markmap.html)
 
+
 &nbsp;
 
 ## Installation
@@ -16,7 +17,7 @@ yarn add vuepress-plugin-markmap
 npm install vuepress-plugin-markmap
 ```
 
-And add it to your `.vuepress/config.js`:
+Then add it to your `.vuepress/config.js`:
 
 ```js
 module.exports = {
@@ -28,11 +29,12 @@ module.exports = {
 }
 ```
 
+
 &nbsp;
 
 ## Usage
 
-Then you can use [markmap](https://github.com/gera2ld/markmap) in Markdown:
+The token info of the code block should be `markmap`, for example:
 
 ~~~markdown
 ```markmap
@@ -50,6 +52,16 @@ Then you can use [markmap](https://github.com/gera2ld/markmap) in Markdown:
 - ~~Pumpkin~~
 ```
 ~~~
+
+Refer to the [documentation of markmap](https://markmap.js.org/repl) for more information.
+
+
+&nbsp;
+
+## Warning
+
+Theoretically, using code blocks highlighted by [Prism.js](https://prismjs.com/) in markmap is also supported (see [here](https://markmap.js.org/repl)). However, markmap will import syntax highlighting styles if code blocks are used, which are conflited with this theme's highlighting styles. So you'd better not use code blocks in this plugin (before I find out an appropriate solution).
+
 
 &nbsp;
 

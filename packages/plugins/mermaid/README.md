@@ -1,8 +1,9 @@
 # @renovamen/vuepress-plugin-mermaid
 
-A plugin for adding [Mermaid](https://mermaid-js.github.io) to [VuePress](https://vuepress.vuejs.org/).
+A plugin for adding [Mermaid](https://mermaid-js.github.io) to [VuePress](https://vuepress.vuejs.org/) to create complex diagrams in Markdown.
 
 [Demo](https://vuepress-theme-gungnir.vercel.app/zh/docs/plugins/mermaid.html)
+
 
 &nbsp;
 
@@ -16,7 +17,7 @@ yarn add @renovamen/vuepress-plugin-mermaid
 npm install @renovamen/vuepress-plugin-mermaid
 ```
 
-And add it to your `.vuepress/config.js`:
+Then add it to your `.vuepress/config.js`:
 
 ```js
 module.exports = {
@@ -28,11 +29,12 @@ module.exports = {
 }
 ```
 
+
 &nbsp;
 
 ## Usage
 
-Then you can use [Mermaid](https://mermaid-js.github.io) in Markdown:
+The token info of the code block should be `mermaid`, for example:
 
 ~~~markdown
 ```mermaid
@@ -43,6 +45,9 @@ sequenceDiagram
   end
 ```
 ~~~
+
+Refer to the [documentation of Mermaid](https://mermaid-js.github.io) for more information.
+
 
 &nbsp;
 

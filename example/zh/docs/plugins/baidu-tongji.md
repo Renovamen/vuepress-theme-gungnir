@@ -15,7 +15,7 @@ date: 2020-03-26
   </a>
 </p>
 
-`@renovamen/vuepress-plugin-baidu-tongji` 插件，用于在 VuePress 中引入百度统计。
+`@renovamen/vuepress-plugin-baidu-tongji` 插件，用于在 VuePress 中引入百度统计。修改自 [@vuepress/plugin-google-analytics](https://v1.vuepress.vuejs.org/plugin/official/plugin-google-analytics.html)。
 
 
 ## 安装

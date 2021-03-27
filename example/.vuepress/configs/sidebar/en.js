@@ -13,14 +13,14 @@ module.exports = {
       title: "Advanced",
       collapsable: false,
       children: [
-        "advanced/functions"
+        "advanced/features"
       ]
     },
     {
       title: "Plugins",
       collapsable: false,
       children: [
-        "plugins/plugins",
+        "plugins/",
         "plugins/chart",
         "plugins/mermaid",
         "plugins/roughviz",
