@@ -61,7 +61,7 @@ npm i -D vuepress-theme-gungnir
 
 ## 文档
 
-[这里](https://vuepress-theme-gungnir.vercel.app/docs/)是本主题的（正在施工中的）文档。
+[这里](https://vuepress-theme-gungnir.vercel.app/docs/)是本主题的文档。
 
 
 &nbsp;

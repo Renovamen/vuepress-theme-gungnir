@@ -13,7 +13,9 @@ module.exports = {
       title: "Advanced",
       collapsable: false,
       children: [
-        "advanced/features"
+        "advanced/features",
+        "advanced/icons",
+        "advanced/highlighting-themes"
       ]
     },
     {

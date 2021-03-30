@@ -61,7 +61,7 @@ Here are some live demos:
 
 ## Documentation
 
-Documentation is available (but ongoing) [here](https://vuepress-theme-gungnir.vercel.app/docs/).
+Documentation is available [here](https://vuepress-theme-gungnir.vercel.app/docs/).
 
 
 &nbsp;

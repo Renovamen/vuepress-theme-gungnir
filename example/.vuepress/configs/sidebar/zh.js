@@ -13,7 +13,9 @@ module.exports = {
       title: "进阶",
       collapsable: false,
       children: [
-        "advanced/features"
+        "advanced/features",
+        "advanced/icons",
+        "advanced/highlighting-themes"
       ]
     },
     {

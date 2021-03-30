@@ -6,13 +6,13 @@ date: 2021-03-26
 All of the features mentioned in this page are disabled by default (except reading time). You should enable the features you want to use in `.vuepress/config.js` following the instructions on this page.
 
 ::: info
-Code related to the disabled features will not be included in the bundle files.
+Code related to the disabled features will not be included in your site's bundle files.
 :::
 
 
 ## Comment
 
-[Vssue](https://vssue.js.org/) is supported as the third party comment system. Vssue works bu storing comments of your static pages on the issue system of code hosting platforms like Github、Gitlab、Bitbucket、Gitee and Gitea.
+[Vssue](https://vssue.js.org/) is supported as the third party comment system. Vssue works by storing comments of your static pages on the issue system of code hosting platforms like Github, Gitlab, Bitbucket, Gitee and Gitea.
 
 A simple configuration for a Github-based comment system is:
 

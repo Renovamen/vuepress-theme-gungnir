@@ -31,7 +31,7 @@ Gungnir was originally a [Jekyll](https://jekyllrb.com/) theme derived from [Hux
 
 Anyway, many thanks for all of these nice work.
 
-And one one day, I decided to rebuild it with [VuePress](https://vuepress.vuejs.org/)...
+And one day, I decided to rebuild it with [VuePress](https://vuepress.vuejs.org/)...
 
 Gungnir is the spear of the god Odin in Norse mythology, made from the wood of the world tree Yggdrasil. It has nothing to do with this theme, but I still use this name.
 
