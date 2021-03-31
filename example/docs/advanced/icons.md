@@ -16,7 +16,7 @@ Gungnir has already imported the following icons:
 
 - `FaRegularUser`: <v-icon name="fa-regular-user" />
 - `FaRegularCalendar`: <v-icon name="fa-regular-calendar" />
-- `RiTimerLine`: <v-icon name="ri-time-line" />
+- `RiTimerLine`: <v-icon name="ri-timer-line" />
 - `FaSun`: <v-icon name="fa-sun" />
 - `FaMoon`: <v-icon name="fa-moon" />
 - `FaMagic`: <v-icon name="fa-magic" />
