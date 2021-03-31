@@ -1,6 +1,6 @@
 {
   "name": "@renovamen/vuepress-plugin-baidu-tongji",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A plugin for adding Baidu Tongji to VuePress.",
   "keywords": [
     "vue",

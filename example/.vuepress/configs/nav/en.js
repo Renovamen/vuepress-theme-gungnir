@@ -20,7 +20,7 @@ module.exports = [
     icon: "fa-book"
   },
   {
-    text: "v0.1.4",
+    text: "v0.1.6",
     icon: "fa-github",
     items: [
       {

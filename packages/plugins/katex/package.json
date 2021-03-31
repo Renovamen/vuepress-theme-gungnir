@@ -1,6 +1,6 @@
 {
   "name": "@renovamen/vuepress-plugin-katex",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A plugin for adding Katex to VuePress.",
   "keywords": [
     "vue",

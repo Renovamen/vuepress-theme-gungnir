@@ -1,11 +1,16 @@
 {
   "name": "vuepress-theme-gungnir",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Gungnir is a blog theme for VuePress.",
   "keywords": [
     "vuepress",
     "blog",
-    "theme"
+    "theme",
+    "katex",
+    "chartjs",
+    "mermaid",
+    "markmap",
+    "roughviz"
   ],
   "homepage": "https://vuepress-theme-gungnir.vercel.app",
   "bugs": {
