@@ -26,7 +26,6 @@ Gungnir has already imported the following icons:
 - `FaChevronDown`: <v-icon name="fa-chevron-down" />
 - `FaListUl`: <v-icon name="fa-list-ul" />
 - `BiLayoutSidebarInset`: <v-icon name="bi-layout-sidebar-inset" />
-- `FaSearch`: <v-icon name="fa-search" />
 - `FaPencilAlt`: <v-icon name="fa-pencil-alt" />
 - `FaCircle`: <v-icon name="fa-circle" />
 - `FaRss`: <v-icon name="fa-rss" />
@@ -37,7 +36,6 @@ Gungnir has already imported the following icons:
 - `RiZhihuLine`: <v-icon name="ri-zhihu-line" />
 - `FaWeibo`: <v-icon name="fa-weibo" />
 - `FaEnvelope`: <v-icon name="fa-envelope" />
-- `RiEarthFill`: <v-icon name="ri-earth-fill" />
 
 To import other icons, you may need to search for icons' names [here](https://oh-vue-icons.vercel.app) and globally import theme in your `.vuepress/enhanceApp.js` file (create one if this file dosen't exist):
 

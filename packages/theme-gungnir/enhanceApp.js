@@ -17,7 +17,6 @@ import {
   FaChevronDown,
   FaListUl,
   BiLayoutSidebarInset,
-  FaSearch,
   FaPencilAlt,
   FaCircle,
   FaRss,
@@ -27,8 +26,7 @@ import {
   FaTwitter,
   RiZhihuLine,
   FaWeibo,
-  FaEnvelope,
-  RiEarthFill
+  FaEnvelope
 } from "oh-vue-icons/icons";
 
 OhVueIcon.add(
@@ -44,7 +42,6 @@ OhVueIcon.add(
   FaChevronDown,
   FaListUl,
   BiLayoutSidebarInset,
-  FaSearch,
   FaPencilAlt,
   FaCircle,
   FaRss,
@@ -54,8 +51,7 @@ OhVueIcon.add(
   FaTwitter,
   RiZhihuLine,
   FaWeibo,
-  FaEnvelope,
-  RiEarthFill
+  FaEnvelope
 );
 
 export default ({ Vue, siteData, isServer }) => {

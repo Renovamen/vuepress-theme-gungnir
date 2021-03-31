@@ -20,6 +20,8 @@ module.exports = {
     editLinks: true,
     lastUpdated: true,
     hitokoto: true, // enable hitokoto (一言) or not?
+    searchIcon: "ri-search-2-line",
+    languageIcon: "hi-translate",
     rss: {
       site_url: "https://vuepress-theme-gungnir.vercel.app",
       copyright: "Renovamen 2018-2021",

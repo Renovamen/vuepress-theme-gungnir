@@ -12,11 +12,16 @@
       class="nav-item"
     >
       <a
-        class="nav-link v-parent v-hover"
+        class="nav-link ov-parent ov-hover"
         style="cursor: pointer"
         @click="$emit('toggle-search')"
       >
-        <v-icon name="fa-search" animation="wrench" hover />
+        <v-icon
+          v-if="$themeConfig.searchIcon"
+          :name="$themeConfig.searchIcon"
+          animation="wrench"
+          hover
+        />
         {{ $themeLocales.search }}
       </a>
     </div>
@@ -71,7 +76,7 @@ export default {
             }
             return { text, link };
           }),
-          icon: "ri-earth-fill"
+          icon: this.$themeConfig.languageIcon
         };
         return [...userNav, languageDropdown];
       }

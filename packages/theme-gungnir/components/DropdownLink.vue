@@ -1,7 +1,7 @@
 <template>
   <div class="dropdown-wrapper" :class="{ open }">
     <a class="dropdown-title" @click="toggle">
-      <span class="title v-parent v-hover">
+      <span class="title ov-parent ov-hover">
         <v-icon v-if="item.icon" :name="item.icon" animation="wrench" hover />
         {{ item.text }}
       </span>

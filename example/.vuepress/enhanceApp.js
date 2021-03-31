@@ -4,8 +4,10 @@ import {
   FaFortAwesome,
   FaTag,
   FaSatelliteDish,
-  FaBook,
-  FaGithub,
+  RiBook2Fill,
+  IoLogoGithub,
+  RiSearch2Line,
+  HiTranslate,
   OiRepo,
   OiGitCompare
 } from "oh-vue-icons/icons";
@@ -14,8 +16,10 @@ OhVueIcon.add(
   FaFortAwesome,
   FaTag,
   FaSatelliteDish,
-  FaBook,
-  FaGithub,
+  RiBook2Fill,
+  IoLogoGithub,
+  RiSearch2Line,
+  HiTranslate,
   OiRepo,
   OiGitCompare
 );

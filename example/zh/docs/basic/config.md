@@ -119,6 +119,26 @@ module.exports = {
 如果想要修改页面主标题，请参考多语言支持部分。
 
 
+## 搜索
+
+```js
+// .vuepress/config.js
+
+module.exports = {
+  themeConfig: {
+    search: true,  // 可选：是否启用搜索，默认：true
+    searchMaxSuggestions: 10,  // 可选：搜索的最大结果数，默认：10
+    searchPlaceholder: "$ grep ...",  // 可选：搜索栏占位文本，默认："$ grep ..."
+    searchIcon: "ri-search-2-line"  // 可选：搜索图标
+  }
+}
+```
+
+::: tip
+需要保证 `searchIcon` 项指定的图标是被引入过的，在[这里](/zh/docs/advanced/icons/)查看怎么引入图标。
+:::
+
+
 ## 页脚自定义
 
 页脚支持 HTML 格式，如本站的页脚配置为：

@@ -119,6 +119,26 @@ Check the [tags page](/tags) and [links page](/links) to see the effect.
 To edit the title of the above mentioned pages, please refer to Multi-language Support section.
 
 
+## Search
+
+```js
+// .vuepress/config.js
+
+module.exports = {
+  themeConfig: {
+    search: true,  // optional: enable search or not, default: true
+    searchMaxSuggestions: 10,  // optional: the maximum number of results for search, default: 10
+    searchPlaceholder: "$ grep ...",  // optional: placeholder of the search field, default: "$ grep ..."
+    searchIcon: "ri-search-2-line"  // optional: search icon
+  }
+}
+```
+
+::: tip
+The icon specified by `searchIcon` should be imported first, see [here](/docs/advanced/icons/) for details.
+:::
+
+
 ## Custom Footer
 
 Support HTML. For example, the footer of this site is:

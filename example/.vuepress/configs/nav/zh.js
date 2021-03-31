@@ -17,11 +17,11 @@ module.exports = [
   {
     text: "文档",
     link: "/zh/docs/",
-    icon: "fa-book"
+    icon: "ri-book-2-fill"
   },
   {
     text: "v0.1.6",
-    icon: "fa-github",
+    icon: "io-logo-github",
     items: [
       {
         text: "仓库地址",
