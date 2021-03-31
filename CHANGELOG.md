@@ -1,5 +1,20 @@
 # Change Log
 
+## [0.1.6](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v0.1.5...v0.1.6) (2021-03-31)
+
+### Bug Fixes
+
+- set sitename link to "/" for all languages ([af89fdb](https://github.com/Renovamen/vuepress-theme-gungnir/commit/af89fdb53e1597170546cb8a65ad2aa4e349508b))
+
+### Features
+
+- add markmap plugin ([1e942dc](https://github.com/Renovamen/vuepress-theme-gungnir/commit/1e942dc5058bcf291e546a965a6fe99b7cb88d40))
+
+### Chore
+
+- change sidebar button icon ([651210d](https://github.com/Renovamen/vuepress-theme-gungnir/commit/651210db1611af251e761459279020bf16058d67))
+
+
 ## [0.1.5](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v0.1.4...v0.1.5) (2021-02-28)
 
 ### Bug Fixes
