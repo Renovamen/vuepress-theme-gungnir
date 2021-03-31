@@ -8,7 +8,7 @@
       invert: isInvert
     }"
   >
-    <router-link :to="$localePath" class="home-link">
+    <router-link to="/" class="home-link">
       <span ref="siteName" class="site-name"> $ cd /home/ </span>
     </router-link>
 
