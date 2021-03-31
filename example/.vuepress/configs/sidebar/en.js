@@ -6,7 +6,8 @@ module.exports = {
       children: [
         "",
         "basic/installation",
-        "basic/config"
+        "basic/config",
+        "basic/content"
       ]
     },
     {

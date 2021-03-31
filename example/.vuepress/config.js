@@ -1,6 +1,6 @@
 module.exports = {
   title: "vuepress-theme-gungnir",
-  description: "Renovamen's blog, also VuePress theme Gungnir.",
+  description: "Gungnir is a blog theme for VuePress.",
   head: [
     ["link", { rel: "icon", href: "/img/logo.svg" }],
     ["meta", { name: "viewport", content: "width=device-width,initial-scale=1,user-scalable=no" }]

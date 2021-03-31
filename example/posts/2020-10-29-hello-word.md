@@ -1,7 +1,6 @@
 ---
-layout: post
 title: Hello Word 1
-subtitle: Welcome to VuePress Theme Gungnir
+subtitle: A Test Post without The Header Image
 author: Renovamen
 date: 2020-10-29
 header_img: /img/in-post/2020-10-29/header.jpg
@@ -10,7 +9,7 @@ tags:
   - test
 ---
 
-This is a test post without the header image.
+Welcome to VuePress theme Gungnir.
 
 <!-- more -->
 

@@ -1,7 +1,6 @@
 ---
-layout: post
 title: Hello Word 2
-subtitle: Welcome to VuePress Theme Gungnir Again
+subtitle: A Test Post with a Header Image
 author: Renovamen
 date: 2020-10-30
 header_style: image
@@ -12,7 +11,7 @@ tags:
   - test
 ---
 
-This is a test post with a header image.
+Welcome to VuePress theme Gungnir.
 
 <!-- more -->
 
