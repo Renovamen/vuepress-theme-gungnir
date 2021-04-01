@@ -1,5 +1,5 @@
 const path = require("path");
-const katex = require("./katex");
+const katex = require("./lib/markdown-it-katex");
 
 module.exports = (options, ctx) => {
   return {

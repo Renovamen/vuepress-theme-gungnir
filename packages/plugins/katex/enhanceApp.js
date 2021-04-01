@@ -1,2 +1,2 @@
 import "katex/dist/katex.min.css";
-import "./index.css";
+import "./lib/style.css";
