@@ -41,7 +41,7 @@
       height 100%
       min-width 100%
       z-index 50
-      margin 0
+      margin 0 !important
       border-radius 0
       overflow-y scroll
       animation elastic .6s
@@ -54,16 +54,14 @@
   .custom-block.details
     div[class*="language-"]
       box-shadow none
-      margin 0.85rem -1.6rem !important
-      border-radius 0 !important
+      margin 0.85rem -1.6rem
+      border-radius 0
 
 @media (max-width: $MQMobileNarrow)
   .content__default
     div[class*="language-"]
       border-radius 4px
       box-shadow none
-      &.code-block-fullscreen
-        margin 0
 
 div[class*="language-"]
   position relative
