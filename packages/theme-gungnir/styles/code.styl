@@ -10,7 +10,6 @@
     border-radius 3px
 
   pre, pre[class*="language-"]
-    line-height 1.4
     padding 3rem 1.2rem 1.25rem
     margin 0.85rem 0
     background-color $codeBgColor
@@ -21,14 +20,58 @@
       background-color transparent
       border-radius 0
 
+  div[class*="language-"]
+    box-shadow 0 4px 9px rgba(0, 0, 0, 45%)
+    .code-button
+      position absolute
+      top 16px
+      left 18px
+      content ""
+      width 11px
+      height 11px
+      border-radius 50%
+      background-color #ff5f56
+      box-shadow 18px 0 0 0 #ffbd2e, 36px 0 0 0 #27c93f
+      z-index 3
+    &.code-block-fullscreen
+      position fixed
+      top 0
+      left 0
+      width 100%
+      height 100%
+      min-width 100%
+      z-index 50
+      margin 0
+      border-radius 0
+      overflow-y scroll
+      animation elastic .6s
+      -webkit-animation elastic .6s
+      .highlight-lines
+        padding-top 3.95rem
+    .highlight-lines
+      padding-top 3.05rem
+
+  .custom-block.details
+    div[class*="language-"]
+      box-shadow none
+      margin 0.85rem -1.6rem !important
+      border-radius 0 !important
+
+@media (max-width: $MQMobileNarrow)
+  .content__default
+    div[class*="language-"]
+      border-radius 4px
+      box-shadow none
+      &.code-block-fullscreen
+        margin 0
+
 div[class*="language-"]
   position relative
   background-color $codeBgColor
   border-radius 5px
-  box-shadow 0 4px 9px rgba(0, 0, 0, 45%)
   .highlight-lines
     user-select none
-    padding-top 3.05rem
+    padding-top 1.5rem
     position absolute
     top 0
     left 0
@@ -37,6 +80,7 @@ div[class*="language-"]
     .highlighted
       background-color $codeHighlightLineColor
   pre, pre[class*="language-"]
+    line-height 1.4
     background transparent
     position relative
     z-index 1
@@ -47,32 +91,6 @@ div[class*="language-"]
     right 1em
     font-size 0.75rem
     color rgba(255, 255, 255, 0.4)
-  .code-button
-    position absolute
-    top 16px
-    left 18px
-    content ""
-    width 11px
-    height 11px
-    border-radius 50%
-    background-color #ff5f56
-    box-shadow 18px 0 0 0 #ffbd2e, 36px 0 0 0 #27c93f
-    z-index 3
-  &.code-block-fullscreen
-    position fixed
-    top 0
-    left 0
-    width 100%
-    height 100%
-    min-width 100%
-    z-index 50
-    margin 0
-    border-radius 0
-    overflow-y scroll
-    animation elastic .6s
-    -webkit-animation elastic .6s
-    .highlight-lines
-      padding-top 3.95rem
   &:not(.line-numbers-mode)
     .line-numbers-wrapper
       display none
