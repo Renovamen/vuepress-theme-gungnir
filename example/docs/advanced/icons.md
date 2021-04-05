@@ -44,8 +44,8 @@ To import other icons, you may need to search for icons' names [here](https://oh
 import OhVueIcon from "oh-vue-icons";
 
 // import the icons you need
-import { OiGitCompare, FaBook } from "oh-vue-icons/icons";
-OhVueIcon.add(OiGitCompare, FaBook);
+import { OiGitCompare, RiBook2Fill } from "oh-vue-icons/icons";
+OhVueIcon.add(OiGitCompare, RiBook2Fill);
 ```
 
 Or you can also locally import them in your custom components.
@@ -55,11 +55,11 @@ Or you can also locally import them in your custom components.
 
 Then you can use these icons in Markdown or your custom components:
 
-<v-icon name="oi-git-compare" /> <v-icon name="fa-book" />
+<v-icon name="oi-git-compare" /> <v-icon name="ri-book-2-fill" />
 
 ```html
 <v-icon name="oi-git-compare" />
-<v-icon name="fa-book" />
+<v-icon name="ri-book-2-fill" />
 ```
 
 `oh-vue-icons` also supports many other features, like editting icon's color, size, animation, flip and so on. Here are some examples:

@@ -1,7 +1,4 @@
 .content__default
-  code
-    font-size 14px
-
   :not(pre) > code
     color var(--inline-code-text)
     background-color var(--inline-code-bg)
@@ -63,13 +60,16 @@
       border-radius 4px
       box-shadow none
 
+code
+  font-size 14px
+
 div[class*="language-"]
   position relative
   background-color $codeBgColor
   border-radius 5px
   .highlight-lines
     user-select none
-    padding-top 1.5rem
+    padding-top 1.1rem
     position absolute
     top 0
     left 0

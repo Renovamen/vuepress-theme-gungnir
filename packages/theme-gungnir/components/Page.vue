@@ -108,22 +108,25 @@ export default {
   watch: {
     $route() {
       this.$nextTick(() => {
-        this.codeFullScreen();
+        this.addCodeBtn();
       });
     }
   },
 
   mounted() {
-    this.codeFullScreen();
+    this.addCodeBtn();
   },
   methods: {
-    codeFullScreen() {
+    addCodeBtn() {
       // full screen the code blocks
       const codeBlocks = document.querySelectorAll("div[class*='language-']");
       const htmlDom = document.querySelector("html");
       for (let block of codeBlocks) {
+        if (this.checkBtn(block)) continue;
+
         let btn = document.createElement("div");
         btn.classList.add("code-button");
+
         // click to full screen the code block
         btn.onclick = function () {
           if (block.classList.contains("code-block-fullscreen")) {
@@ -134,8 +137,15 @@ export default {
             htmlDom.classList.add("screen-fixed");
           }
         };
+
         block.appendChild(btn);
       }
+    },
+    checkBtn(block) {
+      return Object.values(block.children).find((value) => {
+        if (value.classList.contains("code-button")) return true;
+        return false;
+      });
     }
   }
 };

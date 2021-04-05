@@ -43,8 +43,8 @@ date: 2020-03-30
 import OhVueIcon from "oh-vue-icons";
 
 // 引入想要使用的图标
-import { OiGitCompare, FaBook } from "oh-vue-icons/icons";
-OhVueIcon.add(OiGitCompare, FaBook);
+import { OiGitCompare, RiBook2Fill } from "oh-vue-icons/icons";
+OhVueIcon.add(OiGitCompare, RiBook2Fill);
 ```
 
 当然你也可以在你的自定义组件中局部引入。
@@ -54,11 +54,11 @@ OhVueIcon.add(OiGitCompare, FaBook);
 
 然后你就可以在 Markdown 或自定义组件中使用引入的图标了：
 
-<v-icon name="oi-git-compare" /> <v-icon name="fa-book" />
+<v-icon name="oi-git-compare" /> <v-icon name="ri-book-2-fill" />
 
 ```html
 <v-icon name="oi-git-compare" />
-<v-icon name="fa-book" />
+<v-icon name="ri-book-2-fill" />
 ```
 
 `oh-vue-icons` 还支持定制图标的颜色、大小、翻转、动画等，这是一些例子：

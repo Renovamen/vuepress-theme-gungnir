@@ -43,6 +43,8 @@ Most people would find the picture of our universe as an infinite **tower of tor
 
 ## Code
 
+### Code Blocks
+
 Code block with the default theme "[tomorrow](https://prismjs.com/themes/prism-tomorrow.css)" (click the red button on the upper-right corner to make the code block full screen):
 
 ```python{8}
@@ -65,7 +67,28 @@ while True:
   me.eat(10)
 ```
 
-Inline code: `const a = 1`
+### Code Groups
+
+<code-group>
+<code-block title="YARN" active>
+```bash
+yarn add -D vuepress-theme-gungnir
+```
+</code-block>
+
+<code-block title="NPM">
+```bash
+npm install -D vuepress-theme-gungnir
+```
+</code-block>
+</code-group>
+
+### Inline Code
+
+`const a = 1`
+
+
+## Badges <Badge text="tip" /> <Badge text="warning" type="warning" /> <Badge text="error" type="error" /> <Badge text="tip middle" vertical="middle" />
 
 
 ## Charts
