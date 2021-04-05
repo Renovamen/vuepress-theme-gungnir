@@ -207,6 +207,7 @@ export default {
       // margin-top -5px
     & >>> .sns-wrapper
       margin 0 auto
+      padding 0 5px
       text-align center
       position relative
       .icon-stack

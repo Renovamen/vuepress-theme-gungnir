@@ -5,6 +5,11 @@ date: 2021-02-03
 
 The theme can be configured in `.vuepress/config.js`.
 
+::: tip
+Please make sure all the icons you specified in the configuration file are already imported, see [here](/docs/advanced/icons/) to know how to import icons.
+:::
+
+
 ## Author Information
 
 ```js
@@ -41,6 +46,13 @@ module.exports = {
         zhihu: 'chao-neng-gui-su',  // Zhihu
         weibo: 'your-weibo-id',  // Sina Weibo
         email: 'renovamenzxh@gmail.com',  // Email
+        customize: [  // if you want to add other social platforms
+          {
+            icon: "ri-reddit-line",  // platform icon
+            link: "https://www.reddit.com/user/oh-renovamen"  // profile url
+          },
+          // ...
+        ]
       }
     }
 }
@@ -133,10 +145,6 @@ module.exports = {
   }
 }
 ```
-
-::: tip
-The icon specified by `searchIcon` should be imported first, see [here](/docs/advanced/icons/) for details.
-:::
 
 
 ## Custom Footer

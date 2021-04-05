@@ -130,9 +130,9 @@ h2, h3, h4, h5, h6
     font-weight 600
     outline none
   &__nav-tab-active
-    border-bottom #42b983 1px solid
+    border-bottom $accentColorDark 1px solid
   .pre-blank
-    color #42b983
+    color $accentColorDark
 
 @media (max-width: $MQMobileNarrow)
   .theme-code-group

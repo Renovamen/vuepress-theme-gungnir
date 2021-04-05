@@ -5,6 +5,11 @@ date: 2021-02-03
 
 在 `.vuepress/config.js` 中配置主题。
 
+::: tip
+对于所有涉及到图标名称的配置项，请确保指定的图标是被引入过的，在[这里](/zh/docs/advanced/icons/)查看怎么引入图标。
+:::
+
+
 ## 作者信息
 
 ```js
@@ -41,6 +46,13 @@ module.exports = {
         zhihu: 'chao-neng-gui-su',  // 知乎
         weibo: 'your-weibo-id',  // 新浪微博
         email: 'renovamenzxh@gmail.com',  // 邮箱
+        customize: [  // 添加其他的社交平台
+          {
+            icon: "ri-reddit-line",  // 社交平台的图标
+            link: "https://www.reddit.com/user/oh-renovamen"  // 主页链接
+          },
+          // ...
+        ]
       }
     }
 }
@@ -133,10 +145,6 @@ module.exports = {
   }
 }
 ```
-
-::: tip
-需要保证 `searchIcon` 项指定的图标是被引入过的，在[这里](/zh/docs/advanced/icons/)查看怎么引入图标。
-:::
 
 
 ## 页脚自定义
