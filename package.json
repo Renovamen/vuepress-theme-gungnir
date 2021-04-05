@@ -14,6 +14,7 @@
     "lint": "eslint --ext .js,.vue ./",
     "lint-fix": "eslint --fix --ext .js,.vue ./",
     "preview": "cd dist && http-server",
+    "pub": "sh ./scripts/publish.sh",
     "cp-readme": "cp {README.md,README-CN.md} packages/theme-gungnir/"
   },
   "husky": {
@@ -48,7 +49,7 @@
     "prettier": "^2.2.1",
     "sort-package-json": "^1.49.0",
     "vuepress": "^1.8.2",
-    "vuepress-theme-gungnir": "^0.1.5"
+    "vuepress-theme-gungnir": "^0.1.7"
   },
   "useWorkspaces": true
 }

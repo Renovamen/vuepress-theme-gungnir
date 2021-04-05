@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-markmap",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A plugin for adding markmap to VuePress to visualize your Markdown as mindmaps.",
   "keywords": [
     "vue",

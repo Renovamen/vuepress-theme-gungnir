@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-gungnir",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Gungnir is a blog theme for VuePress.",
   "keywords": [
     "vuepress",
@@ -24,12 +24,12 @@
   "author": "Renovamen <renovamenzxh@gmail.com>",
   "main": "index.js",
   "dependencies": {
-    "@renovamen/vuepress-plugin-baidu-tongji": "^0.1.6",
-    "@renovamen/vuepress-plugin-katex": "^0.1.6",
-    "@renovamen/vuepress-plugin-md-plus": "^0.1.6",
-    "@renovamen/vuepress-plugin-mermaid": "^0.1.6",
-    "@renovamen/vuepress-plugin-reading-time": "^0.1.6",
-    "@renovamen/vuepress-plugin-rss": "^0.1.6",
+    "@renovamen/vuepress-plugin-baidu-tongji": "^0.1.7",
+    "@renovamen/vuepress-plugin-katex": "^0.1.7",
+    "@renovamen/vuepress-plugin-md-plus": "^0.1.7",
+    "@renovamen/vuepress-plugin-mermaid": "^0.1.7",
+    "@renovamen/vuepress-plugin-reading-time": "^0.1.7",
+    "@renovamen/vuepress-plugin-rss": "^0.1.7",
     "@vssue/api-github-v3": "^1.4.7",
     "@vssue/vuepress-plugin-vssue": "^1.4.7",
     "@vuepress/plugin-blog": "1.9.4",
@@ -37,10 +37,10 @@
     "markdown-it-chain": "^1.3.0",
     "md5": "2.3.0",
     "oh-vue-icons": "^0.4.1",
-    "vuepress-plugin-chart": "^0.1.6",
+    "vuepress-plugin-chart": "^0.1.7",
     "vuepress-plugin-container": "^2.1.5",
-    "vuepress-plugin-markmap": "^0.1.6",
-    "vuepress-plugin-roughviz": "^0.1.6",
+    "vuepress-plugin-markmap": "^0.1.7",
+    "vuepress-plugin-roughviz": "^0.1.7",
     "vuepress-plugin-smooth-scroll": "^0.0.10"
   },
   "peerDependencies": {
