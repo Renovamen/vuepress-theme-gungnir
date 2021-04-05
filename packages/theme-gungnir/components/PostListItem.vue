@@ -71,7 +71,9 @@ export default {
     border-radius 5px
     img
       display block
+      width 100%
       height 100%
+      object-fit cover
       transition(all .6s)
     &::after
       content ""
