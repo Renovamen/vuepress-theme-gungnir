@@ -1,5 +1,23 @@
 # Change Log
 
+## [0.1.7](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v0.1.6...v0.1.7) (2021-04-05)
+
+### Bug Fixes
+
+- fill the feature images in post list ([#2](https://github.com/Renovamen/vuepress-theme-gungnir/issues/2)) ([b682462](https://github.com/Renovamen/vuepress-theme-gungnir/commit/b68246237e0d774b4300cc2407de1efb28a58868))
+- fix hover animation ([05ffc0b](https://github.com/Renovamen/vuepress-theme-gungnir/commit/05ffc0ba36b613e1cdf5e67c054ee9ccd2f4540e))
+
+### Features
+
+- support code groups ([#2](https://github.com/Renovamen/vuepress-theme-gungnir/issues/2)) ([743240c](https://github.com/Renovamen/vuepress-theme-gungnir/commit/743240c0c0c9625c817637f7dc025327537cf6c9))
+- sns links can be customized now ([bd8ef00](https://github.com/Renovamen/vuepress-theme-gungnir/commit/bd8ef00bc01ce6b7371e466c9a60fa79b57082f4))
+- search and language icon can be configured now ([05ffc0b](https://github.com/Renovamen/vuepress-theme-gungnir/commit/05ffc0ba36b613e1cdf5e67c054ee9ccd2f4540e))
+
+### Chore
+
+- edit style of code blocks in details containers ([cad0f83](https://github.com/Renovamen/vuepress-theme-gungnir/commit/cad0f8392ba0de575610d925fad6920a9ec7657e))
+
+
 ## [0.1.6](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v0.1.5...v0.1.6) (2021-03-31)
 
 ### Bug Fixes
