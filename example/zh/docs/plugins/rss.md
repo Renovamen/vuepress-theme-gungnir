@@ -40,7 +40,7 @@ module.exports = {
   plugins: [
     [
       '@renovamen/vuepress-plugin-rss', {
-        site_url: "https://renovamen.ink",  // 网站链接 （必须）
+        site_url: "https://zxh.io",  // 网站链接 （必须）
         copyright: "Renovamen 2018-2021",  // 版权信息（可选）
         count: 20,  // 需要在 rss 上显示多少篇文章（可选）
         filter: (frontmatter) => { return [true|false] },  // 文章筛选函数（可选）

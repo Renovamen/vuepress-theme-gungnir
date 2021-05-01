@@ -22,7 +22,7 @@ Gungnir is a blog theme for [VuePress](https://vuepress.vuejs.org/).
 ## Live Demos
 
 - [vuepress-theme-gungnir.vercel.app](https://vuepress-theme-gungnir.vercel.app)
-- [My blog](https://renovamen.ink)
+- [My blog](https://zxh.io)
 
 
 ## Inspirations

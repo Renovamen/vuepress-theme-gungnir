@@ -27,7 +27,7 @@ module.exports = {
   plugins: [
     [
       '@renovamen/vuepress-plugin-rss', {
-        site_url: 'https://renovamen.ink',  // (required)
+        site_url: 'https://zxh.io',  // (required)
         copyright: 'Renovamen 2018-2020',  // (optional)
         filter: (frontmatter) => { return [true|false] },  // posts filter (optional)
         count: 20  // how many articles (optional)

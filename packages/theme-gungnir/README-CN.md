@@ -54,7 +54,7 @@ npm i -D vuepress-theme-gungnir
 这里有一些演示站点：
 
 - [vuepress-theme-gungnir.vercel.app](https://vuepress-theme-gungnir.vercel.app/)
-- [renovamen.ink](https://renovamen.ink)（我的博客）
+- [zxh.io](https://zxh.io)（我的博客）
 
 
 &nbsp;

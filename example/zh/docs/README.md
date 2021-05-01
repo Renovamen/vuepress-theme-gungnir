@@ -22,7 +22,7 @@ Gungnir 是一个基于 [VuePress](https://vuepress.vuejs.org/) 的博客主题�
 ## 演示站点
 
 - [vuepress-theme-gungnir.vercel.app](https://vuepress-theme-gungnir.vercel.app)
-- [我的博客](https://renovamen.ink)
+- [我的博客](https://zxh.io)
 
 
 ## 灵感来源

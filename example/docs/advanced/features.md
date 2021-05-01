@@ -68,7 +68,7 @@ themeConfig: {
 ```js
 themeConfig: {
   rss: {
-    site_url: "https://renovamen.ink",  // Site URL (required)
+    site_url: "https://zxh.io",  // Site URL (required)
     copyright: "Renovamen 2018-2021",  // Copyright (optional)
     count: 20,  // How many articles to be shown on RSS (optional)
     filter: (frontmatter) => { return [true|false] },  // Post filter (optional)
