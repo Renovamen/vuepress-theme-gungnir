@@ -143,7 +143,6 @@ export default {
     margin 0 auto
     position relative
     box-sizing border-box
-    padding 0 20px
     height 100vh
     display flex
     align-items center
@@ -152,6 +151,7 @@ export default {
     overflow hidden
     background-position center
     background-size cover
+
     .header-mask
       width 100%
       height 100%
@@ -160,12 +160,14 @@ export default {
 
     .header-content
       z-index 2
+      width 36%
+      max-width 500px
+      display flex
+      flex-direction column
+      align-items center
+      justify-content center
+
       .hero-avatar
-        position absolute
-        top 50%
-        margin-top -140px
-        left 50%
-        margin-left -65px
         width 120px
         height 120px
         cursor auto
@@ -231,19 +233,13 @@ export default {
 
       .hero-info
         background rgba(0, 0, 0, .5)
+        width 100%
         padding 17px
         letter-spacing 0
         border-radius 10px
         box-sizing initial
         white-space nowrap
-        width 36%
-        max-width 500px
-        position absolute
-        left 0
-        right 0
-        margin auto
-        top 50%
-        margin-top 15px
+        margin-top 20px
         &__text
           padding-top 0
           padding-bottom 0
@@ -261,7 +257,7 @@ export default {
             margin-bottom 0
 
       .sns-wrapper
-        margin-top 270px
+        margin-top 10px
 
       .img-prev, .img-next
         cursor pointer

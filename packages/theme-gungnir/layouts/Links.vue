@@ -83,13 +83,12 @@ export default {
   .group
     width 100%
     list-style none
-    display inline-block
     margin-top 10px
+    display grid
+    grid-auto-flow row
+    grid-template-columns repeat(3, 33.33%)
     .item
-      width calc(100% / 3 - 8px)
-      float left
       margin 4px
-      position relative
       .content
         border 1px solid var(--border-color)
         border-radius 10px
@@ -141,18 +140,19 @@ export default {
 @media (max-width $MQIpad)
   .links-wrapper
     width 85%
-    .group .item
-      width calc(100% / 2 - 8px)
+    .group
+      grid-template-columns repeat(2, 49.5%)
 
 @media (max-width $MQMobileNarrow)
   .links-wrapper
     width 100%
     h2
       margin-left 17px
-    .group .item
-      margin-left 15px
-      margin-right 15px
-      width calc(100% - 30px)
+    .group
+      grid-template-columns repeat(1, 100%)
+      .item
+        margin-left 15px
+        margin-right 15px
 </style>
 
 <style src="@theme/styles/theme.styl" lang="stylus"></style>

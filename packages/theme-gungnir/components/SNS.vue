@@ -93,7 +93,6 @@ export default {
 @require '../styles/mixins.styl'
 
 .sns-wrapper
-  margin-top 270px
   padding 0
   .icon-stack
     min-width 50px
