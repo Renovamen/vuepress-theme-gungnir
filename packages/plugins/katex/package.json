@@ -23,6 +23,6 @@
   "author": "Renovamen <renovamenzxh@gmail.com>",
   "main": "index.js",
   "dependencies": {
-    "katex": "^0.13.0"
+    "katex": "^0.13.10"
   }
 }
