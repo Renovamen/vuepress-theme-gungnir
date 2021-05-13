@@ -68,10 +68,12 @@ export default {
         return;
       }
 
-      const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches;
-      const isLightMode = window.matchMedia("(prefers-color-scheme: light)")
-        .matches;
+      const isDarkMode = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      const isLightMode = window.matchMedia(
+        "(prefers-color-scheme: light)"
+      ).matches;
 
       if (isDarkMode) this.setMode("dark");
       if (isLightMode) this.setMode("light");

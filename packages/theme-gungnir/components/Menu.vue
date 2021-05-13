@@ -78,8 +78,8 @@ export default {
   methods: {
     handleScroll() {
       const currentTop = window.pageYOffset;
-      const docuHeight = document.getElementById("theme-container")
-        .offsetHeight;
+      const docuHeight =
+        document.getElementById("theme-container").offsetHeight;
       const windowHeight = document.documentElement.clientHeight;
 
       let percent = (currentTop / (docuHeight - windowHeight)) * 100;
