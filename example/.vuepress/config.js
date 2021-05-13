@@ -30,8 +30,8 @@ module.exports = {
     comment: {
       owner: "This-is-an-Apple",
       repo: "gitalk-comments",
-      clientId: "d6247712dc288a5a60ca",
-      clientSecret: "ed1ec72417828343c79ed910a1b77d140fa715a7"
+      clientId: "0a24dcc429074a13836a",
+      clientSecret: "8d805542796c114a131012d2850a1e4d43772d98"
     },
     analytics: {
       ga: "UA-146858305-4",
