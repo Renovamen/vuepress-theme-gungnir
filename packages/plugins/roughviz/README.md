@@ -62,6 +62,18 @@ So the format of your code block's `token.info` should be `roughviz-{ chart-type
 ```
 ~~~
 
+To load a local `csv` file, a feasible way is to put your `csv` file under `.vuepress/public/` folder (`.vuepress/public/csv/flavors.csv` for example), then:
+
+~~~
+```roughviz-bar
+{
+  "data": "/csv/flavors.csv",
+  "labels": "flavor",
+  "values": "price"
+}
+```
+~~~
+
 Refer to the [documentation of roughViz.js](https://github.com/jwilber/roughViz) for more information.
 
 

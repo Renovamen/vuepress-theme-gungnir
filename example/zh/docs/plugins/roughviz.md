@@ -81,6 +81,28 @@ roughViz.js 支持以下五种图表类型：
 ~~~
 :::
 
+如果希望加载本地 `csv` 文件中的数据，一种可行的方法是把 `csv` 文件放在 `.vuepress/public/` 文件夹下（假设路径为 `.vuepress/public/csv/flavors.csv`），然后：
+
+::: details Code
+~~~
+```roughviz-bar
+{
+  "data": "/csv/flavors.csv",
+  "labels": "flavor",
+  "values": "price"
+}
+```
+~~~
+:::
+
+```roughviz-bar
+{
+  "data": "/csv/flavors.csv",
+  "labels": "flavor",
+  "values": "price"
+}
+```
+
 更详细的用法可以参考 [roughViz.js 文档](https://github.com/jwilber/roughViz)。
 
 
