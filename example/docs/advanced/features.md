@@ -78,6 +78,7 @@ themeConfig: {
 
 Check [RSS file of this site](/rss.xml) for an example.
 
+
 ## Reading Time
 
 The reading time estimation will be shown on the head of the article by default, supported by [plugin-reading-time](/docs/plugins/reading-time/).
@@ -122,6 +123,16 @@ A Hitokoto bubble will appear on the home page when `hitokoto` is set to `true` 
 
 ![hitokoto](/img/docs/hitokoto-bubble.jpg)
 
+Specify `hitokoto.api` to set the query string or use other APIs:
+
+```js
+themeConfig: {
+  hitokoto: {
+    api: "https://v1.hitokoto.cn/?c=i"
+  }
+}
+```
+
 
 ## Math Rendering
 
@@ -162,6 +173,7 @@ $$
 ## Charts
 
 Create interactive charts in Markdown easily.
+
 
 ### Chart.js
 

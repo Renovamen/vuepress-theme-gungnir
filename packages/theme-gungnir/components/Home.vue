@@ -97,13 +97,15 @@ export default {
     );
     window.addEventListener("scroll", throttle(this.handleScroll, 50));
 
-    fetch("https://v1.hitokoto.cn")
-      .then((response) => response.json())
-      .then((data) => {
-        const hitokoto = this.$refs.hitokoto;
-        hitokoto.innerText = data.hitokoto;
-      })
-      .catch(console.error);
+    if (this.$themeConfig.hitokoto) {
+      fetch(this.$themeConfig.hitokoto.api || "https://v1.hitokoto.cn")
+        .then((response) => response.json())
+        .then((data) => {
+          const hitokoto = this.$refs.hitokoto;
+          hitokoto.innerText = data.hitokoto;
+        })
+        .catch(console.error);
+    }
   },
 
   beforeDestroy() {

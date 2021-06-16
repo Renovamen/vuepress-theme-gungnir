@@ -116,6 +116,16 @@ themeConfig: {
 
 ![hitokoto](/img/docs/hitokoto-bubble.jpg)
 
+如果你想更改一言的请求参数，或想使用其他的接口，可以指定 `hitokoto.api` 项：
+
+```js
+themeConfig: {
+  hitokoto: {
+    api: "https://v1.hitokoto.cn/?c=i"  // 只返回诗词
+  }
+}
+```
+
 
 ## 数学公式渲染
 

@@ -19,7 +19,7 @@ module.exports = {
     docsDir: "example",
     editLinks: true,
     lastUpdated: true,
-    hitokoto: true, // enable hitokoto (一言) or not?
+    hitokoto: true,  // enable hitokoto (一言) or not?
     searchIcon: "ri-search-2-line",
     languageIcon: "hi-translate",
     rss: {
