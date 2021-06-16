@@ -1,6 +1,6 @@
 {
   "name": "@renovamen/vuepress-plugin-mermaid",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A plugin for adding Mermaid to VuePress.",
   "keywords": [
     "vue",
