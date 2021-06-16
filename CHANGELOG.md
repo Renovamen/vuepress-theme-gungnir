@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.1.8](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v0.1.7...v0.1.8) (2021-06-16)
+
+### Bug Fixes
+
+- upgrade Vssue to fix the server url of `cors-anywhere` ([vssue#131](https://github.com/meteorlxy/vssue/issues/131), [cors-anywhere#301](https://github.com/Rob--W/cors-anywhere/issues/301)) ([cc010f4](https://github.com/Renovamen/vuepress-theme-gungnir/commit/cc010f4ad7eb65e188db4563668fb5eed9640012))
+
+### Features
+
+- add `hitokoto.api` configuration item ([6a15ea9](https://github.com/Renovamen/vuepress-theme-gungnir/commit/6a15ea97b028bbf1ebe1e3ebdc6bccdc91109ed9))
+
+
 ## [0.1.7](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v0.1.6...v0.1.7) (2021-04-05)
 
 ### Bug Fixes
