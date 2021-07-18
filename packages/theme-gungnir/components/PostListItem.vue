@@ -182,7 +182,7 @@ export default {
     &__content >>> p
       margin 10px 20px 0 20px
 
-@media (max-width: $MQMobileNarrow)
+@media (max-width: $MQMobile)
   .post-item-img
     margin-top 100px
     border-bottom none
