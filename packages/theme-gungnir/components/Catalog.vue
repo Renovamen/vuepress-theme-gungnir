@@ -36,7 +36,7 @@ export default {
     return h(
       "ul",
       {
-        class: { "catalog-wrapper": true },
+        class: { catalog: true },
         style: this.headers.length > 0 ? {} : { width: "0" }
       },
       this.headers.map((header) => {
@@ -68,7 +68,7 @@ export default {
 <style lang="stylus" scoped>
 @require '../styles/mixins.styl'
 
-.catalog-wrapper
+.catalog
   width ($catalogWidth - 1rem)
   padding-left 0
   list-style none
@@ -101,7 +101,7 @@ export default {
       padding-left 3rem
 
 @media (max-width: $MQMobile)
-  .catalog-wrapper
+  .catalog
     transition(transform .5s)
     transform(translateX(calc(100% + 2rem)))
     position fixed

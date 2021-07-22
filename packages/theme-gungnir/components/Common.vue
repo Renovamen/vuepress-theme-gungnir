@@ -235,7 +235,7 @@ export default {
       transform(translateX(0))
     &.no-navbar .sidebar
       padding-top 0
-    &.catalog-open .catalog-wrapper
+    &.catalog-open .catalog
       transform(translateX(0))
       box-shadow var(--box-shadow)
 </style>

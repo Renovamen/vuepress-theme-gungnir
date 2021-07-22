@@ -1,5 +1,5 @@
 <template>
-  <main class="page" :style="pageStyle">
+  <main class="page">
     <ArticleHeader
       v-if="$page.id != 'posts'"
       v-show="$page.title"
@@ -48,14 +48,6 @@ export default {
     sidebarItems: {
       type: Array,
       default: () => []
-    },
-    pageStyle: {
-      type: Object,
-      default() {
-        return {
-          paddingRight: "0"
-        };
-      }
     }
   },
 

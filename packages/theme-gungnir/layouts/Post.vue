@@ -16,7 +16,7 @@
         :style="{ background: $page.frontmatter.header_mask }"
       />
     </ArticleHeader>
-    <Page :page-style="pageStyle" />
+    <Page />
     <Catalog
       :class="{ fixed: isFixed }"
       :style="{ top: `${catalogTop}px !important` }"
@@ -54,13 +54,6 @@ export default {
   },
 
   computed: {
-    pageStyle() {
-      return this.$showCatalog
-        ? {}
-        : {
-            paddingRight: "0"
-          };
-    },
     pageHeaderStyle() {
       var style = {};
       if (
@@ -137,18 +130,6 @@ export default {
 @require '../styles/wrapper.styl'
 
 .post-container
-  .catalog-wrapper
-    position absolute
-    right 1rem
-    height 100%
-    overflow-y scroll
-    &.fixed
-      position fixed
-      height auto
-      bottom 10rem
-    &::-webkit-scrollbar
-      width 0
-      height 0
   .post-header
     max-width 100%
     position relative
@@ -216,6 +197,19 @@ export default {
       margin-top 10rem
       margin-bottom -3rem
 
+  .catalog
+    position absolute
+    right 1rem
+    height 100%
+    overflow-y scroll
+    &.fixed
+      position fixed
+      height auto
+      bottom 10rem
+    &::-webkit-scrollbar
+      width 0
+      height 0
+
 @media (max-width: $MQLarge)
   .post-container
     .page
@@ -262,7 +256,7 @@ export default {
         padding 1rem
         margin-top 13rem
         margin-bottom -5rem
-    .catalog-wrapper
+    .catalog
       transition(transform .5s)
       transform(translateX(calc(100% + 2rem)))
       position fixed
