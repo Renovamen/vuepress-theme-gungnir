@@ -24,7 +24,7 @@ module.exports = (options, ctx) => {
         mdPlus: false,
         readingTime: {},
         personalInfo: {},
-        homeHeaderImages: {},
+        homeHeaderImages: false,
         pages: {},
         footer: ""
       },

@@ -1,11 +1,15 @@
 <template>
   <div class="home-blog">
-    <div class="hero" :style="{ 'background-image': bgImagePath }">
+    <div class="hero" :style="{ 'background-image': `url(${bgImagePath})` }">
       <div
-        v-if="$themeConfig.homeHeaderImages[bgImageID].mask"
+        v-if="
+          $themeConfig.homeHeaderImages &&
+          $themeConfig.homeHeaderImages[bgImageID].mask
+        "
         class="header-mask"
         :style="{ background: $themeConfig.homeHeaderImages[bgImageID].mask }"
       />
+
       <div class="header-content" :style="{ opacity: headerOpacity }">
         <img
           class="hero-avatar hide-on-mobile"
@@ -31,18 +35,10 @@
 
         <SNS class="hide-on-mobile" large />
 
-        <button
-          v-if="$themeConfig.homeHeaderImages"
-          class="img-prev hide-on-mobile"
-          @click="switchImage(-1)"
-        >
+        <button class="img-prev hide-on-mobile" @click="switchImage(-1)">
           <v-icon name="fa-chevron-left" />
         </button>
-        <button
-          v-if="$themeConfig.homeHeaderImages"
-          class="img-next hide-on-mobile"
-          @click="switchImage(1)"
-        >
+        <button class="img-next hide-on-mobile" @click="switchImage(1)">
           <v-icon name="fa-chevron-right" />
         </button>
 
@@ -61,6 +57,9 @@ import PostList from "@theme/components/PostList";
 import SNS from "@theme/components/SNS";
 import { throttle } from "@theme/utils/time";
 
+const UNSPLASH_URL = "https://source.unsplash.com/1600x900/?wallpaper";
+const DEFAULT_IMG = require("@theme/assets/default-wallpaper.jpeg");
+
 export default {
   components: {
     PostList,
@@ -71,40 +70,38 @@ export default {
       currentPage: 1,
       tags: [],
       bgImageID: 0,
+      bgImagePath: "",
       headerOpacity: 1
     };
   },
   computed: {
-    bgImagePath() {
-      if (this.$themeConfig.homeHeaderImages) {
-        const bgPath = `url(${this.$withBase(
-          this.$themeConfig.homeHeaderImages[this.bgImageID].path
-        )})`;
-        return bgPath;
-      } else {
-        const bgURL =
-          "url(https://source.unsplash.com/collection/1065374/1600x900)";
-        return bgURL;
-      }
-    },
     heroHeight() {
       return document.querySelector(".hero").clientHeight;
     }
   },
   mounted() {
-    this.bgImageID = Math.floor(
-      Math.random() * this.$themeConfig.homeHeaderImages.length
-    );
+    // header image
+    if (this.$themeConfig.homeHeaderImages) {
+      this.bgImageID = Math.floor(
+        Math.random() * this.$themeConfig.homeHeaderImages.length
+      );
+      this.setImagePathByID();
+    } else this.getUnsplash();
+
+    // scroll event listener
     window.addEventListener("scroll", throttle(this.handleScroll, 50));
 
+    // fetch hitokoto api
     if (this.$themeConfig.hitokoto) {
-      fetch(this.$themeConfig.hitokoto.api || "https://v1.hitokoto.cn")
+      const HITOKOTO_URL =
+        this.$themeConfig.hitokoto.api || "https://v1.hitokoto.cn";
+      fetch(HITOKOTO_URL)
         .then((response) => response.json())
         .then((data) => {
           const hitokoto = this.$refs.hitokoto;
           hitokoto.innerText = data.hitokoto;
         })
-        .catch(console.error);
+        .catch(`Get ${HITOKOTO_URL} error: `, console.error);
     }
   },
 
@@ -115,8 +112,29 @@ export default {
   methods: {
     // switch to the next header image
     switchImage(n) {
-      const len = this.$themeConfig.homeHeaderImages.length;
-      this.bgImageID = (this.bgImageID + n + len) % len;
+      if (this.$themeConfig.homeHeaderImages) {
+        const len = this.$themeConfig.homeHeaderImages.length;
+        this.bgImageID = (this.bgImageID + n + len) % len;
+        this.setImagePathByID();
+      } else this.getUnsplash();
+    },
+    // get a new image from Unsplash
+    getUnsplash() {
+      fetch(UNSPLASH_URL)
+        .then((response) => {
+          this.bgImagePath = response.url;
+        })
+        .catch((error) => {
+          console.log(`Get ${UNSPLASH_URL} error: `, error);
+          // fall to default image
+          this.bgImagePath = DEFAULT_IMG;
+        });
+    },
+    // set local image path
+    setImagePathByID() {
+      this.bgImagePath = this.$withBase(
+        this.$themeConfig.homeHeaderImages[this.bgImageID].path
+      );
     },
     scrollToPost() {
       window.scrollTo({

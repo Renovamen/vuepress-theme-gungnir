@@ -87,7 +87,7 @@ module.exports = {
 
 页面效果可以参考本站的[首页](/)，点击封面图左右两边的按钮可以在多张图片之间进行切换。
 
-如果不配置 `homeHeaderImages` 项，则主题会在首页上显示通过 [Unsplash API](https://source.unsplash.com/) 随机拉取的一张星空壁纸。
+如果不配置 `homeHeaderImages` 项，则主题会在首页上显示通过 [Unsplash API](https://source.unsplash.com/) 随机拉取的一张壁纸。
 
 
 ## 页面
