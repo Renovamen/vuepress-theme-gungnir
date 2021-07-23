@@ -3,11 +3,13 @@
     <div class="hero" :style="{ 'background-image': `url(${bgImagePath})` }">
       <div
         v-if="
-          $themeConfig.homeHeaderImages &&
-          $themeConfig.homeHeaderImages[bgImageID].mask
+          $themeConfig.homeHeaderImages.local &&
+          $themeConfig.homeHeaderImages.local[bgImageID].mask
         "
         class="header-mask"
-        :style="{ background: $themeConfig.homeHeaderImages[bgImageID].mask }"
+        :style="{
+          background: $themeConfig.homeHeaderImages.local[bgImageID].mask
+        }"
       />
 
       <div class="header-content" :style="{ opacity: headerOpacity }">
@@ -57,7 +59,6 @@ import PostList from "@theme/components/PostList";
 import SNS from "@theme/components/SNS";
 import { throttle } from "@theme/utils/time";
 
-const UNSPLASH_URL = "https://source.unsplash.com/1600x900/?wallpaper";
 const DEFAULT_IMG = require("@theme/assets/default-wallpaper.jpeg");
 
 export default {
@@ -81,9 +82,9 @@ export default {
   },
   mounted() {
     // header image
-    if (this.$themeConfig.homeHeaderImages) {
+    if (this.$themeConfig.homeHeaderImages.local) {
       this.bgImageID = Math.floor(
-        Math.random() * this.$themeConfig.homeHeaderImages.length
+        Math.random() * this.$themeConfig.homeHeaderImages.local.length
       );
       this.setImagePathByID();
     } else this.getUnsplash();
@@ -112,14 +113,15 @@ export default {
   methods: {
     // switch to the next header image
     switchImage(n) {
-      if (this.$themeConfig.homeHeaderImages) {
-        const len = this.$themeConfig.homeHeaderImages.length;
+      if (this.$themeConfig.homeHeaderImages.local) {
+        const len = this.$themeConfig.homeHeaderImages.local.length;
         this.bgImageID = (this.bgImageID + n + len) % len;
         this.setImagePathByID();
       } else this.getUnsplash();
     },
     // get a new image from Unsplash
     getUnsplash() {
+      const UNSPLASH_URL = this.$themeConfig.homeHeaderImages.api;
       fetch(UNSPLASH_URL)
         .then((response) => {
           this.bgImagePath = response.url;
@@ -133,7 +135,7 @@ export default {
     // set local image path
     setImagePathByID() {
       this.bgImagePath = this.$withBase(
-        this.$themeConfig.homeHeaderImages[this.bgImageID].path
+        this.$themeConfig.homeHeaderImages.local[this.bgImageID].path
       );
     },
     scrollToPost() {

@@ -65,20 +65,22 @@ module.exports = {
 
 module.exports = {
   themeConfig: {
-    // optional: paths to and masks of the home page cover images
-    homeHeaderImages: [
-      // image 1
-      {
-        "path": "/img/home-bg/1.jpg",
-        "mask": "rgba(40, 57, 101, .4)"
-      },
-      // image 2
-      {
-        "path": "/img/home-bg/2.jpg",
-        "mask": "rgb(251, 170, 152, .2)"
-      }
-      ...
-    ]
+    homeHeaderImages: {
+      // optional: paths to and masks of the local home page cover images
+      local: [
+        // image 1
+        {
+          "path": "/img/home-bg/1.jpg",
+          "mask": "rgba(40, 57, 101, .4)"
+        },
+        // image 2
+        {
+          "path": "/img/home-bg/2.jpg",
+          "mask": "rgb(251, 170, 152, .2)"
+        }
+        ...
+      ]
+    }
   }
 }
 ```
@@ -87,7 +89,28 @@ The `mask` is a translucent overlay placed on the cover image. It will be helpfu
 
 Check the [home page](/) of this site to see the effect. Click the left and right button to switch among multiple cover images.
 
-If `homeHeaderImages` is not cofigured, a random wallpaper returned by [Unsplash API](https://source.unsplash.com/) will be displayed on home page.
+If `homeHeaderImages.local` is not cofigured, a random wallpaper returned by [Unsplash API](https://source.unsplash.com/) will be displayed on home page. The default API the theme uses is:
+
+```
+https://source.unsplash.com/1600x900/?wallpaper
+```
+
+You can also customize it:
+
+```js
+// .vuepress/config.js
+
+module.exports = {
+  themeConfig: {
+    homeHeaderImages: {
+      // optional: customized Unsplash API
+      api: "https://source.unsplash.com/1600x900/?nature"
+    }
+  }
+}
+```
+
+See the [documentation of Unsplash API](https://source.unsplash.com/) for more details.
 
 
 ## Other Pages

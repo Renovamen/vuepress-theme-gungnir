@@ -24,7 +24,10 @@ module.exports = (options, ctx) => {
         mdPlus: false,
         readingTime: {},
         personalInfo: {},
-        homeHeaderImages: false,
+        homeHeaderImages: {
+          api: "https://source.unsplash.com/1600x900/?wallpaper",
+          local: false
+        },
         pages: {},
         footer: ""
       },

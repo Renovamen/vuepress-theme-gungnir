@@ -65,20 +65,22 @@ module.exports = {
 
 module.exports = {
   themeConfig: {
-    // 可选：首页封面图路径和蒙版
-    homeHeaderImages: [
-      // 图 1
-      {
-        "path": "/img/home-bg/1.jpg",
-        "mask": "rgba(40, 57, 101, .4)"
-      },
-      // 图 2
-      {
-        "path": "/img/home-bg/2.jpg",
-        "mask": "rgb(251, 170, 152, .2)"
-      }
-      ...
-    ]
+    homeHeaderImages: {
+      // 可选：首页本地封面图路径和蒙版
+      local: [
+        // 图 1
+        {
+          "path": "/img/home-bg/1.jpg",
+          "mask": "rgba(40, 57, 101, .4)"
+        },
+        // 图 2
+        {
+          "path": "/img/home-bg/2.jpg",
+          "mask": "rgb(251, 170, 152, .2)"
+        }
+        ...
+      ]
+    }
   }
 }
 ```
@@ -87,7 +89,29 @@ module.exports = {
 
 页面效果可以参考本站的[首页](/)，点击封面图左右两边的按钮可以在多张图片之间进行切换。
 
-如果不配置 `homeHeaderImages` 项，则主题会在首页上显示通过 [Unsplash API](https://source.unsplash.com/) 随机拉取的一张壁纸。
+如果不配置 `homeHeaderImages.local` 项，则主题会在首页上显示通过 [Unsplash API](https://source.unsplash.com/) 随机拉取的一张壁纸，默认使用的请求接口是：
+
+```
+https://source.unsplash.com/1600x900/?wallpaper
+```
+
+也可以更改这个接口：
+
+```js
+// .vuepress/config.js
+
+module.exports = {
+  themeConfig: {
+    homeHeaderImages: {
+      // 可选：自定义 Unsplash 接口
+      api: "https://source.unsplash.com/1600x900/?nature"
+    }
+  }
+}
+```
+
+具体可以参考 [Unsplash API 文档](https://source.unsplash.com/)。
+
 
 
 ## 页面
