@@ -4,6 +4,7 @@
     margin-bottom -0.4rem
   &.info, &.tip, &.warning, &.danger
     position relative
+    background-color var(--bg-color-secondary)
     padding .1rem 1.5rem
     border-left-width .5rem
     border-left-style solid
@@ -29,28 +30,24 @@
       background var(--bg-color)
   &.info
     border-color #007bff
-    background-color var(--bg-color-secondary)
     &::before
       content url('../assets/icons/info.svg')
   &.tip
     border-color #42b983
-    background-color var(--bg-color-secondary)
     .custom-block-title
       color darken(#42b983, 20%)
     &::before
       content url('../assets/icons/tip.svg')
   &.warning
     border-color #f4cd00
-    background-color #fff9dc
     .custom-block-title
-      color darken(#f4cd00, 25%)
+      color darken(#f4cd00, 20%)
     &::before
       content url('../assets/icons/warning.svg')
   &.danger
     border-color #f55
-    background-color #ffe6e6
     .custom-block-title
-      color #a33
+      color darken(#f55, 20%)
     &::before
       content url('../assets/icons/danger.svg')
   &.details
@@ -70,9 +67,3 @@
     summary
       outline none
       cursor pointer
-
-// dark mode
-body[data-theme="dark"]
-  .custom-block
-    &.warning, &.danger
-      background-color var(--bg-color-secondary)
