@@ -1,5 +1,17 @@
 # Change Log
 
+## [0.2.0](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v0.1.8...v0.1.9) (2021-08-18)
+
+### Features
+
+- support customizing Unsplash API ([d207489](https://github.com/Renovamen/vuepress-theme-gungnir/commit/d207489a07446fec9c35f8903d96f4e25515fb51))
+- support switching header images from Unsplash on home page ([fe568d6](https://github.com/Renovamen/vuepress-theme-gungnir/commit/fe568d647c3c015e2713825ccd943ee44f3e3f22))
+
+### BREAKING CHANGES
+
+- the way to configure `homeHeaderImages` has been changed ([d207489](https://github.com/Renovamen/vuepress-theme-gungnir/commit/d207489a07446fec9c35f8903d96f4e25515fb51), [fe568d6](https://github.com/Renovamen/vuepress-theme-gungnir/commit/fe568d647c3c015e2713825ccd943ee44f3e3f22))
+
+
 ## [0.1.8](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v0.1.7...v0.1.8) (2021-06-16)
 
 ### Bug Fixes
