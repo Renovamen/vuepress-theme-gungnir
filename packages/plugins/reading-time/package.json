@@ -1,6 +1,6 @@
 {
   "name": "@renovamen/vuepress-plugin-reading-time",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "description": "A plugin for displaying the number of words and how long a post takes to read in VuePress.",
   "keywords": [
     "vue",

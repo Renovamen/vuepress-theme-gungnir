@@ -7389,10 +7389,10 @@ obuf@^1.0.0, obuf@^1.1.2:
   resolved "https://registry.npm.taobao.org/obuf/download/obuf-1.1.2.tgz#09bea3343d41859ebd446292d11c9d4db619084e"
   integrity sha1-Cb6jND1BhZ69RGKS0RydTbYZCE4=
 
-oh-vue-icons@^0.4.3:
-  version "0.4.3"
-  resolved "https://registry.nlark.com/oh-vue-icons/download/oh-vue-icons-0.4.3.tgz#c80cc19f65e56d719f1c67f08a228ca7bf2815ec"
-  integrity sha1-yAzBn2XlbXGfHGfwiiKMp78oFew=
+oh-vue-icons@^0.4.7:
+  version "0.4.7"
+  resolved "https://registry.yarnpkg.com/oh-vue-icons/-/oh-vue-icons-0.4.7.tgz#ead3f6527db084e30cc9acfebbcf3c7bb31ad69e"
+  integrity sha512-gNyXi/ztl6wYykPbdcBfvVCyE6yU9nkafzXmt1DAsEhE2C7CupxSr/BIFZOIcjml9yUwG6OQjkcjfQASZH1sKg==
 
 on-finished@^2.3.0, on-finished@~2.3.0:
   version "2.3.0"
