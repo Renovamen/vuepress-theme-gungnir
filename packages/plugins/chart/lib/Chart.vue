@@ -6,6 +6,7 @@
 
 <script>
 import Chart from "chart.js";
+import JSONfn from "json-fn";
 
 export default {
   name: "Chart",
@@ -20,7 +21,7 @@ export default {
     }
   },
   mounted() {
-    const data = JSON.parse(this.code);
+    const data = JSONfn.parse(this.code);
     const ctx = this.$refs.chartjs.getContext("2d");
     new Chart(ctx, data);
   }
