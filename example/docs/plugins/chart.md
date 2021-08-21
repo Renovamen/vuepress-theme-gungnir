@@ -85,6 +85,76 @@ The token info of the code block should be `chart`, for example:
 The **key** should be in quotes, or some unexpected errors will occured.
 :::
 
+
+Functions should be stringified before being passed through `callback`. The following example shows how to change the tick marks of y-axis using `callback`:
+
+```chart
+{
+  "type": "bar",
+  "data": {
+    "labels": ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    "datasets": [{
+      "label": "Salary",
+      "data": [12, 19, 3, 5, 2, 3],
+      "backgroundColor": [
+        "rgba(255, 99, 132, 1)",
+        "rgba(54, 162, 235, 1)",
+        "rgba(255, 206, 86, 1)",
+        "rgba(75, 192, 192, 1)",
+        "rgba(153, 102, 255, 1)",
+        "rgba(255, 159, 64, 1)"
+      ]
+    }]
+  },
+  "options": {
+    "scales": {
+      "y": {
+        "ticks": {
+          "beginAtZero": true,
+          "callback": "function(value){ return '￥' + value + 'k'; }"
+        }
+      }
+    }
+  }
+}
+```
+
+::: details Code
+~~~json
+```chart
+{
+  "type": "bar",
+  "data": {
+    "labels": ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    "datasets": [{
+      "label": "Salary",
+      "data": [12, 19, 3, 5, 2, 3],
+      "backgroundColor": [
+        "rgba(255, 99, 132, 1)",
+        "rgba(54, 162, 235, 1)",
+        "rgba(255, 206, 86, 1)",
+        "rgba(75, 192, 192, 1)",
+        "rgba(153, 102, 255, 1)",
+        "rgba(255, 159, 64, 1)"
+      ]
+    }]
+  },
+  "options": {
+    "scales": {
+      "y": {
+        "ticks": {
+          "beginAtZero": true,
+          "callback": "function(value){ return '￥' + value + 'k'; }"
+        }
+      }
+    }
+  }
+}
+```
+~~~
+:::
+
+
 Refer to the [documentation of Chart.js](https://www.chartjs.org/docs/latest/) for more information.
 
 

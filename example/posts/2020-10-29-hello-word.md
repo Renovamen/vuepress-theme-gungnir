@@ -123,11 +123,12 @@ npm install -D vuepress-theme-gungnir
   },
   "options": {
     "scales": {
-      "yAxes": [{
+      "y": {
         "ticks": {
-          "beginAtZero": true
+          "beginAtZero": true,
+          "callback": "function(value){ return value + 'k'; }"
         }
-      }]
+      }
     }
   }
 }

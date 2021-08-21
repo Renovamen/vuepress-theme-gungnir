@@ -85,6 +85,76 @@ module.exports = {
 key 值一定要加引号，否则会报错。
 :::
 
+
+如果希望通过 `callback` 传入一个函数，需要将函数写成字符串。下面这个例子通过 `callback` 修改了 Y 轴的刻度值：
+
+```chart
+{
+  "type": "bar",
+  "data": {
+    "labels": ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    "datasets": [{
+      "label": "Salary",
+      "data": [12, 19, 3, 5, 2, 3],
+      "backgroundColor": [
+        "rgba(255, 99, 132, 1)",
+        "rgba(54, 162, 235, 1)",
+        "rgba(255, 206, 86, 1)",
+        "rgba(75, 192, 192, 1)",
+        "rgba(153, 102, 255, 1)",
+        "rgba(255, 159, 64, 1)"
+      ]
+    }]
+  },
+  "options": {
+    "scales": {
+      "y": {
+        "ticks": {
+          "beginAtZero": true,
+          "callback": "function(value){ return '￥' + value + 'k'; }"
+        }
+      }
+    }
+  }
+}
+```
+
+::: details 代码
+~~~json
+```chart
+{
+  "type": "bar",
+  "data": {
+    "labels": ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    "datasets": [{
+      "label": "Salary",
+      "data": [12, 19, 3, 5, 2, 3],
+      "backgroundColor": [
+        "rgba(255, 99, 132, 1)",
+        "rgba(54, 162, 235, 1)",
+        "rgba(255, 206, 86, 1)",
+        "rgba(75, 192, 192, 1)",
+        "rgba(153, 102, 255, 1)",
+        "rgba(255, 159, 64, 1)"
+      ]
+    }]
+  },
+  "options": {
+    "scales": {
+      "y": {
+        "ticks": {
+          "beginAtZero": true,
+          "callback": "function(value){ return '￥' + value + 'k'; }"
+        }
+      }
+    }
+  }
+}
+```
+~~~
+:::
+
+
 更详细的用法可以参考 [Chart.js 文档](https://www.chartjs.org/docs/latest/)。
 
 

@@ -22,6 +22,6 @@
   "author": "Renovamen <renovamenzxh@gmail.com>",
   "main": "index.js",
   "dependencies": {
-    "chart.js": "^2.9.4"
+    "chart.js": "^3.5.1"
   }
 }

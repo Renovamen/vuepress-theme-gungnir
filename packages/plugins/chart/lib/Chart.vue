@@ -1,12 +1,14 @@
 <template>
   <div class="vuepress-chartjs">
-    <canvas :id="id" ref="chartjs"></canvas>
+    <canvas :id="id" ref="chartjs" height="400"></canvas>
   </div>
 </template>
 
 <script>
-import Chart from "chart.js";
+import Chart from "chart.js/auto";
 import JSONfn from "json-fn";
+
+Chart.defaults.maintainAspectRatio = false;
 
 export default {
   name: "Chart",
