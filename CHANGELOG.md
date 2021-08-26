@@ -1,6 +1,17 @@
 # Change Log
 
-## [0.2.0](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v0.1.8...v0.1.9) (2021-08-18)
+## [0.2.1](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v0.2.0...v0.2.1) (2021-08-26)
+
+### Features
+
+- **plugin-chart**: enable functions to be passed as options ([a0f6833](https://github.com/Renovamen/vuepress-theme-gungnir/commit/a0f6833ff5551aa49fa29aa06b33678e4dddb62f)) ([#17](https://github.com/Renovamen/vuepress-theme-gungnir/pull/17))
+
+### BREAKING CHANGES
+
+- **plugin-chart**: Chart.js has been upgraded to v3.x and some of the APIs have been changed, see the [documentation](https://www.chartjs.org/docs/latest/) of Chart.js for details.
+
+
+## [0.2.0](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v0.1.8...v0.2.0) (2021-08-18)
 
 ### Features
 
