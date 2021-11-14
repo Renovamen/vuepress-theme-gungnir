@@ -1,0 +1,89 @@
+@import '@vuepress/plugin-palette/palette';
+
+// responsive breakpoints
+$MQLarge: 1200px !default;
+$MQIpad: 1023px !default;
+$MQNarrow: 959px !default;
+$MQMobile: 719px !default;
+$MQMobileNarrow: 419px !default;
+
+// content width
+$homePageWidth: 1126px !default;
+
+// code languages
+$codeLang: 'c' 'cpp' 'cs' 'css' 'dart' 'docker' 'fs' 'go' 'html' 'java' 'js'
+  'json' 'kt' 'less' 'makefile' 'md' 'php' 'py' 'rb' 'rs' 'sass' 'scss' 'sh'
+  'styl' 'ts' 'toml' 'vue' 'yml' !default;
+
+// base colors
+$darkColor10: rgba(27, 35, 47, 1);
+$darkColor9: rgba(27, 35, 47, .9);
+$darkColor8: rgba(27, 35, 47, .8);
+$darkColor7: rgba(27, 35, 47, .7);
+$darkColor6: rgba(27, 35, 47, .6);
+$darkColor5: rgba(27, 35, 47, .5);
+$darkColor4: rgba(27, 35, 47, .4);
+$darkColor3: rgba(27, 35, 47, .3);
+$darkColor2: rgba(27, 35, 47, .2);
+$darkColor1: rgba(27, 35, 47, .1);
+
+$lightColor10: rgba(255, 255, 255, 1);
+$lightColor9: rgba(255, 255, 255, .9);
+$lightColor8: rgba(255, 255, 255, .8);
+$lightColor7: rgba(255, 255, 255, .7);
+$lightColor6: rgba(255, 255, 255, .6);
+$lightColor5: rgba(255, 255, 255, .5);
+$lightColor4: rgba(255, 255, 255, .4);
+$lightColor3: rgba(255, 255, 255, .3);
+$lightColor2: rgba(255, 255, 255, .2);
+$lightColor1: rgba(255, 255, 255, .1);
+
+
+// code colors
+$codeBgColor: #2d2d2d !default;
+$codeHighlightBgColor: rgba(0, 0, 0, 66%) !default;
+
+$codeColor: rgba(27, 31, 35, 0.05) !default;
+$codeColorDark: $darkColor3 !default;
+
+$inlineCodeText: #c52950 !default;
+$inlineCodeTextDark: #96c2eb !default;
+$inlineCodeBg: #f9f2f4 !default;
+$inlineCodeBgDark: rgba(76, 86, 128, 0.4) !default;
+
+// shadow colors
+$boxShadow: 0 1px 8px 0 $darkColor1 !default;
+$boxShadowHover: 0 2px 16px 0 $darkColor2 !default;
+$boxShadowDark: 0 1px 8px 0 $darkColor6 !default;
+$boxShadowHoverDark: 0 2px 16px 0 $darkColor7 !default;
+
+// text colors
+$textColor: rgba(0, 0, 0, .9) !default;
+$textColorDark: $lightColor8 !default;
+
+$textColorSub: #7F7F7F !default;
+$textColorSubDark: #8B8B8B !default;
+
+// background colors
+$bgColor: #fff !default;
+$bgColorDark: #2d3746 !default;
+$bgColorSecondary: #f6f6f6 !default;
+$bgColorSecondaryDark: #404d61 !default;
+$bgColorTeritary: #fafafa !default;
+$bgColorTeritaryDark: #313d4e !default;
+$bgColorTransparent: rgba(255, 255, 255, .9) !default;
+$bgColorTransparentDark: rgb(45, 55, 71, .9) !default;
+
+// border colors
+$borderColor: #eaeaea !default;
+$borderColorDark: #3c4a5f !default;
+$borderColorSub: #dadada !default;
+$borderColorSubDark: #4b5a70 !default;
+
+// mask colors
+$maskColor: #888 !default;
+$maskColorDark: #000 !default;
+
+// theme primary colors
+$brandColor: #377bb5 !default;
+$brandColorDark: #74b3eb !default;
