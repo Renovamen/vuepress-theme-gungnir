@@ -1,1 +1,1 @@
-export { version } from "../../../lerna.json";
+export { version } from "../../../packages/theme/package.json";

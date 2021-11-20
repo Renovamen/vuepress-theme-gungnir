@@ -3,13 +3,13 @@
     <div class="hero" :style="{ 'background-image': `url(${bgImagePath})` }">
       <div
         v-if="bgImageMask"
-        class="header-mask"
+        class="hero-mask"
         :style="{
           background: bgImageMask
         }"
       />
 
-      <div class="header-content" :style="{ opacity: headerOpacity }">
+      <div class="hero-content" :style="{ opacity: headerOpacity }">
         <img
           class="hero-avatar hide-on-mobile"
           :src="$withBase(personalInfo.avatar)"
@@ -33,14 +33,14 @@
         <!-- <SNS class="hide-on-mobile" large /> -->
 
         <button class="hero-img-prev hide-on-mobile" @click="switchImage(-1)">
-          <ChevronLeft />
+          <VIcon name="chevron-left" />
         </button>
         <button class="hero-img-next hide-on-mobile" @click="switchImage(1)">
-          <ChevronRight />
+          <VIcon name="chevron-right" />
         </button>
 
         <span class="hero-arrow-down hide-on-mobile" @click="scrollToPost()">
-          <ChevronDown />
+          <VIcon name="chevron-down" animation="float" />
         </span>
       </div>
     </div>
@@ -53,19 +53,13 @@
 import { withBase } from "@vuepress/client";
 import { computed, defineComponent, onMounted, ref } from "vue";
 import { useThemeLocaleData } from "../composables";
-import ChevronDown from "./icons/ChevronDown.vue";
-import ChevronLeft from "./icons/ChevronLeft.vue";
-import ChevronRight from "./icons/ChevronRight.vue";
 import PostList from "./PostList.vue";
 
 export default defineComponent({
   name: "Home",
 
   components: {
-    PostList,
-    ChevronDown,
-    ChevronLeft,
-    ChevronRight
+    PostList
   },
 
   setup() {
@@ -79,15 +73,7 @@ export default defineComponent({
     );
     const headerOpacity = ref(1);
 
-    // -------- Header opacity --------
-
-    const handleScroll = () => {
-      const currentTop = window.pageYOffset;
-      const windowHeight = document.documentElement.clientHeight;
-      headerOpacity.value = 1 - (currentTop * 1.2) / windowHeight;
-    };
-
-    window.addEventListener("scroll", handleScroll);
+    // -------- Scroll --------
 
     const scrollToPost = () => {
       window.scrollTo({

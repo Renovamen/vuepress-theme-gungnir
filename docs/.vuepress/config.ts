@@ -32,7 +32,7 @@ export default defineUserConfig<GungnirThemeOptions>({
     repo: "vuepress/vuepress-next",
     docsDir: "docs",
 
-    hitokoto: true, // enable hitokoto (一言) or not?
+    hitokoto: "https://v1.hitokoto.cn?c=d&c=i", // enable hitokoto (一言) or not?
 
     // personal information
     personalInfo: {
