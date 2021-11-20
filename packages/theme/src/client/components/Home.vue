@@ -30,7 +30,7 @@
           </p>
         </div>
 
-        <!-- <SNS class="hide-on-mobile" large /> -->
+        <SNS class="hide-on-mobile" large />
 
         <button class="hero-img-prev hide-on-mobile" @click="switchImage(-1)">
           <VIcon name="chevron-left" />
@@ -54,12 +54,14 @@ import { withBase } from "@vuepress/client";
 import { computed, defineComponent, onMounted, ref } from "vue";
 import { useThemeLocaleData } from "../composables";
 import PostList from "./PostList.vue";
+import SNS from "./SNS.vue";
 
 export default defineComponent({
   name: "Home",
 
   components: {
-    PostList
+    PostList,
+    SNS
   },
 
   setup() {

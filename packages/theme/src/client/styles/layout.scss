@@ -164,6 +164,12 @@ h6 {
   }
 }
 
+@media (max-width: $MQIpad) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
+
 // narrow desktop / iPad
 @media (max-width: $MQNarrow) {
   .sidebar {
