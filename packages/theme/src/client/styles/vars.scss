@@ -6,8 +6,8 @@
 
   // background colors
   --c-bg: #{$bgColor};
-  --c-bg-light: #f3f4f5;
-  --c-bg-lighter: #eeeeee;
+  --c-bg-light: #{$bgColorLight};
+  --c-bg-lighter: #{$bgColorLighter};
   --c-bg-transparent: #{$bgColorTransparent};
   --c-bg-navbar: var(--c-bg-transparent);
   --c-bg-sidebar: var(--c-bg);

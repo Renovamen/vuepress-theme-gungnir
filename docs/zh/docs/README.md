@@ -7,13 +7,13 @@ Gungnir 是一个基于 [VuePress](https://vuepress.vuejs.org/) 的博客主题�
 
 <p>
   <a href="https://www.npmjs.com/package/vuepress-theme-gungnir" target="_blank">
-    <img src="https://img.shields.io/npm/v/vuepress-theme-gungnir.svg?style=flat-square&logo=npm" style="display: inline; margin: 0" alt="npm">
+    <img src="https://img.shields.io/npm/v/vuepress-theme-gungnir.svg?style=flat-square&logo=npm" style="display: inline; margin: 0 4px 0 0" alt="npm">
   </a>
   <a href="https://github.com/Renovamen/vuepress-theme-gungnir" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-Gungnir-26A2FF?style=flat-square&logo=github" style="display: inline; margin: 0" alt="github">
+    <img src="https://img.shields.io/badge/GitHub-Gungnir-26A2FF?style=flat-square&logo=github" style="display: inline; margin: 0 4px 0 0" alt="github">
   </a>
   <a href="https://github.com/Renovamen/renovamen.github.io/blob/master/LICENSE" target="_blank">
-    <img src="https://img.shields.io/badge/License-Apache--2.0-green?style=flat-square" style="display: inline; margin: 0" alt="license">
+    <img src="https://img.shields.io/badge/License-Apache--2.0-green?style=flat-square" style="display: inline; margin: 0 4px 0 0" alt="license">
   </a>
 </p>
 

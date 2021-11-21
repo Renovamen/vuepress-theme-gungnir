@@ -6,8 +6,8 @@ html.dark {
 
   // background colors
   --c-bg: #{$bgColorDark};
-  --c-bg-light: #2b313a;
-  --c-bg-lighter: #262c34;
+  --c-bg-light: #{$bgColorLightDark};
+  --c-bg-lighter: #{$bgColorLighterDark};
   --c-bg-transparent: #{$bgColorTransparentDark};
 
   // text colors

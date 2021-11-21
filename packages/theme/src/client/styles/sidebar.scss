@@ -116,6 +116,7 @@ a.sidebar-item {
     font-weight: 600;
     color: var(--c-text-accent);
     border-left-color: var(--c-text-accent);
+    background-color: var(--c-bg-lighter);
   }
 
   &.sidebar-heading.active {
@@ -126,5 +127,6 @@ a.sidebar-item {
   .sidebar-sub-items &.active {
     font-weight: 500;
     border-left-color: transparent;
+    background-color: transparent;
   }
 }
