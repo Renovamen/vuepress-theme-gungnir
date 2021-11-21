@@ -85,7 +85,6 @@ export default defineComponent({
     };
 
     // -------- Hitokoto --------
-
     const hitokotoAPI = themeLocaleDataRef.value.hitokoto;
 
     const fetchHitokoto = () => {

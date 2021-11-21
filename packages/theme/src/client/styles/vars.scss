@@ -58,6 +58,9 @@
   // image masks
   --image-mask-color: transparent;
 
+  // shadows
+  --box-shadow: #{$boxShadow};
+
   // font vars
   --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -69,8 +72,8 @@
   --navbar-padding-h: 1.5rem;
   --sidebar-width: 20rem;
   --sidebar-width-mobile: calc(var(--sidebar-width) * 0.82);
-  --content-width: 740px;
-  --homepage-width: 960px;
+  --content-width: 800px;
+  --homepage-width: 1126px;
 }
 
 // plugin-medium-zoom

@@ -6,17 +6,7 @@
   </Common>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
 import Common from "../components/Common.vue";
 import Home from "../components/Home.vue";
-
-export default defineComponent({
-  name: "HomePage",
-
-  components: {
-    Common,
-    Home
-  }
-});
 </script>

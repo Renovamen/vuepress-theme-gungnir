@@ -20,22 +20,13 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
 import { formatDateForArticle } from "../utils";
 
-export default defineComponent({
-  name: "PostListItem",
-  props: {
-    item: {
-      type: Object,
-      required: true
-    }
-  },
-  setup() {
-    return {
-      formatDateForArticle
-    };
+defineProps({
+  item: {
+    type: Object,
+    required: true
   }
 });
 </script>

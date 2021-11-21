@@ -1,3 +1,5 @@
+@import '_variables';
+
 html,
 body {
   padding: 0;
@@ -19,7 +21,6 @@ body {
 }
 
 a {
-  font-weight: 500;
   color: var(--c-text-accent);
   text-decoration: none;
   overflow-wrap: break-word;
@@ -66,7 +67,7 @@ blockquote {
 
 ul,
 ol {
-  padding-left: 1.2em;
+  padding-left: 40px;
 }
 
 strong {
@@ -162,7 +163,18 @@ td {
   padding: 0.6em 1em;
 }
 
-
 svg.outbound {
   display: none !important;
+}
+
+@media (max-width: $MQMobile) {
+  ul, ol {
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: $MQMobileNarrow) {
+  ul, ol {
+    padding-left: 20px;
+  }
 }

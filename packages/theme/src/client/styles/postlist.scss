@@ -3,7 +3,7 @@
 
 .postlist-wrapper {
   margin: 20px auto 0;
-  max-width: $homePageWidth;
+  max-width: var(--homepage-width);
 }
 
 .post-item {

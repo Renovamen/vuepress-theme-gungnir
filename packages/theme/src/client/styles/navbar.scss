@@ -1,4 +1,5 @@
 @import '_variables';
+@import '_mixins';
 
 .navbar {
   --navbar-line-height: calc(
@@ -31,6 +32,17 @@
       vertical-align: top;
     }
   }
+
+  &.invert {
+    span.site-name,
+    .navbar-links .navbar-links-item > a.nav-link,
+    .navbar-links .navbar-links-item span.title {
+      color: white;
+      &:hover, &:focus {
+        color: rgba(white, .8);
+      }
+    }
+  }
 }
 
 @media (max-width: $MQMobile) {
@@ -55,6 +67,7 @@
  */
 .navbar-links {
   display: inline-block;
+  font-weight: 600;
 
   a {
     display: inline-block;
@@ -88,6 +101,32 @@
 }
 
 @media (min-width: $MQMobile) {
+  .navbar {
+    &.is-fixed {
+      /* when the user scrolls down, we hide the header right above the viewport */
+      position: fixed;
+      top: calc(0rem - var(--navbar-height));
+      background-color: var(--c-bg-navbar);
+      border-bottom: 1px solid var(--c-border);
+      box-shadow: var(--box-shadow);
+
+      @include transition(transform .3s);
+
+      .nav-link, span.title, span.site-name {
+        color: var(--c-text) !important;
+        &:hover,
+        &:focus,
+        &.router-link-active {
+          color: var(--c-text-accent) !important;
+        }
+      }
+    }
+
+    &.is-visible {
+      @include transform(translateY(100%))
+    }
+  }
+
   .navbar-links a {
     &:hover,
     &.router-link-active {
@@ -98,8 +137,7 @@
   .navbar-links-item > a:not(.external) {
     &:hover,
     &.router-link-active {
-      margin-bottom: -2px;
-      border-bottom: 2px solid var(--c-text-accent);
+      color: var(--c-text-accent);
     }
   }
 }

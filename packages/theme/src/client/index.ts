@@ -6,6 +6,7 @@ import type {
   GungnirThemePageData,
   GungnirThemePageFrontmatter,
   GungnirThemePluginsOptions,
+  GungnirThemePostFrontmatter,
   NavbarConfig,
   NavbarGroup,
   NavbarItem,
@@ -39,7 +40,8 @@ export type {
   GungnirThemeLocaleData,
   GungnirThemePageData,
   GungnirThemePageFrontmatter,
-  GungnirThemeNormalPageFrontmatter
+  GungnirThemeNormalPageFrontmatter,
+  GungnirThemePostFrontmatter
 };
 export * from "./composables";
 export * from "./utils";

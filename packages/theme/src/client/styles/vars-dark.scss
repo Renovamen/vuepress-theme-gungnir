@@ -35,4 +35,7 @@ html.dark {
 
   // image masks
   --image-mask-color: #{$darkColor3};
+
+  // shadows
+  --box-shadow: #{$boxShadowDark};
 }

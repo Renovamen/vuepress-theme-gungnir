@@ -23,3 +23,11 @@ export interface GungnirThemeNormalPageFrontmatter
   prev?: string | NavLink;
   next?: string | NavLink;
 }
+
+export interface GungnirThemePostFrontmatter
+  extends GungnirThemePageFrontmatter {
+  editLink?: boolean;
+  editLinkPattern?: string;
+  lastUpdated?: boolean;
+  headerImage?: boolean;
+}

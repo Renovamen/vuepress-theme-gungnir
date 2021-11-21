@@ -6,7 +6,11 @@
     @touchend="onTouchEnd"
   >
     <slot name="navbar">
-      <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar">
+      <Navbar
+        v-if="shouldShowNavbar"
+        :is-sidebar="shouldShowSidebar"
+        @toggle-sidebar="toggleSidebar"
+      >
         <template #before>
           <slot name="navbar-before" />
         </template>
@@ -62,6 +66,7 @@ export default defineComponent({
 
     // sidebar
     const sidebarItems = useSidebarItems();
+    const shouldShowSidebar = computed(() => sidebarItems.value.length > 0);
     const isSidebarOpen = ref(false);
     const toggleSidebar = (to?: boolean): void => {
       isSidebarOpen.value = typeof to === "boolean" ? to : !isSidebarOpen.value;
@@ -110,6 +115,7 @@ export default defineComponent({
       onTouchStart,
       onTouchEnd,
       shouldShowNavbar,
+      shouldShowSidebar,
       toggleSidebar
     };
   }
