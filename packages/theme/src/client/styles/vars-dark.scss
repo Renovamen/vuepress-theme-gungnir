@@ -20,6 +20,8 @@ html.dark {
 
   // code blocks vars
   --code-hl-bg-color: #363b46;
+  --inline-code-color: #{$inlineCodeTextDark};
+  --inline-code-bg-color: #{$inlineCodeBgDark};
 
   // image masks
   --image-mask-color: #{$darkColor3};

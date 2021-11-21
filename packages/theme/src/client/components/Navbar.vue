@@ -93,14 +93,14 @@ const handleScroll = () => {
   const currentTop = window.pageYOffset;
 
   if (currentTop < previousTop.value) {
-    // If scrolling up...
+    // Scrolling up
     if (currentTop > 0 && isFixed.value) isVisible.value = true;
     else {
       isVisible.value = false;
       isFixed.value = false;
     }
   } else {
-    // If scrolling down...
+    // Scrolling down
     isVisible.value = false;
     if (navbar.value && currentTop > navbar.value!.offsetHeight)
       isFixed.value = true;

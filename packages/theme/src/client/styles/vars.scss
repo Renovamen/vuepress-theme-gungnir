@@ -45,6 +45,8 @@
   --code-hl-bg-color: rgba(0, 0, 0, 0.66);
   --code-ln-color: #9e9e9e;
   --code-ln-wrapper-width: 3.5rem;
+  --inline-code-color: #{$inlineCodeText};
+  --inline-code-bg-color: #{$inlineCodeBg};
 
   // image masks
   --image-mask-color: transparent;

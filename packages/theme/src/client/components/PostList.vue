@@ -8,7 +8,7 @@
 <script lang="ts">
 import type { PageData } from "@vuepress/client";
 import { defineComponent, ref } from "vue";
-import { getAllPosts } from "../utils";
+import { getAllPosts, sortPostsByDate } from "../utils";
 import PostListItem from "./PostListItem.vue";
 
 export default defineComponent({
@@ -20,7 +20,7 @@ export default defineComponent({
   setup() {
     const posts = ref(<any>[]);
 
-    getAllPosts().then((allPosts) => (posts.value = allPosts));
+    getAllPosts().then((allPosts) => (posts.value = sortPostsByDate(allPosts)));
 
     return {
       posts
