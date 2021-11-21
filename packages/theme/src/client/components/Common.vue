@@ -34,6 +34,8 @@
     </slot>
 
     <slot name="page" />
+
+    <Footer v-if="!shouldShowSidebar" />
   </div>
 </template>
 
@@ -42,6 +44,7 @@ import { usePageFrontmatter } from "@vuepress/client";
 import { computed, defineComponent, onMounted, onUnmounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import type { GungnirThemePageFrontmatter } from "../../shared";
+import Footer from "../components/Footer.vue";
 import Navbar from "../components/Navbar.vue";
 import Sidebar from "../components/Sidebar.vue";
 import { useSidebarItems, useThemeLocaleData } from "../composables";
@@ -51,7 +54,8 @@ export default defineComponent({
 
   components: {
     Navbar,
-    Sidebar
+    Sidebar,
+    Footer
   },
 
   setup() {

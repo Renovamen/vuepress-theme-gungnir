@@ -25,7 +25,7 @@ const defaultLocaleOptions: GungnirThemeLocaleOptions = {
   editLinkText: "Edit this page",
   lastUpdated: true,
   lastUpdatedText: "Last Updated",
-  contributors: true,
+  contributors: false,
   contributorsText: "Contributors",
 
   // 404 page messages
@@ -40,7 +40,13 @@ const defaultLocaleOptions: GungnirThemeLocaleOptions = {
   // a11y
   openInNewWindow: "open in new window",
   toggleDarkMode: "toggle dark mode",
-  toggleSidebar: "toggle sidebar"
+  toggleSidebar: "toggle sidebar",
+
+  // footer
+  footer: `
+    Powered by <a href="https://v2.vuepress.vuejs.org" target="_blank">VuePress</a> &
+    <a href="https://github.com/Renovamen/vuepress-theme-gungnir" target="_blank">Gungnir</a>
+  `
 };
 
 const defaultLocaleData: GungnirThemeLocaleData = {

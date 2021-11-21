@@ -267,4 +267,9 @@ export interface GungnirThemeLocaleData extends LocaleData {
    * A11y text for sidebar toggle button
    */
   toggleSidebar?: string;
+
+  /**
+   * Footer, support HTML
+   */
+  footer?: string;
 }

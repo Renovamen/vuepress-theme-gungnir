@@ -15,21 +15,30 @@
   .meta-item {
     cursor: default;
     margin-top: 0.8rem;
+    font-size: 0.9em;
 
     .meta-item-label {
       font-weight: 500;
-      color: var(--c-text-sub);
+      color: var(--c-text);
     }
 
     .meta-item-info {
       font-weight: 400;
-      color: var(--c-text-quote);
+      color: var(--c-text-sub);
     }
   }
 
   .edit-link {
     display: inline-block;
     margin-right: 0.25rem;
+    color: var(--c-text-accent);
+
+    a {
+      color: var(--c-text-accent) !important;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   .last-updated {

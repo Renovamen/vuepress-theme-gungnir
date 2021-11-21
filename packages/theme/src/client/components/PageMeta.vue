@@ -1,6 +1,7 @@
 <template>
   <footer class="page-meta">
     <div v-if="editNavLink" class="meta-item edit-link">
+      <VIcon name="pencil" scale="0.8" />
       <NavLink class="meta-item-label" :item="editNavLink" />
     </div>
 
