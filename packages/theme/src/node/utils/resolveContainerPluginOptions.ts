@@ -12,7 +12,7 @@ import type {
 export const resolveContainerPluginOptions = (
   themePlugins: GungnirThemePluginsOptions,
   localeOptions: GungnirThemeData,
-  type: "tip" | "warning" | "danger"
+  type: "info" | "tip" | "warning" | "danger"
 ): ContainerPluginOptions | boolean => {
   if (themePlugins?.container?.[type] === false) {
     return false;

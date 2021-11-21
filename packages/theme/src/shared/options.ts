@@ -13,6 +13,7 @@ export interface GungnirThemePluginsOptions {
    * Enable @vuepress/plugin-container or not
    */
   container?: {
+    info?: boolean;
     tip?: boolean;
     warning?: boolean;
     danger?: boolean;

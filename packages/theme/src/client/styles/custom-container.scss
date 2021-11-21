@@ -1,3 +1,6 @@
+@import '_variables';
+@import '_mixins';
+
 .custom-container {
   transition: color var(--t-color), border-color var(--t-color),
     background-color var(--t-color);
@@ -7,54 +10,43 @@
     margin-bottom: -0.4rem;
   }
 
+  &.info,
   &.tip,
   &.warning,
   &.danger {
+    position: relative;
     padding: 0.1rem 1.5rem;
     border-left-width: 0.5rem;
     border-left-style: solid;
     margin: 1rem 0;
+    background-color: var(--c-bg-lighter);
+  }
+
+  &.info {
+    border-color: var(--c-info);
   }
 
   &.tip {
     border-color: var(--c-tip);
-    background-color: var(--c-tip-bg);
-    color: var(--c-tip-text);
 
     .custom-container-title {
       color: var(--c-tip-title);
-    }
-
-    a {
-      color: var(--c-tip-text-accent);
     }
   }
 
   &.warning {
     border-color: var(--c-warning);
-    background-color: var(--c-warning-bg);
-    color: var(--c-warning-text);
 
     .custom-container-title {
       color: var(--c-warning-title);
-    }
-
-    a {
-      color: var(--c-warning-text-accent);
     }
   }
 
   &.danger {
     border-color: var(--c-danger);
-    background-color: var(--c-danger-bg);
-    color: var(--c-danger-text);
 
     .custom-container-title {
       color: var(--c-danger-title);
-    }
-
-    a {
-      color: var(--c-danger-text-accent);
     }
   }
 
@@ -64,7 +56,7 @@
     border-radius: 2px;
     margin: 1.6em 0;
     padding: 1.6em;
-    background-color: var(--c-details-bg);
+    background-color: var(--c-bg-lighter);
 
     h4 {
       margin-top: 0;

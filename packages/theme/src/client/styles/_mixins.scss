@@ -13,3 +13,7 @@
   -o-transform: $value;
   -ms-transform: $value;
 }
+
+@function toRGB ($color) {
+  @return "rgb(" + red($color) + ", " + green($color) + ", " + blue($color)+ ")";
+}

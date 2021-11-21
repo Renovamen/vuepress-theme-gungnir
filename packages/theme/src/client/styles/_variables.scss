@@ -84,3 +84,12 @@ $maskColorDark: #000 !default;
 // theme primary colors
 $brandColor: #377bb5 !default;
 $brandColorDark: #74b3eb !default;
+
+// Container colors
+$infoColor: #007bff !default;
+$tipColor: #42b983 !default;
+$tipTitleColor: #{darken(#42b983, 10%)} !default;
+$warningColor: #f4cd00 !default;
+$warningTitleColor: #{darken(#f4cd00, 10%)} !default;
+$dangerColor: #f55 !default;
+$dangerTitleColor: #{darken(#f55, 10%)} !default;

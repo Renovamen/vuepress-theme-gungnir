@@ -23,22 +23,13 @@
   --c-border-sub: #{$borderColorSub};
 
   // custom container colors
-  --c-tip: #42b983;
-  --c-tip-bg: var(--c-bg-light);
-  --c-tip-title: var(--c-text);
-  --c-tip-text: var(--c-text);
-  --c-tip-text-accent: var(--c-text-accent);
-  --c-warning: #e7c000;
-  --c-warning-bg: #fffae3;
-  --c-warning-title: #ad9000;
-  --c-warning-text: #746000;
-  --c-warning-text-accent: var(--c-text);
-  --c-danger: #cc0000;
-  --c-danger-bg: #ffe0e0;
-  --c-danger-title: #990000;
-  --c-danger-text: #660000;
-  --c-danger-text-accent: var(--c-text);
-  --c-details-bg: #eeeeee;
+  --c-info: #{$infoColor};
+  --c-tip: #{$tipColor};
+  --c-tip-title: #{$tipTitleColor};
+  --c-warning: #{$warningColor};
+  --c-warning-title: #{$warningTitleColor};
+  --c-danger: #{$dangerColor};
+  --c-danger-title: #{$dangerTitleColor};
 
   // badge component colors
   --c-badge-tip: var(--c-tip);

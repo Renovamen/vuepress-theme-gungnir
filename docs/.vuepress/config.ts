@@ -106,6 +106,7 @@ export default defineUserConfig<GungnirThemeOptions>({
         contributorsText: "贡献者",
 
         // custom containers
+        info: "信息",
         tip: "提示",
         warning: "注意",
         danger: "警告",

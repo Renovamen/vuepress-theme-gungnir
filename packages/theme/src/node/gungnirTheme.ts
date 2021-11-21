@@ -54,6 +54,10 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = ({
       ],
       [
         "@vuepress/container",
+        resolveContainerPluginOptions(themePlugins, localeOptions, "info")
+      ],
+      [
+        "@vuepress/container",
         resolveContainerPluginOptions(themePlugins, localeOptions, "tip")
       ],
       [
