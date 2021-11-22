@@ -8,14 +8,14 @@
     "packages/theme-gungnir"
   ],
   "scripts": {
-    "build": "vuepress build example --dest dist",
+    "build": "vuepress build docs --dest dist",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "dev": "vuepress dev example --no-cache --host 0.0.0.0 --port 4000",
+    "dev": "vuepress dev docs --no-cache --host 0.0.0.0 --port 4000",
     "lint": "eslint --ext .js,.vue ./",
     "postinstall": "husky install",
-    "preview": "cd dist && http-server",
+    "serve": "anywhere -h localhost -d dist",
     "pub": "sh ./scripts/publish.sh",
-    "cp-readme": "cp {README.md,README-CN.md} packages/theme-gungnir/"
+    "cp": "cp {README.md,README-CN.md,LICENSE} packages/theme-gungnir/"
   },
   "commitlint": {
     "extends": [
@@ -33,6 +33,7 @@
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
+    "anywhere": "^1.5.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",

@@ -12,6 +12,7 @@ extends:
 ignorePatterns:
   - dist/
   - node_modules/
+  - lib/
 
 rules:
   no-unused-vars:

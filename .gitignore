@@ -1,7 +1,27 @@
-*.log
+# VuePress files
+docs/.vuepress/.temp/
+docs/.vuepress/.cache/
+docs/.vuepress/dist/
+dist/
+
+# Dist files
+lib/
+
+# Node modules
+node_modules/
+
+# MacOS Desktop Services Store
 .DS_Store
-.cache/
-node_modules
-dist
+
+# Log files
+*.log
+
+# Typescript build info
+*.tsbuildinfo
+
+# Editor
+.vscode/
+
+# Configs
 .npmrc
 .yarnrc

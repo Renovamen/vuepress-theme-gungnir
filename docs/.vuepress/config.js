@@ -16,7 +16,7 @@ module.exports = {
   },
   themeConfig: {
     repo: "Renovamen/vuepress-theme-gungnir",
-    docsDir: "example",
+    docsDir: "docs",
     editLinks: true,
     lastUpdated: true,
     hitokoto: true,  // enable hitokoto (一言) or not?
