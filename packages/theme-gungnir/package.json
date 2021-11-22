@@ -9,7 +9,6 @@
     "katex",
     "chartjs",
     "mermaid",
-    "markmap",
     "roughviz"
   ],
   "homepage": "https://vuepress-theme-gungnir.vercel.app",
@@ -40,7 +39,6 @@
     "oh-vue-icons": "^0.4.7",
     "vuepress-plugin-chart": "^0.3.0",
     "vuepress-plugin-container": "^2.1.5",
-    "vuepress-plugin-markmap": "^0.2.0",
     "vuepress-plugin-roughviz": "^0.2.0",
     "vuepress-plugin-smooth-scroll": "^0.0.10"
   },

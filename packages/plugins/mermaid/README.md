@@ -37,7 +37,7 @@ module.exports = {
 The token info of the code block should be `mermaid`, for example:
 
 ~~~markdown
-```mermaid
+```mermaidjs
 sequenceDiagram
   Alice->John: Hello John, how are you?
   loop Every minute

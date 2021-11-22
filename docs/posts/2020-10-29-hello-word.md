@@ -136,7 +136,7 @@ npm install -D vuepress-theme-gungnir
 
 ### Mermaid
 
-```mermaid
+```mermaidjs
 sequenceDiagram
   Alice->John: Hello John, how are you?
   loop Every minute
@@ -158,7 +158,7 @@ sequenceDiagram
 }
 ```
 
-### markmap
+<!-- ### markmap
 
 ```markmap
 # Fruit
@@ -177,7 +177,7 @@ sequenceDiagram
 ## Not related
 
 - $E = mc^2$
-```
+``` -->
 
 
 ## Images

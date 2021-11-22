@@ -39,7 +39,7 @@ V2 is still **WIP**, see [v2](https://github.com/Renovamen/vuepress-theme-gungni
 - Table of contents
 - Multiple syntax highlighting themes, support full screening the code blocks (inspired by WordPress theme [Sakura](https://github.com/mashirozx/Sakura))
 - Tex support ([KaTex](https://github.com/KaTeX/KaTeX))
-- Draw charts and graphs in Markdown easily: [Chart.js](https://www.chartjs.org), [Mermaid](https://mermaid-js.github.io), [roughViz.js](https://github.com/jwilber/roughViz) and [markmap](https://github.com/gera2ld/markmap)
+- Draw charts and graphs in Markdown easily: [Chart.js](https://www.chartjs.org), [Mermaid](https://mermaid-js.github.io) and [roughViz.js](https://github.com/jwilber/roughViz)
 - Markdown enhancements:
   - Footnote ([markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote))
   - Mark ([markdown-it-mark](https://github.com/markdown-it/markdown-it-mark))

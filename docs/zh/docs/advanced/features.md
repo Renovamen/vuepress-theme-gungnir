@@ -234,7 +234,7 @@ themeConfig: {
 
 代码块的 token info 需要为 `mermaid`，例子：
 
-```mermaid
+```mermaidjs
 sequenceDiagram
   Alice->John: Hello John, how are you?
   loop Every minute
@@ -244,7 +244,7 @@ sequenceDiagram
 
 ::: details 代码
 ~~~
-```mermaid
+```mermaidjs
 sequenceDiagram
   Alice->John: Hello John, how are you?
   loop Every minute
@@ -332,7 +332,7 @@ roughViz.js 支持以下七种图表类型：
 更详细的用法可以参考 [roughViz.js 文档](https://github.com/jwilber/roughViz)。
 
 
-### markmap
+<!-- ### markmap
 
 通过插件 [plugin-markmap](/zh/docs/plugins/markmap/) 来在 Markdown 中使用 [markmap](https://github.com/gera2ld/markmap)，从而在文章中加入思维导图。
 
@@ -380,7 +380,7 @@ themeConfig: {
 
 ::: danger
 markmap 还支持在思维导图中插入代码块（[见这里](https://markmap.js.org/repl)），并使用 [Prism.js](https://prismjs.com/) 进行高亮。但如果插入代码块，markmap 就会引入代码块样式文件，这会与主题本身的代码块样式冲突。我目前还没有想出这个问题的解决方案，所以请不要在本插件中使用代码块。
-:::
+::: -->
 
 
 ## Markdown 增强样式

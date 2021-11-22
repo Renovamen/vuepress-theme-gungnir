@@ -27,7 +27,7 @@ module.exports = {
         "plugins/chart",
         "plugins/mermaid",
         "plugins/roughviz",
-        "plugins/markmap",
+        // "plugins/markmap",
         "plugins/katex",
         "plugins/md-plus",
         "plugins/reading-time",

@@ -10,7 +10,7 @@ date: 2020-03-26
 - [plugin-chart](/zh/docs/plugins/chart/)：[Chart.js](https://www.chartjs.org)（图表）
 - [plugin-mermaid](/zh/docs/plugins/mermaid/)：[Mermaid](https://mermaid-js.github.io)（流程图等）
 - [plugin-roughviz](/zh/docs/plugins/roughviz/)：[roughViz.js](https://github.com/jwilber/roughViz)（手绘风格图表）
-- [plugin-markmap](/zh/docs/plugins/markmap/)：[markmap](https://github.com/gera2ld/markmap)（思维导图）
+<!-- - [plugin-markmap](/zh/docs/plugins/markmap/)：[markmap](https://github.com/gera2ld/markmap)（思维导图） -->
 - [plugin-katex](/zh/docs/plugins/katex/)：[KaTeX](https://katex.org/)（公式渲染）
 - [plugin-md-plus](/zh/docs/plugins/md-plus/): 给 Markdown 添加更多语法和功能，目前支持脚注和高亮标记
 - [plugin-reading-time](/zh/docs/plugins/reading-time/)：字数统计和阅读时长估计

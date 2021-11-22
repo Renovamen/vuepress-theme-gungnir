@@ -20,7 +20,6 @@ module.exports = (options, ctx) => {
         mermaid: false,
         chartjs: false,
         roughviz: false,
-        markmap: false,
         mdPlus: false,
         readingTime: {},
         personalInfo: {},
@@ -161,8 +160,7 @@ module.exports = (options, ctx) => {
       ["@renovamen/vuepress-plugin-katex", options.katex],
       ["@renovamen/vuepress-plugin-mermaid", options.mermaid],
       ["vuepress-plugin-chart", options.chartjs],
-      ["vuepress-plugin-roughviz", options.roughviz],
-      ["vuepress-plugin-markmap", options.markmap]
+      ["vuepress-plugin-roughviz", options.roughviz]
     ],
 
     chainMarkdown(config) {

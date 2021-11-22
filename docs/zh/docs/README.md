@@ -49,7 +49,7 @@ Gungnir 最初是一个基于 [Jekyll](https://jekyllrb.com/) 的主题，在 [H
 - 文章目录
 - 多种代码高亮主题，支持代码块全屏（从 WordPress 主题 [Sakura](https://github.com/mashirozx/Sakura) 搬过来的功能）
 - 基于 [Katex](https://github.com/KaTeX/KaTeX) 的公式支持
-- 在文章中使用图表：[Chart.js](https://www.chartjs.org)、[Mermaid](https://mermaid-js.github.io)、[roughViz.js](https://github.com/jwilber/roughViz) 和 [markmap](https://github.com/gera2ld/markmap)
+- 在文章中使用图表：[Chart.js](https://www.chartjs.org)、[Mermaid](https://mermaid-js.github.io) 和 [roughViz.js](https://github.com/jwilber/roughViz)
 - 一些 Markdown 增强样式，目前支持：
   - 脚注（基于 [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)）
   - 高亮（基于 [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark)）

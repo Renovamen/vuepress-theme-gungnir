@@ -5,7 +5,7 @@ const mermaid = (md) => {
   md.renderer.rules.fence = (tokens, idx, options, env, slf) => {
     const token = tokens[idx];
 
-    if (token.info === "mermaid") {
+    if (token.info === "mermaidjs") {
       try {
         const key = `mermaid_${hash(idx)}`;
         const code = token.content.trim();

@@ -244,7 +244,7 @@ themeConfig: {
 
 The token info of the code block should be `mermaid`, for example:
 
-```mermaid
+```mermaidjs
 sequenceDiagram
   Alice->John: Hello John, how are you?
   loop Every minute
@@ -254,7 +254,7 @@ sequenceDiagram
 
 ::: details Code
 ~~~
-```mermaid
+```mermaidjs
 sequenceDiagram
   Alice->John: Hello John, how are you?
   loop Every minute
@@ -342,7 +342,7 @@ To load a local `csv` file, a feasible way is to put your `csv` file under `.vue
 Refer to the [documentation of roughViz.js](https://github.com/jwilber/roughViz) for more information.
 
 
-### markmap
+<!-- ### markmap
 
 Use [markmap](https://github.com/gera2ld/markmap) via [plugin-markmap](/docs/plugins/markmap/) to create creating mind map in Markdown:
 
@@ -390,7 +390,7 @@ Refer to the [documentation of markmap](https://markmap.js.org/repl) for more in
 
 ::: danger
 Theoretically, using code blocks highlighted by [Prism.js](https://prismjs.com/) in markmap is also supported (see [here](https://markmap.js.org/repl)). However, markmap will import syntax highlighting styles if code blocks are used, which are conflited with this theme's highlighting styles. So you'd better not use code blocks in this plugin (before I find out an appropriate solution).
-:::
+::: -->
 
 
 ## Markdown Enhancements

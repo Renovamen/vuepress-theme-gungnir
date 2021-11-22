@@ -43,7 +43,7 @@ module.exports = {
 
 代码块的 token info 需要为 `mermaid`，例子：
 
-```mermaid
+```mermaidjs
 sequenceDiagram
   Alice->John: Hello John, how are you?
   loop Every minute
@@ -53,7 +53,7 @@ sequenceDiagram
 
 ::: details 代码
 ~~~
-```mermaid
+```mermaidjs
 sequenceDiagram
   Alice->John: Hello John, how are you?
   loop Every minute

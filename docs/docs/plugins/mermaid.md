@@ -43,7 +43,7 @@ module.exports = {
 
 The token info of the code block should be `mermaid`, for example:
 
-```mermaid
+```mermaidjs
 sequenceDiagram
   Alice->John: Hello John, how are you?
   loop Every minute
@@ -53,7 +53,7 @@ sequenceDiagram
 
 ::: details Code
 ~~~
-```mermaid
+```mermaidjs
 sequenceDiagram
   Alice->John: Hello John, how are you?
   loop Every minute

@@ -41,7 +41,6 @@ module.exports = {
     mermaid: true,
     chartjs: true,
     roughviz: true,
-    markmap: true,
     mdPlus: {
       all: true
     },
