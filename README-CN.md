@@ -4,11 +4,26 @@
 
 一个基于 [VuePress](https://vuepress.vuejs.org/) 的博客主题。同时[这里](https://github.com/Renovamen/jekyll-theme-gungnir)还有一个它的 [Jekyll](https://jekyllrb.com/) 版本。
 
+---
+
+**提示：** 我正在开发基于 [VuePress 2](https://v2.vuepress.vuejs.org/) 的 [Gungnir v2](https://github.com/Renovamen/vuepress-theme-gungnir/tree/v2) 版本。因此 Gungnir v0 应该不会再有除了 bug 修复以外的更新。
+
+---
+
 **Gungnir**，冈格尼尔，北欧神话中主神奥丁使用的用世界树树枝做成的武器，和本主题没有半毛钱关系但我就是用了这个名字。
 
-🇬🇧 [English Intro](README.md) | 🇨🇳 中文说明
+[English](README.md) | 中文
 
-![preview](example/.vuepress/public/img/docs/gungnir.jpg)
+![preview](docs/.vuepress/public/img/docs/gungnir.jpg)
+
+
+&nbsp;
+
+## V2
+
+我正在开发基于 [Gungnir v2](https://github.com/Renovamen/vuepress-theme-gungnir/tree/v2) 版本，它使用了 [VuePress 2](https://v2.vuepress.vuejs.org/zh/)、[Vue 3](https://v3.cn.vuejs.org/)、[Vite](https://cn.vitejs.dev/) 和 [Webpack 5](https://webpack.docschina.org/). 新版本将会用 [Composition API](https://v3.cn.vuejs.org/guide/composition-api-introduction.html) 重写，并会有更快的开发服务器启动速度。
+
+请在 [v2](https://github.com/Renovamen/vuepress-theme-gungnir/tree/v2) 分支查看 Gungnir v2 的开发进度。
 
 
 &nbsp;
