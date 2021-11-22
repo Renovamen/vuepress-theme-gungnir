@@ -1,8 +1,15 @@
-# Gungnir
+# Gungnir V1
 
 A blog theme for [VuePress 2](https://v2.vuepress.vuejs.org/), **WIP**. 
 
-See [main](https://github.com/Renovamen/vuepress-theme-gungnir) branch for the stable version based on [VuePress 1](https://vuepress.vuejs.org/).
+See [main](https://github.com/Renovamen/vuepress-theme-gungnir) branch for the stable version (v0.x) based on [VuePress 1](https://vuepress.vuejs.org/).
+
+
+&nbsp;
+
+## Preview
+
+https://v1-vuepress-theme-gungnir.vercel.app
 
 
 &nbsp;
