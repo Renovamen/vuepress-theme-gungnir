@@ -1,5 +1,28 @@
 # Change Log
 
+## [0.3.0](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v0.2.1...v0.3.0) (2021-11-22)
+
+### Bug Fixes
+
+- **plugin-mermaid:** edit language token `mermaid` -> `mermaidjs` to avoid being conflict with [PrismJS](https://prismjs.com/) ([f89a7a6](https://github.com/Renovamen/vuepress-theme-gungnir/commit/f89a7a6094323a47b12019deff598ac57c1b3ca0))
+- **plugin-markmap:** remove plugin-markmap due to some unsolved issues ([f89a7a6](https://github.com/Renovamen/vuepress-theme-gungnir/commit/f89a7a6094323a47b12019deff598ac57c1b3ca0))
+
+### BREAKING CHANGES
+
+- **plugin-mermaid**: The usage of plugin-mermaid has changed:
+
+  ~~~diff
+  - ```mermaid
+  + ```mermaidjs
+  ~~~
+
+- **plugin-markmap:** plugin-markmap has been removed
+
+### Notice
+
+- No further update expected for Gungnir v0 except bug fixes, because I'm now working on [Gungnir v2](https://github.com/Renovamen/vuepress-theme-gungnir/tree/v2) which is powered by [VuePress 2](https://v2.vuepress.vuejs.org/).
+
+
 ## [0.2.1](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v0.2.0...v0.2.1) (2021-08-26)
 
 ### Features
