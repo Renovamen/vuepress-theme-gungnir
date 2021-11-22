@@ -4,9 +4,9 @@ title: Hello Word 2
 subtitle: A Test Post with a Header Image
 author: Renovamen
 date: 2020-10-30
-header_style: image
-header_img: /img/in-post/2020-10-30/header.jpg
-header_mask: rgba(40, 57, 101, .4)
+useHeaderImage: true
+headerImage: /img/in-post/2020-10-30/header.jpg
+headerMask: rgba(40, 57, 101, .4)
 catalog: true
 tags:
   - test

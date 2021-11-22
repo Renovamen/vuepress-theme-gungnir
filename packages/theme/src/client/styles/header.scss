@@ -1,0 +1,97 @@
+@import '_wrapper';
+
+.article-header.use-image {
+  max-width: 100%;
+  position: relative;
+  padding-bottom: 6rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  h1.article-title,
+  p.article-subtitle,
+  .article-icon,
+  .article-tags .tag {
+    color: white;
+    border-color: white;
+  }
+
+  .article-header-mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+}
+
+.article-header-content {
+  @extend %header-wrapper;
+  position: relative;
+  z-index: 2;
+
+  .article-icon {
+    display: inline-block;
+    line-height: 1.5rem;
+    color: var(--c-text-sub);
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    span {
+      margin-left: 0.3rem;
+      font-size: 13px;
+      font-weight: normal;
+    }
+  }
+
+  .article-tags {
+    margin-bottom: -20px;
+
+    .tag {
+      border: 1px solid var(--c-text);
+      color: var(--c-text);
+      background-color: transparent;
+      font-size: 12px;
+      line-height: 24px;
+      padding: 0 10px;
+
+      &.active, &:hover {
+        background-color: rgba(0, 0, 0, 0.05) !important;
+      }
+    }
+  }
+}
+
+.post-header .article-header-content {
+  padding-top: 8rem;
+
+  h1.article-title {
+    font-size: 50px;
+  }
+  p.article-subtitle {
+    margin-top: -10px;
+    font-weight: 400;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: $MQLarge) {
+  .article-header.use-image {
+    padding-bottom: 4rem;
+  }
+
+  .article-header-content {
+    padding-top: 5rem !important;
+
+    h1.article-title {
+      font-size: 30px !important;
+      margin-top: 30px !important;
+    }
+    p.article-subtitle {
+      font-size: 16px !important;
+      margin-top: -5px !important;
+    }
+  }
+}

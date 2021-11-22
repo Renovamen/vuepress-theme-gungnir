@@ -19,5 +19,7 @@
 
 @use 'postlist';
 @use 'post';
+@use 'header';
+@use 'tags';
 
 @use '@vuepress/plugin-palette/style';

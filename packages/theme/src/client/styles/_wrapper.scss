@@ -13,3 +13,17 @@
     padding: 1rem;
   }
 }
+
+%header-wrapper {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 1rem 0 2rem;
+
+  @media (max-width: $MQNarrow) {
+    padding: 8rem 2rem 0;
+  }
+
+  @media (max-width: $MQMobileNarrow) {
+    padding: 6rem 1rem 0;
+  }
+}

@@ -14,6 +14,7 @@ export interface GungnirThemePageFrontmatter {
 export interface GungnirThemeNormalPageFrontmatter
   extends GungnirThemePageFrontmatter {
   home?: false;
+  title?: string;
   editLink?: boolean;
   editLinkPattern?: string;
   lastUpdated?: boolean;
@@ -26,8 +27,16 @@ export interface GungnirThemeNormalPageFrontmatter
 
 export interface GungnirThemePostFrontmatter
   extends GungnirThemePageFrontmatter {
+  title: string;
   editLink?: boolean;
   editLinkPattern?: string;
   lastUpdated?: boolean;
-  headerImage?: boolean;
+  useHeaderImage?: boolean;
+  subtitle?: string;
+  author?: string;
+  date: string;
+  headerImage: string;
+  headerMask?: string;
+  catalog: boolean;
+  tags: string[];
 }

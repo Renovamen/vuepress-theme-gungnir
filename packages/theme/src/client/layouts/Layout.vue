@@ -9,6 +9,7 @@
       >
         <Page :key="page.path">
           <template #top>
+            <ArticleHeader v-show="page.title" />
             <slot name="page-top" />
           </template>
           <template #bottom>
@@ -20,34 +21,18 @@
   </Common>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { usePageData } from "@vuepress/client";
 import { defineComponent } from "vue";
+import ArticleHeader from "../components/ArticleHeader.vue";
 import Common from "../components/Common.vue";
 import Page from "../components/Page.vue";
 import { useScrollPromise } from "../composables";
 
-export default defineComponent({
-  name: "Layout",
+const page = usePageData();
 
-  components: {
-    Common,
-    Page
-  },
-
-  setup() {
-    const page = usePageData();
-
-    // handle scrollBehavior with transition
-    const scrollPromise = useScrollPromise();
-    const onBeforeEnter = scrollPromise.resolve;
-    const onBeforeLeave = scrollPromise.pending;
-
-    return {
-      page,
-      onBeforeEnter,
-      onBeforeLeave
-    };
-  }
-});
+// handle scrollBehavior with transition
+const scrollPromise = useScrollPromise();
+const onBeforeEnter = scrollPromise.resolve;
+const onBeforeLeave = scrollPromise.pending;
 </script>

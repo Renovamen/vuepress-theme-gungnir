@@ -116,7 +116,7 @@ const handleInvert = () => {
   // Post with header image
   if (
     frontmatter.value.layout === "Post" &&
-    (frontmatter.value as GungnirThemePostFrontmatter).headerImage
+    (frontmatter.value as GungnirThemePostFrontmatter).useHeaderImage
   )
     invert = true;
 

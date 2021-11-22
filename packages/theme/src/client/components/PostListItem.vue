@@ -1,7 +1,7 @@
 <template>
   <div class="post-item">
     <div class="post-item__img" @click="$router.push(item.path)">
-      <img :src="$withBase(item.frontmatter.header_img)" />
+      <img :src="$withBase(item.frontmatter.headerImage)" />
     </div>
     <div class="else">
       <p v-if="item.frontmatter.date" class="post-item__date">

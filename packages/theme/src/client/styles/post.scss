@@ -1,4 +1,6 @@
-.post-wrapper {
+@import '_variables';
+
+.post-content {
 
   .theme-gungnir-content {
     h1 {
@@ -33,6 +35,31 @@
     h6 {
       font-size: 16px;
       color: var(--c-text-sub);
+    }
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .post-content {
+    .theme-gungnir-content {
+      h1 {
+        font-size: 30px;
+      }
+      h2 {
+        font-size: 25px;
+      }
+      h3 {
+        font-size: 22px;
+      }
+      h4 {
+        font-size: 21px;
+      }
+      h5 {
+        font-size: 19px;
+      }
+      h6 {
+        font-size: 16px;
+      }
     }
   }
 }

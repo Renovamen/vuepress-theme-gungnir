@@ -1,5 +1,5 @@
 <template>
-  <Common class="post-wrapper">
+  <Common>
     <template #page>
       <Transition
         name="fade-slide-y"
@@ -7,47 +7,36 @@
         @before-enter="onBeforeEnter"
         @before-leave="onBeforeLeave"
       >
-        <Page :key="page.path">
-          <template #top>
-            <slot name="page-top" />
-          </template>
-          <template #bottom>
-            <slot name="page-bottom" />
-          </template>
-        </Page>
+        <div class="post-wrapper">
+          <ArticleHeader v-show="page.title" class="post-header" />
+
+          <Page :key="page.path" class="post-content">
+            <template #top>
+              <slot name="page-top" />
+            </template>
+            <template #bottom>
+              <slot name="page-bottom" />
+            </template>
+          </Page>
+        </div>
       </Transition>
     </template>
   </Common>
 </template>
 
-<script lang="ts">
-import { usePageData } from "@vuepress/client";
-import { defineComponent } from "vue";
+<script setup lang="ts">
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
+import type { GungnirThemePostFrontmatter } from "../../shared";
+import ArticleHeader from "../components/ArticleHeader.vue";
 import Common from "../components/Common.vue";
 import Page from "../components/Page.vue";
 import { useScrollPromise } from "../composables";
 
-export default defineComponent({
-  name: "Post",
+const page = usePageData();
+const frontmatter = usePageFrontmatter<GungnirThemePostFrontmatter>();
 
-  components: {
-    Common,
-    Page
-  },
-
-  setup() {
-    const page = usePageData();
-
-    // handle scrollBehavior with transition
-    const scrollPromise = useScrollPromise();
-    const onBeforeEnter = scrollPromise.resolve;
-    const onBeforeLeave = scrollPromise.pending;
-
-    return {
-      page,
-      onBeforeEnter,
-      onBeforeLeave
-    };
-  }
-});
+// handle scrollBehavior with transition
+const scrollPromise = useScrollPromise();
+const onBeforeEnter = scrollPromise.resolve;
+const onBeforeLeave = scrollPromise.pending;
 </script>

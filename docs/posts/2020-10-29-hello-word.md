@@ -4,7 +4,7 @@ title: Hello Word 1
 subtitle: A Test Post without The Header Image
 author: Renovamen
 date: 2020-10-29
-header_img: /img/in-post/2020-10-29/header.jpg
+headerImage: /img/in-post/2020-10-29/header.jpg
 catalog: true
 tags:
   - test
