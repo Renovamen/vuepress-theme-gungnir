@@ -10,12 +10,12 @@
   "scripts": {
     "build": "vuepress build docs --dest dist",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "cp": "cp {README.md,README-CN.md,LICENSE} packages/theme-gungnir/",
     "dev": "vuepress dev docs --no-cache --host 0.0.0.0 --port 4000",
-    "lint": "eslint --ext .js,.vue ./",
     "postinstall": "husky install",
-    "serve": "anywhere -h localhost -d dist",
+    "lint": "eslint --ext .js,.vue ./",
     "pub": "sh ./scripts/publish.sh",
-    "cp": "cp {README.md,README-CN.md,LICENSE} packages/theme-gungnir/"
+    "serve": "anywhere -h localhost -d dist"
   },
   "commitlint": {
     "extends": [
@@ -44,7 +44,7 @@
     "prettier": "^2.3.2",
     "sort-package-json": "^1.50.0",
     "vuepress": "^1.8.2",
-    "vuepress-theme-gungnir": "^0.2.1"
+    "vuepress-theme-gungnir": "^0.3.0"
   },
   "useWorkspaces": true
 }

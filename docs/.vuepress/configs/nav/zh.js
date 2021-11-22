@@ -20,7 +20,7 @@ module.exports = [
     icon: "ri-book-2-fill"
   },
   {
-    text: "v0.2.1",
+    text: "v0.3.0",
     icon: "io-logo-github",
     items: [
       {

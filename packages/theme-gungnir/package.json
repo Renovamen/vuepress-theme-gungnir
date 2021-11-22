@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-gungnir",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Gungnir is a blog theme for VuePress.",
   "keywords": [
     "vuepress",
@@ -26,7 +26,7 @@
     "@renovamen/vuepress-plugin-baidu-tongji": "^0.2.0",
     "@renovamen/vuepress-plugin-katex": "^0.2.0",
     "@renovamen/vuepress-plugin-md-plus": "^0.2.0",
-    "@renovamen/vuepress-plugin-mermaid": "^0.2.0",
+    "@renovamen/vuepress-plugin-mermaid": "^0.3.0",
     "@renovamen/vuepress-plugin-reading-time": "^0.2.0",
     "@renovamen/vuepress-plugin-rss": "^0.2.0",
     "@vssue/api-github-v3": "^1.4.7",
