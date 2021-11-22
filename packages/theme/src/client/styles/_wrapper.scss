@@ -14,10 +14,10 @@
   }
 }
 
-%header-wrapper {
+%post-header-wrapper {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 1rem 0 2rem;
+  padding: 8rem 2.5rem 2rem;
 
   @media (max-width: $MQNarrow) {
     padding: 8rem 2rem 0;

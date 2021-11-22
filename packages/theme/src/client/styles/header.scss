@@ -26,7 +26,7 @@
 }
 
 .article-header-content {
-  @extend %header-wrapper;
+  @extend %wrapper;
   position: relative;
   z-index: 2;
 
@@ -65,7 +65,7 @@
 }
 
 .post-header .article-header-content {
-  padding-top: 8rem;
+  @extend %post-header-wrapper;
 
   h1.article-title {
     font-size: 50px;
@@ -83,8 +83,6 @@
   }
 
   .article-header-content {
-    padding-top: 5rem !important;
-
     h1.article-title {
       font-size: 30px !important;
       margin-top: 30px !important;

@@ -23,7 +23,6 @@
 
 <script setup lang="ts">
 import { usePageData } from "@vuepress/client";
-import { defineComponent } from "vue";
 import ArticleHeader from "../components/ArticleHeader.vue";
 import Common from "../components/Common.vue";
 import Page from "../components/Page.vue";
