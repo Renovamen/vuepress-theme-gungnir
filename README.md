@@ -1,4 +1,4 @@
-# Gungnir V1
+# Gungnir V2
 
 A blog theme for [VuePress 2](https://v2.vuepress.vuejs.org/), **WIP**. 
 
@@ -9,7 +9,7 @@ See [main](https://github.com/Renovamen/vuepress-theme-gungnir) branch for the s
 
 ## Preview
 
-https://v1-vuepress-theme-gungnir.vercel.app
+https://v2-vuepress-theme-gungnir.vercel.app
 
 
 &nbsp;
