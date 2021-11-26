@@ -100,9 +100,8 @@ const handleScroll = () => {
   // active link
   for (let i = headers.value.length - 1; i >= 0; i--) {
     const slug = (headers.value[i] as any).slug;
-    const headerTop = (
-      document.querySelector(`#${slug}`) as HTMLElement
-    ).getBoundingClientRect().top;
+    const slugElement = document.querySelector(`#${slug}`) as HTMLElement;
+    const headerTop = slugElement ? slugElement.getBoundingClientRect().top : 0;
     if (headerTop <= 100) {
       state.activeLink = slug;
       break;

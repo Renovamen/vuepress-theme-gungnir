@@ -29,8 +29,9 @@ export default defineUserConfig<GungnirThemeOptions>({
   theme: "vuepress-theme-gungnir",
 
   themeConfig: {
-    repo: "vuepress/vuepress-next",
+    repo: "Renovamen/vuepress-theme-gungnir",
     docsDir: "docs",
+    docsBranch: "v2",
 
     hitokoto: "https://v1.hitokoto.cn?c=d&c=i", // enable hitokoto (一言) or not?
 
