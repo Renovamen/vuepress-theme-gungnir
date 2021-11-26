@@ -38,7 +38,7 @@ import {
   useRouteLocale,
   useSiteLocaleData
 } from "@vuepress/client";
-import { computed, onMounted, ref } from "vue";
+import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 import type {
   GungnirThemeNormalPageFrontmatter,
   GungnirThemePostFrontmatter
@@ -156,6 +156,10 @@ onMounted(() => {
 
   handleInvert();
   window.addEventListener("scroll", handleScroll);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", handleScroll);
 });
 
 function getCssValue(el: HTMLElement | null, property: string): number {

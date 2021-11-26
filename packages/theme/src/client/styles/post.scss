@@ -1,7 +1,6 @@
 @import '_variables';
 
 .post-content {
-
   .theme-gungnir-content {
     h1 {
       font-size: 50px
@@ -39,8 +38,17 @@
   }
 }
 
+@media (max-width: $MQLarge) {
+  .show-catalog .post-content {
+    padding-right: calc(var(--catalog-width) + 1rem);
+    max-width: 100%;
+  }
+}
+
 @media (max-width: $MQMobile) {
   .post-content {
+    padding-right: 0 !important;
+
     .theme-gungnir-content {
       h1 {
         font-size: 30px;

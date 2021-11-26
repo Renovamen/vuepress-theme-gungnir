@@ -147,6 +147,9 @@ export default defineUserConfig<GungnirThemeOptions>({
           /^@vuepress/,
           path.resolve(__dirname, "../../packages/@vuepress")
         )
+    },
+    extractHeaders: {
+      level: [2, 3, 4, 5]
     }
   }
 });

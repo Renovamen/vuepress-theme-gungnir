@@ -1,0 +1,95 @@
+@import '_variables';
+@import '_mixins';
+
+.catalog {
+  $sideWidth: calc((100% - var(--content-width)) / 2);
+
+  width: var(--catalog-width);
+  padding-left: 0;
+  list-style: none;
+  font-size: 14px;
+  bottom: 40px !important;
+  top: 120px !important;
+  overflow-x: hidden;
+  position: absolute;
+  right: calc($sideWidth - var(--catalog-width) - 5rem);
+  height: 100%;
+  overflow-y: scroll;
+
+  &.fixed {
+    position: fixed;
+    height: auto;
+    bottom: 10rem;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  li {
+    cursor: pointer;
+    color: var(--c-text-sub);
+    border-left: 2px solid var(--c-border);
+    padding-right: 1rem;
+    line-height: 2;
+    vertical-align: middle;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    &:hover {
+      color: var(--c-text-accent);
+    }
+
+    &.active {
+      border-left: 2px solid var(--c-text-accent);
+      color: var(--c-text-accent);
+      font-weight: bold;
+    }
+
+    &.level-2 {
+      padding-left: .6rem;
+    }
+    &.level-3 {
+      padding-left: 1.4rem;
+    }
+    &.level-4 {
+      padding-left: 2.2rem;
+    }
+    &.level-5 {
+      padding-left: 3rem;
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .catalog {
+    right: 0;
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .catalog {
+    @include transition(transform .5s);
+    @include transform(translateX(calc(100% + 2rem)));
+
+    position: fixed;
+    top: -15px !important;
+    right: -2px;
+    padding-top: 2rem;
+    width: var(--catalog-width) !important;
+    height: 100%;
+    background-color: var(--c-bg);
+    z-index: 5;
+
+    li {
+      border-left: none;
+      color: var(--c-text);
+
+      &.active {
+        border-left: 2px solid var(--c-text-accent);
+      }
+    }
+  }
+}

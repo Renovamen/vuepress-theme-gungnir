@@ -49,96 +49,75 @@
   </main>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { withBase } from "@vuepress/client";
-import { computed, defineComponent, onMounted, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { useThemeLocaleData } from "../composables";
 import PostList from "./PostList.vue";
 import SNS from "./SNS.vue";
 
-export default defineComponent({
-  name: "Home",
+const themeLocaleDataRef = useThemeLocaleData();
+const bgImages = themeLocaleDataRef.value.homeHeaderImages;
 
-  components: {
-    PostList,
-    SNS
-  },
+const bgImageID = ref(
+  bgImages && bgImages.length > 0
+    ? Math.floor(Math.random() * bgImages.length)
+    : 0
+);
+const headerOpacity = ref(1);
 
-  setup() {
-    const themeLocaleDataRef = useThemeLocaleData();
-    const bgImages = themeLocaleDataRef.value.homeHeaderImages;
+// -------- Scroll --------
 
-    const bgImageID = ref(
-      bgImages && bgImages.length > 0
-        ? Math.floor(Math.random() * bgImages.length)
-        : 0
-    );
-    const headerOpacity = ref(1);
+const scrollToPost = () => {
+  window.scrollTo({
+    top: (document.querySelector(".hero") as HTMLElement).clientHeight,
+    behavior: "smooth"
+  });
+};
 
-    // -------- Scroll --------
+// -------- Hitokoto --------
+const hitokotoAPI = themeLocaleDataRef.value.hitokoto;
 
-    const scrollToPost = () => {
-      window.scrollTo({
-        top: (document.querySelector(".hero") as HTMLElement).clientHeight,
-        behavior: "smooth"
-      });
-    };
+const fetchHitokoto = () => {
+  let api = hitokotoAPI;
+  api = typeof api === "string" ? api : "https://v1.hitokoto.cn";
 
-    // -------- Hitokoto --------
-    const hitokotoAPI = themeLocaleDataRef.value.hitokoto;
-
-    const fetchHitokoto = () => {
-      let api = hitokotoAPI;
-      api = typeof api === "string" ? api : "https://v1.hitokoto.cn";
-
-      fetch(api)
-        .then((response) => response.json())
-        .then((data) => {
-          const hitokoto = document.querySelector("#hitokoto") as HTMLElement;
-          hitokoto.innerHTML = data.hitokoto;
-        })
-        .catch((error) => {
-          console.log(`Get ${api} error: `, error);
-        });
-    };
-
-    onMounted(() => {
-      if (hitokotoAPI) fetchHitokoto();
+  fetch(api)
+    .then((response) => response.json())
+    .then((data) => {
+      const hitokoto = document.querySelector("#hitokoto") as HTMLElement;
+      hitokoto.innerHTML = data.hitokoto;
+    })
+    .catch((error) => {
+      console.log(`Get ${api} error: `, error);
     });
+};
 
-    // -------- Header images --------
-
-    const switchImage = (n: number) => {
-      if (!(bgImages && bgImages.length > 0)) return;
-      const len = bgImages.length;
-      bgImageID.value = (bgImageID.value + n + len) % len;
-    };
-
-    const bgImagePath = computed(() => {
-      return bgImages && bgImages.length > 0
-        ? withBase(bgImages[bgImageID.value].path)
-        : null;
-    });
-
-    const bgImageMask = computed(() => {
-      return bgImages && bgImages.length > 0
-        ? bgImages[bgImageID.value].mask
-        : null;
-    });
-
-    // -------- Other configs --------
-
-    const personalInfo = themeLocaleDataRef.value.personalInfo;
-
-    return {
-      switchImage,
-      bgImagePath,
-      bgImageMask,
-      headerOpacity,
-      personalInfo,
-      hitokotoAPI,
-      scrollToPost
-    };
-  }
+onMounted(() => {
+  if (hitokotoAPI) fetchHitokoto();
 });
+
+// -------- Header images --------
+
+const switchImage = (n: number) => {
+  if (!(bgImages && bgImages.length > 0)) return;
+  const len = bgImages.length;
+  bgImageID.value = (bgImageID.value + n + len) % len;
+};
+
+const bgImagePath = computed(() => {
+  return bgImages && bgImages.length > 0
+    ? withBase(bgImages[bgImageID.value].path)
+    : null;
+});
+
+const bgImageMask = computed(() => {
+  return bgImages && bgImages.length > 0
+    ? bgImages[bgImageID.value].mask
+    : null;
+});
+
+// -------- Other configs --------
+
+const personalInfo = themeLocaleDataRef.value.personalInfo;
 </script>

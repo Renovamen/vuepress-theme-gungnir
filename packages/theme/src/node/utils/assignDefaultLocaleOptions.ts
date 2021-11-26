@@ -7,7 +7,7 @@ const defaultLocaleOptions: GungnirThemeLocaleOptions = {
   hitokoto: false,
   personalInfo: null,
   homeHeaderImages: null,
-  title: "cd",
+  catalog: true,
 
   // navbar
   navbar: [],
@@ -51,8 +51,7 @@ const defaultLocaleOptions: GungnirThemeLocaleOptions = {
 
 const defaultLocaleData: GungnirThemeLocaleData = {
   // navbar
-  selectLanguageName: "English",
-  title: "cd"
+  selectLanguageName: "English"
 };
 
 /**

@@ -92,4 +92,22 @@
       margin-top: -5px !important;
     }
   }
+
+  .show-catalog .article-header-content {
+    max-width: 100%;
+    $sideWidth: calc((100% - var(--content-width) - var(--catalog-width) - 1rem) / 2);
+    padding-left: max($sideWidth, 2.5rem);
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .show-catalog .article-header-content {
+    padding-left: 2rem;
+  }
+}
+
+@media (max-width: $MQMobileNarrow) {
+  .show-catalog .article-header-content {
+    padding-left: 1rem;
+  }
 }

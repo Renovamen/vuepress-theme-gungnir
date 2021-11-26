@@ -11,8 +11,5 @@ import { getAllPosts, sortPostsByDate } from "../utils";
 import PostListItem from "./PostListItem.vue";
 
 const posts = ref<PageData[]>([]);
-
-onMounted(() => {
-  getAllPosts().then((allPosts) => (posts.value = sortPostsByDate(allPosts)));
-});
+getAllPosts().then((allPosts) => (posts.value = sortPostsByDate(allPosts)));
 </script>

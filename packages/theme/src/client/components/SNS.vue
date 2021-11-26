@@ -21,8 +21,7 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
 import { useThemeLocaleData } from "../composables";
 
 const snsLinks = {
@@ -45,35 +44,23 @@ const snsIcons = {
   email: "envelope"
 };
 
-export default defineComponent({
-  name: "SNS",
-
-  props: {
-    large: {
-      type: Boolean,
-      default: true
-    }
-  },
-
-  setup() {
-    const themeLocaleDataRef = useThemeLocaleData();
-    const sns = themeLocaleDataRef.value.personalInfo?.sns;
-
-    const getSNSLink = (user: string, platform: string) => {
-      return snsLinks[platform] + user;
-    };
-
-    const getSNSIcon = (platform: string) => {
-      return snsIcons[platform];
-    };
-
-    return {
-      sns,
-      getSNSLink,
-      getSNSIcon
-    };
+defineProps({
+  large: {
+    type: Boolean,
+    default: true
   }
 });
+
+const themeLocaleDataRef = useThemeLocaleData();
+const sns = themeLocaleDataRef.value.personalInfo?.sns;
+
+const getSNSLink = (user: string, platform: string) => {
+  return snsLinks[platform] + user;
+};
+
+const getSNSIcon = (platform: string) => {
+  return snsIcons[platform];
+};
 </script>
 
 <style lang="scss">

@@ -71,6 +71,12 @@ export interface GungnirThemeLocaleData extends LocaleData {
   homeHeaderImages?: null | Array<{ path: string; mask?: string }>;
 
   /**
+   * Display catalog for all posts or not. Catalog can also be configured
+   * in page frontmatter.
+   */
+  catalog?: boolean;
+
+  /**
    * Navbar config
    *
    * Set to `false` to disable navbar in current locale
