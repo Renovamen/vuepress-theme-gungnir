@@ -7,6 +7,6 @@
 <script setup lang="ts">
 import { useThemeLocaleData } from "../composables";
 
-const themeLocaleDataRef = useThemeLocaleData();
-const footerHTML = themeLocaleDataRef.value.footer;
+const themeLocale = useThemeLocaleData();
+const footerHTML = themeLocale.value.footer;
 </script>

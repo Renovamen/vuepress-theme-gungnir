@@ -9,6 +9,8 @@ const defaultLocaleOptions: GungnirThemeLocaleOptions = {
   homeHeaderImages: null,
   catalog: true,
 
+  postNumPerPage: 10,
+
   // navbar
   navbar: [],
   darkMode: true,
@@ -31,6 +33,10 @@ const defaultLocaleOptions: GungnirThemeLocaleOptions = {
   // post pager
   postNext: "Next",
   postPrev: "Previous",
+
+  // home page pager
+  homeNext: "← Newer Posts",
+  homePrev: "Older Posts →",
 
   // 404 page messages
   notFound: [

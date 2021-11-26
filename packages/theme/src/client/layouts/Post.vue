@@ -59,7 +59,7 @@ import { getAllPosts, sortPostsByDateWithPager } from "../utils";
 
 const page = usePageData();
 const frontmatter = usePageFrontmatter<GungnirThemePostFrontmatter>();
-const themeLocaleData = useThemeLocaleData();
+const themeLocale = useThemeLocaleData();
 const router = useRouter();
 
 // handle scrollBehavior with transition
@@ -70,7 +70,7 @@ const onBeforeLeave = scrollPromise.pending;
 // catalog
 const shoudleShowCatalog = computed(
   () =>
-    (themeLocaleData.value.catalog || frontmatter.value.catalog) &&
+    (themeLocale.value.catalog || frontmatter.value.catalog) &&
     pageData.value.headers.length > 0
 );
 
@@ -123,9 +123,8 @@ const handleScroll = () => {
 };
 
 const resetCatalogPos = () => {
-  state.headerHeight = (
-    document.querySelector(".post-header") as HTMLElement
-  ).offsetHeight;
+  const postHeader = document.querySelector(".post-header") as HTMLElement;
+  state.headerHeight = postHeader ? postHeader.offsetHeight : 0;
   state.screenWidth = document.body.clientWidth;
   if (state.screenWidth <= 719) state.catalogTop = -15;
   // $MQMobile
@@ -133,7 +132,7 @@ const resetCatalogPos = () => {
 };
 
 // reset catalog's position after navigation
-let unregisterCatalogPosHook;
+let unregisterRouterHook;
 
 onMounted(() => {
   window.addEventListener("scroll", handleScroll);
@@ -146,14 +145,14 @@ onMounted(() => {
     })();
   };
 
-  unregisterCatalogPosHook = router.afterEach(() => {
+  unregisterRouterHook = router.afterEach(() => {
     resetCatalogPos();
   });
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", handleScroll);
-  unregisterCatalogPosHook();
+  unregisterRouterHook();
 });
 
 // pager
@@ -167,9 +166,16 @@ const postIndex = computed(() =>
 );
 const pagerData = computed(() => {
   if (postIndex.value === -1) return {};
+
+  const next = posts.value[postIndex.value].next;
+  if (next) next.text = themeLocale.value.postNext;
+
+  const prev = posts.value[postIndex.value].prev;
+  if (prev) prev.text = themeLocale.value.postPrev;
+
   return {
-    next: posts.value[postIndex.value].next,
-    prev: posts.value[postIndex.value].prev
+    next: next,
+    prev: prev
   };
 });
 </script>

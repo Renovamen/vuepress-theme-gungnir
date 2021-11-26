@@ -51,8 +51,8 @@ defineProps({
   }
 });
 
-const themeLocaleDataRef = useThemeLocaleData();
-const sns = themeLocaleDataRef.value.personalInfo?.sns;
+const themeLocale = useThemeLocaleData();
+const sns = themeLocale.value.personalInfo?.sns;
 
 const getSNSLink = (user: string, platform: string) => {
   return snsLinks[platform] + user;

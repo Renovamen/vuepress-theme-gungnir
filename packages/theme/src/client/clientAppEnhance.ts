@@ -35,6 +35,12 @@ export default defineClientAppEnhance(({ app, router }) => {
   // icons
   app.component("VIcon", OhVueIcon);
 
+  router.addRoute({
+    path: "/page/:id",
+    name: "homepage",
+    component: () => import("./layouts/HomePage.vue")
+  });
+
   // handle scrollBehavior with transition
   const scrollBehavior = router.options.scrollBehavior!;
   router.options.scrollBehavior = async (...args) => {

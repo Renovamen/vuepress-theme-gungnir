@@ -6,6 +6,15 @@
   max-width: var(--homepage-width);
 }
 
+.postlist-wrapper .pager {
+  max-width: var(--homepage-width);
+
+  a {
+    width: 180px;
+    padding: 20px 0 !important;
+  }
+}
+
 .post-item {
   margin: 80px auto 100px;
   position: relative;

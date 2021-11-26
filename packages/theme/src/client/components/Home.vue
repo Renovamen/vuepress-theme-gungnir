@@ -56,8 +56,8 @@ import { useThemeLocaleData } from "../composables";
 import PostList from "./PostList.vue";
 import SNS from "./SNS.vue";
 
-const themeLocaleDataRef = useThemeLocaleData();
-const bgImages = themeLocaleDataRef.value.homeHeaderImages;
+const themeLocale = useThemeLocaleData();
+const bgImages = themeLocale.value.homeHeaderImages;
 
 const bgImageID = ref(
   bgImages && bgImages.length > 0
@@ -76,7 +76,7 @@ const scrollToPost = () => {
 };
 
 // -------- Hitokoto --------
-const hitokotoAPI = themeLocaleDataRef.value.hitokoto;
+const hitokotoAPI = themeLocale.value.hitokoto;
 
 const fetchHitokoto = () => {
   let api = hitokotoAPI;
@@ -119,5 +119,5 @@ const bgImageMask = computed(() => {
 
 // -------- Other configs --------
 
-const personalInfo = themeLocaleDataRef.value.personalInfo;
+const personalInfo = themeLocale.value.personalInfo;
 </script>

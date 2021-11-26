@@ -85,6 +85,21 @@ export interface GungnirThemeLocaleData extends LocaleData {
   postPrev?: string;
 
   /**
+   * Home page pagers config.
+   *
+   * The text to replace the default "Older Posts →" and "← Newer Posts"
+   */
+  homeNext?: string;
+  homePrev?: string;
+
+  /**
+   * Maximum number of posts per page.
+   *
+   * Default: 10
+   */
+  postNumPerPage?: number;
+
+  /**
    * Navbar config
    *
    * Set to `false` to disable navbar in current locale

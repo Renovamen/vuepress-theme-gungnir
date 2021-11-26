@@ -65,6 +65,7 @@ const frontmatter =
   usePageFrontmatter<
     GungnirThemeNormalPageFrontmatter | GungnirThemePostFrontmatter
   >();
+const router = useRouter();
 
 const navbar = ref<HTMLElement | null>(null);
 const siteBrand = ref<HTMLElement | null>(null);
@@ -90,6 +91,8 @@ const isFixed = ref(false);
 const isVisible = ref(false);
 const isInvert = ref(true);
 
+const path = computed(() => router.currentRoute.value.path);
+
 const handleScroll = () => {
   const currentTop = window.pageYOffset;
 
@@ -113,7 +116,7 @@ const handleInvert = () => {
   let invert = false;
 
   // Home page
-  if (frontmatter.value.layout === "HomePage") invert = true;
+  if (path.value === "/" || path.value.indexOf("/page/") !== -1) invert = true;
   // Post with header image
   if (
     frontmatter.value.layout === "Post" &&
@@ -133,10 +136,8 @@ const handleInvert = () => {
   isInvert.value = invert;
 };
 
-const router = useRouter();
-
 // handle navbar color invert after navigation
-let unregisterInvertHook;
+let unregisterRouterHook;
 
 // avoid overlapping of long title and long navbar links
 onMounted(() => {
@@ -161,7 +162,7 @@ onMounted(() => {
   window.addEventListener("orientationchange", handleLinksWrapWidth, false);
 
   handleInvert();
-  unregisterInvertHook = router.afterEach(() => {
+  unregisterRouterHook = router.afterEach(() => {
     handleInvert();
   });
 
@@ -170,7 +171,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", handleScroll);
-  unregisterInvertHook();
+  unregisterRouterHook();
 });
 
 function getCssValue(el: HTMLElement | null, property: string): number {

@@ -43,8 +43,9 @@ export interface GungnirThemePostFrontmatter
 }
 
 export interface PagerData {
-  title: string;
-  link: string;
+  title?: string;
+  link?: string;
+  text?: string;
 }
 
 export interface PostPageData extends PageData {

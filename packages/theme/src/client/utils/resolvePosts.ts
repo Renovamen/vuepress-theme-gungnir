@@ -39,3 +39,18 @@ export function sortPostsByDateWithPager(posts: PageData[]): PostPageData[] {
     return postWithPager;
   });
 }
+
+export function sliceSortedPosts(
+  posts: PageData[],
+  index: number,
+  per: number
+) {
+  const sortedPosts = sortPostsByDate(posts);
+
+  if (sortedPosts.length === 0) return sortedPosts;
+
+  index = Math.min(index, Math.ceil(sortedPosts.length / per));
+  const start = (index - 1) * per;
+
+  return sortedPosts.slice(start, Math.min(start + per, sortedPosts.length));
+}
