@@ -77,6 +77,14 @@ export interface GungnirThemeLocaleData extends LocaleData {
   catalog?: boolean;
 
   /**
+   * Post pagers config.
+   *
+   * The text to replace the default "Previous" and "Next"
+   */
+  postNext?: string;
+  postPrev?: string;
+
+  /**
    * Navbar config
    *
    * Set to `false` to disable navbar in current locale

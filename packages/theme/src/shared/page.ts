@@ -1,3 +1,4 @@
+import type { PageData } from "@vuepress/client";
 import type { GitPluginPageData } from "@vuepress/plugin-git";
 import type { NavLink, SidebarConfig } from "./nav";
 
@@ -39,4 +40,14 @@ export interface GungnirThemePostFrontmatter
   headerMask?: string;
   catalog: boolean;
   tags: string[];
+}
+
+export interface PagerData {
+  title: string;
+  link: string;
+}
+
+export interface PostPageData extends PageData {
+  next?: PagerData | null;
+  prev?: PagerData | null;
 }

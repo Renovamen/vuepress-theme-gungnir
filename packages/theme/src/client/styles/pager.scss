@@ -1,0 +1,58 @@
+@import '_wrapper';
+
+.pager {
+  @extend %wrapper;
+
+  list-style: none;
+  height: 100px;
+
+  a {
+    color: var(--text-color);
+    border: 1px solid var(--c-border-sub);
+    border-radius: 3px;
+    background-color: transparent;
+    padding: 20px 0;
+    max-width: 48%;
+    width: 360px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+    &.next {
+      float: left;
+    }
+
+    &.previous {
+      float: right;
+    }
+
+    span {
+      font-weight: normal;
+      color: var(--c-text-sub);
+    }
+
+    &:hover,
+    &:focus {
+      color: white;
+      background-color: var(--c-text-accent);
+      border: 1px solid var(--c-text-accent);
+      > span {
+        color: white !important;
+      }
+    }
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .pager a {
+    padding: 15px 0;
+  }
+}
+
+@media (max-width: $MQMobileNarrow) {
+  .pager a {
+    padding: 12px 0;
+  }
+}

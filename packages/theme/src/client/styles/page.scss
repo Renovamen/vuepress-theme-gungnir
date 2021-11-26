@@ -48,13 +48,10 @@
 
 @media (max-width: $MQMobile) {
   .page-meta {
-    .last-updated {
-      font-size: 0.8em;
-      float: none;
-    }
+    font-size: 0.9em;
 
-    .contributors {
-      font-size: 0.8em;
+    .last-updated {
+      float: none;
     }
   }
 }

@@ -39,7 +39,7 @@
 }
 
 @media (max-width: $MQLarge) {
-  .show-catalog .post-content {
+  .post-wrapper.show-catalog .post-content {
     padding-right: calc(var(--catalog-width) + 1rem);
     max-width: 100%;
   }
@@ -69,5 +69,18 @@
         font-size: 16px;
       }
     }
+  }
+}
+
+@media (max-width: $MQLarge) {
+  .post-wrapper.show-catalog .pager-wrapper {
+    padding-right: calc(var(--catalog-width) + 1rem);
+    max-width: 100%;
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .post-wrapper .pager-wrapper {
+    padding-right: 0 !important;
   }
 }

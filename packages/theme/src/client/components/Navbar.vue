@@ -38,7 +38,8 @@ import {
   useRouteLocale,
   useSiteLocaleData
 } from "@vuepress/client";
-import { computed, onBeforeUnmount, onMounted, ref } from "vue";
+import { computed, onBeforeUnmount, onMounted, ref, watch } from "vue";
+import { useRouter } from "vue-router";
 import type {
   GungnirThemeNormalPageFrontmatter,
   GungnirThemePostFrontmatter
@@ -132,6 +133,11 @@ const handleInvert = () => {
   isInvert.value = invert;
 };
 
+const router = useRouter();
+
+// handle navbar color invert after navigation
+let unregisterInvertHook;
+
 // avoid overlapping of long title and long navbar links
 onMounted(() => {
   // TODO: migrate to css var
@@ -155,11 +161,16 @@ onMounted(() => {
   window.addEventListener("orientationchange", handleLinksWrapWidth, false);
 
   handleInvert();
+  unregisterInvertHook = router.afterEach(() => {
+    handleInvert();
+  });
+
   window.addEventListener("scroll", handleScroll);
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", handleScroll);
+  unregisterInvertHook();
 });
 
 function getCssValue(el: HTMLElement | null, property: string): number {

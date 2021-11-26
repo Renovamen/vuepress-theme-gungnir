@@ -22,5 +22,6 @@
 @use 'header';
 @use 'tags';
 @use 'catalog';
+@use 'pager';
 
 @use '@vuepress/plugin-palette/style';

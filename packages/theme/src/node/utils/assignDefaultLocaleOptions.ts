@@ -28,6 +28,10 @@ const defaultLocaleOptions: GungnirThemeLocaleOptions = {
   contributors: false,
   contributorsText: "Contributors",
 
+  // post pager
+  postNext: "Next",
+  postPrev: "Previous",
+
   // 404 page messages
   notFound: [
     `There's nothing here.`,

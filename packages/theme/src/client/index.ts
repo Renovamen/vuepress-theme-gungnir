@@ -13,6 +13,8 @@ import type {
   NavGroup,
   NavItem,
   NavLink,
+  PagerData,
+  PostPageData,
   ResolvedNavbarItem,
   ResolvedSidebarItem,
   SidebarConfig,
@@ -41,7 +43,9 @@ export type {
   GungnirThemePageData,
   GungnirThemePageFrontmatter,
   GungnirThemeNormalPageFrontmatter,
-  GungnirThemePostFrontmatter
+  GungnirThemePostFrontmatter,
+  PagerData,
+  PostPageData
 };
 export * from "./composables";
 export * from "./utils";

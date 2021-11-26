@@ -22,6 +22,8 @@
             </template>
           </Page>
 
+          <Pager :data="pagerData" />
+
           <Catalog
             v-if="shoudleShowCatalog"
             :headers="headers"
@@ -37,17 +39,28 @@
 
 <script setup lang="ts">
 import { pageData, usePageData, usePageFrontmatter } from "@vuepress/client";
-import { computed, onBeforeUnmount, onMounted, reactive, ref } from "vue";
-import type { GungnirThemePostFrontmatter } from "../../shared";
+import {
+  computed,
+  onBeforeUnmount,
+  onMounted,
+  reactive,
+  ref,
+  watch
+} from "vue";
+import { useRouter } from "vue-router";
+import type { GungnirThemePostFrontmatter, PostPageData } from "../../shared";
 import ArticleHeader from "../components/ArticleHeader.vue";
 import { Catalog } from "../components/Catalog";
 import Common from "../components/Common.vue";
 import Page from "../components/Page.vue";
+import Pager from "../components/Pager.vue";
 import { useScrollPromise, useThemeLocaleData } from "../composables";
+import { getAllPosts, sortPostsByDateWithPager } from "../utils";
 
 const page = usePageData();
 const frontmatter = usePageFrontmatter<GungnirThemePostFrontmatter>();
 const themeLocaleData = useThemeLocaleData();
+const router = useRouter();
 
 // handle scrollBehavior with transition
 const scrollPromise = useScrollPromise();
@@ -109,7 +122,7 @@ const handleScroll = () => {
   if (state.screenWidth <= 719) state.catalogTop = -15;
 };
 
-const initCatalog = () => {
+const resetCatalogPos = () => {
   state.headerHeight = (
     document.querySelector(".post-header") as HTMLElement
   ).offsetHeight;
@@ -119,19 +132,44 @@ const initCatalog = () => {
   else state.catalogTop = state.headerHeight + catalogTopAbsolute;
 };
 
+// reset catalog's position after navigation
+let unregisterCatalogPosHook;
+
 onMounted(() => {
   window.addEventListener("scroll", handleScroll);
 
-  initCatalog();
+  resetCatalogPos();
   window.onresize = () => {
     return (() => {
-      initCatalog();
+      resetCatalogPos();
       handleScroll();
     })();
   };
+
+  unregisterCatalogPosHook = router.afterEach(() => {
+    resetCatalogPos();
+  });
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", handleScroll);
+  unregisterCatalogPosHook();
+});
+
+// pager
+const posts = ref<PostPageData[]>([]);
+getAllPosts().then(
+  (allPosts) => (posts.value = sortPostsByDateWithPager(allPosts))
+);
+
+const postIndex = computed(() =>
+  posts.value.findIndex((item) => item.path === router.currentRoute.value.path)
+);
+const pagerData = computed(() => {
+  if (postIndex.value === -1) return {};
+  return {
+    next: posts.value[postIndex.value].next,
+    prev: posts.value[postIndex.value].prev
+  };
 });
 </script>
