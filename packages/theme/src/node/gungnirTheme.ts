@@ -85,7 +85,8 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = ({
       ["@vuepress/nprogress", themePlugins.nprogress !== false],
       ["@vuepress/palette", { preset: "sass" }],
       ["@vuepress/prismjs", themePlugins.prismjs !== false],
-      ["@vuepress/theme-data", { themeData: localeOptions }]
+      ["@vuepress/theme-data", { themeData: localeOptions }],
+      ["@renovamen/vuepress-plugin-katex", themePlugins.katex !== false]
     ],
 
     async onInitialized(app) {

@@ -1,7 +1,8 @@
 {
   "private": true,
   "workspaces": [
-    "packages/theme"
+    "packages/theme",
+    "packages/plugins/*"
   ],
   "scripts": {
     "build": "tsc --build",

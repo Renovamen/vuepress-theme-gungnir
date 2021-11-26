@@ -41,6 +41,11 @@ export interface GungnirThemePluginsOptions {
    * Enable @vuepress/plugin-prismjs or not
    */
   prismjs?: boolean;
+
+  /**
+   * Enable @renovamen/vuepress-plugin-katex or not
+   */
+  katex?: boolean;
 }
 
 export type GungnirThemeLocaleOptions = GungnirThemeData;

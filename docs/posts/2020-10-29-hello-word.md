@@ -79,6 +79,17 @@ while True:
 ![Image Example](/img/home-bg/3.jpg)
 
 
+## Maths
+
+Inline math: $E = mc^2$
+
+Display math:
+
+$$
+i\hbar\frac{\partial \psi}{\partial t} = \frac{-\hbar^2}{2m} ( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} ) \psi + V \psi.
+$$
+
+
 ## Emojis
 
 :smile: :smirk: :racehorse: :wolf:

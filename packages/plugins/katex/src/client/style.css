@@ -1,0 +1,9 @@
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.katex-error {
+  color: red;
+}

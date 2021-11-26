@@ -44,7 +44,7 @@ export function sliceSortedPosts(
   posts: PageData[],
   index: number,
   per: number
-) {
+): PageData[] {
   const sortedPosts = sortPostsByDate(posts);
 
   if (sortedPosts.length === 0) return sortedPosts;

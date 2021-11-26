@@ -1,7 +1,7 @@
 {
   "name": "vuepress-theme-gungnir",
   "version": "2.0.0-alpha.1",
-  "description": "Gungnir is a blog theme for VuePress.",
+  "description": "Gungnir is a blog theme for VuePress 2.",
   "keywords": [
     "vuepress-theme",
     "vuepress",
@@ -29,6 +29,7 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,scss}\" lib"
   },
   "dependencies": {
+    "@renovamen/vuepress-plugin-katex": "^2.0.0-alpha.1",
     "@vuepress/client": "2.0.0-beta.27",
     "@vuepress/core": "2.0.0-beta.27",
     "@vuepress/plugin-active-header-links": "2.0.0-beta.27",
