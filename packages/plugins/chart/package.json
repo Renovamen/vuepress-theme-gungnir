@@ -1,0 +1,37 @@
+{
+  "name": "vuepress-plugin-chart",
+  "version": "2.0.0-alpha.1",
+  "description": "A plugin for adding Chart.js to VuePress 2.",
+  "keywords": [
+    "vue",
+    "vuepress",
+    "vuepress-plugin",
+    "chart",
+    "chartjs"
+  ],
+  "homepage": "https://github.com/Renovamen/vuepress-theme-gungnir/tree/main/packages/plugins/chart",
+  "bugs": {
+    "url": "https://github.com/Renovamen/vuepress-theme-gungnir/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Renovamen/vuepress-theme-gungnir.git",
+    "directory": "packages/plugins/chart"
+  },
+  "license": "MIT",
+  "author": "Renovamen <renovamenzxh@gmail.com>",
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.css\" lib"
+  },
+  "dependencies": {
+    "chart.js": "^3.6.0",
+    "json-fn": "^1.1.1"
+  }
+}

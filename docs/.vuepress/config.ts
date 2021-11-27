@@ -130,7 +130,10 @@ export default defineUserConfig<GungnirThemeOptions>({
 
     themePlugins: {
       // only enable git plugin in production mode
-      git: isProd
+      git: isProd,
+      katex: true,
+      mermaid: true,
+      chartjs: true
     },
 
     footer: `

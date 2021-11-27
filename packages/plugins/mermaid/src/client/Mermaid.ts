@@ -17,7 +17,6 @@ export default defineComponent({
 
     onMounted(() => {
       content.value = mermaidElement.value?.dataset.code || "";
-      console.log(content.value);
 
       import("mermaid/dist/mermaid.min").then((mermaid) => {
         mermaid.initialize({

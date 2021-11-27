@@ -1,10 +1,10 @@
 import { path } from "@vuepress/utils";
 import type MarkdownIt from "markdown-it";
-import { mermaid } from "./markdown-it-mermaid";
+import { chart } from "./markdown-it-chart";
 
-const mermaidPlugin = (option, app) => {
+const chartPlugin = (option, app) => {
   return {
-    name: "@renovamen/vuepress-plugin-mermaid",
+    name: "vuepress-plugin-chart",
 
     clientAppEnhanceFiles: path.resolve(
       __dirname,
@@ -12,9 +12,9 @@ const mermaidPlugin = (option, app) => {
     ),
 
     extendsMarkdown: (md: MarkdownIt): void => {
-      md.use(mermaid);
+      md.use(chart);
     }
   };
 };
 
-export default mermaidPlugin;
+export default chartPlugin;

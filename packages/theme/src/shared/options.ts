@@ -51,6 +51,11 @@ export interface GungnirThemePluginsOptions {
    * Enable @renovamen/vuepress-plugin-mermaid or not
    */
   mermaid?: boolean;
+
+  /**
+   * Enable @renovamen/vuepress-plugin-chart or not
+   */
+  chartjs?: boolean;
 }
 
 export type GungnirThemeLocaleOptions = GungnirThemeData;
