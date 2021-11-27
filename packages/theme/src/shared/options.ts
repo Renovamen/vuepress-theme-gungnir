@@ -46,6 +46,11 @@ export interface GungnirThemePluginsOptions {
    * Enable @renovamen/vuepress-plugin-katex or not
    */
   katex?: boolean;
+
+  /**
+   * Enable @renovamen/vuepress-plugin-mermaid or not
+   */
+  mermaid?: boolean;
 }
 
 export type GungnirThemeLocaleOptions = GungnirThemeData;

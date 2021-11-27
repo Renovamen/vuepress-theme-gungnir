@@ -1,0 +1,14 @@
+.vuepress-mermaid {
+  margin: 30px 0;
+  overflow: scroll;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 419px) {
+  .vuepress-mermaid {
+    margin: 0;
+  }
+}

@@ -1,8 +1,8 @@
+import { htmlEscape } from "@vuepress/shared";
 import Katex from "katex";
 import type MarkdownIt from "markdown-it";
 import type StateBlock from "markdown-it/lib/rules_block/state_block";
 import type StateInline from "markdown-it/lib/rules_inline/state_inline";
-import { escapeHTML } from "./utils";
 
 const isValidDelim = (
   state: StateInline,
@@ -183,9 +183,9 @@ export const katex = (
     } catch (error) {
       if (katexOptions.throwOnError) console.warn(error);
 
-      return `<span title='${escapeHTML(
+      return `<span title='${htmlEscape(
         (error as Error).toString()
-      )}'>${escapeHTML(tex)}</span>`;
+      )}'>${htmlEscape(tex)}</span>`;
     }
   };
 
@@ -197,9 +197,9 @@ export const katex = (
     } catch (error) {
       if (katexOptions.throwOnError) console.warn(error);
 
-      return `<p class='katex-error' title='${escapeHTML(
+      return `<p class='katex-error' title='${htmlEscape(
         (error as Error).toString()
-      )}'>${escapeHTML(tex)}</p>`;
+      )}'>${htmlEscape(tex)}</p>`;
     }
   };
 

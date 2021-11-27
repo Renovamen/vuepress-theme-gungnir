@@ -36,12 +36,6 @@ module.exports = {
       rules: {
         "vue/match-component-file-name": "off"
       }
-    },
-    {
-      files: ["packages/plugins/**/*ts"],
-      rules: {
-        "@typescript-eslint/no-empty-function": "off"
-      }
     }
   ]
 };
