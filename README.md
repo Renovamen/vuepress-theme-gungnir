@@ -44,6 +44,7 @@ This repo also contains the following plugins:
 - [plugin-katex](packages/plugins/katex): use [KaTeX](https://katex.org/) in Vuepress 2
 - [plugin-chart](packages/plugins/chart): [Chart.js](https://www.chartjs.org)
 - [plugin-mermaid](packages/plugins/mermaid): [Mermaid](https://mermaid-js.github.io)
+- [plugin-reading-time](packages/plugins/reading-time): word count and reading time
 
 
 &nbsp;

@@ -31,6 +31,7 @@
   "dependencies": {
     "@renovamen/vuepress-plugin-katex": "^2.0.0-alpha.1",
     "@renovamen/vuepress-plugin-mermaid": "^2.0.0-alpha.1",
+    "@renovamen/vuepress-plugin-reading-time": "2.0.0-alpha.1",
     "@vuepress/client": "2.0.0-beta.27",
     "@vuepress/core": "2.0.0-beta.27",
     "@vuepress/plugin-active-header-links": "2.0.0-beta.27",

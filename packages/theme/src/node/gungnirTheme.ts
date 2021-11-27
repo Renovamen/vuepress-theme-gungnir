@@ -13,7 +13,8 @@ import {
   resolveContainerPluginOptionsForCodeGroupItem,
   resolveContainerPluginOptionsForDetails,
   resolveGitPluginOptions,
-  resolveMediumZoomPluginOptions
+  resolveMediumZoomPluginOptions,
+  resolveReadingTimePluginOptions
 } from "./utils";
 
 export interface GungnirThemeOptions
@@ -88,7 +89,11 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = ({
       ["@vuepress/theme-data", { themeData: localeOptions }],
       ["@renovamen/vuepress-plugin-katex", themePlugins.katex],
       ["@renovamen/vuepress-plugin-mermaid", themePlugins.mermaid],
-      ["vuepress-plugin-chart", themePlugins.chartjs]
+      ["vuepress-plugin-chart", themePlugins.chartjs],
+      [
+        "@renovamen/vuepress-plugin-reading-time",
+        resolveReadingTimePluginOptions(themePlugins)
+      ]
     ],
 
     async onInitialized(app) {

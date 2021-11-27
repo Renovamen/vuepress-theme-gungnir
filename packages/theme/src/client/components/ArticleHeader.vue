@@ -50,9 +50,12 @@
 </template>
 
 <script setup lang="ts">
-import { usePageFrontmatter, withBase } from "@vuepress/client";
+import { usePageData, usePageFrontmatter, withBase } from "@vuepress/client";
 import { useRouter } from "vue-router";
-import type { GungnirThemePostFrontmatter } from "../../shared";
+import type {
+  GungnirThemePageData,
+  GungnirThemePostFrontmatter
+} from "../../shared";
 import { useThemeLocaleData } from "../composables";
 import { formatDateForArticle } from "../utils/resolveTime";
 
@@ -64,15 +67,17 @@ defineProps({
 });
 
 const router = useRouter();
+const page = usePageData<GungnirThemePageData>();
+const themeLocale = useThemeLocaleData();
+const frontmatter = usePageFrontmatter<GungnirThemePostFrontmatter>();
+
+console.log(page.value.readingTime);
 
 const goTagPage = (tag: string) => {
   if (router.currentRoute.value.path !== `/tags/${tag}/`) {
     router.push({ path: `/tags/${tag}/` });
   }
 };
-
-const themeLocale = useThemeLocaleData();
-const frontmatter = usePageFrontmatter<GungnirThemePostFrontmatter>();
 
 // post header style
 const headerStyle = () => {

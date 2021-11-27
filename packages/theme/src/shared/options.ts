@@ -1,3 +1,4 @@
+import type { ReadingTimeOptions } from "@renovamen/vuepress-plugin-reading-time";
 import type { ThemeData } from "@vuepress/plugin-theme-data";
 import type { LocaleData } from "@vuepress/shared";
 import type { NavbarConfig, SidebarConfig } from "./nav";
@@ -56,6 +57,12 @@ export interface GungnirThemePluginsOptions {
    * Enable @renovamen/vuepress-plugin-chart or not
    */
   chartjs?: boolean;
+
+  /**
+   * Enable @renovamen/vuepress-plugin-reading-time or not
+   * and pass it's options
+   */
+  readingTime?: false | ReadingTimeOptions;
 }
 
 export type GungnirThemeLocaleOptions = GungnirThemeData;
