@@ -76,8 +76,6 @@ const page = usePageData<GungnirThemePageData>();
 const themeLocale = useThemeLocaleData();
 const frontmatter = usePageFrontmatter<GungnirThemePostFrontmatter>();
 
-console.log(page.value.readingTime);
-
 const goTagPage = (tag: string) => {
   if (router.currentRoute.value.path !== `/tags/${tag}/`) {
     router.push({ path: `/tags/${tag}/` });
@@ -91,7 +89,6 @@ const headerStyle = () => {
     if (frontmatter.value.useHeaderImage && frontmatter.value.headerImage) {
       style.backgroundImage = `url(${withBase(frontmatter.value.headerImage)})`;
     }
-    style.paddingRight = "0";
   }
   return style;
 };

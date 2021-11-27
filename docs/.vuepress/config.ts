@@ -154,6 +154,9 @@ export default defineUserConfig<GungnirThemeOptions>({
     },
     extractHeaders: {
       level: [2, 3, 4, 5]
+    },
+    code: {
+      lineNumbers: false
     }
   }
 });
