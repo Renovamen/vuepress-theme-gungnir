@@ -34,6 +34,7 @@
     display: inline-block;
     line-height: 1.5rem;
     color: var(--c-text-sub);
+    vertical-align: middle;
 
     &:not(:last-child) {
       margin-right: 1rem;

@@ -44,6 +44,11 @@
           <VIcon name="calendar" scale="0.8" />
           <span>{{ formatDateForArticle(frontmatter.date) }}</span>
         </div>
+
+        <div v-if="page.readingTime" class="article-icon">
+          <VIcon name="timer" />
+          <span>{{ page.readingTime.minutes }} min</span>
+        </div>
       </div>
     </div>
   </div>

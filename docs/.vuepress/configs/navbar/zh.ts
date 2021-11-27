@@ -26,7 +26,7 @@ export const zh: NavbarConfig = [
         link: "https://github.com/Renovamen/vuepress-theme-gungnir/blob/main/CHANGELOG.md"
       },
       {
-        text: "v1.x",
+        text: "v2.x",
         link: "/docs/"
       },
       {
