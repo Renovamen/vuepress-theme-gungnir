@@ -23,7 +23,7 @@
     <div class="sidebar-mask" @click="toggleSidebar(false)" />
 
     <slot name="sidebar">
-      <Sidebar>
+      <Sidebar v-if="!isNotFound">
         <template #top>
           <slot name="sidebar-top" />
         </template>
@@ -33,17 +33,22 @@
       </Sidebar>
     </slot>
 
-    <slot name="page" />
+    <div class="page-content">
+      <slot name="page" />
+    </div>
 
-    <Footer v-if="!shouldShowSidebar" />
+    <Footer v-if="isNotFound || !shouldShowSidebar" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { usePageFrontmatter } from "@vuepress/client";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { computed, onMounted, onUnmounted, ref } from "vue";
 import { useRouter } from "vue-router";
-import type { GungnirThemePageFrontmatter } from "../../shared";
+import type {
+  GungnirThemePageData,
+  GungnirThemePageFrontmatter
+} from "../../shared";
 import Footer from "../components/Footer.vue";
 import Navbar from "../components/Navbar.vue";
 import Sidebar from "../components/Sidebar.vue";
@@ -51,11 +56,15 @@ import { useSidebarItems, useThemeLocaleData } from "../composables";
 
 const frontmatter = usePageFrontmatter<GungnirThemePageFrontmatter>();
 const themeLocale = useThemeLocaleData();
+const page = usePageData<GungnirThemePageData>();
 
 // navbar
 const shouldShowNavbar = computed(
   () => frontmatter.value.navbar !== false && themeLocale.value.navbar !== false
 );
+
+// 404 page
+const isNotFound = computed(() => page.value.path === "");
 
 // sidebar
 const sidebarItems = useSidebarItems();

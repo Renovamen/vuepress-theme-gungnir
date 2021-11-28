@@ -119,7 +119,7 @@ export default defineUserConfig<GungnirThemeOptions>({
           "这是一个 404 页面",
           "看起来我们进入了错误的链接"
         ],
-        backToHome: "返回首页",
+        backToHome: "$ cd /home/",
 
         // a11y
         openInNewWindow: "在新窗口打开",

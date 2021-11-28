@@ -76,6 +76,14 @@
 }
 
 .theme-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  .page-content {
+    flex: 1;
+  }
+
   &.sidebar-open {
     .sidebar-mask {
       display: block;

@@ -23,5 +23,6 @@
 @use 'tags';
 @use 'catalog';
 @use 'pager';
+@use 'not-found';
 
 @use '@vuepress/plugin-palette/style';
