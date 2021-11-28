@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
 import {
-  usePageData,
+  pageData,
   usePageFrontmatter,
   useRouteLocale,
   useSiteLocaleData
@@ -20,7 +20,6 @@ import { computed } from "vue";
 import type { ComputedRef } from "vue";
 import { useRouter } from "vue-router";
 import type {
-  GungnirThemePageData,
   GungnirThemePageFrontmatter,
   NavbarGroup,
   NavbarItem,
@@ -166,7 +165,6 @@ const navbarLinks = computed(() => [
 ]);
 
 const frontmatter = usePageFrontmatter<GungnirThemePageFrontmatter>();
-const page = usePageData<GungnirThemePageData>();
 
 const isDocPage = computed(() => {
   // Show language switcher only on docs page
@@ -175,7 +173,7 @@ const isDocPage = computed(() => {
   return (
     frontmatter.value.layout === undefined &&
     path.indexOf("/page/") === -1 &&
-    page.value.path !== ""
+    pageData.value.path !== ""
   );
 });
 </script>

@@ -29,7 +29,7 @@
             :headers="headers"
             :active-link="state.activeLink"
             :class="{ fixed: state.isFixed }"
-            :style="{ top: `${state.catalogTop}px !important` }"
+            :style="{ top: `${state.catalogTop}px` }"
           />
         </div>
       </Transition>
@@ -38,7 +38,7 @@
 </template>
 
 <script setup lang="ts">
-import { pageData, usePageData, usePageFrontmatter } from "@vuepress/client";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import {
   computed,
   onBeforeUnmount,
@@ -71,11 +71,11 @@ const onBeforeLeave = scrollPromise.pending;
 const shoudleShowCatalog = computed(
   () =>
     (themeLocale.value.catalog || frontmatter.value.catalog) &&
-    pageData.value.headers.length > 0
+    page.value.headers.length > 0
 );
 
 const pageHeaders = computed(() =>
-  shoudleShowCatalog.value ? pageData.value.headers : []
+  shoudleShowCatalog.value ? page.value.headers : []
 );
 const flattenHeaders = (item: any) => {
   return item.children.length > 0
@@ -100,7 +100,7 @@ const handleScroll = () => {
   // active link
   for (let i = headers.value.length - 1; i >= 0; i--) {
     const slug = (headers.value[i] as any).slug;
-    const slugElement = document.querySelector(`#${slug}`) as HTMLElement;
+    const slugElement = document.querySelector<HTMLElement>(`#${slug}`);
     const headerTop = slugElement ? slugElement.getBoundingClientRect().top : 0;
     if (headerTop <= 100) {
       state.activeLink = slug;
@@ -121,8 +121,8 @@ const handleScroll = () => {
   if (state.screenWidth <= 719) state.catalogTop = -15;
 };
 
-const resetCatalogPos = () => {
-  const postHeader = document.querySelector(".post-header") as HTMLElement;
+const resetCatalogPosition = () => {
+  const postHeader = document.querySelector<HTMLElement>(".post-header");
   state.headerHeight = postHeader ? postHeader.offsetHeight : 0;
   state.screenWidth = document.body.clientWidth;
   if (state.screenWidth <= 719) state.catalogTop = -15;
@@ -136,16 +136,16 @@ let unregisterRouterHook;
 onMounted(() => {
   window.addEventListener("scroll", handleScroll);
 
-  resetCatalogPos();
+  resetCatalogPosition();
   window.onresize = () => {
     return (() => {
-      resetCatalogPos();
+      resetCatalogPosition();
       handleScroll();
     })();
   };
 
   unregisterRouterHook = router.afterEach(() => {
-    resetCatalogPos();
+    resetCatalogPosition();
   });
 });
 

@@ -7,9 +7,9 @@
         @before-enter="onBeforeEnter"
         @before-leave="onBeforeLeave"
       >
-        <Page :key="page.path">
+        <Page :key="pageData.path">
           <template #top>
-            <ArticleHeader v-show="page.title" />
+            <ArticleHeader v-show="pageData.title" />
             <slot name="page-top" />
           </template>
           <template #bottom>
@@ -22,13 +22,11 @@
 </template>
 
 <script setup lang="ts">
-import { usePageData } from "@vuepress/client";
+import { pageData } from "@vuepress/client";
 import ArticleHeader from "../components/ArticleHeader.vue";
 import Common from "../components/Common.vue";
 import Page from "../components/Page.vue";
 import { useScrollPromise } from "../composables";
-
-const page = usePageData();
 
 // handle scrollBehavior with transition
 const scrollPromise = useScrollPromise();

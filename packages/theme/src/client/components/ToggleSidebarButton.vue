@@ -7,11 +7,7 @@
     tabindex="0"
     @click="$emit('toggle')"
   >
-    <div class="icon" aria-hidden="true">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <VIcon name="sidebar" />
   </div>
 </template>
 

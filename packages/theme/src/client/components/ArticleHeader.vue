@@ -45,9 +45,9 @@
           <span>{{ formatDateForArticle(frontmatter.date) }}</span>
         </div>
 
-        <div v-if="page.readingTime" class="article-icon">
+        <div v-if="pageData.readingTime" class="article-icon">
           <VIcon name="timer" />
-          <span>{{ page.readingTime.minutes }} min</span>
+          <span>{{ pageData.readingTime.minutes }} min</span>
         </div>
       </div>
     </div>
@@ -55,12 +55,9 @@
 </template>
 
 <script setup lang="ts">
-import { usePageData, usePageFrontmatter, withBase } from "@vuepress/client";
+import { pageData, usePageFrontmatter, withBase } from "@vuepress/client";
 import { useRouter } from "vue-router";
-import type {
-  GungnirThemePageData,
-  GungnirThemePostFrontmatter
-} from "../../shared";
+import type { GungnirThemePostFrontmatter } from "../../shared";
 import { useThemeLocaleData } from "../composables";
 import { formatDateForArticle } from "../utils/resolveTime";
 
@@ -72,7 +69,6 @@ defineProps({
 });
 
 const router = useRouter();
-const page = usePageData<GungnirThemePageData>();
 const themeLocale = useThemeLocaleData();
 const frontmatter = usePageFrontmatter<GungnirThemePostFrontmatter>();
 

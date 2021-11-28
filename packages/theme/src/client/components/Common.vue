@@ -6,11 +6,7 @@
     @touchend="onTouchEnd"
   >
     <slot name="navbar">
-      <Navbar
-        v-if="shouldShowNavbar"
-        :is-sidebar="shouldShowSidebar"
-        @toggle-sidebar="toggleSidebar"
-      >
+      <Navbar v-if="shouldShowNavbar" :is-sidebar="shouldShowSidebar">
         <template #before>
           <slot name="navbar-before" />
         </template>
@@ -37,19 +33,19 @@
       <slot name="page" />
     </div>
 
+    <Menu @toggle-sidebar="toggleSidebar" @toggle-catalog="toggleCatalog" />
+
     <Footer v-if="isNotFound || !shouldShowSidebar" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
+import { pageData, usePageFrontmatter } from "@vuepress/client";
 import { computed, onMounted, onUnmounted, ref } from "vue";
 import { useRouter } from "vue-router";
-import type {
-  GungnirThemePageData,
-  GungnirThemePageFrontmatter
-} from "../../shared";
+import type { GungnirThemePageFrontmatter } from "../../shared";
 import Footer from "../components/Footer.vue";
+import Menu from "../components/Menu.vue";
 import Navbar from "../components/Navbar.vue";
 import Sidebar from "../components/Sidebar.vue";
 import {
@@ -60,7 +56,6 @@ import {
 
 const frontmatter = usePageFrontmatter<GungnirThemePageFrontmatter>();
 const themeLocale = useThemeLocaleData();
-const page = usePageData<GungnirThemePageData>();
 const router = useRouter();
 
 // navbar
@@ -71,7 +66,7 @@ const shouldShowNavbar = computed(
 // 404 page
 const isNotFound = computed(
   () =>
-    page.value.path === "" &&
+    pageData.value.path === "" &&
     router.currentRoute.value.path.indexOf("/page/") === -1
 );
 
@@ -101,12 +96,19 @@ const onTouchEnd = (e): void => {
   }
 };
 
+// catalog
+const isCatalogOpen = ref(false);
+const toggleCatalog = (to?: boolean): void => {
+  isCatalogOpen.value = typeof to === "boolean" ? to : !isCatalogOpen.value;
+};
+
 // classes
 const containerClass = computed(() => [
   {
     "no-navbar": !shouldShowNavbar.value,
     "no-sidebar": !sidebarItems.value.length,
-    "sidebar-open": isSidebarOpen.value
+    "sidebar-open": isSidebarOpen.value,
+    "catalog-open": isCatalogOpen.value
   },
   frontmatter.value.pageClass
 ]);

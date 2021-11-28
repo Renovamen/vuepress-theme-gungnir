@@ -8,11 +8,9 @@
       invert: isInvert
     }"
   >
-    <ToggleSidebarButton @toggle="$emit('toggle-sidebar')" />
-
     <span ref="siteBrand">
       <RouterLink :to="siteBrandLink">
-        <span class="site-name can-hide">
+        <span class="site-name">
           {{ siteBrandTitle }}
         </span>
       </RouterLink>
@@ -25,8 +23,6 @@
 
       <slot name="after" />
 
-      <ToggleDarkModeButton v-if="enableDarkMode" />
-
       <NavbarSearch />
     </div>
   </header>
@@ -38,16 +34,14 @@ import {
   useRouteLocale,
   useSiteLocaleData
 } from "@vuepress/client";
-import { computed, onBeforeUnmount, onMounted, ref, watch } from "vue";
+import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import type {
   GungnirThemeNormalPageFrontmatter,
   GungnirThemePostFrontmatter
 } from "../../shared";
-import { useDarkMode, useThemeLocaleData } from "../composables";
+import { useThemeLocaleData } from "../composables";
 import NavbarLinks from "./NavbarLinks.vue";
-import ToggleDarkModeButton from "./ToggleDarkModeButton.vue";
-import ToggleSidebarButton from "./ToggleSidebarButton.vue";
 
 defineProps({
   isSidebar: {
@@ -55,12 +49,10 @@ defineProps({
     required: true
   }
 });
-defineEmits(["toggle-sidebar"]);
 
 const routeLocale = useRouteLocale();
 const siteLocale = useSiteLocaleData();
 const themeLocale = useThemeLocaleData();
-const isDarkMode = useDarkMode();
 const frontmatter =
   usePageFrontmatter<
     GungnirThemeNormalPageFrontmatter | GungnirThemePostFrontmatter
@@ -82,7 +74,6 @@ const linksWrapperStyle = computed(() => {
     maxWidth: linksWrapperMaxWidth.value + "px"
   };
 });
-const enableDarkMode = computed(() => themeLocale.value.darkMode);
 
 const previousTop = ref(0);
 const isFixed = ref(false);

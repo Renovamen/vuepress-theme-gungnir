@@ -9,7 +9,7 @@
 
 .navbar {
   position: absolute;
-  z-index: 20;
+  z-index: 10;
   top: 0;
   left: 0;
   right: 0;
@@ -23,7 +23,7 @@
   font-size: 16px;
   width: var(--sidebar-width);
   position: fixed;
-  z-index: 10;
+  z-index: 20;
   margin: 0;
   top: var(--navbar-height);
   left: 0;
@@ -87,27 +87,6 @@
   &.sidebar-open {
     .sidebar-mask {
       display: block;
-    }
-
-    .navbar > .toggle-sidebar-button .icon {
-      span {
-        &:nth-child(1) {
-          transform: rotate(45deg) translate3d(5.5px, 5.5px, 0);
-        }
-
-        &:nth-child(2) {
-          transform: scale3d(0, 1, 1);
-        }
-
-        &:nth-child(3) {
-          transform: rotate(-45deg) translate3d(6px, -6px, 0);
-        }
-
-        &:nth-child(1),
-        &:nth-child(3) {
-          transform-origin: center;
-        }
-      }
     }
   }
 
@@ -213,8 +192,7 @@ h6 {
 @media (max-width: $MQMobile) {
   .sidebar {
     top: 0;
-    padding-top: var(--navbar-height);
-    transform: translateX(-100%);
+    @include transform(translateX(-100%));
   }
 
   .page {
@@ -224,8 +202,13 @@ h6 {
   .theme-container {
     &.sidebar-open {
       .sidebar {
-        transform: translateX(0);
+        @include transform(translateX(0));
       }
+    }
+
+    &.catalog-open .catalog {
+      @include transform(translateX(0));
+      box-shadow: var(--box-shadow);
     }
 
     &.no-navbar {
