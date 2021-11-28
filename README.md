@@ -45,6 +45,7 @@ This repo also contains the following plugins:
 - [plugin-chart](packages/plugins/chart): [Chart.js](https://www.chartjs.org)
 - [plugin-mermaid](packages/plugins/mermaid): [Mermaid](https://mermaid-js.github.io)
 - [plugin-reading-time](packages/plugins/reading-time): word count and reading time
+- [plugin-code-enhance](packages/plugins/code-enhance): full-screen and ~~copy~~ button for code blocks
 
 
 &nbsp;

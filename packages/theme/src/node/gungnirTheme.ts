@@ -93,6 +93,10 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = ({
       [
         "@renovamen/vuepress-plugin-reading-time",
         resolveReadingTimePluginOptions(themePlugins)
+      ],
+      [
+        "vuepress-plugin-code-enhance",
+        themePlugins.codeEnhance === false ? false : {}
       ]
     ],
 

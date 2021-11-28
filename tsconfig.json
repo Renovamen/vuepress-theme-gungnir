@@ -5,7 +5,8 @@
     { "path": "./packages/plugins/katex/tsconfig.build.json" },
     { "path": "./packages/plugins/mermaid/tsconfig.build.json" },
     { "path": "./packages/plugins/chart/tsconfig.build.json" },
-    { "path": "./packages/plugins/reading-time/tsconfig.build.json" }
+    { "path": "./packages/plugins/reading-time/tsconfig.build.json" },
+    { "path": "./packages/plugins/code-enhance/tsconfig.build.json" }
   ],
   "files": []
 }

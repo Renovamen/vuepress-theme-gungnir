@@ -1,6 +1,7 @@
 import type { ReadingTimeOptions } from "@renovamen/vuepress-plugin-reading-time";
 import type { ThemeData } from "@vuepress/plugin-theme-data";
 import type { LocaleData } from "@vuepress/shared";
+import type { CodeEnhanceOptions } from "vuepress-plugin-code-enhance";
 import type { NavbarConfig, SidebarConfig } from "./nav";
 import type { PersonalConfig } from "./personal";
 
@@ -63,6 +64,11 @@ export interface GungnirThemePluginsOptions {
    * and pass it's options
    */
   readingTime?: false | ReadingTimeOptions;
+
+  /**
+   * Enable vuepress-plugin-code-enhance or not and pass it's options
+   */
+  codeEnhance?: false | CodeEnhanceOptions;
 }
 
 export type GungnirThemeLocaleOptions = GungnirThemeData;

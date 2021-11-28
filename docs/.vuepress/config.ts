@@ -156,7 +156,7 @@ export default defineUserConfig<GungnirThemeOptions>({
       level: [2, 3, 4, 5]
     },
     code: {
-      lineNumbers: false
+      // lineNumbers: false
     }
   }
 });
