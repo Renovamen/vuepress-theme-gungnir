@@ -9,12 +9,23 @@
 </template>
 
 <script setup lang="ts">
-import { useRouteLocale, useSiteLocaleData } from "@vuepress/client";
+import {
+  usePageData,
+  usePageFrontmatter,
+  useRouteLocale,
+  useSiteLocaleData
+} from "@vuepress/client";
 import { isLinkHttp, isString } from "@vuepress/shared";
 import { computed } from "vue";
 import type { ComputedRef } from "vue";
 import { useRouter } from "vue-router";
-import type { NavbarGroup, NavbarItem, ResolvedNavbarItem } from "../../shared";
+import type {
+  GungnirThemePageData,
+  GungnirThemePageFrontmatter,
+  NavbarGroup,
+  NavbarItem,
+  ResolvedNavbarItem
+} from "../../shared";
 import { useNavLink, useThemeLocaleData } from "../composables";
 import { resolveRepoType } from "../utils";
 import DropdownLink from "./DropdownLink.vue";
@@ -151,6 +162,20 @@ const navbarSelectLanguage = useNavbarSelectLanguage();
 const navbarRepo = useNavbarRepo();
 const navbarLinks = computed(() => [
   ...navbarConfig.value,
-  ...navbarSelectLanguage.value
+  ...(isDocPage.value ? navbarSelectLanguage.value : [])
 ]);
+
+const frontmatter = usePageFrontmatter<GungnirThemePageFrontmatter>();
+const page = usePageData<GungnirThemePageData>();
+
+const isDocPage = computed(() => {
+  // Show language switcher only on docs page
+  const router = useRouter();
+  const path = router.currentRoute.value.path;
+  return (
+    frontmatter.value.layout === undefined &&
+    path.indexOf("/page/") === -1 &&
+    page.value.path !== ""
+  );
+});
 </script>

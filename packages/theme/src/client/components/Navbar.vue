@@ -69,9 +69,7 @@ const router = useRouter();
 
 const navbar = ref<HTMLElement | null>(null);
 const siteBrand = ref<HTMLElement | null>(null);
-const siteBrandLink = computed(
-  () => themeLocale.value.home || routeLocale.value
-);
+const siteBrandLink = computed(() => themeLocale.value.home || "/");
 const siteBrandTitle = computed(() => {
   return siteLocale.value.title ? siteLocale.value.title : "$ cd /home/";
 });
@@ -116,7 +114,11 @@ const handleInvert = () => {
   let invert = false;
 
   // Home page
-  if (path.value === "/" || path.value.indexOf("/page/") !== -1) invert = true;
+  if (
+    frontmatter.value.layout === "HomePage" ||
+    path.value.indexOf("/page/") !== -1
+  )
+    invert = true;
   // Post with header image
   if (
     frontmatter.value.layout === "Post" &&

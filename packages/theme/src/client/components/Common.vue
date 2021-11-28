@@ -52,11 +52,16 @@ import type {
 import Footer from "../components/Footer.vue";
 import Navbar from "../components/Navbar.vue";
 import Sidebar from "../components/Sidebar.vue";
-import { useSidebarItems, useThemeLocaleData } from "../composables";
+import {
+  useResolveRouteWithRedirect,
+  useSidebarItems,
+  useThemeLocaleData
+} from "../composables";
 
 const frontmatter = usePageFrontmatter<GungnirThemePageFrontmatter>();
 const themeLocale = useThemeLocaleData();
 const page = usePageData<GungnirThemePageData>();
+const router = useRouter();
 
 // navbar
 const shouldShowNavbar = computed(
@@ -64,7 +69,11 @@ const shouldShowNavbar = computed(
 );
 
 // 404 page
-const isNotFound = computed(() => page.value.path === "");
+const isNotFound = computed(
+  () =>
+    page.value.path === "" &&
+    router.currentRoute.value.path.indexOf("/page/") === -1
+);
 
 // sidebar
 const sidebarItems = useSidebarItems();
@@ -106,7 +115,6 @@ const containerClass = computed(() => [
 let unregisterRouterHook;
 
 onMounted(() => {
-  const router = useRouter();
   unregisterRouterHook = router.afterEach(() => {
     toggleSidebar(false);
   });

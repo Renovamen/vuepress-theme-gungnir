@@ -3,5 +3,5 @@ module.exports = {
     "vetur.validation.template": false,
     "vetur.useWorkspaceDependencies": true
   },
-  projects: ["./docs", "./packages/theme"]
+  projects: ["./docs", "./packages/theme", "./packages/packages"]
 };

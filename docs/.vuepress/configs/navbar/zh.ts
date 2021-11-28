@@ -4,7 +4,7 @@ import { version } from "../meta";
 export const zh: NavbarConfig = [
   {
     text: "首页",
-    link: "/zh/"
+    link: "/"
   },
   {
     text: "文档",
