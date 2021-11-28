@@ -68,6 +68,27 @@ while True:
 ```
 
 
+### Code Groups
+
+<CodeGroup>
+<CodeGroupItem title="YARN" active>
+
+```bash
+yarn add -D vuepress-theme-gungnir@next
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="NPM">
+
+```bash
+npm install -D vuepress-theme-gungnir@next
+```
+
+</CodeGroupItem>
+</CodeGroup>
+
+
 ### Inline Code
 
 `const a = 1`
@@ -171,6 +192,26 @@ This is a dangerous warning message.
 ```cpp
 cout << "Hello World!" << "\n";
 ```
+:::
+
+::: details Show me the code group.
+<CodeGroup>
+<CodeGroupItem title="JS" active>
+
+```js
+console.log("Hello World!");
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="PY">
+
+```python
+print("Hello World!")
+```
+
+</CodeGroupItem>
+</CodeGroup>
 :::
 
 ## References

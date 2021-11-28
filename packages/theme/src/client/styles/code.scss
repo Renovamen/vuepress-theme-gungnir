@@ -258,6 +258,12 @@ div[class*='language-'] {
   }
 }
 
+.custom-container.details div[class*="language-"] {
+  box-shadow: none;
+  margin: 0.85rem -1.6rem;
+  border-radius: 0;
+}
+
 @each $lang in $codeLang {
   div[class*='language-'].ext-#{$lang} {
     &:before {
