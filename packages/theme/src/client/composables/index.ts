@@ -5,3 +5,4 @@ export * from "./useScrollPromise";
 export * from "./useSidebarItems";
 export * from "./useThemeData";
 export * from "./usePages";
+export * from "./useBlog";

@@ -39,23 +39,15 @@
 
 <script setup lang="ts">
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import {
-  computed,
-  onBeforeUnmount,
-  onMounted,
-  reactive,
-  ref,
-  watch
-} from "vue";
+import { computed, onBeforeUnmount, onMounted, reactive } from "vue";
 import { useRouter } from "vue-router";
-import type { GungnirThemePostFrontmatter, PostPageData } from "../../shared";
+import type { GungnirThemePostFrontmatter } from "../../shared";
 import ArticleHeader from "../components/ArticleHeader.vue";
 import { Catalog } from "../components/Catalog";
 import Common from "../components/Common.vue";
 import Page from "../components/Page.vue";
 import Pager from "../components/Pager.vue";
-import { useScrollPromise, useThemeLocaleData } from "../composables";
-import { getAllPosts, sortPostsByDateWithPager } from "../utils";
+import { useBlog, useScrollPromise, useThemeLocaleData } from "../composables";
 
 const page = usePageData();
 const frontmatter = usePageFrontmatter<GungnirThemePostFrontmatter>();
@@ -155,21 +147,15 @@ onBeforeUnmount(() => {
 });
 
 // pager
-const posts = ref<PostPageData[]>([]);
-getAllPosts().then(
-  (allPosts) => (posts.value = sortPostsByDateWithPager(allPosts))
-);
+const { posts, postIndex, post, slicedPosts, pagerLink } = useBlog();
 
-const postIndex = computed(() =>
-  posts.value.findIndex((item) => item.path === router.currentRoute.value.path)
-);
 const pagerData = computed(() => {
-  if (postIndex.value === -1) return {};
+  if (!post.value) return {};
 
-  const next = posts.value[postIndex.value].next;
+  const next = post.value.next;
   if (next) next.text = themeLocale.value.postNext;
 
-  const prev = posts.value[postIndex.value].prev;
+  const prev = post.value.prev;
   if (prev) prev.text = themeLocale.value.postPrev;
 
   return {
