@@ -62,9 +62,7 @@ const router = useRouter();
 const navbar = ref<HTMLElement | null>(null);
 const siteBrand = ref<HTMLElement | null>(null);
 const siteBrandLink = computed(() => themeLocale.value.home || "/");
-const siteBrandTitle = computed(() => {
-  return siteLocale.value.title ? siteLocale.value.title : "$ cd /home/";
-});
+const siteBrandTitle = "$ cd /home/";
 const linksWrapperMaxWidth = ref(0);
 const linksWrapperStyle = computed(() => {
   if (!linksWrapperMaxWidth.value) {

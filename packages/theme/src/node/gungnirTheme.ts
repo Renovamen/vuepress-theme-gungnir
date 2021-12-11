@@ -87,9 +87,9 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = ({
       ["@vuepress/palette", { preset: "sass" }],
       ["@vuepress/prismjs", themePlugins.prismjs !== false],
       ["@vuepress/theme-data", { themeData: localeOptions }],
-      ["@renovamen/vuepress-plugin-katex", themePlugins.katex],
-      ["@renovamen/vuepress-plugin-mermaid", themePlugins.mermaid],
-      ["vuepress-plugin-chart", themePlugins.chartjs],
+      ["@renovamen/vuepress-plugin-katex", themePlugins.katex === true],
+      ["@renovamen/vuepress-plugin-mermaid", themePlugins.mermaid === true],
+      ["vuepress-plugin-chart", themePlugins.chartjs === true],
       [
         "@renovamen/vuepress-plugin-reading-time",
         resolveReadingTimePluginOptions(themePlugins)
@@ -97,6 +97,10 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = ({
       [
         "vuepress-plugin-code-enhance",
         themePlugins.codeEnhance === false ? false : {}
+      ],
+      [
+        "vuepress-plugin-giscus",
+        themePlugins.giscus === undefined ? false : themePlugins.giscus
       ]
     ],
 

@@ -2,6 +2,7 @@ import type { ReadingTimeOptions } from "@renovamen/vuepress-plugin-reading-time
 import type { ThemeData } from "@vuepress/plugin-theme-data";
 import type { LocaleData } from "@vuepress/shared";
 import type { CodeEnhanceOptions } from "vuepress-plugin-code-enhance";
+import type { GiscusOptions } from "vuepress-plugin-giscus";
 import type { NavbarConfig, SidebarConfig } from "./nav";
 import type { PersonalConfig } from "./personal";
 
@@ -31,31 +32,43 @@ export interface GungnirThemePluginsOptions {
 
   /**
    * Enable @vuepress/plugin-medium-zoom or not
+   *
+   * @default true
    */
   mediumZoom?: boolean;
 
   /**
    * Enable @vuepress/plugin-nprogress or not
+   *
+   * @default true
    */
   nprogress?: boolean;
 
   /**
    * Enable @vuepress/plugin-prismjs or not
+   *
+   * @default true
    */
   prismjs?: boolean;
 
   /**
    * Enable @renovamen/vuepress-plugin-katex or not
+   *
+   * @default false
    */
   katex?: boolean;
 
   /**
    * Enable @renovamen/vuepress-plugin-mermaid or not
+   *
+   * @default false
    */
   mermaid?: boolean;
 
   /**
    * Enable @renovamen/vuepress-plugin-chart or not
+   *
+   * @default false
    */
   chartjs?: boolean;
 
@@ -69,6 +82,13 @@ export interface GungnirThemePluginsOptions {
    * Enable vuepress-plugin-code-enhance or not and pass it's options
    */
   codeEnhance?: false | CodeEnhanceOptions;
+
+  /**
+   * Enable vuepress-plugin-giscus or not and pass it's options
+   *
+   * @default false
+   */
+  giscus?: false | GiscusOptions;
 }
 
 export type GungnirThemeLocaleOptions = GungnirThemeData;

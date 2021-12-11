@@ -28,6 +28,8 @@ export default defineUserConfig<GungnirThemeOptions>({
 
   theme: "vuepress-theme-gungnir",
 
+  title: "vuepress-theme-gungnir",
+
   themeConfig: {
     repo: "Renovamen/vuepress-theme-gungnir",
     docsDir: "docs",
@@ -133,7 +135,13 @@ export default defineUserConfig<GungnirThemeOptions>({
       git: isProd,
       katex: true,
       mermaid: true,
-      chartjs: true
+      chartjs: true,
+      giscus: {
+        repo: "This-is-an-Apple/gitalk-comments",
+        repoId: "MDEwOlJlcG9zaXRvcnkyMTA1MjQyMTQ=",
+        category: "Announcements",
+        categoryId: "DIC_kwDODIxYNs4CAO1u"
+      }
     },
 
     footer: `

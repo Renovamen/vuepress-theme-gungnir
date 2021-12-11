@@ -24,7 +24,7 @@
       </div>
 
       <div class="menu-btn-child-wrapper">
-        <ToggleDarkModeButton v-if="enableDarkMode" class="menu-btn-child" />
+        <ToggleDarkModeButton class="menu-btn-child" />
 
         <div class="menu-btn-child" @click="scrollToBottom">
           <VIcon name="chevron-down" />
@@ -52,16 +52,12 @@
 </template>
 
 <script setup lang="ts">
-import { pageData, usePageFrontmatter } from "@vuepress/client";
+import { pageData } from "@vuepress/client";
 import { computed, onBeforeUnmount, onMounted, reactive } from "vue";
-import { useThemeLocaleData } from "../composables";
 import ToggleDarkModeButton from "./ToggleDarkModeButton.vue";
 import ToggleSidebarButton from "./ToggleSidebarButton.vue";
 
 defineEmits(["toggle-sidebar", "toggle-catalog"]);
-
-const themeLocale = useThemeLocaleData();
-const enableDarkMode = computed(() => themeLocale.value.darkMode);
 
 const state = reactive({
   isMenuOpen: false,

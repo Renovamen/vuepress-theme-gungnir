@@ -14,15 +14,10 @@
           <ArticleHeader v-show="page.title" class="post-header" />
 
           <Page :key="page.path" class="post-content">
-            <template #top>
-              <slot name="page-top" />
-            </template>
             <template #bottom>
-              <slot name="page-bottom" />
+              <Pager :data="pagerData" />
             </template>
           </Page>
-
-          <Pager :data="pagerData" />
 
           <Catalog
             v-if="shoudleShowCatalog"

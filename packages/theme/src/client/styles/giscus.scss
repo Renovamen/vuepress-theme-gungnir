@@ -1,0 +1,18 @@
+@import '_wrapper';
+
+.giscus {
+  @extend %wrapper;
+  width: calc(100% - 5rem);
+}
+
+@media (max-width: $MQNarrow) {
+  .giscus {
+    width: calc(100% - 4rem);
+  }
+}
+
+@media (max-width: $MQMobileNarrow) {
+  .giscus {
+    width: calc(100% - 2rem);
+  }
+}

@@ -11,10 +11,20 @@
     <PageNav />
 
     <slot name="bottom" />
+
+    <Giscus v-if="isGiscus" :theme="giscusTheme" />
   </main>
 </template>
 
 <script setup lang="ts">
+import { computed, resolveComponent } from "vue";
+import { useDarkMode } from "../composables";
 import PageMeta from "./PageMeta.vue";
 import PageNav from "./PageNav.vue";
+
+const isGiscus = typeof resolveComponent("Giscus") !== "string";
+const isDarkMode = useDarkMode();
+const giscusTheme = computed(() =>
+  isDarkMode.value ? "dark_dimmed" : "light"
+);
 </script>

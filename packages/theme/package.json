@@ -50,7 +50,8 @@
     "sass-loader": "^12.2.0",
     "vue": "^3.2.20",
     "vue-router": "^4.0.12",
-    "vuepress-plugin-code-enhance": "2.0.0-alpha.1"
+    "vuepress-plugin-code-enhance": "2.0.0-alpha.1",
+    "vuepress-plugin-giscus": "2.0.0-alpha.1"
   },
   "publishConfig": {
     "access": "public"
