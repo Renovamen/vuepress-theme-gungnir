@@ -1,0 +1,69 @@
+# @renovamen/vuepress-plugin-katex@next
+
+Plugin `@renovamen/vuepress-plugin-katex@next` for adding [KaTeX](https://katex.org/) to [VuePress 2](https://v2.vuepress.vuejs.org/) to support mathematical formulas rendering in Markdown. This plugin is based on [waylonflinn/markdown-it-katex](https://github.com/waylonflinn/markdown-it-katex).
+
+[KaTeX](https://katex.org/) is a faster alternative to MathJax (see [here](https://www.intmath.com/cg5/katex-mathjax-comparison.php)).
+
+[Demo](https://v2-vuepress-theme-gungnir.vercel.app/docs/plugins/katex.html)
+
+
+&nbsp;
+
+## Install
+
+```bash
+yarn add @renovamen/vuepress-plugin-katex@next
+# or
+npm install @renovamen/vuepress-plugin-katex@next
+```
+
+Then add it to your `.vuepress/config.js`:
+
+```js
+module.exports = {
+  plugins: [
+    [
+      "@renovamen/vuepress-plugin-katex"
+    ]
+  ]
+}
+```
+
+You can alsp enable it with some [KaTeX options](https://katex.org/docs/options.html):
+
+```js
+module.exports = {
+  plugins: [
+    [
+      "@renovamen/vuepress-plugin-katex", {
+        "throwOnError": false,
+        "errorColor": "#cc0000"
+      }
+    ]
+  ]
+}
+```
+
+
+&nbsp;
+
+## Usage
+
+[Here](https://katex.org/docs/supported.html) is a list of TeX functions supported by KaTeX.
+
+```
+Inline math: E = mc^2
+
+Display math:
+
+$$
+i\hbar\frac{\partial \psi}{\partial t} = \frac{-\hbar^2}{2m} ( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} ) \psi + V \psi.
+$$
+```
+
+
+&nbsp;
+
+## License
+
+[MIT](https://github.com/Renovamen/vuepress-theme-gungnir/blob/main/packages/plugins/katex/LICENSE)

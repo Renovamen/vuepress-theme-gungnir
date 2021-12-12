@@ -51,6 +51,16 @@ This repo also contains the following plugins:
 
 &nbsp;
 
+## Some of the changes
+
+- With the power of [VuePress 2](https://v2.vuepress.vuejs.org/), [Vue 3](https://v3.vuejs.org/), [Vite](https://vitejs.dev/) and [Webpack 5](https://webpack.js.org/), written using [Composition API](https://v3.vuejs.org/guide/composition-api-introduction.html), of course
+- Stylus -> SCSS
+- Drop external fonts to increase load speed
+- Built-in comments system: move from [Vssue](https://github.com/meteorlxy/vssue) (isn't compatable with Vue 3 as for now) to [Giscus](https://github.com/giscus/giscus)
+
+
+&nbsp;
+
 ## License
 
 VuePress theme Gungnir is [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) licensed, see the [LICENSE](packages/theme-gungnir/LICENSE) file for details.

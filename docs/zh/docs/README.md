@@ -3,7 +3,7 @@ title: 介绍
 date: 2020-10-18
 ---
 
-Gungnir 是一个基于 [VuePress](https://vuepress.vuejs.org/) 的博客主题。
+[Gungnir v2](https://github.com/Renovamen/vuepress-theme-gungnir/tree/v2) 是一个基于 [Vuepress 2](https://v2.vuepress.vuejs.org/) 的博客主题。
 
 <p>
   <a href="https://www.npmjs.com/package/vuepress-theme-gungnir" target="_blank">
@@ -22,7 +22,7 @@ Gungnir 是一个基于 [VuePress](https://vuepress.vuejs.org/) 的博客主题�
 ## 演示站点
 
 - [vuepress-theme-gungnir.vercel.app](https://vuepress-theme-gungnir.vercel.app)
-- [我的博客](https://zxh.io)
+- ~~[我的博客](https://zxh.io)~~（目前还是 v0 版本）
 
 
 ## 灵感来源
@@ -31,7 +31,7 @@ Gungnir 最初是一个基于 [Jekyll](https://jekyllrb.com/) 的主题，在 [H
 
 总之感谢上面提到或没有提到的所有给过我灵感与帮助的项目。
 
-后来出于一些说来话长的理由，我决定把它用 VuePress 重写一遍。
+后来出于一些说来话长的理由，我决定把它用 [VuePress](https://vuepress.vuejs.org/) 重写一遍。再后来 [Vuepress 2](https://v2.vuepress.vuejs.org/) 出了，于是我开始升级它。
 
 **Gungnir**，冈格尼尔，北欧神话中主神奥丁使用的用世界树树枝做成的武器，和本主题并没有什么关系但我就是用了这个名字。
 
@@ -45,22 +45,30 @@ Gungnir 最初是一个基于 [Jekyll](https://jekyllrb.com/) 的主题，在 [H
 - 多级目录
 - 可切换的首页大图
 - 明亮和夜间模式：识别系统的外观设置并自动切换模式，也支持用户手动切换
-- 搜索
 - 文章目录
-- 多种代码高亮主题，支持代码块全屏（从 WordPress 主题 [Sakura](https://github.com/mashirozx/Sakura) 搬过来的功能）
+- 支持代码块全屏（从 WordPress 主题 [Sakura](https://github.com/mashirozx/Sakura) 搬过来的功能）
 - 基于 [Katex](https://github.com/KaTeX/KaTeX) 的公式支持
-- 在文章中使用图表：[Chart.js](https://www.chartjs.org)、[Mermaid](https://mermaid-js.github.io)、[roughViz.js](https://github.com/jwilber/roughViz) 和 [markmap](https://github.com/gera2ld/markmap)
+- 在文章中使用图表：[Chart.js](https://www.chartjs.org)、[Mermaid](https://mermaid-js.github.io)
+- 评论（基于 [Giscus](https://github.com/giscus/giscus)）
+- 阅读时间估计
+
+
+## TODO
+
+- 搜索
+- [roughViz.js](https://github.com/jwilber/roughViz) 和 [markmap](https://github.com/gera2ld/markmap)
 - 一些 Markdown 增强样式，目前支持：
   - 脚注（基于 [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)）
   - 高亮（基于 [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark)）
 - 站点统计（[Google Analytics](https://analytics.google.com/) 和 [百度统计](https://tongji.baidu.com/)）
-- 评论（基于 [Vssue](https://github.com/meteorlxy/vssue)）
 - RSS
-- 阅读时间估计
 - 多语言支持（英文、简体中文）
 - 带标签的归档页、链接页
 
 
 ## 其他版本
 
-如上所述，Gungnir 最初是一个基于 [Jekyll](https://jekyllrb.com/) 的主题：🖥️ [[主页 / 演示站点]](https://jekyll-theme-gungnir.vercel.app) 📖 [[文档]](https://jekyll-theme-gungnir.vercel.app/theme/) 🧐 [[Github]](https://github.com/Renovamen/jekyll-theme-gungnir)
+如上所述，Gungnir 最初是
+
+- [Jekyll](https://jekyllrb.com/) 主题：🖥️ [[主页 / 演示站点]](https://jekyll-theme-gungnir.vercel.app) 📖 [[文档]](https://jekyll-theme-gungnir.vercel.app/theme/) 🧐 [[Github]](https://github.com/Renovamen/jekyll-theme-gungnir)
+- [VuePress 1](https://vuepress.vuejs.org/) 主题：🖥️ [[主页 / 演示站点]](https://vuepress-theme-gungnir.vercel.app) 📖 [[文档]](https://vuepress-theme-gungnir.vercel.app/docs/) 🧐 [[Github]](https://github.com/Renovamen/vuepress-theme-gungnir)

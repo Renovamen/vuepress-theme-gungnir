@@ -1,9 +1,9 @@
 ---
 title: Introduction
-date: 2020-10-18
+date: 2021-12-12
 ---
 
-Gungnir is a blog theme for [VuePress](https://vuepress.vuejs.org/).
+[Gungnir v2](https://github.com/Renovamen/vuepress-theme-gungnir/tree/v2) is a blog theme for [Vuepress 2](https://v2.vuepress.vuejs.org/).
 
 <p>
   <a href="https://www.npmjs.com/package/vuepress-theme-gungnir" target="_blank">
@@ -21,8 +21,8 @@ Gungnir is a blog theme for [VuePress](https://vuepress.vuejs.org/).
 
 ## Live Demos
 
-- [vuepress-theme-gungnir.vercel.app](https://vuepress-theme-gungnir.vercel.app)
-- [My blog](https://zxh.io)
+- [v2-vuepress-theme-gungnir.vercel.app](https://v2-vuepress-theme-gungnir.vercel.app)
+- ~~[My blog](https://zxh.io)~~ (v0 version)
 
 
 ## Inspirations
@@ -31,7 +31,7 @@ Gungnir was originally a [Jekyll](https://jekyllrb.com/) theme derived from [Hux
 
 Anyway, many thanks for all of these nice work.
 
-And one day, I decided to rebuild it with [VuePress](https://vuepress.vuejs.org/)...
+And one day, I decided to rebuild it with [VuePress](https://vuepress.vuejs.org/). Another day, I started to move it to [Vuepress 2](https://v2.vuepress.vuejs.org/)...
 
 Gungnir is the spear of the god Odin in Norse mythology, made from the wood of the world tree Yggdrasil. It has nothing to do with this theme, but I still use this name.
 
@@ -43,22 +43,30 @@ Gungnir is the spear of the god Odin in Norse mythology, made from the wood of t
 - Multi-level navigation
 - Switchable cover images for home page
 - Dark and light mode: system theme detection with a theme-switcher to set the theme as per the user preference
-- Search
 - Table of contents
-- Multiple syntax highlighting themes, support full screening the code blocks (inspired by WordPress theme [Sakura](https://github.com/mashirozx/Sakura))
+- Full screening the code blocks (inspired by WordPress theme [Sakura](https://github.com/mashirozx/Sakura))
 - Tex support ([Katex](https://github.com/KaTeX/KaTeX))
-- Draw charts and graphs in Markdown easily: [Chart.js](https://www.chartjs.org), [Mermaid](https://mermaid-js.github.io), [roughViz.js](https://github.com/jwilber/roughViz) and [markmap](https://github.com/gera2ld/markmap)
+- Draw charts and graphs in Markdown easily: [Chart.js](https://www.chartjs.org), [Mermaid](https://mermaid-js.github.io)
+- Comment ([Giscus](https://github.com/giscus/giscus))
+- Reading time
+
+
+## TODO
+
+- Search
+- [roughViz.js](https://github.com/jwilber/roughViz) and [markmap](https://github.com/gera2ld/markmap)
 - Markdown enhancements:
   - Footnote ([markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote))
   - Mark ([markdown-it-mark](https://github.com/markdown-it/markdown-it-mark))
 - Analytics ([Google Analytics](https://analytics.google.com/) and [Baidu Tongji](https://tongji.baidu.com/))
-- Comment ([Vssue](https://github.com/meteorlxy/vssue))
 - RSS
-- Reading time
 - Multi-language support (English, Simplified Chinese)
 - Archive page with tags, links page
 
 
 ## Other Resources
 
-As mentioned above, Gungnir was originally a [Jekyll](https://jekyllrb.com/) theme: 🖥️ [[Home Page / Demo Site]](https://jekyll-theme-gungnir.vercel.app) 📖 [[Docs]](https://jekyll-theme-gungnir.vercel.app/theme/) 🧐 [[Github]](https://github.com/Renovamen/jekyll-theme-gungnir)
+As mentioned above, Gungnir was originally a
+
+- [Jekyll](https://jekyllrb.com/) theme: 🖥️ [[Home Page / Demo Site]](https://jekyll-theme-gungnir.vercel.app) 📖 [[Docs]](https://jekyll-theme-gungnir.vercel.app/theme/) 🧐 [[Github]](https://github.com/Renovamen/jekyll-theme-gungnir)
+- [VuePress 1](https://vuepress.vuejs.org/) theme: 🖥️ [[Home Page / Demo Site]](https://vuepress-theme-gungnir.vercel.app) 📖 [[Docs]](https://vuepress-theme-gungnir.vercel.app/docs/) 🧐 [[Github]](https://github.com/Renovamen/vuepress-theme-gungnir)
