@@ -22,7 +22,7 @@ npm install vuepress-plugin-giscus@next
 
 ## Usage
 
-First you need to see [Giscus's website](https://github.com/giscus/giscus) for its details and generate your repo id, category id and other things on the website.
+First you need to see [Giscus's website](https://github.com/apps/giscus) for its details and generate your repo id, category id and other things on the website.
 
 Then add the plugin to your `.vuepress/config.js`:
 

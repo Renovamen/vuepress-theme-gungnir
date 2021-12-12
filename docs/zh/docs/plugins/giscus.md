@@ -29,7 +29,7 @@ npm install vuepress-plugin-giscus@next
 
 ## 使用插件
 
-首先你需要查看 [Giscus 官网](https://github.com/giscus/giscus) 以对它有一个基本的了解，同时在网站上生成你的 repo id、category id 以及别的必要信息。然后在 `.vuepress/config.js` 中引入这个插件：
+首先你需要查看 [Giscus 官网](https://github.com/apps/giscus) 以对它有一个基本的了解，同时在网站上生成你的 repo id、category id 以及别的必要信息。然后在 `.vuepress/config.js` 中引入这个插件：
 
 ```js
 module.exports = {
