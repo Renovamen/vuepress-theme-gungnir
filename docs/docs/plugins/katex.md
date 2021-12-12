@@ -4,8 +4,8 @@ date: 2021-12-12
 ---
 
 <p>
-  <a href="https://www.npmjs.com/package/@renovamen/vuepress-plugin-katex" target="_blank">
-    <img src="https://img.shields.io/npm/v/@renovamen/vuepress-plugin-katex.svg?style=flat-square&logo=npm" style="display: inline; margin: 0 4px 0 0" alt="npm">
+  <a href="https://www.npmjs.com/package/@renovamen/vuepress-plugin-katex/v/next" target="_blank">
+    <img src="https://img.shields.io/npm/v/@renovamen/vuepress-plugin-katex/next.svg?style=flat-square&logo=npm" style="display: inline; margin: 0 4px 0 0" alt="npm">
   </a>
   <a href="https://github.com/Renovamen/vuepress-theme-gungnir/tree/main/packages/plugins/katex" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-@renovamen/vuepress--plugin--katex-26A2FF?style=flat-square&logo=github" style="display: inline; margin: 0 4px 0 0" alt="github">

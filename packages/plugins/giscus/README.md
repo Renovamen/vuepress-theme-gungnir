@@ -1,5 +1,7 @@
 # vuepress-plugin-giscus@next
 
+[![npm](https://img.shields.io/npm/v/vuepress-plugin-giscus/next.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-plugin-giscus/v/next) [![docs](https://img.shields.io/badge/Docs-vuepress--plugin--giscus-26A2FF?style=flat-square)](https://v2-vuepress-theme-gungnir.vercel.app/docs/plugins/giscus.html) [![license](https://img.shields.io/badge/License-Apache--2.0-green?style=flat-square)](LICENSE)
+
 Plugin `vuepress-plugin-giscus@next` for adding comment system [Giscus](https://github.com/giscus/giscus) powered by [GitHub Discussions](https://docs.github.com/en/discussions) to [VuePress 2](https://v2.vuepress.vuejs.org/).
 
 [Demo](https://v2-vuepress-theme-gungnir.vercel.app/docs/plugins/giscus.html)

@@ -1,5 +1,7 @@
 # @renovamen/vuepress-plugin-reading-time@next
 
+[![npm](https://img.shields.io/npm/v/@renovamen/vuepress-plugin-reading-time/next.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/@renovamen/vuepress-plugin-reading-time/v/next) [![docs](https://img.shields.io/badge/Docs-@renovamen/vuepress--plugin--reading--time-26A2FF?style=flat-square)](https://v2-vuepress-theme-gungnir.vercel.app/docs/plugins/reading-time.html) [![license](https://img.shields.io/badge/License-Apache--2.0-green?style=flat-square)](LICENSE)
+
 Plugin `@renovamen/vuepress-plugin-reading-time@next` for counting words and estimating reading time in [VuePress 2](https://v2.vuepress.vuejs.org/). Compare to other similar VuePress plugins, this plugin supports:
 
 - Setting reading speed for English and Chinese separately

@@ -1,5 +1,7 @@
 # vuepress-plugin-chart@next
 
+[![npm](https://img.shields.io/npm/v/vuepress-plugin-chart/next.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-plugin-chart/v/next) [![docs](https://img.shields.io/badge/Docs-vuepress--plugin--chart-26A2FF?style=flat-square)](https://v2-vuepress-theme-gungnir.vercel.app/docs/plugins/chart.html) [![license](https://img.shields.io/badge/License-Apache--2.0-green?style=flat-square)](LICENSE)
+
 Plugin `vuepress-plugin-chart@next` for adding JavaScript charting library [Chart.js](https://www.chartjs.org) to [VuePress 2](https://v2.vuepress.vuejs.org/) to create interactive charts in Markdown.
 
 [Demo](https://v2-vuepress-theme-gungnir.vercel.app/docs/plugins/chart.html)
