@@ -36,12 +36,13 @@ export interface GiscusOptions {
   /**
    * Theme of Giscus component.
    *
-   * @default auto (github light / dark dimmed)
+   * @default "light"
    */
   theme?: string;
 
   /**
-   * Language of Giscus component.
+   * Language of Giscus component. "auto" for following site's language (
+   * would fell to "en" if your site's language is not supported by Giscus)
    *
    * @default auto
    */

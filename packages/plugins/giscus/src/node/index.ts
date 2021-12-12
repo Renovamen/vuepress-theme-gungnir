@@ -9,7 +9,8 @@ const giscusPlugin: Plugin<GiscusOptions> = (options: GiscusOptions, app) => {
     name: "vuepress-plugin-giscus",
 
     define: {
-      __GISCUS_OPTIONS__: options
+      __GISCUS_OPTIONS__: options,
+      __SITE_LOCALES__: app.siteData.locales
     },
 
     clientAppEnhanceFiles: path.resolve(

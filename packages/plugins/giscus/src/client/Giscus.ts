@@ -1,3 +1,4 @@
+import { useRouteLocale } from "@vuepress/client";
 import {
   computed,
   defineComponent,
@@ -13,6 +14,28 @@ import type { GiscusOptions } from "../shared";
 declare const __GISCUS_OPTIONS__: GiscusOptions;
 const options = __GISCUS_OPTIONS__;
 
+declare const __SITE_LOCALES__: any;
+const siteLocales = __SITE_LOCALES__;
+
+const langMap = {
+  "en-us": "en",
+  en: "en",
+  "zh-cn": "zh-CN",
+  cn: "zh-CN",
+  "zh-tw": "zh-TW",
+  "zh-hant": "zh-TW",
+  "zh-hk": "zh-TW",
+  fr: "fr",
+  es: "es",
+  gsw: "gsw",
+  id: "id",
+  it: "it",
+  ja: "ja",
+  ko: "ko",
+  pl: "pl",
+  ro: "ro"
+};
+
 export default defineComponent({
   name: "Giscus",
 
@@ -27,16 +50,31 @@ export default defineComponent({
     },
     reactionsEnabled: {
       type: Boolean,
-      required: false
+      default: undefined
     }
   },
 
   setup(props) {
-    const theme = computed(() => props.theme || options.theme);
-    const lang = computed(() => props.lang || options.lang);
-    const reactionsEnabled = computed(
-      () => props.reactionsEnabled || options.reactionsEnabled
-    );
+    const routeLocale = useRouteLocale();
+
+    const theme = computed(() => props.theme || options.theme || "light");
+    const reactionsEnabled = computed(() => {
+      if (props.reactionsEnabled === undefined)
+        return !(options.reactionsEnabled === false);
+      return props.reactionsEnabled;
+    });
+    const lang = computed(() => props.lang || options.lang || "auto");
+
+    // Handles language switching
+    const resolvedLang = computed(() => {
+      if (lang.value === "auto") {
+        const locale = siteLocales[routeLocale.value];
+        const lang = locale && locale.lang;
+        if (lang && langMap[lang.toLowerCase()])
+          return langMap[lang.toLowerCase()];
+      }
+      return "en";
+    });
 
     const getScriptElement = () => {
       const element = document.createElement("script");
@@ -51,11 +89,11 @@ export default defineComponent({
       );
       element.setAttribute(
         "data-reactions-enabled",
-        reactionsEnabled.value === false ? "0" : "1"
+        reactionsEnabled.value ? "1" : "0"
       );
       element.setAttribute("data-emit-metadata", "0");
-      element.setAttribute("data-theme", theme.value ? theme.value : "light");
-      element.setAttribute("data-lang", lang.value ? lang.value : "en");
+      element.setAttribute("data-theme", theme.value);
+      element.setAttribute("data-lang", resolvedLang.value);
       element.setAttribute(
         "crossorigin",
         options.crossorigin ? options.crossorigin : "anonymous"
@@ -74,9 +112,9 @@ export default defineComponent({
         {
           giscus: {
             setConfig: {
-              theme: props.theme,
-              lang: props.lang,
-              reactionsEnabled: props.reactionsEnabled
+              theme: theme.value,
+              lang: resolvedLang.value,
+              reactionsEnabled: reactionsEnabled.value
             }
           }
         },
@@ -84,10 +122,9 @@ export default defineComponent({
       );
     };
 
-    watch(
-      () => [props.theme, props.lang, props.reactionsEnabled],
-      () => updateGiscus()
-    );
+    watch([theme, resolvedLang, reactionsEnabled], () => {
+      updateGiscus();
+    });
 
     onMounted(() => {
       document.head.appendChild(scriptElement.value);
