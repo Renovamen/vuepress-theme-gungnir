@@ -24,12 +24,19 @@ export default defineComponent({
     lang: {
       type: String,
       required: false
+    },
+    reactionsEnabled: {
+      type: Boolean,
+      required: false
     }
   },
 
   setup(props) {
     const theme = computed(() => props.theme || options.theme);
     const lang = computed(() => props.lang || options.lang);
+    const reactionsEnabled = computed(
+      () => props.reactionsEnabled || options.reactionsEnabled
+    );
 
     const getScriptElement = () => {
       const element = document.createElement("script");
@@ -44,7 +51,7 @@ export default defineComponent({
       );
       element.setAttribute(
         "data-reactions-enabled",
-        options.reactionsEnabled === false ? "0" : "1"
+        reactionsEnabled.value === false ? "0" : "1"
       );
       element.setAttribute("data-emit-metadata", "0");
       element.setAttribute("data-theme", theme.value ? theme.value : "light");
@@ -59,14 +66,27 @@ export default defineComponent({
 
     const scriptElement = ref<HTMLScriptElement>(getScriptElement());
 
+    const updateGiscus = () => {
+      const iframe = document.querySelector<HTMLIFrameElement>(
+        "iframe.giscus-frame"
+      );
+      iframe?.contentWindow?.postMessage(
+        {
+          giscus: {
+            setConfig: {
+              theme: props.theme,
+              lang: props.lang,
+              reactionsEnabled: props.reactionsEnabled
+            }
+          }
+        },
+        "https://giscus.app"
+      );
+    };
+
     watch(
-      () => props.theme,
-      () => {
-        // Hanlde theme switching by removing and re-adding the <script> element
-        document.head.removeChild(scriptElement.value);
-        scriptElement.value = getScriptElement();
-        document.head.appendChild(scriptElement.value);
-      }
+      () => [props.theme, props.lang, props.reactionsEnabled],
+      () => updateGiscus()
     );
 
     onMounted(() => {

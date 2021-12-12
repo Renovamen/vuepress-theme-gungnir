@@ -1,7 +1,6 @@
 export interface GiscusOptions {
   /**
    * The name of repository to store discussions.
-   * https://bostonu.zoom.us/j/97790708569?pwd=WEJUNzBuRGxhQmF3TVR4SEI3cExWQT09
    */
   repo: string;
 
