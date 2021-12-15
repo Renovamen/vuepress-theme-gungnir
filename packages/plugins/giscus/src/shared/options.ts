@@ -22,7 +22,7 @@ export interface GiscusOptions {
   /**
    * Page - discussion mapping.
    *
-   * @default "title"
+   * @default "pathname"
    */
   mapping?: string;
 

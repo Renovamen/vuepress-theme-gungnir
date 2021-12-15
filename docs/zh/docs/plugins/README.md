@@ -7,6 +7,7 @@ date: 2020-03-26
 
 这是插件列表：
 
+- [plugin-giscus](/zh/docs/plugins/giscus/)：[Giscus](https://github.com/giscus/giscus)（基于 [GitHub Discussions](https://docs.github.com/en/discussions) 的评论系统）
 - [plugin-chart](/zh/docs/plugins/chart/)：[Chart.js](https://www.chartjs.org)（图表）
 - [plugin-mermaid](/zh/docs/plugins/mermaid/)：[Mermaid](https://mermaid-js.github.io)（流程图等）
 - [plugin-katex](/zh/docs/plugins/katex/)：[KaTeX](https://katex.org/)（公式渲染）

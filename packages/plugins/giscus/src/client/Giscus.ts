@@ -85,7 +85,7 @@ export default defineComponent({
       element.setAttribute("data-category-id", options.categoryId);
       element.setAttribute(
         "data-mapping",
-        options.mapping ? options.mapping : "title"
+        options.mapping ? options.mapping : "pathname"
       );
       element.setAttribute(
         "data-reactions-enabled",

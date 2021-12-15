@@ -32,7 +32,7 @@ npm install @renovamen/vuepress-plugin-mermaid@next
 module.exports = {
   plugins: [
     [
-      "@renovamen/vuepress-plugin-mermaid@next"
+      "@renovamen/vuepress-plugin-mermaid"
     ]
   ]
 }
