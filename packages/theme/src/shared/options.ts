@@ -6,6 +6,22 @@ import type { GiscusOptions } from "vuepress-plugin-giscus";
 import type { NavbarConfig, SidebarConfig } from "./nav";
 import type { PersonalConfig } from "./personal";
 
+interface ImageItem {
+  path: string;
+  mask?: string;
+}
+
+export interface GungnirThemePageOptions {
+  title?: string;
+  subtitle?: string;
+  bgImage?: ImageItem;
+}
+
+export interface GungnirThemePagesOptions {
+  tags?: GungnirThemePageOptions;
+  links?: GungnirThemePageOptions;
+}
+
 export interface GungnirThemePluginsOptions {
   /**
    * Enable @vuepress/plugin-active-header-links or not
@@ -116,7 +132,12 @@ export interface GungnirThemeLocaleData extends LocaleData {
   /**
    * Header images on home page
    */
-  homeHeaderImages?: null | Array<{ path: string; mask?: string }>;
+  homeHeaderImages?: null | Array<ImageItem>;
+
+  /**
+   * Other pages
+   */
+  pages?: null | GungnirThemePagesOptions;
 
   /**
    * Display catalog for all posts or not. Catalog can also be configured
@@ -349,4 +370,15 @@ export interface GungnirThemeLocaleData extends LocaleData {
    * Footer, support HTML
    */
   footer?: string;
+
+  /**
+   * Other pages' text
+   */
+  tagsText?: string;
+  linksText?: string;
+
+  /**
+   * "Show all tags" button
+   */
+  showAllTagsText?: string;
 }

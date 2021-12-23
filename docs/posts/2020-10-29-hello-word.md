@@ -8,6 +8,7 @@ headerImage: /img/in-post/2020-10-29/header.jpg
 catalog: true
 tags:
   - test
+  - tag with space
 ---
 
 Welcome to VuePress theme Gungnir.

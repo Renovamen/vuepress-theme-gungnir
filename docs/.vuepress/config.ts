@@ -72,6 +72,25 @@ export default defineUserConfig<GungnirThemeOptions>({
       }
     ],
 
+    // other pages
+    pages: {
+      tags: {
+        subtitle: "Black Sheep Wall",
+        bgImage: {
+          path: "/img/pages/tags.jpg",
+          mask: "rgba(211, 136, 37, .5)"
+        }
+      },
+      links: {
+        subtitle:
+          "When you are looking at the stars, please put the brightest star shining night sky as my soul.",
+        bgImage: {
+          path: "/img/pages/links.jpg",
+          mask: "rgba(64, 118, 190, 0.5)"
+        }
+      }
+    },
+
     // theme-level locales config
     locales: {
       /**
@@ -107,6 +126,13 @@ export default defineUserConfig<GungnirThemeOptions>({
         editLinkText: "在 GitHub 上编辑此页",
         lastUpdatedText: "上次更新",
         contributorsText: "贡献者",
+
+        // other pages
+        tagsText: "标签",
+        linksText: "链接",
+
+        // "show all tags" button
+        showAllTagsText: "全部",
 
         // custom containers
         info: "信息",

@@ -6,3 +6,4 @@ export * from "./useSidebarItems";
 export * from "./useThemeData";
 export * from "./usePages";
 export * from "./useBlog";
+export * from "./useTags";

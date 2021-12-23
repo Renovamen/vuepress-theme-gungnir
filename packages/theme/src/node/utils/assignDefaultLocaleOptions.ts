@@ -7,6 +7,7 @@ const defaultLocaleOptions: GungnirThemeLocaleOptions = {
   hitokoto: false,
   personalInfo: null,
   homeHeaderImages: null,
+  pages: null,
   catalog: true,
 
   postNumPerPage: 10,
@@ -29,6 +30,13 @@ const defaultLocaleOptions: GungnirThemeLocaleOptions = {
   lastUpdatedText: "Last Updated",
   contributors: false,
   contributorsText: "Contributors",
+
+  // other pages
+  tagsText: "Tags",
+  linksText: "Links",
+
+  // "show all tags" button
+  showAllTagsText: "Show All",
 
   // post pager
   postNext: "Next",

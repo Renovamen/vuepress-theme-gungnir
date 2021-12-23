@@ -7,6 +7,10 @@ export const zh: NavbarConfig = [
     link: "/"
   },
   {
+    text: "标签",
+    link: "/tags/"
+  },
+  {
     text: "文档",
     link: "/zh/docs/"
   },

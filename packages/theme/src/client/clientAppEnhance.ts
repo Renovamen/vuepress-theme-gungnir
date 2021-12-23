@@ -35,10 +35,23 @@ export default defineClientAppEnhance(({ app, router }) => {
   // icons
   app.component("VIcon", OhVueIcon);
 
+  // dynamic routes
   router.addRoute({
     path: "/page/:id",
     name: "homepage",
     component: () => import("./layouts/HomePage.vue")
+  });
+
+  router.addRoute({
+    path: "/tags",
+    name: "tags",
+    component: () => import("./layouts/Tags.vue")
+  });
+
+  router.addRoute({
+    path: "/tags/:id",
+    name: "tag",
+    component: () => import("./layouts/Tags.vue")
   });
 
   // handle scrollBehavior with transition

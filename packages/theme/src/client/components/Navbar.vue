@@ -108,6 +108,7 @@ const handleInvert = () => {
     path.value.indexOf("/page/") !== -1
   )
     invert = true;
+
   // Post with header image
   if (
     frontmatter.value.layout === "Post" &&
@@ -115,10 +116,14 @@ const handleInvert = () => {
   )
     invert = true;
 
-  // // tags page with header image
-  // (frontmatter.value.layout && ["Tags", "Tag"].includes(frontmatter.value.layout) &&
-  //   this.$themeConfig.pages.tags &&
-  //   this.$themeConfig.pages.tags.bgImage) ||
+  if (
+    path.value.indexOf("/tags/") !== -1 &&
+    themeLocale.value.pages &&
+    themeLocale.value.pages.tags &&
+    themeLocale.value.pages.tags.bgImage
+  )
+    invert = true;
+
   // // links page with header image
   // (frontmatter.value.layout == "Links" &&
   //   this.$themeConfig.pages.links &&

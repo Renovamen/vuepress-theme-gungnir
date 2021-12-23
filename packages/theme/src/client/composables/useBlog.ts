@@ -4,7 +4,7 @@ import type { Ref } from "vue";
 import { useRouter } from "vue-router";
 import type { PostPageData } from "../../shared";
 import { useThemeLocaleData } from "../composables";
-import { compareDate } from "../utils";
+import { sortPostsByDate } from "../utils";
 import { usePages } from "./usePages";
 
 export async function fetchPosts(): Promise<PageData[]> {
@@ -12,13 +12,7 @@ export async function fetchPosts(): Promise<PageData[]> {
   return pages.filter((page) => page.frontmatter.layout === "Post");
 }
 
-export const sortPostsByDate = (posts: PageData[]): PageData[] => {
-  return posts.sort((prev: PageData, next: PageData) => {
-    return compareDate(prev, next);
-  });
-};
-
-export const preparePosts = (posts: PageData[]): PostPageData[] => {
+const preparePosts = (posts: PageData[]): PostPageData[] => {
   const sortedPosts = sortPostsByDate(posts);
 
   return sortedPosts.map((post, index) => {
