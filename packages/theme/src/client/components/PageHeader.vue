@@ -10,7 +10,7 @@
       :style="{ background: pageInfo.bgImage.mask }"
     />
     <h1 class="title">
-      {{ pageInfo.title }}
+      {{ pageInfo.title || frontmatter.title }}
     </h1>
     <h3 v-if="pageInfo.subtitle" class="subtitle">
       {{ pageInfo.subtitle }}
@@ -19,8 +19,9 @@
 </template>
 
 <script setup lang="ts">
-import { withBase } from "@vuepress/client";
+import { usePageFrontmatter, withBase } from "@vuepress/client";
 import { computed, toRefs } from "vue";
+import type { GungnirThemeNormalPageFrontmatter } from "../../shared";
 
 const props = defineProps({
   pageInfo: {
@@ -32,6 +33,7 @@ const props = defineProps({
 });
 
 const { pageInfo } = toRefs(props);
+const frontmatter = usePageFrontmatter<GungnirThemeNormalPageFrontmatter>();
 
 const headerStyle = computed(() => {
   return pageInfo.value.bgImage

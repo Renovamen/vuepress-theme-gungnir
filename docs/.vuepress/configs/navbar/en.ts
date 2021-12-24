@@ -11,6 +11,10 @@ export const en: NavbarConfig = [
     link: "/tags/"
   },
   {
+    text: "Links",
+    link: "/links/"
+  },
+  {
     text: "Docs",
     link: "/docs/"
   },

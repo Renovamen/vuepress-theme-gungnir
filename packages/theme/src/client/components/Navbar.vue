@@ -116,6 +116,7 @@ const handleInvert = () => {
   )
     invert = true;
 
+  // Tags page with header image
   if (
     path.value.indexOf("/tags") !== -1 &&
     themeLocale.value.pages &&
@@ -124,10 +125,14 @@ const handleInvert = () => {
   )
     invert = true;
 
-  // // links page with header image
-  // (frontmatter.value.layout == "Links" &&
-  //   this.$themeConfig.pages.links &&
-  //   this.$themeConfig.pages.links.bgImage)
+  // Links page with header image
+  if (
+    path.value.indexOf("/links") !== -1 &&
+    themeLocale.value.pages &&
+    themeLocale.value.pages.links &&
+    themeLocale.value.pages.links.bgImage
+  )
+    invert = true;
 
   isInvert.value = invert;
 };

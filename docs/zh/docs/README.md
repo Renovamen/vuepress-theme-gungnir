@@ -51,7 +51,7 @@ Gungnir 最初是一个基于 [Jekyll](https://jekyllrb.com/) 的主题，在 [H
 - 在文章中使用图表：[Chart.js](https://www.chartjs.org)、[Mermaid](https://mermaid-js.github.io)
 - 评论（基于 [Giscus](https://github.com/giscus/giscus)）
 - 阅读时间估计
-- 带标签的归档页
+- 带标签的归档页和链接页
 
 
 ## TODO
@@ -64,7 +64,6 @@ Gungnir 最初是一个基于 [Jekyll](https://jekyllrb.com/) 的主题，在 [H
 - 站点统计（[Google Analytics](https://analytics.google.com/) 和 [百度统计](https://tongji.baidu.com/)）
 - RSS
 - 多语言支持（英文、简体中文）
-- 链接页
 
 
 ## 其他版本

@@ -1,5 +1,6 @@
 import type {
   GungnirThemeData,
+  GungnirThemeLinksPageFrontmatter,
   GungnirThemeLocaleData,
   GungnirThemeLocaleOptions,
   GungnirThemeNormalPageFrontmatter,
@@ -44,6 +45,7 @@ export type {
   GungnirThemePageFrontmatter,
   GungnirThemeNormalPageFrontmatter,
   GungnirThemePostFrontmatter,
+  GungnirThemeLinksPageFrontmatter,
   PagerData,
   PostPageData
 };

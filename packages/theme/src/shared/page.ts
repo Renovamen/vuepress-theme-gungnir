@@ -30,6 +30,7 @@ export interface GungnirThemeNormalPageFrontmatter
 
 export interface GungnirThemePostFrontmatter
   extends GungnirThemePageFrontmatter {
+  home?: false;
   title: string;
   editLink?: boolean;
   editLinkPattern?: string;
@@ -42,6 +43,25 @@ export interface GungnirThemePostFrontmatter
   headerMask?: string;
   catalog: boolean;
   tags: string[];
+}
+
+interface LinkItem {
+  sitename: string;
+  url: string;
+  img: string;
+  desc: string;
+}
+
+interface LinkGroup {
+  title: string;
+  item: Array<LinkItem>;
+}
+
+export interface GungnirThemeLinksPageFrontmatter
+  extends GungnirThemePageFrontmatter {
+  home?: false;
+  title?: string;
+  links: Array<LinkGroup>;
 }
 
 export interface PagerData {
