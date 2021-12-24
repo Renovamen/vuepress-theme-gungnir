@@ -117,7 +117,7 @@ const handleInvert = () => {
     invert = true;
 
   if (
-    path.value.indexOf("/tags/") !== -1 &&
+    path.value.indexOf("/tags") !== -1 &&
     themeLocale.value.pages &&
     themeLocale.value.pages.tags &&
     themeLocale.value.pages.tags.bgImage

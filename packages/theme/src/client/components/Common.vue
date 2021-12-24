@@ -19,7 +19,7 @@
     <div class="sidebar-mask" @click="toggleSidebar(false)" />
 
     <slot name="sidebar">
-      <Sidebar v-if="!isNotFound">
+      <Sidebar>
         <template #top>
           <slot name="sidebar-top" />
         </template>
@@ -35,7 +35,7 @@
 
     <Menu @toggle-sidebar="toggleSidebar" @toggle-catalog="toggleCatalog" />
 
-    <Footer v-if="isNotFound || !shouldShowSidebar" />
+    <Footer v-if="!shouldShowSidebar" />
   </div>
 </template>
 
@@ -67,12 +67,15 @@ const shouldShowNavbar = computed(
 const isNotFound = computed(
   () =>
     pageData.value.path === "" &&
-    router.currentRoute.value.path.indexOf("/page/") === -1
+    router.currentRoute.value.path.indexOf("/page/") === -1 &&
+    router.currentRoute.value.path.indexOf("/tags") === -1
 );
 
 // sidebar
 const sidebarItems = useSidebarItems();
-const shouldShowSidebar = computed(() => sidebarItems.value.length > 0);
+const shouldShowSidebar = computed(
+  () => sidebarItems.value.length > 0 && !isNotFound.value
+);
 const isSidebarOpen = ref(false);
 const toggleSidebar = (to?: boolean): void => {
   isSidebarOpen.value = typeof to === "boolean" ? to : !isSidebarOpen.value;
@@ -106,7 +109,7 @@ const toggleCatalog = (to?: boolean): void => {
 const containerClass = computed(() => [
   {
     "no-navbar": !shouldShowNavbar.value,
-    "no-sidebar": !sidebarItems.value.length,
+    "no-sidebar": !shouldShowSidebar.value,
     "sidebar-open": isSidebarOpen.value,
     "catalog-open": isCatalogOpen.value
   },
