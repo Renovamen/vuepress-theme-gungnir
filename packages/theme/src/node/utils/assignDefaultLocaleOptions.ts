@@ -1,7 +1,5 @@
-import type {
-  GungnirThemeLocaleData,
-  GungnirThemeLocaleOptions
-} from "../../shared";
+import type { GungnirThemeLocaleOptions } from "../../shared";
+import { en } from "../i18n";
 
 const defaultLocaleOptions: GungnirThemeLocaleOptions = {
   hitokoto: false,
@@ -16,8 +14,6 @@ const defaultLocaleOptions: GungnirThemeLocaleOptions = {
   navbar: [],
   darkMode: true,
   repo: null,
-  selectLanguageText: "Languages",
-  selectLanguageAriaLabel: "Select language",
 
   // sidebar
   sidebar: "auto",
@@ -25,51 +21,16 @@ const defaultLocaleOptions: GungnirThemeLocaleOptions = {
 
   // page meta
   editLink: true,
-  editLinkText: "Edit this page",
   lastUpdated: true,
-  lastUpdatedText: "Last Updated",
   contributors: false,
-  contributorsText: "Contributors",
-
-  // other pages
-  tagsText: "Tags",
-  linksText: "Links",
-
-  // "show all tags" button
-  showAllTagsText: "Show All",
-
-  // post pager
-  postNext: "Next",
-  postPrev: "Previous",
-
-  // home page pager
-  homeNext: "← Newer Posts",
-  homePrev: "Older Posts →",
-
-  // 404 page messages
-  notFound: [
-    `There's nothing here.`,
-    `How did we get here?`,
-    `That's a Four-Oh-Four.`,
-    `Looks like we've got some broken links.`
-  ],
-  backToHome: "$ cd /home/",
-
-  // a11y
-  openInNewWindow: "open in new window",
-  toggleDarkMode: "toggle dark mode",
-  toggleSidebar: "toggle sidebar",
 
   // footer
   footer: `
     Powered by <a href="https://v2.vuepress.vuejs.org" target="_blank">VuePress</a> &
     <a href="https://github.com/Renovamen/vuepress-theme-gungnir" target="_blank">Gungnir</a>
-  `
-};
+  `,
 
-const defaultLocaleData: GungnirThemeLocaleData = {
-  // navbar
-  selectLanguageName: "English"
+  ...en
 };
 
 /**
@@ -92,7 +53,7 @@ export const assignDefaultLocaleOptions = (
   });
 
   Object.assign(localeOptions.locales["/"], {
-    ...defaultLocaleData,
+    ...en,
     ...localeOptions.locales["/"]
   });
 };

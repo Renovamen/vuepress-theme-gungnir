@@ -3,6 +3,7 @@ import type { ThemeData } from "@vuepress/plugin-theme-data";
 import type { LocaleData } from "@vuepress/shared";
 import type { CodeEnhanceOptions } from "vuepress-plugin-code-enhance";
 import type { GiscusOptions } from "vuepress-plugin-giscus";
+import type { GungnirThemeI18n } from "./i18n";
 import type { NavbarConfig, SidebarConfig } from "./nav";
 import type { PersonalConfig } from "./personal";
 
@@ -111,7 +112,7 @@ export type GungnirThemeLocaleOptions = GungnirThemeData;
 
 export type GungnirThemeData = ThemeData<GungnirThemeLocaleData>;
 
-export interface GungnirThemeLocaleData extends LocaleData {
+export interface GungnirThemeLocaleData extends LocaleData, GungnirThemeI18n {
   /**
    * Home path of current locale
    *
@@ -144,22 +145,6 @@ export interface GungnirThemeLocaleData extends LocaleData {
    * in page frontmatter.
    */
   catalog?: boolean;
-
-  /**
-   * Post pagers config.
-   *
-   * The text to replace the default "Previous" and "Next"
-   */
-  postNext?: string;
-  postPrev?: string;
-
-  /**
-   * Home page pagers config.
-   *
-   * The text to replace the default "Older Posts →" and "← Newer Posts"
-   */
-  homeNext?: string;
-  homePrev?: string;
 
   /**
    * Maximum number of posts per page.
@@ -197,29 +182,6 @@ export interface GungnirThemeLocaleData extends LocaleData {
   repoLabel?: string;
 
   /**
-   * Navbar language selection config
-   *
-   * Text of the language selection dropdown
-   */
-  selectLanguageText?: string;
-
-  /**
-   * Navbar language selection config
-   *
-   * Aria label of of the language selection dropdown
-   */
-  selectLanguageAriaLabel?: string;
-
-  /**
-   * Navbar language selection config
-   *
-   * Language name of current locale
-   *
-   * Displayed inside the language selection dropdown
-   */
-  selectLanguageName?: string;
-
-  /**
    * Sidebar config
    *
    * Set to `false` to disable sidebar in current locale
@@ -248,13 +210,6 @@ export interface GungnirThemeLocaleData extends LocaleData {
    * Whether to show "Edit this page" or not
    */
   editLink?: boolean;
-
-  /**
-   * Page meta - edit link config
-   *
-   * The text to replace the default "Edit this page"
-   */
-  editLinkText?: string;
 
   /**
    * Page meta - edit link config
@@ -296,13 +251,6 @@ export interface GungnirThemeLocaleData extends LocaleData {
   lastUpdated?: boolean;
 
   /**
-   * Page meta - last updated config
-   *
-   * The text to replace the default "Last Updated"
-   */
-  lastUpdatedText?: string;
-
-  /**
    * Page meta - contributors config
    *
    * Whether to show "Contributors" or not
@@ -310,75 +258,7 @@ export interface GungnirThemeLocaleData extends LocaleData {
   contributors?: boolean;
 
   /**
-   * Page meta - contributors config
-   *
-   * The text to replace the default "Contributors"
-   */
-  contributorsText?: string;
-
-  /**
-   * Custom block config
-   *
-   * Default title of TIP custom block
-   */
-  tip?: string;
-
-  /**
-   * Custom block config
-   *
-   * Default title of WARNING custom block
-   */
-  warning?: string;
-
-  /**
-   * Custom block config
-   *
-   * Default title of DANGER custom block
-   */
-  danger?: string;
-
-  /**
-   * 404 page config
-   *
-   * Not Found messages for 404 page
-   */
-  notFound?: string[];
-
-  /**
-   * 404 page config
-   *
-   * Text of back-to-home link in 404 page
-   */
-  backToHome?: string;
-
-  /**
-   * A11y text for `<OutboundLink>`
-   */
-  openInNewWindow?: string;
-
-  /**
-   * A11y text for dark mode toggle button
-   */
-  toggleDarkMode?: string;
-
-  /**
-   * A11y text for sidebar toggle button
-   */
-  toggleSidebar?: string;
-
-  /**
    * Footer, support HTML
    */
   footer?: string;
-
-  /**
-   * Other pages' text
-   */
-  tagsText?: string;
-  linksText?: string;
-
-  /**
-   * "Show all tags" button
-   */
-  showAllTagsText?: string;
 }

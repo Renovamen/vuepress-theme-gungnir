@@ -55,7 +55,7 @@ const pageInfo = computed(() => {
       ? themeLocale.value.pages.links
       : {}
   ) as GungnirThemePageOptions;
-  if (info.title === undefined) info.title = themeLocale.value.linksText;
+  if (info.title === undefined) info.title = themeLocale.value.pageText?.links;
   return info;
 });
 </script>

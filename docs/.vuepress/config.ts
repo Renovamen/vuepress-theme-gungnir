@@ -1,6 +1,7 @@
 import { defineUserConfig } from "@vuepress/cli";
 import { path } from "@vuepress/utils";
 import type { GungnirThemeOptions } from "vuepress-theme-gungnir";
+import { zh } from "vuepress-theme-gungnir/lib/node/i18n";
 import { navbar, sidebar } from "./configs";
 
 const isProd = process.env.NODE_ENV === "production";
@@ -101,12 +102,8 @@ export default defineUserConfig<GungnirThemeOptions>({
       "/": {
         // navbar
         navbar: navbar.en,
-
         // sidebar
-        sidebar: sidebar.en,
-
-        // page meta
-        editLinkText: "Edit this page on GitHub"
+        sidebar: sidebar.en
       },
 
       /**
@@ -115,44 +112,10 @@ export default defineUserConfig<GungnirThemeOptions>({
       "/zh/": {
         // navbar
         navbar: navbar.zh,
-        selectLanguageName: "简体中文",
-        selectLanguageText: "选择语言",
-        selectLanguageAriaLabel: "选择语言",
-
         // sidebar
         sidebar: sidebar.zh,
-
-        // page meta
-        editLinkText: "在 GitHub 上编辑此页",
-        lastUpdatedText: "上次更新",
-        contributorsText: "贡献者",
-
-        // other pages
-        tagsText: "标签",
-        linksText: "链接",
-
-        // "show all tags" button
-        showAllTagsText: "全部",
-
-        // custom containers
-        info: "信息",
-        tip: "提示",
-        warning: "注意",
-        danger: "警告",
-
-        // 404 page
-        notFound: [
-          "这里什么都没有",
-          "我们怎么到这来了？",
-          "这是一个 404 页面",
-          "看起来我们进入了错误的链接"
-        ],
-        backToHome: "$ cd /home/",
-
-        // a11y
-        openInNewWindow: "在新窗口打开",
-        toggleDarkMode: "切换夜间模式",
-        toggleSidebar: "切换侧边栏"
+        // i18n
+        ...zh
       }
     },
 
@@ -173,7 +136,7 @@ export default defineUserConfig<GungnirThemeOptions>({
     footer: `
       &copy; <a href="https://github.com/Renovamen" target="_blank">Renovamen</a> 2018-2021
       <br>
-      Powered by <a href="https://vuepress.vuejs.org" target="_blank">VuePress</a> &
+      Powered by <a href="https://v2.vuepress.vuejs.org" target="_blank">VuePress</a> &
       <a href="https://github.com/Renovamen/vuepress-theme-gungnir" target="_blank">Gungnir</a>
     `
   },

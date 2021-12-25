@@ -43,7 +43,7 @@ const pageInfo = computed(() => {
       ? themeLocale.value.pages.tags
       : {}
   ) as GungnirThemePageOptions;
-  if (info.title === undefined) info.title = themeLocale.value.tagsText;
+  if (info.title === undefined) info.title = themeLocale.value.pageText?.tags;
   return info;
 });
 </script>

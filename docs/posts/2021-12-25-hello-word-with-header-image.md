@@ -1,20 +1,20 @@
 ---
 layout: Post
-title: Hello Word 1
-subtitle: A Test Post without The Header Image
+title: Hello Word 2
+subtitle: A Test Post with a Header Image
 author: Renovamen
-date: 2020-10-29
-headerImage: /img/in-post/2020-10-29/header.jpg
+date: 2021-12-25
+useHeaderImage: true
+headerImage: /img/in-post/2021-12-25/header.jpg
+headerMask: rgba(40, 57, 101, .4)
 catalog: true
 tags:
   - test
-  - tag with space
 ---
 
 Welcome to VuePress theme Gungnir.
 
 <!-- more -->
-
 
 ## Paragraphs
 
@@ -214,6 +214,7 @@ print("Hello World!")
 </CodeGroupItem>
 </CodeGroup>
 :::
+
 
 ## References
 

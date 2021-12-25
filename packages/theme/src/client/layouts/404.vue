@@ -4,7 +4,7 @@
       <div class="not-found-wrapper">
         <p class="emoji">{{ getEmoji() }}</p>
         <h1>404 - {{ getMsg() }}</h1>
-        <RouterLink :to="homeLink">{{ homeText }}</RouterLink>
+        <RouterLink to="/">{{ homeText }}</RouterLink>
       </div>
     </template>
   </Common>
@@ -21,7 +21,6 @@ const themeLocale = useThemeLocaleData();
 const messages = themeLocale.value.notFound ?? ["Not Found"];
 const getMsg = (): string =>
   messages[Math.floor(Math.random() * messages.length)];
-const homeLink = themeLocale.value.home ?? routeLocale.value;
 const homeText = themeLocale.value.backToHome ?? "$ cd /home/";
 
 const emojiArray = [
