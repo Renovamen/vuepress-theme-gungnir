@@ -1,6 +1,6 @@
 {
   "name": "@renovamen/vuepress-plugin-reading-time",
-  "version": "2.0.0-alpha.2",
+  "version": "2.0.0-alpha.3",
   "description": "A plugin for computing word count and reading time in VuePress 2.",
   "keywords": [
     "vue",

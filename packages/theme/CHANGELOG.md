@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.3](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.2...v2.0.0-alpha.3) (2021-12-25)
+
+
+### Bug Fixes
+
+* sidebar styles on mobile ([6898037](https://github.com/Renovamen/vuepress-theme-gungnir/commit/689803708ea5f9042e9e615ed28cd92b51097521))
+
+
+### Features
+
+* i18n (English, Simplified Chinese) ([eb918a1](https://github.com/Renovamen/vuepress-theme-gungnir/commit/eb918a1f85e36b32815a7571760dc39a21a56c11))
+* links page ([f1406c4](https://github.com/Renovamen/vuepress-theme-gungnir/commit/f1406c4749c0ac8fef90ae859bbff6eeb10dcb11))
+* **plugin-reading-time:** add `options.includes` ([#23](https://github.com/Renovamen/vuepress-theme-gungnir/issues/23)) ([7faa78e](https://github.com/Renovamen/vuepress-theme-gungnir/commit/7faa78e9b1d274401c7fb13c925139f80582871f))
+* tags page ([b3d9459](https://github.com/Renovamen/vuepress-theme-gungnir/commit/b3d94593686fd89f04ff7171f065f581dbe15e06))
+
+
+
+
+
 # 2.0.0-alpha.2 (2021-12-12)
 
 
