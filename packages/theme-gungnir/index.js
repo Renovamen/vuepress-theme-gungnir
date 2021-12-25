@@ -138,7 +138,7 @@ module.exports = (options, ctx) => {
         readingTime
           ? Object.assign(
               {
-                excludes: ["/tags/.*", "/links"]
+                excludes: ["/tags/.*", "/links/"]
               },
               readingTime
             )

@@ -71,8 +71,7 @@ readingTime: { minutes: 3, words: 1500 }
 
 ### excludes
 
-Exclude pages by their path via a regular expression. This tests for both `path`
-and `regularPath`.
+Exclude pages by their path via a regular expression. This tests for both `path` and `regularPath`. Will be ignored if [`includes`](#includes) is specified.
 
 - Type: `Array<string>`
 - Default: `[]`
@@ -82,8 +81,29 @@ Example:
 ```js
 plugins: [
   [
-    '@renovamen/vuepress-plugin-reading-time', {
-      excludes: ['/about', '/tag/.*']
+    "@renovamen/vuepress-plugin-reading-time", {
+      excludes: ["/tags/.*", "/links/"]
+    }
+  ]
+]
+```
+
+### includes
+
+An allowlist of all pages that should be computed word count and reading time for. Includes pages by their path via a regular expression, tests for both `path` and `regularPath`.
+
+If `includes` is specified, [`excludes`](#excludes) will be ignored.
+
+- Type: `Array<string>`
+- Default: `[]`
+
+Example:
+
+```js
+plugins: [
+  [
+    "@renovamen/vuepress-plugin-reading-time", {
+      includes: ["/docs/.*"]
     }
   ]
 ]
