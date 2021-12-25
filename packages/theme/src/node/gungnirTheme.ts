@@ -13,8 +13,7 @@ import {
   resolveContainerPluginOptionsForCodeGroupItem,
   resolveContainerPluginOptionsForDetails,
   resolveGitPluginOptions,
-  resolveMediumZoomPluginOptions,
-  resolveReadingTimePluginOptions
+  resolveMediumZoomPluginOptions
 } from "./utils";
 
 export interface GungnirThemeOptions
@@ -90,14 +89,8 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = ({
       ["@renovamen/vuepress-plugin-katex", themePlugins.katex === true],
       ["@renovamen/vuepress-plugin-mermaid", themePlugins.mermaid === true],
       ["vuepress-plugin-chart", themePlugins.chartjs === true],
-      [
-        "@renovamen/vuepress-plugin-reading-time",
-        resolveReadingTimePluginOptions(themePlugins)
-      ],
-      [
-        "vuepress-plugin-code-enhance",
-        themePlugins.codeEnhance === false ? false : {}
-      ],
+      ["@renovamen/vuepress-plugin-reading-time", themePlugins.readingTime],
+      ["vuepress-plugin-code-enhance", themePlugins.codeEnhance],
       [
         "vuepress-plugin-giscus",
         themePlugins.giscus === undefined ? false : themePlugins.giscus

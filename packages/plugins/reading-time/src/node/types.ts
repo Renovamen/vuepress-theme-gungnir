@@ -14,21 +14,30 @@ export interface ReadingTimeOptions {
   wordsPerMinuteEN?: number;
 
   /**
-   * Exclude all content inside code blocks or not
+   * Excludes all content inside code blocks or not
    *
    * @default false
    */
   excludeCodeBlock?: boolean;
 
   /**
-   * Exclude all content inside tex blocks or not
+   * Excludes all content inside tex blocks or not
    *
    * @default false
    */
   excludeTexBlock?: boolean;
 
   /**
-   * Exclude pages by their path via a regular expression.
+   * Includes pages by their path via a regular expression.
+   * If specified, `excludes` will be ignored.
+   *
+   * @default []
+   */
+  includes?: string[];
+
+  /**
+   * Excludes pages by their path via a regular expression.
+   * Will be ignored if `includes` is specified.
    *
    * @default []
    */

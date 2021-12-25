@@ -72,7 +72,7 @@ readingTime: { minutes: 3, words: 1500 }
 
 ### excludes
 
-不需要进行统计的页面路径，插件会通过正则表达式来将这些页面排除。
+不需要进行统计的页面路径，插件会通过正则表达式来将这些页面排除。如果指定了 [`includes`](#includes) 项，那么这一项无效。
 
 - Type: `Array<string>`
 - Default: `[]`
@@ -83,7 +83,26 @@ readingTime: { minutes: 3, words: 1500 }
 plugins: [
   [
     '@renovamen/vuepress-plugin-reading-time', {
-      excludes: ['/about', '/tag/.*']
+      excludes: ["/docs/.*", "/posts/hello-word.html"]
+    }
+  ]
+]
+```
+
+### includes
+
+需要进行统计的页面路径（正则表达式）。如果指定了这一项，那么 [`excludes`](#excludes) 项无效。
+
+- Type: `Array<string>`
+- Default: `[]`
+
+Example:
+
+```js
+plugins: [
+  [
+    "@renovamen/vuepress-plugin-reading-time", {
+      includes: ["/docs/.*"]
     }
   ]
 ]

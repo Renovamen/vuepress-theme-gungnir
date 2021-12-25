@@ -17,23 +17,14 @@
 </template>
 
 <script setup lang="ts">
-import { useSiteLocaleData } from "@vuepress/client";
 import { computed, resolveComponent } from "vue";
 import { useDarkMode } from "../composables";
 import PageMeta from "./PageMeta.vue";
 import PageNav from "./PageNav.vue";
-
-const langMap = {
-  "en-US": "en",
-  "zh-CN": "zh-CN"
-};
 
 const isGiscus = typeof resolveComponent("Giscus") !== "string";
 const isDarkMode = useDarkMode();
 const giscusTheme = computed(() =>
   isDarkMode.value ? "dark_dimmed" : "light"
 );
-
-const siteLocale = useSiteLocaleData();
-const giscusLang = computed(() => langMap[siteLocale.value.lang]);
 </script>
