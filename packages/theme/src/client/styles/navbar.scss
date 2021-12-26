@@ -88,6 +88,13 @@
     &:first-child {
       margin-left: 0;
     }
+
+    .nav-icon {
+      position: relative;
+      display: inline-block;
+      margin-right: 1px;
+      width: 17px;
+    }
   }
 }
 

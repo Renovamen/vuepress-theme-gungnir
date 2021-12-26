@@ -14,6 +14,15 @@
   -ms-transform: $value;
 }
 
-@function toRGB ($color) {
-  @return "rgb(" + red($color) + ", " + green($color) + ", " + blue($color)+ ")";
+@mixin hide-scrollbar() {
+  // Chrome, Safari
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+  // IE
+  -ms-overflow-style: none;
+  // Firefox
+  scrollbar-width: none;
 }

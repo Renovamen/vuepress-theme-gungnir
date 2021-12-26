@@ -10,6 +10,10 @@ const defaultLocaleOptions: GungnirThemeLocaleOptions = {
 
   postNumPerPage: 10,
 
+  // icons
+  langIcon: "translate",
+  searchIcon: "search",
+
   // navbar
   navbar: [],
   darkMode: true,

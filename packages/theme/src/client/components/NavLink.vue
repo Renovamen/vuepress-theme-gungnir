@@ -8,6 +8,12 @@
     v-bind="$attrs"
   >
     <slot name="before" />
+    <span v-if="item.icon" class="nav-icon">
+      <VIcon
+        :name="item.icon"
+        :scale="0.7 * (item.iconScale !== undefined ? item.iconScale : 1)"
+      />
+    </span>
     {{ item.text }}
     <slot name="after" />
   </RouterLink>
@@ -21,8 +27,13 @@
     v-bind="$attrs"
   >
     <slot name="before" />
+    <span v-if="item.icon" class="nav-icon">
+      <VIcon
+        :name="item.icon"
+        :scale="0.7 * (item.iconScale !== undefined ? item.iconScale : 1)"
+      />
+    </span>
     {{ item.text }}
-    <OutboundLink v-if="isBlankTarget" />
     <slot name="after" />
   </a>
 </template>

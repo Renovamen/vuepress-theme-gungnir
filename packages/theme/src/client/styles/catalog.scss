@@ -15,15 +15,12 @@
   bottom: 40px !important;
   right: calc($sideWidth - var(--catalog-width) - 5rem);
 
+  @include hide-scrollbar();
+
   &.fixed {
     position: fixed;
     height: auto;
     bottom: 10rem;
-  }
-
-  &::-webkit-scrollbar {
-    width: 0;
-    height: 0;
   }
 
   li {

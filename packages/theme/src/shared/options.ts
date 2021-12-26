@@ -126,6 +126,20 @@ export interface GungnirThemeLocaleData extends LocaleData, GungnirThemeI18n {
   hitokoto?: boolean | string;
 
   /**
+   * Icon for language seletor (should be registered first). "false" for no icon.
+   *
+   * @default "translate"
+   */
+  langIcon?: string | boolean;
+
+  /**
+   * Icon for search button (should be registered first). "false" for no icon.
+   *
+   * @default "search"
+   */
+  searchIcon?: string | boolean;
+
+  /**
    * Personal information
    */
   personalInfo?: null | PersonalConfig;

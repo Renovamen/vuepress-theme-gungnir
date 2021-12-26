@@ -6,7 +6,15 @@
       :aria-label="dropdownAriaLabel"
       @click="handleDropdown"
     >
-      <span class="title">{{ item.text }}</span>
+      <span class="title">
+        <span v-if="item.icon" class="nav-icon">
+          <VIcon
+            :name="item.icon"
+            :scale="0.7 * (item.iconScale !== undefined ? item.iconScale : 1)"
+          />
+        </span>
+        {{ item.text }}
+      </span>
       <span class="arrow down" />
     </button>
 
@@ -16,7 +24,15 @@
       :aria-label="dropdownAriaLabel"
       @click="open = !open"
     >
-      <span class="title">{{ item.text }}</span>
+      <span class="title">
+        <span v-if="item.icon" class="nav-icon">
+          <VIcon
+            :name="item.icon"
+            :scale="0.7 * (item.iconScale !== undefined ? item.iconScale : 1)"
+          />
+        </span>
+        {{ item.text }}
+      </span>
       <span class="arrow" :class="open ? 'down' : 'right'" />
     </button>
 
