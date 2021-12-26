@@ -90,6 +90,10 @@
     }
   }
 
+  &.search-open .search-page {
+    @include transform(translateY(0));
+  }
+
   &.no-navbar {
     .theme-gungnir-content:not(.custom) > h1,
     h2,

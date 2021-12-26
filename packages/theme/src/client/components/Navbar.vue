@@ -18,7 +18,7 @@
 
     <div class="navbar-links-wrapper" :style="linksWrapperStyle">
       <slot name="before" />
-      <NavbarLinks class="can-hide" />
+      <NavbarLinks class="can-hide" @toggle-search="$emit('toggle-search')" />
       <slot name="after" />
     </div>
   </header>
@@ -45,6 +45,8 @@ defineProps({
     required: true
   }
 });
+
+defineEmits(["toggle-search"]);
 
 const routeLocale = useRouteLocale();
 const siteLocale = useSiteLocaleData();

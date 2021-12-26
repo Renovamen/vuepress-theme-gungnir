@@ -6,7 +6,11 @@
     @touchend="onTouchEnd"
   >
     <slot name="navbar">
-      <Navbar v-if="shouldShowNavbar" :is-sidebar="shouldShowSidebar">
+      <Navbar
+        v-if="shouldShowNavbar"
+        :is-sidebar="shouldShowSidebar"
+        @toggle-search="toggleSearch(true)"
+      >
         <template #before>
           <slot name="navbar-before" />
         </template>
@@ -33,6 +37,11 @@
       <slot name="page" />
     </div>
 
+    <SearchPage
+      v-if="shouldShowSearchPage"
+      @toggle-search="toggleSearch(false)"
+    />
+
     <Menu @toggle-sidebar="toggleSidebar" @toggle-catalog="toggleCatalog" />
 
     <Footer v-if="!shouldShowSidebar" />
@@ -47,6 +56,7 @@ import type { GungnirThemePageFrontmatter } from "../../shared";
 import Footer from "../components/Footer.vue";
 import Menu from "../components/Menu.vue";
 import Navbar from "../components/Navbar.vue";
+import SearchPage from "../components/SearchPage.vue";
 import Sidebar from "../components/Sidebar.vue";
 import {
   useResolveRouteWithRedirect,
@@ -99,6 +109,26 @@ const onTouchEnd = (e): void => {
   }
 };
 
+// search page
+const shouldShowSearchPage = computed(
+  () => themeLocale.value.search && frontmatter.value.search !== false
+);
+
+const isSearchOpen = ref(false);
+
+const toggleSearch = (to?: boolean): void => {
+  isSearchOpen.value = typeof to === "boolean" ? to : !isSearchOpen.value;
+  // auto focus
+  if (isSearchOpen.value) {
+    setTimeout(function () {
+      const searchInput = document.querySelector(
+        ".search-page input"
+      ) as HTMLInputElement;
+      searchInput.focus();
+    }, 400);
+  }
+};
+
 // catalog
 const isCatalogOpen = ref(false);
 const toggleCatalog = (to?: boolean): void => {
@@ -111,17 +141,19 @@ const containerClass = computed(() => [
     "no-navbar": !shouldShowNavbar.value,
     "no-sidebar": !shouldShowSidebar.value,
     "sidebar-open": isSidebarOpen.value,
-    "catalog-open": isCatalogOpen.value
+    "catalog-open": isCatalogOpen.value,
+    "search-open": isSearchOpen.value
   },
   frontmatter.value.pageClass
 ]);
 
-// close sidebar after navigation
+// close sidebar and search page after navigation
 let unregisterRouterHook;
 
 onMounted(() => {
   unregisterRouterHook = router.afterEach(() => {
     toggleSidebar(false);
+    toggleSearch(false);
   });
 });
 

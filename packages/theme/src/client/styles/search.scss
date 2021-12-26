@@ -1,0 +1,123 @@
+@import '_mixins';
+@import '_variables';
+
+.search-page {
+  background-color: var(--c-bg);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 100;
+  @include transition(transform .25s);
+  @include transform(translateY(100%));
+}
+
+.search-close {
+  float: right;
+  margin-right: 30px;
+  margin-top: 30px;
+  color: #bdbbbb;
+  @include transition(.3s ease);
+
+  &:hover {
+    color: #696868;
+  }
+}
+
+.search-box {
+  margin: 100px auto 0;
+  display: block;
+  width: 50%;
+  height: 100%;
+
+  input {
+    width: 100%;
+    height: auto;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 5px 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--c-text);
+    @include placeholdeTextColor(var(--c-text-sub));
+  }
+
+  .suggestions {
+    height: 70%;
+    width: 100%;
+    margin-top: 30px;
+    overflow-y: scroll;
+    padding: 0;
+  }
+
+  .suggestion {
+    padding: 0.6rem 0;
+    cursor: pointer;
+
+    a {
+      white-space: normal;
+      color: var(--c-text);
+
+      .title {
+        font-size: 20px;
+        line-height: 1.5;
+        font-weight: 600;
+        display: block;
+      }
+
+      .subtitle {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-top: 5px;
+        display: block;
+        color: var(--c-text-sub);
+      }
+    }
+
+    &.focused {
+      background-color: transparent;
+
+      .title, .subtitle {
+        color: var(--c-text-accent);
+      }
+    }
+  }
+}
+
+@media (max-width: $MQIpad) {
+  .search-box {
+    width: 80%;
+  }
+}
+
+@media (max-width: $MQMobileNarrow) {
+  .search-box {
+    input {
+      font-size: 24px;
+    }
+
+    .suggestions {
+      margin-top: 20px;
+      padding: 0;
+    }
+
+    .suggestion {
+      padding: 0.4rem 0;
+
+      a {
+        .title {
+          font-size: 18px;
+          line-height: 1.3;
+        }
+        .subtitle {
+          font-size: 14px;
+          line-height: 1.3;
+        }
+      }
+    }
+  }
+}

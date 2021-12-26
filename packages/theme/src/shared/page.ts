@@ -13,6 +13,7 @@ export interface GungnirThemePageFrontmatter {
   home?: boolean;
   navbar?: boolean;
   pageClass?: string;
+  search?: boolean;
 }
 
 export interface GungnirThemeNormalPageFrontmatter
@@ -33,11 +34,11 @@ export interface GungnirThemePostFrontmatter
   extends GungnirThemePageFrontmatter {
   home?: false;
   title: string;
+  subtitle?: string;
   editLink?: boolean;
   editLinkPattern?: string;
   lastUpdated?: boolean;
   useHeaderImage?: boolean;
-  subtitle?: string;
   author?: string;
   date: string;
   headerImage: string;

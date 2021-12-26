@@ -35,7 +35,7 @@
   -ms-transform: $value;
 }
 
-@mixin hide-scrollbar() {
+@mixin hideScrollbar() {
   // Chrome, Safari
   &::-webkit-scrollbar {
     width: 0;
@@ -46,4 +46,19 @@
   -ms-overflow-style: none;
   // Firefox
   scrollbar-width: none;
+}
+
+@mixin placeholdeTextColor($value) {
+  &::-webkit-input-placeholder {
+    color: $value;
+  }
+  &::-moz-placeholder {
+    color: $value;
+  }
+  &:-moz-placeholder {
+    color: $value;
+  }
+  &:-ms-input-placeholder {
+    color: $value;
+  }
 }

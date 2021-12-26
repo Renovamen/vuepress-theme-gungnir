@@ -15,7 +15,7 @@
   bottom: 40px !important;
   right: calc($sideWidth - var(--catalog-width) - 5rem);
 
-  @include hide-scrollbar();
+  @include hideScrollbar();
 
   &.fixed {
     position: fixed;

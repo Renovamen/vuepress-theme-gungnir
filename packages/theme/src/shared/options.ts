@@ -133,6 +133,27 @@ export interface GungnirThemeLocaleData extends LocaleData, GungnirThemeI18n {
   hitokoto?: boolean | string;
 
   /**
+   * Enable search page or not
+   *
+   * @default true
+   */
+  search?: boolean;
+
+  /**
+   * Maximum number of results for search
+   *
+   * @default 10
+   */
+  searchMaxSuggestions?: number;
+
+  /**
+   * Placeholder of the search field
+   *
+   * @default "$ grep ..."
+   */
+  searchPlaceholder?: string;
+
+  /**
    * Icon for language seletor (should be registered first). "false" for no icon.
    *
    * @default "translate"

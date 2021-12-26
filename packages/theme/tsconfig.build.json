@@ -7,6 +7,7 @@
     { "path": "../plugins/reading-time/tsconfig.build.json" },
     { "path": "../plugins/code-enhance/tsconfig.build.json" },
     { "path": "../plugins/giscus/tsconfig.build.json" },
+    { "path": "../plugins/search/tsconfig.build.json" },
     { "path": "./tsconfig.esm.json" },
     { "path": "./tsconfig.cjs.json" }
   ],

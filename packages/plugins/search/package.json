@@ -1,0 +1,42 @@
+{
+  "name": "@renovamen/vuepress-plugin-search",
+  "version": "2.0.0-alpha.1",
+  "description": "VuePress theme Gungnir plugin - built-in search",
+  "homepage": "https://github.com/Renovamen/vuepress-theme-gungnir/tree/main/packages/plugins/search",
+  "bugs": {
+    "url": "https://github.com/Renovamen/vuepress-theme-gungnir/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Renovamen/vuepress-theme-gungnir.git",
+    "directory": "packages/plugins/search"
+  },
+  "license": "MIT",
+  "author": "Renovamen <renovamenzxh@gmail.com>",
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.d.ts\" lib"
+  },
+  "dependencies": {
+    "@vuepress/client": "2.0.0-beta.29",
+    "@vuepress/core": "2.0.0-beta.29",
+    "@vuepress/shared": "2.0.0-beta.28",
+    "@vuepress/utils": "2.0.0-beta.28",
+    "chokidar": "^3.5.2",
+    "vue": "^3.2.24",
+    "vue-router": "^4.0.12"
+  },
+  "devDependencies": {
+    "@types/webpack-env": "^1.16.3",
+    "vite": "^2.7.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

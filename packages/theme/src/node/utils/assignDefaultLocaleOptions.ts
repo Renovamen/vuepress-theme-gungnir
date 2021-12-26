@@ -10,6 +10,10 @@ const defaultLocaleOptions: GungnirThemeLocaleOptions = {
 
   postNumPerPage: 10,
 
+  search: true,
+  searchMaxSuggestions: 10,
+  searchPlaceholder: "$ grep ...",
+
   // icons
   langIcon: "translate",
   searchIcon: "search",

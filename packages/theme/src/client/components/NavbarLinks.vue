@@ -2,8 +2,21 @@
   <nav v-if="navbarLinks.length" class="navbar-links">
     <div v-for="item in navbarLinks" :key="item.text" class="navbar-links-item">
       <DropdownLink v-if="item.children" :item="item" />
-
       <NavLink v-else :item="item" />
+    </div>
+
+    <!-- search button -->
+    <div v-if="shouldShowSearchPage" class="navbar-links-item">
+      <a
+        class="nav-link"
+        style="cursor: pointer"
+        @click="$emit('toggle-search')"
+      >
+        <span v-if="themeLocale.searchIcon" class="nav-icon">
+          <VIcon :name="themeLocale.searchIcon" scale="0.8" />
+        </span>
+        Search
+      </a>
     </div>
   </nav>
 </template>
@@ -29,6 +42,8 @@ import { useNavLink, useThemeLocaleData } from "../composables";
 import { resolveRepoType } from "../utils";
 import DropdownLink from "./DropdownLink.vue";
 import NavLink from "./NavLink.vue";
+
+defineEmits(["toggle-search"]);
 
 /**
  * Get navbar config of select language dropdown
@@ -178,4 +193,11 @@ const isDocPage = computed(() => {
     pageData.value.path !== ""
   );
 });
+
+// search button
+const themeLocale = useThemeLocaleData();
+
+const shouldShowSearchPage = computed(
+  () => themeLocale.value.search && frontmatter.value.search !== false
+);
 </script>

@@ -45,6 +45,7 @@ Gungnir 最初是一个基于 [Jekyll](https://jekyllrb.com/) 的主题，在 [H
 - 多级目录
 - 可切换的首页大图
 - 明亮和夜间模式：识别系统的外观设置并自动切换模式，也支持用户手动切换
+- 搜索
 - 文章目录
 - 支持代码块全屏（从 WordPress 主题 [Sakura](https://github.com/mashirozx/Sakura) 搬过来的功能）
 - 基于 [Katex](https://github.com/KaTeX/KaTeX) 的公式支持
@@ -57,7 +58,6 @@ Gungnir 最初是一个基于 [Jekyll](https://jekyllrb.com/) 的主题，在 [H
 
 ## TODO
 
-- 搜索
 - [roughViz.js](https://github.com/jwilber/roughViz) 和 [markmap](https://github.com/gera2ld/markmap)
 - 一些 Markdown 增强样式，目前支持：
   - 脚注（基于 [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)）
