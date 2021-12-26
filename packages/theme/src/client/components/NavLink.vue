@@ -34,6 +34,7 @@
       />
     </span>
     {{ item.text }}
+    <ExternalLinkIcon v-if="isBlankTarget" />
     <slot name="after" />
   </a>
 </template>

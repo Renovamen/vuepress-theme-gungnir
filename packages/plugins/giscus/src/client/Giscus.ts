@@ -42,14 +42,17 @@ export default defineComponent({
   props: {
     theme: {
       type: String,
-      required: false
+      required: false,
+      default: undefined
     },
     lang: {
       type: String,
-      required: false
+      required: false,
+      default: undefined
     },
     reactionsEnabled: {
       type: Boolean,
+      required: false,
       default: undefined
     }
   },

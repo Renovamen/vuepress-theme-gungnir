@@ -1,5 +1,4 @@
 import { defineUserConfig } from "@vuepress/cli";
-import { path } from "@vuepress/utils";
 import type { GungnirThemeOptions } from "vuepress-theme-gungnir";
 import { zh } from "vuepress-theme-gungnir/lib/node/i18n";
 import { navbar, sidebar } from "./configs";
@@ -24,8 +23,8 @@ export default defineUserConfig<GungnirThemeOptions>({
   bundler:
     // specify bundler via environment variable
     process.env.DOCS_BUNDLER ??
-    // use vite in dev, use webpack in prod
-    (isProd ? "@vuepress/webpack" : "@vuepress/vite"),
+    // use vite by default
+    "@vuepress/vite",
 
   theme: "vuepress-theme-gungnir",
 
@@ -142,13 +141,6 @@ export default defineUserConfig<GungnirThemeOptions>({
   },
 
   markdown: {
-    importCode: {
-      handleImportPath: (str) =>
-        str.replace(
-          /^@vuepress/,
-          path.resolve(__dirname, "../../packages/@vuepress")
-        )
-    },
     extractHeaders: {
       level: [2, 3, 4, 5]
     },

@@ -86,7 +86,7 @@ export interface GungnirThemeI18n {
   backToHome?: string;
 
   /**
-   * A11y text for `<OutboundLink>`
+   * A11y text for external link icon
    */
   openInNewWindow?: string;
 

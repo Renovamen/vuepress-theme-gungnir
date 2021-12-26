@@ -18,12 +18,8 @@
 
     <div class="navbar-links-wrapper" :style="linksWrapperStyle">
       <slot name="before" />
-
       <NavbarLinks class="can-hide" />
-
       <slot name="after" />
-
-      <NavbarSearch />
     </div>
   </header>
 </template>
@@ -53,10 +49,9 @@ defineProps({
 const routeLocale = useRouteLocale();
 const siteLocale = useSiteLocaleData();
 const themeLocale = useThemeLocaleData();
-const frontmatter =
-  usePageFrontmatter<
-    GungnirThemeNormalPageFrontmatter | GungnirThemePostFrontmatter
-  >();
+const frontmatter = usePageFrontmatter<
+  GungnirThemeNormalPageFrontmatter | GungnirThemePostFrontmatter
+>();
 const router = useRouter();
 
 const navbar = ref<HTMLElement | null>(null);

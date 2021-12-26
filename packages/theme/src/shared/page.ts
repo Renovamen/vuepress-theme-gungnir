@@ -1,11 +1,12 @@
-import type { ReadingTime } from "@renovamen/vuepress-plugin-reading-time";
+import type { ReadingTimePageData } from "@renovamen/vuepress-plugin-reading-time";
 import type { PageData } from "@vuepress/client";
 import type { GitPluginPageData } from "@vuepress/plugin-git";
 import type { NavLink, SidebarConfig } from "./nav";
 
-export interface GungnirThemePageData extends GitPluginPageData {
-  filePathRelative: string;
-  readingTime?: ReadingTime;
+export interface GungnirThemePageData
+  extends GitPluginPageData,
+    ReadingTimePageData {
+  filePathRelative: string | null;
 }
 
 export interface GungnirThemePageFrontmatter {

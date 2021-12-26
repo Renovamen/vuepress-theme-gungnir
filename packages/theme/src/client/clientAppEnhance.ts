@@ -1,10 +1,9 @@
 import { defineClientAppEnhance } from "@vuepress/client";
 import { addIcons, OhVueIcon } from "oh-vue-icons";
-import { h } from "vue";
 import Badge from "./components/global/Badge.vue";
 import CodeGroup from "./components/global/CodeGroup";
 import CodeGroupItem from "./components/global/CodeGroupItem.vue";
-import OutboundLink from "./components/global/OutboundLink.vue";
+import ExternalLinkIcon from "./components/global/ExternalLinkIcon.vue";
 import { useScrollPromise } from "./composables";
 import icons from "./icons";
 
@@ -18,19 +17,9 @@ export default defineClientAppEnhance(({ app, router }) => {
   app.component("CodeGroup", CodeGroup);
   app.component("CodeGroupItem", CodeGroupItem);
 
-  // unregister the built-in `<OutboundLink>` to avoid warning
-  delete app._context.components.OutboundLink;
-  // override the built-in `<OutboundLink>`
-  app.component("OutboundLink", OutboundLink);
-
-  // compat with @vuepress/plugin-search
-  app.component("NavbarSearch", () => {
-    const SearchComponent = app.component("SearchBox");
-    if (SearchComponent) {
-      return h(SearchComponent);
-    }
-    return null;
-  });
+  // override the `<ExternalLinkIcon>` provided by @vuepress/plugin-external-link-icon
+  delete app._context.components.ExternalLinkIcon;
+  app.component("ExternalLinkIcon", ExternalLinkIcon);
 
   // icons
   app.component("VIcon", OhVueIcon);

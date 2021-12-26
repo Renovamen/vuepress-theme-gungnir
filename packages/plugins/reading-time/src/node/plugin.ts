@@ -1,6 +1,10 @@
-import type { Plugin } from "@vuepress/core";
+import type { Page, Plugin } from "@vuepress/core";
 import { readingTime } from "./reading-time";
-import type { ReadingTime, ReadingTimeOptions } from "./types";
+import type {
+  ReadingTime,
+  ReadingTimeOptions,
+  ReadingTimePageData
+} from "./types";
 
 const pagePathRegex = (paths: string[] | undefined, page: string) => {
   const match =
@@ -19,13 +23,11 @@ export const readingTimePlugin: Plugin<ReadingTimeOptions> = (
   return {
     name: "@renovamen/vuepress-plugin-reading-time",
 
-    extendsPageData: (page): { readingTime?: ReadingTime } => {
+    extendsPage: (page: Page<ReadingTimePageData>) => {
       if (!page.content) return {};
 
       if (page.frontmatter && page.frontmatter.readingTime) {
-        return {
-          readingTime: page.frontmatter.readingTime as ReadingTime
-        };
+        page.data.readingTime = page.frontmatter.readingTime as ReadingTime;
       }
 
       if (options.includes && options.includes.length > 0) {
@@ -38,9 +40,7 @@ export const readingTimePlugin: Plugin<ReadingTimeOptions> = (
         if (excludePage) return {};
       }
 
-      return {
-        readingTime: readingTime(page.content, options)
-      };
+      page.data.readingTime = readingTime(page.content, options);
     }
   };
 };

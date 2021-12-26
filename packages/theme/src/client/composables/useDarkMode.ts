@@ -5,7 +5,10 @@ import { useThemeLocaleData } from ".";
 
 export type DarkModeRef = WritableComputedRef<boolean>;
 
-export const darkModeSymbol: InjectionKey<DarkModeRef> = Symbol("darkMode");
+export const darkModeSymbol: InjectionKey<DarkModeRef> = Symbol(
+  /* eslint-disable no-undef */
+  __VUEPRESS_DEV__ ? "darkMode" : ""
+);
 
 /**
  * Inject dark mode global computed

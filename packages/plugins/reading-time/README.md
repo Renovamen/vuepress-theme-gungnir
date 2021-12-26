@@ -41,7 +41,7 @@ The `readingTime` data can be accessed by:
 
 ```js
 import { pageData } from "@vuepress/client";
-console.log(pageData.readingTime);
+console.log(pageData.value.readingTime);
 ```
 
 An example `readingTime` data:

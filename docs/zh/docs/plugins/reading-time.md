@@ -48,7 +48,7 @@ module.exports = {
 
 ```js
 import { pageData } from "@vuepress/client";
-console.log(pageData.readingTime);
+console.log(pageData.value.readingTime);
 ```
 
 一个样例 `readingTime` 数据为：

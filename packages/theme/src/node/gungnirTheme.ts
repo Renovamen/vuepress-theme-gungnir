@@ -1,8 +1,9 @@
-import type { Theme, ThemeConfig } from "@vuepress/core";
+import type { Page, Theme, ThemeConfig } from "@vuepress/core";
 import { createPage } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import type {
   GungnirThemeLocaleOptions,
+  GungnirThemePageData,
   GungnirThemePluginsOptions
 } from "../shared";
 import {
@@ -26,10 +27,24 @@ export interface GungnirThemeOptions
   themePlugins?: GungnirThemePluginsOptions;
 }
 
-export const gungnirTheme: Theme<GungnirThemeOptions> = ({
-  themePlugins = {},
-  ...localeOptions
-}) => {
+export const gungnirTheme: Theme<GungnirThemeOptions> = (
+  { themePlugins = {}, ...localeOptions },
+  app
+) => {
+  if (app.options.bundler.endsWith("vite")) {
+    // eslint-disable-next-line import/no-extraneous-dependencies
+    app.options.bundlerConfig.viteOptions = require("vite").mergeConfig(
+      app.options.bundlerConfig.viteOptions,
+      {
+        css: {
+          preprocessorOptions: {
+            scss: { charset: false }
+          }
+        }
+      }
+    );
+  }
+
   assignDefaultLocaleOptions(localeOptions);
 
   return {
@@ -44,8 +59,12 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = ({
 
     clientAppSetupFiles: path.resolve(__dirname, "../client/clientAppSetup.js"),
 
-    // use the relative file path to generate edit link
-    extendsPageData: ({ filePathRelative }) => ({ filePathRelative }),
+    extendsPage: (page: Page<GungnirThemePageData>) => {
+      // save relative file path into page data to generate edit link
+      page.data.filePathRelative = page.filePathRelative;
+      // save title into route meta to generate navbar and sidebar
+      page.routeMeta.title = page.title;
+    },
 
     plugins: [
       [
@@ -80,6 +99,7 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = ({
         "@vuepress/container",
         resolveContainerPluginOptionsForCodeGroupItem(themePlugins)
       ],
+      ["@vuepress/external-link-icon", themePlugins.externalLinkIcon === true],
       ["@vuepress/git", resolveGitPluginOptions(themePlugins, localeOptions)],
       ["@vuepress/medium-zoom", resolveMediumZoomPluginOptions(themePlugins)],
       ["@vuepress/nprogress", themePlugins.nprogress !== false],

@@ -17,7 +17,8 @@ module.exports = {
         "@typescript-eslint/ban-types": "off",
         "import/no-extraneous-dependencies": "off",
         "array-callback-return": "off",
-        "vue/no-v-html": "off"
+        "vue/no-v-html": "off",
+        "vue/multi-word-component-names": "off"
       }
     },
     {
