@@ -1,5 +1,5 @@
-@import '_mixins';
-@import '_variables';
+@import '../vars/_variables';
+@import '../utils/_mixins';
 
 .links-wrapper {
   padding: 10px 0 50px;

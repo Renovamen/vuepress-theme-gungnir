@@ -1,5 +1,5 @@
-@import '_mixins';
-@import '_variables';
+@import '../vars/_variables';
+@import '../utils/_mixins';
 
 .sidebar {
   ul {

@@ -41,7 +41,7 @@ const getEmoji = (): string =>
 </script>
 
 <style lang="scss">
-@import "../styles/_variables";
+@import "../styles/vars/_variables";
 
 .not-found-wrapper {
   position: absolute;

@@ -1,7 +1,7 @@
 @use "sass:math";
 
-@import '_variables';
-@import '_mixins';
+@import '../vars/_variables';
+@import '../utils/_mixins';
 
 // Variables
 $menu-btn-size: 50px;

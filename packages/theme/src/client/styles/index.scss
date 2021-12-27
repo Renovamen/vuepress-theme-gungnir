@@ -1,32 +1,39 @@
-@use 'vars';
-@use 'vars-dark';
-@use 'normalize';
+// variables
+@use 'vars/vars-dark.scss';
+@use 'vars/vars';
 
-@use 'arrow';
-@use 'badge';
-@use 'code';
-@use 'code-group';
-@use 'custom-container';
-@use 'dropdown';
-@use 'home';
-@use 'layout';
-@use 'navbar';
-@use 'page';
-@use 'sidebar';
-@use 'sr-only';
-@use 'toc';
-@use 'transitions';
+// utils
+@use 'utils/normalize';
+@use 'utils/transitions';
 
-@use 'postlist';
-@use 'post';
-@use 'header';
-@use 'tags';
-@use 'links';
-@use 'catalog';
-@use 'pager';
-@use 'menu';
-@use 'giscus';
-@use 'search';
-@use 'md-plus';
+// layouts
+@use 'layouts/base';
+@use 'layouts/home';
+@use 'layouts/links';
+@use 'layouts/page';
+@use 'layouts/post';
+@use 'layouts/search';
+@use 'layouts/tags';
+
+// components
+@use 'components/arrow';
+@use 'components/badge';
+@use 'components/catalog';
+@use 'components/code';
+@use 'components/code-group';
+@use 'components/custom-container';
+@use 'components/dropdown';
+@use 'components/header';
+@use 'components/menu';
+@use 'components/navbar';
+@use 'components/pager';
+@use 'components/postlist';
+@use 'components/sidebar';
+@use 'components/sr-only';
+@use 'components/toc';
+
+// plugins
+@use 'plugins/giscus';
+@use 'plugins/md-plus';
 
 @use '@vuepress/plugin-palette/style';

@@ -64,7 +64,7 @@ const getSNSIcon = (platform: string) => {
 </script>
 
 <style lang="scss">
-@import "../styles/_mixins";
+@import "../styles/utils/_mixins";
 
 .sns-wrapper {
   padding: 0;

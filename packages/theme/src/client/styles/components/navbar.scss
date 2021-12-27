@@ -1,5 +1,5 @@
-@import '_variables';
-@import '_mixins';
+@import '../vars/_variables';
+@import '../utils/_mixins';
 
 .navbar {
   --navbar-line-height: calc(

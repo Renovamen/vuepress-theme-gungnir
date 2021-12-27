@@ -1,4 +1,4 @@
-@import '_variables';
+@import '../vars/_variables';
 
 @mixin content_wrapper {
   max-width: var(--content-width);
