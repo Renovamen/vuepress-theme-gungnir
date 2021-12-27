@@ -1,3 +1,4 @@
+import type { MdPlusOptions } from "@renovamen/vuepress-plugin-md-plus";
 import type { ReadingTimeOptions } from "@renovamen/vuepress-plugin-reading-time";
 import type { ThemeData } from "@vuepress/plugin-theme-data";
 import type { LocaleData } from "@vuepress/shared";
@@ -129,6 +130,13 @@ export interface GungnirThemePluginsOptions {
    * @default false
    */
   ba?: false | string;
+
+  /**
+   * Enable @renovamen/vuepress-plugin-md-plus or not
+   *
+   * @default false
+   */
+  mdPlus?: false | MdPlusOptions;
 }
 
 export type GungnirThemeLocaleOptions = GungnirThemeData;

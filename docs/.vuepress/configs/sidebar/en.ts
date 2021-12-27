@@ -15,7 +15,8 @@ export const en: SidebarConfig = {
         "/docs/plugins/mermaid.md",
         "/docs/plugins/katex.md",
         "/docs/plugins/reading-time.md",
-        "/docs/plugins/baidu-tongji.md"
+        "/docs/plugins/baidu-tongji.md",
+        "/docs/plugins/md-plus.md"
       ]
     }
   ]
