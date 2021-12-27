@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.4](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.3...v2.0.0-alpha.4) (2021-12-27)
+
+
+### Features
+
+* baidu tongji ([fd93b60](https://github.com/Renovamen/vuepress-theme-gungnir/commit/fd93b603cd6d983edb0aaf233c70fbf14b1c7e92))
+* google analytics ([3af6d12](https://github.com/Renovamen/vuepress-theme-gungnir/commit/3af6d1205dd3ebd7794e299662d6125d4824d44f))
+* navbar icons ([2341354](https://github.com/Renovamen/vuepress-theme-gungnir/commit/2341354a9b01c9c96a370b55e2b2e07979adefa2))
+* search ([f6824ad](https://github.com/Renovamen/vuepress-theme-gungnir/commit/f6824ada3c87ec521cf877ef7b155c47ed61e6e9))
+
+
+
+
+
 # [2.0.0-alpha.3](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.2...v2.0.0-alpha.3) (2021-12-25)
 
 
