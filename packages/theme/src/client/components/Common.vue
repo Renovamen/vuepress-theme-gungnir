@@ -23,7 +23,7 @@
     <div class="sidebar-mask" @click="toggleSidebar(false)" />
 
     <slot name="sidebar">
-      <Sidebar>
+      <Sidebar @toggle-search="toggleSearch(true)">
         <template #top>
           <slot name="sidebar-top" />
         </template>

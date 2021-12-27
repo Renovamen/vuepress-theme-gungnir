@@ -27,10 +27,10 @@
           @mouseenter="focusTo(i)"
         >
           <a :href="s.path" @click.prevent>
-            <span class="title">
+            <span class="suggestion-title">
               {{ s.title || s.path }}
             </span>
-            <span v-if="s.subtitle" class="subtitle">
+            <span v-if="s.subtitle" class="suggestion-subtitle">
               {{ s.subtitle }}
             </span>
           </a>
