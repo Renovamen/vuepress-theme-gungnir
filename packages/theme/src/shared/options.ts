@@ -115,12 +115,20 @@ export interface GungnirThemePluginsOptions {
   giscus?: false | GiscusOptions;
 
   /**
-   * Enable @vuepress/plugin-google-analytics or not and pass you
+   * Enable @vuepress/plugin-google-analytics or not and pass your
    * Measurement ID
    *
    * @default false
    */
   ga?: false | string;
+
+  /**
+   * Enable @renovamen/vuepress-plugin-baidu-tongji or not and pass
+   * your tracking code
+   *
+   * @default false
+   */
+  ba?: false | string;
 }
 
 export type GungnirThemeLocaleOptions = GungnirThemeData;

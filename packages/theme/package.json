@@ -29,6 +29,7 @@
     "copy": "cpx \"src/**/*.{d.ts,vue,scss}\" lib"
   },
   "dependencies": {
+    "@renovamen/vuepress-plugin-baidu-tongji": "2.0.0-alpha.1",
     "@renovamen/vuepress-plugin-katex": "2.0.0-alpha.2",
     "@renovamen/vuepress-plugin-mermaid": "2.0.0-alpha.2",
     "@renovamen/vuepress-plugin-reading-time": "2.0.0-alpha.3",

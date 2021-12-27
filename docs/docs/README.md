@@ -48,6 +48,7 @@ Gungnir is the spear of the god Odin in Norse mythology, made from the wood of t
 - Full screening the code blocks (inspired by WordPress theme [Sakura](https://github.com/mashirozx/Sakura))
 - Tex support ([Katex](https://github.com/KaTeX/KaTeX))
 - Draw charts and graphs in Markdown easily: [Chart.js](https://www.chartjs.org), [Mermaid](https://mermaid-js.github.io)
+- Analytics ([Google Analytics](https://analytics.google.com/) and [Baidu Tongji](https://tongji.baidu.com/))
 - Comment ([Giscus](https://github.com/giscus/giscus))
 - Reading time
 - Multi-language support (English, Simplified Chinese)
@@ -60,7 +61,6 @@ Gungnir is the spear of the god Odin in Norse mythology, made from the wood of t
 - Markdown enhancements:
   - Footnote ([markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote))
   - Mark ([markdown-it-mark](https://github.com/markdown-it/markdown-it-mark))
-- Analytics ([Google Analytics](https://analytics.google.com/) and [Baidu Tongji](https://tongji.baidu.com/))
 - RSS
 
 

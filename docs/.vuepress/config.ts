@@ -130,7 +130,8 @@ export default defineUserConfig<GungnirThemeOptions>({
         category: "Announcements",
         categoryId: "DIC_kwDODIxYNs4CAO1u"
       },
-      ga: "G-EE8M2S3MPB"
+      ga: "G-EE8M2S3MPB",
+      ba: "10b7bc420625758a319d6b23aed4700f"
     },
 
     footer: `

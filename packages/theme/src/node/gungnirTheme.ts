@@ -119,6 +119,10 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = (
       [
         "@vuepress/plugin-google-analytics",
         typeof themePlugins.ga === "string" ? { id: themePlugins.ga } : false
+      ],
+      [
+        "@renovamen/vuepress-plugin-baidu-tongji",
+        typeof themePlugins.ba === "string" ? { id: themePlugins.ba } : false
       ]
     ],
 

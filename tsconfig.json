@@ -8,6 +8,7 @@
     { "path": "./packages/plugins/reading-time/tsconfig.build.json" },
     { "path": "./packages/plugins/code-enhance/tsconfig.build.json" },
     { "path": "./packages/plugins/giscus/tsconfig.build.json" },
+    { "path": "./packages/plugins/baidu-tongji/tsconfig.build.json" },
     { "path": "./packages/plugins/search/tsconfig.build.json" }
   ],
   "files": []
