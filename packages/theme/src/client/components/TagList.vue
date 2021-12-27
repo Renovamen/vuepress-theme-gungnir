@@ -11,7 +11,7 @@
     @click="router.push(item.path)"
   >
     {{ item.name }}
-    <sup v-if="item.path == '/tags/'">{{ blog.posts.value.length }}</sup>
+    <sup v-if="item.path == '/tags/'">{{ posts.length }}</sup>
     <sup v-else>{{ item.pages.length }}</sup>
   </span>
 </template>
@@ -31,7 +31,7 @@ defineProps({
 const themeLocale = useThemeLocaleData();
 const router = useRouter();
 const tag = useTags();
-const blog = useBlog();
+const { posts } = useBlog();
 
 const tags = computed(() => {
   return [

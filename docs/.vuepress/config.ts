@@ -129,7 +129,8 @@ export default defineUserConfig<GungnirThemeOptions>({
         repoId: "MDEwOlJlcG9zaXRvcnkyMTA1MjQyMTQ=",
         category: "Announcements",
         categoryId: "DIC_kwDODIxYNs4CAO1u"
-      }
+      },
+      ga: "G-EE8M2S3MPB"
     },
 
     footer: `

@@ -4,7 +4,7 @@
       <PageHeader :page-info="pageInfo" />
       <div class="tags-wrapper">
         <TagList :current-tag="currentTag" />
-        <TagPostList :data="posts" />
+        <TagPostList :data="filteredPosts" />
       </div>
     </template>
   </Common>
@@ -24,17 +24,16 @@ import { filterPostsByTag, getPostsByYear } from "../utils";
 const router = useRouter();
 const themeLocale = useThemeLocaleData();
 const tag = useTags();
-const blog = useBlog();
+const { posts } = useBlog();
 
 const currentTag = computed(
   () => router.currentRoute.value.params.id || themeLocale.value.showAllTagsText
 );
 
-const posts = computed(() => {
+const filteredPosts = computed(() => {
   const tag =
     currentTag.value === "Show All" ? "" : (currentTag.value as string);
-  const filteredPost = filterPostsByTag(blog.posts.value, tag);
-  return getPostsByYear(filteredPost);
+  return getPostsByYear(filterPostsByTag(posts.value, tag));
 });
 
 const pageInfo = computed(() => {

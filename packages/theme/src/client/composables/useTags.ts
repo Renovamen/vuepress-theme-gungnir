@@ -21,11 +21,11 @@ const tagColor = (start: string, increment: number[], weighting: number) => {
 };
 
 export const useTags = (start = "#a5a5e4", end = "#4388c4") => {
-  const blog = useBlog();
+  const { posts } = useBlog();
 
   const tags = computed(() => {
     const tagdict = {};
-    for (const post of blog.posts.value) {
+    for (const post of posts.value) {
       const frontmatter = post.frontmatter as any;
       for (const tag of frontmatter.tags) {
         if (tagdict[tag] === undefined) tagdict[tag] = [];

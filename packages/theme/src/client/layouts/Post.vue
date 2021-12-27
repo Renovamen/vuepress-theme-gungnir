@@ -142,7 +142,7 @@ onBeforeUnmount(() => {
 });
 
 // pager
-const { posts, postIndex, post, slicedPosts, pagerLink } = useBlog();
+const { post } = useBlog();
 
 const pagerData = computed(() => {
   if (!post.value) return {};

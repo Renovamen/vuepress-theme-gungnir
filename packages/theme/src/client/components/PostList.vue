@@ -21,7 +21,7 @@ const pageIndex = computed(() => {
   return Number(index);
 });
 
-const { posts, postIndex, post, slicedPosts, pagerLink } = useBlog(pageIndex);
+const { slicedPosts, pagerLink } = useBlog(pageIndex);
 
 const pagerData = computed(() => {
   const links = pagerLink.value;

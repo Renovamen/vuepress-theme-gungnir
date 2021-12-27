@@ -113,6 +113,14 @@ export interface GungnirThemePluginsOptions {
    * @default false
    */
   giscus?: false | GiscusOptions;
+
+  /**
+   * Enable @vuepress/plugin-google-analytics or not and pass you
+   * Measurement ID
+   *
+   * @default false
+   */
+  ga?: false | string;
 }
 
 export type GungnirThemeLocaleOptions = GungnirThemeData;

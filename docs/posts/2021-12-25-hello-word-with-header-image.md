@@ -95,6 +95,9 @@ npm install -D vuepress-theme-gungnir@next
 `const a = 1`
 
 
+## Badges <Badge text="tip" /> <Badge text="warning" type="warning" /> <Badge text="danger" type="danger" /> <Badge text="tip middle" vertical="middle" />
+
+
 ## Charts
 
 ### Chart.js
