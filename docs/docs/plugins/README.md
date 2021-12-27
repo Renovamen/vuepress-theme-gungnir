@@ -10,3 +10,4 @@ I wrote some plugins to implement some of the features of this theme. This secti
 - [plugin-mermaid](/docs/plugins/mermaid/): [Mermaid](https://mermaid-js.github.io) (diagrams)
 - [plugin-katex](/docs/plugins/katex/): [KaTeX](https://katex.org/) (math rendering)
 - [plugin-reading-time](/docs/plugins/reading-time/): Word count and reading time estimation
+- [plugin-baidu-tongji](/docs/plugins/baidu-tongji/): [百度统计](https://tongji.baidu.com/)

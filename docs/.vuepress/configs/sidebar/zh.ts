@@ -14,7 +14,8 @@ export const zh: SidebarConfig = {
         "/zh/docs/plugins/chart.md",
         "/zh/docs/plugins/mermaid.md",
         "/zh/docs/plugins/katex.md",
-        "/zh/docs/plugins/reading-time.md"
+        "/zh/docs/plugins/reading-time.md",
+        "/zh/docs/plugins/baidu-tongji.md"
       ]
     }
   ]
