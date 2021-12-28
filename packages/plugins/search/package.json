@@ -1,6 +1,6 @@
 {
   "name": "@renovamen/vuepress-plugin-search",
-  "version": "2.0.0-alpha.4",
+  "version": "2.0.0-alpha.7",
   "description": "VuePress theme Gungnir plugin - built-in search",
   "homepage": "https://github.com/Renovamen/vuepress-theme-gungnir/tree/main/packages/plugins/search",
   "bugs": {
