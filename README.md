@@ -4,44 +4,64 @@
 
 A blog theme for [VuePress 2](https://v2.vuepress.vuejs.org/), **WIP**. 
 
-See [main](https://github.com/Renovamen/vuepress-theme-gungnir) branch for the stable version (v0.x) based on [VuePress 1](https://vuepress.vuejs.org/).
+**Gungnir** is the spear of the god Odin in Norse mythology.
+
+![preview](docs/.vuepress/public/img/docs/gungnir.jpg)
 
 
 &nbsp;
 
-## Preview
+## Features
 
-https://v2-vuepress-theme-gungnir.vercel.app
+- Simple and beautiful
+- Responsive design
+- Multi-level navigation
+- Switchable cover images for home page
+- Dark and light mode: system theme detection with a theme-switcher to set the theme as per the user preference
+- Search
+- Table of contents
+- Full screening the code blocks (inspired by WordPress theme [Sakura](https://github.com/mashirozx/Sakura))
+- Tex support ([Katex](https://github.com/KaTeX/KaTeX))
+- Draw charts and graphs in Markdown easily: [Chart.js](https://www.chartjs.org), [Mermaid](https://mermaid-js.github.io)
+- Analytics ([Google Analytics](https://analytics.google.com/) and [Baidu Tongji](https://tongji.baidu.com/))
+- Comment ([Giscus](https://github.com/giscus/giscus))
+- Reading time
+- Multi-language support (English, Simplified Chinese)
+- Archive page with tags and links page
+
+TODO:
+
+- [roughViz.js](https://github.com/jwilber/roughViz) and [markmap](https://github.com/gera2ld/markmap)
+- Markdown enhancements:
+  - Footnote ([markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote))
+  - Mark ([markdown-it-mark](https://github.com/markdown-it/markdown-it-mark))
+- RSS
 
 
 &nbsp;
 
-## Dev
-
-Clone the repo and install dependencies:
+## Installation
 
 ```bash
-yarn
+yarn add -D vuepress-theme-gungnir@next
+# or
+npm i -D vuepress-theme-gungnir@next
 ```
 
-Start watching source files:
 
-```bash
-yarn dev
-```
+&nbsp;
 
-Open another terminal, and start developing the documentation site:
+## Documentation & Live Demos
 
-```bash
-yarn docs:dev
-```
+- Documentation: [v2-vuepress-theme-gungnir.vercel.app](https://v2-vuepress-theme-gungnir.vercel.app)
+- My blog: [zxh.io](https://zxh.io/)
 
 
 &nbsp;
 
 ## Plugins
 
-This repo also contains the following plugins:
+This repository also contains the following plugins:
 
 - [plugin-giscus](packages/plugins/giscus): use [Giscus](https://github.com/giscus/giscus) (a comments system powered by [GitHub Discussions](https://docs.github.com/en/discussions)) in Vuepress 2
 - [plugin-katex](packages/plugins/katex): [KaTeX](https://katex.org/)
@@ -55,7 +75,7 @@ This repo also contains the following plugins:
 
 &nbsp;
 
-## Some of the changes
+## Changes (v0 -> v2)
 
 - With the power of [VuePress 2](https://v2.vuepress.vuejs.org/), [Vue 3](https://v3.vuejs.org/), [Vite](https://vitejs.dev/) and [Webpack 5](https://webpack.js.org/), written using [Composition API](https://v3.vuejs.org/guide/composition-api-introduction.html), of course
 - Stylus -> SCSS
@@ -65,6 +85,25 @@ This repo also contains the following plugins:
 
 &nbsp;
 
+## Contribution
+
+See [Contributing Guide](CONTRIBUTING.md).
+
+
+&nbsp;
+
+## Other Versions
+
+No further update expected for the following previous versions:
+
+- [VuePress 1 theme](https://github.com/Renovamen/vuepress-theme-gungnir/tree/v0)
+- [Jekyll theme](https://github.com/Renovamen/jekyll-theme-gungnir)
+
+
+&nbsp;
+
 ## License
 
 VuePress theme Gungnir is [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) licensed, see the [LICENSE](LICENSE) file for details.
+
+Plugins are licensed by MIT.

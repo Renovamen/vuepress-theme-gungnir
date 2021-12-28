@@ -22,7 +22,7 @@ date: 2020-10-18
 ## 演示站点
 
 - [vuepress-theme-gungnir.vercel.app](https://vuepress-theme-gungnir.vercel.app)
-- ~~[我的博客](https://zxh.io)~~（目前还是 v0 版本）
+- [我的博客](https://zxh.io)
 
 
 ## 灵感来源
