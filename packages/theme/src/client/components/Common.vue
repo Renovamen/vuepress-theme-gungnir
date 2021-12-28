@@ -118,6 +118,7 @@ const isSearchOpen = ref(false);
 
 const toggleSearch = (to?: boolean): void => {
   isSearchOpen.value = typeof to === "boolean" ? to : !isSearchOpen.value;
+
   // auto focus
   if (isSearchOpen.value) {
     setTimeout(function () {
@@ -127,6 +128,11 @@ const toggleSearch = (to?: boolean): void => {
       searchInput.focus();
     }, 400);
   }
+
+  // disable scrolling on html element
+  const HTMLDom = document.querySelector<HTMLElement>("html");
+  if (isSearchOpen.value) HTMLDom?.classList.add("fixed");
+  else HTMLDom?.classList.remove("fixed");
 };
 
 // catalog

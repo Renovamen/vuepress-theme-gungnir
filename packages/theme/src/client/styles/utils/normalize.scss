@@ -18,6 +18,10 @@ html.dark {
   color-scheme: dark;
 }
 
+html.fixed {
+  overflow: hidden !important;
+}
+
 body {
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;

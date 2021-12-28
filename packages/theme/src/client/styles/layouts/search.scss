@@ -52,6 +52,7 @@
     margin-top: 30px;
     overflow-y: scroll;
     padding: 0;
+    @include hideScrollbar();
   }
 
   .suggestion {
