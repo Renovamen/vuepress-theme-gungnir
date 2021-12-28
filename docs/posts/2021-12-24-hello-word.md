@@ -46,7 +46,7 @@ Most people would find the picture of our universe as an infinite **tower of tor
 
 ### Code Blocks
 
-Code block with the default theme "[tomorrow](https://prismjs.com/themes/prism-tomorrow.css)" (click the red button on the upper-right corner to make the code block full screen):
+Click the red button on the upper-right corner to make the code block full screen.
 
 ```python{8}
 import food

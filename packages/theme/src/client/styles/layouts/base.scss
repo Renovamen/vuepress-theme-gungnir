@@ -159,8 +159,18 @@ h6 {
     text-decoration: underline;
   }
 
+  p {
+    margin: 25px 0;
+  }
+
+  li p {
+    margin: 0;
+    margin-bottom: 5px;
+  }
+
   img {
     max-width: 100%;
+    display: block;
     margin: 1.5em auto 1.6em auto;
   }
 }
