@@ -20,10 +20,10 @@ export default defineClientAppSetup(() => {
 
     if (block.classList.contains("fullscreen-mode")) {
       block.classList.remove("fullscreen-mode");
-      HTMLDom?.classList.remove("screen-fixed");
+      HTMLDom?.classList.remove("fixed");
     } else {
       block.classList.add("fullscreen-mode");
-      HTMLDom?.classList.add("screen-fixed");
+      HTMLDom?.classList.add("fixed");
     }
   };
 
