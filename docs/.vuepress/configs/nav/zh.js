@@ -25,12 +25,12 @@ module.exports = [
     items: [
       {
         text: "仓库地址",
-        link: "https://github.com/Renovamen/vuepress-theme-gungnir",
+        link: "https://github.com/Renovamen/vuepress-theme-gungnir/tree/v0",
         icon: "oi-repo"
       },
       {
         text: "更新日志",
-        link: "https://github.com/Renovamen/vuepress-theme-gungnir/blob/main/CHANGELOG.md",
+        link: "https://github.com/Renovamen/vuepress-theme-gungnir/blob/v0/CHANGELOG.md",
         icon: "oi-git-compare"
       }
     ]

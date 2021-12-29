@@ -8,13 +8,13 @@
     "vuepress-plugin",
     "mermaid"
   ],
-  "homepage": "https://github.com/Renovamen/vuepress-theme-gungnir/tree/main/packages/plugins/mermaid",
+  "homepage": "https://github.com/Renovamen/vuepress-theme-gungnir/tree/v0/packages/plugins/mermaid",
   "bugs": {
     "url": "https://github.com/Renovamen/vuepress-theme-gungnir/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Renovamen/vuepress-theme-gungnir.git",
+    "url": "git+https://github.com/Renovamen/vuepress-theme-gungnir.git#v0",
     "directory": "packages/plugins/mermaid"
   },
   "license": "MIT",

@@ -13,13 +13,13 @@
     "word count",
     "words per minute"
   ],
-  "homepage": "https://github.com/Renovamen/vuepress-theme-gungnir/tree/main/packages/plugins/reading-time",
+  "homepage": "https://github.com/Renovamen/vuepress-theme-gungnir/tree/v0/packages/plugins/reading-time",
   "bugs": {
     "url": "https://github.com/Renovamen/vuepress-theme-gungnir/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Renovamen/vuepress-theme-gungnir.git",
+    "url": "git+https://github.com/Renovamen/vuepress-theme-gungnir.git#v0",
     "directory": "packages/plugins/reading-time"
   },
   "license": "MIT",

@@ -7,10 +7,10 @@ date: 2020-03-26
   <a href="https://www.npmjs.com/package/@renovamen/vuepress-plugin-rss" target="_blank">
     <img src="https://img.shields.io/npm/v/@renovamen/vuepress-plugin-rss.svg?style=flat-square&logo=npm" style="display: inline; margin: 0" alt="npm">
   </a>
-  <a href="https://github.com/Renovamen/vuepress-theme-gungnir/tree/main/packages/plugins/rss" target="_blank">
+  <a href="https://github.com/Renovamen/vuepress-theme-gungnir/tree/v0/packages/plugins/rss" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-@renovamen/vuepress--plugin--rss-26A2FF?style=flat-square&logo=github" style="display: inline; margin: 0" alt="github">
   </a>
-  <a href="https://github.com/Renovamen/vuepress-theme-gungnir/blob/main/packages/plugins/rss/LICENSE" target="_blank">
+  <a href="https://github.com/Renovamen/vuepress-theme-gungnir/blob/v0/packages/plugins/rss/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" style="display: inline; margin: 0" alt="license">
   </a>
 </p>
@@ -53,4 +53,4 @@ module.exports = {
 
 ## 开源协议
 
-[MIT](https://github.com/Renovamen/vuepress-theme-gungnir/blob/main/packages/plugins/rss/LICENSE)
+[MIT](https://github.com/Renovamen/vuepress-theme-gungnir/blob/v0/packages/plugins/rss/LICENSE)

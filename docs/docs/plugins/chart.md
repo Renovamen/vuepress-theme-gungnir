@@ -7,10 +7,10 @@ date: 2020-03-26
   <a href="https://www.npmjs.com/package/vuepress-plugin-chart" target="_blank">
     <img src="https://img.shields.io/npm/v/vuepress-plugin-chart.svg?style=flat-square&logo=npm" style="display: inline; margin: 0" alt="npm">
   </a>
-  <a href="https://github.com/Renovamen/vuepress-theme-gungnir/tree/main/packages/plugins/chart" target="_blank">
+  <a href="https://github.com/Renovamen/vuepress-theme-gungnir/tree/v0/packages/plugins/chart" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-vuepress--plugin--chart-26A2FF?style=flat-square&logo=github" style="display: inline; margin: 0" alt="github">
   </a>
-  <a href="https://github.com/Renovamen/vuepress-theme-gungnir/blob/main/packages/plugins/chart/LICENSE" target="_blank">
+  <a href="https://github.com/Renovamen/vuepress-theme-gungnir/blob/v0/packages/plugins/chart/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" style="display: inline; margin: 0" alt="license">
   </a>
 </p>
@@ -160,4 +160,4 @@ Refer to the [documentation of Chart.js](https://www.chartjs.org/docs/latest/) f
 
 ## License
 
-[MIT](https://github.com/Renovamen/vuepress-theme-gungnir/blob/main/packages/plugins/chart/LICENSE)
+[MIT](https://github.com/Renovamen/vuepress-theme-gungnir/blob/v0/packages/plugins/chart/LICENSE)

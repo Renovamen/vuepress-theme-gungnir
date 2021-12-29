@@ -25,12 +25,12 @@ module.exports = [
     items: [
       {
         text: "Repository",
-        link: "https://github.com/Renovamen/vuepress-theme-gungnir",
+        link: "https://github.com/Renovamen/vuepress-theme-gungnir/tree/v0",
         icon: "oi-repo"
       },
       {
         text: "Changelog",
-        link: "https://github.com/Renovamen/vuepress-theme-gungnir/blob/main/CHANGELOG.md",
+        link: "https://github.com/Renovamen/vuepress-theme-gungnir/blob/v0/CHANGELOG.md",
         icon: "oi-git-compare"
       }
     ]

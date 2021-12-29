@@ -6,7 +6,7 @@ A blog theme for [VuePress 1](https://vuepress.vuejs.org/). The [Jekyll](https:/
 
 ---
 
-**Notice:** I'm now working on [Gungnir v2](https://github.com/Renovamen/vuepress-theme-gungnir/tree/v2) for [VuePress 2](https://v2.vuepress.vuejs.org/). So no further update expected for Gungnir v0 except bug fixes.
+**Notice:** I'm now working on [Gungnir v2](https://github.com/Renovamen/vuepress-theme-gungnir) for [VuePress 2](https://v2.vuepress.vuejs.org/). So no further update expected for Gungnir v0 except bug fixes.
 
 ---
 
@@ -23,7 +23,7 @@ English | [中文](README-CN.md)
 
 I'm now working on Gungnir v2, with the power of [VuePress 2](https://v2.vuepress.vuejs.org/), [Vue 3](https://v3.vuejs.org/), [Vite](https://vitejs.dev/) and [Webpack 5](https://webpack.js.org/). The new version will be written using [Composition API](https://v3.vuejs.org/guide/composition-api-introduction.html) and with a much higher dev server spinning up speed.
 
-V2 is still **WIP**, see [v2](https://github.com/Renovamen/vuepress-theme-gungnir/tree/v2) branch for the progress.
+V2 is still **WIP**, see [main](https://github.com/Renovamen/vuepress-theme-gungnir) branch for the progress.
 
 
 &nbsp;
@@ -64,23 +64,15 @@ npm i -D vuepress-theme-gungnir
 
 &nbsp;
 
-## Demo
+## Documentation & Live Demos
 
-Here are some live demos:
-
-- [vuepress-theme-gungnir.vercel.app](https://vuepress-theme-gungnir.vercel.app/)
-- [zxh.io](https://zxh.io) (my blog)
-
-
-&nbsp;
-
-## Documentation
-
-Documentation is available [here](https://vuepress-theme-gungnir.vercel.app/docs/).
+- Documentation: [vuepress-theme-gungnir.vercel.app](https://vuepress-theme-gungnir.vercel.app/)
+- ~~My blog: [zxh.io](https://zxh.io)~~ (v2 version)
 
 
 &nbsp;
 
 ## License
 
-VuePress theme Gungnir is [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) licensed, see the [LICENSE](packages/theme-gungnir/LICENSE) file for details.
+- VuePress theme Gungnir is [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) licensed, see the [LICENSE](packages/theme-gungnir/LICENSE) file for details
+- Plugins are licensed by MIT

@@ -7,10 +7,10 @@ date: 2020-03-26
   <a href="https://www.npmjs.com/package/vuepress-plugin-roughviz" target="_blank">
     <img src="https://img.shields.io/npm/v/vuepress-plugin-roughviz.svg?style=flat-square&logo=npm" style="display: inline; margin: 0" alt="npm">
   </a>
-  <a href="https://github.com/Renovamen/vuepress-theme-gungnir/tree/main/packages/plugins/roughviz" target="_blank">
+  <a href="https://github.com/Renovamen/vuepress-theme-gungnir/tree/v0/packages/plugins/roughviz" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-vuepress--plugin--roughviz-26A2FF?style=flat-square&logo=github" style="display: inline; margin: 0" alt="github">
   </a>
-  <a href="https://github.com/Renovamen/vuepress-theme-gungnir/blob/main/packages/plugins/roughviz/LICENSE" target="_blank">
+  <a href="https://github.com/Renovamen/vuepress-theme-gungnir/blob/v0/packages/plugins/roughviz/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" style="display: inline; margin: 0" alt="license">
   </a>
 </p>
@@ -108,4 +108,4 @@ roughViz.js 支持以下五种图表类型：
 
 ## 开源协议
 
-[MIT](https://github.com/Renovamen/vuepress-theme-gungnir/blob/main/packages/plugins/roughviz/LICENSE)
+[MIT](https://github.com/Renovamen/vuepress-theme-gungnir/blob/v0/packages/plugins/roughviz/LICENSE)

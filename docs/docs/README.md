@@ -9,10 +9,10 @@ Gungnir is a blog theme for [VuePress](https://vuepress.vuejs.org/).
   <a href="https://www.npmjs.com/package/vuepress-theme-gungnir" target="_blank">
     <img src="https://img.shields.io/npm/v/vuepress-theme-gungnir.svg?style=flat-square&logo=npm" style="display: inline; margin: 0" alt="npm">
   </a>
-  <a href="https://github.com/Renovamen/vuepress-theme-gungnir" target="_blank">
+  <a href="https://github.com/Renovamen/vuepress-theme-gungnir/tree/v0" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-Gungnir-26A2FF?style=flat-square&logo=github" style="display: inline; margin: 0" alt="github">
   </a>
-  <a href="https://github.com/Renovamen/renovamen.github.io/blob/master/LICENSE" target="_blank">
+  <a href="https://github.com/Renovamen/vuepress-theme-gungnir/blob/v0/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/License-Apache--2.0-green?style=flat-square" style="display: inline; margin: 0" alt="license">
   </a>
 </p>
@@ -22,7 +22,7 @@ Gungnir is a blog theme for [VuePress](https://vuepress.vuejs.org/).
 ## Live Demos
 
 - [vuepress-theme-gungnir.vercel.app](https://vuepress-theme-gungnir.vercel.app)
-- [My blog](https://zxh.io)
+- ~~[My blog](https://zxh.io)~~ (v2 version)
 
 
 ## Inspirations

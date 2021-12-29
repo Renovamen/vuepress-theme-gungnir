@@ -2,11 +2,11 @@
 
 [![npm](https://img.shields.io/npm/v/vuepress-theme-gungnir.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-theme-gungnir) [![docs](https://img.shields.io/badge/Docs-Gungnir-26A2FF?style=flat-square)](https://vuepress-theme-gungnir.vercel.app/docs/) [![license](https://img.shields.io/badge/License-Apache--2.0-green?style=flat-square)](LICENSE)
 
-一个基于 [VuePress](https://vuepress.vuejs.org/) 的博客主题。同时[这里](https://github.com/Renovamen/jekyll-theme-gungnir)还有一个它的 [Jekyll](https://jekyllrb.com/) 版本。
+一个基于 [VuePress 1](https://vuepress.vuejs.org/) 的博客主题。同时[这里](https://github.com/Renovamen/jekyll-theme-gungnir)还有一个它的 [Jekyll](https://jekyllrb.com/) 版本。
 
 ---
 
-**提示：** 我正在开发基于 [VuePress 2](https://v2.vuepress.vuejs.org/) 的 [Gungnir v2](https://github.com/Renovamen/vuepress-theme-gungnir/tree/v2) 版本。因此 Gungnir v0 应该不会再有除了 bug 修复以外的更新。
+**提示：** 我正在开发基于 [VuePress 2](https://v2.vuepress.vuejs.org/) 的 [Gungnir v2](https://github.com/Renovamen/vuepress-theme-gungnir) 版本。因此 Gungnir v0 应该不会再有除了 bug 修复以外的更新。
 
 ---
 
@@ -23,7 +23,7 @@
 
 我正在开发基于 [Gungnir v2](https://github.com/Renovamen/vuepress-theme-gungnir/tree/v2) 版本，它使用了 [VuePress 2](https://v2.vuepress.vuejs.org/zh/)、[Vue 3](https://v3.cn.vuejs.org/)、[Vite](https://cn.vitejs.dev/) 和 [Webpack 5](https://webpack.docschina.org/). 新版本将会用 [Composition API](https://v3.cn.vuejs.org/guide/composition-api-introduction.html) 重写，并会有更快的开发服务器启动速度。
 
-请在 [v2](https://github.com/Renovamen/vuepress-theme-gungnir/tree/v2) 分支查看 Gungnir v2 的开发进度。
+请在 [main](https://github.com/Renovamen/vuepress-theme-gungnir) 分支查看 Gungnir v2 的开发进度。
 
 
 &nbsp;
@@ -64,23 +64,15 @@ npm i -D vuepress-theme-gungnir
 
 &nbsp;
 
-## 演示站点
+## 文档和演示站点
 
-这里有一些演示站点：
-
-- [vuepress-theme-gungnir.vercel.app](https://vuepress-theme-gungnir.vercel.app/)
-- [zxh.io](https://zxh.io)（我的博客）
-
-
-&nbsp;
-
-## 文档
-
-[这里](https://vuepress-theme-gungnir.vercel.app/docs/)是本主题的文档。
+- 文档：[vuepress-theme-gungnir.vercel.app](https://vuepress-theme-gungnir.vercel.app/)
+- ~~我的博客：[zxh.io](https://zxh.io)~~（已经更新到了 v2 版本）
 
 
 &nbsp;
 
 ## 开源协议
 
-Gungnir 主题遵守 [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) 开源协议，详细细节见 [LICENSE](packages/theme-gungnir/LICENSE) 文件。
+- Gungnir 主题遵守 [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) 开源协议，详细细节见 [LICENSE](packages/theme-gungnir/LICENSE) 文件
+- 插件遵守 MIT 开源协议

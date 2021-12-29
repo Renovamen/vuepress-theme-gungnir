@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Renovamen/vuepress-theme-gungnir"
+    "url": "git+https://github.com/Renovamen/vuepress-theme-gungnir.git#v0"
   },
   "license": "Apache-2.0",
   "author": "Renovamen <renovamenzxh@gmail.com>",
