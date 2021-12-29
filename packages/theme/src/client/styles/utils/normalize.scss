@@ -126,11 +126,10 @@ h6 {
 }
 
 a.header-anchor {
-  font-size: 0.85em;
+  font-size: inherit;
   float: left;
   margin-left: -0.87em;
   padding-right: 0.23em;
-  margin-top: 0.125em;
   opacity: 0;
 
   &:hover {
