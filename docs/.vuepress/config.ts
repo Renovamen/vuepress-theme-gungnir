@@ -48,7 +48,13 @@ export default defineUserConfig<GungnirThemeOptions>({
         facebook: "renovamen.zou",
         twitter: "renovamen_zxh",
         zhihu: "chao-neng-gui-su",
-        email: "renovamenzxh@gmail.com"
+        email: "renovamenzxh@gmail.com",
+        // customized sns
+        bilibili: {
+          icon: "bilibili",
+          iconScale: 1.15,
+          link: "https://www.bilibili.com/"
+        }
       }
     },
 

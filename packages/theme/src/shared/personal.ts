@@ -1,13 +1,17 @@
 /**
  * SNS items
  */
+
+export type SNSItem =
+  | {
+      icon: string;
+      link: string;
+      iconScale?: number;
+    }
+  | string;
+
 export interface SNS {
-  github?: string;
-  linkedin?: string;
-  facebook?: string;
-  twitter?: string;
-  zhihu?: string;
-  email?: string;
+  [platform: string]: SNSItem;
 }
 
 export interface PersonalConfig {

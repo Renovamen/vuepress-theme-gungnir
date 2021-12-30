@@ -11,8 +11,8 @@
       <VIcon class="icon-stack">
         <VIcon v-if="large" name="circle" scale="2" class="icon-circle" />
         <VIcon
-          :name="getSNSIcon(platform)"
-          :scale="platform == 'zhihu' ? 1 : 0.9"
+          :name="getSNSIcon(user, platform)"
+          :scale="getSNSIconScale(user, platform)"
           class="icon-sns"
           inverse
         />
@@ -22,26 +22,39 @@
 </template>
 
 <script setup lang="ts">
+import type { SNSItem } from "../../shared";
 import { useThemeLocaleData } from "../composables";
 
-const snsLinks = {
-  github: "https://github.com/",
-  linkedin: "https://www.linkedin.com/in/",
-  facebook: "https://www.facebook.com/",
-  twitter: "https://www.twitter.com/",
-  zhihu: "https://www.zhihu.com/people/",
-  weibo: "http://weibo.com/u/",
-  email: "mailto:"
-};
-
-const snsIcons = {
-  github: "github",
-  linkedin: "linkedin-in",
-  facebook: "facebook-f",
-  twitter: "twitter",
-  zhihu: "zhihu",
-  weibo: "weibo",
-  email: "envelope"
+const defaultSNS = {
+  github: {
+    icon: "github",
+    preLink: "https://github.com/"
+  },
+  linkedin: {
+    icon: "linkedin-in",
+    preLink: "https://www.linkedin.com/in/"
+  },
+  facebook: {
+    icon: "facebook-f",
+    preLink: "https://www.facebook.com/"
+  },
+  twitter: {
+    icon: "twitter",
+    preLink: "https://www.twitter.com/"
+  },
+  zhihu: {
+    icon: "zhihu",
+    preLink: "https://www.zhihu.com/people/",
+    iconScale: 1.1
+  },
+  weibo: {
+    icon: "weibo",
+    preLink: "http://weibo.com/u/"
+  },
+  email: {
+    icon: "envelope",
+    preLink: "mailto:"
+  }
 };
 
 defineProps({
@@ -54,12 +67,23 @@ defineProps({
 const themeLocale = useThemeLocaleData();
 const sns = themeLocale.value.personalInfo?.sns;
 
-const getSNSLink = (user: string, platform: string) => {
-  return snsLinks[platform] + user;
+const getSNSLink = (user: SNSItem, platform: string): string => {
+  return typeof user === "string"
+    ? defaultSNS[platform].preLink + user
+    : user.link;
 };
 
-const getSNSIcon = (platform: string) => {
-  return snsIcons[platform];
+const getSNSIcon = (user: SNSItem, platform: string): string => {
+  return typeof user === "string" ? defaultSNS[platform].icon : user.icon;
+};
+
+const getSNSIconScale = (user: SNSItem, platform: string): number => {
+  return (
+    0.9 *
+    ((typeof user === "string"
+      ? defaultSNS[platform].iconScale
+      : user.iconScale) || 1)
+  );
 };
 </script>
 
