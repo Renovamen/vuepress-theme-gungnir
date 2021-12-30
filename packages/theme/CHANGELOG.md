@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.8](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2021-12-30)
+
+
+### Bug Fixes
+
+* "show all tags" button, close [#25](https://github.com/Renovamen/vuepress-theme-gungnir/issues/25) ([4055b8a](https://github.com/Renovamen/vuepress-theme-gungnir/commit/4055b8a39c3dd906f02760c0c6d78ed0baba15d8))
+
+
+### Features
+
+* adding customized sns ([#24](https://github.com/Renovamen/vuepress-theme-gungnir/issues/24)) ([08e1352](https://github.com/Renovamen/vuepress-theme-gungnir/commit/08e13528f8fa10f41cd5ca4884cbfc8c5eb3572b))
+
+
+
+
+
 # [2.0.0-alpha.7](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.6...v2.0.0-alpha.7) (2021-12-28)
 
 
