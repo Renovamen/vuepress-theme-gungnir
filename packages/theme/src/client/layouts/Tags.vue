@@ -32,7 +32,9 @@ const currentTag = computed(
 
 const filteredPosts = computed(() => {
   const tag =
-    currentTag.value === "Show All" ? "" : (currentTag.value as string);
+    currentTag.value === themeLocale.value.showAllTagsText
+      ? ""
+      : (currentTag.value as string);
   return getPostsByYear(filterPostsByTag(posts.value, tag));
 });
 
