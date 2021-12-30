@@ -1,5 +1,9 @@
 @import '../vars/_variables';
 
+:root {
+  scroll-behavior: smooth;
+}
+
 html,
 body,
 #app {
