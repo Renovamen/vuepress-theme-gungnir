@@ -49,6 +49,7 @@ export default defineUserConfig<GungnirThemeOptions>({
         twitter: "renovamen_zxh",
         zhihu: "chao-neng-gui-su",
         email: "renovamenzxh@gmail.com",
+        rss: "/rss.xml",
         // customized sns
         bilibili: {
           icon: "bilibili",
@@ -140,7 +141,11 @@ export default defineUserConfig<GungnirThemeOptions>({
         all: true
       },
       ga: "G-EE8M2S3MPB",
-      ba: "10b7bc420625758a319d6b23aed4700f"
+      ba: "10b7bc420625758a319d6b23aed4700f",
+      rss: {
+        siteURL: "https://v2.vuepress-theme-gungnir.vercel.app",
+        copyright: "Renovamen 2018-2021"
+      }
     },
 
     footer: `

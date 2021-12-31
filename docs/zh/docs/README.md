@@ -50,8 +50,12 @@ Gungnir 最初是一个基于 [Jekyll](https://jekyllrb.com/) 的主题，在 [H
 - 支持代码块全屏（从 WordPress 主题 [Sakura](https://github.com/mashirozx/Sakura) 搬过来的功能）
 - 基于 [Katex](https://github.com/KaTeX/KaTeX) 的公式支持
 - 在文章中使用图表：[Chart.js](https://www.chartjs.org)、[Mermaid](https://mermaid-js.github.io)
+- 一些 Markdown 增强样式，目前支持：
+  - 脚注（基于 [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)）
+  - 高亮（基于 [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark)）
 - 站点统计（[Google Analytics](https://analytics.google.com/) 和 [百度统计](https://tongji.baidu.com/)）
 - 评论（基于 [Giscus](https://github.com/giscus/giscus)）
+- RSS
 - 阅读时间估计
 - 多语言支持（英文、简体中文）
 - 带标签的归档页和链接页
@@ -60,10 +64,6 @@ Gungnir 最初是一个基于 [Jekyll](https://jekyllrb.com/) 的主题，在 [H
 ## TODO
 
 - [roughViz.js](https://github.com/jwilber/roughViz) 和 [markmap](https://github.com/gera2ld/markmap)
-- 一些 Markdown 增强样式，目前支持：
-  - 脚注（基于 [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)）
-  - 高亮（基于 [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark)）
-- RSS
 
 
 ## 其他版本

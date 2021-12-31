@@ -54,6 +54,10 @@ const defaultSNS = {
   email: {
     icon: "envelope",
     preLink: "mailto:"
+  },
+  rss: {
+    preLink: "",
+    icon: "rss"
   }
 };
 

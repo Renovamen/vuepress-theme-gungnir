@@ -14,7 +14,8 @@ import {
   resolveContainerPluginOptionsForCodeGroupItem,
   resolveContainerPluginOptionsForDetails,
   resolveGitPluginOptions,
-  resolveMediumZoomPluginOptions
+  resolveMediumZoomPluginOptions,
+  resolveRSSPluginOptions
 } from "./utils";
 
 export interface GungnirThemeOptions
@@ -112,6 +113,7 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = (
       ["vuepress-plugin-chart", themePlugins.chartjs === true],
       ["@renovamen/vuepress-plugin-reading-time", themePlugins.readingTime],
       ["vuepress-plugin-code-enhance", themePlugins.codeEnhance],
+      ["@renovamen/vuepress-plugin-rss", resolveRSSPluginOptions(themePlugins)],
       [
         "vuepress-plugin-giscus",
         themePlugins.giscus === undefined ? false : themePlugins.giscus

@@ -1,0 +1,34 @@
+{
+  "name": "@renovamen/vuepress-plugin-rss",
+  "version": "2.0.0-alpha.1",
+  "description": "A plugin for adding RSS to vuepress-theme-gungnir v2.",
+  "keywords": [
+    "vue",
+    "vuepress",
+    "vuepress-plugin",
+    "rss"
+  ],
+  "homepage": "https://github.com/Renovamen/vuepress-theme-gungnir/tree/main/packages/plugins/rss",
+  "bugs": {
+    "url": "https://github.com/Renovamen/vuepress-theme-gungnir/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Renovamen/vuepress-theme-gungnir.git",
+    "directory": "packages/plugins/rss"
+  },
+  "license": "MIT",
+  "author": "Renovamen <renovamenzxh@gmail.com>",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo"
+  },
+  "dependencies": {
+    "rss": "^1.2.2"
+  }
+}
