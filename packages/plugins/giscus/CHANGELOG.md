@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.9](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2021-12-31)
+
+
+### Bug Fixes
+
+* **plugin-giscus:** handle ssr ([2d78110](https://github.com/Renovamen/vuepress-theme-gungnir/commit/2d781102f6790644d3f728e3265040085e0032f4))
+
+
+
+
+
 # [2.0.0-alpha.4](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.3...v2.0.0-alpha.4) (2021-12-27)
 
 **Note:** Version bump only for package vuepress-plugin-giscus

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.9](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2021-12-31)
+
+
+### Bug Fixes
+
+* home page header image ([a4bc90d](https://github.com/Renovamen/vuepress-theme-gungnir/commit/a4bc90d39751d01146214ed0b7acfd22cf350a00))
+* **plugin-giscus:** handle ssr ([2d78110](https://github.com/Renovamen/vuepress-theme-gungnir/commit/2d781102f6790644d3f728e3265040085e0032f4))
+
+
+### Features
+
+* **plugin-rss:** add supports for RSS ([f477c51](https://github.com/Renovamen/vuepress-theme-gungnir/commit/f477c51258b336c375b5ef348ebbc1e547610d4c))
+
+
+
+
+
 # [2.0.0-alpha.8](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.7...v2.0.0-alpha.8) (2021-12-30)
 
 
