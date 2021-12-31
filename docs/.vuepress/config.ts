@@ -144,12 +144,12 @@ export default defineUserConfig<GungnirThemeOptions>({
       ba: "10b7bc420625758a319d6b23aed4700f",
       rss: {
         siteURL: "https://v2.vuepress-theme-gungnir.vercel.app",
-        copyright: "Renovamen 2018-2021"
+        copyright: "Renovamen 2018-2022"
       }
     },
 
     footer: `
-      &copy; <a href="https://github.com/Renovamen" target="_blank">Renovamen</a> 2018-2021
+      &copy; <a href="https://github.com/Renovamen" target="_blank">Renovamen</a> 2018-2022
       <br>
       Powered by <a href="https://v2.vuepress.vuejs.org" target="_blank">VuePress</a> &
       <a href="https://github.com/Renovamen/vuepress-theme-gungnir" target="_blank">Gungnir</a>
