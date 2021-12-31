@@ -59,11 +59,7 @@ import SNS from "./SNS.vue";
 const themeLocale = useThemeLocaleData();
 const bgImages = themeLocale.value.homeHeaderImages;
 
-const bgImageID = ref(
-  bgImages && bgImages.length > 0
-    ? Math.floor(Math.random() * bgImages.length)
-    : 0
-);
+const bgImageID = ref(-1);
 const headerOpacity = ref(1);
 
 // -------- Scroll --------
@@ -95,6 +91,8 @@ const fetchHitokoto = () => {
 
 onMounted(() => {
   if (hitokotoAPI) fetchHitokoto();
+  if (bgImages && bgImages.length > 0)
+    bgImageID.value = Math.floor(Math.random() * bgImages.length);
 });
 
 // -------- Header images --------
@@ -106,13 +104,13 @@ const switchImage = (n: number) => {
 };
 
 const bgImagePath = computed(() => {
-  return bgImages && bgImages.length > 0
+  return bgImages && bgImages.length > 0 && bgImageID.value !== -1
     ? withBase(bgImages[bgImageID.value].path)
     : null;
 });
 
 const bgImageMask = computed(() => {
-  return bgImages && bgImages.length > 0
+  return bgImages && bgImages.length > 0 && bgImageID.value !== -1
     ? bgImages[bgImageID.value].mask
     : null;
 });
