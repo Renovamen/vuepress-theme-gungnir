@@ -45,13 +45,6 @@ export interface GungnirThemePluginsOptions {
   };
 
   /**
-   * Enable @vuepress/plugin-external-link-icon or not
-   *
-   * @default false
-   */
-  externalLinkIcon?: boolean;
-
-  /**
    * Enable @vuepress/plugin-git or not
    */
   git?: boolean;
