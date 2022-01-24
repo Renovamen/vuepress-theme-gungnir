@@ -1,6 +1,6 @@
-@import '../vars/_variables';
-@import '../utils/_mixins';
-@import '../utils/_wrapper';
+@import '../_variables';
+@import '../_mixins';
+@import '../_wrapper';
 
 .page {
   padding-top: var(--navbar-height);

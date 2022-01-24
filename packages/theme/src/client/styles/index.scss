@@ -1,6 +1,6 @@
-// variables
-@use 'vars/vars-dark.scss';
-@use 'vars/vars';
+// light/dark mode
+@use 'mode/light';
+@use 'mode/dark';
 
 // utils
 @use 'utils/normalize';

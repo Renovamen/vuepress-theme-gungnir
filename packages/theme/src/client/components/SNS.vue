@@ -92,7 +92,7 @@ const getSNSIconScale = (user: SNSItem, platform: string): number => {
 </script>
 
 <style lang="scss">
-@import "../styles/utils/_mixins";
+@import "../styles/_mixins";
 
 .sns-wrapper {
   padding: 0;
