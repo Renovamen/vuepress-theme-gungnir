@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.10](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.9...v2.0.0-alpha.10) (2022-01-24)
+
+
+### Features
+
+* add icons for customize containers ([6bbb471](https://github.com/Renovamen/vuepress-theme-gungnir/commit/6bbb471337a6ecdf194ad1b25eb2f10a4b7db7aa))
+
+
+
+
+
 # [2.0.0-alpha.9](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.8...v2.0.0-alpha.9) (2021-12-31)
 
 
