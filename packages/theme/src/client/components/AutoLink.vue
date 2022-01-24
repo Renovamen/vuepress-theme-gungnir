@@ -1,7 +1,6 @@
 <template>
   <RouterLink
     v-if="isRouterLink"
-    class="nav-link"
     :class="{ 'router-link-active': isActive }"
     :to="item.link"
     :aria-label="linkAriaLabel"
@@ -17,9 +16,10 @@
     {{ item.text }}
     <slot name="after" />
   </RouterLink>
+
   <a
     v-else
-    class="nav-link external"
+    class="external-link"
     :href="item.link"
     :rel="linkRel"
     :target="linkTarget"
@@ -70,12 +70,12 @@ const { item } = toRefs(props);
 // if the link has http protocol
 const hasHttpProtocol = computed(() => isLinkHttp(item.value.link));
 // if the link has non-http protocol
-const hasNonHttpProtocal = computed(
+const hasNonHttpProtocoll = computed(
   () => isLinkMailto(item.value.link) || isLinkTel(item.value.link)
 );
 // resolve the `target` attr
 const linkTarget = computed(() => {
-  if (hasNonHttpProtocal.value) return undefined;
+  if (hasNonHttpProtocoll.value) return undefined;
   if (item.value.target) return item.value.target;
   if (hasHttpProtocol.value) return "_blank";
   return undefined;
@@ -85,11 +85,11 @@ const isBlankTarget = computed(() => linkTarget.value === "_blank");
 // is `<RouterLink>` or not
 const isRouterLink = computed(
   () =>
-    !hasHttpProtocol.value && !hasNonHttpProtocal.value && !isBlankTarget.value
+    !hasHttpProtocol.value && !hasNonHttpProtocoll.value && !isBlankTarget.value
 );
 // resolve the `rel` attr
 const linkRel = computed(() => {
-  if (hasNonHttpProtocal.value) return undefined;
+  if (hasNonHttpProtocoll.value) return undefined;
   if (item.value.rel) return item.value.rel;
   if (isBlankTarget.value) return "noopener noreferrer";
   return undefined;

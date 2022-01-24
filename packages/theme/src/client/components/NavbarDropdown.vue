@@ -1,7 +1,7 @@
 <template>
-  <div class="dropdown-wrapper" :class="{ open }">
+  <div class="navbar-dropdown-wrapper" :class="{ open }">
     <button
-      class="dropdown-title"
+      class="navbar-dropdown-title"
       type="button"
       :aria-label="dropdownAriaLabel"
       @click="handleDropdown"
@@ -19,7 +19,7 @@
     </button>
 
     <button
-      class="mobile-dropdown-title"
+      class="navbar-dropdown-title-mobile"
       type="button"
       :aria-label="dropdownAriaLabel"
       @click="open = !open"
@@ -37,15 +37,15 @@
     </button>
 
     <DropdownTransition>
-      <ul v-show="open" class="nav-dropdown">
+      <ul v-show="open" class="navbar-dropdown">
         <li
-          v-for="(child, index) in item.children"
-          :key="child.link || index"
-          class="dropdown-item"
+          v-for="child in item.children"
+          :key="child.text"
+          class="navbar-dropdown-item"
         >
           <template v-if="child.children">
-            <h4 class="dropdown-subtitle">
-              <NavLink
+            <h4 class="navbar-dropdown-subtitle">
+              <AutoLink
                 v-if="child.link"
                 :item="child"
                 @focusout="
@@ -58,13 +58,13 @@
               <span v-else>{{ child.text }}</span>
             </h4>
 
-            <ul class="dropdown-subitem-wrapper">
+            <ul class="navbar-navbar-dropdown-subitem-wrapper">
               <li
                 v-for="grandchild in child.children"
                 :key="grandchild.link"
-                class="dropdown-subitem"
+                class="navbar-dropdown-subitem"
               >
-                <NavLink
+                <AutoLink
                   :item="grandchild"
                   @focusout="
                     isLastItemOfArray(grandchild, child.children) &&
@@ -77,7 +77,7 @@
           </template>
 
           <template v-else>
-            <NavLink
+            <AutoLink
               :item="child"
               @focusout="
                 isLastItemOfArray(child, item.children) && (open = false)
@@ -91,16 +91,16 @@
 </template>
 
 <script setup lang="ts">
+import AutoLink from "@theme/AutoLink.vue";
+import DropdownTransition from "@theme/DropdownTransition.vue";
 import { computed, ref, toRefs, watch } from "vue";
 import type { PropType } from "vue";
 import { useRoute } from "vue-router";
-import type { NavGroup, NavItem } from "../../shared";
-import DropdownTransition from "./DropdownTransition.vue";
-import NavLink from "./NavLink.vue";
+import type { NavbarItem, ResolvedNavbarItem } from "../../shared";
 
 const props = defineProps({
   item: {
-    type: Object as PropType<NavGroup<NavItem>>,
+    type: Object as PropType<Exclude<ResolvedNavbarItem, NavbarItem>>,
     required: true
   }
 });

@@ -1,31 +1,42 @@
 <template>
-  <NavLink v-if="item.link" :class="itemClass" :item="item" />
-  <p v-else :class="itemClass" @click="onClick">
-    {{ item.text }}
-    <span
-      v-if="item.collapsible"
-      class="arrow"
-      :class="isOpen ? 'down' : 'right'"
-    />
-  </p>
+  <li>
+    <AutoLink v-if="item.link" :class="itemClass" :item="item" />
+    <p
+      v-else
+      tabindex="0"
+      :class="itemClass"
+      @click="onClick"
+      @keydown.enter="onClick"
+    >
+      {{ item.text }}
+      <span
+        v-if="item.collapsible"
+        class="arrow"
+        :class="isOpen ? 'down' : 'right'"
+      />
+    </p>
 
-  <DropdownTransition v-if="item.children?.length">
-    <ul v-show="isOpen" class="sidebar-item-children">
-      <li v-for="child in item.children" :key="child.text">
-        <SidebarItem :item="child" :depth="depth + 1" />
-      </li>
-    </ul>
-  </DropdownTransition>
+    <DropdownTransition v-if="item.children?.length">
+      <ul v-show="isOpen" class="sidebar-item-children">
+        <SidebarItem
+          v-for="child in item.children"
+          :key="`${depth}${child.text}${child.link}`"
+          :item="child"
+          :depth="depth + 1"
+        />
+      </ul>
+    </DropdownTransition>
+  </li>
 </template>
 
 <script setup lang="ts">
+import AutoLink from "@theme/AutoLink.vue";
+import DropdownTransition from "@theme/DropdownTransition.vue";
 import { computed, ref, toRefs } from "vue";
 import type { PropType } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import type { ResolvedSidebarItem } from "../../shared";
 import { isActiveSidebarItem } from "../utils";
-import DropdownTransition from "./DropdownTransition.vue";
-import NavLink from "./NavLink.vue";
 
 const props = defineProps({
   item: {

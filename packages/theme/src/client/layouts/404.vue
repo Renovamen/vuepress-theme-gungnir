@@ -11,8 +11,8 @@
 </template>
 
 <script setup lang="ts">
+import Common from "@theme/Common.vue";
 import { useRouteLocale } from "@vuepress/client";
-import Common from "../components/Common.vue";
 import { useThemeLocaleData } from "../composables";
 
 const routeLocale = useRouteLocale();

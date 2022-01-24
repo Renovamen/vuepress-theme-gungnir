@@ -6,11 +6,11 @@
 </template>
 
 <script setup lang="ts">
+import Pager from "@theme/Pager.vue";
+import PostListItem from "@theme/PostListItem.vue";
 import { computed } from "vue";
 import { useRouter } from "vue-router";
 import { useBlog, useThemeLocaleData } from "../composables";
-import Pager from "./Pager.vue";
-import PostListItem from "./PostListItem.vue";
 
 const router = useRouter();
 const themeLocale = useThemeLocaleData();

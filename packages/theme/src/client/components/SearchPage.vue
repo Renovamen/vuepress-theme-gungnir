@@ -95,6 +95,10 @@ const goTo = (index: number): void => {
     return;
   }
 
+  // force enable scrolling on html element
+  const HTMLDom = document.querySelector<HTMLElement>("html");
+  HTMLDom?.classList.remove("fixed");
+
   router.push(suggestion.link).then(() => {
     query.value = "";
     focusIndex.value = 0;

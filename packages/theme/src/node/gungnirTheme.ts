@@ -1,6 +1,6 @@
 import type { Page, Theme, ThemeConfig } from "@vuepress/core";
 import { createPage } from "@vuepress/core";
-import { path } from "@vuepress/utils";
+import { fs, path } from "@vuepress/utils";
 import type {
   GungnirThemeLocaleOptions,
   GungnirThemePageData,
@@ -13,6 +13,7 @@ import {
   resolveContainerPluginOptionsForCodeGroup,
   resolveContainerPluginOptionsForCodeGroupItem,
   resolveContainerPluginOptionsForDetails,
+  resolveExternalLinkIconPluginOptions,
   resolveGitPluginOptions,
   resolveMediumZoomPluginOptions,
   resolveRSSPluginOptions
@@ -52,6 +53,19 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = (
     name: "vuepress-theme-gungnir",
 
     layouts: path.resolve(__dirname, "../client/layouts"),
+
+    templateBuild: path.resolve(__dirname, "../../templates/index.build.html"),
+
+    // use alias to make all components replaceable
+    alias: Object.fromEntries(
+      fs
+        .readdirSync(path.resolve(__dirname, "../client/components"))
+        .filter((file) => file.endsWith(".vue"))
+        .map((file) => [
+          `@theme/${file}`,
+          path.resolve(__dirname, "../client/components", file)
+        ])
+    ),
 
     clientAppEnhanceFiles: path.resolve(
       __dirname,
@@ -100,7 +114,10 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = (
         "@vuepress/container",
         resolveContainerPluginOptionsForCodeGroupItem(themePlugins)
       ],
-      ["@vuepress/external-link-icon", themePlugins.externalLinkIcon === true],
+      [
+        "@vuepress/external-link-icon",
+        resolveExternalLinkIconPluginOptions(themePlugins, localeOptions)
+      ],
       ["@vuepress/git", resolveGitPluginOptions(themePlugins, localeOptions)],
       ["@vuepress/medium-zoom", resolveMediumZoomPluginOptions(themePlugins)],
       ["@vuepress/nprogress", themePlugins.nprogress !== false],

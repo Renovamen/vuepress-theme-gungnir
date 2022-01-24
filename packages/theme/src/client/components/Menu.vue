@@ -52,10 +52,10 @@
 </template>
 
 <script setup lang="ts">
+import ToggleDarkModeButton from "@theme/ToggleDarkModeButton.vue";
+import ToggleSidebarButton from "@theme/ToggleSidebarButton.vue";
 import { pageData } from "@vuepress/client";
 import { computed, onBeforeUnmount, onMounted, reactive } from "vue";
-import ToggleDarkModeButton from "./ToggleDarkModeButton.vue";
-import ToggleSidebarButton from "./ToggleSidebarButton.vue";
 
 defineEmits(["toggle-sidebar", "toggle-catalog"]);
 

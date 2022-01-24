@@ -13,6 +13,14 @@
     &::before {
       top: -2.4em;
     }
+
+    .highlight-lines {
+      padding-top: 1.3rem;
+    }
+
+    &.line-numbers-mode .line-numbers {
+      padding-top: 1.25rem;
+    }
   }
 
   .fullscreen-code-button {

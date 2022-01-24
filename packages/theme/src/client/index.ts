@@ -22,6 +22,8 @@ import type {
   SidebarConfig,
   SidebarConfigArray,
   SidebarConfigObject,
+  SidebarGroup,
+  SidebarGroupCollapsible,
   SidebarItem
 } from "../shared";
 
@@ -37,6 +39,8 @@ export type {
   SidebarConfigArray,
   SidebarConfigObject,
   SidebarConfig,
+  SidebarGroup,
+  SidebarGroupCollapsible,
   ResolvedSidebarItem,
   GungnirThemePluginsOptions,
   GungnirThemeLocaleOptions,

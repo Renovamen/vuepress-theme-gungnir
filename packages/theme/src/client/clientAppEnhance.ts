@@ -3,7 +3,6 @@ import { addIcons, OhVueIcon } from "oh-vue-icons";
 import Badge from "./components/global/Badge.vue";
 import CodeGroup from "./components/global/CodeGroup";
 import CodeGroupItem from "./components/global/CodeGroupItem.vue";
-import ExternalLinkIcon from "./components/global/ExternalLinkIcon.vue";
 import { useScrollPromise } from "./composables";
 import icons from "./icons";
 
@@ -16,10 +15,6 @@ export default defineClientAppEnhance(({ app, router }) => {
   app.component("Badge", Badge);
   app.component("CodeGroup", CodeGroup);
   app.component("CodeGroupItem", CodeGroupItem);
-
-  // override the `<ExternalLinkIcon>` provided by @vuepress/plugin-external-link-icon
-  delete app._context.components.ExternalLinkIcon;
-  app.component("ExternalLinkIcon", ExternalLinkIcon);
 
   // icons
   app.component("VIcon", OhVueIcon);

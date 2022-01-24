@@ -36,14 +36,14 @@
 </template>
 
 <script setup lang="ts">
+import Common from "@theme/Common.vue";
+import PageHeader from "@theme/PageHeader.vue";
 import { usePageFrontmatter } from "@vuepress/client";
 import { computed } from "vue";
 import type {
   GungnirThemeLinksPageFrontmatter,
   GungnirThemePageOptions
 } from "../../shared";
-import Common from "../components/Common.vue";
-import PageHeader from "../components/PageHeader.vue";
 import { useThemeLocaleData } from "../composables";
 
 const themeLocale = useThemeLocaleData();

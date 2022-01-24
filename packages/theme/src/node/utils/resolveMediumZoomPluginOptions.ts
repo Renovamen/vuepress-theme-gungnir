@@ -16,6 +16,6 @@ export const resolveMediumZoomPluginOptions = (
       ".theme-gungnir-content > img, .theme-gungnir-content :not(a) > img",
     zoomOptions: {},
     // should greater than page transition duration
-    delay: 400
+    delay: 300
   };
 };

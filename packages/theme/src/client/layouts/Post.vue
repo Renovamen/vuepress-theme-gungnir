@@ -33,15 +33,15 @@
 </template>
 
 <script setup lang="ts">
+import ArticleHeader from "@theme/ArticleHeader.vue";
+import Common from "@theme/Common.vue";
+import Page from "@theme/Page.vue";
+import Pager from "@theme/Pager.vue";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { computed, onBeforeUnmount, onMounted, reactive } from "vue";
 import { useRouter } from "vue-router";
 import type { GungnirThemePostFrontmatter } from "../../shared";
-import ArticleHeader from "../components/ArticleHeader.vue";
 import { Catalog } from "../components/Catalog";
-import Common from "../components/Common.vue";
-import Page from "../components/Page.vue";
-import Pager from "../components/Pager.vue";
 import { useBlog, useScrollPromise, useThemeLocaleData } from "../composables";
 
 const page = usePageData();

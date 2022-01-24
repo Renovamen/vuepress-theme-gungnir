@@ -1,7 +1,7 @@
 import type { GungnirThemeLocaleOptions } from "../../shared";
 import { en } from "../i18n";
 
-const defaultLocaleOptions: GungnirThemeLocaleOptions = {
+export const DEFAULT_LOCALE_OPTIONS: GungnirThemeLocaleOptions = {
   hitokoto: false,
   personalInfo: null,
   homeHeaderImages: null,
@@ -56,7 +56,7 @@ export const assignDefaultLocaleOptions = (
   }
 
   Object.assign(localeOptions, {
-    ...defaultLocaleOptions,
+    ...DEFAULT_LOCALE_OPTIONS,
     ...localeOptions
   });
 

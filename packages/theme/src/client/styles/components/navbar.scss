@@ -16,7 +16,7 @@
     position: relative;
   }
 
-  .navbar-links-wrapper {
+  .navbar-items-wrapper {
     display: flex;
     position: absolute;
     box-sizing: border-box;
@@ -35,8 +35,8 @@
 
   &.invert {
     span.site-name,
-    .navbar-links .navbar-links-item > a.nav-link,
-    .navbar-links .navbar-links-item span.title {
+    .navbar-items .navbar-item > a,
+    .navbar-items .navbar-item span.title {
       color: white;
       &:hover, &:focus {
         color: rgba(white, .8);
@@ -62,9 +62,9 @@
 }
 
 /**
- * navbar-links
+ * navbar-items
  */
-.navbar-links {
+.navbar-items {
   display: inline-block;
   font-weight: 600;
 
@@ -79,7 +79,7 @@
     }
   }
 
-  .navbar-links-item {
+  .navbar-item {
     position: relative;
     display: inline-block;
     margin-left: 1.5rem;
@@ -99,8 +99,8 @@
 }
 
 @media (max-width: $MQMobile) {
-  .navbar-links {
-    .navbar-links-item {
+  .navbar-items {
+    .navbar-item {
       margin-left: 0;
     }
   }
@@ -118,7 +118,7 @@
 
       @include transition(transform .3s);
 
-      .nav-link, span.title, span.site-name {
+      .navbar-item a, span.title, span.site-name {
         color: var(--c-text) !important;
         &:hover,
         &:focus,
@@ -133,14 +133,14 @@
     }
   }
 
-  .navbar-links a {
+  .navbar-items a {
     &:hover,
     &.router-link-active {
       color: var(--c-text);
     }
   }
 
-  .navbar-links-item > a:not(.external) {
+  .navbar-item > a {
     &:hover,
     &.router-link-active {
       color: var(--c-text-accent);

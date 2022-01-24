@@ -49,15 +49,15 @@
 </template>
 
 <script setup lang="ts">
+import Footer from "@theme/Footer.vue";
+import Menu from "@theme/Menu.vue";
+import Navbar from "@theme/Navbar.vue";
+import SearchPage from "@theme/SearchPage.vue";
+import Sidebar from "@theme/Sidebar.vue";
 import { pageData, usePageFrontmatter } from "@vuepress/client";
 import { computed, onMounted, onUnmounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import type { GungnirThemePageFrontmatter } from "../../shared";
-import Footer from "../components/Footer.vue";
-import Menu from "../components/Menu.vue";
-import Navbar from "../components/Navbar.vue";
-import SearchPage from "../components/SearchPage.vue";
-import Sidebar from "../components/Sidebar.vue";
 import {
   useResolveRouteWithRedirect,
   useSidebarItems,
@@ -119,6 +119,11 @@ const isSearchOpen = ref(false);
 const toggleSearch = (to?: boolean): void => {
   isSearchOpen.value = typeof to === "boolean" ? to : !isSearchOpen.value;
 
+  // disable/enable scrolling on html element
+  const HTMLDom = document.querySelector<HTMLElement>("html");
+  if (isSearchOpen.value) HTMLDom?.classList.add("fixed");
+  else HTMLDom?.classList.remove("fixed");
+
   // auto focus
   if (isSearchOpen.value) {
     setTimeout(function () {
@@ -128,11 +133,6 @@ const toggleSearch = (to?: boolean): void => {
       searchInput.focus();
     }, 400);
   }
-
-  // disable scrolling on html element
-  const HTMLDom = document.querySelector<HTMLElement>("html");
-  if (isSearchOpen.value) HTMLDom?.classList.add("fixed");
-  else HTMLDom?.classList.remove("fixed");
 };
 
 // catalog

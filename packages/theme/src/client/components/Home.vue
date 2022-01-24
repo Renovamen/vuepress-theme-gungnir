@@ -50,11 +50,11 @@
 </template>
 
 <script setup lang="ts">
+import PostList from "@theme/PostList.vue";
+import SNS from "@theme/SNS.vue";
 import { withBase } from "@vuepress/client";
 import { computed, onMounted, ref } from "vue";
 import { useThemeLocaleData } from "../composables";
-import PostList from "./PostList.vue";
-import SNS from "./SNS.vue";
 
 const themeLocale = useThemeLocaleData();
 const bgImages = themeLocale.value.homeHeaderImages;

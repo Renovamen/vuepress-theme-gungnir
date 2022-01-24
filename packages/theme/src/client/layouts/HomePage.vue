@@ -7,6 +7,6 @@
 </template>
 
 <script setup lang="ts">
-import Common from "../components/Common.vue";
-import Home from "../components/Home.vue";
+import Common from "@theme/Common.vue";
+import Home from "@theme/Home.vue";
 </script>

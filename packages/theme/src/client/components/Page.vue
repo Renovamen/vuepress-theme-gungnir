@@ -17,10 +17,10 @@
 </template>
 
 <script setup lang="ts">
+import PageMeta from "@theme/PageMeta.vue";
+import PageNav from "@theme/PageNav.vue";
 import { computed, resolveComponent } from "vue";
 import { useDarkMode } from "../composables";
-import PageMeta from "./PageMeta.vue";
-import PageNav from "./PageNav.vue";
 
 const isGiscus = typeof resolveComponent("Giscus") !== "string";
 const isDarkMode = useDarkMode();

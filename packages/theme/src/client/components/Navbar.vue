@@ -16,15 +16,16 @@
       </RouterLink>
     </span>
 
-    <div class="navbar-links-wrapper" :style="linksWrapperStyle">
+    <div class="navbar-items-wrapper" :style="linksWrapperStyle">
       <slot name="before" />
-      <NavbarLinks class="can-hide" @toggle-search="$emit('toggle-search')" />
+      <NavbarItems class="can-hide" @toggle-search="$emit('toggle-search')" />
       <slot name="after" />
     </div>
   </header>
 </template>
 
 <script setup lang="ts">
+import NavbarItems from "@theme/NavbarItems.vue";
 import {
   usePageFrontmatter,
   useRouteLocale,
@@ -37,7 +38,6 @@ import type {
   GungnirThemePostFrontmatter
 } from "../../shared";
 import { useThemeLocaleData } from "../composables";
-import NavbarLinks from "./NavbarLinks.vue";
 
 defineProps({
   isSidebar: {

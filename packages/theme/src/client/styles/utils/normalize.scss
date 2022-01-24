@@ -37,7 +37,7 @@ body {
 a {
   color: var(--c-text-accent);
   text-decoration: none;
-  overflow-wrap: break-word;
+
 }
 
 p a code {
@@ -64,7 +64,7 @@ code {
   background-color: var(--inline-code-bg-color);
   border-radius: 3px;
   overflow-wrap: break-word;
-  transition: background-color var(--t-color), color var(--t-color);
+  transition: background-color var(--t-color);
 }
 
 blockquote {
@@ -96,6 +96,10 @@ h5,
 h6 {
   font-weight: 600;
   line-height: 1.25;
+
+  &:focus-visible {
+    outline: none;
+  }
 
   &:hover .header-anchor {
     opacity: 1;
@@ -161,20 +165,24 @@ table {
   margin: 1rem 0;
   display: block;
   overflow-x: auto;
+  transition: border-color var(--t-color);
 }
 
 tr {
   border-top: 1px solid var(--c-border-sub);
+  transition: border-color var(--t-color);
 
   &:nth-child(2n) {
     background-color: var(--c-bg-light);
+    transition: background-color var(--t-color);
   }
 }
 
 th,
 td {
-  border: 1px solid var(--c-border-sub);
   padding: 0.6em 1em;
+  border: 1px solid var(--c-border-dark);
+  transition: border-color var(--t-color);
 }
 
 @media (max-width: $MQMobile) {

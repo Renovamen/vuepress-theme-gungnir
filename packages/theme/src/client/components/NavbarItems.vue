@@ -1,17 +1,13 @@
 <template>
-  <nav v-if="navbarLinks.length" class="navbar-links">
-    <div v-for="item in navbarLinks" :key="item.text" class="navbar-links-item">
-      <DropdownLink v-if="item.children" :item="item" />
-      <NavLink v-else :item="item" />
+  <nav v-if="navbarLinks.length" class="navbar-items">
+    <div v-for="item in navbarLinks" :key="item.text" class="navbar-item">
+      <NavbarDropdown v-if="item.children" :item="item" />
+      <AutoLink v-else :item="item" />
     </div>
 
     <!-- search button -->
-    <div v-if="shouldShowSearchPage" class="navbar-links-item">
-      <a
-        class="nav-link"
-        style="cursor: pointer"
-        @click="$emit('toggle-search')"
-      >
+    <div v-if="shouldShowSearchPage" class="navbar-item">
+      <a style="cursor: pointer" @click="$emit('toggle-search')">
         <span v-if="themeLocale.searchIcon" class="nav-icon">
           <VIcon :name="themeLocale.searchIcon" scale="0.8" />
         </span>
@@ -22,6 +18,8 @@
 </template>
 
 <script setup lang="ts">
+import AutoLink from "@theme/AutoLink.vue";
+import NavbarDropdown from "@theme/NavbarDropdown.vue";
 import {
   pageData,
   usePageFrontmatter,
@@ -40,8 +38,6 @@ import type {
 } from "../../shared";
 import { useNavLink, useThemeLocaleData } from "../composables";
 import { resolveRepoType } from "../utils";
-import DropdownLink from "./DropdownLink.vue";
-import NavLink from "./NavLink.vue";
 
 defineEmits(["toggle-search"]);
 
@@ -64,8 +60,9 @@ const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
     const currentFullPath = router.currentRoute.value.fullPath;
 
     const languageDropdown: ResolvedNavbarItem = {
-      text: themeLocale.value.selectLanguageText ?? "unkown language",
-      ariaLabel: themeLocale.value.selectLanguageAriaLabel ?? "unkown language",
+      text: themeLocale.value.selectLanguageText ?? "unknown language",
+      ariaLabel:
+        themeLocale.value.selectLanguageAriaLabel ?? "unknown language",
       icon: themeLocale.value.langIcon,
       iconScale: 1.1,
       children: localePaths.map((targetLocalePath) => {

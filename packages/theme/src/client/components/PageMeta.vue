@@ -2,7 +2,7 @@
   <footer class="page-meta">
     <div v-if="editNavLink" class="meta-item edit-link">
       <VIcon name="pencil" scale="0.8" />
-      <NavLink class="meta-item-label" :item="editNavLink" />
+      <AutoLink class="meta-item-label" :item="editNavLink" />
     </div>
 
     <div v-if="lastUpdated" class="meta-item last-updated">
@@ -30,6 +30,7 @@
 </template>
 
 <script setup lang="ts">
+import AutoLink from "@theme/AutoLink.vue";
 import {
   usePageData,
   usePageFrontmatter,
@@ -40,13 +41,12 @@ import type { ComputedRef } from "vue";
 import type {
   GungnirThemeNormalPageFrontmatter,
   GungnirThemePageData,
-  NavLink as NavLinkType
+  NavLink
 } from "../../shared";
 import { useThemeLocaleData } from "../composables";
 import { resolveEditLink } from "../utils";
-import NavLink from "./NavLink.vue";
 
-const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
+const useEditNavLink = (): ComputedRef<null | NavLink> => {
   const themeLocale = useThemeLocaleData();
   const page = usePageData<GungnirThemePageData>();
   const frontmatter = usePageFrontmatter<GungnirThemeNormalPageFrontmatter>();
@@ -87,7 +87,6 @@ const useEditNavLink = (): ComputedRef<null | NavLinkType> => {
 };
 
 const useLastUpdated = (): ComputedRef<null | string> => {
-  const siteLocale = useSiteLocaleData();
   const themeLocale = useThemeLocaleData();
   const page = usePageData<GungnirThemePageData>();
   const frontmatter = usePageFrontmatter<GungnirThemeNormalPageFrontmatter>();

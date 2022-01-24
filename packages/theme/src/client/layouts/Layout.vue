@@ -22,10 +22,10 @@
 </template>
 
 <script setup lang="ts">
+import ArticleHeader from "@theme/ArticleHeader.vue";
+import Common from "@theme/Common.vue";
+import Page from "@theme/Page.vue";
 import { pageData } from "@vuepress/client";
-import ArticleHeader from "../components/ArticleHeader.vue";
-import Common from "../components/Common.vue";
-import Page from "../components/Page.vue";
 import { useScrollPromise } from "../composables";
 
 // handle scrollBehavior with transition

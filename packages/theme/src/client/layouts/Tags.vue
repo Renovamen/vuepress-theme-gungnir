@@ -11,13 +11,13 @@
 </template>
 
 <script setup lang="ts">
+import Common from "@theme/Common.vue";
+import PageHeader from "@theme/PageHeader.vue";
+import TagList from "@theme/TagList.vue";
+import TagPostList from "@theme/TagPostList.vue";
 import { computed } from "vue";
 import { useRouter } from "vue-router";
 import type { GungnirThemePageOptions } from "../../shared";
-import Common from "../components/Common.vue";
-import PageHeader from "../components/PageHeader.vue";
-import TagList from "../components/TagList.vue";
-import TagPostList from "../components/TagPostList.vue";
 import { useBlog, useTags, useThemeLocaleData } from "../composables";
 import { filterPostsByTag, getPostsByYear } from "../utils";
 
