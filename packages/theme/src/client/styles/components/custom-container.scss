@@ -21,7 +21,7 @@
     margin: 1rem 0;
     background-color: var(--c-bg-lighter);
 
-    svg {
+    & > svg {
       position: absolute;
       height: 22px;
       width: 22px;

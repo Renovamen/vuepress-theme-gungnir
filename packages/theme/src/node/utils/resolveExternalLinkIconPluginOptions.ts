@@ -11,7 +11,7 @@ export const resolveExternalLinkIconPluginOptions = (
   themePlugins: GungnirThemePluginsOptions,
   localeOptions: GungnirThemeData
 ): ExternalLinkIconPluginOptions | boolean => {
-  if (themePlugins?.externalLinkIcon === false) {
+  if (themePlugins?.externalLinkIcon !== true) {
     return false;
   }
 
