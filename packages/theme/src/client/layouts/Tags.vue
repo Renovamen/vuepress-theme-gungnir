@@ -26,9 +26,13 @@ const themeLocale = useThemeLocaleData();
 const tag = useTags();
 const { posts } = useBlog();
 
-const currentTag = computed(
-  () => router.currentRoute.value.params.id || themeLocale.value.showAllTagsText
-);
+const currentTag = computed(() => {
+  const tagName = decodeURI(
+    router.currentRoute.value.path.replace(/\/tags/g, "").replace(/\//g, "")
+  );
+  if (tagName === "") return themeLocale.value.showAllTagsText;
+  else return tagName;
+});
 
 const filteredPosts = computed(() => {
   const tag =

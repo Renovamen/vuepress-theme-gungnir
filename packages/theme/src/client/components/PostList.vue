@@ -16,8 +16,10 @@ const router = useRouter();
 const themeLocale = useThemeLocaleData();
 
 const pageIndex = computed(() => {
-  const index = router.currentRoute.value.params.id || 1;
-  if (isNaN(Number(index))) return 1;
+  const index = decodeURI(
+    router.currentRoute.value.path.replace(/\/page/g, "").replace(/\//g, "")
+  );
+  if (index === "") return 1;
   return Number(index);
 });
 

@@ -55,7 +55,7 @@ export const useBlog = (pageIndex?: Ref<number>) => {
 
   const pageValidIndex = computed(() => {
     if (!pageIndex) return -1;
-    return Math.min(pageIndex.value, maxPageIndex.value);
+    return Math.max(1, Math.min(pageIndex.value, maxPageIndex.value));
   });
 
   const postIndex = computed(() =>
