@@ -20,7 +20,6 @@ export const DEFAULT_LOCALE_OPTIONS: GungnirThemeLocaleOptions = {
 
   // navbar
   navbar: [],
-  darkMode: true,
   repo: null,
 
   // sidebar

@@ -22,8 +22,8 @@ import PageNav from "@theme/PageNav.vue";
 import { computed, resolveComponent } from "vue";
 import { useDarkMode } from "../composables";
 
+const { isDarkMode } = useDarkMode();
 const isGiscus = typeof resolveComponent("Giscus") !== "string";
-const isDarkMode = useDarkMode();
 const giscusTheme = computed(() =>
   isDarkMode.value ? "dark_dimmed" : "light"
 );

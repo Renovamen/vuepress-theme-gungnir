@@ -1,11 +1,22 @@
 import { usePreferredDark, useStorage } from "@vueuse/core";
-import { computed, inject, onMounted, onUnmounted, provide, watch } from "vue";
-import type { InjectionKey, WritableComputedRef } from "vue";
-import { useThemeLocaleData } from ".";
+import {
+  computed,
+  inject,
+  onMounted,
+  onUnmounted,
+  provide,
+  ref,
+  watch
+} from "vue";
+import type { InjectionKey, Ref, WritableComputedRef } from "vue";
 
-export type DarkModeRef = WritableComputedRef<boolean>;
+export type CurrentModeRef = WritableComputedRef<string>;
+export type IsDarkModeRef = Ref<boolean>;
 
-export const darkModeSymbol: InjectionKey<DarkModeRef> = Symbol(
+export const darkModeSymbol: InjectionKey<{
+  currentMode: CurrentModeRef;
+  isDarkMode: IsDarkModeRef;
+}> = Symbol(
   /* eslint-disable no-undef */
   __VUEPRESS_DEV__ ? "darkMode" : ""
 );
@@ -13,57 +24,60 @@ export const darkModeSymbol: InjectionKey<DarkModeRef> = Symbol(
 /**
  * Inject dark mode global computed
  */
-export const useDarkMode = (): DarkModeRef => {
-  const isDarkMode = inject(darkModeSymbol);
-  if (!isDarkMode) {
+export const useDarkMode = (): {
+  currentMode: CurrentModeRef;
+  isDarkMode: IsDarkModeRef;
+} => {
+  const mode = inject(darkModeSymbol);
+  if (!mode) {
     throw new Error("useDarkMode() is called without provider.");
   }
-  return isDarkMode;
+
+  return mode;
 };
 
 /**
  * Create dark mode ref and provide as global computed in setup
  */
 export const setupDarkMode = (): void => {
-  const themeLocale = useThemeLocaleData();
-  const isDarkPreferred = usePreferredDark();
-  const darkStorage = useStorage("vuepress-color-scheme", "auto");
+  const modeStorage = useStorage("vuepress-color-scheme", "auto");
 
-  const isDarkMode = computed<boolean>({
+  const currentMode = computed<string>({
     get() {
-      // disable dark mode
-      if (!themeLocale.value.darkMode) {
-        return false;
-      }
-      // auto detected from prefers-color-scheme
-      if (darkStorage.value === "auto") {
-        return isDarkPreferred.value;
-      }
       // storage value
-      return darkStorage.value === "dark";
+      return modeStorage.value;
     },
     set(val) {
-      if (val === isDarkPreferred.value) {
-        darkStorage.value = "auto";
-      } else {
-        darkStorage.value = val ? "dark" : "light";
-      }
+      modeStorage.value = val;
     }
   });
-  provide(darkModeSymbol, isDarkMode);
 
-  updateHtmlDarkClass(isDarkMode);
+  const isDarkMode = ref<boolean>(false);
+  provide(darkModeSymbol, { currentMode, isDarkMode });
+
+  updateHtmlDarkClass(currentMode, isDarkMode);
 };
 
-export const updateHtmlDarkClass = (isDarkMode: DarkModeRef): void => {
-  const update = (value = isDarkMode.value): void => {
+export const updateHtmlDarkClass = (
+  currentMode: CurrentModeRef,
+  isDarkMode: IsDarkModeRef
+): void => {
+  const isDarkPreferred = usePreferredDark();
+
+  const update = (): void => {
+    // auto detected from prefers-color-scheme
+    isDarkMode.value =
+      currentMode.value === "auto"
+        ? isDarkPreferred.value
+        : currentMode.value === "dark";
+
     // set `class="dark"` on `<html>` element
     const htmlEl = window?.document.querySelector("html");
-    htmlEl?.classList.toggle("dark", value);
+    htmlEl?.classList.toggle("dark", isDarkMode.value);
   };
 
   onMounted(() => {
-    watch(isDarkMode, update, { immediate: true });
+    watch([currentMode, isDarkPreferred], update, { immediate: true });
   });
 
   onUnmounted(() => update());

@@ -228,13 +228,6 @@ export interface GungnirThemeLocaleData extends LocaleData, GungnirThemeI18n {
   navbar?: false | NavbarConfig;
 
   /**
-   * Navbar dark mode button config
-   *
-   * Enable dark mode switching and display a button in navbar or not
-   */
-  darkMode?: boolean;
-
-  /**
    * Navbar repository config
    *
    * Used for the repository link of navbar
