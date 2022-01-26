@@ -42,7 +42,7 @@ export const zh: NavbarConfig = [
       },
       {
         text: "更新日志",
-        link: "https://github.com/Renovamen/vuepress-theme-gungnir/blob/v2/packages/theme/CHANGELOG.md",
+        link: "https://github.com/Renovamen/vuepress-theme-gungnir/blob/main/CHANGELOG.md",
         icon: "compare"
       },
       {

@@ -33,7 +33,6 @@ export default defineUserConfig<GungnirThemeOptions>({
   themeConfig: {
     repo: "Renovamen/vuepress-theme-gungnir",
     docsDir: "docs",
-    docsBranch: "v2",
 
     hitokoto: "https://v1.hitokoto.cn?c=d&c=i", // enable hitokoto (一言) or not?
 

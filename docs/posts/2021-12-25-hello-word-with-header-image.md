@@ -10,6 +10,7 @@ headerMask: rgba(40, 57, 101, .4)
 catalog: true
 tags:
   - test
+  - 中文标签
 ---
 
 Welcome to VuePress theme Gungnir.
