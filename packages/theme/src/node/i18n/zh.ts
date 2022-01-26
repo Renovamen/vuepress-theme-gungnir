@@ -45,7 +45,11 @@ const zh: GungnirThemeI18n = {
 
   // home page pager
   homeNext: "← 较新的文章",
-  homePrev: "较旧的文章 →"
+  homePrev: "较旧的文章 →",
+
+  // PWA-popup
+  pwaPopupMessage: "发现有新内容更新",
+  pwaPopupButtonText: "刷新"
 };
 
 export { zh };

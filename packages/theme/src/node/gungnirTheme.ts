@@ -15,6 +15,7 @@ import {
   resolveContainerPluginOptionsForDetails,
   resolveGitPluginOptions,
   resolveMediumZoomPluginOptions,
+  resolvePWAPopupOptions,
   resolveRSSPluginOptions
 } from "./utils";
 
@@ -141,6 +142,15 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = (
       [
         "@renovamen/vuepress-plugin-md-plus",
         themePlugins.mdPlus === undefined ? false : themePlugins.mdPlus
+      ],
+      [
+        "@vuepress/plugin-google-analytics",
+        typeof themePlugins.ga === "string" ? { id: themePlugins.ga } : false
+      ],
+      ["@vuepress/plugin-pwa", themePlugins.pwa ? themePlugins.pwa : false],
+      [
+        "@vuepress/plugin-pwa-popup",
+        resolvePWAPopupOptions(themePlugins, localeOptions)
       ]
     ],
 

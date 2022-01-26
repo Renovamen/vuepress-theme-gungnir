@@ -128,4 +128,14 @@ export interface GungnirThemeI18n {
    * Text of "show all tags" button.
    */
   showAllTagsText?: string;
+
+  /**
+   * plugin-pwa-popup box message.
+   */
+  pwaPopupMessage?: string;
+
+  /**
+   * plugin-pwa-popup button text.
+   */
+  pwaPopupButtonText?: string;
 }

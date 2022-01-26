@@ -144,7 +144,8 @@ export default defineUserConfig<GungnirThemeOptions>({
       rss: {
         siteURL: "https://v2.vuepress-theme-gungnir.vercel.app",
         copyright: "Renovamen 2018-2022"
-      }
+      },
+      pwa: true
     },
 
     footer: `

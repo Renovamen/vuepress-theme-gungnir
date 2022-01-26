@@ -46,7 +46,11 @@ const en: GungnirThemeI18n = {
 
   // home page pager
   homeNext: "← Newer Posts",
-  homePrev: "Older Posts →"
+  homePrev: "Older Posts →",
+
+  // PWA-popup
+  pwaPopupMessage: "New content is available.",
+  pwaPopupButtonText: "Refresh"
 };
 
 export { en };

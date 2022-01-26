@@ -1,6 +1,7 @@
 import type { MdPlusOptions } from "@renovamen/vuepress-plugin-md-plus";
 import type { ReadingTimeOptions } from "@renovamen/vuepress-plugin-reading-time";
 import type { RSSOptions } from "@renovamen/vuepress-plugin-rss";
+import type { PwaPluginOptions } from "@vuepress/plugin-pwa";
 import type { ThemeData } from "@vuepress/plugin-theme-data";
 import type { LocaleData } from "@vuepress/shared";
 import type { CodeEnhanceOptions } from "vuepress-plugin-code-enhance";
@@ -138,6 +139,13 @@ export interface GungnirThemePluginsOptions {
    * @default false
    */
   rss?: false | RSSOptions;
+
+  /**
+   * Enable @vuepress/vuepress-plugin-pwa or not and pass it's options
+   *
+   * @default false
+   */
+  pwa?: boolean | PwaPluginOptions;
 }
 
 export type GungnirThemeLocaleOptions = GungnirThemeData;
