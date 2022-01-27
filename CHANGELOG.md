@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.12](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.11...v2.0.0-alpha.12) (2022-01-27)
+
+
+### Bug Fixes
+
+* pre-render tags and pagination pages instead of using dynamic routes, fix [#28](https://github.com/Renovamen/vuepress-theme-gungnir/issues/28) ([fd5d6ca](https://github.com/Renovamen/vuepress-theme-gungnir/commit/fd5d6ca47d860f157f4a26805e3dcb145ae90eac))
+
+
+### Features
+
+* add "auto" appearance mode explicitly ([47e4bb4](https://github.com/Renovamen/vuepress-theme-gungnir/commit/47e4bb4263951acc485469fdd5ca44f1dae0071a))
+* **theme:** enhance page link and button click feeling ([bc13bcc](https://github.com/Renovamen/vuepress-theme-gungnir/commit/bc13bcc46b7924f6baf71ce69b5b010661ac5152))
+
+
+
+
+
 # [2.0.0-alpha.11](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.10...v2.0.0-alpha.11) (2022-01-24)
 
 
