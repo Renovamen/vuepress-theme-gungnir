@@ -2696,7 +2696,7 @@
     "@vuepress/core" "2.0.0-beta.35"
     prismjs "^1.26.0"
 
-"@vuepress/plugin-pwa-popup@^2.0.0-beta.35":
+"@vuepress/plugin-pwa-popup@2.0.0-beta.35":
   version "2.0.0-beta.35"
   resolved "https://registry.npmjs.org/@vuepress/plugin-pwa-popup/-/plugin-pwa-popup-2.0.0-beta.35.tgz#c899a3ed7963a435db119bcb6172f85b67e5b059"
   integrity sha512-JEjAbdwdAbUXTDG+pfOHbvP2e1C8DxBHHGjS9ocd2k/RBf5RBHa7rRON3orbh5EtCnR+SxPrif9rBTps3k6sVA==
@@ -2708,7 +2708,7 @@
     "@vuepress/utils" "2.0.0-beta.35"
     vue "^3.2.28"
 
-"@vuepress/plugin-pwa@2.0.0-beta.35", "@vuepress/plugin-pwa@^2.0.0-beta.35":
+"@vuepress/plugin-pwa@2.0.0-beta.35":
   version "2.0.0-beta.35"
   resolved "https://registry.npmjs.org/@vuepress/plugin-pwa/-/plugin-pwa-2.0.0-beta.35.tgz#6848b2a1b6f44616c896d0cc20406241d7ced973"
   integrity sha512-ieZPYJqKuSD8sJ337Wmpg90zZvnRV11D3I6hphJ9tX7TjMagaAQ5nIzVddlTEB7NuHKpWn+ikVurYxs0FUwutw==
@@ -3117,7 +3117,7 @@ anymatch@~3.1.2:
 
 anywhere@^1.5.0:
   version "1.5.0"
-  resolved "https://registry.yarnpkg.com/anywhere/-/anywhere-1.5.0.tgz#8e00797690708dd3142339cb9b5b3f4dd5663008"
+  resolved "https://registry.npmjs.org/anywhere/-/anywhere-1.5.0.tgz#8e00797690708dd3142339cb9b5b3f4dd5663008"
   integrity sha512-YrSvwc2/+qqdL5/XBT6juSFwkWmJDHaO7j6Yl11rtjZVvdNj1a+3UT+rk9sitNOEWhFbBufc4Oct7AAPsmJq7g==
   dependencies:
     connect "^3.6.6"
