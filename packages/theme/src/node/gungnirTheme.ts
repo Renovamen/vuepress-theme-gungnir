@@ -184,8 +184,6 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = (
         for (const tag of page.frontmatter.tags as string[]) {
           if (addedTags[tag] === true) continue;
 
-          console.log(tag);
-
           const tagPage = await createPage(app, {
             path: `/tags/${tag}`,
             frontmatter: {

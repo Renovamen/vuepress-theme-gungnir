@@ -1,6 +1,6 @@
 <template>
   <main class="home-blog">
-    <div class="hero" :style="{ 'background-image': `url(${bgImagePath})` }">
+    <div class="hero" :style="{ 'background-image': bgImagePath }">
       <div
         v-if="bgImageMask"
         class="hero-mask"
@@ -105,8 +105,8 @@ const switchImage = (n: number) => {
 
 const bgImagePath = computed(() => {
   return bgImages && bgImages.length > 0 && bgImageID.value !== -1
-    ? withBase(bgImages[bgImageID.value].path)
-    : null;
+    ? `url(${withBase(bgImages[bgImageID.value].path)})`
+    : "none";
 });
 
 const bgImageMask = computed(() => {
