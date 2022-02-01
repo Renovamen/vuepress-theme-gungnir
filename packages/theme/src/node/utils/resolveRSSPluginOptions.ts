@@ -9,9 +9,7 @@ export const resolveRSSPluginOptions = (
 ): RSSOptions | boolean => {
   const rssOptions = themePlugins.rss;
 
-  if (rssOptions === false || rssOptions === undefined) {
-    return false;
-  }
+  if (!rssOptions) return false;
 
   if (!rssOptions.filter)
     rssOptions.filter = (page) => page.frontmatter.layout === "Post";

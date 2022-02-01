@@ -129,7 +129,7 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = (
       ["@renovamen/vuepress-plugin-rss", resolveRSSPluginOptions(themePlugins)],
       [
         "vuepress-plugin-giscus",
-        themePlugins.giscus === undefined ? false : themePlugins.giscus
+        themePlugins.giscus ? themePlugins.giscus : false
       ],
       [
         "@vuepress/plugin-google-analytics",
@@ -141,7 +141,7 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = (
       ],
       [
         "@renovamen/vuepress-plugin-md-plus",
-        themePlugins.mdPlus === undefined ? false : themePlugins.mdPlus
+        themePlugins.mdPlus ? themePlugins.mdPlus : false
       ],
       [
         "@vuepress/plugin-google-analytics",
