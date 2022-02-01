@@ -8,7 +8,11 @@ const isProd = process.env.NODE_ENV === "production";
 export default defineUserConfig<GungnirThemeOptions>({
   base: "/",
 
-  head: [["link", { rel: "icon", href: "/img/logo.svg" }]],
+  head: [
+    ["link", { rel: "icon", href: "/img/logo.svg" }],
+    ["link", { rel: "manifest", href: "/manifest.webmanifest" }],
+    ["meta", { name: "theme-color", content: "#2d3746" }]
+  ],
 
   // site-level locales config
   locales: {
@@ -144,7 +148,8 @@ export default defineUserConfig<GungnirThemeOptions>({
       rss: {
         siteURL: "https://v2.vuepress-theme-gungnir.vercel.app",
         copyright: "Renovamen 2018-2022"
-      }
+      },
+      pwa: true
     },
 
     footer: `
