@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.13](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.12...v2.0.0-alpha.13) (2022-02-02)
+
+
+### Bug Fixes
+
+* [#31](https://github.com/Renovamen/vuepress-theme-gungnir/issues/31) fixed ([b6fe1af](https://github.com/Renovamen/vuepress-theme-gungnir/commit/b6fe1af8e3faee1963f5b8cfa2e1844d5207a2bc))
+
+
+### Features
+
+* **theme:** Add Vuepress2 plugin PWA support  ([#32](https://github.com/Renovamen/vuepress-theme-gungnir/issues/32)), closed ([#27](https://github.com/Renovamen/vuepress-theme-gungnir/issues/27)) ([92bc2e0](https://github.com/Renovamen/vuepress-theme-gungnir/commit/92bc2e015749d967ff4ca56c852f597a9d8cbc1e))
+
+
+
+
+
 # [2.0.0-alpha.12](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.11...v2.0.0-alpha.12) (2022-01-27)
 
 
