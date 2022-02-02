@@ -7,7 +7,7 @@
     tabindex="0"
     @click="$emit('toggle')"
   >
-    <VIcon name="sidebar" />
+    <VIcon name="bi-layout-sidebar-inset" />
   </div>
 </template>
 

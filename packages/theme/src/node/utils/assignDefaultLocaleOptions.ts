@@ -15,8 +15,8 @@ export const DEFAULT_LOCALE_OPTIONS: GungnirThemeLocaleOptions = {
   searchPlaceholder: "$ grep ...",
 
   // icons
-  langIcon: "translate",
-  searchIcon: "search",
+  langIcon: "hi-translate",
+  searchIcon: "ri-search-2-line",
 
   // navbar
   navbar: [],

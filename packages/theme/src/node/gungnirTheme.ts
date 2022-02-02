@@ -42,6 +42,9 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = (
           preprocessorOptions: {
             scss: { charset: false }
           }
+        },
+        optimizeDeps: {
+          exclude: ["oh-vue-icons/icons"]
         }
       }
     );

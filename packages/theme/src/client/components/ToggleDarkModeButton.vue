@@ -4,9 +4,9 @@
     :title="themeLocale.toggleDarkMode"
     @click="toggleDarkMode"
   >
-    <VIcon v-show="currentMode === 'light'" name="sun" />
-    <VIcon v-show="currentMode === 'dark'" name="moon" />
-    <VIcon v-show="currentMode === 'auto'" name="magic" />
+    <VIcon v-show="currentMode === 'light'" name="fa-sun" />
+    <VIcon v-show="currentMode === 'dark'" name="fa-moon" />
+    <VIcon v-show="currentMode === 'auto'" name="fa-magic" />
   </div>
 </template>
 

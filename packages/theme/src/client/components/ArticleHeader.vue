@@ -36,17 +36,17 @@
           v-if="frontmatter.author || themeLocale.personalInfo.name"
           class="article-icon"
         >
-          <VIcon name="user" scale="0.8" />
+          <VIcon name="fa-regular-user" scale="0.9" />
           <span>{{ frontmatter.author || themeLocale.personalInfo.name }}</span>
         </div>
 
         <div v-if="frontmatter.date" class="article-icon">
-          <VIcon name="calendar" scale="0.8" />
+          <VIcon name="fa-regular-calendar" scale="0.9" />
           <span>{{ formatDateForArticle(frontmatter.date) }}</span>
         </div>
 
         <div v-if="pageData.readingTime" class="article-icon">
-          <VIcon name="timer" />
+          <VIcon name="ri-timer-line" scale="0.9" />
           <span>{{ pageData.readingTime.minutes }} min</span>
         </div>
       </div>

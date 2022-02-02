@@ -22,7 +22,6 @@ export interface NavLink extends NavItem {
   target?: string;
   activeMatch?: string;
   icon?: string | boolean;
-  iconScale?: number;
 }
 
 /**

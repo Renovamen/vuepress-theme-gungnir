@@ -33,14 +33,14 @@
         <SNS class="hide-on-mobile" large />
 
         <button class="hero-img-prev hide-on-mobile" @click="switchImage(-1)">
-          <VIcon name="chevron-left" />
+          <VIcon name="fa-chevron-left" />
         </button>
         <button class="hero-img-next hide-on-mobile" @click="switchImage(1)">
-          <VIcon name="chevron-right" />
+          <VIcon name="fa-chevron-right" />
         </button>
 
         <span class="hero-arrow-down hide-on-mobile" @click="scrollToPost()">
-          <VIcon name="chevron-down" animation="float" />
+          <VIcon name="fa-chevron-down" animation="float" />
         </span>
       </div>
     </div>

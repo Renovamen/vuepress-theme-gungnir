@@ -9,7 +9,7 @@
       rel="noopener noreferrer"
     >
       <VIcon class="icon-stack">
-        <VIcon v-if="large" name="circle" scale="2" class="icon-circle" />
+        <VIcon v-if="large" name="fa-circle" scale="2.3" class="icon-circle" />
         <VIcon
           :name="getSNSIcon(user, platform)"
           :scale="getSNSIconScale(user, platform)"
@@ -27,37 +27,37 @@ import { useThemeLocaleData } from "../composables";
 
 const defaultSNS = {
   github: {
-    icon: "github",
+    icon: "fa-github-alt",
     preLink: "https://github.com/"
   },
   linkedin: {
-    icon: "linkedin-in",
+    icon: "fa-linkedin-in",
     preLink: "https://www.linkedin.com/in/"
   },
   facebook: {
-    icon: "facebook-f",
+    icon: "fa-facebook-f",
     preLink: "https://www.facebook.com/"
   },
   twitter: {
-    icon: "twitter",
+    icon: "fa-twitter",
     preLink: "https://www.twitter.com/"
   },
   zhihu: {
-    icon: "zhihu",
-    preLink: "https://www.zhihu.com/people/",
-    iconScale: 1.1
+    icon: "ri-zhihu-line",
+    preLink: "https://www.zhihu.com/people/"
   },
   weibo: {
-    icon: "weibo",
+    icon: "ri-weibo-fill",
     preLink: "http://weibo.com/u/"
   },
   email: {
-    icon: "envelope",
+    icon: "fa-envelope",
     preLink: "mailto:"
   },
   rss: {
+    icon: "ri-rss-fill",
     preLink: "",
-    icon: "rss"
+    iconScale: 0.9
   }
 };
 
@@ -83,10 +83,9 @@ const getSNSIcon = (user: SNSItem, platform: string): string => {
 
 const getSNSIconScale = (user: SNSItem, platform: string): number => {
   return (
-    0.9 *
-    ((typeof user === "string"
+    (typeof user === "string"
       ? defaultSNS[platform].iconScale
-      : user.iconScale) || 1)
+      : user.iconScale) || 1
   );
 };
 </script>

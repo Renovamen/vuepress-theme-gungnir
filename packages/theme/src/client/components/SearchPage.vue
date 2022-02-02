@@ -1,7 +1,7 @@
 <template>
   <div class="search-page">
     <span class="search-close" @click="$emit('toggle-search')">
-      <VIcon name="chevron-down" scale="1.5" />
+      <VIcon name="fa-chevron-down" scale="1.5" />
     </span>
 
     <div class="search-box">

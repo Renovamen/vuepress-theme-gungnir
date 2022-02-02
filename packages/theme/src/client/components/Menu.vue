@@ -27,11 +27,11 @@
         <ToggleDarkModeButton class="menu-btn-child" />
 
         <div class="menu-btn-child" @click="scrollToBottom">
-          <VIcon name="chevron-down" />
+          <VIcon name="fa-chevron-down" scale="1.5" />
         </div>
 
         <div class="menu-btn-child" @click="scrollToTop">
-          <VIcon name="chevron-up" />
+          <VIcon name="fa-chevron-up" />
         </div>
 
         <div
@@ -39,7 +39,7 @@
           class="menu-btn-child menu-toc-btn"
           @click="$emit('toggle-catalog')"
         >
-          <VIcon name="list-ul" />
+          <VIcon name="fa-list-ul" />
         </div>
 
         <ToggleSidebarButton

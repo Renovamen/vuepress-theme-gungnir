@@ -55,8 +55,7 @@ export default defineUserConfig<GungnirThemeOptions>({
         rss: "/rss.xml",
         // customized sns
         bilibili: {
-          icon: "bilibili",
-          iconScale: 1.15,
+          icon: "ri-bilibili-line",
           link: "https://www.bilibili.com/"
         }
       }

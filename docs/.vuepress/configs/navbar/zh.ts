@@ -5,56 +5,51 @@ export const zh: NavbarConfig = [
   {
     text: "首页",
     link: "/",
-    icon: "fort-awesome"
+    icon: "fa-fort-awesome"
   },
   {
     text: "标签",
     link: "/tags/",
-    icon: "tag"
+    icon: "fa-tag"
   },
   {
     text: "链接",
     link: "/links/",
-    icon: "satellite-dish"
+    icon: "fa-satellite-dish"
   },
   {
     text: "文档",
     link: "/zh/docs/",
-    icon: "book",
-    iconScale: 1.1
+    icon: "ri-book-2-fill"
   },
   {
     text: "VuePress",
     link: "https://v2.vuepress.vuejs.org/zh/",
-    icon: "vuejs",
-    iconScale: 1.1
+    icon: "ri-vuejs-line"
   },
   {
     text: `v${version}`,
-    icon: "git",
-    iconScale: 1.05,
+    icon: "co-git",
     children: [
       {
         text: "GitHub",
         link: "https://github.com/Renovamen/vuepress-theme-gungnir",
-        icon: "github-line",
-        iconScale: 1.1
+        icon: "ri-github-line"
       },
       {
         text: "更新日志",
         link: "https://github.com/Renovamen/vuepress-theme-gungnir/blob/main/CHANGELOG.md",
-        icon: "compare"
+        icon: "oi-git-compare"
       },
       {
         text: "v2.x",
         link: "/docs/",
-        icon: "rocket",
-        iconScale: 0.9
+        icon: "oi-rocket"
       },
       {
         text: "v0.x",
         link: "https://vuepress-theme-gungnir.vercel.app",
-        icon: "boat"
+        icon: "ri-sailboat-line"
       }
     ]
   }

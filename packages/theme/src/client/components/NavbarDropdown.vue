@@ -8,12 +8,9 @@
     >
       <span class="title">
         <span v-if="item.icon" class="nav-icon">
-          <VIcon
-            :name="item.icon"
-            :scale="0.7 * (item.iconScale !== undefined ? item.iconScale : 1)"
-          />
+          <VIcon :name="item.icon" />
         </span>
-        {{ item.text }}
+        <span>{{ item.text }}</span>
       </span>
       <span class="arrow down" />
     </button>
@@ -26,12 +23,9 @@
     >
       <span class="title">
         <span v-if="item.icon" class="nav-icon">
-          <VIcon
-            :name="item.icon"
-            :scale="0.7 * (item.iconScale !== undefined ? item.iconScale : 1)"
-          />
+          <VIcon :name="item.icon" />
         </span>
-        {{ item.text }}
+        <span>{{ item.text }}</span>
       </span>
       <span class="arrow" :class="open ? 'down' : 'right'" />
     </button>

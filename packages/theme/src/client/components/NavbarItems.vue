@@ -9,9 +9,9 @@
     <div v-if="shouldShowSearchPage" class="navbar-item">
       <a style="cursor: pointer" @click="$emit('toggle-search')">
         <span v-if="themeLocale.searchIcon" class="nav-icon">
-          <VIcon :name="themeLocale.searchIcon" scale="0.8" />
+          <VIcon :name="themeLocale.searchIcon" />
         </span>
-        Search
+        <span>Search</span>
       </a>
     </div>
   </nav>
@@ -64,7 +64,6 @@ const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
       ariaLabel:
         themeLocale.value.selectLanguageAriaLabel ?? "unknown language",
       icon: themeLocale.value.langIcon,
-      iconScale: 1.1,
       children: localePaths.map((targetLocalePath) => {
         // target locale config of this langauge link
         const targetSiteLocale =

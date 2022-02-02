@@ -8,12 +8,9 @@
   >
     <slot name="before" />
     <span v-if="item.icon" class="nav-icon">
-      <VIcon
-        :name="item.icon"
-        :scale="0.7 * (item.iconScale !== undefined ? item.iconScale : 1)"
-      />
+      <VIcon :name="item.icon" />
     </span>
-    {{ item.text }}
+    <span>{{ item.text }}</span>
     <slot name="after" />
   </RouterLink>
 
@@ -28,12 +25,9 @@
   >
     <slot name="before" />
     <span v-if="item.icon" class="nav-icon">
-      <VIcon
-        :name="item.icon"
-        :scale="0.7 * (item.iconScale !== undefined ? item.iconScale : 1)"
-      />
+      <VIcon :name="item.icon" />
     </span>
-    {{ item.text }}
+    <span>{{ item.text }}</span>
     <slot name="after" />
   </a>
 </template>

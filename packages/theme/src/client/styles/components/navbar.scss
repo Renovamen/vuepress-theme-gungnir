@@ -92,8 +92,14 @@
     .nav-icon {
       position: relative;
       display: inline-block;
-      margin-right: 1px;
+      margin-right: 4px;
       width: 17px;
+      vertical-align: middle;
+      text-align: center;
+
+      .ov-icon {
+        width: 15px;
+      }
     }
   }
 }
