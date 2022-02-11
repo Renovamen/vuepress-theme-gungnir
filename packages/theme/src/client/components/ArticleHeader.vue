@@ -15,7 +15,7 @@
         <span
           v-for="(item, index) in frontmatter.tags"
           :key="index"
-          class="tag"
+          class="article-tag"
           :class="{ active: currentTag == item }"
           @click.stop="goTagPage(item)"
         >

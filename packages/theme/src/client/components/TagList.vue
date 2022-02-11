@@ -2,7 +2,7 @@
   <span
     v-for="(item, index) in tags"
     :key="index"
-    class="tag"
+    class="article-tag"
     :class="{
       active: item.name == currentTag,
       'tag-all': item.path == '/tags/'

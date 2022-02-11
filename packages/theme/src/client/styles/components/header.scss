@@ -12,7 +12,7 @@
   h1.article-title,
   p.article-subtitle,
   .article-icon,
-  .article-tags .tag {
+  .article-tags .article-tag {
     color: white;
     border-color: white;
   }
@@ -50,7 +50,7 @@
   .article-tags {
     margin-bottom: -20px;
 
-    .tag {
+    .article-tag {
       border: 1px solid var(--c-text);
       color: var(--c-text);
       background-color: transparent;

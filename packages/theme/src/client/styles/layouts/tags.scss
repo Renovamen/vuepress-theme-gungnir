@@ -1,7 +1,7 @@
 @import '../_variables';
 @import '../_mixins';
 
-.tag {
+.article-tag {
   vertical-align: middle;
   display: inline-block;
   margin: 0 8px 8px 0;
@@ -32,13 +32,13 @@
   &:hover:not(.tag-all),
   &.active:not(.tag-all),
   &.focus:not(.tag-all) {
-    background-color: var(--c-brand) !important;
+    background-color: $brandColor !important;
   }
 }
 
-.tag-all {
+.article-tag.tag-all {
   font-weight: 700;
-  color: var(--c-brand);
+  color: $brandColor;
   background-color: #f3f5f5;
 
   &:hover,

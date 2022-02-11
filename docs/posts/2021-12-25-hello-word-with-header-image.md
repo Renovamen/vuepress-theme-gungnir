@@ -174,6 +174,15 @@ $$
 i\hbar\frac{\partial \psi}{\partial t} = \frac{-\hbar^2}{2m} ( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} ) \psi + V \psi.
 $$
 
+With tags:
+
+$$
+\begin{gather}
+  A = \text{softmax}(\frac{QK^T}{\sqrt{d_k}}) \\
+  F_{\text{out}} = A V
+\end{gather}
+$$
+
 
 ## Emojis
 
