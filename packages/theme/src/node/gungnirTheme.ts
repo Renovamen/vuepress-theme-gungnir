@@ -161,6 +161,7 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = (
       const homepage = await createPage(app, {
         path: "/",
         frontmatter: {
+          title: "Home",
           layout: "HomePage"
         }
       });
@@ -169,6 +170,7 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = (
       const tags = await createPage(app, {
         path: "/tags",
         frontmatter: {
+          title: "Tags",
           layout: "Tags"
         }
       });
@@ -190,6 +192,7 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = (
           const tagPage = await createPage(app, {
             path: `/tags/${tag}`,
             frontmatter: {
+              title: "Tags",
               layout: "Tags"
             }
           });
@@ -214,6 +217,7 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = (
         const pagination = await createPage(app, {
           path: `/page/${i}`,
           frontmatter: {
+            title: "Home",
             layout: "HomePage"
           }
         });

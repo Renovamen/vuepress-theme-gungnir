@@ -1,5 +1,6 @@
 ---
 layout: Links
+title: Links
 links:
   - title: Live Demos
     items:
