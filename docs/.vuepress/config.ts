@@ -9,18 +9,51 @@ export default defineUserConfig<GungnirThemeOptions>({
   base: "/",
 
   head: [
-    ["link", { rel: "icon", href: "/img/logo.svg" }],
+    [
+      "link",
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: `/img/logo/favicon-16x16.png`
+      }
+    ],
+    [
+      "link",
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: `/img/logo/favicon-32x32.png`
+      }
+    ],
+
     ["link", { rel: "manifest", href: "/manifest.webmanifest" }],
-    ["meta", { name: "theme-color", content: "#2d3746" }]
+    ["meta", { name: "application-name", content: "Gungnir Theme" }],
+    ["meta", { name: "apple-mobile-web-app-title", content: "Gungnir Theme" }],
+    [
+      "meta",
+      { name: "apple-mobile-web-app-status-bar-style", content: "black" }
+    ],
+    [
+      "link",
+      { rel: "apple-touch-icon", href: `/images/icons/apple-touch-icon.png` }
+    ],
+    ["meta", { name: "theme-color", content: "#377bb5" }],
+    ["meta", { name: "msapplication-TileColor", content: "#377bb5" }]
   ],
 
   // site-level locales config
   locales: {
     "/": {
-      lang: "en-US"
+      lang: "en-US",
+      title: "VuePress Theme Gungnir",
+      description: "A blog theme for VuePress"
     },
     "/zh/": {
-      lang: "zh-CN"
+      lang: "zh-CN",
+      title: "VuePress Theme Gungnir",
+      description: "VuePress 博客主题"
     }
   },
 
@@ -32,8 +65,6 @@ export default defineUserConfig<GungnirThemeOptions>({
 
   theme: "vuepress-theme-gungnir",
 
-  title: "vuepress-theme-gungnir",
-
   themeConfig: {
     repo: "Renovamen/vuepress-theme-gungnir",
     docsDir: "docs",
@@ -44,7 +75,7 @@ export default defineUserConfig<GungnirThemeOptions>({
     personalInfo: {
       name: "Gungnir",
       avatar: "/img/avatar.jpeg",
-      description: "A blog theme for VuePress.",
+      description: "A blog theme for VuePress",
       sns: {
         github: "Renovamen",
         linkedin: "xiaohan-zou-55bba0160",
