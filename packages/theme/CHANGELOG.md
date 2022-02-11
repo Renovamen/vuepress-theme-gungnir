@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.14](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.13...v2.0.0-alpha.14) (2022-02-11)
+
+
+### Bug Fixes
+
+* add missing page titles ([3f9dc62](https://github.com/Renovamen/vuepress-theme-gungnir/commit/3f9dc6253807a8cdbda0e0998a173dac15cd4b9a))
+* resolve style conflict between article tags and katex tags ([98c0d89](https://github.com/Renovamen/vuepress-theme-gungnir/commit/98c0d89c8d8aeffff771399e375d44fa3e5f19cf))
+
+
+
+
+
 # [2.0.0-alpha.13](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.12...v2.0.0-alpha.13) (2022-02-02)
 
 
