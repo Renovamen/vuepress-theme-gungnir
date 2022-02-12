@@ -7,6 +7,7 @@
   "scripts": {
     "build": "tsc --build",
     "clean": "lerna run clean --stream",
+    "commit": "cz",
     "copy": "lerna run copy --stream",
     "copy-watch": "lerna run copy --parallel -- --watch",
     "dev": "yarn copy-watch & yarn build --watch",
@@ -23,12 +24,18 @@
     "*.{js,ts,vue}": "eslint --fix",
     "package.json": "sort-package-json"
   },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
   "devDependencies": {
     "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^16.0.0",
     "anywhere": "^1.5.0",
     "cpx2": "^4.1.2",
     "cross-env": "^7.0.3",
+    "cz-customizable": "^6.3.0",
     "eslint": "^8.7.0",
     "eslint-config-vuepress": "^3.5.0",
     "eslint-config-vuepress-typescript": "^2.5.0",
