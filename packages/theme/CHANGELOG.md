@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.15](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.14...v2.0.0-alpha.15) (2022-02-26)
+
+
+### Bug Fixes
+
+* catalog settings ([91317cb](https://github.com/Renovamen/vuepress-theme-gungnir/commit/91317cb35fdd2f2b32080a4f4ebc2e784bde1a83))
+
+
+
+
+
 # [2.0.0-alpha.14](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.13...v2.0.0-alpha.14) (2022-02-11)
 
 
