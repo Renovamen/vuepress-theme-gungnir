@@ -32,7 +32,7 @@
     "copy": "cpx \"src/**/*.css\" lib"
   },
   "dependencies": {
-    "katex": "^0.15.1"
+    "katex": "^0.15.2"
   },
   "publishConfig": {
     "access": "public"

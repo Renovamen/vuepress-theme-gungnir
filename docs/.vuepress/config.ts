@@ -27,7 +27,6 @@ export default defineUserConfig<GungnirThemeOptions>({
         href: `/img/logo/favicon-32x32.png`
       }
     ],
-
     ["link", { rel: "manifest", href: "/manifest.webmanifest" }],
     ["meta", { name: "application-name", content: "Gungnir Theme" }],
     ["meta", { name: "apple-mobile-web-app-title", content: "Gungnir Theme" }],
