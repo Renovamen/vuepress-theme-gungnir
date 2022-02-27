@@ -58,11 +58,7 @@ import { pageData, usePageFrontmatter } from "@vuepress/client";
 import { computed, onMounted, onUnmounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import type { GungnirThemePageFrontmatter } from "../../shared";
-import {
-  useResolveRouteWithRedirect,
-  useSidebarItems,
-  useThemeLocaleData
-} from "../composables";
+import { useSidebarItems, useThemeLocaleData } from "../composables";
 
 const frontmatter = usePageFrontmatter<GungnirThemePageFrontmatter>();
 const themeLocale = useThemeLocaleData();

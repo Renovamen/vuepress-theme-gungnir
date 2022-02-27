@@ -4,12 +4,12 @@ export const en: SidebarConfig = {
   "/docs/": [
     {
       text: "Basic",
-      children: ["/docs/README.md"]
+      children: ["/docs/intro.md"]
     },
     {
       text: "Plugins",
       children: [
-        "/docs/plugins/README.md",
+        "/docs/plugins/intro.md",
         "/docs/plugins/giscus.md",
         "/docs/plugins/chart.md",
         "/docs/plugins/mermaid.md",
