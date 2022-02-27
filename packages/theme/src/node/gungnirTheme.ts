@@ -146,10 +146,6 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = (
         "@renovamen/vuepress-plugin-md-plus",
         themePlugins.mdPlus ? themePlugins.mdPlus : false
       ],
-      [
-        "@vuepress/plugin-google-analytics",
-        typeof themePlugins.ga === "string" ? { id: themePlugins.ga } : false
-      ],
       ["@vuepress/plugin-pwa", themePlugins.pwa ? themePlugins.pwa : false],
       [
         "@vuepress/plugin-pwa-popup",

@@ -18,11 +18,12 @@ export default defineComponent({
     onMounted(() => {
       content.value = mermaidElement.value?.dataset.code || "";
 
-      import("mermaid/dist/mermaid.min").then((mermaid) => {
-        mermaid.initialize({
+      Promise.resolve(import("mermaid")).then((mermaid) => {
+        const { initialize, init } = mermaid.default;
+        initialize({
           startOnLoad: true
         });
-        mermaid.init(undefined, "#" + props.id);
+        init(undefined, "#" + props.id);
       });
     });
 
