@@ -4,4 +4,3 @@ lib/
 dist/
 !.vuepress/
 !.*.js
-.cz-config.js
