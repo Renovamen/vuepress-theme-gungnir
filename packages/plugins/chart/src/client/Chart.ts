@@ -1,7 +1,7 @@
 /* eslint-disable no-new */
 import Chart from "chart.js/auto";
-import JSONfn from "json-fn";
 import { defineComponent, h, onMounted, ref } from "vue";
+import JSONfn from "./json-fn";
 import "./style.css";
 
 Chart.defaults.maintainAspectRatio = false;

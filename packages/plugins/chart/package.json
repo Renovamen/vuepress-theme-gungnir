@@ -31,7 +31,6 @@
     "copy": "cpx \"src/**/*.css\" lib"
   },
   "dependencies": {
-    "chart.js": "^3.7.1",
-    "json-fn": "^1.1.1"
+    "chart.js": "^3.7.1"
   }
 }

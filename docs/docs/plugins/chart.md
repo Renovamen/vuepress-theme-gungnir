@@ -120,7 +120,7 @@ Functions should be stringified before being passed through `callback`. The foll
 ```
 
 ::: details Code
-~~~json
+~~~json{24}
 ```chart
 {
   "type": "bar",
