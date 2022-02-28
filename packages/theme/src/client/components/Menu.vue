@@ -56,6 +56,7 @@ import ToggleDarkModeButton from "@theme/ToggleDarkModeButton.vue";
 import ToggleSidebarButton from "@theme/ToggleSidebarButton.vue";
 import { pageData } from "@vuepress/client";
 import { computed, onBeforeUnmount, onMounted, reactive } from "vue";
+import { useCatalog } from "../composables";
 
 defineEmits(["toggle-sidebar", "toggle-catalog"]);
 
@@ -119,10 +120,5 @@ const getSiteHeight = () => {
   return container ? container.offsetHeight : 0;
 };
 
-const isShowTocButton = computed(
-  () =>
-    pageData.value.frontmatter.layout === "Post" &&
-    pageData.value.frontmatter.catalog &&
-    pageData.value.headers.length > 0
-);
+const isShowTocButton = useCatalog();
 </script>

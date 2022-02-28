@@ -120,7 +120,7 @@ key 值一定要加引号，否则会报错。
 ```
 
 ::: details 代码
-~~~json
+~~~json{24}
 ```chart
 {
   "type": "bar",

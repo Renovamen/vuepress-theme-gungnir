@@ -42,7 +42,12 @@ import { computed, onBeforeUnmount, onMounted, reactive } from "vue";
 import { useRouter } from "vue-router";
 import type { GungnirThemePostFrontmatter } from "../../shared";
 import { Catalog } from "../components/Catalog";
-import { useBlog, useScrollPromise, useThemeLocaleData } from "../composables";
+import {
+  useBlog,
+  useCatalog,
+  useScrollPromise,
+  useThemeLocaleData
+} from "../composables";
 
 const page = usePageData();
 const frontmatter = usePageFrontmatter<GungnirThemePostFrontmatter>();
@@ -55,11 +60,7 @@ const onBeforeEnter = scrollPromise.resolve;
 const onBeforeLeave = scrollPromise.pending;
 
 // catalog
-const shoudleShowCatalog = computed(
-  () =>
-    (themeLocale.value.catalog || frontmatter.value.catalog) &&
-    page.value.headers.length > 0
-);
+const shoudleShowCatalog = useCatalog();
 
 const pageHeaders = computed(() =>
   shoudleShowCatalog.value ? page.value.headers : []

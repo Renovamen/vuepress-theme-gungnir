@@ -1,6 +1,6 @@
 {
   "name": "@renovamen/vuepress-plugin-mermaid",
-  "version": "2.0.0-alpha.10",
+  "version": "2.0.0-alpha.16",
   "description": "A plugin for adding Mermaid to VuePress 2.",
   "keywords": [
     "vue",
@@ -30,6 +30,6 @@
     "copy": "cpx \"src/**/*.css\" lib"
   },
   "dependencies": {
-    "mermaid": "^8.13.4"
+    "mermaid": "^8.14.0"
   }
 }

@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.16](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.15...v2.0.0-alpha.16) (2022-02-28)
+
+
+### Bug Fixes
+
+* **plugin-chart:** fix import error of json-fn ([f4719ec](https://github.com/Renovamen/vuepress-theme-gungnir/commit/f4719ec9726e246a67f281234b3d2cf8a02068dd))
+* **plugin-mermaid:** fix mermaid import ([#35](https://github.com/Renovamen/vuepress-theme-gungnir/issues/35)) ([5c67699](https://github.com/Renovamen/vuepress-theme-gungnir/commit/5c67699ef0516b5f961d072adcd55ba8d22c9d4e))
+
+
+
+
+
+# [2.0.0-alpha.15](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.14...v2.0.0-alpha.15) (2022-02-26)
+
+
+### Bug Fixes
+
+* catalog settings ([91317cb](https://github.com/Renovamen/vuepress-theme-gungnir/commit/91317cb35fdd2f2b32080a4f4ebc2e784bde1a83))
+
+
+
+
+
 # [2.0.0-alpha.14](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.13...v2.0.0-alpha.14) (2022-02-11)
 
 

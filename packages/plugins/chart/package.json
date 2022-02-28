@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-chart",
-  "version": "2.0.0-alpha.10",
+  "version": "2.0.0-alpha.16",
   "description": "A plugin for adding Chart.js to VuePress 2.",
   "keywords": [
     "vue",
@@ -31,7 +31,6 @@
     "copy": "cpx \"src/**/*.css\" lib"
   },
   "dependencies": {
-    "chart.js": "^3.6.0",
-    "json-fn": "^1.1.1"
+    "chart.js": "^3.7.1"
   }
 }

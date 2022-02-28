@@ -5,7 +5,6 @@ subtitle: A Test Post without The Header Image
 author: Renovamen
 date: 2021-12-24
 headerImage: /img/in-post/2021-12-24/header.jpg
-catalog: true
 tags:
   - test
   - tag with space

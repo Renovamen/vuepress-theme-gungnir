@@ -1,6 +1,6 @@
 {
   "name": "@renovamen/vuepress-plugin-katex",
-  "version": "2.0.0-alpha.10",
+  "version": "2.0.0-alpha.15",
   "description": "A plugin for adding KaTeX to VuePress 2.",
   "keywords": [
     "vue",
@@ -32,7 +32,7 @@
     "copy": "cpx \"src/**/*.css\" lib"
   },
   "dependencies": {
-    "katex": "^0.15.1"
+    "katex": "^0.15.2"
   },
   "publishConfig": {
     "access": "public"

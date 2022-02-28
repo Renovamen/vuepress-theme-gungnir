@@ -6,7 +6,7 @@ A blog theme for [VuePress 2](https://v2.vuepress.vuejs.org/), **WIP**.
 
 **Gungnir** is the spear of the god Odin in Norse mythology.
 
-![preview](docs/.vuepress/public/img/docs/gungnir.jpg)
+![preview](https://raw.githubusercontent.com/Renovamen/vuepress-theme-gungnir/main/docs/.vuepress/public/img/docs/gungnir.jpg)
 
 
 &nbsp;

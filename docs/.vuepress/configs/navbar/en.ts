@@ -19,7 +19,7 @@ export const en: NavbarConfig = [
   },
   {
     text: "Docs",
-    link: "/docs/",
+    link: "/docs/intro.md",
     icon: "ri-book-2-fill"
   },
   {
@@ -43,7 +43,7 @@ export const en: NavbarConfig = [
       },
       {
         text: "v2.x",
-        link: "/docs/",
+        link: "/docs/intro.md",
         icon: "oi-rocket"
       },
       {

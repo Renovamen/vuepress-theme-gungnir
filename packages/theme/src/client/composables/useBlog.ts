@@ -3,9 +3,8 @@ import { computed, ref } from "vue";
 import type { Ref } from "vue";
 import { useRouter } from "vue-router";
 import type { PostPageData } from "../../shared";
-import { useThemeLocaleData } from "../composables";
 import { sortPostsByDate } from "../utils";
-import { usePages } from "./usePages";
+import { usePages, useThemeLocaleData } from ".";
 
 export async function fetchPosts(): Promise<PageData[]> {
   const pages = await usePages();

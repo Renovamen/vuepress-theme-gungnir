@@ -19,7 +19,7 @@ export const zh: NavbarConfig = [
   },
   {
     text: "文档",
-    link: "/zh/docs/",
+    link: "/zh/docs/intro.md",
     icon: "ri-book-2-fill"
   },
   {
@@ -43,7 +43,7 @@ export const zh: NavbarConfig = [
       },
       {
         text: "v2.x",
-        link: "/docs/",
+        link: "/zh/docs/intro.md",
         icon: "oi-rocket"
       },
       {
