@@ -23,12 +23,18 @@
     "*.{js,ts,vue}": "eslint --fix",
     "package.json": "sort-package-json"
   },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
   "devDependencies": {
     "@commitlint/cli": "^16.2.1",
     "@commitlint/config-conventional": "^16.2.1",
     "anywhere": "^1.5.0",
     "cpx2": "^4.2.0",
     "cross-env": "^7.0.3",
+    "cz-git": "^1.1.7",
     "eslint": "^8.10.0",
     "eslint-config-vuepress": "^3.5.0",
     "eslint-config-vuepress-typescript": "^2.5.0",
