@@ -1,4 +1,4 @@
-import { defineUserConfig } from "@vuepress/cli";
+import { defineUserConfig } from "vuepress";
 import type { GungnirThemeOptions } from "vuepress-theme-gungnir";
 import { zh } from "vuepress-theme-gungnir/lib/node/i18n";
 import { navbar, sidebar } from "./configs";

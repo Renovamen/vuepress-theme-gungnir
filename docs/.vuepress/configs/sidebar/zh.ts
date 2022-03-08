@@ -4,7 +4,7 @@ export const zh: SidebarConfig = {
   "/zh/docs/": [
     {
       text: "基础",
-      children: ["/zh/docs/intro.md"]
+      children: ["/zh/docs/basic/intro.md"]
     },
     {
       text: "插件",

@@ -19,7 +19,7 @@ export const en: NavbarConfig = [
   },
   {
     text: "Docs",
-    link: "/docs/intro.md",
+    link: "/docs/basic/intro.md",
     icon: "ri-book-2-fill"
   },
   {

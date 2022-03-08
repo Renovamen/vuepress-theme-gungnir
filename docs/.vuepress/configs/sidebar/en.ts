@@ -4,7 +4,16 @@ export const en: SidebarConfig = {
   "/docs/": [
     {
       text: "Basic",
-      children: ["/docs/intro.md"]
+      children: [
+        "/docs/basic/intro.md",
+        "/docs/basic/installation.md",
+        "/docs/basic/config.md",
+        "/docs/basic/content.md"
+      ]
+    },
+    {
+      text: "Advanced",
+      children: ["/docs/advanced/features.md", "/docs/advanced/icons.md"]
     },
     {
       text: "Plugins",
@@ -16,7 +25,8 @@ export const en: SidebarConfig = {
         "/docs/plugins/katex.md",
         "/docs/plugins/reading-time.md",
         "/docs/plugins/baidu-tongji.md",
-        "/docs/plugins/md-plus.md"
+        "/docs/plugins/md-plus.md",
+        "/docs/plugins/rss.md"
       ]
     }
   ]
