@@ -1,16 +1,16 @@
 ---
-title: Installation
+title: 安装
 date: 2020-10-18
 ---
 
-Create a new project `blog` (or any other name you want):
+创建一个项目 `blog`（或者叫别的什么名字）：
 
 ```bash
 mkdir blog && cd blog
 yarn init  # or: npm init
 ```
 
-Install VuePress and theme Gungnir:
+安装 VuePress 和主题 Gungnir：
 
 <CodeGroup>
 <CodeGroupItem title="YARN" active>
@@ -30,7 +30,7 @@ npm install -D vuepress@next vuepress-theme-gungnir@next
 </CodeGroupItem>
 </CodeGroup>
 
-Build your directory structure follow the guide of [VuePress's official documentation](https://v2.vuepress.vuejs.org/guide/getting-started.html) and specify this theme in `.vuepress/config.js` or `.vuepress/config.ts` (if you are using TypeScript):
+参考 [VuePress 文档](https://v2.vuepress.vuejs.org/guide/)搭建目录结构，然后在 `.vuepress/config.js` 或 `.vuepress/config.ts`（如果你在使用 TypeScript 的话）中指定主题：
 
 <CodeGroup>
 <CodeGroupItem title="JS" active>

@@ -15,7 +15,7 @@ date: 2021-12-12
   </a>
 </p>
 
-`@renovamen/vuepress-plugin-katex@next` 插件，用于在 [VuePress 2](https://v2.vuepress.vuejs.org/) 的 Markdown 中使用 [KaTeX](https://katex.org/)，从而在文章中支持数学公式渲染。该插件基于 [waylonflinn/markdown-it-katex](https://github.com/waylonflinn/markdown-it-katex)。
+`@renovamen/vuepress-plugin-katex@next` 插件，用于在 [VuePress 2](https://v2.vuepress.vuejs.org/zh/) 的 Markdown 中使用 [KaTeX](https://katex.org/)，从而在文章中支持数学公式渲染。该插件基于 [waylonflinn/markdown-it-katex](https://github.com/waylonflinn/markdown-it-katex)。
 
 KaTeX 是一种比 MathJax 更快的公式渲染引擎（速度比较可以参考[这里](https://www.intmath.com/cg5/katex-mathjax-comparison.php)）。
 

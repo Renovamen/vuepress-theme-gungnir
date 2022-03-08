@@ -4,7 +4,16 @@ export const zh: SidebarConfig = {
   "/zh/docs/": [
     {
       text: "基础",
-      children: ["/zh/docs/basic/intro.md"]
+      children: [
+        "/zh/docs/basic/intro.md",
+        "/zh/docs/basic/installation.md",
+        "/zh/docs/basic/config.md",
+        "/zh/docs/basic/content.md"
+      ]
+    },
+    {
+      text: "进阶",
+      children: ["/zh/docs/advanced/features.md", "/zh/docs/advanced/icons.md"]
     },
     {
       text: "插件",
@@ -16,7 +25,8 @@ export const zh: SidebarConfig = {
         "/zh/docs/plugins/katex.md",
         "/zh/docs/plugins/reading-time.md",
         "/zh/docs/plugins/baidu-tongji.md",
-        "/zh/docs/plugins/md-plus.md"
+        "/zh/docs/plugins/md-plus.md",
+        "/zh/docs/plugins/rss.md"
       ]
     }
   ]

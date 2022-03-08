@@ -1,18 +1,18 @@
 ---
-title: Icons
+title: 图标支持
 date: 2020-03-30
 ---
 
-Gungnir uses Vue icon component `oh-vue-icons` (my another project lol) for icon support. `oh-vue-icons` is for including inline SVG icons from different popular icon packs easily.
+主题内置了 Vue 图标组件 `oh-vue-icons`（我写的 hhh）作为图标支持。`oh-vue-icons` 集成了多个常用图标库，能让你轻松从不同的图标库引入 SVG 图标。
 
-See [here](https://github.com/Renovamen/oh-vue-icons) for documentation and other details of `oh-vue-icons`.
+在[这里](https://github.com/Renovamen/oh-vue-icons)查看 `oh-vue-icons` 的文档和更多信息。
 
 
-## Import Icons
+## 引入图标
 
-`oh-vue-icons` supports tree-shaking, icons that are not imported will not be included in your site's bundle files. So you can only import the icons you need to reduce the bundle size.
+`oh-vue-icons` 支持 tree-shaking，没有引入的图标不会出现在打包文件中。因此你可以只引入你想要使用的图标，从而减小打包体积。
 
-Gungnir has already imported the following icons:
+主题默认引入了以下图标：
 
 - `FaRegularUser`: <v-icon name="fa-regular-user" />
 - `FaRegularCalendar`: <v-icon name="fa-regular-calendar" />
@@ -39,22 +39,22 @@ Gungnir has already imported the following icons:
 - `HiTranslate`: <v-icon name="hi-translate" />
 - `BiLayoutSidebarInset`: <v-icon name="bi-layout-sidebar-inset" />
 
-To import other icons, you may need to search for icons' names [here](https://oh-vue-icons.vercel.app) and globally import theme in your `.vuepress/clientAppEnhance.js` file (create one if it dosen't exist):
+如果想要引入别的图标，需要在 `oh-vue-icons` 的[网站](https://oh-vue-icons.vercel.app/cn)上搜索图标的名称，然后在你的项目的 `.vuepress/clientAppEnhance.js` 文件（如果没有的话就新建一个）中全局引入图标：
 
 ```js
 import { addIcons } from "oh-vue-icons";
 
-// import the icons you need
+// 引入想要使用的图标
 import { OiGitCompare, RiBook2Fill } from "oh-vue-icons/icons";
 addIcons(OiGitCompare, RiBook2Fill);
 ```
 
-Or you can also locally import them in your custom components.
+当然你也可以在你的自定义组件中局部引入。
 
 
-## Use Icons
+## 使用图标
 
-Then you can use these icons in Markdown or your custom components:
+然后你就可以在 Markdown 或自定义组件中使用引入的图标了：
 
 <v-icon name="oi-git-compare" /> <v-icon name="ri-book-2-fill" />
 
@@ -63,7 +63,7 @@ Then you can use these icons in Markdown or your custom components:
 <v-icon name="ri-book-2-fill" />
 ```
 
-`oh-vue-icons` also supports many other features, like editting icon's color, size, animation, flip and so on. Here are some examples:
+`oh-vue-icons` 还支持定制图标的颜色、大小、翻转、动画等，这是一些例子：
 
 <v-icon name="oi-git-compare" scale="2" /> <v-icon name="oi-git-compare" flip="vertical" /> <v-icon name="oi-git-compare" fill="orange" /> <v-icon name="oi-git-compare" animation="flash" />
 
@@ -74,4 +74,4 @@ Then you can use these icons in Markdown or your custom components:
 <v-icon name="oi-git-compare" animation="flash" />
 ```
 
-See [documentation](https://oh-vue-icons.js.org/docs) of `oh-vue-icons` for more features and examples.
+更多的功能和示例请参考 `oh-vue-icons` 的[文档](https://oh-vue-icons.vercel.app/cn/docs)。

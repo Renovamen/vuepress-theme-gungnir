@@ -78,7 +78,7 @@ See:
 - [VuePress's Markdown Extensions](https://v2.vuepress.vuejs.org/guide/markdown.html)
 - [Gungnir's Markdown Extensions](/docs/advanced/features/)
 
-Here are some showcases of the custom containers supported by Gungnir by default:
+Here are some showcases of the [custom containers](https://v2.vuepress.vuejs.org/reference/plugin/container.html) supported by Gungnir by default:
 
 ::: info
 This is an info message.

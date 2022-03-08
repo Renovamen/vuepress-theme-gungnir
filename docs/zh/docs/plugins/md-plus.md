@@ -15,7 +15,7 @@ date: 2021-12-27
   </a>
 </p>
 
-`@renovamen/vuepress-plugin-md-plus` 插件，可以在 [VuePress 2](https://v2.vuepress.vuejs.org/) 的 Markdown 中加入更多语法和功能。目前支持：
+`@renovamen/vuepress-plugin-md-plus` 插件，可以在 [VuePress 2](https://v2.vuepress.vuejs.org/zh/) 的 Markdown 中加入更多语法和功能。目前支持：
 
 - 脚注（基于 [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)）
 - 高亮标记（基于 [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)）

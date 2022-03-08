@@ -15,7 +15,7 @@ date: 2021-12-12
   </a>
 </p>
 
-`vuepress-plugin-chart@next` 插件，用于在 [VuePress 2](https://v2.vuepress.vuejs.org/) 的 Markdown 中使用 JavaScript 图表库 [Chart.js](https://www.chartjs.org)。
+`vuepress-plugin-chart@next` 插件，用于在 [VuePress 2](https://v2.vuepress.vuejs.org/zh/) 的 Markdown 中使用 JavaScript 图表库 [Chart.js](https://www.chartjs.org)。
 
 
 ## 安装

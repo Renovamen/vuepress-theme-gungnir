@@ -15,7 +15,7 @@ date: 2021-12-12
   </a>
 </p>
 
-`@renovamen/vuepress-plugin-mermaid@next` 插件，用于在 [VuePress 2](https://v2.vuepress.vuejs.org/) 的 Markdown 中使用 [Mermaid](https://mermaid-js.github.io)，从而在文章中加入流程图、状态图、时序图、甘特图等。
+`@renovamen/vuepress-plugin-mermaid@next` 插件，用于在 [VuePress 2](https://v2.vuepress.vuejs.org/zh/) 的 Markdown 中使用 [Mermaid](https://mermaid-js.github.io)，从而在文章中加入流程图、状态图、时序图、甘特图等。
 
 
 ## 安装

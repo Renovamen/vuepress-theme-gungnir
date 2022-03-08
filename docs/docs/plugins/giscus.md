@@ -29,7 +29,11 @@ npm install vuepress-plugin-giscus@next
 
 ## Usage
 
-First you need to see [Giscus's website](https://giscus.app/) for its details and generate your repo id, category id and other things on the website.
+First you need to:
+
+- Create a public Github repository and [enable Discussions](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/enabling-or-disabling-github-discussions-for-a-repository) for it
+- Install [Giscus app](https://github.com/apps/giscus)
+- Browse [Giscus's website](https://giscus.app/) and generate your repo id, category id and other things on the website
 
 Then add the plugin to your `.vuepress/config.js`:
 

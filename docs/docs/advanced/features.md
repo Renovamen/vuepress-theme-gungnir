@@ -12,7 +12,13 @@ Code related to the disabled features will not be included in your site's bundle
 
 ## Comment
 
-[Giscus](https://github.com/giscus/giscus) is supported as the third party comment system, which is powered by [GitHub Discussions](https://docs.github.com/en/discussions). You should first generate your repo id, category id and other things on [Giscus' website](https://giscus.app/). Then, configure it by:
+[Giscus](https://github.com/giscus/giscus) is supported as the third party comment system, which is powered by [GitHub Discussions](https://docs.github.com/en/discussions). First, you need to:
+
+- Create a public Github repository and [enable Discussions](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/enabling-or-disabling-github-discussions-for-a-repository) for it
+- Install [Giscus app](https://github.com/apps/giscus)
+- Browse [Giscus's website](https://giscus.app/) and generate your repo id, category id and other things on the website
+
+Then, configure it by:
 
 ```js
 themeConfig: {
@@ -31,7 +37,7 @@ themeConfig: {
 }
 ```
 
-Refer to the [plugin-giscus](/docs/plugins/giscus.html) for more information.
+Refer to the [plugin-giscus](/zh/docs/plugins/giscus.html) for more information.
 
 
 ## Site Analytics
@@ -82,6 +88,27 @@ themeConfig: {
 ```
 
 Check [RSS file of this site](/rss.xml) for an example.
+
+
+## Hitokoto
+
+```js
+themeConfig: {
+  hitokoto: true
+}
+```
+
+A [Hitokoto](https://hitokoto.cn/) bubble will appear on the home page when `hitokoto` is set to `true` and your mouse cursor is hovered over the avatar:
+
+![hitokoto](/img/docs/hitokoto-bubble.jpg)
+
+You can also customize the requested API:
+
+```js
+themeConfig: {
+  hitokoto: "https://v1.hitokoto.cn?c=i"
+}
+```
 
 
 ## Reading Time
@@ -258,29 +285,6 @@ sequenceDiagram
 :::
 
 Refer to the [documentation of Mermaid](https://mermaid-js.github.io) for more information.
-
-
-
-
-## Hitokoto
-
-```js
-themeConfig: {
-  hitokoto: true
-}
-```
-
-A Hitokoto bubble will appear on the home page when `hitokoto` is set to `true` and your mouse cursor is hovered over the avatar:
-
-![hitokoto](/img/docs/hitokoto-bubble.jpg)
-
-You can also customize the requested API:
-
-```js
-themeConfig: {
-  hitokoto: "https://v1.hitokoto.cn?c=d&c=i"
-}
-```
 
 
 ## Markdown Enhancements

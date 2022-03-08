@@ -15,7 +15,7 @@ date: 2021-12-12
   </a>
 </p>
 
-`@renovamen/vuepress-plugin-reading-time@next` 插件，用于在 [VuePress 2](https://v2.vuepress.vuejs.org/) 中统计文章字数和估计阅读时长。相比其它的阅读时长插件，本插件可以：
+`@renovamen/vuepress-plugin-reading-time@next` 插件，用于在 [VuePress 2](https://v2.vuepress.vuejs.org/zh/) 中统计文章字数和估计阅读时长。相比其它的阅读时长插件，本插件可以：
 
 - 为中英文分别设置阅读速度
 - 选择将代码块或公式块中的字符排除在统计以外

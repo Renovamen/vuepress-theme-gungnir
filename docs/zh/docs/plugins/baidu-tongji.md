@@ -15,7 +15,7 @@ date: 2021-12-27
   </a>
 </p>
 
-`@renovamen/vuepress-plugin-baidu-tongji@next` 插件，用于在 [VuePress 2](https://v2.vuepress.vuejs.org/) 中引入[百度统计](https://tongji.baidu.com)。修改自 [@vuepress/plugin-google-analytics](https://github.com/vuepress/vuepress-next/tree/main/packages/%40vuepress/plugin-google-analytics)。
+`@renovamen/vuepress-plugin-baidu-tongji@next` 插件，用于在 [VuePress 2](https://v2.vuepress.vuejs.org/zh/) 中引入[百度统计](https://tongji.baidu.com)。修改自 [@vuepress/plugin-google-analytics](https://github.com/vuepress/vuepress-next/tree/main/packages/%40vuepress/plugin-google-analytics)。
 
 
 ## 安装

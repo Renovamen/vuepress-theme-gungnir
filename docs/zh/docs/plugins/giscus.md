@@ -15,7 +15,7 @@ date: 2021-12-12
   </a>
 </p>
 
-`vuepress-plugin-giscus@next` 插件：在 [VuePress 2](https://v2.vuepress.vuejs.org/) 中使用基于 [GitHub Discussions](https://docs.github.com/en/discussions) 的评论系统 [Giscus](https://github.com/giscus/giscus)。
+`vuepress-plugin-giscus@next` 插件：在 [VuePress 2](https://v2.vuepress.vuejs.org/zh/) 中使用基于 [GitHub Discussions](https://docs.github.com/en/discussions) 的评论系统 [Giscus](https://github.com/giscus/giscus)。
 
 
 ## 安装
@@ -29,7 +29,13 @@ npm install vuepress-plugin-giscus@next
 
 ## 使用插件
 
-首先你需要查看 [Giscus 官网](https://github.com/apps/giscus) 以对它有一个基本的了解，同时在网站上生成你的 repo id、category id 以及别的必要信息。然后在 `.vuepress/config.js` 中引入这个插件：
+首先你需要：
+
+- 建一个公开的 Github 仓库并[启用 Discussions](https://docs.github.com/cn/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/enabling-or-disabling-github-discussions-for-a-repository)
+- 安装 [Giscus app](https://github.com/apps/giscus)
+- 查看 [Giscus 官网](https://giscus.app)并在上面生成你的 repo id、category id 以及别的必要信息
+
+然后在 `.vuepress/config.js` 中引入这个插件：
 
 ```js
 module.exports = {

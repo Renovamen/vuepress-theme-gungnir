@@ -6,6 +6,18 @@ date: 2021-02-03
 The theme can be configured in `.vuepress/config.js`. Refer to [here](https://github.com/Renovamen/vuepress-theme-gungnir/blob/main/packages/theme/src/shared/options.ts) for all possible options.
 
 ::: tip
+The configs of this theme are compatible with all the configs of [VuePress's default theme](https://v2.vuepress.vuejs.org/reference/default-theme/config.html) except:
+
+- logo
+- logoDark
+- darkMode (dark mode switching is always enabled in this theme)
+- repo
+- repoLabel
+
+Please refer to [reference of VuePress's default theme config](https://v2.vuepress.vuejs.org/reference/default-theme/config.html) for how to set them.
+:::
+
+::: tip
 Please make sure all the icons you specified in the configuration file are already imported, see [here](/docs/advanced/icons/) to know how to import icons.
 :::
 
@@ -17,13 +29,13 @@ Please make sure all the icons you specified in the configuration file are alrea
 
 module.exports = {
   /*
-    other configurations
+    other site configurations
     ...
   */
 
   themeConfig: {
     /*
-      other configurations
+      other theme configurations
       ...
     */
 
