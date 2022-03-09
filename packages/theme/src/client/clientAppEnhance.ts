@@ -26,6 +26,7 @@ import {
   RiWeiboFill,
   RiZhihuLine
 } from "oh-vue-icons/icons";
+import { h } from "vue";
 import Badge from "./components/global/Badge.vue";
 import CodeGroup from "./components/global/CodeGroup";
 import CodeGroupItem from "./components/global/CodeGroupItem.vue";
@@ -66,6 +67,16 @@ export default defineClientAppEnhance(({ app, router }) => {
 
   // icons
   app.component("VIcon", OhVueIcon);
+
+  // compat with @vuepress/plugin-docsearch and @vuepress/plugin-search
+  app.component("NavbarSearch", () => {
+    const SearchComponent =
+      app.component("Docsearch") || app.component("SearchBox");
+    if (SearchComponent) {
+      return h(SearchComponent);
+    }
+    return null;
+  });
 
   // handle scrollBehavior with transition
   const scrollBehavior = router.options.scrollBehavior!;

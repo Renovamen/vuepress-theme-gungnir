@@ -4,7 +4,7 @@
       <VIcon name="fa-chevron-down" scale="1.5" />
     </span>
 
-    <div class="search-box">
+    <div class="post-search-box">
       <input
         ref="input"
         aria-label="Search"

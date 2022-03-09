@@ -28,7 +28,7 @@
   }
 }
 
-.search-box {
+.post-search-box {
   margin: 100px auto 0;
   display: block;
   width: 50%;
@@ -91,13 +91,13 @@
 }
 
 @media (max-width: $MQIpad) {
-  .search-box {
+  .post-search-box {
     width: 80%;
   }
 }
 
 @media (max-width: $MQMobileNarrow) {
-  .search-box {
+  .post-search-box {
     input {
       font-size: 24px;
     }
@@ -121,5 +121,37 @@
         }
       }
     }
+  }
+}
+
+// plugin-search
+.search-box {
+  input {
+    border-radius: 6px !important;
+    width: 0 !important;
+    cursor: pointer !important;
+
+    &:focus {
+      cursor: auto !important;
+      border-color: var(--c-brand) !important;
+      width: var(--search-input-width) !important;
+    }
+  }
+
+  .suggestions {
+    background: var(--c-bg) !important;
+    border-color: var(--c-border) !important;
+  }
+}
+
+.navbar.invert .search-box {
+  input:focus {
+    border-color: white !important;
+  }
+}
+
+.navbar.is-fixed .search-box {
+  input:focus {
+    border-color: var(--c-brand) !important;
   }
 }

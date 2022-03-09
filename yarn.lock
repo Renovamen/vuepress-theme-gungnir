@@ -2721,6 +2721,19 @@
     vue "^3.2.28"
     workbox-build "^6.4.2"
 
+"@vuepress/plugin-search@^2.0.0-beta.36":
+  version "2.0.0-beta.36"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-search/-/plugin-search-2.0.0-beta.36.tgz#4b8219514ae704919cc31d227d571dc06eefa9fd"
+  integrity sha512-UMtWH5h9wXiZgram2w5m/4Ni5R/8w+G/r22pBdBuqB1KMOUO473EmgOWgxqAsT3DLvOgevfmxQvp/OcEQv9Esw==
+  dependencies:
+    "@vuepress/client" "2.0.0-beta.35"
+    "@vuepress/core" "2.0.0-beta.36"
+    "@vuepress/shared" "2.0.0-beta.35"
+    "@vuepress/utils" "2.0.0-beta.35"
+    chokidar "^3.5.3"
+    vue "^3.2.28"
+    vue-router "^4.0.12"
+
 "@vuepress/plugin-theme-data@2.0.0-beta.36":
   version "2.0.0-beta.36"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-theme-data/-/plugin-theme-data-2.0.0-beta.36.tgz#298fd9b160de886d003705615dbeee8ca2712a2b"
@@ -10201,7 +10214,7 @@ vue@^3.2.24, vue@^3.2.28, vue@^3.2.31:
     "@vue/server-renderer" "3.2.31"
     "@vue/shared" "3.2.31"
 
-vuepress-vite@2.0.0-beta.36:
+vuepress-vite@2.0.0-beta.36, vuepress-vite@^2.0.0-beta.36:
   version "2.0.0-beta.36"
   resolved "https://registry.yarnpkg.com/vuepress-vite/-/vuepress-vite-2.0.0-beta.36.tgz#50e4e2c11ff4e057f725ba42de81d9ac50be4b45"
   integrity sha512-KbN7HDhaCLVB7/YmJDydQClUjMBybLtBpB376mi5fD16RFBzHwMGI7zopb4lu7Nmj2BnvLI9kpottv9zuOJYLQ==
@@ -10211,7 +10224,7 @@ vuepress-vite@2.0.0-beta.36:
     "@vuepress/core" "2.0.0-beta.36"
     "@vuepress/theme-default" "2.0.0-beta.36"
 
-vuepress-webpack@2.0.0-beta.36:
+vuepress-webpack@^2.0.0-beta.36:
   version "2.0.0-beta.36"
   resolved "https://registry.yarnpkg.com/vuepress-webpack/-/vuepress-webpack-2.0.0-beta.36.tgz#883c11faf8628d01c9b7fec55d1f2780af39d4f8"
   integrity sha512-ah0zAT1jZQIJ74VPJi61PgTc70tq9TtriYEj2tDNjkInze1T1ggTM9+irduRZEphTc02TF1ckNUPcviJzsXUtA==

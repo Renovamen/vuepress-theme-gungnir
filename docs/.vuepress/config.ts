@@ -70,6 +70,8 @@ export default defineUserConfig<GungnirThemeOptions>({
 
     hitokoto: "https://v1.hitokoto.cn?c=d&c=i", // enable hitokoto (一言) or not?
 
+    search: false, // use @vuepress/plugin-search instead
+
     // personal information
     personalInfo: {
       name: "Gungnir",
@@ -188,6 +190,16 @@ export default defineUserConfig<GungnirThemeOptions>({
       <a href="https://github.com/Renovamen/vuepress-theme-gungnir" target="_blank">Gungnir</a>
     `
   },
+
+  plugins: [
+    [
+      "@vuepress/plugin-search",
+      {
+        isSearchable: (page) =>
+          !["Tags", "Links", "HomePage"].includes(page.frontmatter.layout)
+      }
+    ]
+  ],
 
   markdown: {
     extractHeaders: {

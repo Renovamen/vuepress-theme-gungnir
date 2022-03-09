@@ -20,6 +20,7 @@
       <slot name="before" />
       <NavbarItems class="can-hide" @toggle-search="$emit('toggle-search')" />
       <slot name="after" />
+      <NavbarSearch />
     </div>
   </header>
 </template>
