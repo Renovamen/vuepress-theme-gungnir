@@ -145,6 +145,8 @@ module.exports = {
 
 ## 搜索
 
+主题内置的搜索组件只能搜索**博客文章**（即不支持文档文章）：
+
 ```js
 // .vuepress/config.js
 
@@ -155,6 +157,36 @@ module.exports = {
     searchPlaceholder: "$ grep ...",  // 可选：搜索栏占位文本，默认："$ grep ..."
     searchIcon: "ri-search-2-line"  // 可选：搜索图标
   }
+}
+```
+
+效果可以参考[这里](https://zxh.io)（点击导航栏的 Search）。
+
+如果你有搜索文档文章的需求，可以考虑使用官方搜索插件 [@vuepress/plugin-search](https://v2.vuepress.vuejs.org/zh/reference/plugin/search.html) 或 [@vuepress/plugin-docsearch](https://v2.vuepress.vuejs.org/zh/reference/plugin/docsearch.html)。按照官方文档上的方式配置即可，配置完后本主题会把搜索框添加到导航栏，效果参考本站右上角。同时你可能需要禁用本主题的默认搜索组件：
+
+```js
+// .vuepress/config.js
+
+module.exports = {
+  themeConfig: {
+    search: false
+  }
+}
+```
+
+在使用 `@vuepress/plugin-search` 时，你可能会想要排除掉首页、标签页和链接页：
+
+```js
+// .vuepress/config.js
+
+module.exports = {
+  plugins: [
+    [
+      "@vuepress/plugin-search", {
+        isSearchable: (page) => !["Tags", "Links", "HomePage"].includes(page.frontmatter.layout)
+      }
+    ]
+  ]
 }
 ```
 

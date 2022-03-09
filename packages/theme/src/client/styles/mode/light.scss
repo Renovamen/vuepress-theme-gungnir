@@ -69,14 +69,6 @@
   --content-width: 800px;
   --homepage-width: 1126px;
   --catalog-width: 13rem;
-
-  // plugin-pwa-popup
-  --pwa-popup-z-index: 40;
-  --pwa-popup-bg-color: var(--c-bg-transparent);
-  --pwa-popup-border-color: var(--c-border-sub);
-  --pwa-popup-shadow: none;
-  --pwa-popup-btn-bg-color: #{$brandColor};
-  --pwa-popup-btn-hover-bg-color: rgba(55, 123, 181, 0.8);
 }
 
 // plugin-medium-zoom
@@ -115,4 +107,15 @@
   --search-border-color: transparent;
   --search-item-text-color: var(--c-text-sub);
   --search-item-focus-bg-color: var(--c-bg-lighter);
+}
+
+// plugin-pwa-popup
+.pwa-popup {
+  --pwa-popup-z-index: 40;
+  --pwa-popup-text-color: var(--c-text);
+  --pwa-popup-bg-color: var(--c-bg-transparent);
+  --pwa-popup-border-color: var(--c-border-sub);
+  --pwa-popup-shadow: none;
+  --pwa-popup-btn-bg-color: #{$brandColor};
+  --pwa-popup-btn-hover-bg-color: rgba(55, 123, 181, 0.8);
 }
