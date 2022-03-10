@@ -1,5 +1,5 @@
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
-import type { PageHeader } from "@vuepress/client";
+import type { PageFrontmatter, PageHeader } from "@vuepress/client";
 import {
   isArray,
   isPlainObject,
@@ -53,7 +53,7 @@ export const setupSidebarItems = (): void => {
  * It should only be resolved and provided once
  */
 export const resolveSidebarItems = (
-  frontmatter: GungnirThemeNormalPageFrontmatter,
+  frontmatter: PageFrontmatter<GungnirThemeNormalPageFrontmatter>,
   themeLocale: GungnirThemeData
 ): ResolvedSidebarItem[] => {
   // get sidebar config from frontmatter > themeConfig
@@ -62,7 +62,7 @@ export const resolveSidebarItems = (
     frontmatter.sidebarDepth ?? themeLocale.sidebarDepth ?? 2;
 
   // resolve sidebar items according to the config
-  if (frontmatter.home || sidebarConfig === false) {
+  if (frontmatter.layout || sidebarConfig === false) {
     return [];
   }
 

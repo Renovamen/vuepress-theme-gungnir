@@ -236,20 +236,6 @@ export interface GungnirThemeLocaleData extends LocaleData, GungnirThemeI18n {
   navbar?: false | NavbarConfig;
 
   /**
-   * Navbar repository config
-   *
-   * Used for the repository link of navbar
-   */
-  repo?: null | string;
-
-  /**
-   * Navbar repository config
-   *
-   * Used for the repository text of navbar
-   */
-  repoLabel?: string;
-
-  /**
    * Sidebar config
    *
    * Set to `false` to disable sidebar in current locale

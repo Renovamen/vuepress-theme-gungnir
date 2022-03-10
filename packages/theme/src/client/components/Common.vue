@@ -70,12 +70,7 @@ const shouldShowNavbar = computed(
 );
 
 // 404 page
-const isNotFound = computed(
-  () =>
-    pageData.value.path === "" &&
-    router.currentRoute.value.path.indexOf("/page/") === -1 &&
-    router.currentRoute.value.path.indexOf("/tags") === -1
-);
+const isNotFound = computed(() => pageData.value.path === "");
 
 // sidebar
 const sidebarItems = useSidebarItems();
