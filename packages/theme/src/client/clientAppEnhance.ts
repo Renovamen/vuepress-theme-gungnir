@@ -30,6 +30,7 @@ import { h } from "vue";
 import Badge from "./components/global/Badge.vue";
 import CodeGroup from "./components/global/CodeGroup";
 import CodeGroupItem from "./components/global/CodeGroupItem.vue";
+import ContainerCard from "./components/global/ContainerCard.vue";
 import { useScrollPromise } from "./composables";
 import "./styles/index.scss";
 
@@ -67,6 +68,9 @@ export default defineClientAppEnhance(({ app, router }) => {
 
   // icons
   app.component("VIcon", OhVueIcon);
+
+  // link card
+  app.component("ContainerCard", ContainerCard);
 
   // compat with @vuepress/plugin-docsearch and @vuepress/plugin-search
   app.component("NavbarSearch", () => {

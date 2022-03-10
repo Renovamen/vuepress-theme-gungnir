@@ -43,6 +43,7 @@ export interface GungnirThemePluginsOptions {
     details?: boolean;
     codeGroup?: boolean;
     codeGroupItem?: boolean;
+    link?: boolean;
   };
 
   /**

@@ -106,3 +106,53 @@ export const resolveContainerPluginOptionsForCodeGroupItem = (
     after: () => "</CodeGroupItem>\n"
   };
 };
+
+const getContainerDslValue = (
+  target: string,
+  start: string,
+  end: string
+): string => {
+  if (typeof target !== "string" || target === "") return "";
+  const startIndex = target.indexOf(start);
+  const endIndex = target.lastIndexOf(end);
+  if (startIndex === -1 || endIndex === -1) return "";
+  return target.substring(startIndex + 1, endIndex);
+};
+
+/**
+ * For link card
+ */
+export const resolveContainerPluginOptionsForLink = (
+  themePlugins: GungnirThemePluginsOptions
+): ContainerPluginOptions | boolean => {
+  if (themePlugins?.container?.link === false) {
+    return false;
+  }
+
+  return {
+    type: "link",
+    before: (dsl) => {
+      let context = dsl;
+      const title = getContainerDslValue(context, "[", "]");
+      context = context.replace(title, "");
+      const link = getContainerDslValue(context, "(", ")");
+      context = context.replace(link, "");
+      const icon = getContainerDslValue(context, "{", "}");
+      const scale = () => {
+        const scale = getContainerDslValue(context, "<", ">");
+        return scale !== "" && !isNaN(parseInt(scale, 10))
+          ? parseInt(scale, 10)
+          : 1;
+      };
+
+      return `
+      <ContainerCard 
+        title="${title}"
+        link="${link}"
+        icon="${icon}"
+        :iconScale="${scale()}"
+        >`;
+    },
+    after: () => "</ContainerCard>\n"
+  };
+};
