@@ -1,0 +1,115 @@
+.search-page {
+  background-color: var(--search-bg-color);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: var( --searc-page-z-index);
+}
+
+.search-close {
+  float: right;
+  margin-right: 30px;
+  margin-top: 28px;
+  color: #bdbbbb;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.search-close:hover {
+  color: #696868;
+}
+
+.gungnir-search-box {
+  margin: 100px auto 0;
+  display: block;
+  width: 50%;
+  height: 100%;
+}
+
+.gungnir-search-box input {
+  width: 100%;
+  height: auto;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 5px 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--search-text-color);
+}
+
+.gungnir-search-box .suggestions {
+  height: 70%;
+  width: 100%;
+  margin-top: 30px;
+  overflow-y: scroll;
+  padding: 0;
+}
+
+.gungnir-search-box .suggestion {
+  padding: 0.6rem 0;
+  cursor: pointer;
+}
+
+.gungnir-search-box .suggestion a {
+  white-space: normal;
+  color: var(--search-item-title-color);
+}
+
+.gungnir-search-box .suggestion a .suggestion-title {
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 600;
+  display: block;
+}
+
+.gungnir-search-box .suggestion a .suggestion-subtitle {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 5px;
+  display: block;
+  color: var(--search-item-subtitle-color);
+}
+
+.gungnir-search-box .suggestion.focused {
+  background-color: transparent;
+}
+
+.gungnir-search-box .suggestion.focused .suggestion-title, .suggestion-subtitle {
+  color: var(--search-accent-color);
+}
+
+@media (max-width: 1023px) {
+  .gungnir-search-box {
+    width: 80%;
+  }
+}
+
+@media (max-width: 419px) {
+  .gungnir-search-box input {
+    font-size: 24px;
+  }
+
+  .gungnir-search-box .suggestions {
+    margin-top: 20px;
+    padding: 0;
+  }
+
+  .gungnir-search-box .suggestion {
+    padding: 0.4rem 0;
+  }
+
+  .gungnir-search-box .suggestion a .suggestion-title {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .gungnir-search-box .suggestion a .suggestion-subtitle {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+}

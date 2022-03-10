@@ -1,0 +1,8 @@
+:root {
+  --search-bg-color: #ffffff;
+  --search-accent-color: #3eaf7c;
+  --search-text-color: #2c3e50;
+  --search-item-title-color: #2c3e50;
+  --search-item-subtitle-color: #7f7f7f;
+  --searc-page-z-index: 10;
+}

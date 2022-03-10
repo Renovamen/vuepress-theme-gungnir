@@ -19,8 +19,8 @@ if (import.meta.hot) {
 
 export const prepareSearchIndex = async ({
   app,
-  isSearchable,
-  getExtraFields
+  isSearchable = () => true,
+  getExtraFields = () => []
 }: {
   app: App;
   isSearchable: SearchPluginOptions["isSearchable"];

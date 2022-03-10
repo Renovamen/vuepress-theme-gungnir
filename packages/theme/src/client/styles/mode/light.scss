@@ -99,7 +99,7 @@
   --docsearch-footer-background: var(--c-bg);
 }
 
-// plugin-search
+// @vuepress/plugin-search
 .search-box {
   --search-bg-color: transparent;
   --search-accent-color: var(--c-brand);
@@ -107,6 +107,16 @@
   --search-border-color: transparent;
   --search-item-text-color: var(--c-text-sub);
   --search-item-focus-bg-color: var(--c-bg-lighter);
+}
+
+// @renovamen/plugin-search
+.search-page {
+  --search-bg-color: var(--c-bg);
+  --search-accent-color: var(--c-brand);
+  --search-text-color: var(--c-text);
+  --search-item-title-color: var(--c-text);
+  --search-item-subtitle-color: var(--c-text-sub);
+  --searc-page-z-index: 100;
 }
 
 // plugin-pwa-popup

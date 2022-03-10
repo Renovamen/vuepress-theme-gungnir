@@ -10,13 +10,13 @@ export const DEFAULT_LOCALE_OPTIONS: GungnirThemeLocaleOptions = {
 
   postNumPerPage: 10,
 
-  search: true,
-  searchMaxSuggestions: 10,
-  searchPlaceholder: "$ grep ...",
+  // search options
+  search: {
+    icon: "ri-search-2-line"
+  },
 
-  // icons
+  // language switcher icon
   langIcon: "hi-translate",
-  searchIcon: "ri-search-2-line",
 
   // navbar
   navbar: [],
@@ -63,4 +63,8 @@ export const assignDefaultLocaleOptions = (
     ...en,
     ...localeOptions.locales["/"]
   });
+
+  if (localeOptions.search !== false) {
+    Object.assign(localeOptions.search, DEFAULT_LOCALE_OPTIONS.search);
+  }
 };

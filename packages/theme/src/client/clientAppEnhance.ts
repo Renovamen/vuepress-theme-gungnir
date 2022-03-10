@@ -68,6 +68,12 @@ export default defineClientAppEnhance(({ app, router }) => {
   // icons
   app.component("VIcon", OhVueIcon);
 
+  // built-in SearchPage component
+  app.component("GungnirSearchPage", () => {
+    const SearchPage = app.component("SearchPage");
+    return SearchPage ? h(SearchPage) : null;
+  });
+
   // compat with @vuepress/plugin-docsearch and @vuepress/plugin-search
   app.component("NavbarSearch", () => {
     const SearchComponent =

@@ -70,7 +70,7 @@ export default defineUserConfig<GungnirThemeOptions>({
 
     hitokoto: "https://v1.hitokoto.cn?c=d&c=i", // enable hitokoto (一言) or not?
 
-    search: false, // use @vuepress/plugin-search instead
+    search: false, // use @vuepress/plugin-docsearch instead
 
     // personal information
     personalInfo: {
