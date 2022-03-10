@@ -15,7 +15,10 @@
 
           <Page :key="page.path" class="post-content">
             <template #bottom>
-              <Pager :data="pagerData" />
+              <Pager
+                v-if="pagerData.next || pagerData.prev"
+                :data="pagerData"
+              />
             </template>
           </Page>
 

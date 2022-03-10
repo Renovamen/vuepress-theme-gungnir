@@ -1,7 +1,7 @@
 <template>
   <div class="postlist-wrapper">
     <PostListItem v-for="item in slicedPosts" :key="item.path" :item="item" />
-    <Pager :data="pagerData" />
+    <Pager v-if="pagerData.next || pagerData.prev" :data="pagerData" />
   </div>
 </template>
 
