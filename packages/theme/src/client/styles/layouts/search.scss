@@ -133,7 +133,6 @@
 
     &:focus {
       cursor: auto !important;
-      border-color: var(--c-brand) !important;
       width: var(--search-input-width) !important;
     }
   }
@@ -145,13 +144,19 @@
 }
 
 .navbar.invert .search-box {
-  input:focus {
-    border-color: white !important;
+  input {
+    color: white !important;
+    &:focus {
+      border-color: white !important;
+    }
   }
 }
 
 .navbar.is-fixed .search-box {
-  input:focus {
-    border-color: var(--c-brand) !important;
+  input {
+    color: var(--search-text-color) !important;
+    &:focus {
+      border-color: var(--c-brand) !important;
+    }
   }
 }
