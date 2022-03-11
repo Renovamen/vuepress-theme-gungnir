@@ -1,7 +1,7 @@
 <template>
   <div class="custom-container link">
-    <AutoLink :item="link" />
-    <VIcon :scale="iconScale" :name="icon" />
+    <AutoLink :item="linkItem"></AutoLink>
+    <VIcon v-if="icon !== ''" :scale="iconScale" :name="icon" />
     <div class="custom-container-title">{{ title }}</div>
     <slot />
   </div>
@@ -9,8 +9,9 @@
 
 <script setup lang="ts">
 import AutoLink from "@theme/AutoLink.vue";
+import { computed, toRefs } from "vue";
 
-defineProps({
+const props = defineProps({
   title: {
     type: String,
     required: false,
@@ -24,7 +25,7 @@ defineProps({
   icon: {
     type: String,
     required: false,
-    default: "/"
+    default: ""
   },
   iconScale: {
     type: Number,
@@ -32,4 +33,11 @@ defineProps({
     default: 1
   }
 });
+
+const { link } = toRefs(props);
+
+const linkItem = computed(() => ({
+  link: link.value,
+  icon: false
+}));
 </script>
