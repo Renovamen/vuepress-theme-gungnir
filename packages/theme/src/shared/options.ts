@@ -25,6 +25,10 @@ interface GungnirSearchOptions extends SearchPluginOptions {
   icon?: string;
 }
 
+interface GungnirGiscusOptions extends GiscusOptions {
+  darkTheme?: string;
+}
+
 export interface GungnirThemePageOptions {
   title?: string;
   subtitle?: string;
@@ -118,7 +122,7 @@ export interface GungnirThemePluginsOptions {
    *
    * @default false
    */
-  giscus?: false | GiscusOptions;
+  giscus?: false | GungnirGiscusOptions;
 
   /**
    * Enable @vuepress/plugin-google-analytics or not and pass your
