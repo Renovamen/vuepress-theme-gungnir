@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.17](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.16...v2.0.0-alpha.17) (2022-03-11)
+
+
+### Bug Fixes
+
+* **plugin-search:** move SearchPage component into plugin ([0299077](https://github.com/Renovamen/vuepress-theme-gungnir/commit/0299077bbe823af8461f6b1593b074080048e05f))
+
+
+
+
+
 # [2.0.0-alpha.15](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.14...v2.0.0-alpha.15) (2022-02-26)
 
 **Note:** Version bump only for package @renovamen/vuepress-plugin-search

@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.17](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.16...v2.0.0-alpha.17) (2022-03-11)
+
+
+### Bug Fixes
+
+* don't show catalog btn on docs page ([5f5647e](https://github.com/Renovamen/vuepress-theme-gungnir/commit/5f5647e0d0b75b080dac1887537cbd4b728b1edf))
+* don't show empty .pager element ([f6ee9af](https://github.com/Renovamen/vuepress-theme-gungnir/commit/f6ee9af6a4ccf872a0ea0b482ff59b8d892ec746))
+* don't show sidebar on pages other than docs ([608ee3e](https://github.com/Renovamen/vuepress-theme-gungnir/commit/608ee3e120305200fd5624fe9ffadd5f306b142e))
+* **plugin-search:** move SearchPage component into plugin ([0299077](https://github.com/Renovamen/vuepress-theme-gungnir/commit/0299077bbe823af8461f6b1593b074080048e05f))
+* style conflicts with @vuepress/plugin-search ([7ce033d](https://github.com/Renovamen/vuepress-theme-gungnir/commit/7ce033def88bfeccf842bcb12a3155833515399c))
+
+
+### Features
+
+* customize giscus dark/light theme ([9c39433](https://github.com/Renovamen/vuepress-theme-gungnir/commit/9c3943396853c02ddbbe6307c9f9a18a9de4ba98))
+* support @vuepress/plugin-docsearch ([6348db7](https://github.com/Renovamen/vuepress-theme-gungnir/commit/6348db700a918e03633abc9ee4c34031152e7157))
+* support @vuepress/plugin-search ([86782ec](https://github.com/Renovamen/vuepress-theme-gungnir/commit/86782ec90b6b5ce4f36f3f95e7b412d9b7bbc8c2))
+
+
+
+
+
 # [2.0.0-alpha.16](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.15...v2.0.0-alpha.16) (2022-02-28)
 
 
