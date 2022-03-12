@@ -142,17 +142,16 @@
       line-height: 15px;
     }
     svg,img {
-      padding: 2px;
+      box-sizing: border-box;
+      padding: 6px;
       border-radius: 100%;
       max-width: 100%;
       float: right;
-      background: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      box-shadow: inset 0 0 10px var(--c-text);
+      box-shadow: var(--box-shadow-inset);
       margin-top: 16px;
       margin-right: -15px;
-      width: 2em;
-      height: 2em;
+      width: 2.3em;
+      height: 2.3em;
     }
     &:hover {
       border: 1px solid transparent;

@@ -53,6 +53,8 @@ $boxShadow: 0 1px 8px 0 $darkColor1 !default;
 $boxShadowHover: 0 2px 16px 0 $darkColor2 !default;
 $boxShadowDark: 0 1px 8px 0 $darkColor6 !default;
 $boxShadowHoverDark: 0 2px 16px 0 $darkColor7 !default;
+$boxShadowInset: inset 2px 2px 4px #292a2d, inset -1px -1px 4px #3f444e !default;
+$boxShadowInsetDark: inset 2px 2px 4px #292a2d, inset -1px -1px 4px #3f444e !default;
 
 // text colors
 $textColor: rgba(0, 0, 0, .9) !default;

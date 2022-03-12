@@ -138,19 +138,11 @@ export const resolveContainerPluginOptionsForLink = (
       const link = getContainerDslValue(context, "(", ")");
       context = context.replace(link, "");
       const icon = getContainerDslValue(context, "{", "}");
-      const scale = () => {
-        const scale = getContainerDslValue(context, "<", ">");
-        return scale !== "" && !isNaN(parseInt(scale, 10))
-          ? parseInt(scale, 10)
-          : 1;
-      };
-
       return `
       <ContainerCard 
         title="${title}"
         link="${link}"
         icon="${icon}"
-        :iconScale="${scale()}"
         >`;
     },
     after: () => "</ContainerCard>\n"

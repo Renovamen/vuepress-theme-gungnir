@@ -1,7 +1,7 @@
 <template>
   <div class="custom-container link">
     <AutoLink :item="linkItem"></AutoLink>
-    <VIcon v-if="icon !== ''" :scale="iconScale" :name="icon" />
+    <VIcon v-if="icon !== ''" :name="icon" />
     <div class="custom-container-title">{{ title }}</div>
     <slot />
   </div>
@@ -26,11 +26,6 @@ const props = defineProps({
     type: String,
     required: false,
     default: ""
-  },
-  iconScale: {
-    type: Number,
-    required: false,
-    default: 1
   }
 });
 
