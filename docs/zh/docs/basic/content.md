@@ -5,6 +5,8 @@ date: 2021-03-31
 
 ## 博客文章
 
+### Front Matter
+
 博客文章会在[首页](/)显示。所有博客文章都需要在 front matter 里加上 `layout: Post`（我知道这样听上去很奇怪，但在 VuePress 2 的博客插件出来之前我只能想到这种解决方案）。
 
 博客文章的 front matter 的格式为：
@@ -51,6 +53,10 @@ permalinkPattern: /post/:year/:month/:day/:slug/
 如果配置了这个 permalinkPattern，就必须通过博客文章的 front matter 或文件名/目录名**指定 date（博客发表日期）**。具体细节请参考[这里](https://v2.vuepress.vuejs.org/zh/reference/frontmatter.html#permalinkpattern)。
 :::
 
+### 摘要
+
+文章中 `<!-- more -->` 以上部分会被当作摘要，摘要会在首页文章流中显示。
+
 
 ## 文档文章
 
@@ -77,7 +83,7 @@ author: 斯蒂芬·霍金  # 文档作者（可选，不填的话会使用 `them
 
 - [Markdown 原生语法](https://www.markdownguide.org/basic-syntax/)
 - [VuePress 的 Markdown 拓展语法](https://v1.vuepress.vuejs.org/zh/guide/markdown.html)
-- [本主题的 Markdown 拓展语法](/zh/docs/advanced/features/)
+- [本主题的 Markdown 拓展语法](/zh/docs/advanced/markdown/)
 
 这里展示一下本主题默认支持的[容器](https://v2.vuepress.vuejs.org/zh/reference/plugin/container.html)用法：
 

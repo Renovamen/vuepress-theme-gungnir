@@ -8,12 +8,17 @@ export const en: SidebarConfig = {
         "/docs/basic/intro.md",
         "/docs/basic/installation.md",
         "/docs/basic/config.md",
+        "/docs/basic/search.md",
         "/docs/basic/content.md"
       ]
     },
     {
       text: "Advanced",
-      children: ["/docs/advanced/features.md", "/docs/advanced/icons.md"]
+      children: [
+        "/docs/advanced/features.md",
+        "/docs/advanced/markdown.md",
+        "/docs/advanced/icons.md"
+      ]
     },
     {
       text: "Plugins",

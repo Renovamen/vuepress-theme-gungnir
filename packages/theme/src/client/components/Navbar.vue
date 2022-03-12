@@ -76,8 +76,6 @@ const isFixed = ref(false);
 const isVisible = ref(false);
 const isInvert = ref(true);
 
-const path = computed(() => router.currentRoute.value.path);
-
 const handleScroll = () => {
   const currentTop = window.pageYOffset;
 

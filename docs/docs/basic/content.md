@@ -5,6 +5,8 @@ date: 2021-03-31
 
 ## Blog
 
+### Front Matter
+
 Blog posts will be shown on [home page](/). A post file should be identified by `layout: Post` in its front matter. An example front matter for a post looks like:
 
 ```yaml
@@ -49,6 +51,12 @@ See [here](https://v2.vuepress.vuejs.org/reference/frontmatter.html#permalinkpat
 :::warning
 When using this permalink pattern, you must **specify the date** in front matter or filename/dirname. See [here](https://v2.vuepress.vuejs.org/reference/frontmatter.html#permalinkpattern) for more details.
 :::
+
+
+### Excerpt
+
+In a blog markdown file, any content above the `<!-- more -->` comment will be extracted, rendered as excerpt and displayed on the home page.
+
 
 
 ## Documentation
