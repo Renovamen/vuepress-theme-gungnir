@@ -108,3 +108,43 @@ This is a dangerous warning message.
 cout << "Hello World!" << "\n";
 ```
 :::
+
+本主题的新增的容器：
+
+链接卡片
+
+- 语法
+
+```md
+::: link {Icon Name | Image URL} [title](url)
+description
+:::
+```
+
+- 示例:
+
+```md
+::: link [介绍](/zh/docs/basic/intro.html)
+vuepress-theme-gungnir Introduction
+:::
+
+::: link {fa-github-alt} [vuepress-theme-gungnir](https://github.com/Renovamen/vuepress-theme-gungnir)
+A blog theme for VuePress 2.
+:::
+
+::: link {/img/links/me.png} [My Blog](https://zxh.io)
+My blog 🧐, powered by VuePress 2, themed by Gungnir.
+:::
+```
+
+::: link [介绍](/zh/docs/basic/intro.html)
+vuepress-theme-gungnir Introduction
+:::
+
+::: link {fa-github-alt} [vuepress-theme-gungnir](https://github.com/Renovamen/vuepress-theme-gungnir)
+A blog theme for VuePress 2.
+:::
+
+::: link {/img/links/me.png} [My Blog](https://zxh.io)
+My blog 🧐, powered by VuePress 2, themed by Gungnir.
+:::

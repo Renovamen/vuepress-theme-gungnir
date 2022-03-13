@@ -109,3 +109,43 @@ This is a dangerous warning message.
 cout << "Hello World!" << "\n";
 ```
 :::
+
+New containers for this theme：
+
+link card
+
+- Container Syntax:
+
+```md
+::: link {Icon Name | Image URL} [title](url)
+description
+:::
+```
+
+- Example:
+
+```md
+::: link [Introduction](/docs/basic/intro.html)
+vuepress-theme-gungnir Introduction
+:::
+
+::: link {fa-github-alt} [vuepress-theme-gungnir](https://github.com/Renovamen/vuepress-theme-gungnir)
+A blog theme for VuePress 2.
+:::
+
+::: link {/img/links/me.png} [My Blog](https://zxh.io)
+My blog 🧐, powered by VuePress 2, themed by Gungnir.
+:::
+```
+
+::: link [Introduction](/docs/basic/intro.html)
+vuepress-theme-gungnir Introduction
+:::
+
+::: link {fa-github-alt} [vuepress-theme-gungnir](https://github.com/Renovamen/vuepress-theme-gungnir)
+A blog theme for VuePress 2.
+:::
+
+::: link {/img/links/me.png} [My Blog](https://zxh.io)
+My blog 🧐, powered by VuePress 2, themed by Gungnir.
+:::
