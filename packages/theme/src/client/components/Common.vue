@@ -37,10 +37,7 @@
       <slot name="page" />
     </div>
 
-    <SearchPage
-      v-if="shouldShowSearchPage"
-      @toggle-search="toggleSearch(false)"
-    />
+    <GungnirSearchPage @toggle-search="toggleSearch(false)" />
 
     <Menu @toggle-sidebar="toggleSidebar" @toggle-catalog="toggleCatalog" />
 
@@ -52,7 +49,6 @@
 import Footer from "@theme/Footer.vue";
 import Menu from "@theme/Menu.vue";
 import Navbar from "@theme/Navbar.vue";
-import SearchPage from "@theme/SearchPage.vue";
 import Sidebar from "@theme/Sidebar.vue";
 import { pageData, usePageFrontmatter } from "@vuepress/client";
 import { computed, onMounted, onUnmounted, ref } from "vue";

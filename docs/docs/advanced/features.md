@@ -3,7 +3,7 @@ title: More Features
 date: 2021-03-26
 ---
 
-All of the features mentioned in this page are disabled by default (except reading time). You should enable the features you want to use in `.vuepress/config.js` following the instructions on this page.
+All of the features mentioned in this page are disabled by default (except reading time). You need to enable the features you want to use in `.vuepress/config.js` following the instructions on this page.
 
 ::: info
 Code related to the disabled features will not be included in your site's bundle files.
@@ -90,27 +90,6 @@ themeConfig: {
 Check [RSS file of this site](/rss.xml) for an example.
 
 
-## Hitokoto
-
-```js
-themeConfig: {
-  hitokoto: true
-}
-```
-
-A [Hitokoto](https://hitokoto.cn/) bubble will appear on the home page when `hitokoto` is set to `true` and your mouse cursor is hovered over the avatar:
-
-![hitokoto](/img/docs/hitokoto-bubble.jpg)
-
-You can also customize the requested API:
-
-```js
-themeConfig: {
-  hitokoto: "https://v1.hitokoto.cn?c=i"
-}
-```
-
-
 ## Reading Time
 
 The reading time estimation will be shown on the head of the article by default, supported by [plugin-reading-time](/docs/plugins/reading-time/).
@@ -148,199 +127,22 @@ themeConfig: {
 ```
 
 
-## Math Rendering
-
-Enable KaTeX to render mathematical formulas in articles (supported by [plugin-katex](/docs/plugins/katex/)):
+## Hitokoto
 
 ```js
 themeConfig: {
-  themePlugins: {
-    katex: true
-  }
+  hitokoto: true
 }
 ```
 
-**Example:**
+A [Hitokoto](https://hitokoto.cn/) bubble will appear on the home page when `hitokoto` is set to `true` and your mouse cursor is hovered over the avatar:
 
-Inline math: E = mc^2
+![hitokoto](/img/docs/hitokoto-bubble.jpg)
 
-Display math:
-
-$$
-i\hbar\frac{\partial \psi}{\partial t} = \frac{-\hbar^2}{2m} ( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} ) \psi + V \psi.
-$$
-
-
-::: details Code
-```
-Inline math: E = mc^2
-
-Display math:
-
-$$
-i\hbar\frac{\partial \psi}{\partial t} = \frac{-\hbar^2}{2m} ( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} ) \psi + V \psi.
-$$
-```
-:::
-
-[Here](https://katex.org/docs/supported.html) is a list of TeX functions supported by KaTeX.
-
-
-## Charts
-
-Create interactive charts in Markdown easily.
-
-
-### Chart.js
-
-Use JavaScript charting library [Chart.js](https://www.chartjs.org) in Markdown via [plugin-chart](/docs/plugins/chart/):
+You can also customize the requested API:
 
 ```js
 themeConfig: {
-  themePlugins: {
-    chartjs: true
-  }
+  hitokoto: "https://v1.hitokoto.cn?c=i"
 }
 ```
-
-The token info of the code block should be `chart`, for example:
-
-```chart
-{
-  "type": "doughnut",
-  "data": {
-    "datasets": [{
-      "data": [10, 20, 30],
-      "backgroundColor": [
-        "rgba(255, 99, 132)",
-        "rgba(255, 206, 86)",
-        "rgba(54, 162, 235)"
-      ]
-    }],
-    "labels": ["Red", "Yellow", "Blue"]
-  }
-}
-```
-
-::: details Code
-~~~json
-```chart
-{
-  "type": "doughnut",
-  "data": {
-    "datasets": [{
-      "data": [10, 20, 30],
-      "backgroundColor": [
-        "rgba(255, 99, 132)",
-        "rgba(255, 206, 86)",
-        "rgba(54, 162, 235)"
-      ]
-    }],
-    "labels": ["Red", "Yellow", "Blue"]
-  }
-}
-```
-~~~
-:::
-
-::: danger
-The **key** should be in quotes, or some unexpected errors will occured.
-:::
-
-Refer to the [documentation of Chart.js](https://www.chartjs.org/docs/latest/) for more information.
-
-
-### Mermaid
-
-Use [Mermaid](https://mermaid-js.github.io) via [plugin-mermaid](/docs/plugins/mermaid/) to create complex diagrams in Markdown:
-
-```js
-themeConfig: {
-  themePlugins: {
-    mermaid: true
-  }
-}
-```
-
-The token info of the code block should be `mermaidjs`, for example:
-
-```mermaidjs
-sequenceDiagram
-  Alice->John: Hello John, how are you?
-  loop Every minute
-    John-->Alice: Great!
-  end
-```
-
-::: details Code
-~~~
-```mermaidjs
-sequenceDiagram
-  Alice->John: Hello John, how are you?
-  loop Every minute
-    John-->Alice: Great!
-  end
-```
-~~~
-:::
-
-Refer to the [documentation of Mermaid](https://mermaid-js.github.io) for more information.
-
-
-## Markdown Enhancements
-
-[plugin-md-plus](/plugins/md-plus) is used for adding more syntax in Markdown. It now supports:
-
-- Footnote
-- Mark
-
-You can enable all features simply by:
-
-```js
-themeConfig: {
-  themePlugins: {
-    mdPlus: {
-      all: true,  // enable all features (default: false)
-    }
-  }
-}
-```
-
-or enable them separately:
-
-```js
-themeConfig: {
-  themePlugins: {
-    mdPlus: {
-      footnote: true,  // Footnote (default: false)
-      mark: true  // Mark (default: false)
-    }
-  }
-}
-```
-
-### Footnote
-
-Add footnotes for text[^1]
-
-::: details Syntax
-```
-Add footnotes for text[^1]
-
-[^1]: Write your footnote here.
-```
-:::
-
-### Mark
-
-Mark important information: "Excuse me. Can you tell me how much the shirt is?" "Yes, it's ==nine fifteen==."
-
-::: details Syntax
-```
-Yes, it's ==nine fifteen==.
-```
-:::
-
----
-
-[^1]: Write your footnote here.

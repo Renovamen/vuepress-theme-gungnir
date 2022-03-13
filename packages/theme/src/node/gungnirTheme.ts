@@ -14,6 +14,7 @@ import {
   resolveContainerPluginOptionsForCodeGroupItem,
   resolveContainerPluginOptionsForDetails,
   resolveContainerPluginOptionsForLink,
+  resolveGiscusOptions,
   resolveGitPluginOptions,
   resolveMediumZoomPluginOptions,
   resolvePWAPopupOptions,
@@ -137,7 +138,7 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = (
       ["@renovamen/vuepress-plugin-rss", resolveRSSPluginOptions(themePlugins)],
       [
         "vuepress-plugin-giscus",
-        themePlugins.giscus ? themePlugins.giscus : false
+        resolveGiscusOptions(themePlugins, localeOptions)
       ],
       [
         "@vuepress/plugin-google-analytics",

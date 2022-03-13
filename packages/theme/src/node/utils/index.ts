@@ -5,3 +5,4 @@ export * from "./resolveGitPluginOptions";
 export * from "./resolveMediumZoomPluginOptions";
 export * from "./resolveRSSPluginOptions";
 export * from "./resolvePWAPopupOptions";
+export * from "./resolveGiscusOptions";

@@ -113,7 +113,7 @@
   }
 }
 
-.page-header {
+.page-content .page-header {
   position: relative;
   padding: 55px 0 0;
 
@@ -134,7 +134,7 @@
   }
 }
 
-.page-header.use-image {
+.page-content .page-header.use-image {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -173,7 +173,7 @@
 }
 
 @media (max-width: $MQMobile) {
-  .page-header.use-image {
+  .page-content .page-header.use-image {
     padding-left: 15px;
     padding-right: 15px;
 

@@ -8,8 +8,8 @@
     <!-- search button -->
     <div v-if="shouldShowSearchPage" class="navbar-item">
       <a style="cursor: pointer" @click="$emit('toggle-search')">
-        <span v-if="themeLocale.searchIcon" class="nav-icon">
-          <VIcon :name="themeLocale.searchIcon" />
+        <span v-if="themeLocale.search.icon" class="nav-icon">
+          <VIcon :name="themeLocale.search.icon" />
         </span>
         <span>Search</span>
       </a>

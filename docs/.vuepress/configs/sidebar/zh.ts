@@ -8,12 +8,24 @@ export const zh: SidebarConfig = {
         "/zh/docs/basic/intro.md",
         "/zh/docs/basic/installation.md",
         "/zh/docs/basic/config.md",
+        "/zh/docs/basic/search.md",
         "/zh/docs/basic/content.md"
       ]
     },
     {
       text: "进阶",
-      children: ["/zh/docs/advanced/features.md", "/zh/docs/advanced/icons.md"]
+      children: [
+        "/zh/docs/advanced/features.md",
+        "/zh/docs/advanced/markdown.md",
+        "/zh/docs/advanced/icons.md"
+      ]
+    },
+    {
+      text: "拓展",
+      children: [
+        "/zh/docs/extension/resource.md",
+        "/zh/docs/extension/deploy.md"
+      ]
     },
     {
       text: "插件",

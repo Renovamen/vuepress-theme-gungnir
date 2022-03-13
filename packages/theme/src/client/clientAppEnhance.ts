@@ -72,6 +72,12 @@ export default defineClientAppEnhance(({ app, router }) => {
   // link card
   app.component("Card", Card);
 
+  // built-in SearchPage component
+  app.component("GungnirSearchPage", () => {
+    const SearchPage = app.component("SearchPage");
+    return SearchPage ? h(SearchPage) : null;
+  });
+
   // compat with @vuepress/plugin-docsearch and @vuepress/plugin-search
   app.component("NavbarSearch", () => {
     const SearchComponent =

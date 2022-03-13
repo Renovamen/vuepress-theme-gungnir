@@ -1,6 +1,7 @@
 import type { MdPlusOptions } from "@renovamen/vuepress-plugin-md-plus";
 import type { ReadingTimeOptions } from "@renovamen/vuepress-plugin-reading-time";
 import type { RSSOptions } from "@renovamen/vuepress-plugin-rss";
+import type { SearchPluginOptions } from "@renovamen/vuepress-plugin-search";
 import type { PwaPluginOptions } from "@vuepress/plugin-pwa";
 import type { ThemeData } from "@vuepress/plugin-theme-data";
 import type { LocaleData } from "@vuepress/shared";
@@ -13,6 +14,19 @@ import type { PersonalConfig } from "./personal";
 interface ImageItem {
   path: string;
   mask?: string;
+}
+
+interface GungnirSearchOptions extends SearchPluginOptions {
+  /**
+   * Icon for search button (should be registered first). "false" for no icon.
+   *
+   * @default "ri-search-2-line"
+   */
+  icon?: string;
+}
+
+interface GungnirGiscusOptions extends GiscusOptions {
+  darkTheme?: string;
 }
 
 export interface GungnirThemePageOptions {
@@ -109,7 +123,7 @@ export interface GungnirThemePluginsOptions {
    *
    * @default false
    */
-  giscus?: false | GiscusOptions;
+  giscus?: false | GungnirGiscusOptions;
 
   /**
    * Enable @vuepress/plugin-google-analytics or not and pass your
@@ -169,23 +183,9 @@ export interface GungnirThemeLocaleData extends LocaleData, GungnirThemeI18n {
   /**
    * Enable search page or not
    *
-   * @default true
+   * @default {}
    */
-  search?: boolean;
-
-  /**
-   * Maximum number of results for search
-   *
-   * @default 10
-   */
-  searchMaxSuggestions?: number;
-
-  /**
-   * Placeholder of the search field
-   *
-   * @default "$ grep ..."
-   */
-  searchPlaceholder?: string;
+  search?: GungnirSearchOptions | false;
 
   /**
    * Icon for language seletor (should be registered first). "false" for no icon.
@@ -193,13 +193,6 @@ export interface GungnirThemeLocaleData extends LocaleData, GungnirThemeI18n {
    * @default "translate"
    */
   langIcon?: string | boolean;
-
-  /**
-   * Icon for search button (should be registered first). "false" for no icon.
-   *
-   * @default "search"
-   */
-  searchIcon?: string | boolean;
 
   /**
    * Personal information

@@ -87,7 +87,7 @@
   --docsearch-primary-color: var(--c-brand);
   --docsearch-text-color: var(--c-text);
   --docsearch-highlight-color: var(--c-brand);
-  --docsearch-muted-color: var(--c-text-quote);
+  --docsearch-muted-color: var(--c-text-sub);
   --docsearch-container-background: rgba(9, 10, 17, 0.8);
   --docsearch-modal-background: var(--c-bg-light);
   --docsearch-searchbox-background: var(--c-bg-lighter);
@@ -96,11 +96,11 @@
   --docsearch-hit-color: var(--c-text-light);
   --docsearch-hit-active-color: var(--c-bg);
   --docsearch-hit-background: var(--c-bg);
-  --docsearch-hit-shadow: 0 1px 3px 0 var(--c-border-dark);
+  --docsearch-hit-shadow: 0 1px 3px 0 var(--c-border);
   --docsearch-footer-background: var(--c-bg);
 }
 
-// plugin-search
+// @vuepress/plugin-search
 .search-box {
   --search-bg-color: transparent;
   --search-accent-color: var(--c-brand);
@@ -108,6 +108,16 @@
   --search-border-color: transparent;
   --search-item-text-color: var(--c-text-sub);
   --search-item-focus-bg-color: var(--c-bg-lighter);
+}
+
+// @renovamen/plugin-search
+.search-page {
+  --search-bg-color: var(--c-bg);
+  --search-accent-color: var(--c-brand);
+  --search-text-color: var(--c-text);
+  --search-item-title-color: var(--c-text);
+  --search-item-subtitle-color: var(--c-text-sub);
+  --searc-page-z-index: 100;
 }
 
 // plugin-pwa-popup

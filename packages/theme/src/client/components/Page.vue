@@ -20,11 +20,16 @@
 import PageMeta from "@theme/PageMeta.vue";
 import PageNav from "@theme/PageNav.vue";
 import { computed, resolveComponent } from "vue";
-import { useDarkMode } from "../composables";
+import { useDarkMode, useThemeLocaleData } from "../composables";
 
+const themeLocale = useThemeLocaleData();
 const { isDarkMode } = useDarkMode();
+
 const isGiscus = typeof resolveComponent("Giscus") !== "string";
+
 const giscusTheme = computed(() =>
-  isDarkMode.value ? "dark_dimmed" : "light"
+  isDarkMode.value
+    ? themeLocale.value.giscusDarkTheme
+    : themeLocale.value.giscusLightTheme
 );
 </script>

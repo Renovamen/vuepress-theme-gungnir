@@ -144,54 +144,6 @@ Check the [tags page](/tags/) and [links page](/links/) to see the effect.
 To edit the title of the above mentioned pages, please refer to Multi-language Support (TODO) section.
 
 
-## Search
-
-The built-in search component of this theme only supports searching for **blog article** contents, which means searching for documentation article contents is not avaliable.
-
-```js
-// .vuepress/config.js
-
-module.exports = {
-  themeConfig: {
-    search: true,  // optional: enable search or not, default: true
-    searchMaxSuggestions: 10,  // optional: the maximum number of results for search, default: 10
-    searchPlaceholder: "$ grep ...",  // optional: placeholder of the search field, default: "$ grep ..."
-    searchIcon: "ri-search-2-line"  // optional: search icon
-  }
-}
-```
-
-See [here](https://zxh.io) for a demo (click the "Search" button in navbar).
-
-If you need support for documentation articles, consider [@vuepress/plugin-search](https://v2.vuepress.vuejs.org/reference/plugin/search.html) or [@vuepress/plugin-docsearch](https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html). This theme will add search box to the navbar (see the top right-hand corner of this site) once you configure the plugin correctly. Before that, you may want to disable the built-in search component:
-
-```js
-// .vuepress/config.js
-
-module.exports = {
-  themeConfig: {
-    search: false
-  }
-}
-```
-
-When using `@vuepress/plugin-search`, you may want to exclude Home, Tags and Links page:
-
-```js
-// .vuepress/config.js
-
-module.exports = {
-  plugins: [
-    [
-      "@vuepress/plugin-search", {
-        isSearchable: (page) => !["Tags", "Links", "HomePage"].includes(page.frontmatter.layout)
-      }
-    ]
-  ]
-}
-```
-
-
 ## Custom Footer
 
 Support HTML. For example, the footer of this site is:

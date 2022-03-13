@@ -15,7 +15,7 @@ date: 2021-03-26
 评论系统使用了基于 [GitHub Discussions](https://docs.github.com/en/discussions) 的 [Giscus](https://github.com/giscus/giscus)。首先你需要：
 
 - 建一个公开的 Github 仓库并[启用 Discussions](https://docs.github.com/cn/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/enabling-or-disabling-github-discussions-for-a-repository)
-- 安装 [Giscus app](https://github.com/apps/giscus)
+- 安装 [Giscus app](https://github.com/apps/giscus)，在选择仓库时至少要把上述仓库选进去
 - 查看 [Giscus 官网](https://giscus.app)并在上面生成你的 repo id、category id 以及别的必要信息
 
 然后：
@@ -23,19 +23,25 @@ date: 2021-03-26
 ```js
 themeConfig: {
   themePlugins: {
-    repo: "[仓库]",  // 必须，string，格式：user_name/repo_name
-    repoId: "[仓库 ID]",  // 必须，string，在 Giscus 官网上生成
-    category: "[discussion 分类名]",  // 必须，string
-    categoryId: "[discussion 分类 ID]",  // 必须，string，在 Giscus 官网上生成
-    mapping: "[页面 <-> discussion 映射]",  // 可选，string，default="title"
-    reactionsEnabled: "[是否启用 reaction]",  // 可选，boolean，default=true
-    lang: "[语言]",  // 可选，string，default="auto"（跟随网站语言，如果 Giscus 不支持你的网站的语言，则会使用 "en"）
-    crossorigin: "[crossorigin]"  // 可选，string，default="anonymous"
+    giscus: {
+      repo: "[仓库]",  // 必须，string，格式：user_name/repo_name
+      repoId: "[仓库 ID]",  // 必须，string，在 Giscus 官网上生成
+      category: "[discussion 分类名]",  // 必须，string
+      categoryId: "[discussion 分类 ID]",  // 必须，string，在 Giscus 官网上生成
+      mapping: "[页面 <-> discussion 映射]",  // 可选，string，default="title"
+      reactionsEnabled: "[是否启用 reaction]",  // 可选，boolean，default=true
+      lang: "[语言]",  // 可选，string，default="auto"（跟随网站语言，如果 Giscus 不支持你的网站的语言，则会使用 "en"）
+      crossorigin: "[crossorigin]",  // 可选，string，default="anonymous"
+      theme: "[light 模式主题]",  // 可选，string，default="light"
+      darkTheme: "[dark 模式主题]"  // 可选，string，default="dark_dimmed"
+    }
   }
 }
 ```
 
-更多细节请参考 [plugin-giscus](/zh/docs/plugins/giscus.html)。
+其中，`theme` 和 `darkTheme` 项可以传入[自定义主题](https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#data-theme)。
+
+参考：[plugin-giscus](/zh/docs/plugins/giscus.md)
 
 
 ## 站点统计
@@ -88,27 +94,6 @@ themeConfig: {
 [这里](/rss.xml)是本站的 RSS 文件。
 
 
-## 一言
-
-```js
-themeConfig: {
-  hitokoto: true
-}
-```
-
-将 `hitokoto` 项设置为 `true` 可以开启首页的[一言](https://hitokoto.cn/)气泡，将鼠标悬浮在头像上气泡就会显示出来：
-
-![hitokoto](/img/docs/hitokoto-bubble.jpg)
-
-如果你想更改一言的请求参数，或想使用其他的接口，可以：
-
-```js
-themeConfig: {
-  hitokoto: "https://v1.hitokoto.cn?c=i"  // 只返回诗词
-}
-```
-
-
 ## 阅读时长估计
 
 主题默认在文章头部显示估计出的阅读时长，该功能基于插件 [plugin-reading-time](/zh/docs/plugins/reading-time/)。
@@ -148,196 +133,22 @@ themeConfig: {
 ```
 
 
-## 数学公式渲染
-
-通过插件 [plugin-katex](/zh/docs/plugins/katex/) 来提供公式渲染支持。启用 KaTeX：
+## 一言
 
 ```js
 themeConfig: {
-  themePlugins: {
-    katex: true
-  }
+  hitokoto: true
 }
 ```
 
-例子：
+将 `hitokoto` 项设置为 `true` 可以开启首页的[一言](https://hitokoto.cn/)气泡，将鼠标悬浮在头像上气泡就会显示出来：
 
-行内公式：$E = mc^2$
+![hitokoto](/img/docs/hitokoto-bubble.jpg)
 
-行块公式：
-
-$$
-i\hbar\frac{\partial \psi}{\partial t} = \frac{-\hbar^2}{2m} ( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} ) \psi + V \psi.
-$$
-
-
-::: details 代码
-```
-行内公式：$E = mc^2$
-
-行块公式：
-
-$$
-i\hbar\frac{\partial \psi}{\partial t} = \frac{-\hbar^2}{2m} ( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} ) \psi + V \psi.
-$$
-```
-:::
-
-
-## 图表
-
-在 Markdown 中轻松插入一些可交互的图表。
-
-### Chart.js
-
-通过插件 [plugin-chart](/zh/docs/plugins/chart/) 来在 Markdown 中使用 JavaScript 图表库 [Chart.js](https://www.chartjs.org)：
+如果你想更改一言的请求参数，或想使用其他的接口，可以：
 
 ```js
 themeConfig: {
-  themePlugins: {
-    chartjs: true
-  }
+  hitokoto: "https://v1.hitokoto.cn?c=i"  // 只返回诗词
 }
 ```
-
-代码块的 token info 需要为 `chart`，例子：
-
-```chart
-{
-  "type": "doughnut",
-  "data": {
-    "datasets": [{
-      "data": [10, 20, 30],
-      "backgroundColor": [
-        "rgba(255, 99, 132)",
-        "rgba(255, 206, 86)",
-        "rgba(54, 162, 235)"
-      ]
-    }],
-    "labels": ["Red", "Yellow", "Blue"]
-  }
-}
-```
-
-::: details 代码
-~~~json
-```chart
-{
-  "type": "doughnut",
-  "data": {
-    "datasets": [{
-      "data": [10, 20, 30],
-      "backgroundColor": [
-        "rgba(255, 99, 132)",
-        "rgba(255, 206, 86)",
-        "rgba(54, 162, 235)"
-      ]
-    }],
-    "labels": ["Red", "Yellow", "Blue"]
-  }
-}
-```
-~~~
-:::
-
-::: danger
-key 值一定要加引号，否则会报错。
-:::
-
-更详细的用法可以参考 [Chart.js 文档](https://www.chartjs.org/docs/latest/)。
-
-
-### Mermaid
-
-通过插件 [plugin-mermaid](/zh/docs/plugins/mermaid/) 来在 Markdown 中使用 [Mermaid](https://mermaid-js.github.io)，从而在文章中加入流程图、状态图、时序图、甘特图等：
-
-```js
-themeConfig: {
-  themePlugins: {
-    mermaid: true
-  }
-}
-```
-
-代码块的 token info 需要为 `mermaid`，例子：
-
-```mermaidjs
-sequenceDiagram
-  Alice->John: Hello John, how are you?
-  loop Every minute
-    John-->Alice: Great!
-  end
-```
-
-::: details 代码
-~~~
-```mermaidjs
-sequenceDiagram
-  Alice->John: Hello John, how are you?
-  loop Every minute
-    John-->Alice: Great!
-  end
-```
-~~~
-:::
-
-更详细的用法可以参考 [Mermaid 文档](https://mermaid-js.github.io)。
-
-
-## Markdown 增强样式
-
-通过插件 [plugin-md-plus](/zh/docs/plugins/md-plus/) 来在 Markdown 中加入更多语法和功能。目前支持：
-
-- 脚注
-- 高亮标记
-
-你可以一键启用所有功能：
-
-```js
-themeConfig: {
-  themePlugins: {
-    mdPlus: {
-      all: true,  // 全部启用（默认：false）
-    }
-  }
-}
-```
-
-也可以分别启用：
-
-```js
-themeConfig: {
-  themePlugins: {
-    mdPlus: {
-      footnote: true,  // 脚注（默认：false）
-      mark: true  // 高亮标记（默认：false）
-    }
-  }
-}
-```
-
-### 脚注
-
-给文字加上脚注[^1]
-
-::: details 语法
-```
-给文字加上脚注[^1]
-
-[^1]: 脚注内容
-```
-:::
-
-### 高亮标记
-
-高亮标记重要的内容：衬衫的价格是 ==九磅十五便士==
-
-::: details 语法
-```
-衬衫的价格是 ==九磅十五便士==
-```
-:::
-
----
-
-[^1]: 脚注内容
