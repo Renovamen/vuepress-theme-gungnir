@@ -137,14 +137,16 @@ export const resolveContainerPluginOptionsForLink = (
       context = context.replace(title, "");
       const link = getContainerDslValue(context, "(", ")");
       context = context.replace(link, "");
-      const icon = getContainerDslValue(context, "{", "}");
+      const identifier = getContainerDslValue(context, "{", "}");
+      const isImgae = identifier.includes("/");
       return `
-      <ContainerCard 
+      <Card 
         title="${title}"
         link="${link}"
-        icon="${icon}"
+        icon="${isImgae ? "" : identifier}"
+        image="${!isImgae ? "" : identifier}"
         >`;
     },
-    after: () => "</ContainerCard>\n"
+    after: () => "</Card>\n"
   };
 };

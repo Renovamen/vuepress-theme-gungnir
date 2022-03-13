@@ -28,9 +28,9 @@ import {
 } from "oh-vue-icons/icons";
 import { h } from "vue";
 import Badge from "./components/global/Badge.vue";
+import Card from "./components/global/Card.vue";
 import CodeGroup from "./components/global/CodeGroup";
 import CodeGroupItem from "./components/global/CodeGroupItem.vue";
-import ContainerCard from "./components/global/ContainerCard.vue";
 import { useScrollPromise } from "./composables";
 import "./styles/index.scss";
 
@@ -70,7 +70,7 @@ export default defineClientAppEnhance(({ app, router }) => {
   app.component("VIcon", OhVueIcon);
 
   // link card
-  app.component("ContainerCard", ContainerCard);
+  app.component("Card", Card);
 
   // compat with @vuepress/plugin-docsearch and @vuepress/plugin-search
   app.component("NavbarSearch", () => {
