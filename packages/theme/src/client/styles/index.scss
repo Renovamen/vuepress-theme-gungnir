@@ -12,7 +12,6 @@
 @use 'layouts/links';
 @use 'layouts/page';
 @use 'layouts/post';
-@use 'layouts/search';
 @use 'layouts/tags';
 
 // components
@@ -31,6 +30,7 @@
 @use 'components/sidebar';
 @use 'components/sr-only';
 @use 'components/toc';
+@use 'components/search';
 
 // plugins
 @use 'plugins/giscus';

@@ -6,14 +6,6 @@
   max-width: var(--homepage-width);
 }
 
-.postlist-wrapper .pager {
-  max-width: var(--homepage-width);
-
-  a {
-    width: 180px;
-  }
-}
-
 .post-item {
   margin: 80px auto 100px;
   position: relative;
@@ -139,7 +131,7 @@
 
 @media (max-width: $MQIpad) {
   .postlist-wrapper {
-    padding: 0 13px 0 14px;
+    padding: 0 13px;
   }
 
   .post-item {

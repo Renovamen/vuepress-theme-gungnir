@@ -4,7 +4,7 @@
   @extend %wrapper;
 
   list-style: none;
-  height: 100px;
+  margin-bottom: 100px;
 
   a {
     color: var(--text-color);
@@ -45,14 +45,30 @@
   }
 }
 
+.postlist-wrapper .pager {
+  max-width: var(--homepage-width);
+
+  a {
+    width: 180px;
+  }
+}
+
 @media (max-width: $MQMobile) {
   .pager a {
     padding: 15px 0;
+  }
+
+  .postlist-wrapper .pager a {
+    padding: 20px 0;
   }
 }
 
 @media (max-width: $MQMobileNarrow) {
   .pager a {
     padding: 12px 0;
+  }
+
+  .postlist-wrapper .pager {
+    padding: 1rem 0;
   }
 }

@@ -201,14 +201,13 @@
 @media (min-width: $MQIpad) {
   .home-blog .hero {
     background-attachment: fixed;
-    .hero-info__text {
-      // gungnir-font()
-    }
   }
 }
 
 @media (max-width: $MQIpad) {
   .home-blog {
+    padding-bottom: 0;
+
     .hide-on-mobile {
       display: none;
     }
