@@ -15,7 +15,7 @@
           {{ item.frontmatter.subtitle }}
         </h3>
       </RouterLink>
-      <div class="post-item__content" v-html="item.excerpt" />
+      <div class="post-item__content" v-html="getExcerpt(item.excerpt)" />
     </div>
   </div>
 </template>
@@ -29,4 +29,10 @@ defineProps({
     required: true
   }
 });
+
+const getExcerpt = (excerpt: string) => {
+  return excerpt
+    .replaceAll("<RouterLink to", "<a href")
+    .replaceAll("</RouterLink>", "</a>");
+};
 </script>
