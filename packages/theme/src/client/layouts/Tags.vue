@@ -18,12 +18,11 @@ import TagPostList from "@theme/TagPostList.vue";
 import { computed } from "vue";
 import { useRouter } from "vue-router";
 import type { GungnirThemePageOptions } from "../../shared";
-import { useBlog, useTags, useThemeLocaleData } from "../composables";
+import { useBlog, useThemeLocaleData } from "../composables";
 import { filterPostsByTag, getPostsByYear } from "../utils";
 
 const router = useRouter();
 const themeLocale = useThemeLocaleData();
-const tag = useTags();
 const { posts } = useBlog();
 
 const currentTag = computed(() => {

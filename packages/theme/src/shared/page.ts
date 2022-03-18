@@ -37,11 +37,12 @@ export interface GungnirThemePostFrontmatter
   lastUpdated?: boolean;
   useHeaderImage?: boolean;
   author?: string;
-  date: string;
+  date?: string;
   headerImage: string;
   headerMask?: string;
-  catalog: boolean;
-  tags: string[];
+  catalog?: boolean;
+  tags?: string[];
+  hide?: boolean;
 }
 
 interface LinkItem {

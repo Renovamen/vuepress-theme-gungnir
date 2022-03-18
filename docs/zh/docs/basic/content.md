@@ -22,7 +22,8 @@ useHeaderImage: true  # 是否在博客中显示封面图（可选，默认：fa
 headerImage: /img/test.jpg  # 博客封面图（必须，即使上一项选了 false，因为图片也需要在首页显示）
 headerMask: rgba(40, 57, 101, .4)  # 封面图遮罩（可选）
 catalog: true  # 是否启用右侧目录，会覆写 `themeConfig.catalog`（可选，默认：false）
-tags:  # 博客标签
+hide: true  # 是否在首页和标签页博客列表中隐藏这篇博客（可选，默认：false）
+tags:  # 博客标签（可选）
   - 宇宙
   - 物理
 ---
@@ -35,6 +36,8 @@ tags:  # 博客标签
 :::tip
 `front-matter` 中有 `tags` 项的博客会在[标签页](/tags/)显示。
 :::
+
+### URL
 
 如果你希望博客文章的 URL 格式为 `/post/year/month/day/post-title/`，请在 front matter 里添加 `permalinkPattern` 项：
 

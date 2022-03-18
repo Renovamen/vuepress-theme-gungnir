@@ -20,7 +20,8 @@ useHeaderImage: true  # show header image in post or not (optional, default: fal
 headerImage: /img/test.jpg  # path to the header image (required, even if `useHeaderImage` is false, becasue header image would also be shown on home page)
 headerMask: rgba(40, 57, 101, .4)  # mask of the header image (optional)
 catalog: false  # enable catalog or not, can rewrite `themeConfig.catalog` (optional, default: true)
-tags:  # post tags
+hide: true  # hide this blog in the blog list of home page and tags page or not (optional, default: false)
+tags:  # post tags (optional)
   - space
   - physics
 ---
@@ -34,7 +35,9 @@ tags:  # post tags
 Posts that with `tags` item in front matter will be appear on [tags page](/tags/).
 :::
 
-If you would like the URL of a post be shown in the form of `/post/year/month/day/post-title/`, just add this line to its front matter:
+### URL
+
+If you would like the URL of a blog be shown in the form of `/post/year/month/day/post-title/`, just add this line to its front matter:
 
 ```yaml{5}
 ---

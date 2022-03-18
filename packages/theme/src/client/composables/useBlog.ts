@@ -8,7 +8,9 @@ import { usePages, useThemeLocaleData } from ".";
 
 export async function fetchPosts(): Promise<PageData[]> {
   const pages = await usePages();
-  return pages.filter((page) => page.frontmatter.layout === "Post");
+  return pages.filter(
+    (page) => page.frontmatter.layout === "Post" && !page.frontmatter.hide
+  );
 }
 
 const preparePosts = (posts: PageData[]): PostPageData[] => {
