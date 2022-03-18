@@ -12,20 +12,18 @@
 
     <slot name="bottom" />
 
-    <Giscus v-if="isGiscus" :theme="giscusTheme" />
+    <GungnirGiscus :theme="giscusTheme" />
   </main>
 </template>
 
 <script setup lang="ts">
 import PageMeta from "@theme/PageMeta.vue";
 import PageNav from "@theme/PageNav.vue";
-import { computed, resolveComponent } from "vue";
+import { computed } from "vue";
 import { useDarkMode, useThemeLocaleData } from "../composables";
 
 const themeLocale = useThemeLocaleData();
 const { isDarkMode } = useDarkMode();
-
-const isGiscus = typeof resolveComponent("Giscus") !== "string";
 
 const giscusTheme = computed(() =>
   isDarkMode.value

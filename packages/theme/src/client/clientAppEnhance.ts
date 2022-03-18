@@ -27,6 +27,7 @@ import {
   RiZhihuLine
 } from "oh-vue-icons/icons";
 import { h } from "vue";
+import type { DefineComponent } from "vue";
 import Badge from "./components/global/Badge.vue";
 import CodeGroup from "./components/global/CodeGroup";
 import CodeGroupItem from "./components/global/CodeGroupItem.vue";
@@ -72,6 +73,12 @@ export default defineClientAppEnhance(({ app, router }) => {
   app.component("GungnirSearchPage", () => {
     const SearchPage = app.component("SearchPage");
     return SearchPage ? h(SearchPage) : null;
+  });
+
+  // Giscus
+  app.component("GungnirGiscus", (props: { theme?: string }) => {
+    const Giscus = app.component("Giscus") as DefineComponent;
+    return Giscus ? h(Giscus, { theme: props.theme }) : null;
   });
 
   // compat with @vuepress/plugin-docsearch and @vuepress/plugin-search
