@@ -11,6 +11,9 @@ const en: GungnirThemeI18n = {
   lastUpdatedText: "Last Updated",
   contributorsText: "Contributors",
 
+  // search
+  searchText: "Search",
+
   // custom containers
   info: "INFO",
   tip: "TIP",

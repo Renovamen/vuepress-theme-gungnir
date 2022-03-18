@@ -8,10 +8,10 @@
     <!-- search button -->
     <div v-if="shouldShowSearchPage" class="navbar-item">
       <a style="cursor: pointer" @click="$emit('toggle-search')">
-        <span v-if="themeLocale.search.icon" class="nav-icon">
-          <VIcon :name="themeLocale.search.icon" />
+        <span v-if="themeLocale.searchIcon" class="nav-icon">
+          <VIcon :name="themeLocale.searchIcon" />
         </span>
-        <span>Search</span>
+        <span>{{ themeLocale.searchText }}</span>
       </a>
     </div>
   </nav>
@@ -37,7 +37,6 @@ import type {
   ResolvedNavbarItem
 } from "../../shared";
 import { useNavLink, useThemeLocaleData } from "../composables";
-import { resolveRepoType } from "../utils";
 
 defineEmits(["toggle-search"]);
 

@@ -44,6 +44,13 @@ export interface GungnirThemeI18n {
   contributorsText?: string;
 
   /**
+   * Search config
+   *
+   * The text to replace the default "Search"
+   */
+  searchText?: string;
+
+  /**
    * Custom block config
    *
    * Title of INFO custom block

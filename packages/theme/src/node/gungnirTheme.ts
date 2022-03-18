@@ -53,6 +53,8 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = (
 
   assignDefaultLocaleOptions(localeOptions);
 
+  localeOptions.search = !(themePlugins.search === false);
+
   return {
     name: "vuepress-theme-gungnir",
 
@@ -124,7 +126,7 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = (
       ["@vuepress/palette", { preset: "sass" }],
       ["@vuepress/prismjs", themePlugins.prismjs !== false],
       ["@vuepress/theme-data", { themeData: localeOptions }],
-      ["@renovamen/vuepress-plugin-search", localeOptions.search],
+      ["@renovamen/vuepress-plugin-search", themePlugins.search],
       ["@renovamen/vuepress-plugin-katex", themePlugins.katex === true],
       ["@renovamen/vuepress-plugin-mermaid", themePlugins.mermaid === true],
       ["vuepress-plugin-chart", themePlugins.chartjs === true],

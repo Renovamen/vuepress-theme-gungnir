@@ -11,6 +11,9 @@ const zh: GungnirThemeI18n = {
   lastUpdatedText: "上次更新",
   contributorsText: "贡献者",
 
+  // search
+  searchText: "搜索",
+
   // custom containers
   info: "信息",
   tip: "提示",

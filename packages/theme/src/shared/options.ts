@@ -16,15 +16,6 @@ interface ImageItem {
   mask?: string;
 }
 
-interface GungnirSearchOptions extends SearchPluginOptions {
-  /**
-   * Icon for search button (should be registered first). "false" for no icon.
-   *
-   * @default "ri-search-2-line"
-   */
-  icon?: string;
-}
-
 interface GungnirGiscusOptions extends GiscusOptions {
   darkTheme?: string;
 }
@@ -160,6 +151,13 @@ export interface GungnirThemePluginsOptions {
    * @default false
    */
   pwa?: boolean | PwaPluginOptions;
+
+  /**
+   * Enable @renovamen/vuepress-plugin-search or not and pass it's options
+   *
+   * @default {}
+   */
+  search?: false | SearchPluginOptions;
 }
 
 export type GungnirThemeLocaleOptions = GungnirThemeData;
@@ -180,16 +178,16 @@ export interface GungnirThemeLocaleData extends LocaleData, GungnirThemeI18n {
   hitokoto?: boolean | string;
 
   /**
-   * Enable search page or not
+   * Icon for search button (should be registered first). "false" for no icon.
    *
-   * @default {}
+   * @default "ri-search-2-line"
    */
-  search?: GungnirSearchOptions | false;
+  searchIcon?: string | boolean;
 
   /**
    * Icon for language seletor (should be registered first). "false" for no icon.
    *
-   * @default "translate"
+   * @default "hi-translate"
    */
   langIcon?: string | boolean;
 

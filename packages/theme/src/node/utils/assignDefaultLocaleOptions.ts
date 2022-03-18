@@ -10,10 +10,8 @@ export const DEFAULT_LOCALE_OPTIONS: GungnirThemeLocaleOptions = {
 
   postNumPerPage: 10,
 
-  // search options
-  search: {
-    icon: "ri-search-2-line"
-  },
+  // search
+  searchIcon: "ri-search-2-line",
 
   // language switcher icon
   langIcon: "hi-translate",
@@ -63,8 +61,4 @@ export const assignDefaultLocaleOptions = (
     ...en,
     ...localeOptions.locales["/"]
   });
-
-  if (localeOptions.search !== false) {
-    Object.assign(localeOptions.search, DEFAULT_LOCALE_OPTIONS.search);
-  }
 };

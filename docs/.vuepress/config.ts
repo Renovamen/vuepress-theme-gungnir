@@ -70,8 +70,6 @@ export default defineUserConfig<GungnirThemeOptions>({
 
     hitokoto: "https://v1.hitokoto.cn?c=d&c=i", // enable hitokoto (一言) or not?
 
-    search: false, // use @vuepress/plugin-docsearch instead
-
     // personal information
     personalInfo: {
       name: "Gungnir",
@@ -180,7 +178,8 @@ export default defineUserConfig<GungnirThemeOptions>({
         siteURL: "https://v2.vuepress-theme-gungnir.vercel.app",
         copyright: "Renovamen 2018-2022"
       },
-      pwa: true
+      pwa: true,
+      search: false // use @vuepress/plugin-docsearch instead
     },
 
     footer: `

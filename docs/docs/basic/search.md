@@ -10,7 +10,70 @@ The built-in search component of this theme is adapted from [@vuepress/plugin-se
 See [here](https://zxh.io) for a demo (click the "Search" button in navbar).
 
 
-### Options
+### Navbar Options
+
+#### searchText
+
+- Type: `string`
+
+- Default
+  
+  - en: `"Search"`
+  - zh: `"搜索"`
+
+- Details
+  
+  - Text of the search button in the navbar
+  - Can be used as normal config, and can also be used in the [locales](https://v2.vuepress.vuejs.org/reference/default-theme/config.html#locales) option
+
+- Example:
+
+  ```js
+  // normal config
+
+  themeConfig: {
+    searchText: "Search"
+  }
+  ```
+
+  or
+
+  ```js
+  // locales option
+
+  themeConfig: {
+    locales: {
+      "/": {
+        searchText: "Search"
+      },
+      "/zh/": {
+        searchText: "搜索"
+      }
+    }
+  }
+  ```
+
+
+#### searchIcon
+
+- Type: `string`
+
+- Default: `"ri-search-2-line"`
+
+- Details: Icon of the search button in the navbar
+
+- Example:
+
+  ```js
+  themeConfig: {
+    searchIicon: "bi-search"
+  }
+  ```
+
+- Also see: [Advanced > Icons](/docs/advanced/icons.md)
+
+
+### Plugin Options
 
 #### locales
 
@@ -23,10 +86,8 @@ See [here](https://zxh.io) for a demo (click the "Search" button in navbar).
 - Example:
 
   ```js
-  // .vuepress/config.js
-
-  module.exports = {
-    themeConfig: {
+  themeConfig: {
+    themePlugins: {
       search: {
         locales: {
           "/": {
@@ -34,7 +95,7 @@ See [here](https://zxh.io) for a demo (click the "Search" button in navbar).
           },
           "/zh/": {
             placeholder: "搜索"
-          },
+          }
         }
       }
     }
@@ -42,31 +103,6 @@ See [here](https://zxh.io) for a demo (click the "Search" button in navbar).
   ```
 
 - Also see: [Guide > I18n](https://v2.vuepress.vuejs.org/guide/i18n.html)
-
-
-#### icon
-
-- Type: `string`
-
-- Default: `"ri-search-2-line"`
-
-- Details: Icon to be displayed in the navbar
-
-- Example:
-
-  ```js
-  // .vuepress/config.js
-
-  module.exports = {
-    themeConfig: {
-      search: {
-        icon: "bi-search"
-      }
-    }
-  }
-  ```
-
-- Also see: [Advanced > Icons](/docs/advanced/icons.md)
 
 
 #### hotKeys
@@ -107,10 +143,8 @@ See [here](https://zxh.io) for a demo (click the "Search" button in navbar).
 - Example:
 
   ```js
-  // .vuepress/config.js
-
-  module.exports = {
-    themeConfig: {
+  themeConfig: {
+    themePlugins: {
       search: {
         // exclude a specified post
         isSearchable: (page) => page.path !== "/posts/2021-12-25-hello.html"
@@ -134,10 +168,8 @@ See [here](https://zxh.io) for a demo (click the "Search" button in navbar).
 - Example:
 
   ```js
-  // .vuepress/config.js
-
-  module.exports = {
-    themeConfig: {
+  themeConfig: {
+    themePlugins: {
       search: {
         // allow searching the `tags` frontmatter
         getExtraFields: (page) => page.frontmatter.tags ?? []
@@ -168,10 +200,8 @@ You can customize the style of the search component via CSS variables:
 Disable the built-in search component:
 
 ```js
-// .vuepress/config.js
-
-module.exports = {
-  themeConfig: {
+themeConfig: {
+  themePlugins: {
     search: false
   }
 }

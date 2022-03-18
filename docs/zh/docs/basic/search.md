@@ -10,7 +10,70 @@ date: 2022-03-12
 效果可以参考[这里](https://zxh.io)（点击导航栏的 Search）。
 
 
-### 配置项
+### 导航栏配置项
+
+#### searchText
+
+- 类型：`string`
+
+- 默认值
+  
+  - en: `"Search"`
+  - zh: `"搜索"`
+
+- 详情
+  
+  - 在导航栏中搜索按钮中显示的文字
+  - 可以作为一般配置使用，也可以在 [locales](https://v2.vuepress.vuejs.org/zh/reference/default-theme/config.html#locales) 配置项内使用
+
+- 示例：
+
+  ```js
+  // 一般配置
+
+  themeConfig: {
+    searchText: "Search"
+  }
+  ```
+
+  or
+
+  ```js
+  // locales 配置项
+
+  themeConfig: {
+    locales: {
+      "/": {
+        searchText: "Search"
+      },
+      "/zh/": {
+        searchText: "搜索"
+      }
+    }
+  }
+  ```
+
+
+#### searchIcon
+
+- 类型：`string`
+
+- 默认值：`"ri-search-2-line"`
+
+- 详情：在导航栏搜索按钮中显示的图标，需要提前引入
+
+- 示例：
+
+  ```js
+  themeConfig: {
+    searchIicon: "bi-search"
+  }
+  ```
+
+- 参考：[进阶 > 图标支持](/zh/docs/advanced/icons.md)
+
+
+### 插件配置项
 
 #### locales
 
@@ -23,10 +86,8 @@ date: 2022-03-12
 - 示例：
 
   ```js
-  // .vuepress/config.js
-
-  module.exports = {
-    themeConfig: {
+  themeConfig: {
+    themePlugins: {
       search: {
         locales: {
           "/": {
@@ -42,31 +103,6 @@ date: 2022-03-12
   ```
 
 - 参考：[指南 > 多语言支持](https://v2.vuepress.vuejs.org/zh/guide/i18n.html)
-
-
-#### icon
-
-- 类型：`string`
-
-- 默认值：`"ri-search-2-line"`
-
-- 详情：在导航栏显示的搜索图标，需要提前引入
-
-- 示例：
-
-  ```js
-  // .vuepress/config.js
-
-  module.exports = {
-    themeConfig: {
-      search: {
-        icon: "bi-search"
-      }
-    }
-  }
-  ```
-
-- 参考：[进阶 > 图标支持](/zh/docs/advanced/icons.md)
 
 
 #### hotKeys
@@ -107,10 +143,8 @@ date: 2022-03-12
 - 示例：
 
   ```js
-  // .vuepress/config.js
-
-  module.exports = {
-    themeConfig: {
+  themeConfig: {
+    themePlugins: {
       search: {
         // 排除特定博客文章
         isSearchable: (page) => page.path !== "/posts/2021-12-25-hello.html"
@@ -134,10 +168,8 @@ date: 2022-03-12
 - 示例：
 
   ```js
-  // .vuepress/config.js
-
-  module.exports = {
-    themeConfig: {
+  themeConfig: {
+    themePlugins: {
       search: {
         // 允许搜索 Frontmatter 中的 `tags`
         getExtraFields: (page) => page.frontmatter.tags ?? []
@@ -170,8 +202,8 @@ date: 2022-03-12
 ```js
 // .vuepress/config.js
 
-module.exports = {
-  themeConfig: {
+themeConfig: {
+  themePlugins: {
     search: false
   }
 }

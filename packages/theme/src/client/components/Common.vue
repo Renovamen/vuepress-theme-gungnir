@@ -96,11 +96,6 @@ const onTouchEnd = (e): void => {
   }
 };
 
-// search page
-const shouldShowSearchPage = computed(
-  () => themeLocale.value.search && frontmatter.value.search !== false
-);
-
 const isSearchOpen = ref(false);
 
 const toggleSearch = (to?: boolean): void => {
