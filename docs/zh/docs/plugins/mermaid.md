@@ -39,6 +39,77 @@ module.exports = {
 ```
 
 
+## 配置项
+
+可以使用一下配置项来设置 Mermaid 的主题，比如：
+
+```js
+module.exports = {
+  plugins: [
+    [
+      "@renovamen/vuepress-plugin-mermaid", {
+        theme: "default",  // 默认："default"
+        darkTheme: "dark",  // 默认："dark"
+        darkSelector: "html",  // 默认：undefined
+        darkClass: "dark"  // 默认：undefined
+      }
+    ]
+  ]
+}
+```
+
+[这里](https://github.com/mermaid-js/mermaid/tree/develop/src/themes)是所有 Mermaid 支持的主题。
+
+
+### theme
+
+- 类型：`string`
+
+- 默认值：`"default"`
+
+- 详情：主题
+
+
+### darkTheme
+
+- 类型：`string`
+
+- 默认值：`"dark"`
+
+- 详情：夜间模式主题，只在 [darkSelector](#darkselector) 和 [darkClass](#darkclass) 都被设置了的情况下有效
+
+
+### darkSelector
+
+- 类型：`string`
+
+- 默认值：`undefined`
+
+- 详情
+
+  - 一个 CSS 选择器，插件会根据它选择一个 HTML 元素，然后通过 [darkClass](#darkclass) 来判断当前是否为夜间模式
+  - 对于默认主题和 Gungnir 主题，这一项需要被设为 `html`
+
+
+### darkClass
+
+- 类型：`string`
+
+- 默认值：`undefined`
+
+- 详情
+
+  - 一个类名，插件会根据它来判断当前是否为夜间模式
+  - 对于默认主题和 Gungnir 主题，这一项需要被设为 `dark`
+
+
+:::tip
+在启用夜间模式时，默认主题和 Gungnir 主题会在 `html` 元素上添加一个类名 `dark`。
+
+点击右下角的模式切换按钮，体验 Mermaid 的主题切换。
+:::
+
+
 ## 使用
 
 代码块的 token info 需要为 `mermaidjs`，例子：

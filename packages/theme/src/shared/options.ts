@@ -1,4 +1,5 @@
 import type { MdPlusOptions } from "@renovamen/vuepress-plugin-md-plus";
+import type { MermaidOptions } from "@renovamen/vuepress-plugin-mermaid";
 import type { ReadingTimeOptions } from "@renovamen/vuepress-plugin-reading-time";
 import type { RSSOptions } from "@renovamen/vuepress-plugin-rss";
 import type { SearchPluginOptions } from "@renovamen/vuepress-plugin-search";
@@ -88,7 +89,7 @@ export interface GungnirThemePluginsOptions {
    *
    * @default false
    */
-  mermaid?: boolean;
+  mermaid?: boolean | MermaidOptions;
 
   /**
    * Enable @renovamen/vuepress-plugin-chart or not

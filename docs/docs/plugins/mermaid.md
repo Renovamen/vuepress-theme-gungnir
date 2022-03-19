@@ -38,6 +38,76 @@ module.exports = {
 }
 ```
 
+## Options
+
+You can use the following options to set theme for Mermaid diagrams, for example:
+
+```js
+module.exports = {
+  plugins: [
+    [
+      "@renovamen/vuepress-plugin-mermaid", {
+        theme: "default",  // default: "default"
+        darkTheme: "dark",  // default: "dark"
+        darkSelector: "html",  // default: undefined
+        darkClass: "dark"  // default: undefined
+      }
+    ]
+  ]
+}
+```
+
+[Here](https://github.com/mermaid-js/mermaid/tree/develop/src/themes) are all themes supported by Mermaid.
+
+
+### theme
+
+- Type: `string`
+
+- Default: `"default"`
+
+- Details: Theme
+
+
+### darkTheme
+
+- Type: `string`
+
+- Default: `"dark"`
+
+- Details: Theme for dark mode. Only works when [darkSelector](#darkselector) and [darkClass](#darkclass) are set.
+
+
+### darkSelector
+
+- Type: `string`
+
+- Default: `undefined`
+
+- Details
+
+  - A CSS selector for the plugin to select an element and check if the dark mode is enabled by [darkClass](#darkclass)
+  - For default theme and Gungnir theme, this option should be `html`
+
+
+### darkClass
+
+- Type: `string`
+
+- Default: `undefined`
+
+- Details
+
+  - A class name for the plugin to check if the dark mode is enabled
+  - For default theme and Gungnir theme, this option should be `dark`
+
+
+:::tip
+The default theme and Gungnir theme will add a class name `dark` to the `html` element to enable dark mode.
+
+Click the mode switcher in the lower right corner to see what happens!
+:::
+
 
 ## Usage
 

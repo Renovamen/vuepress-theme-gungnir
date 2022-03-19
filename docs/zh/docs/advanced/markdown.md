@@ -117,7 +117,27 @@ themeConfig: {
 }
 ```
 
-代码块的 token info 需要为 `mermaid`，例子：
+### 主题
+
+Mermaid 支持[多种主题](https://github.com/mermaid-js/mermaid/tree/develop/src/themes)。Gungnir 主题默认在亮色模式下使用 `default` 主题，在夜间模式下使用 `dark` 主题。你也可以通过修改插件配置项来使用其他主题：
+
+```js
+themeConfig: {
+  themePlugins: {
+    mermaid: {
+      theme: "default",  // 默认："default"
+      darkTheme: "dark"  // 默认："dark"
+    }
+  }
+}
+```
+
+更多细节和用法请参考 [plugin-mermaid](/zh/docs/plugins/mermaid.html#配置项) 的文档。
+
+
+### 语法
+
+代码块的 token info 需要为 `mermaidjs`，例子：
 
 ```mermaidjs
 sequenceDiagram

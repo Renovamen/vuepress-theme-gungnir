@@ -16,6 +16,7 @@ import {
   resolveGiscusOptions,
   resolveGitPluginOptions,
   resolveMediumZoomPluginOptions,
+  resolveMermaidOptions,
   resolvePWAPopupOptions,
   resolveRSSPluginOptions
 } from "./utils";
@@ -128,7 +129,10 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = (
       ["@vuepress/theme-data", { themeData: localeOptions }],
       ["@renovamen/vuepress-plugin-search", themePlugins.search],
       ["@renovamen/vuepress-plugin-katex", themePlugins.katex === true],
-      ["@renovamen/vuepress-plugin-mermaid", themePlugins.mermaid === true],
+      [
+        "@renovamen/vuepress-plugin-mermaid",
+        resolveMermaidOptions(themePlugins)
+      ],
       ["vuepress-plugin-chart", themePlugins.chartjs === true],
       ["@renovamen/vuepress-plugin-reading-time", themePlugins.readingTime],
       ["vuepress-plugin-code-enhance", themePlugins.codeEnhance],

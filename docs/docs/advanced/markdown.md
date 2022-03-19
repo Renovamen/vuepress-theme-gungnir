@@ -108,7 +108,7 @@ Refer to the [documentation of Chart.js](https://www.chartjs.org/docs/latest/) f
 
 ## Mermaid
 
-Use [Mermaid](https://mermaid-js.github.io) via [plugin-mermaid](/docs/plugins/mermaid/) to create complex diagrams in Markdown:
+Use [Mermaid](https://mermaid-js.github.io) via [plugin-mermaid](/docs/plugins/mermaid.md) to create complex diagrams in Markdown:
 
 ```js
 themeConfig: {
@@ -117,6 +117,26 @@ themeConfig: {
   }
 }
 ```
+
+### Themes
+
+Mermaid supports [multiple themes](https://github.com/mermaid-js/mermaid/tree/develop/src/themes). By default, Gungnir uses `default` theme in light mode and `dark` in dark mode. You can also use other themes by configuring the plugin options:
+
+```js
+themeConfig: {
+  themePlugins: {
+    mermaid: {
+      theme: "default",  // default: "default"
+      darkTheme: "dark"  // default: "dark"
+    }
+  }
+}
+```
+
+Also see [plugin-mermaid](/docs/plugins/mermaid.html#options) for more details.
+
+
+### Syntax
 
 The token info of the code block should be `mermaidjs`, for example:
 
