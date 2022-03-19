@@ -1,6 +1,6 @@
 .vuepress-mermaid {
   margin: 30px 0;
-  overflow: scroll;
+  overflow: auto;
   text-align: center;
   display: flex;
   justify-content: center;
