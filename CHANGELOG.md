@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.18](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.17...v2.0.0-alpha.18) (2022-03-19)
+
+
+### Bug Fixes
+
+* giscus import ([54bcd47](https://github.com/Renovamen/vuepress-theme-gungnir/commit/54bcd47605a057de13a804b026ab4eaf085a62eb))
+* handle <RouterLink> in blog excerpt, close [#42](https://github.com/Renovamen/vuepress-theme-gungnir/issues/42) ([21c7e47](https://github.com/Renovamen/vuepress-theme-gungnir/commit/21c7e47617d4107945f794bf23c0fa608d70662b))
+* mobile pager style ([4bec742](https://github.com/Renovamen/vuepress-theme-gungnir/commit/4bec7429b6267566e546ee81e438be37448f96c8))
+* **plugin-mermaid:** set `overflow: auto` to remove scrollbar [#39](https://github.com/Renovamen/vuepress-theme-gungnir/issues/39) ([f3ed781](https://github.com/Renovamen/vuepress-theme-gungnir/commit/f3ed781f51068667289b87cb528e8187b44018fb))
+* video style in page content ([b51e18b](https://github.com/Renovamen/vuepress-theme-gungnir/commit/b51e18b2790089e71ac2d84fba1b454bf3c64c5a))
+
+
+### Features
+
+* custom search text ([526926f](https://github.com/Renovamen/vuepress-theme-gungnir/commit/526926f6365f5cde8cd444476ed9baa1ee3aaef9))
+* hide a blog in home page and tags page [#41](https://github.com/Renovamen/vuepress-theme-gungnir/issues/41) ([50a2e4b](https://github.com/Renovamen/vuepress-theme-gungnir/commit/50a2e4b36208ca25561e057b97a83863db01ac1c))
+* **plugin-mermaid:** support setting and switching (light/dark) theme [#40](https://github.com/Renovamen/vuepress-theme-gungnir/issues/40) ([5c5d766](https://github.com/Renovamen/vuepress-theme-gungnir/commit/5c5d7668bd8bcdc51f95fa91171161f2cef97a7a))
+
+
+
+
+
 # [2.0.0-alpha.17](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.16...v2.0.0-alpha.17) (2022-03-11)
 
 
