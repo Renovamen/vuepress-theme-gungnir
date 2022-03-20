@@ -39,7 +39,7 @@ Gungnir has already imported the following icons:
 - `HiTranslate`: <v-icon name="hi-translate" />
 - `BiLayoutSidebarInset`: <v-icon name="bi-layout-sidebar-inset" />
 
-To import other icons, you may need to search for icons' names [here](https://oh-vue-icons.vercel.app) and globally import theme in your `.vuepress/clientAppEnhance.js` file (create one if it dosen't exist):
+To import other icons, you may need to search for icons' names [here](https://oh-vue-icons.js.org) and globally import theme in your `.vuepress/clientAppEnhance.js` file (create one if it dosen't exist):
 
 ```js
 import { addIcons } from "oh-vue-icons";

@@ -41,7 +41,7 @@ module.exports = {
 
 ## 配置项
 
-可以使用一下配置项来设置 Mermaid 的主题，比如：
+可以使用以下配置项来设置 Mermaid 的主题，比如：
 
 ```js
 module.exports = {
