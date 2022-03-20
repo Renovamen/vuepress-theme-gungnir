@@ -218,5 +218,9 @@ $longer-time: $time * 2;
     .menu-toc-btn {
       display: flex;
     }
+
+    .toggle-sidebar-button {
+      outline: none;
+    }
   }
 }
