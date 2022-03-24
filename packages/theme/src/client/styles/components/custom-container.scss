@@ -1,5 +1,5 @@
-@import '../_variables';
-@import '../_mixins';
+@import "../_variables";
+@import "../_mixins";
 
 .custom-container {
   transition: color var(--t-color), border-color var(--t-color),
@@ -100,5 +100,104 @@
       outline: none;
       cursor: pointer;
     }
+  }
+
+  // linkcard
+
+  &.link {
+    position: relative;
+    width: 40%;
+    margin: 10px 4px;
+    border: 1px solid var(--c-border);
+    border-radius: 10px;
+    padding: 13px 30px 13px 20px;
+    overflow: hidden;
+    @include transition(all ease 0.3s);
+
+    a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+    }
+
+    .custom-container-title {
+      color: var(--c-text-accent);
+      margin-bottom: 2px;
+      padding: 8px 0;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .custom-container-description {
+      p {
+        font-size: 13px;
+        margin: 0 0 10px 0;
+        padding: 10px 0;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        overflow: hidden;
+        line-height: 15px;
+        &:first-child {
+          border-top: 1px dashed #ddd;
+          margin-top: 10px;
+          padding-bottom: 0;
+        }
+        &:nth-child(2) {
+          padding: 0;
+        }
+      }
+      .custom-container-link-text {
+        display: flex;
+        align-items: center;
+        color: var(--c-text-sub);
+        svg{
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+
+    .custom-container-identifier {
+      box-sizing: border-box;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      max-width: 100%;
+      float: right;
+      margin-top: 16px;
+      margin-right: -15px;
+    }
+    svg.custom-container-identifier {
+      padding: 10px;
+      box-shadow: var(--box-shadow-inset);
+    }
+    img.custom-container-identifier {
+      padding: 2px;
+        box-shadow: inset 0 0 10px var(--c-text);
+    }
+    
+    &:hover {
+      border: 1px solid transparent;
+      box-shadow: var(--box-shadow-hover);
+      @include transform(translate(0px, -3px));
+    }
+  }
+}
+
+@media (max-width: $MQIpad) {
+  .custom-container.link {
+    width: 50%;
+  }
+}
+
+@media (max-width: $MQMobileNarrow) {
+  .custom-container.link {
+    width: 70%;
   }
 }

@@ -190,6 +190,14 @@ $$
 
 ## Containers
 
+::: link {fa-github-alt} [vuepress-theme-gungnir](https://github.com/Renovamen/vuepress-theme-gungnir)
+A blog theme for VuePress 2.
+:::
+
+::: link {/img/links/me.png} [My Blog](https://zxh.io)
+My links.
+:::
+
 ::: info
 This is an info message.
 :::
@@ -231,7 +239,6 @@ print("Hello World!")
 </CodeGroupItem>
 </CodeGroup>
 :::
-
 
 ## References
 

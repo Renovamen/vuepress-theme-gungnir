@@ -29,6 +29,7 @@ html.dark {
   // shadows
   --box-shadow: #{$boxShadowDark};
   --box-shadow-hover: #{$boxShadowHoverDark};
+  --box-shadow-inset: #{$boxShadowInsetDark};
 }
 
 // plugin-docsearch

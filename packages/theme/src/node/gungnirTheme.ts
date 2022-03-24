@@ -13,6 +13,7 @@ import {
   resolveContainerPluginOptionsForCodeGroup,
   resolveContainerPluginOptionsForCodeGroupItem,
   resolveContainerPluginOptionsForDetails,
+  resolveContainerPluginOptionsForLink,
   resolveGiscusOptions,
   resolveGitPluginOptions,
   resolveMediumZoomPluginOptions,
@@ -120,6 +121,10 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = (
       [
         "@vuepress/container",
         resolveContainerPluginOptionsForCodeGroupItem(themePlugins)
+      ],
+      [
+        "@vuepress/container",
+        resolveContainerPluginOptionsForLink(themePlugins)
       ],
       ["@vuepress/git", resolveGitPluginOptions(themePlugins, localeOptions)],
       ["@vuepress/medium-zoom", resolveMediumZoomPluginOptions(themePlugins)],

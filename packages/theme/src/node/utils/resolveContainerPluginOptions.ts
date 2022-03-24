@@ -106,3 +106,47 @@ export const resolveContainerPluginOptionsForCodeGroupItem = (
     after: () => "</CodeGroupItem>\n"
   };
 };
+
+const getContainerDslValue = (
+  target: string,
+  start: string,
+  end: string
+): string => {
+  if (typeof target !== "string" || target === "") return "";
+  const startIndex = target.indexOf(start);
+  const endIndex = target.lastIndexOf(end);
+  if (startIndex === -1 || endIndex === -1) return "";
+  return target.substring(startIndex + 1, endIndex);
+};
+
+/**
+ * For link card
+ */
+export const resolveContainerPluginOptionsForLink = (
+  themePlugins: GungnirThemePluginsOptions
+): ContainerPluginOptions | boolean => {
+  if (themePlugins?.container?.link === false) {
+    return false;
+  }
+
+  return {
+    type: "link",
+    before: (dsl) => {
+      let context = dsl;
+      const title = getContainerDslValue(context, "[", "]");
+      context = context.replace(title, "");
+      const link = getContainerDslValue(context, "(", ")");
+      context = context.replace(link, "");
+      const identifier = getContainerDslValue(context, "{", "}");
+      const isImgae = identifier.includes("/");
+      return `
+      <Card 
+        title="${title}"
+        link="${link}"
+        icon="${isImgae ? "" : identifier}"
+        image="${!isImgae ? "" : identifier}"
+        >`;
+    },
+    after: () => "</Card>\n"
+  };
+};
