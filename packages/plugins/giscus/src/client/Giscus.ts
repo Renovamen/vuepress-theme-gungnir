@@ -97,6 +97,7 @@ export default defineComponent({
       element.setAttribute("data-emit-metadata", "0");
       element.setAttribute("data-theme", theme.value);
       element.setAttribute("data-lang", resolvedLang.value);
+      if (options.lazyLoad) element.setAttribute("data-loading", "lazy");
       element.setAttribute(
         "crossorigin",
         options.crossorigin ? options.crossorigin : "anonymous"

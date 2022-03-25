@@ -49,6 +49,14 @@ export interface GiscusOptions {
   lang?: string;
 
   /**
+   * Load the comments lazily. Loading of the comments will be deferred
+   * until the user scrolls near the comments container.
+   * 
+   * @default false
+   */
+  lazyLoad?: boolean;
+
+  /**
    * Crossorigin.
    *
    * @default "anonymous"
