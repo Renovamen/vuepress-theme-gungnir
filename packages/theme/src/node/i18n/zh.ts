@@ -56,7 +56,10 @@ const zh: GungnirThemeI18n = {
 
   // PWA-popup
   pwaPopupMessage: "发现有新内容更新",
-  pwaPopupButtonText: "刷新"
+  pwaPopupButtonText: "刷新",
+
+  // header image
+  headerImageCredit: "图源"
 };
 
 export { zh };

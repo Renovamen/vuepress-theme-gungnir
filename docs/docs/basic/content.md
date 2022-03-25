@@ -19,6 +19,8 @@ author: Stephen Hawking  # post author (optional, will use `themeConfig.personal
 useHeaderImage: true  # show header image in post or not (optional, default: false)
 headerImage: /img/test.jpg  # path to the header image (required, even if `useHeaderImage` is false, becasue header image would also be shown on home page)
 headerMask: rgba(40, 57, 101, .4)  # mask of the header image (optional)
+headerImageCredit: Jeremy Fenske  # source of the header image, like name of the author or website (optional, only works when "useHeaderImage: true")
+headerImageCreditLink: https://www.artstation.com/artwork/nLY0K  # link to the source of the header image (optional, only works when "useHeaderImage: true")
 catalog: false  # enable catalog or not, can rewrite `themeConfig.catalog` (optional, default: true)
 hide: true  # hide this blog in the blog list of home page and tags page or not (optional, default: false)
 tags:  # post tags (optional)
@@ -83,11 +85,16 @@ Again, `title` will be used as the first-level heading in a documentation page, 
 
 ## Markdown Syntax
 
+### Basic
+
 See:
 
 - [Markdown Baisc Syntax](https://www.markdownguide.org/basic-syntax/)
 - [VuePress's Markdown Extensions](https://v2.vuepress.vuejs.org/guide/markdown.html)
 - [Gungnir's Markdown Extensions](/docs/advanced/features/)
+
+
+### Containers
 
 Here are some showcases of the [custom containers](https://v2.vuepress.vuejs.org/reference/plugin/container.html) supported by Gungnir by default:
 
@@ -113,11 +120,7 @@ cout << "Hello World!" << "\n";
 ```
 :::
 
-New containers for this theme：
-
-link card
-
-- Container Syntax:
+Gungnir also supports link card containers, the syntax looks like:
 
 ```md
 ::: link {Icon Name | Image URL} [title](url)
@@ -125,7 +128,20 @@ description
 :::
 ```
 
-- Example:
+For example:
+
+::: link [Introduction](/docs/basic/intro.html)
+vuepress-theme-gungnir Introduction
+:::
+
+::: link {fa-github-alt} [vuepress-theme-gungnir](https://github.com/Renovamen/vuepress-theme-gungnir)
+A blog theme for VuePress 2.
+:::
+
+::: link {/img/links/me.png} [My Blog](https://zxh.io)
+My blog 🧐, powered by VuePress 2, themed by Gungnir.
+:::
+
 
 ```md
 ::: link [Introduction](/docs/basic/intro.html)
@@ -140,15 +156,3 @@ A blog theme for VuePress 2.
 My blog 🧐, powered by VuePress 2, themed by Gungnir.
 :::
 ```
-
-::: link [Introduction](/docs/basic/intro.html)
-vuepress-theme-gungnir Introduction
-:::
-
-::: link {fa-github-alt} [vuepress-theme-gungnir](https://github.com/Renovamen/vuepress-theme-gungnir)
-A blog theme for VuePress 2.
-:::
-
-::: link {/img/links/me.png} [My Blog](https://zxh.io)
-My blog 🧐, powered by VuePress 2, themed by Gungnir.
-:::

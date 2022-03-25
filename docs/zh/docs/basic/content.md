@@ -21,6 +21,8 @@ author: 斯蒂芬·霍金  # 博客作者（可选，不填的话会使用 `them
 useHeaderImage: true  # 是否在博客中显示封面图（可选，默认：false）
 headerImage: /img/test.jpg  # 博客封面图（必须，即使上一项选了 false，因为图片也需要在首页显示）
 headerMask: rgba(40, 57, 101, .4)  # 封面图遮罩（可选）
+headerImageCredit: Jeremy Fenske  # 图片来源，比如图片作者的名字（可选，只在 "useHeaderImage: true" 时有效）
+headerImageCreditLink: https://www.artstation.com/artwork/nLY0K  # 图片来源的链接（可选，只在 "useHeaderImage: true" 时有效）
 catalog: true  # 是否启用右侧目录，会覆写 `themeConfig.catalog`（可选，默认：false）
 hide: true  # 是否在首页和标签页博客列表中隐藏这篇博客（可选，默认：false）
 tags:  # 博客标签（可选）
@@ -82,11 +84,16 @@ author: 斯蒂芬·霍金  # 文档作者（可选，不填的话会使用 `them
 
 ## Markdown 语法
 
+### 基础
+
 请参考：
 
 - [Markdown 原生语法](https://www.markdownguide.org/basic-syntax/)
 - [VuePress 的 Markdown 拓展语法](https://v1.vuepress.vuejs.org/zh/guide/markdown.html)
 - [本主题的 Markdown 拓展语法](/zh/docs/advanced/markdown/)
+
+
+### 容器
 
 这里展示一下本主题默认支持的[容器](https://v2.vuepress.vuejs.org/zh/reference/plugin/container.html)用法：
 
@@ -112,11 +119,7 @@ cout << "Hello World!" << "\n";
 ```
 :::
 
-本主题的新增的容器：
-
-链接卡片
-
-- 语法
+本主题新增了链接卡片容器，语法为：
 
 ```md
 ::: link {Icon Name | Image URL} [title](url)
@@ -124,7 +127,19 @@ description
 :::
 ```
 
-- 示例:
+示例:
+
+::: link [介绍](/zh/docs/basic/intro.html)
+vuepress-theme-gungnir Introduction
+:::
+
+::: link {fa-github-alt} [vuepress-theme-gungnir](https://github.com/Renovamen/vuepress-theme-gungnir)
+A blog theme for VuePress 2.
+:::
+
+::: link {/img/links/me.png} [My Blog](https://zxh.io)
+My blog 🧐, powered by VuePress 2, themed by Gungnir.
+:::
 
 ```md
 ::: link [介绍](/zh/docs/basic/intro.html)
@@ -139,15 +154,3 @@ A blog theme for VuePress 2.
 My blog 🧐, powered by VuePress 2, themed by Gungnir.
 :::
 ```
-
-::: link [介绍](/zh/docs/basic/intro.html)
-vuepress-theme-gungnir Introduction
-:::
-
-::: link {fa-github-alt} [vuepress-theme-gungnir](https://github.com/Renovamen/vuepress-theme-gungnir)
-A blog theme for VuePress 2.
-:::
-
-::: link {/img/links/me.png} [My Blog](https://zxh.io)
-My blog 🧐, powered by VuePress 2, themed by Gungnir.
-:::

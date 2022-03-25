@@ -51,6 +51,21 @@
         </div>
       </div>
     </div>
+    <div
+      v-if="frontmatter.useHeaderImage && frontmatter.headerImageCredit"
+      class="article-image-credit"
+    >
+      {{ themeLocale.headerImageCredit }}
+      <a
+        v-if="frontmatter.headerImageCreditLink"
+        :href="frontmatter.headerImageCreditLink"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ frontmatter.headerImageCredit }}
+      </a>
+      <span v-else>{{ frontmatter.headerImageCredit }}</span>
+    </div>
   </div>
 </template>
 

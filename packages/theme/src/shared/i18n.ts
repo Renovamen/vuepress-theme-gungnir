@@ -152,4 +152,11 @@ export interface GungnirThemeI18n {
    * plugin-pwa-popup button text.
    */
   pwaPopupButtonText?: string;
+
+  /**
+   * Blog header image credit.
+   *
+   * The text to replace the default "Image by".
+   */
+  headerImageCredit?: string;
 }

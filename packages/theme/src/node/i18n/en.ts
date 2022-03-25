@@ -56,7 +56,10 @@ const en: GungnirThemeI18n = {
 
   // PWA-popup
   pwaPopupMessage: "New content is available.",
-  pwaPopupButtonText: "Refresh"
+  pwaPopupButtonText: "Refresh",
+
+  // header image
+  headerImageCredit: "Image by"
 };
 
 export { en };

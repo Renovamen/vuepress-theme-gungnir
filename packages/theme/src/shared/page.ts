@@ -40,6 +40,8 @@ export interface GungnirThemePostFrontmatter
   date?: string;
   headerImage: string;
   headerMask?: string;
+  headerImageCredit?: string;
+  headerImageCreditLink?: string;
   catalog?: boolean;
   tags?: string[];
   hide?: boolean;

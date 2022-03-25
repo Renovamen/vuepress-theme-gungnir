@@ -24,6 +24,23 @@
     top: 0;
     z-index: 1;
   }
+
+  .article-image-credit {
+    color: white;
+    opacity: 0.5;
+    font-size: 12px;
+    position: absolute;
+    right: 0.8rem;
+    bottom: 0.6rem;
+    z-index: 2;
+
+    a {
+      color: white;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 .article-header-content {
@@ -110,6 +127,11 @@
 @media (max-width: $MQMobileNarrow) {
   .show-catalog .article-header-content {
     padding-left: 1rem;
+  }
+
+  .article-header.use-image .article-image-credit {
+    right: 0.5rem;
+    bottom: 0.4rem;
   }
 }
 
