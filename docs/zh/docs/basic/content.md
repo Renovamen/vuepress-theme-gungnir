@@ -84,8 +84,6 @@ author: 斯蒂芬·霍金  # 文档作者（可选，不填的话会使用 `them
 
 ## Markdown 语法
 
-### 基础
-
 请参考：
 
 - [Markdown 原生语法](https://www.markdownguide.org/basic-syntax/)
@@ -93,33 +91,14 @@ author: 斯蒂芬·霍金  # 文档作者（可选，不填的话会使用 `them
 - [本主题的 Markdown 拓展语法](/zh/docs/advanced/markdown/)
 
 
-### 容器
+## 容器
 
-这里展示一下本主题默认支持的[容器](https://v2.vuepress.vuejs.org/zh/reference/plugin/container.html)用法：
+### 链接卡片容器
 
-::: info
-This is an info message.
-:::
+本主题新增了链接卡片容器。
 
-::: tip
-This is a tip message.
-:::
 
-::: warning
-This is a warning message.
-:::
-
-::: danger
-This is a dangerous warning message.
-:::
-
-::: details Show me the code.
-```cpp
-cout << "Hello World!" << "\n";
-```
-:::
-
-本主题新增了链接卡片容器，语法为：
+#### 语法
 
 ```md
 ::: link {Icon Name | Image URL} [title](url)
@@ -154,3 +133,60 @@ A blog theme for VuePress 2.
 My blog 🧐, powered by VuePress 2, themed by Gungnir.
 :::
 ```
+
+#### 配置
+
+如果你不需要再链接卡片中显示域名:
+
+```js
+themeConfig: {
+  themePlugins: {
+    container: {
+      link: {
+        siteDomain: false  // 可选，默认："true"
+      }
+    }
+  }
+}
+```
+
+<img src="/img/docs/link-card-without-site-domain.png" width="370px" style="margin-left: 0" alt="link-card-without-site-domain" />
+
+或者想要关闭该功能:
+
+```js
+themeConfig: {
+  themePlugins: {
+    container: {
+      link: false  // 可选，默认："true"
+    }
+  }
+}
+```
+
+
+### 其他容器
+
+这里展示一下本主题默认支持的[容器](https://v2.vuepress.vuejs.org/zh/reference/plugin/container.html)用法：
+
+::: info
+This is an info message.
+:::
+
+::: tip
+This is a tip message.
+:::
+
+::: warning
+This is a warning message.
+:::
+
+::: danger
+This is a dangerous warning message.
+:::
+
+::: details Show me the code.
+```cpp
+cout << "Hello World!" << "\n";
+```
+:::

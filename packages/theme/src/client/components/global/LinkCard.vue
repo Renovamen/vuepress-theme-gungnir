@@ -43,10 +43,18 @@ const props = defineProps({
     type: String,
     required: false,
     default: ""
+  },
+  siteDomain: {
+    type: String,
+    required: false,
+    default: "true",
+    validator: function (value: string) {
+      return value === "true" || value === "false";
+    }
   }
 });
 
-const { link } = toRefs(props);
+const { link, siteDomain } = toRefs(props);
 
 const linkItem = computed(() => ({
   link: link.value,
@@ -54,6 +62,8 @@ const linkItem = computed(() => ({
 }));
 
 const linkText = computed(() =>
-  isLinkHttp(link.value) ? link.value.split("/")[2] : ""
+  siteDomain.value === "true" && isLinkHttp(link.value)
+    ? link.value.split("/")[2]
+    : ""
 );
 </script>

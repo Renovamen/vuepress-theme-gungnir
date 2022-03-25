@@ -107,7 +107,7 @@
   &.link {
     position: relative;
     width: 40%;
-    margin: 10px 4px;
+    margin: 10px 0;
     border: 1px solid var(--c-border);
     border-radius: 10px;
     padding: 13px 30px 13px 20px;
@@ -181,7 +181,7 @@
       padding: 2px;
         box-shadow: inset 0 0 10px var(--c-text);
     }
-    
+
     &:hover {
       border: 1px solid transparent;
       box-shadow: var(--box-shadow-hover);

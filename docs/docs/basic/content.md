@@ -85,8 +85,6 @@ Again, `title` will be used as the first-level heading in a documentation page, 
 
 ## Markdown Syntax
 
-### Basic
-
 See:
 
 - [Markdown Baisc Syntax](https://www.markdownguide.org/basic-syntax/)
@@ -94,7 +92,83 @@ See:
 - [Gungnir's Markdown Extensions](/docs/advanced/features/)
 
 
-### Containers
+## Containers
+
+### Link Card Container
+
+Gungnir adds a new container: link card. 
+
+#### Syntax
+
+The syntax of it looks like:
+
+```md
+::: link {Icon Name | Image URL} [title](url)
+description
+:::
+```
+
+Some examples:
+
+::: link [Introduction](/docs/basic/intro.html)
+vuepress-theme-gungnir Introduction
+:::
+
+::: link {fa-github-alt} [vuepress-theme-gungnir](https://github.com/Renovamen/vuepress-theme-gungnir)
+A blog theme for VuePress 2.
+:::
+
+::: link {/img/links/me.png} [My Blog](https://zxh.io)
+My blog 🧐, powered by VuePress 2, themed by Gungnir.
+:::
+
+
+```md
+::: link [Introduction](/docs/basic/intro.html)
+vuepress-theme-gungnir Introduction
+:::
+
+::: link {fa-github-alt} [vuepress-theme-gungnir](https://github.com/Renovamen/vuepress-theme-gungnir)
+A blog theme for VuePress 2.
+:::
+
+::: link {/img/links/me.png} [My Blog](https://zxh.io)
+My blog 🧐, powered by VuePress 2, themed by Gungnir.
+:::
+```
+
+#### Options
+
+You can choose to hide the site domain:
+
+```js
+themeConfig: {
+  themePlugins: {
+    container: {
+      link: {
+        siteDomain: false  // optional, default: true
+      }
+    }
+  }
+}
+```
+
+<img src="/img/docs/link-card-without-site-domain.png" width="370px" style="margin-left: 0" alt="link-card-without-site-domain" />
+
+or disable this container:
+
+```js
+themeConfig: {
+  themePlugins: {
+    container: {
+      link: false  // optional, default: true
+    }
+  }
+}
+```
+
+
+### Other Containers
 
 Here are some showcases of the [custom containers](https://v2.vuepress.vuejs.org/reference/plugin/container.html) supported by Gungnir by default:
 
@@ -119,40 +193,3 @@ This is a dangerous warning message.
 cout << "Hello World!" << "\n";
 ```
 :::
-
-Gungnir also supports link card containers, the syntax looks like:
-
-```md
-::: link {Icon Name | Image URL} [title](url)
-description
-:::
-```
-
-For example:
-
-::: link [Introduction](/docs/basic/intro.html)
-vuepress-theme-gungnir Introduction
-:::
-
-::: link {fa-github-alt} [vuepress-theme-gungnir](https://github.com/Renovamen/vuepress-theme-gungnir)
-A blog theme for VuePress 2.
-:::
-
-::: link {/img/links/me.png} [My Blog](https://zxh.io)
-My blog 🧐, powered by VuePress 2, themed by Gungnir.
-:::
-
-
-```md
-::: link [Introduction](/docs/basic/intro.html)
-vuepress-theme-gungnir Introduction
-:::
-
-::: link {fa-github-alt} [vuepress-theme-gungnir](https://github.com/Renovamen/vuepress-theme-gungnir)
-A blog theme for VuePress 2.
-:::
-
-::: link {/img/links/me.png} [My Blog](https://zxh.io)
-My blog 🧐, powered by VuePress 2, themed by Gungnir.
-:::
-```

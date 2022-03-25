@@ -29,9 +29,9 @@ import {
 import { h } from "vue";
 import type { DefineComponent } from "vue";
 import Badge from "./components/global/Badge.vue";
-import Card from "./components/global/Card.vue";
 import CodeGroup from "./components/global/CodeGroup";
 import CodeGroupItem from "./components/global/CodeGroupItem.vue";
+import LinkCard from "./components/global/LinkCard.vue";
 import { useScrollPromise } from "./composables";
 import "./styles/index.scss";
 
@@ -71,7 +71,7 @@ export default defineClientAppEnhance(({ app, router }) => {
   app.component("VIcon", OhVueIcon);
 
   // link card
-  app.component("Card", Card);
+  app.component("LinkCard", LinkCard);
 
   // built-in SearchPage component
   app.component("GungnirSearchPage", () => {

@@ -139,14 +139,19 @@ export const resolveContainerPluginOptionsForLink = (
       context = context.replace(link, "");
       const identifier = getContainerDslValue(context, "{", "}");
       const isImgae = identifier.includes("/");
+      const siteDomain =
+        typeof themePlugins?.container?.link === "object"
+          ? themePlugins?.container?.link?.siteDomain
+          : true;
       return `
-      <Card 
+      <LinkCard
         title="${title}"
         link="${link}"
         icon="${isImgae ? "" : identifier}"
         image="${!isImgae ? "" : identifier}"
+        siteDomain="${siteDomain}"
         >`;
     },
-    after: () => "</Card>\n"
+    after: () => "</LinkCard>\n"
   };
 };
