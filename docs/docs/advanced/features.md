@@ -31,11 +31,16 @@ themeConfig: {
       mapping: "[page <-> discussion mapping]",  // optional, string, default="title"
       reactionsEnabled: "[enable reactions or not?]",  // optional, boolean, default=true
       lang: "[language]",  // optional, string, default="auto" (follow the site's language, fall to "en" if your site's language is not supported by Giscus)
-      crossorigin: "[crossorigin]"  // optional, string, default="anonymous"
+      lazyLoad: true,  // optional, boolean, default=false (if true, loading of Giscus will be deferred until the user scrolls near the comments container)
+      crossorigin: "[crossorigin]",  // optional, string, default="anonymous"
+      theme: "[theme for light mode]",  // optional, string, default="light"
+      darkTheme: "[theme for dark mode]"  // optional, string, default="dark_dimmed"
     }
   }
 }
 ```
+
+`theme` and `darkTheme` option could be a [custom theme](https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#data-theme) (a URL to a CSS file).
 
 Refer to the [plugin-giscus](/zh/docs/plugins/giscus.html) for more information.
 

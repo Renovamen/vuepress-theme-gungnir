@@ -50,6 +50,7 @@ module.exports = {
         reactionsEnabled: "[是否启用 reaction]",  // 可选，boolean，default=true
         theme: "[主题]", // 可选，string，default="light"
         lang: "[语言]",  // 可选，string，default="auto"（跟随网站语言，如果 Giscus 不支持你的网站的语言，则会使用 "en"）
+        lazyLoad: true,  // 可选，boolean，default=false（如果设为 true，Giscus 的加载将延迟到用户滚动到评论容器附近）
         crossorigin: "[crossorigin]"  // 可选，string，default="anonymous"
       }
     ]

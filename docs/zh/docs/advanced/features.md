@@ -31,6 +31,7 @@ themeConfig: {
       mapping: "[页面 <-> discussion 映射]",  // 可选，string，default="title"
       reactionsEnabled: "[是否启用 reaction]",  // 可选，boolean，default=true
       lang: "[语言]",  // 可选，string，default="auto"（跟随网站语言，如果 Giscus 不支持你的网站的语言，则会使用 "en"）
+      lazyLoad: true,  // 可选，boolean，default=false（如果设为 true，Giscus 的加载将延迟到用户滚动到评论容器附近）
       crossorigin: "[crossorigin]",  // 可选，string，default="anonymous"
       theme: "[light 模式主题]",  // 可选，string，default="light"
       darkTheme: "[dark 模式主题]"  // 可选，string，default="dark_dimmed"
@@ -39,7 +40,7 @@ themeConfig: {
 }
 ```
 
-其中，`theme` 和 `darkTheme` 项可以传入[自定义主题](https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#data-theme)。
+其中，`theme` 和 `darkTheme` 项可以传入[自定义主题](https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#data-theme)（一个 CSS 文件的 URL）。
 
 参考：[plugin-giscus](/zh/docs/plugins/giscus.md)
 

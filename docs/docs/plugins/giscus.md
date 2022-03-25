@@ -48,8 +48,9 @@ module.exports = {
         categoryId: "[category id]",  // required, string, generate it on Giscus's website
         mapping: "[page <-> discussion mapping]",  // optional, string, default="title"
         reactionsEnabled: "[enable reactions or not?]",  // optional, boolean, default=true
-        theme: "[theme]", // optional, string, default="light"
+        theme: "[theme]",  // optional, string, default="light"
         lang: "[language]",  // optional, string, default="auto" (follow the site's language, fell to "en" if your site's language is not supported by Giscus)
+        lazyLoad: true,  // optional, boolean, default=false (if true, loading of Giscus will be deferred until the user scrolls near the comments container)
         crossorigin: "[crossorigin]"  // optional, string, default="anonymous"
       }
     ]
