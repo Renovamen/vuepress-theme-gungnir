@@ -1,5 +1,15 @@
-import type { GungnirThemeLocaleOptions } from "../../shared";
+import type {
+  GungnirThemeData,
+  GungnirThemeI18n,
+  GungnirThemeLocaleOptions
+} from "../../shared";
 import { en } from "../i18n";
+
+const deleteSelectLanguageName = (options: GungnirThemeI18n) => {
+  const newOptions = { ...options };
+  delete newOptions.selectLanguageName;
+  return newOptions;
+};
 
 export const DEFAULT_LOCALE_OPTIONS: GungnirThemeLocaleOptions = {
   hitokoto: false,
@@ -35,7 +45,12 @@ export const DEFAULT_LOCALE_OPTIONS: GungnirThemeLocaleOptions = {
     <a href="https://github.com/Renovamen/vuepress-theme-gungnir" target="_blank">Gungnir</a>
   `,
 
-  ...en
+  ...deleteSelectLanguageName(en)
+};
+
+export const DEFAULT_LOCALE_DATA: GungnirThemeData = {
+  // navbar
+  selectLanguageName: en.selectLanguageName
 };
 
 /**
@@ -58,7 +73,7 @@ export const assignDefaultLocaleOptions = (
   });
 
   Object.assign(localeOptions.locales["/"], {
-    ...en,
+    ...DEFAULT_LOCALE_DATA,
     ...localeOptions.locales["/"]
   });
 };

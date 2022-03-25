@@ -1,6 +1,9 @@
 import type { GungnirThemeI18n } from "../../shared";
 
 const en: GungnirThemeI18n = {
+  // navbar
+  navbarTitle: "$ cd /home/",
+
   // language selector
   selectLanguageName: "English",
   selectLanguageText: "Languages",

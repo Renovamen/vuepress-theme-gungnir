@@ -1,5 +1,12 @@
 export interface GungnirThemeI18n {
   /**
+   * Navbar brand title
+   *
+   * The text to replace the default "$ cd /home/"
+   */
+  navbarTitle?: string;
+
+  /**
    * Navbar language selection config
    *
    * Language name of current locale

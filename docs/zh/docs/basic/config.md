@@ -22,9 +22,11 @@ date: 2021-02-03
 :::
 
 
-## 作者信息
+## 导航栏标题
 
-```js
+与默认主题不同的是，本主题的导航栏左上角标题处显示的不是 [站点配置中的 `title` 项](https://v2.vuepress.vuejs.org/zh/reference/config.html#title)，而是：
+
+```js{14}
 // .vuepress/config.js
 
 module.exports = {
@@ -38,7 +40,38 @@ module.exports = {
       其他主题配置
       ...
     */
+    navbarTitle: "Gungnir"  // 可选，默认："$ cd /home/"
+  }
+}
+```
 
+也可以在 [`locales`](https://v2.vuepress.vuejs.org/zh/reference/default-theme/config.html#locales) 中使用，如：
+
+```js
+// .vuepress/config.js
+
+module.exports = {
+  themeConfig: {
+    locales: {
+      "/": {
+        navbarTitle: "Gungnir"
+      },
+      "/zh/": {
+        navbarTitle: "冈格尼尔"
+      }
+    }
+  }
+}
+```
+
+
+## 作者信息
+
+```js
+// .vuepress/config.js
+
+module.exports = {
+  themeConfig: {
     personalInfo: {
       // 必须：名称，将在首页、移动端侧边栏和文章作者信息处显示
       name: "Cool Dragon",

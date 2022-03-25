@@ -22,9 +22,12 @@ Please make sure all the icons you specified in the configuration file are alrea
 :::
 
 
-## Author Information
+## Navbar Title
 
-```js
+Different from the default theme, Gungnir theme displays `themeConfig.navbarTitle` instead of the [`title` option in site config](https://v2.vuepress.vuejs.org/reference/config.html#title) at the left of the navbar:
+
+
+```js{14}
 // .vuepress/config.js
 
 module.exports = {
@@ -38,7 +41,38 @@ module.exports = {
       other theme configurations
       ...
     */
+    navbarTitle: "Gungnir"  // optional, default: "$ cd /home/"
+  }
+}
+```
 
+It can also be used in the [`locales`](https://v2.vuepress.vuejs.org/reference/default-theme/config.html#locales) option, for example:
+
+```js
+// .vuepress/config.js
+
+module.exports = {
+  themeConfig: {
+    locales: {
+      "/": {
+        navbarTitle: "Gungnir"
+      },
+      "/zh/": {
+        navbarTitle: "冈格尼尔"
+      }
+    }
+  }
+}
+```
+
+
+## Author Information
+
+```js
+// .vuepress/config.js
+
+module.exports = {
+  themeConfig: {
     personalInfo: {
       // required: nickname, will be showed on home page, mobile sidebar and author info of articles
       name: "Cool Dragon",

@@ -8,10 +8,10 @@
       invert: isInvert
     }"
   >
-    <span ref="siteBrand">
-      <RouterLink :to="siteBrandLink">
+    <span ref="navbarBrand">
+      <RouterLink :to="navbarBrandLink">
         <span class="site-name">
-          {{ siteBrandTitle }}
+          {{ navbarBrandTitle }}
         </span>
       </RouterLink>
     </span>
@@ -27,11 +27,7 @@
 
 <script setup lang="ts">
 import NavbarItems from "@theme/NavbarItems.vue";
-import {
-  usePageFrontmatter,
-  useRouteLocale,
-  useSiteLocaleData
-} from "@vuepress/client";
+import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import type {
@@ -50,7 +46,6 @@ defineProps({
 defineEmits(["toggle-search"]);
 
 const routeLocale = useRouteLocale();
-const siteLocale = useSiteLocaleData();
 const themeLocale = useThemeLocaleData();
 const frontmatter = usePageFrontmatter<
   GungnirThemeNormalPageFrontmatter | GungnirThemePostFrontmatter
@@ -58,9 +53,9 @@ const frontmatter = usePageFrontmatter<
 const router = useRouter();
 
 const navbar = ref<HTMLElement | null>(null);
-const siteBrand = ref<HTMLElement | null>(null);
-const siteBrandLink = computed(() => themeLocale.value.home || "/");
-const siteBrandTitle = "$ cd /home/";
+const navbarBrand = ref<HTMLElement | null>(null);
+const navbarBrandLink = computed(() => themeLocale.value.home || "/");
+const navbarBrandTitle = computed(() => themeLocale.value.navbarTitle);
 const linksWrapperMaxWidth = ref(0);
 const linksWrapperStyle = computed(() => {
   if (!linksWrapperMaxWidth.value) {
@@ -147,7 +142,7 @@ onMounted(() => {
       linksWrapperMaxWidth.value =
         navbar.value!.offsetWidth -
         navbarHorizontalPadding -
-        (siteBrand.value?.offsetWidth || 0);
+        (navbarBrand.value?.offsetWidth || 0);
     }
   };
   handleLinksWrapWidth();
