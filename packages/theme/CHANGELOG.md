@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.19](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.18...v2.0.0-alpha.19) (2022-03-29)
+
+
+### Bug Fixes
+
+* remove outlines of headings and sidebar button ([f8d7d49](https://github.com/Renovamen/vuepress-theme-gungnir/commit/f8d7d49b8c36c8f368e5d45a8fa9c16afcef8875))
+
+
+### Features
+
+* allows to hide site domain in link card container ([934ecae](https://github.com/Renovamen/vuepress-theme-gungnir/commit/934ecaed0e4e2efdab64de4edb2282f82e80eff5))
+* **plugin-chart:** support custom code block token ([0a48ac7](https://github.com/Renovamen/vuepress-theme-gungnir/commit/0a48ac7a6210e21b9d3ff6a4cbbc15e1e78dc43e))
+* support crediting the source of the header image in blog ([9608ccf](https://github.com/Renovamen/vuepress-theme-gungnir/commit/9608ccf568c851593c67e4611ed17c2d2ca078f8))
+* support custom navbar brand title [#43](https://github.com/Renovamen/vuepress-theme-gungnir/issues/43) ([4ef34d1](https://github.com/Renovamen/vuepress-theme-gungnir/commit/4ef34d1d900491d84b9dca82ddea8378e02e5d29))
+
+
+### Performance Improvements
+
+* don't fetch hitokoto util hovering avatar ([487c439](https://github.com/Renovamen/vuepress-theme-gungnir/commit/487c439db5c0d5d61ea97beb7dc36f92dcc13009))
+
+
+
+
+
 # [2.0.0-alpha.18](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.17...v2.0.0-alpha.18) (2022-03-19)
 
 

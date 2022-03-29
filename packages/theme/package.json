@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-gungnir",
-  "version": "2.0.0-alpha.18",
+  "version": "2.0.0-alpha.19",
   "description": "Gungnir is a blog theme for VuePress 2.",
   "keywords": [
     "vuepress-theme",
@@ -33,7 +33,7 @@
     "@renovamen/vuepress-plugin-baidu-tongji": "2.0.0-alpha.17",
     "@renovamen/vuepress-plugin-katex": "2.0.0-alpha.15",
     "@renovamen/vuepress-plugin-md-plus": "2.0.0-alpha.5",
-    "@renovamen/vuepress-plugin-mermaid": "2.0.0-alpha.18",
+    "@renovamen/vuepress-plugin-mermaid": "2.0.0-alpha.19",
     "@renovamen/vuepress-plugin-reading-time": "2.0.0-alpha.10",
     "@renovamen/vuepress-plugin-rss": "2.0.0-alpha.9",
     "@renovamen/vuepress-plugin-search": "2.0.0-alpha.17",
@@ -58,9 +58,9 @@
     "sass-loader": "^12.6.0",
     "vue": "^3.2.31",
     "vue-router": "^4.0.12",
-    "vuepress-plugin-chart": "2.0.0-alpha.16",
+    "vuepress-plugin-chart": "2.0.0-alpha.19",
     "vuepress-plugin-code-enhance": "2.0.0-alpha.10",
-    "vuepress-plugin-giscus": "2.0.0-alpha.16"
+    "vuepress-plugin-giscus": "2.0.0-alpha.19"
   },
   "publishConfig": {
     "access": "public"
