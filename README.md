@@ -1,6 +1,6 @@
 # Gungnir V2
 
-[![npm](https://img.shields.io/npm/v/vuepress-theme-gungnir/next.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-theme-gungnir/v/next) [![docs](https://img.shields.io/badge/Docs-Gungnir-26A2FF?style=flat-square)](https://v2-vuepress-theme-gungnir.vercel.app/docs/) [![license](https://img.shields.io/badge/License-Apache--2.0-green?style=flat-square)](LICENSE)
+[![npm](https://img.shields.io/npm/v/vuepress-theme-gungnir/next.svg?style=flat-square&logo=npm)](https://www.npmjs.com/package/vuepress-theme-gungnir/v/next) [![docs](https://img.shields.io/badge/Docs-Gungnir-26A2FF?style=flat-square)](https://v2-vuepress-theme-gungnir.vercel.app/docs/) [![license](https://img.shields.io/badge/License-Apache--2.0-green?style=flat-square)](LICENSE) [![awesome-vuepress](https://cdn.jsdelivr.net/gh/sindresorhus/awesome@a7b5b7805ecc00b3396acb35022cf6e2c0699e03/media/badge-flat.svg)](https://github.com/vuepress/awesome-vuepress/blob/main/v2.md#themes)
 
 A blog theme for [VuePress 2](https://v2.vuepress.vuejs.org/), **WIP**. 
 

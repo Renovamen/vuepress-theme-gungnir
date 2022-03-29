@@ -15,6 +15,9 @@ date: 2020-10-18
   <a href="https://github.com/Renovamen/renovamen.github.io/blob/master/LICENSE" target="_blank">
     <img src="https://img.shields.io/badge/License-Apache--2.0-green?style=flat-square" style="display: inline; margin: 0 4px 0 0" alt="license">
   </a>
+  <a href="https://github.com/vuepress/awesome-vuepress/blob/main/v2.md#themes" target="_blank">
+    <img src="https://cdn.jsdelivr.net/gh/sindresorhus/awesome@a7b5b7805ecc00b3396acb35022cf6e2c0699e03/media/badge-flat.svg" style="display: inline; margin: 0 4px 0 0" alt="license">
+  </a>
 </p>
 
 ![theme-gungnir](/img/docs/gungnir.jpg)
