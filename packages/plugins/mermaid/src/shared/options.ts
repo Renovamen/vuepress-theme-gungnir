@@ -1,5 +1,12 @@
 export interface MermaidOptions {
   /**
+   * Custom fenced code block token.
+   *
+   * @default "mermaidjs"
+   */
+  token?: string;
+
+  /**
    * Theme of Mermaid diagrams.
    *
    * @default "default"

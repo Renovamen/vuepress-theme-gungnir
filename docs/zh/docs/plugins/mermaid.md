@@ -41,24 +41,13 @@ module.exports = {
 
 ## 配置项
 
-可以使用以下配置项来设置 Mermaid 的主题，比如：
+### token
 
-```js
-module.exports = {
-  plugins: [
-    [
-      "@renovamen/vuepress-plugin-mermaid", {
-        theme: "default",  // 默认："default"
-        darkTheme: "dark",  // 默认："dark"
-        darkSelector: "html",  // 默认：undefined
-        darkClass: "dark"  // 默认：undefined
-      }
-    ]
-  ]
-}
-```
+- 类型：`string`
 
-[这里](https://github.com/mermaid-js/mermaid/tree/develop/src/themes)是所有 Mermaid 支持的主题。
+- 默认值：`"mermaidjs"`
+
+- 详情：自定义代码块的 token
 
 
 ### theme
@@ -67,7 +56,7 @@ module.exports = {
 
 - 默认值：`"default"`
 
-- 详情：主题
+- 详情：主题（[这里](https://github.com/mermaid-js/mermaid/tree/develop/src/themes)是所有 Mermaid 支持的主题）
 
 
 ### darkTheme
@@ -112,7 +101,7 @@ module.exports = {
 
 ## 使用
 
-代码块的 token info 需要为 `mermaidjs`，例子：
+代码块的 token info 需要为 `mermaidjs`（如果你使用了自定义代码块 token，则需要为 `options.token`），例子：
 
 ```mermaidjs
 sequenceDiagram
