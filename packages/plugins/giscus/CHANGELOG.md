@@ -8,7 +8,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* **plugin-chart:** support custom code block token ([0a48ac7](https://github.com/Renovamen/vuepress-theme-gungnir/commit/0a48ac7a6210e21b9d3ff6a4cbbc15e1e78dc43e))
+* **plugin-giscus:** added support for lazy load of the comments ([#45](https://github.com/Renovamen/vuepress-theme-gungnir/pull/45)) ([fecc326](https://github.com/Renovamen/vuepress-theme-gungnir/commit/fecc326ed91915d97153fbff6227ad4a5514b6c0))
 
 
 
@@ -16,10 +16,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [2.0.0-alpha.16](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.15...v2.0.0-alpha.16) (2022-02-28)
 
-
-### Bug Fixes
-
-* **plugin-mermaid:** fix mermaid import ([#35](https://github.com/Renovamen/vuepress-theme-gungnir/issues/35)) ([5c67699](https://github.com/Renovamen/vuepress-theme-gungnir/commit/5c67699ef0516b5f961d072adcd55ba8d22c9d4e))
+**Note:** Version bump only for package vuepress-plugin-giscus
 
 
 

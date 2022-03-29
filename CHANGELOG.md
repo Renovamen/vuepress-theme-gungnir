@@ -13,7 +13,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
+* add link card container (close [#36](https://github.com/Renovamen/vuepress-theme-gungnir/issues/36)) ([#38](https://github.com/Renovamen/vuepress-theme-gungnir/pull/38)) ([415e5a2](https://github.com/Renovamen/vuepress-theme-gungnir/commit/415e5a2ccfac337f08cdb44d9cd63f5f41acc4b3))
 * allows to hide site domain in link card container ([934ecae](https://github.com/Renovamen/vuepress-theme-gungnir/commit/934ecaed0e4e2efdab64de4edb2282f82e80eff5))
+* **plugin-giscus:** added support for lazy load of the comments ([#45](https://github.com/Renovamen/vuepress-theme-gungnir/pull/45)) ([fecc326](https://github.com/Renovamen/vuepress-theme-gungnir/commit/fecc326ed91915d97153fbff6227ad4a5514b6c0))
 * **plugin-chart:** support custom code block token ([0a48ac7](https://github.com/Renovamen/vuepress-theme-gungnir/commit/0a48ac7a6210e21b9d3ff6a4cbbc15e1e78dc43e))
 * **plugin-mermaid:** support custom code block token [#46](https://github.com/Renovamen/vuepress-theme-gungnir/issues/46) ([54b6a00](https://github.com/Renovamen/vuepress-theme-gungnir/commit/54b6a003f3550d082f513ddcd8bba82ca473f24d))
 * support crediting the source of the header image in blog ([9608ccf](https://github.com/Renovamen/vuepress-theme-gungnir/commit/9608ccf568c851593c67e4611ed17c2d2ca078f8))
