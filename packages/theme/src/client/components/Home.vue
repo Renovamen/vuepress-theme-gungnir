@@ -14,11 +14,12 @@
           class="hero-avatar hide-on-mobile"
           :src="$withBase(personalInfo.avatar)"
           alt="hero"
+          @mouseover="fetchHitokoto"
         />
 
         <div v-if="hitokotoAPI" class="hero-bubble">
           <div class="hero-bubble__body">
-            <p id="hitokoto">正在加载一言...</p>
+            <p>{{ hitokotoText }}</p>
           </div>
           <div class="hero-bubble__tile" />
         </div>
@@ -73,24 +74,26 @@ const scrollToPost = () => {
 
 // -------- Hitokoto --------
 const hitokotoAPI = themeLocale.value.hitokoto;
+const hitokotoText = ref("正在加载一言...");
+let hasFetchedHitokoto = false;
 
 const fetchHitokoto = () => {
+  if (!hitokotoAPI || hasFetchedHitokoto) return;
+
+  hasFetchedHitokoto = true;
+
   let api = hitokotoAPI;
   api = typeof api === "string" ? api : "https://v1.hitokoto.cn";
 
   fetch(api)
     .then((response) => response.json())
-    .then((data) => {
-      const hitokoto = document.querySelector("#hitokoto") as HTMLElement;
-      hitokoto.innerHTML = data.hitokoto;
-    })
+    .then((data) => (hitokotoText.value = data.hitokoto))
     .catch((error) => {
       console.log(`Get ${api} error: `, error);
     });
 };
 
 onMounted(() => {
-  if (hitokotoAPI) fetchHitokoto();
   if (bgImages && bgImages.length > 0)
     bgImageID.value = Math.floor(Math.random() * bgImages.length);
 });

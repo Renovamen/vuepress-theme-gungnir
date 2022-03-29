@@ -68,7 +68,7 @@ export default defineUserConfig<GungnirThemeOptions>({
     repo: "Renovamen/vuepress-theme-gungnir",
     docsDir: "docs",
 
-    hitokoto: "https://v1.hitokoto.cn?c=d&c=i", // enable hitokoto (一言) or not?
+    hitokoto: "https://v1.hitokoto.cn?c=i", // enable hitokoto (一言) or not?
 
     // personal information
     personalInfo: {
