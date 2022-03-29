@@ -51,7 +51,7 @@ export interface GiscusOptions {
   /**
    * Load the comments lazily. Loading of the comments will be deferred
    * until the user scrolls near the comments container.
-   * 
+   *
    * @default false
    */
   lazyLoad?: boolean;

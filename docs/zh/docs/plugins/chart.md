@@ -39,9 +39,20 @@ module.exports = {
 ```
 
 
+## 配置项
+
+### token
+
+- 类型：`string`
+
+- 默认值：`"chart"`
+
+- 详情：自定义代码块的 token
+
+
 ## 使用
 
-代码块的 token info 需要为 `chart`，比如：
+代码块的 token info 需要为 `chart`（如果你使用了自定义代码块 token，则需要为 `options.token`），比如：
 
 ```chart
 {

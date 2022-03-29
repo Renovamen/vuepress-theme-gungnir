@@ -6,6 +6,7 @@ import type { SearchPluginOptions } from "@renovamen/vuepress-plugin-search";
 import type { PwaPluginOptions } from "@vuepress/plugin-pwa";
 import type { ThemeData } from "@vuepress/plugin-theme-data";
 import type { LocaleData } from "@vuepress/shared";
+import type { ChartOptions } from "vuepress-plugin-chart";
 import type { CodeEnhanceOptions } from "vuepress-plugin-code-enhance";
 import type { GiscusOptions } from "vuepress-plugin-giscus";
 import type { GungnirThemeI18n } from "./i18n";
@@ -97,7 +98,7 @@ export interface GungnirThemePluginsOptions {
    *
    * @default false
    */
-  chartjs?: boolean;
+  chartjs?: boolean | ChartOptions;
 
   /**
    * Enable @renovamen/vuepress-plugin-reading-time or not

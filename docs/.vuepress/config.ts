@@ -1,6 +1,6 @@
 import { defineUserConfig } from "vuepress";
 import type { GungnirThemeOptions } from "vuepress-theme-gungnir";
-import { zh } from "vuepress-theme-gungnir/lib/node/i18n";
+import { i18n } from "vuepress-theme-gungnir";
 import { navbar, sidebar } from "./configs";
 
 const isProd = process.env.NODE_ENV === "production";
@@ -153,7 +153,7 @@ export default defineUserConfig<GungnirThemeOptions>({
         // sidebar
         sidebar: sidebar.zh,
         // i18n
-        ...zh
+        ...i18n.zh
       }
     },
 
@@ -167,7 +167,8 @@ export default defineUserConfig<GungnirThemeOptions>({
         repo: "This-is-an-Apple/gitalk-comments",
         repoId: "MDEwOlJlcG9zaXRvcnkyMTA1MjQyMTQ=",
         category: "Announcements",
-        categoryId: "DIC_kwDODIxYNs4CAO1u"
+        categoryId: "DIC_kwDODIxYNs4CAO1u",
+        lazyLoad: true
       },
       mdPlus: {
         all: true

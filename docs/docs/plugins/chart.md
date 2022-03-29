@@ -39,9 +39,20 @@ module.exports = {
 ```
 
 
+## Options
+
+### token
+
+- Type: `string`
+
+- Default: `"chart"`
+
+- Details: Custom token of the fenced code block.
+
+
 ## Usage
 
-The token info of the code block should be `chart`, for example:
+The token info of the code block should be `chart` (or `options.token` if you set), for example:
 
 ```chart
 {

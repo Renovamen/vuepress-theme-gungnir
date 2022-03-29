@@ -138,7 +138,10 @@ export const gungnirTheme: Theme<GungnirThemeOptions> = (
         "@renovamen/vuepress-plugin-mermaid",
         resolveMermaidOptions(themePlugins)
       ],
-      ["vuepress-plugin-chart", themePlugins.chartjs === true],
+      [
+        "vuepress-plugin-chart",
+        themePlugins.chartjs ? themePlugins.chartjs : false
+      ],
       ["@renovamen/vuepress-plugin-reading-time", themePlugins.readingTime],
       ["vuepress-plugin-code-enhance", themePlugins.codeEnhance],
       ["@renovamen/vuepress-plugin-rss", resolveRSSPluginOptions(themePlugins)],

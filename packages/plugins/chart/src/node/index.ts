@@ -1,8 +1,10 @@
+import type { Plugin } from "@vuepress/core";
 import { path } from "@vuepress/utils";
 import type MarkdownIt from "markdown-it";
-import { chart } from "./markdown-it-chart";
+import { getChart } from "./markdown-it-chart";
+import type { ChartOptions } from "./options";
 
-const chartPlugin = (option, app) => {
+const chartPlugin: Plugin<ChartOptions> = (options: ChartOptions, app) => {
   return {
     name: "vuepress-plugin-chart",
 
@@ -12,9 +14,10 @@ const chartPlugin = (option, app) => {
     ),
 
     extendsMarkdown: (md: MarkdownIt): void => {
-      md.use(chart);
+      md.use(getChart(options.token));
     }
   };
 };
 
 export default chartPlugin;
+export * from "./options";
