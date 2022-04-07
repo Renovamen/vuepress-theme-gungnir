@@ -1196,10 +1196,10 @@
   dependencies:
     "@cspotcode/source-map-consumer" "0.8.0"
 
-"@cz-git/loader@^1.1.6":
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/@cz-git/loader/-/loader-1.1.6.tgz#a81813a4cbd92f9f88a3b06ac594988d70e8229c"
-  integrity sha512-rwdpiqD3D3SrRkzb8RMpNcGs1Zg0RlTzYRmNStLiUpYzyQjB+Qwe9yrB3Y14sFTdQW3T07nI6rNWXtboHj47OQ==
+"@cz-git/loader@1.2.3":
+  version "1.2.3"
+  resolved "https://registry.npmjs.org/@cz-git/loader/-/loader-1.2.3.tgz#daaa1fa3250717d1dfa897aabcb47f5759936b24"
+  integrity sha512-FdLdCBp9AV42sQKdZ/poWLHaMrbr/ItuEaH20ufk3Q0jz+hwdi6+MSIQjFZSeiFXdb57lNXY0f54Hzx+HLyDGg==
   dependencies:
     "@commitlint/load" "16.2.1"
     strip-json-comments "3.1.1"
@@ -4270,12 +4270,12 @@ csstype@^3.0.2:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.11.tgz#d66700c5eacfac1940deb4e3ee5642792d85cd33"
   integrity sha512-sa6P2wJ+CAbgyy4KFssIb/JNMLxFvKF1pCYCSXS8ZMuqZnMsrxqI2E5sPyoTpxoPU/gVZMzr2zjOfg8GIZOMsw==
 
-cz-git@^1.1.7:
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/cz-git/-/cz-git-1.1.8.tgz#c5f85a3a4b55f232c52bd121914a0fa2a5c49fff"
-  integrity sha512-mIOpdtbFr2oJqqKK/KuDKKDb6fDtEcxaOWR9XzIENUWB15EhHwOvw7IR8DF/HiioICY1EeEZSZXEI8fDtNlUSA==
+cz-git@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.npmjs.org/cz-git/-/cz-git-1.2.3.tgz#7524f8b2e73a25e460cd6ad484b0be3a2d530d27"
+  integrity sha512-brXWBPSBFQgBs8v6kKsE7O9nkm8mD/fyDVBsurnvFgClvQ1YIVneaBBO41eYnFWKiX2qEvefX9SvrVADS4vZsw==
   dependencies:
-    "@cz-git/loader" "^1.1.6"
+    "@cz-git/loader" "1.2.3"
     inquirer "^7.3.3"
     inquirer-autocomplete-prompt "1.4.0"
     rimraf "3.0.2"
