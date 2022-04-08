@@ -26,7 +26,7 @@ body:
   - type: textarea
     id: environment
     attributes:
-      label: 📄 Environment info(`npx vuepress info`)
+      label: 📄 Environment info (`npx vuepress info`)
       description: "1. Open your terminal\n2. Make sure you are under the project path \n3. Input command line `npx vuepress info`"
       render: shell
     validations:
