@@ -1,0 +1,40 @@
+name: Bug report
+description: 🐞 Create a report to help us improve
+title: "[Bug report]"
+labels:
+  - bug
+assignees: Renovamen
+body:
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: ✅ Checklist
+      description: Make sure that you follow these statements.
+      options:
+        - label: I am using the **latest version**
+          required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 🔎 Description
+      description: A clear and concise description of what the bug is.And input a clear and concise description of what you expected to happen.
+      value: "#### Concise Description\n\n#### Expected behavior\n\n#### Steps to reproduce\n\n#### Screenshots or Screen Recording (if possible)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: 📄 Environment info (`npx vuepress info`)
+      description: "1. Open your terminal\n2. Make sure you are under the project path \n3. Input command line `npx vuepress info`"
+      render: shell
+    validations:
+      required: true
+
+  - type: input
+    id: link
+    attributes:
+      label: "🔗 Reproduction link / repo:"
+      description: If applicable, give us the project address, or minimize test cases repo to help us explain your problem.
+      placeholder: "link / repo URL"

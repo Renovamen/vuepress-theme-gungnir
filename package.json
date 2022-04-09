@@ -35,7 +35,7 @@
     "anywhere": "^1.5.0",
     "cpx2": "^4.2.0",
     "cross-env": "^7.0.3",
-    "cz-git": "^1.1.7",
+    "cz-git": "^1.2.3",
     "eslint": "^8.10.0",
     "eslint-config-vuepress": "^3.5.0",
     "eslint-config-vuepress-typescript": "^2.5.0",

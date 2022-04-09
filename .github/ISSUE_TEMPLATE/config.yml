@@ -1,0 +1,9 @@
+blank_issues_enabled: false
+contact_links:
+  - name: en_US Documents
+    url: https://v2-vuepress-theme-gungnir.vercel.app/docs/basic/intro.html
+    about: vuepress-theme-gungnir V2 Usage Guide
+
+  - name: zh-CN Documents
+    url: https://v2-vuepress-theme-gungnir.vercel.app/zh/docs/basic/intro.html
+    about: vuepress-theme-gungnir V2 简体中文文档
