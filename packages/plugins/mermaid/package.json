@@ -30,6 +30,6 @@
     "copy": "cpx \"src/**/*.css\" lib"
   },
   "dependencies": {
-    "mermaid": "^8.14.0"
+    "mermaid": "^9.0.0"
   }
 }
