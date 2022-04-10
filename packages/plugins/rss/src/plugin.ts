@@ -12,8 +12,16 @@ export const rssPlugin: Plugin<RSSOptions> = (options: RSSOptions, app) => {
       const rssURL = `${options.siteURL}/rss.xml`;
 
       const feed = new RSS({
-        title: options.title || app.options.title,
-        description: options.description || "",
+        title:
+          options.title ||
+          app.options.title ||
+          app.options.locales["/"].title ||
+          "",
+        description:
+          options.description ||
+          app.options.description ||
+          app.options.locales["/"].description ||
+          "",
         feed_url: rssURL,
         site_url: `${options.siteURL}`,
         copyright: `${options.copyright || ""}`,
@@ -30,6 +38,10 @@ export const rssPlugin: Plugin<RSSOptions> = (options: RSSOptions, app) => {
         .map((page) => ({
           title: page.frontmatter.title || "",
           description: page.excerpt || "",
+          author:
+            page.frontmatter.author ||
+            app.options.themeConfig.personalInfo?.name ||
+            "",
           url: `${options.siteURL}${page.path}`,
           date: page.date
         }))
