@@ -110,22 +110,20 @@ module.exports = {
 
 module.exports = {
   themeConfig: {
-    homeHeaderImages: {
-      // 可选：首页本地封面图路径和蒙版
-      local: [
-        // 图 1
-        {
-          "path": "/img/home-bg/1.jpg",
-          "mask": "rgba(40, 57, 101, .4)"
-        },
-        // 图 2
-        {
-          "path": "/img/home-bg/2.jpg",
-          "mask": "rgb(251, 170, 152, .2)"
-        }
-        ...
-      ]
-    }
+    homeHeaderImages: [
+      // 图 1
+      {
+        "path": "/img/home-bg/1.jpg",
+        "mask": "rgba(40, 57, 101, .4)"
+      },
+      // 图 2
+      {
+        "path": "/img/home-bg/2.jpg",
+        "mask": "rgb(251, 170, 152, .2)"
+      }
+      ...
+    ],
+    postNumPerPage: 20  // 可选：每页的博客数量，默认：10
   }
 }
 ```

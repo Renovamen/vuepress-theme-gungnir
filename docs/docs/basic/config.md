@@ -111,22 +111,19 @@ module.exports = {
 
 module.exports = {
   themeConfig: {
-    homeHeaderImages: {
-      // optional: paths to and masks of the local home page cover images
-      local: [
-        // image 1
-        {
-          "path": "/img/home-bg/1.jpg",
-          "mask": "rgba(40, 57, 101, .4)"
-        },
-        // image 2
-        {
-          "path": "/img/home-bg/2.jpg",
-          "mask": "rgb(251, 170, 152, .2)"
-        }
-        ...
-      ]
-    },
+    homeHeaderImages: [
+      // image 1
+      {
+        "path": "/img/home-bg/1.jpg",
+        "mask": "rgba(40, 57, 101, .4)"
+      },
+      // image 2
+      {
+        "path": "/img/home-bg/2.jpg",
+        "mask": "rgb(251, 170, 152, .2)"
+      }
+      ...
+    ],
     postNumPerPage: 20  // optional: maximum number of posts per page, default: 10
   }
 }
