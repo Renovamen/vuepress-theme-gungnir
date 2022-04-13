@@ -11,7 +11,7 @@ export const resolvePWAPopupOptions = (
   themePlugins: GungnirThemePluginsOptions,
   localeOptions: GungnirThemeLocaleOptions
 ): PwaPopupPluginOptions | boolean => {
-  if (themePlugins?.pwa === false || !localeOptions.locales) {
+  if (!themePlugins?.pwa || !localeOptions.locales) {
     return false;
   }
   const option = Object.assign({
