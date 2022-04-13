@@ -106,7 +106,7 @@
 
   &.link {
     position: relative;
-    width: 40%;
+    width: calc(45% - 52px);
     margin: 10px 0;
     border: 1px solid var(--c-border);
     border-radius: 10px;
@@ -145,7 +145,7 @@
         line-height: 15px;
         &:first-child {
           border-top: 1px dashed #ddd;
-          margin-top: 10px;
+          margin-top: 7px;
           padding-bottom: 0;
         }
         &:nth-child(2) {
@@ -190,14 +190,14 @@
   }
 }
 
-@media (max-width: $MQIpad) {
+@media (max-width: $MQNarrow) {
   .custom-container.link {
-    width: 50%;
+    width: calc(70% - 52px);
   }
 }
 
-@media (max-width: $MQMobile) {
+@media (max-width: $MQMobileNarrow) {
   .custom-container.link {
-    width: 70%;
+    width: calc(100% - 52px);
   }
 }
