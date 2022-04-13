@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.20](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.19...v2.0.0-alpha.20) (2022-04-13)
+
+
+### Bug Fixes
+
+* compatible with vuepress v2.0.0-beta.39 [#55](https://github.com/Renovamen/vuepress-theme-gungnir/issues/55) ([e68d31b](https://github.com/Renovamen/vuepress-theme-gungnir/commit/e68d31b404cea050a0ca8847d99dfa4c7244498f))
+* link-card title and icon name clash. error replace ([#50](https://github.com/Renovamen/vuepress-theme-gungnir/issues/50)) ([9db4cda](https://github.com/Renovamen/vuepress-theme-gungnir/commit/9db4cda145fbf3fc6998e0d0bb83d4c78b908c2f)), closes [#49](https://github.com/Renovamen/vuepress-theme-gungnir/issues/49) [#49](https://github.com/Renovamen/vuepress-theme-gungnir/issues/49)
+
+
+### Features
+
+* update link container styles ([dd9eb74](https://github.com/Renovamen/vuepress-theme-gungnir/commit/dd9eb74f8f0342838a616683b6a9b0836528c4b2))
+
+
+
+
+
 # [2.0.0-alpha.19](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.18...v2.0.0-alpha.19) (2022-03-29)
 
 

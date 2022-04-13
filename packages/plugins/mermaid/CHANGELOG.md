@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.20](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.19...v2.0.0-alpha.20) (2022-04-13)
+
+**Note:** Version bump only for package @renovamen/vuepress-plugin-mermaid
+
+
+
+
+
 # [2.0.0-alpha.19](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.18...v2.0.0-alpha.19) (2022-03-29)
 
 

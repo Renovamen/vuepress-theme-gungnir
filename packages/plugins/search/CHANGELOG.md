@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.20](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.19...v2.0.0-alpha.20) (2022-04-13)
+
+
+### Bug Fixes
+
+* compatible with vuepress v2.0.0-beta.39 [#55](https://github.com/Renovamen/vuepress-theme-gungnir/issues/55) ([e68d31b](https://github.com/Renovamen/vuepress-theme-gungnir/commit/e68d31b404cea050a0ca8847d99dfa4c7244498f))
+
+
+
+
+
 # [2.0.0-alpha.17](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.16...v2.0.0-alpha.17) (2022-03-11)
 
 
