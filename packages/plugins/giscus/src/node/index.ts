@@ -10,7 +10,8 @@ const giscusPlugin: Plugin<GiscusOptions> = (options: GiscusOptions, app) => {
 
     define: {
       __GISCUS_OPTIONS__: options,
-      __SITE_LOCALES__: app.siteData.locales
+      __SITE_LOCALES__: app.siteData.locales,
+      __SITE_LANG__: app.siteData.lang
     },
 
     clientAppEnhanceFiles: path.resolve(

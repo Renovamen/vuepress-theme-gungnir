@@ -15,7 +15,9 @@ declare const __GISCUS_OPTIONS__: GiscusOptions;
 const options = __GISCUS_OPTIONS__;
 
 declare const __SITE_LOCALES__: any;
+declare const __SITE_LANG__: string;
 const siteLocales = __SITE_LOCALES__;
+const siteLang = __SITE_LANG__;
 
 const langMap = {
   "en-us": "en",
@@ -72,7 +74,7 @@ export default defineComponent({
     const resolvedLang = computed(() => {
       if (lang.value === "auto") {
         const locale = siteLocales[routeLocale.value];
-        const lang = locale && locale.lang;
+        const lang = (locale && locale.lang) || siteLang;
         if (lang && langMap[lang.toLowerCase()])
           return langMap[lang.toLowerCase()];
       }
