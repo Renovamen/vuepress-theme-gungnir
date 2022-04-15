@@ -78,7 +78,7 @@ export default defineComponent({
         if (lang && langMap[lang.toLowerCase()])
           return langMap[lang.toLowerCase()];
       }
-      return "en";
+      return langMap[lang.value.toLowerCase()] ?? "en";
     });
 
     const getScriptElement = () => {
