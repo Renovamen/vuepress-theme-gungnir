@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.21](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.20...v2.0.0-alpha.21) (2022-04-18)
+
+
+### Bug Fixes
+
+* **plugin-giscus:** fix giscus lang options setting, close [#57](https://github.com/Renovamen/vuepress-theme-gungnir/issues/57) ([#58](https://github.com/Renovamen/vuepress-theme-gungnir/issues/58)) ([bb200e2](https://github.com/Renovamen/vuepress-theme-gungnir/commit/bb200e230ef2179d96ea4fec7f0d41d850994e70))
+
+
+
+
+
 # [2.0.0-alpha.20](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.19...v2.0.0-alpha.20) (2022-04-13)
 
 

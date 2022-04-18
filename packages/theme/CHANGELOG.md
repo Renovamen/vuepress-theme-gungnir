@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0-alpha.21](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.20...v2.0.0-alpha.21) (2022-04-18)
+
+
+### Bug Fixes
+
+* pwa default option ([a3d680a](https://github.com/Renovamen/vuepress-theme-gungnir/commit/a3d680ad28e280e5971e5b8785a9e1e4021a8307))
+
+
+
+
+
 # [2.0.0-alpha.20](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.19...v2.0.0-alpha.20) (2022-04-13)
 
 

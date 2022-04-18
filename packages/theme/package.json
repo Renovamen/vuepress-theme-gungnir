@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-gungnir",
-  "version": "2.0.0-alpha.20",
+  "version": "2.0.0-alpha.21",
   "description": "Gungnir is a blog theme for VuePress 2.",
   "keywords": [
     "vuepress-theme",
@@ -60,7 +60,7 @@
     "vue-router": "^4.0.12",
     "vuepress-plugin-chart": "2.0.0-alpha.19",
     "vuepress-plugin-code-enhance": "2.0.0-alpha.10",
-    "vuepress-plugin-giscus": "2.0.0-alpha.20"
+    "vuepress-plugin-giscus": "2.0.0-alpha.21"
   },
   "publishConfig": {
     "access": "public"
