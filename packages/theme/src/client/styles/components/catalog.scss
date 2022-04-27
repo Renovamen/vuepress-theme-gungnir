@@ -6,21 +6,18 @@
 
   position: absolute;
   width: var(--catalog-width);
-  height: 100%;
   padding-left: 0;
   list-style: none;
   font-size: 14px;
   overflow-x: hidden;
   overflow-y: scroll;
-  bottom: 40px !important;
+  bottom: 40px;
   right: calc($sideWidth - var(--catalog-width) - 5rem);
 
   @include hideScrollbar();
 
   &.fixed {
     position: fixed;
-    height: auto;
-    bottom: 10rem;
   }
 
   li {
@@ -73,8 +70,7 @@
     position: fixed;
     top: -15px !important;
     right: -2px;
-    padding-top: 2rem;
-    height: 100% !important;
+    height: 100%;
     background-color: var(--c-bg);
     z-index: 5;
 
@@ -84,6 +80,14 @@
 
       &.active {
         border-left: 2px solid var(--c-text-accent);
+      }
+
+      &:first-child {
+        margin-top: 2rem;
+      }
+
+      &:last-child {
+        margin-bottom: 2rem;
       }
     }
   }

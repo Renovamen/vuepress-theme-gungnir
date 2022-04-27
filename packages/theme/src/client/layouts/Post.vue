@@ -108,17 +108,13 @@ const handleScroll = () => {
     state.isFixed = false;
     state.catalogTop = state.headerHeight + catalogTopAbsolute;
   }
-  // $MQMobile
-  if (state.screenWidth <= 719) state.catalogTop = -15;
 };
 
 const resetCatalogPosition = () => {
   const postHeader = document.querySelector<HTMLElement>(".post-header");
   state.headerHeight = postHeader ? postHeader.offsetHeight : 0;
   state.screenWidth = document.body.clientWidth;
-  if (state.screenWidth <= 719) state.catalogTop = -15;
-  // $MQMobile
-  else state.catalogTop = state.headerHeight + catalogTopAbsolute;
+  state.catalogTop = state.headerHeight + catalogTopAbsolute;
 };
 
 // reset catalog's position after navigation

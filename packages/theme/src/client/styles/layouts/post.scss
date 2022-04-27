@@ -1,44 +1,46 @@
 @import '../_variables';
 
-.post-content {
-  .theme-gungnir-content {
-    h1 {
-      font-size: 50px
-    }
+.post-wrapper {
+  position: relative;
+}
 
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-weight: bold;
-    }
+.post-content .theme-gungnir-content {
+  h1 {
+    font-size: 50px
+  }
 
-    h2 {
-      font-size: 30px;
-    }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+  }
 
-    h3 {
-      font-size: 24px;
-    }
+  h2 {
+    font-size: 30px;
+  }
 
-    h4 {
-      font-size: 21px;
-    }
+  h3 {
+    font-size: 24px;
+  }
 
-    h5 {
-      font-size: 19px;
-      color: var(--c-text-sub);
-    }
+  h4 {
+    font-size: 21px;
+  }
 
-    h6 {
-      font-size: 16px;
-      color: var(--c-text-sub);
-    }
+  h5 {
+    font-size: 19px;
+    color: var(--c-text-sub);
+  }
 
-    a.header-anchor {
-      opacity: 1;
-    }
+  h6 {
+    font-size: 16px;
+    color: var(--c-text-sub);
+  }
+
+  a.header-anchor {
+    opacity: 1;
   }
 }
 
