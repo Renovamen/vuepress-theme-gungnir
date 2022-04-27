@@ -10,13 +10,13 @@ mkdir blog && cd blog
 yarn init  # or: npm init
 ```
 
-安装 VuePress 和主题 Gungnir：
+安装 VuePress 和主题 Gungnir。目前主题还无法兼容 VuePress >= 2.0.0-beta.40，请暂时锁定 2.0.0-beta.39 版本：
 
 <CodeGroup>
 <CodeGroupItem title="YARN" active>
 
 ```bash
-yarn add -D vuepress@next vuepress-theme-gungnir@next
+yarn add -D vuepress@2.0.0-beta.39 vuepress-theme-gungnir@next
 ```
 
 </CodeGroupItem>
@@ -24,7 +24,7 @@ yarn add -D vuepress@next vuepress-theme-gungnir@next
 <CodeGroupItem title="NPM">
 
 ```bash
-npm install -D vuepress@next vuepress-theme-gungnir@next
+npm install -D vuepress@2.0.0-beta.39 vuepress-theme-gungnir@next
 ```
 
 </CodeGroupItem>

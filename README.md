@@ -42,10 +42,12 @@ TODO:
 
 ## Installation
 
+Currently, the theme is not compatible with VuePress >= 2.0.0-beta.40, please stick to VuePress 2.0.0-beta.39.
+
 ```bash
-yarn add -D vuepress-theme-gungnir@next
+yarn add -D vuepress@2.0.0-beta.39 vuepress-theme-gungnir@next
 # or
-npm i -D vuepress-theme-gungnir@next
+npm i -D vuepress@2.0.0-beta.39 vuepress-theme-gungnir@next
 ```
 
 
