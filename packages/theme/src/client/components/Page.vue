@@ -3,7 +3,11 @@
     <slot name="top" />
 
     <div class="theme-gungnir-content">
+      <slot name="content-top" />
+
       <Content />
+
+      <slot name="content-bottom" />
     </div>
 
     <PageMeta />

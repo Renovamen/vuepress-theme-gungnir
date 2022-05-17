@@ -1,6 +1,6 @@
 import type { Page } from "@vuepress/core";
 
-export interface RSSOptions {
+export interface BaseRSSOptions {
   /**
    * URL of your site.
    */
@@ -33,7 +33,18 @@ export interface RSSOptions {
   count?: number;
 
   /**
+   * Default author for posts.
+   *
+   * @default ""
+   */
+  author?: string;
+
+  /**
    * A filter function to choose which posts to be generated.
    */
   filter?: (page: Page) => boolean;
+}
+
+export interface RSSOptions extends BaseRSSOptions {
+  locales?: Record<string, BaseRSSOptions>;
 }

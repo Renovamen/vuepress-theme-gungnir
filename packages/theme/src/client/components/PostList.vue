@@ -45,8 +45,8 @@ const pagerData = computed(() => {
       : null;
 
   return {
-    next: next,
-    prev: prev
+    next,
+    prev
   };
 });
 </script>

@@ -1,14 +1,11 @@
-import { defineClientAppSetup } from "@vuepress/client";
 import { onMounted, onUnmounted } from "vue";
 import { useRouter } from "vue-router";
-import type { CodeEnhanceOptions } from "../shared";
-
-import "./style.css";
+import type { CodeEnhanceOptions } from "../../shared";
 
 declare const __CODE_ENHANCE_OPTIONS__: CodeEnhanceOptions;
 const options = __CODE_ENHANCE_OPTIONS__;
 
-export default defineClientAppSetup(() => {
+export const codeEnhance = (): void => {
   let unregisterRouterHook;
 
   /**
@@ -67,4 +64,4 @@ export default defineClientAppSetup(() => {
   onUnmounted(() => {
     unregisterRouterHook();
   });
-});
+};

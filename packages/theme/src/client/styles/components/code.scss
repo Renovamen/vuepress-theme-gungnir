@@ -1,10 +1,10 @@
-@import '../_variables';
+@import "../_variables";
 
 // ===============================
 // Forked and modified from prismjs/themes/prism-tomorrow.css
 
-code[class*='language-'],
-pre[class*='language-'] {
+code[class*="language-"],
+pre[class*="language-"] {
   color: #ccc;
   background: none;
   font-family: var(--font-family-code);
@@ -27,19 +27,19 @@ pre[class*='language-'] {
 }
 
 /* Code blocks */
-pre[class*='language-'] {
+pre[class*="language-"] {
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
 }
 
-:not(pre) > code[class*='language-'],
-pre[class*='language-'] {
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
   background: #2d2d2d;
 }
 
 /* Inline code */
-:not(pre) > code[class*='language-'] {
+:not(pre) > code[class*="language-"] {
   padding: 0.1em;
   border-radius: 0.3em;
   white-space: normal;
@@ -123,7 +123,7 @@ pre[class*='language-'] {
 
 .theme-gungnir-content {
   pre,
-  pre[class*='language-'] {
+  pre[class*="language-"] {
     line-height: 1.4;
     padding: 3rem 1.5rem 1.25rem;
     margin: 0.85rem 0;
@@ -146,7 +146,7 @@ pre[class*='language-'] {
   }
 }
 
-div[class*='language-'] {
+div[class*="language-"] {
   position: relative;
   background-color: var(--code-bg-color);
   border-radius: 5px;
@@ -176,7 +176,7 @@ div[class*='language-'] {
   }
 
   pre,
-  pre[class*='language-'] {
+  pre[class*="language-"] {
     // force override the background color to be compatible with shiki
     background: transparent !important;
     position: relative;
@@ -208,7 +208,7 @@ div[class*='language-'] {
       position: relative;
 
       &::before {
-        content: ' ';
+        content: " ";
         position: absolute;
         z-index: 2;
         left: 0;
@@ -234,16 +234,17 @@ div[class*='language-'] {
       padding-top: 3rem;
       line-height: 1.4;
 
-      br {
-        user-select: none;
-      }
-
       .line-number {
         position: relative;
         z-index: 3;
         user-select: none;
-        font-size: 0.85em;
-        line-height: 0;
+        height: 1.4em;
+
+        &::before {
+          counter-increment: line-number;
+          content: counter(line-number);
+          font-size: 0.85em;
+        }
       }
     }
   }
@@ -266,21 +267,21 @@ div[class*='language-'] {
 }
 
 @each $lang in $codeLang {
-  div[class*='language-'].ext-#{$lang} {
+  div[class*="language-"].ext-#{$lang} {
     &:before {
-      content: '' + $lang;
+      content: "" + $lang;
     }
   }
 }
 
 // narrow mobile
 @media (max-width: $MQMobileNarrow) {
-  div[class*='language-'] {
+  div[class*="language-"] {
     box-shadow: none;
   }
 
   .theme-gungnir-content {
-    div[class*='language-'] {
+    div[class*="language-"] {
       margin: 0.85rem 0;
     }
   }

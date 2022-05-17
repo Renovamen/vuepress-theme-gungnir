@@ -96,8 +96,8 @@ export const useBlog = (pageIndex?: Ref<number>) => {
         : null;
 
     return {
-      next: next,
-      prev: prev
+      next,
+      prev
     };
   });
 

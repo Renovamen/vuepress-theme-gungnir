@@ -54,7 +54,7 @@ export const DEFAULT_LOCALE_DATA: GungnirThemeData = {
 };
 
 /**
- * Assign default options to `themeConfig`
+ * Assign default options
  */
 export const assignDefaultLocaleOptions = (
   localeOptions: GungnirThemeLocaleOptions

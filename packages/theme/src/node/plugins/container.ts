@@ -1,7 +1,9 @@
+import type { Plugin } from "@vuepress/core";
+import { containerPlugin } from "@vuepress/plugin-container";
 import type { ContainerPluginOptions } from "@vuepress/plugin-container";
 import type {
-  GungnirThemeData,
-  GungnirThemePluginsOptions
+  GungnirThemeContainerOptions,
+  GungnirThemeData
 } from "../../shared";
 
 const defaultSVGs = {
@@ -17,14 +19,9 @@ const defaultSVGs = {
  * For custom containers default title
  */
 export const resolveContainerPluginOptions = (
-  themePlugins: GungnirThemePluginsOptions,
   localeOptions: GungnirThemeData,
   type: "info" | "tip" | "warning" | "danger"
-): ContainerPluginOptions | boolean => {
-  if (themePlugins?.container?.[type] === false) {
-    return false;
-  }
-
+): ContainerPluginOptions => {
   const locales = Object.entries(localeOptions.locales || {}).reduce(
     (result, [key, value]) => {
       result[key] = {
@@ -47,66 +44,6 @@ export const resolveContainerPluginOptions = (
   };
 };
 
-/**
- * Resolve options for @vuepress/plugin-container
- *
- * For details container
- */
-export const resolveContainerPluginOptionsForDetails = (
-  themePlugins: GungnirThemePluginsOptions
-): ContainerPluginOptions | boolean => {
-  if (themePlugins?.container?.details === false) {
-    return false;
-  }
-
-  return {
-    type: "details",
-    before: (info) =>
-      `<details class="custom-container details">${
-        info ? `<summary>${info}</summary>` : ""
-      }\n`,
-    after: () => "</details>\n"
-  };
-};
-
-/**
- * Resolve options for @vuepress/plugin-container
- *
- * For code-group container
- */
-export const resolveContainerPluginOptionsForCodeGroup = (
-  themePlugins: GungnirThemePluginsOptions
-): ContainerPluginOptions | boolean => {
-  if (themePlugins?.container?.codeGroup === false) {
-    return false;
-  }
-
-  return {
-    type: "code-group",
-    before: () => `<CodeGroup>\n`,
-    after: () => "</CodeGroup>\n"
-  };
-};
-
-/**
- * Resolve options for @vuepress/plugin-container
- *
- * For code-group-item block
- */
-export const resolveContainerPluginOptionsForCodeGroupItem = (
-  themePlugins: GungnirThemePluginsOptions
-): ContainerPluginOptions | boolean => {
-  if (themePlugins?.container?.codeGroupItem === false) {
-    return false;
-  }
-
-  return {
-    type: "code-group-item",
-    before: (info) => `<CodeGroupItem title="${info}">\n`,
-    after: () => "</CodeGroupItem>\n"
-  };
-};
-
 const getContainerDslValue = (
   target: string,
   start: string,
@@ -123,35 +60,71 @@ const getContainerDslValue = (
  * For link card
  */
 export const resolveContainerPluginOptionsForLink = (
-  themePlugins: GungnirThemePluginsOptions
-): ContainerPluginOptions | boolean => {
-  if (themePlugins?.container?.link === false) {
-    return false;
-  }
+  options?: boolean | { siteDomain?: boolean }
+): ContainerPluginOptions => ({
+  type: "link",
+  before: (dsl) => {
+    let context = dsl;
+    const title = getContainerDslValue(context, "[", "]");
+    context = context.replace(`[${title}]`, "");
+    const link = getContainerDslValue(context, "(", ")");
+    context = context.replace(`(${link})`, "");
+    const identifier = getContainerDslValue(context, "{", "}");
+    const isImgae = identifier.includes("/");
+    const siteDomain = typeof options === "object" ? options.siteDomain : true;
+    return `
+    <LinkCard
+      title="${title}"
+      link="${link}"
+      icon="${isImgae ? "" : identifier}"
+      image="${!isImgae ? "" : identifier}"
+      siteDomain="${siteDomain}"
+      >`;
+  },
+  after: () => "</LinkCard>\n"
+});
 
-  return {
-    type: "link",
-    before: (dsl) => {
-      let context = dsl;
-      const title = getContainerDslValue(context, "[", "]");
-      context = context.replace(`[${title}]`, "");
-      const link = getContainerDslValue(context, "(", ")");
-      context = context.replace(`(${link})`, "");
-      const identifier = getContainerDslValue(context, "{", "}");
-      const isImgae = identifier.includes("/");
-      const siteDomain =
-        typeof themePlugins?.container?.link === "object"
-          ? themePlugins?.container?.link?.siteDomain
-          : true;
-      return `
-      <LinkCard
-        title="${title}"
-        link="${link}"
-        icon="${isImgae ? "" : identifier}"
-        image="${!isImgae ? "" : identifier}"
-        siteDomain="${siteDomain}"
-        >`;
-    },
-    after: () => "</LinkCard>\n"
-  };
-};
+export const getContainerPlugin = (
+  localeOptions: GungnirThemeData,
+  options?: GungnirThemeContainerOptions
+): (Plugin | [])[] => [
+  options?.info !== false
+    ? containerPlugin(resolveContainerPluginOptions(localeOptions, "info"))
+    : [],
+  options?.tip !== false
+    ? containerPlugin(resolveContainerPluginOptions(localeOptions, "tip"))
+    : [],
+  options?.warning !== false
+    ? containerPlugin(resolveContainerPluginOptions(localeOptions, "warning"))
+    : [],
+  options?.danger !== false
+    ? containerPlugin(resolveContainerPluginOptions(localeOptions, "danger"))
+    : [],
+  options?.details !== false
+    ? containerPlugin({
+        type: "details",
+        before: (info) =>
+          `<details class="custom-container details">${
+            info ? `<summary>${info}</summary>` : ""
+          }\n`,
+        after: () => "</details>\n"
+      })
+    : [],
+  options?.codeGroup !== false
+    ? containerPlugin({
+        type: "code-group",
+        before: () => `<CodeGroup>\n`,
+        after: () => "</CodeGroup>\n"
+      })
+    : [],
+  options?.codeGroupItem !== false
+    ? containerPlugin({
+        type: "code-group-item",
+        before: (info) => `<CodeGroupItem title="${info}">\n`,
+        after: () => "</CodeGroupItem>\n"
+      })
+    : [],
+  options?.danger !== false
+    ? containerPlugin(resolveContainerPluginOptionsForLink(options?.link))
+    : []
+];

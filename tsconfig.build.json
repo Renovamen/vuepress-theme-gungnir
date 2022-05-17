@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.base.json",
+  "references": [
+    { "path": "./packages/theme/tsconfig.build.json" },
+    { "path": "./packages/plugins/baidu-tongji/tsconfig.build.json" },
+    { "path": "./packages/plugins/chart/tsconfig.build.json" },
+    { "path": "./packages/plugins/code-enhance/tsconfig.build.json" },
+    { "path": "./packages/plugins/giscus/tsconfig.build.json" },
+    { "path": "./packages/plugins/katex/tsconfig.build.json" },
+    { "path": "./packages/plugins/md-plus/tsconfig.build.json" },
+    { "path": "./packages/plugins/mermaid/tsconfig.build.json" },
+    { "path": "./packages/plugins/reading-time/tsconfig.build.json" },
+    { "path": "./packages/plugins/rss/tsconfig.build.json" },
+    { "path": "./packages/plugins/search/tsconfig.build.json" }
+  ],
+  "files": []
+}

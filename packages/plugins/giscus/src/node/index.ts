@@ -4,8 +4,9 @@ import type { GiscusOptions } from "../shared";
 
 export * from "../shared";
 
-const giscusPlugin: Plugin<GiscusOptions> = (options: GiscusOptions, app) => {
-  return {
+export const giscusPlugin =
+  (options: GiscusOptions): Plugin =>
+  (app) => ({
     name: "vuepress-plugin-giscus",
 
     define: {
@@ -14,11 +15,7 @@ const giscusPlugin: Plugin<GiscusOptions> = (options: GiscusOptions, app) => {
       __SITE_LANG__: app.siteData.lang
     },
 
-    clientAppEnhanceFiles: path.resolve(
-      __dirname,
-      "../client/clientAppEnhance.js"
-    )
-  };
-};
+    clientConfigFile: path.resolve(__dirname, "../client/config.js")
+  });
 
 export default giscusPlugin;

@@ -14,22 +14,16 @@ export interface SearchPluginOptions {
   getExtraFields?: (page: Page) => string[];
 }
 
-export const searchPlugin: Plugin<SearchPluginOptions> = (
-  {
-    locales = {},
-    hotKeys = ["s", "/"],
-    maxSuggestions = 10,
-    isSearchable = () => true,
-    getExtraFields = () => []
-  },
-  app
-) => ({
+export const searchPlugin = ({
+  locales = {},
+  hotKeys = ["s", "/"],
+  maxSuggestions = 10,
+  isSearchable = () => true,
+  getExtraFields = () => []
+}: SearchPluginOptions = {}): Plugin => ({
   name: "@renovamen/vuepress-plugin-search",
 
-  clientAppEnhanceFiles: path.resolve(
-    __dirname,
-    "../client/clientAppEnhance.js"
-  ),
+  clientConfigFile: path.resolve(__dirname, "../client/config.js"),
 
   define: {
     __SEARCH_LOCALES__: locales,
@@ -37,8 +31,9 @@ export const searchPlugin: Plugin<SearchPluginOptions> = (
     __SEARCH_MAX_SUGGESTIONS__: maxSuggestions
   },
 
-  onPrepared: (app) =>
-    prepareSearchIndex({ app, isSearchable, getExtraFields }),
+  onPrepared: async (app) => {
+    await prepareSearchIndex({ app, isSearchable, getExtraFields });
+  },
 
   onWatched: (app, watchers) => {
     // here we only watch the page data files

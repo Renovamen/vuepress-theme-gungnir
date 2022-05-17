@@ -12,6 +12,12 @@
             <ArticleHeader v-show="pageData.title" />
             <slot name="page-top" />
           </template>
+          <template #content-top>
+            <slot name="page-content-top" />
+          </template>
+          <template #content-bottom>
+            <slot name="page-content-bottom" />
+          </template>
           <template #bottom>
             <slot name="page-bottom" />
           </template>

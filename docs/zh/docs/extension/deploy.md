@@ -50,44 +50,39 @@ npm run docs:build
 ```yaml
 # .github/workflows/deploy.yaml
 
-name: build and deploy
+name: build-and-deploy
 
 on:
   push:
     branches: [ master ]  # master 分支有 commit 时自动触发该 workflow
 
 jobs:
-  build-and-deploy-vuepress:  # 随便起个名字
+  build-and-deploy:  # 随便起个名字
     # 配置运行该 workflow 的系统
     runs-on: ubuntu-latest
 
+    env:
+      NODE_VERSION: '16'
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       # 配置 Node.js
-      - name: Setup Node
-        uses: actions/setup-node@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: ${{ env.NODE_VERSION }}
+          cache: yarn
 
-      - name: Get yarn cache
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+      # 安装依赖
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
 
       # 打包并生成静态文件
-      - name: Build
-        run: |
-          yarn install --frozen-lockfile
-          yarn docs:build
+      - name: Build site
+        run: yarn docs:build
 
       # 推送静态文件到 gh-pages 分支
       - name: Deploy

@@ -24,7 +24,7 @@ const excludeTexBlock = function (text: string): string {
 
 export const readingTime = function (
   text: string,
-  options: ReadingTimeOptions
+  options?: ReadingTimeOptions
 ): ReadingTime {
   options = options || {};
 
@@ -47,7 +47,7 @@ export const readingTime = function (
   minutes = minutes < 1 ? 1 : Math.ceil(Number(minutes.toFixed(2)));
 
   return {
-    minutes: minutes,
+    minutes,
     words: cntCN + cntEN
   };
 };

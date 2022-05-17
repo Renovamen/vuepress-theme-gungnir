@@ -4,19 +4,16 @@ import type { CodeEnhanceOptions } from "../shared";
 
 export * from "../shared";
 
-const codeEnhancePlugin: Plugin<CodeEnhanceOptions> = (
-  options: CodeEnhanceOptions,
-  app
-) => {
-  return {
-    name: "vuepress-plugin-code-enhance",
+export const codeEnhancePlugin = (
+  options: CodeEnhanceOptions = {}
+): Plugin => ({
+  name: "vuepress-plugin-code-enhance",
 
-    define: {
-      __CODE_ENHANCE_OPTIONS__: options
-    },
+  define: {
+    __CODE_ENHANCE_OPTIONS__: options
+  },
 
-    clientAppSetupFiles: path.resolve(__dirname, "../client/clientAppSetup.js")
-  };
-};
+  clientConfigFile: path.resolve(__dirname, "../client/config.js")
+});
 
 export default codeEnhancePlugin;

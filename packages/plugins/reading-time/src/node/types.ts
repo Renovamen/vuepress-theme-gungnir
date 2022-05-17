@@ -54,7 +54,3 @@ export interface ReadingTime {
    */
   words: number;
 }
-
-export interface ReadingTimePageData {
-  readingTime: ReadingTime;
-}

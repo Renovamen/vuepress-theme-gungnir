@@ -1,4 +1,4 @@
-import { defineClientAppEnhance } from "@vuepress/client";
+import { defineClientConfig } from "@vuepress/client";
 import { addIcons } from "oh-vue-icons";
 import {
   CoGit,
@@ -28,5 +28,4 @@ addIcons(
   RiSailboatLine
 );
 
-/* eslint-disable-next-line @typescript-eslint/no-empty-function */
-export default defineClientAppEnhance(({ app, router }) => {});
+export default defineClientConfig({});

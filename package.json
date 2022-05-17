@@ -1,26 +1,29 @@
 {
+  "version": "2.0.0-alpha.22",
   "private": true,
-  "workspaces": [
-    "packages/theme",
-    "packages/plugins/*"
-  ],
   "scripts": {
-    "build": "tsc --build",
-    "clean": "lerna run clean --stream",
-    "copy": "lerna run copy --stream",
-    "copy-watch": "lerna run copy --parallel -- --watch",
-    "dev": "yarn copy-watch & yarn build --watch",
-    "docs:build": "vuepress build docs --clean-cache",
-    "docs:clean": "rimraf docs/.vuepress/.temp docs/.vuepress/.cache docs/.vuepress/dist",
-    "docs:dev": "vuepress dev docs --clean-cache",
-    "docs:release": "yarn copy && yarn build && yarn docs:build",
-    "docs:serve": "anywhere -h localhost -d docs/.vuepress/dist",
+    "build": "pnpm build:all && pnpm build:copy",
+    "build:all": "pnpm -r --stream build",
+    "build:copy": "pnpm --parallel --stream copy",
+    "clean": "pnpm --parallel --stream clean",
+    "dev": "tsc -b tsconfig.build.json --watch",
+    "dev:copy": "pnpm build:copy --watch",
+    "docs:build": "pnpm --filter=docs docs:build",
+    "docs:clean": "pnpm --filter=docs docs:clean",
+    "docs:dev": "pnpm --filter=docs docs:dev",
+    "docs:release": "pnpm build && pnpm docs:build",
+    "docs:serve": "pnpm --filter=docs docs:serve",
     "lint": "eslint --ext .js,.ts,.vue .",
     "prepare": "husky install",
-    "release": "yarn lint && yarn clean && yarn copy && yarn build && lerna publish prerelease --dist-tag next"
+    "release": "pnpm release:check && pnpm release:version && pnpm release:publish",
+    "release:changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "release:check": "pnpm lint && pnpm clean && pnpm build && pnpm test",
+    "release:publish": "pnpm -r publish --tag next",
+    "release:version": "bumpp package.json packages/*/package.json packages/plugins/*/package.json --execute=\"pnpm release:changelog\" --commit \"build: publish v%s\" --all --tag --push"
   },
   "lint-staged": {
     "*.{js,ts,vue}": "eslint --fix",
+    "*.{json,yml,css,scss}": "prettier --write",
     "package.json": "sort-package-json"
   },
   "config": {
@@ -29,23 +32,39 @@
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.2.1",
-    "@commitlint/config-conventional": "^16.2.1",
-    "@vuepress/plugin-docsearch": "2.0.0-beta.38",
-    "anywhere": "^1.5.0",
+    "@commitlint/cli": "^16.3.0",
+    "@commitlint/config-conventional": "^16.2.4",
+    "@types/node": "^17.0.31",
+    "@types/webpack-env": "^1.16.4",
+    "bumpp": "^7.1.1",
+    "conventional-changelog-cli": "^2.2.2",
     "cpx2": "^4.2.0",
-    "cross-env": "^7.0.3",
-    "cz-git": "^1.2.3",
-    "eslint": "^8.13.0",
-    "eslint-config-vuepress": "^3.5.0",
-    "eslint-config-vuepress-typescript": "^2.5.0",
-    "husky": "^7.0.4",
-    "lerna": "^4.0.0",
+    "cz-git": "^1.3.1",
+    "eslint": "^8.15.0",
+    "eslint-config-vuepress": "^3.7.1",
+    "eslint-config-vuepress-typescript": "^2.7.1",
+    "husky": "^8.0.0",
     "lint-staged": "^12.3.7",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
-    "sort-package-json": "^1.55.0",
-    "typescript": "^4.5.5",
-    "vuepress": "2.0.0-beta.39"
+    "sort-package-json": "^1.57.0",
+    "tsconfig-vuepress": "^0.1.0",
+    "typescript": "^4.6.4",
+    "vite": "~2.9.9"
+  },
+  "engines": {
+    "node": ">=14",
+    "pnpm": ">=7"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search",
+        "eslint-plugin-import",
+        "eslint-plugin-n",
+        "eslint-plugin-promise",
+        "webpack"
+      ]
+    }
   }
 }

@@ -154,8 +154,8 @@ const pagerData = computed(() => {
   if (prev) prev.text = themeLocale.value.postPrev;
 
   return {
-    next: next,
-    prev: prev
+    next,
+    prev
   };
 });
 </script>

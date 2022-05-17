@@ -1,8 +1,10 @@
 import { htmlEscape } from "@vuepress/shared";
-import Katex from "katex";
-import type MarkdownIt from "markdown-it";
-import type StateBlock from "markdown-it/lib/rules_block/state_block";
-import type StateInline from "markdown-it/lib/rules_inline/state_inline";
+import * as Katex from "katex";
+import type { KatexOptions } from "katex";
+import type * as MarkdownIt from "markdown-it";
+import type * as StateBlock from "markdown-it/lib/rules_block/state_block";
+import type * as StateInline from "markdown-it/lib/rules_inline/state_inline";
+import type * as Token from "markdown-it/lib/token";
 
 const isValidDelim = (
   state: StateInline,
@@ -30,7 +32,7 @@ const isValidDelim = (
   }
 
   return {
-    canOpen: canOpen,
+    canOpen,
     canClose: canClost
   };
 };
@@ -168,11 +170,11 @@ const mathBlock = (
   return true;
 };
 
-export const katex = (
+const katex = (
   md: MarkdownIt,
-  options: Katex.KatexOptions = { throwOnError: false }
+  options: KatexOptions = { throwOnError: false }
 ): void => {
-  const katexOptions: Katex.KatexOptions = { ...options, output: "html" };
+  const katexOptions: KatexOptions = { ...options, output: "html" };
 
   // set KaTeX as the renderer for markdown-it-simplemath
   const katexInline = (tex: string): string => {
@@ -203,11 +205,11 @@ export const katex = (
     }
   };
 
-  const inlineRenderer = (tokens, idx): string => {
+  const inlineRenderer = (tokens: Token[], idx: number): string => {
     return katexInline(tokens[idx].content);
   };
 
-  const blockRenderer = (tokens, idx): string => {
+  const blockRenderer = (tokens: Token[], idx: number): string => {
     return katexBlock(tokens[idx].content) + "\n";
   };
 
@@ -220,3 +222,5 @@ export const katex = (
   md.renderer.rules.mathInline = inlineRenderer;
   md.renderer.rules.mathBlock = blockRenderer;
 };
+
+export default katex;

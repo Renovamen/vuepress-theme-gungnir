@@ -1,9 +1,9 @@
 import { htmlEscape } from "@vuepress/shared";
 import { hash } from "@vuepress/utils";
-import type MarkdownIt from "markdown-it";
-import type Token from "markdown-it/lib/token";
+import type * as MarkdownIt from "markdown-it";
+import type * as Token from "markdown-it/lib/token";
 
-export const getMermaid = (blockToken = "mermaidjs") => {
+const MarkdownItMermaid = (blockToken = "mermaidjs") => {
   const mermaid = (md: MarkdownIt): void => {
     const temp = md.renderer.rules.fence!.bind(md.renderer.rules);
     md.renderer.rules.fence = (tokens: Token[], index, options, env, slf) => {
@@ -23,3 +23,5 @@ export const getMermaid = (blockToken = "mermaidjs") => {
   };
   return mermaid;
 };
+
+export default MarkdownItMermaid;

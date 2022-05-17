@@ -1,4 +1,4 @@
-@import '../_variables';
+@import "../_variables";
 
 :root {
   scroll-behavior: smooth;
@@ -22,6 +22,10 @@ html.dark {
   color-scheme: dark;
 }
 
+html {
+  font-size: 16px;
+}
+
 html.fixed {
   overflow: hidden !important;
 }
@@ -30,14 +34,13 @@ body {
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--c-text);
 }
 
 a {
   color: var(--c-text-accent);
   text-decoration: none;
-
 }
 
 p a code {
@@ -186,7 +189,8 @@ td {
 }
 
 @media (max-width: $MQMobile) {
-  ul, ol {
+  ul,
+  ol {
     padding-left: 30px;
   }
 
@@ -201,7 +205,8 @@ td {
 }
 
 @media (max-width: $MQMobileNarrow) {
-  ul, ol {
+  ul,
+  ol {
     padding-left: 20px;
   }
 

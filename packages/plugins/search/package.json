@@ -23,18 +23,14 @@
     "clean": "rimraf lib *.tsbuildinfo",
     "copy": "cpx \"src/**/*.{d.ts,css,svg}\" lib"
   },
-  "dependencies": {
-    "@vuepress/client": "2.0.0-beta.38",
-    "@vuepress/core": "2.0.0-beta.38",
-    "@vuepress/shared": "2.0.0-beta.38",
-    "@vuepress/utils": "2.0.0-beta.38",
-    "chokidar": "^3.5.2",
-    "vue": "^3.2.24",
-    "vue-router": "^4.0.12"
-  },
   "devDependencies": {
-    "@types/webpack-env": "^1.16.3",
-    "vite": "^2.8.4"
+    "@vuepress/client": "2.0.0-beta.45",
+    "@vuepress/core": "2.0.0-beta.45",
+    "@vuepress/shared": "2.0.0-beta.45",
+    "@vuepress/utils": "2.0.0-beta.45",
+    "chokidar": "^3.5.3",
+    "vue": "^3.2.33",
+    "vue-router": "^4.0.15"
   },
   "publishConfig": {
     "access": "public"

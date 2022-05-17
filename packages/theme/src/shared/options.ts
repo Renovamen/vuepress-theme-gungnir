@@ -18,7 +18,7 @@ interface ImageItem {
   mask?: string;
 }
 
-interface GungnirGiscusOptions extends GiscusOptions {
+export interface GungnirGiscusOptions extends GiscusOptions {
   darkTheme?: string;
 }
 
@@ -33,6 +33,17 @@ export interface GungnirThemePagesOptions {
   links?: GungnirThemePageOptions;
 }
 
+export interface GungnirThemeContainerOptions {
+  info?: boolean;
+  tip?: boolean;
+  warning?: boolean;
+  danger?: boolean;
+  details?: boolean;
+  codeGroup?: boolean;
+  codeGroupItem?: boolean;
+  link?: boolean | { siteDomain?: boolean };
+}
+
 export interface GungnirThemePluginsOptions {
   /**
    * Enable @vuepress/plugin-active-header-links or not
@@ -42,16 +53,7 @@ export interface GungnirThemePluginsOptions {
   /**
    * Enable @vuepress/plugin-container or not
    */
-  container?: {
-    info?: boolean;
-    tip?: boolean;
-    warning?: boolean;
-    danger?: boolean;
-    details?: boolean;
-    codeGroup?: boolean;
-    codeGroupItem?: boolean;
-    link?: boolean | { siteDomain?: boolean };
-  };
+  container?: GungnirThemeContainerOptions;
 
   /**
    * Enable @vuepress/plugin-git or not

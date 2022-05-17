@@ -2,9 +2,9 @@
 docs/.vuepress/.temp/
 docs/.vuepress/.cache/
 docs/.vuepress/dist/
-/dist/
 
 # Dist files
+dist/
 lib/
 
 # Test temp files

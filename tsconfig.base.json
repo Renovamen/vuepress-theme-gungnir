@@ -1,20 +1,12 @@
 {
+  "extends": "tsconfig-vuepress/base.json",
   "compilerOptions": {
     "composite": true,
-    "esModuleInterop": true,
-    "declaration": true,
-    "declarationMap": true,
     "lib": ["DOM", "ES2020"],
-    "module": "CommonJS",
-    "moduleResolution": "node",
-    "newLine": "lf",
+    "moduleResolution": "Node",
     "noEmitOnError": true,
     "noImplicitAny": false,
-    "resolveJsonModule": true,
     "skipLibCheck": true,
-    "sourceMap": false,
-    "strict": true,
-    "strictNullChecks": true,
-    "target": "ES2018"
+    "target": "ES2020"
   }
 }

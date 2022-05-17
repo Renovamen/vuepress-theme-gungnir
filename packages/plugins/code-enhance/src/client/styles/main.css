@@ -2,7 +2,7 @@ html.fixed {
   overflow: hidden !important;
 }
 
-div[class*='language-'].fullscreen-mode {
+div[class*="language-"].fullscreen-mode {
   position: fixed;
   top: 0;
   left: 0;
@@ -13,8 +13,8 @@ div[class*='language-'].fullscreen-mode {
   margin: 0 !important;
   border-radius: 0;
   overflow-y: scroll;
-  animation: elastic .6s;
-  -webkit-animation: elastic .6s;
+  animation: elastic 0.6s;
+  -webkit-animation: elastic 0.6s;
 }
 
 @keyframes elastic {
@@ -25,7 +25,7 @@ div[class*='language-'].fullscreen-mode {
     transform: scale(1);
   }
   70% {
-    transform: scale(.98);
+    transform: scale(0.98);
   }
   100% {
     transform: scale(1);
