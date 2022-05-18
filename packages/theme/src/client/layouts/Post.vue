@@ -147,10 +147,10 @@ const { post } = useBlog();
 const pagerData = computed(() => {
   if (!post.value) return {};
 
-  const next = post.value.next;
+  const next = post.value.info.next;
   if (next) next.text = themeLocale.value.postNext;
 
-  const prev = post.value.prev;
+  const prev = post.value.info.prev;
   if (prev) prev.text = themeLocale.value.postPrev;
 
   return {

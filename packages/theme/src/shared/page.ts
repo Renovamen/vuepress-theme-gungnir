@@ -1,5 +1,4 @@
 import type { ReadingTime } from "@renovamen/vuepress-plugin-reading-time";
-import type { PageData } from "@vuepress/client";
 import type { GitPluginPageData } from "@vuepress/plugin-git";
 import type { NavLink, SidebarConfig } from "./nav";
 
@@ -62,15 +61,4 @@ export interface GungnirThemeLinksPageFrontmatter
   extends GungnirThemePageFrontmatter {
   title?: string;
   links: Array<LinkGroup>;
-}
-
-export interface PagerData {
-  title?: string;
-  link?: string;
-  text?: string;
-}
-
-export interface PostPageData extends PageData {
-  next?: PagerData | null;
-  prev?: PagerData | null;
 }

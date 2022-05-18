@@ -5,10 +5,10 @@
     <div v-for="(subItem, subIndex) in item.data" :key="subIndex" class="item">
       <RouterLink :to="subItem.path">
         <p class="title">
-          {{ subItem.frontmatter.title }}
+          {{ subItem.info.title }}
         </p>
-        <p v-if="subItem.frontmatter.subtitle" class="subtitle">
-          {{ subItem.frontmatter.subtitle }}
+        <p v-if="subItem.info.subtitle" class="subtitle">
+          {{ subItem.info.subtitle }}
         </p>
       </RouterLink>
       <hr />
@@ -17,9 +17,14 @@
 </template>
 
 <script setup lang="ts">
+import type { PropType } from "vue";
+import type { GungnirThemePostData } from "../../shared";
+
 defineProps({
   data: {
-    type: Array,
+    type: Array as PropType<
+      Array<{ year: string; data: GungnirThemePostData[] }>
+    >,
     default: () => []
   }
 });

@@ -16,28 +16,27 @@ import PageHeader from "@theme/PageHeader.vue";
 import TagList from "@theme/TagList.vue";
 import TagPostList from "@theme/TagPostList.vue";
 import { computed } from "vue";
-import { useRouter } from "vue-router";
+import { useRoute } from "vue-router";
 import type { GungnirThemePageOptions } from "../../shared";
-import { useBlog, useThemeLocaleData } from "../composables";
+import { useBlog, useTags, useThemeLocaleData } from "../composables";
 import { filterPostsByTag, getPostsByYear } from "../utils";
 
-const router = useRouter();
+const route = useRoute();
 const themeLocale = useThemeLocaleData();
+
 const { posts } = useBlog();
+const { tags } = useTags();
 
 const currentTag = computed(() => {
-  const tagName = decodeURI(
-    router.currentRoute.value.path.replace(/\/tags/g, "").replace(/\//g, "")
-  );
-  if (tagName === "") return themeLocale.value.showAllTagsText;
-  else return tagName;
+  const tagName = tags.value.find((tag) => tag.path === route.path);
+  return tagName ? tagName.name : (themeLocale.value.showAllTagsText as string);
 });
 
 const filteredPosts = computed(() => {
   const tag =
     currentTag.value === themeLocale.value.showAllTagsText
       ? ""
-      : (currentTag.value as string);
+      : currentTag.value;
   return getPostsByYear(filterPostsByTag(posts.value, tag));
 });
 

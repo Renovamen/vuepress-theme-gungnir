@@ -1,57 +1,68 @@
-import type { PageData } from "@vuepress/client";
-import { computed, ref } from "vue";
-import type { Ref } from "vue";
+import { computed, inject, provide } from "vue";
+import type { ComputedRef, InjectionKey, Ref } from "vue";
 import { useRouter } from "vue-router";
-import type { PostPageData } from "../../shared";
-import { sortPostsByDate } from "../utils";
-import { usePages, useThemeLocaleData } from ".";
+import type { BlogTypeData } from "vuepress-plugin-blog2";
+import { useBlogType } from "vuepress-plugin-blog2/lib/client";
+import type { GungnirThemePostInfo } from "../../shared";
+import { useThemeLocaleData } from ".";
 
-export async function fetchPosts(): Promise<PageData[]> {
-  const pages = await usePages();
-  return pages.filter(
-    (page) => page.frontmatter.layout === "Post" && !page.frontmatter.hide
-  );
-}
+export type BlogRef = ComputedRef<BlogTypeData<GungnirThemePostInfo>>;
 
-const preparePosts = (posts: PageData[]): PostPageData[] => {
-  const sortedPosts = sortPostsByDate(posts);
+export const blogsSymbol: InjectionKey<BlogRef> = Symbol.for("blogs");
 
-  return sortedPosts.map((post, index) => {
-    const postWithPager = post as PostPageData;
+export const useBlogPages = (): BlogRef => {
+  const blogs = inject(blogsSymbol);
 
-    postWithPager.next =
-      index > 0
-        ? {
-            title: sortedPosts[index - 1].title,
-            link: sortedPosts[index - 1].path
-          }
-        : null;
+  if (!blogs) {
+    throw new Error("useBlogPages() is called without provider.");
+  }
 
-    postWithPager.prev =
-      index < sortedPosts.length - 1
-        ? {
-            title: sortedPosts[index + 1].title,
-            link: sortedPosts[index + 1].path
-          }
-        : null;
+  return blogs;
+};
 
-    return postWithPager;
-  });
+export const setupBlogPages = (): void => {
+  const blogs = useBlogType<GungnirThemePostInfo>("post");
+
+  provide(blogsSymbol, blogs);
 };
 
 export const useBlog = (pageIndex?: Ref<number>) => {
-  const posts = ref<PostPageData[]>([]);
   const themeLocale = useThemeLocaleData();
   const router = useRouter();
+  const postPages = useBlogPages();
 
-  fetchPosts().then((allPosts) => (posts.value = preparePosts(allPosts)));
+  const posts = computed(() => {
+    const pages = postPages.value.items;
 
-  const postNumPerPage = computed(
-    () => themeLocale.value.postNumPerPage as number
+    return pages.map((page, index) => {
+      const post = page;
+
+      post.info.next =
+        index > 0
+          ? {
+              title: pages[index - 1].info.title,
+              link: pages[index - 1].path
+            }
+          : null;
+
+      post.info.prev =
+        index < pages.length - 1
+          ? {
+              title: pages[index + 1].info.title,
+              link: pages[index + 1].path
+            }
+          : null;
+
+      return post;
+    });
+  });
+
+  const blogNumPerPage = computed(
+    () => themeLocale.value.blogNumPerPage as number
   );
 
   const maxPageIndex = computed(() =>
-    Math.max(1, Math.ceil(posts.value.length / postNumPerPage.value))
+    Math.max(1, Math.ceil(posts.value.length / blogNumPerPage.value))
   );
 
   const pageValidIndex = computed(() => {
@@ -73,14 +84,14 @@ export const useBlog = (pageIndex?: Ref<number>) => {
     if (posts.value.length === 0 || pageValidIndex.value === -1)
       return posts.value;
 
-    const start = (pageValidIndex.value - 1) * postNumPerPage.value;
+    const start = (pageValidIndex.value - 1) * blogNumPerPage.value;
     return posts.value.slice(
       start,
-      Math.min(start + postNumPerPage.value, posts.value.length)
+      Math.min(start + blogNumPerPage.value, posts.value.length)
     );
   });
 
-  const pagerLink = computed(() => {
+  const postListPager = computed(() => {
     if (!pageIndex) return {};
 
     const next =
@@ -106,6 +117,6 @@ export const useBlog = (pageIndex?: Ref<number>) => {
     postIndex,
     post,
     slicedPosts,
-    pagerLink
+    postListPager
   };
 };

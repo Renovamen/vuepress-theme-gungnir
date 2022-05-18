@@ -16,6 +16,7 @@ import type {
   GungnirThemePluginsOptions
 } from "../../shared";
 import { getActiveHeaderLinksPlugin } from "./activeHeaderLinks";
+import { getBlogPlugin } from "./blog";
 import { getContainerPlugin } from "./container";
 import { getGiscusPlugin } from "./giscus";
 import { getGitPlugin } from "./git";
@@ -72,7 +73,9 @@ export const getPlugins = (
     // @vuepress/plugin-pwa
     getPwaPlugin(plugins.pwa),
     // @vuepress/plugin-pwa-popup
-    getPwaPopupPlugin(localeOptions, plugins.pwa)
+    getPwaPopupPlugin(localeOptions, plugins.pwa),
+    // vuepress-plugin-blog2
+    getBlogPlugin(localeOptions, plugins.blog)
   ];
 
   const containerConfig = getContainerPlugin(localeOptions, plugins.container);

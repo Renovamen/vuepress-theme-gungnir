@@ -33,11 +33,11 @@
 
       <div class="article-icons">
         <div
-          v-if="frontmatter.author || themeLocale.personalInfo.name"
+          v-if="frontmatter.author || personalInfo.name"
           class="article-icon"
         >
           <VIcon name="fa-regular-user" scale="0.9" />
-          <span>{{ frontmatter.author || themeLocale.personalInfo.name }}</span>
+          <span>{{ frontmatter.author || personalInfo.name }}</span>
         </div>
 
         <div v-if="frontmatter.date" class="article-icon">
@@ -45,9 +45,9 @@
           <span>{{ formatDateForArticle(frontmatter.date) }}</span>
         </div>
 
-        <div v-if="pageData.readingTime" class="article-icon">
+        <div v-if="page.readingTime" class="article-icon">
           <VIcon name="ri-timer-line" scale="0.9" />
-          <span>{{ pageData.readingTime.minutes }} min</span>
+          <span>{{ page.readingTime.minutes }} min</span>
         </div>
       </div>
     </div>
@@ -70,10 +70,14 @@
 </template>
 
 <script setup lang="ts">
-import { pageData, usePageFrontmatter, withBase } from "@vuepress/client";
+import { usePageData, usePageFrontmatter, withBase } from "@vuepress/client";
 import { useRouter } from "vue-router";
-import type { GungnirThemePostFrontmatter } from "../../shared";
-import { useThemeLocaleData } from "../composables";
+import type {
+  GungnirThemePageData,
+  GungnirThemePostFrontmatter,
+  PersonalConfig
+} from "../../shared";
+import { useTagMap, useThemeLocaleData } from "../composables";
 import { formatDateForArticle } from "../utils/resolveTime";
 
 defineProps({
@@ -86,21 +90,27 @@ defineProps({
 const router = useRouter();
 const themeLocale = useThemeLocaleData();
 const frontmatter = usePageFrontmatter<GungnirThemePostFrontmatter>();
+const page = usePageData<GungnirThemePageData>();
+const tagMap = useTagMap();
 
 const goTagPage = (tag: string) => {
-  if (router.currentRoute.value.path !== `/tags/${tag}/`) {
-    router.push({ path: `/tags/${tag}/` });
+  if (router.currentRoute.value.path !== tagMap.value.map[tag].path) {
+    router.push({ path: tagMap.value.map[tag].path });
   }
 };
 
 // post header style
 const headerStyle = () => {
-  const style = {} as any;
-  if (frontmatter.value.layout === "Post") {
-    if (frontmatter.value.useHeaderImage && frontmatter.value.headerImage) {
-      style.backgroundImage = `url(${withBase(frontmatter.value.headerImage)})`;
-    }
+  const style = {} as { backgroundImage: string };
+  if (
+    frontmatter.value.layout === "Post" &&
+    frontmatter.value.useHeaderImage &&
+    frontmatter.value.headerImage
+  ) {
+    style.backgroundImage = `url(${withBase(frontmatter.value.headerImage)})`;
   }
   return style;
 };
+
+const personalInfo = themeLocale.value.personalInfo as PersonalConfig;
 </script>

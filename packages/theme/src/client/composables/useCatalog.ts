@@ -1,15 +1,17 @@
-import { pageData } from "@vuepress/client";
+import { usePageData } from "@vuepress/client";
 import { computed } from "vue";
+import type { GungnirThemePageData } from "../../shared";
 import { useThemeLocaleData } from ".";
 
 export const useCatalog = () => {
   const themeLocale = useThemeLocaleData();
+  const page = usePageData<GungnirThemePageData>();
 
   return computed(
     () =>
-      pageData.value.frontmatter.layout === "Post" &&
-      pageData.value.frontmatter.catalog !== false &&
-      (themeLocale.value.catalog || pageData.value.frontmatter.catalog) &&
-      pageData.value.headers.length > 0
+      page.value.frontmatter.layout === "Post" &&
+      page.value.frontmatter.catalog !== false &&
+      (themeLocale.value.catalog || page.value.frontmatter.catalog) &&
+      page.value.headers.length > 0
   );
 };

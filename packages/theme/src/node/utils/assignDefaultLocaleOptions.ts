@@ -18,7 +18,7 @@ export const DEFAULT_LOCALE_OPTIONS: GungnirThemeLocaleOptions = {
   pages: null,
   catalog: true,
 
-  postNumPerPage: 10,
+  blogNumPerPage: 10,
 
   // search
   searchIcon: "ri-search-2-line",

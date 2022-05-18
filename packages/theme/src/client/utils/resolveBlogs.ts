@@ -1,37 +1,37 @@
-import type { PostPageData } from "../../shared";
-import { compareDate, dateFormat } from ".";
+import type { GungnirThemePostData } from "../../shared";
+import { dateFormat } from ".";
 
-export const sortPostsByDate = (posts: PostPageData[]): PostPageData[] => {
-  return posts.sort((prev: PostPageData, next: PostPageData) => {
-    return compareDate(prev, next);
-  });
-};
-
-export const getPostsByYear = (posts: PostPageData[]) => {
-  const formatPages = {};
-  const formatPagesArr = [] as any[];
+export const getPostsByYear = (posts: GungnirThemePostData[]) => {
+  const formatPages = {} as Record<string, GungnirThemePostData[]>;
+  const formatPagesArr = [] as Array<{
+    year: string;
+    data: GungnirThemePostData[];
+  }>;
 
   for (const post of posts) {
-    const pageDateYear = dateFormat(post.frontmatter.date as string, "year");
+    if (!post.info.date) continue;
+    const pageDateYear = dateFormat(post.info.date, "year");
     if (formatPages[pageDateYear]) formatPages[pageDateYear].push(post);
     else formatPages[pageDateYear] = [post];
   }
 
   for (const key in formatPages) {
-    const data = formatPages[key];
-    sortPostsByDate(data);
     formatPagesArr.unshift({
       year: key,
-      data
+      data: formatPages[key]
     });
   }
 
   return formatPagesArr;
 };
 
-export const filterPostsByTag = (posts: PostPageData[], tag: string) => {
+export const filterPostsByTag = (
+  posts: GungnirThemePostData[],
+  tag: string
+) => {
   if (tag === "") return posts;
   return posts.filter((item, index) => {
-    return (item.frontmatter.tags as string[]).includes(tag);
+    if (!item.info.tags) return false;
+    return item.info.tags.includes(tag);
   });
 };

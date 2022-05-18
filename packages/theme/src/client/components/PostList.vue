@@ -23,10 +23,10 @@ const pageIndex = computed(() => {
   return Number(index);
 });
 
-const { slicedPosts, pagerLink } = useBlog(pageIndex);
+const { slicedPosts, postListPager } = useBlog(pageIndex);
 
 const pagerData = computed(() => {
-  const links = pagerLink.value;
+  const links = postListPager.value;
 
   const next =
     links && links.next

@@ -1,12 +1,34 @@
-import { computed } from "vue";
-import type { PostPageData } from "../../shared";
+import { computed, inject, provide } from "vue";
+import type { ComputedRef, InjectionKey } from "vue";
+import type { BlogCategoryData } from "vuepress-plugin-blog2";
+import { useBlogCategory } from "vuepress-plugin-blog2/lib/client";
+import type { GungnirThemePostData, GungnirThemePostInfo } from "../../shared";
 import { colorIncrement, toHex, toRGB } from "../utils";
-import { useBlog } from ".";
 
-export interface Tags {
+export type TagMapRef = ComputedRef<BlogCategoryData<GungnirThemePostInfo>>;
+
+export const tagMapSymbol: InjectionKey<TagMapRef> = Symbol.for("blogTags");
+
+export const useTagMap = (): TagMapRef => {
+  const tagMap = inject(tagMapSymbol);
+
+  if (!tagMap) {
+    throw new Error("useTagMap() is called without provider.");
+  }
+
+  return tagMap;
+};
+
+export const setupTagMap = (): void => {
+  const tagMap = useBlogCategory<GungnirThemePostInfo>("tag");
+
+  provide(tagMapSymbol, tagMap);
+};
+
+export interface TagType {
   name: string;
   path: string;
-  pages: Array<PostPageData>;
+  pages: Array<GungnirThemePostData>;
   tagColor?: string;
 }
 
@@ -21,29 +43,22 @@ const tagColor = (start: string, increment: number[], weighting: number) => {
 };
 
 export const useTags = (start = "#a5a5e4", end = "#4388c4") => {
-  const { posts } = useBlog();
+  const tagMap = useTagMap();
 
   const tags = computed(() => {
-    const tagdict = {};
-    for (const post of posts.value) {
-      const frontmatter = post.frontmatter as any;
-      for (const tag of frontmatter.tags) {
-        if (tagdict[tag] === undefined) tagdict[tag] = [];
-        tagdict[tag].push(post);
-      }
-    }
+    const tags = [] as Array<TagType>;
 
-    const tags = [] as Array<Tags>;
+    for (const tag in tagMap.value.map) {
+      const info = {} as TagType;
 
-    for (const tag in tagdict) {
-      const info = {} as Tags;
-      info.pages = tagdict[tag];
       info.name = tag;
-      info.path = `/tags/${tag}`;
+      info.pages = tagMap.value.map[tag].items;
+      info.path = tagMap.value.map[tag].path;
+
       tags.push(info);
     }
 
-    tags.sort((prev, next) => {
+    tags.sort((prev: TagType, next: TagType) => {
       return next.pages.length - prev.pages.length;
     });
 

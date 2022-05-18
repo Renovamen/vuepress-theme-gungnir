@@ -1,5 +1,3 @@
-import type { PageData } from "@vuepress/client";
-
 export function renderTime(date: string): string {
   const dateee = new Date(date).toJSON();
   return new Date(+new Date(dateee) + 8 * 3600 * 1000)
@@ -25,7 +23,7 @@ export function formatDate(time: string, fmt = "yyyy-MM-dd hh:mm:ss"): string {
   if (/(y+)/.test(fmt)) {
     fmt = fmt
       .replace(RegExp.$1, date.getFullYear() + "")
-      .substr(4 - RegExp.$1.length);
+      .substring(4 - RegExp.$1.length);
   }
 
   const o = {
@@ -45,13 +43,13 @@ export function formatDate(time: string, fmt = "yyyy-MM-dd hh:mm:ss"): string {
   return fmt;
 }
 
-export function formatDateForArticle(value: string): string {
+export function formatDateForArticle(value?: string): string {
   if (!value) return "";
   value = value.replace("T", " ").slice(0, value.lastIndexOf("."));
 
-  const h = Number(value.substr(11, 2)); // hours
-  const m = Number(value.substr(14, 2)); // minutes
-  const s = Number(value.substr(17, 2)); // seconds
+  const h = Number(value.substring(11, 13)); // hours
+  const m = Number(value.substring(14, 16)); // minutes
+  const s = Number(value.substring(17, 19)); // seconds
 
   if (h > 0 || m > 0 || s > 0) {
     // if user set hours, minutes or seconds manully
@@ -59,12 +57,4 @@ export function formatDateForArticle(value: string): string {
   } else {
     return formatDate(value, "yyyy-MM-dd");
   }
-}
-
-export function compareDate(a: PageData, b: PageData): number {
-  return getTimeNum(b) - getTimeNum(a);
-}
-
-function getTimeNum(page: PageData): number {
-  return new Date(page.frontmatter.date as string).getTime();
 }

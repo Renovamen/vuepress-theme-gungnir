@@ -58,6 +58,7 @@
     "sass": "^1.51.0",
     "vue": "^3.2.33",
     "vue-router": "^4.0.15",
+    "vuepress-plugin-blog2": "2.0.0-beta.62",
     "vuepress-plugin-chart": "workspace:*",
     "vuepress-plugin-code-enhance": "workspace:*",
     "vuepress-plugin-giscus": "workspace:*"

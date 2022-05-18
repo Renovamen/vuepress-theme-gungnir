@@ -22,7 +22,7 @@
           <span class="contributor" :title="`email: ${contributor.email}`">
             {{ contributor.name }}
           </span>
-          <template v-if="index !== contributors.length - 1">, </template>
+          <template v-if="index !== contributors!.length - 1">, </template>
         </template>
       </span>
     </div>
@@ -31,11 +31,7 @@
 
 <script setup lang="ts">
 import AutoLink from "@theme/AutoLink.vue";
-import {
-  usePageData,
-  usePageFrontmatter,
-  useSiteLocaleData
-} from "@vuepress/client";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { computed } from "vue";
 import type { ComputedRef } from "vue";
 import type {

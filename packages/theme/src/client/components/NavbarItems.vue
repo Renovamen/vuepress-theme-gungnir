@@ -26,7 +26,7 @@ import {
   useRouteLocale,
   useSiteLocaleData
 } from "@vuepress/client";
-import { isLinkHttp, isString } from "@vuepress/shared";
+import { isString } from "@vuepress/shared";
 import { computed } from "vue";
 import type { ComputedRef } from "vue";
 import { useRouter } from "vue-router";

@@ -12,7 +12,7 @@
       <div class="hero-content" :style="{ opacity: headerOpacity }">
         <img
           class="hero-avatar hide-on-mobile"
-          :src="$withBase(personalInfo.avatar)"
+          :src="withBase(personalInfo.avatar)"
           alt="hero"
           @mouseover="fetchHitokoto"
         />
@@ -55,6 +55,7 @@ import PostList from "@theme/PostList.vue";
 import SNS from "@theme/SNS.vue";
 import { withBase } from "@vuepress/client";
 import { computed, onMounted, ref } from "vue";
+import type { PersonalConfig } from "../../shared";
 import { useThemeLocaleData } from "../composables";
 
 const themeLocale = useThemeLocaleData();
@@ -120,5 +121,5 @@ const bgImageMask = computed(() => {
 
 // -------- Other configs --------
 
-const personalInfo = themeLocale.value.personalInfo;
+const personalInfo = themeLocale.value.personalInfo as PersonalConfig;
 </script>

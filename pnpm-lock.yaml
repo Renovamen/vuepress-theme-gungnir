@@ -248,6 +248,7 @@ importers:
       sass: ^1.51.0
       vue: ^3.2.33
       vue-router: ^4.0.15
+      vuepress-plugin-blog2: 2.0.0-beta.62
       vuepress-plugin-chart: workspace:*
       vuepress-plugin-code-enhance: workspace:*
       vuepress-plugin-giscus: workspace:*
@@ -280,6 +281,7 @@ importers:
       sass: 1.51.0
       vue: 3.2.33
       vue-router: 4.0.15_vue@3.2.33
+      vuepress-plugin-blog2: 2.0.0-beta.62
       vuepress-plugin-chart: link:../plugins/chart
       vuepress-plugin-code-enhance: link:../plugins/code-enhance
       vuepress-plugin-giscus: link:../plugins/giscus
@@ -1729,6 +1731,13 @@ packages:
       '@types/react': '>= 16.8.0 < 18.0.0'
       react: '>= 16.8.0 < 18.0.0'
       react-dom: '>= 16.8.0 < 18.0.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
     dependencies:
       '@algolia/autocomplete-core': 1.5.2
       '@algolia/autocomplete-preset-algolia': 1.5.2_algoliasearch@4.13.0
@@ -1816,6 +1825,24 @@ packages:
 
   /@leichtgewicht/ip-codec/2.0.4:
     resolution: {integrity: sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==}
+    dev: false
+
+  /@mr-hope/vuepress-shared/2.0.0-beta.62:
+    resolution: {integrity: sha512-N9O8OLECG8mFq0+S4SfrTqZ+u4xjf+RfQC49co6xcbaPeXXt9n3Uo/7GzRRIga1zotPPoIRBGE1EPI5YgByKPg==}
+    dependencies:
+      '@vuepress/client': 2.0.0-beta.45
+      '@vuepress/plugin-git': 2.0.0-beta.45
+      '@vuepress/plugin-theme-data': 2.0.0-beta.45
+      '@vuepress/shared': 2.0.0-beta.45
+      '@vuepress/utils': 2.0.0-beta.45
+      chalk: 4.1.2
+      dayjs: 1.11.2
+      execa: 5.1.1
+      ora: 5.4.1
+      vue: 3.2.33
+      vue-router: 4.0.15_vue@3.2.33
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /@nodelib/fs.scandir/2.1.5:
@@ -4459,6 +4486,10 @@ packages:
   /dateformat/3.0.3:
     resolution: {integrity: sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==}
     dev: true
+
+  /dayjs/1.11.2:
+    resolution: {integrity: sha512-F4LXf1OeU9hrSYRPTTj/6FbO4HTjPKXvEIC1P2kcnFurViINCVk3ZV0xAS3XVx9MkMsXbbqlK6hjseaYbgKEHw==}
+    dev: false
 
   /debounce/1.2.1:
     resolution: {integrity: sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==}
@@ -9195,6 +9226,20 @@ packages:
       '@vue/runtime-dom': 3.2.33
       '@vue/server-renderer': 3.2.33_vue@3.2.33
       '@vue/shared': 3.2.33
+
+  /vuepress-plugin-blog2/2.0.0-beta.62:
+    resolution: {integrity: sha512-/ZJJby8JeqtIp0aHk5K2yuPjaGmWtp4PqGgWPxQxsuiVgPF8s+9CJfAio3kyUjU2i8t4Bgl0ghkMRBpGFC32IA==}
+    dependencies:
+      '@mr-hope/vuepress-shared': 2.0.0-beta.62
+      '@vuepress/client': 2.0.0-beta.45
+      '@vuepress/core': 2.0.0-beta.45
+      '@vuepress/shared': 2.0.0-beta.45
+      chokidar: 3.5.3
+      vue: 3.2.33
+      vue-router: 4.0.15_vue@3.2.33
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
 
   /vuepress-vite/2.0.0-beta.45_mmbfvomqry7gbkain4a2blfniu:
     resolution: {integrity: sha512-1yARk4FLwaQIAqp3trRb4rhAT5blkBfVUaNtTiYwC3/TwUyFWhBBaIP8sugxUMXhAalvkpMEHFxaLm4BkLfWhw==}
