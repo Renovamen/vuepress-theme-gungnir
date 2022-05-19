@@ -57,7 +57,8 @@ export const getBlogPlugin = (
 
     filter:
       blogOptions.filter ||
-      (({ frontmatter }): boolean => frontmatter.layout === "Post"),
+      (({ frontmatter }): boolean =>
+        frontmatter.layout === "Post" && !frontmatter.hide),
 
     getInfo: ({
       excerpt,

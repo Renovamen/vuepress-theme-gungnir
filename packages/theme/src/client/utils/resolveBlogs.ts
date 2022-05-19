@@ -1,5 +1,5 @@
 import type { GungnirThemePostData } from "../../shared";
-import { dateFormat } from ".";
+import { resolveDate } from ".";
 
 export const getPostsByYear = (posts: GungnirThemePostData[]) => {
   const formatPages = {} as Record<string, GungnirThemePostData[]>;
@@ -10,7 +10,7 @@ export const getPostsByYear = (posts: GungnirThemePostData[]) => {
 
   for (const post of posts) {
     if (!post.info.date) continue;
-    const pageDateYear = dateFormat(post.info.date, "year");
+    const pageDateYear = resolveDate(post.info.date, "year");
     if (formatPages[pageDateYear]) formatPages[pageDateYear].push(post);
     else formatPages[pageDateYear] = [post];
   }
@@ -25,13 +25,9 @@ export const getPostsByYear = (posts: GungnirThemePostData[]) => {
   return formatPagesArr;
 };
 
-export const filterPostsByTag = (
-  posts: GungnirThemePostData[],
-  tag: string
-) => {
-  if (tag === "") return posts;
-  return posts.filter((item, index) => {
-    if (!item.info.tags) return false;
-    return item.info.tags.includes(tag);
-  });
-};
+export const filterPostsByTag = (posts: GungnirThemePostData[], tag: string) =>
+  tag === ""
+    ? posts
+    : posts.filter((item) =>
+        item.info.tags ? item.info.tags.includes(tag) : false
+      );

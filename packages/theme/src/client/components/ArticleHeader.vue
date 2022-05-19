@@ -42,7 +42,7 @@
 
         <div v-if="frontmatter.date" class="article-icon">
           <VIcon name="fa-regular-calendar" scale="0.9" />
-          <span>{{ formatDateForArticle(frontmatter.date) }}</span>
+          <span>{{ formateDateString(frontmatter.date) }}</span>
         </div>
 
         <div v-if="page.readingTime" class="article-icon">
@@ -78,7 +78,7 @@ import type {
   PersonalConfig
 } from "../../shared";
 import { useTagMap, useThemeLocaleData } from "../composables";
-import { formatDateForArticle } from "../utils/resolveTime";
+import { formateDateString } from "../utils/resolveTime";
 
 defineProps({
   currentTag: {

@@ -5,7 +5,7 @@
     </div>
     <div class="else">
       <p v-if="item.info.date" class="post-item__date">
-        {{ formatDateForArticle(item.info.date) }}
+        {{ formateDateString(item.info.date) }}
       </p>
       <RouterLink :to="item.path" class="post-item__title">
         <h2>
@@ -27,7 +27,7 @@
 import { withBase } from "@vuepress/client";
 import type { PropType } from "vue";
 import type { GungnirThemePostData } from "../../shared";
-import { formatDateForArticle } from "../utils";
+import { formateDateString } from "../utils";
 
 defineProps({
   item: {
