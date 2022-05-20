@@ -1,3 +1,17 @@
+# [2.0.0-alpha.23](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.22...v2.0.0-alpha.23) (2022-05-20)
+
+
+### Bug Fixes
+
+* **plugin-chart:** replace eval() with safer Function() ([ffd7913](https://github.com/Renovamen/vuepress-theme-gungnir/commit/ffd7913335971bc033e7234552065a39d72546c2))
+
+
+### Features
+
+* improve SEO (render blog list on server side) [#62](https://github.com/Renovamen/vuepress-theme-gungnir/issues/62) [#28](https://github.com/Renovamen/vuepress-theme-gungnir/issues/28) ([419b2c8](https://github.com/Renovamen/vuepress-theme-gungnir/commit/419b2c82169d2337283055ed27db2bda13710834))
+
+
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
