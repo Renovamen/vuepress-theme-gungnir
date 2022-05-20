@@ -1,6 +1,59 @@
 # [2.0.0-alpha.23](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.22...v2.0.0-alpha.23) (2022-05-20)
 
 
+### IMPORTANT
+
+To be compatible with VuePress >= 2.0.0-beta.40, this release contains important breaking changes, see [here](https://github.com/vuepress/vuepress-next/blob/main/CHANGELOG.md#200-beta40-2022-04-25) for details.
+
+You could migrate your config file as follow, and check our latest docs for more details:
+
+```diff
+- module.exports = {
+-   theme: "gungnir",
+-   themeConfig: {
+-     // your theme configs
+-   }
+- }
+
++ const { gungnirTheme } = require("vuepress-theme-gungnir");
++
++ module.exports = {
++   theme: gungnirTheme({
++     // you theme configs
++   })
++ }
+```
+
+```diff
+- module.exports = {
+-   plugins: [
+-     [
+-       "vuepress-plugin-giscus",
+-       {
+-         repo: "[repo]",
+-         repoId: "[repo id]",
+-         category: "[category name]",
+-         categoryId: "[category id]"
+-       }
+-     ]
+-   ]
+- }
+
++ const { giscusPlugin } = require("vuepress-plugin-giscus");
++
++ module.exports = {
++   plugins: [
++     giscusPlugin({
++         repo: "[repo]",
++         repoId: "[repo id]",
++         category: "[category name]",
++         categoryId: "[category id]"
++     })
++   ]
++ }
+```
+
+
 ### Bug Fixes
 
 * **plugin-chart:** replace eval() with safer Function() ([ffd7913](https://github.com/Renovamen/vuepress-theme-gungnir/commit/ffd7913335971bc033e7234552065a39d72546c2))
@@ -12,10 +65,7 @@
 
 
 
-# Change Log
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 # [2.0.0-alpha.22](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.21...v2.0.0-alpha.22) (2022-05-01)
 

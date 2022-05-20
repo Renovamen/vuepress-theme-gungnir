@@ -1,1 +1,1 @@
-export { version } from "../../../packages/theme/package.json";
+export const { version } = require("vuepress-theme-gungnir/package.json");
