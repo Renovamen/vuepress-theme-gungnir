@@ -22,35 +22,56 @@ Plugin `@renovamen/vuepress-plugin-katex@next` for adding [KaTeX](https://katex.
 
 ## Install
 
+<CodeGroup>
+<CodeGroupItem title="PNPM" active>
+
+```bash
+pnpm install @renovamen/vuepress-plugin-katex@next
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="YARN" active>
+
 ```bash
 yarn add @renovamen/vuepress-plugin-katex@next
-# or
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="NPM">
+
+```bash
 npm install @renovamen/vuepress-plugin-katex@next
 ```
+
+</CodeGroupItem>
+</CodeGroup>
+
 
 Then add it to your `.vuepress/config.js`:
 
 ```js
+const { katexPlugin } = require("@renovamen/vuepress-plugin-katex");
+
 module.exports = {
   plugins: [
-    [
-      "@renovamen/vuepress-plugin-katex"
-    ]
+    katexPlugin()
   ]
 }
 ```
 
-You can alsp enable it with some [KaTeX options](https://katex.org/docs/options.html):
+You can also enable it with some [KaTeX options](https://katex.org/docs/options.html):
 
 ```js
+const { katexPlugin } = require("@renovamen/vuepress-plugin-katex");
+
 module.exports = {
   plugins: [
-    [
-      "@renovamen/vuepress-plugin-katex", {
-        "throwOnError": false,
-        "errorColor": "#cc0000"
-      }
-    ]
+    katexPlugin({
+      "throwOnError": false,
+      "errorColor": "#cc0000"
+    })
   ]
 }
 ```

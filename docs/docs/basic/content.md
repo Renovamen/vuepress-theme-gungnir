@@ -142,14 +142,18 @@ My blog 🧐, powered by VuePress 2, themed by Gungnir.
 You can choose to hide the site domain:
 
 ```js
-themeConfig: {
-  themePlugins: {
-    container: {
-      link: {
-        siteDomain: false  // optional, default: true
+// .vuepress/config.js
+
+module.exports = {
+  theme: gungnirTheme({
+    themePlugins: {
+      container: {
+        link: {
+          siteDomain: false  // optional, default: true
+        }
       }
     }
-  }
+  })
 }
 ```
 
@@ -158,12 +162,16 @@ themeConfig: {
 or disable this container:
 
 ```js
-themeConfig: {
-  themePlugins: {
-    container: {
-      link: false  // optional, default: true
+// .vuepress/config.js
+
+module.exports = {
+  theme: gungnirTheme({
+    themePlugins: {
+      container: {
+        link: false  // optional, default: true
+      }
     }
-  }
+  })
 }
 ```
 

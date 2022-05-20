@@ -20,11 +20,31 @@ date: 2021-12-27
 
 ## 安装
 
+<CodeGroup>
+<CodeGroupItem title="PNPM" active>
+
+```bash
+pnpm install @renovamen/vuepress-plugin-baidu-tongji@next
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="YARN" active>
+
 ```bash
 yarn add @renovamen/vuepress-plugin-baidu-tongji@next
-# or
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="NPM">
+
+```bash
 npm install @renovamen/vuepress-plugin-baidu-tongji@next
 ```
+
+</CodeGroupItem>
+</CodeGroup>
 
 
 ## 配置
@@ -32,13 +52,13 @@ npm install @renovamen/vuepress-plugin-baidu-tongji@next
 需要去[百度统计](https://tongji.baidu.com)官网上申请一个跟踪代码，然后在 `.vuepress/config.js` 中配置：
 
 ```js
+const { baiduTongjiPlugin } = require("@renovamen/vuepress-plugin-baidu-tongji");
+
 module.exports = {
   plugins: [
-    [
-      "@renovamen/vuepress-plugin-baidu-tongji", {
-        "id": "your-tracking-code"
-      }
-    ]
+    baiduTongjiPlugin({
+      "id": "your-tracking-code"
+    })
   ]
 }
 ```

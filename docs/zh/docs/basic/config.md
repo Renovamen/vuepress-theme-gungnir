@@ -35,13 +35,13 @@ module.exports = {
     ...
   */
 
-  themeConfig: {
+  theme: gungnirTheme({
     /*
       其他主题配置
       ...
     */
     navbarTitle: "Gungnir"  // 可选，默认："$ cd /home/"
-  }
+  })
 }
 ```
 
@@ -51,7 +51,7 @@ module.exports = {
 // .vuepress/config.js
 
 module.exports = {
-  themeConfig: {
+  theme: gungnirTheme({
     locales: {
       "/": {
         navbarTitle: "Gungnir"
@@ -60,7 +60,7 @@ module.exports = {
         navbarTitle: "冈格尼尔"
       }
     }
-  }
+  })
 }
 ```
 
@@ -71,7 +71,7 @@ module.exports = {
 // .vuepress/config.js
 
 module.exports = {
-  themeConfig: {
+  theme: gungnirTheme({
     personalInfo: {
       // 必须：名称，将在首页、移动端侧边栏和文章作者信息处显示
       name: "Cool Dragon",
@@ -100,6 +100,7 @@ module.exports = {
         // ...
       }
     }
+  })
 }
 ```
 
@@ -109,7 +110,7 @@ module.exports = {
 // .vuepress/config.js
 
 module.exports = {
-  themeConfig: {
+  theme: gungnirTheme({
     homeHeaderImages: [
       // 图 1
       {
@@ -123,8 +124,8 @@ module.exports = {
       }
       ...
     ],
-    postNumPerPage: 20  // 可选：每页的博客数量，默认：10
-  }
+    blogNumPerPage: 20  // 可选：每页的博客数量，默认：10
+  })
 }
 ```
 
@@ -139,7 +140,7 @@ module.exports = {
 // .vuepress/config.js
 
 module.exports = {
-  themeConfig: {
+  theme: gungnirTheme({
     pages: {
       // 标签页配置
       tags: {
@@ -165,7 +166,7 @@ module.exports = {
         }
       }
     }
-  }
+  })
 }
 ```
 
@@ -182,14 +183,14 @@ module.exports = {
 // .vuepress/config.js
 
 module.exports = {
-  themeConfig: {
+  theme: gungnirTheme({
     footer: `
       &copy; <a href="https://github.com/Renovamen" target="_blank">Renovamen</a> 2018-2022
       <br>
       Powered by <a href="https://v2.vuepress.vuejs.org" target="_blank">VuePress</a> &
       <a href="https://github.com/Renovamen/vuepress-theme-gungnir" target="_blank">Gungnir</a>
     `
-  }
+  })
 }
 ```
 
@@ -202,8 +203,8 @@ module.exports = {
 // .vuepress/config.js
 
 module.exports = {
-  themeConfig: {
+  theme: gungnirTheme({
     catalog: false  // 可选，默认：true
-  }
+  })
 }
 ```

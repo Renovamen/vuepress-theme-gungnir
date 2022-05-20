@@ -23,20 +23,41 @@ date: 2021-12-12
 
 ## 安装
 
+<CodeGroup>
+<CodeGroupItem title="PNPM" active>
+
+```bash
+pnpm install @renovamen/vuepress-plugin-reading-time@next
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="YARN" active>
+
 ```bash
 yarn add @renovamen/vuepress-plugin-reading-time@next
-# or
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="NPM">
+
+```bash
 npm install @renovamen/vuepress-plugin-reading-time@next
 ```
+
+</CodeGroupItem>
+</CodeGroup>
+
 
 然后在 `.vuepress/config.js` 中引入这个插件：
 
 ```js
+const { readingTimePlugin } = require("@renovamen/vuepress-plugin-reading-time");
+
 module.exports = {
   plugins: [
-    [
-      "@renovamen/vuepress-plugin-reading-time"
-    ]
+    readingTimePlugin()
   ]
 }
 ```
@@ -81,11 +102,9 @@ readingTime: { minutes: 3, words: 1500 }
 
 ```js
 plugins: [
-  [
-    '@renovamen/vuepress-plugin-reading-time', {
-      excludes: ["/docs/.*", "/posts/hello-word.html"]
-    }
-  ]
+  readingTimePlugin({
+    excludes: ["/docs/.*", "/posts/hello-word.html"]
+  })
 ]
 ```
 
@@ -100,11 +119,9 @@ Example:
 
 ```js
 plugins: [
-  [
-    "@renovamen/vuepress-plugin-reading-time", {
-      includes: ["/docs/.*"]
-    }
-  ]
+  readingTimePlugin({
+    includes: ["/docs/.*"]
+  })
 ]
 ```
 
@@ -119,11 +136,9 @@ plugins: [
 
 ```js
 plugins: [
-  [
-    '@renovamen/vuepress-plugin-reading-time', {
-      wordsPerMinuteCN: 500
-    }
-  ]
+  readingTimePlugin({
+    wordsPerMinuteCN: 500
+  })
 ]
 ```
 
@@ -138,11 +153,9 @@ plugins: [
 
 ```js
 plugins: [
-  [
-    '@renovamen/vuepress-plugin-reading-time', {
-      wordsPerMinuteEN: 200
-    }
-  ]
+  readingTimePlugin({
+    wordsPerMinuteEN: 200
+  })
 ]
 ```
 
@@ -157,11 +170,9 @@ plugins: [
 
 ```js
 plugins: [
-  [
-    '@renovamen/vuepress-plugin-reading-time', {
-      excludeCodeBlock: true
-    }
-  ]
+  readingTimePlugin({
+    excludeCodeBlock: true
+  })
 ]
 ```
 
@@ -176,11 +187,9 @@ plugins: [
 
 ```js
 plugins: [
-  [
-    '@renovamen/vuepress-plugin-reading-time', {
-      excludeTexBlock: true
-    }
-  ]
+  readingTimePlugin({
+    excludeTexBlock: true
+  })
 ]
 ```
 

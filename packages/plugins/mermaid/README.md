@@ -12,19 +12,22 @@ Plugin `@renovamen/vuepress-plugin-mermaid@next` for adding [Mermaid](https://me
 ## Install
 
 ```bash
+# pnpm
+pnpm install @renovamen/vuepress-plugin-mermaid@next
+# yarn
 yarn add @renovamen/vuepress-plugin-mermaid@next
-# or
+# npm
 npm install @renovamen/vuepress-plugin-mermaid@next
 ```
 
 Then add it to your `.vuepress/config.js`:
 
 ```js
+const { mermaidPlugin } = require("@renovamen/vuepress-plugin-mermaid");
+
 module.exports = {
   plugins: [
-    [
-      "@renovamen/vuepress-plugin-mermaid"
-    ]
+    mermaidPlugin()
   ]
 }
 ```
@@ -34,24 +37,13 @@ module.exports = {
 
 ## Options
 
-You can use the following options to set theme for Mermaid diagrams, for example:
+### token
 
-```js
-module.exports = {
-  plugins: [
-    [
-      "@renovamen/vuepress-plugin-mermaid", {
-        theme: "default",  // default: "default"
-        darkTheme: "dark",  // default: "dark"
-        darkSelector: "html",  // default: undefined
-        darkClass: "dark"  // default: undefined
-      }
-    ]
-  ]
-}
-```
+- Type: `string`
 
-[Here](https://github.com/mermaid-js/mermaid/tree/develop/src/themes) are all themes supported by Mermaid.
+- Default: `"mermaidjs"`
+
+- Details: Custom token of the fenced code block.
 
 
 ### theme
@@ -60,7 +52,7 @@ module.exports = {
 
 - Default: `"default"`
 
-- Details: Theme
+- Details: Theme ([here](https://github.com/mermaid-js/mermaid/tree/develop/src/themes) are all themes supported by Mermaid)
 
 
 ### darkTheme
@@ -103,7 +95,7 @@ module.exports = {
 
 ## Usage
 
-The token info of the code block should be `mermaidjs`, for example:
+The token info of the code block should be `mermaidjs` (or `options.token` if you set), for example:
 
 ~~~
 ```mermaidjs

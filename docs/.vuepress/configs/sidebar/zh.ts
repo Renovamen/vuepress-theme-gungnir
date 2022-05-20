@@ -15,9 +15,21 @@ export const zh: SidebarConfig = {
     {
       text: "进阶",
       children: [
-        "/zh/docs/advanced/features.md",
-        "/zh/docs/advanced/markdown.md",
+        "/zh/docs/advanced/comment.md",
+        "/zh/docs/advanced/analytics.md",
+        "/zh/docs/advanced/reading-time.md",
+        "/zh/docs/advanced/rss.md",
+        "/zh/docs/advanced/hitokoto.md",
         "/zh/docs/advanced/icons.md"
+      ]
+    },
+    {
+      text: "Markdown 拓展语法",
+      children: [
+        "/zh/docs/md-enhance/math.md",
+        "/zh/docs/md-enhance/chart.md",
+        "/zh/docs/md-enhance/mermaid.md",
+        "/zh/docs/md-enhance/others.md"
       ]
     },
     {

@@ -29,27 +29,33 @@ See [here](https://zxh.io) for a demo (click the "Search" button in navbar).
 - Example:
 
   ```js
-  // normal config
+  // .vuepress/config.js
 
-  themeConfig: {
-    searchText: "Search"
+  module.exports = {
+    theme: gungnirTheme({
+      // normal config
+      searchText: "Search"
+    })
   }
   ```
 
   or
 
   ```js
-  // locales option
+  // .vuepress/config.js
 
-  themeConfig: {
-    locales: {
-      "/": {
-        searchText: "Search"
-      },
-      "/zh/": {
-        searchText: "搜索"
+  module.exports = {
+    theme: gungnirTheme({
+      // locales option
+      locales: {
+        "/": {
+          searchText: "Search"
+        },
+        "/zh/": {
+          searchText: "搜索"
+        }
       }
-    }
+    })
   }
   ```
 
@@ -65,8 +71,12 @@ See [here](https://zxh.io) for a demo (click the "Search" button in navbar).
 - Example:
 
   ```js
-  themeConfig: {
-    searchIicon: "bi-search"
+  // .vuepress/config.js
+
+  module.exports = {
+    theme: gungnirTheme({
+      searchIicon: "bi-search"
+    })
   }
   ```
 
@@ -86,19 +96,23 @@ See [here](https://zxh.io) for a demo (click the "Search" button in navbar).
 - Example:
 
   ```js
-  themeConfig: {
-    themePlugins: {
-      search: {
-        locales: {
-          "/": {
-            placeholder: "Search"
-          },
-          "/zh/": {
-            placeholder: "搜索"
+  // .vuepress/config.js
+
+  module.exports = {
+    theme: gungnirTheme({
+      themePlugins: {
+        search: {
+          locales: {
+            "/": {
+              placeholder: "Search"
+            },
+            "/zh/": {
+              placeholder: "搜索"
+            }
           }
         }
       }
-    }
+    })
   }
   ```
 
@@ -143,13 +157,17 @@ See [here](https://zxh.io) for a demo (click the "Search" button in navbar).
 - Example:
 
   ```js
-  themeConfig: {
-    themePlugins: {
-      search: {
-        // exclude a specified post
-        isSearchable: (page) => page.path !== "/posts/2021-12-25-hello.html"
+  // .vuepress/config.js
+  
+  module.exports = {
+    theme: gungnirTheme({
+      themePlugins: {
+        search: {
+          // exclude a specified post
+          isSearchable: (page) => page.path !== "/posts/2021-12-25-hello.html"
+        }
       }
-    }
+    })
   }
   ```
 
@@ -168,13 +186,17 @@ See [here](https://zxh.io) for a demo (click the "Search" button in navbar).
 - Example:
 
   ```js
-  themeConfig: {
-    themePlugins: {
-      search: {
-        // allow searching the `tags` frontmatter
-        getExtraFields: (page) => page.frontmatter.tags ?? []
+  // .vuepress/config.js
+  
+  module.exports = {
+    theme: gungnirTheme({
+      themePlugins: {
+        search: {
+          // allow searching the `tags` frontmatter
+          getExtraFields: (page) => page.frontmatter.tags ?? []
+        }
       }
-    }
+    })
   }
   ```
 
@@ -200,10 +222,14 @@ You can customize the style of the search component via CSS variables:
 Disable the built-in search component:
 
 ```js
-themeConfig: {
-  themePlugins: {
-    search: false
-  }
+// .vuepress/config.js
+  
+module.exports = {
+  theme: gungnirTheme({
+    themePlugins: {
+      search: false
+    }
+  })
 }
 ```
 
@@ -217,13 +243,13 @@ When using `@vuepress/plugin-search`, you may want to exclude Home, Tags and Lin
 ```js
 // .vuepress/config.js
 
+const { searchPlugin } = require("@vuepress/plugin-search");
+
 module.exports = {
   plugins: [
-    [
-      "@vuepress/plugin-search", {
-        isSearchable: (page) => !["Tags", "Links", "HomePage"].includes(page.frontmatter.layout)
-      }
-    ]
+    searchPlugin({
+      isSearchable: (page) => !["Tags", "Links", "HomePage"].includes(page.frontmatter.layout)
+    })
   ]
 }
 ```

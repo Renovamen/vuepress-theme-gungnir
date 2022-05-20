@@ -39,7 +39,7 @@ date: 2020-03-30
 - `HiTranslate`: <v-icon name="hi-translate" />
 - `BiLayoutSidebarInset`: <v-icon name="bi-layout-sidebar-inset" />
 
-如果想要引入别的图标，需要在 `oh-vue-icons` 的[网站](https://oh-vue-icons.js.org/cn)上搜索图标的名称，然后在你的项目的 `.vuepress/clientAppEnhance.js` 文件（如果没有的话就新建一个）中全局引入图标：
+如果想要引入别的图标，需要在 `oh-vue-icons` 的[网站](https://oh-vue-icons.js.org/cn)上搜索图标的名称，然后在你的项目的 `.vuepress/client.js` 文件（如果没有的话就新建一个）中全局引入图标：
 
 ```js
 import { addIcons } from "oh-vue-icons";

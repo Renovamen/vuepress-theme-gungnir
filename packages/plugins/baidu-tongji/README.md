@@ -10,8 +10,11 @@ Plugin `@renovamen/vuepress-plugin-baidu-tongji@next` for adding [百度统计](
 ## Install
 
 ```bash
+# pnpm
+pnpm install @renovamen/vuepress-plugin-baidu-tongji@next
+# yarn
 yarn add @renovamen/vuepress-plugin-baidu-tongji@next
-# or
+# npm
 npm install @renovamen/vuepress-plugin-baidu-tongji@next
 ```
 
@@ -21,13 +24,13 @@ npm install @renovamen/vuepress-plugin-baidu-tongji@next
 ## Usage
 
 ```js
+const { baiduTongjiPlugin } = require("@renovamen/vuepress-plugin-baidu-tongji");
+
 module.exports = {
   plugins: [
-    [
-      "@renovamen/vuepress-plugin-baidu-tongji", {
-        "id": "your-tracking-code"
-      }
-    ]
+    baiduTongjiPlugin({
+      "id": "your-tracking-code"
+    })
   ]
 }
 ```

@@ -7,7 +7,7 @@ date: 2021-03-31
 
 ### Front Matter
 
-博客文章会在[首页](/)显示。所有博客文章都需要在 front matter 里加上 `layout: Post`（我知道这样听上去很奇怪，但在 VuePress 2 的博客插件出来之前我只能想到这种解决方案）。
+博客文章会在[首页](/)显示。所有博客文章都需要在 front matter 里加上 `layout: Post`。
 
 博客文章的 front matter 的格式为：
 
@@ -139,14 +139,18 @@ My blog 🧐, powered by VuePress 2, themed by Gungnir.
 如果你不需要再链接卡片中显示域名:
 
 ```js
-themeConfig: {
-  themePlugins: {
-    container: {
-      link: {
-        siteDomain: false  // 可选，默认："true"
+// .vuepress/config.js
+
+module.exports = {
+  theme: gungnirTheme({
+    themePlugins: {
+      container: {
+        link: {
+          siteDomain: false  // 可选，默认："true"
+        }
       }
     }
-  }
+  })
 }
 ```
 
@@ -155,12 +159,16 @@ themeConfig: {
 或者想要关闭该功能:
 
 ```js
-themeConfig: {
-  themePlugins: {
-    container: {
-      link: false  // 可选，默认："true"
+// .vuepress/config.js
+
+module.exports = {
+  theme: gungnirTheme({
+    themePlugins: {
+      container: {
+        link: false  // 可选，默认："true"
+      }
     }
-  }
+  })
 }
 ```
 

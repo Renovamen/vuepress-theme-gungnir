@@ -15,19 +15,22 @@ Plugin `@renovamen/vuepress-plugin-reading-time@next` for counting words and est
 ## Install
 
 ```bash
+# pnpm
+pnpm install @renovamen/vuepress-plugin-reading-time@next
+# yarn
 yarn add @renovamen/vuepress-plugin-reading-time@next
-# or
+# npm
 npm install @renovamen/vuepress-plugin-reading-time@next
 ```
 
 Then add it to your `.vuepress/config.js`:
 
 ```js
+const { readingTimePlugin } = require("@renovamen/vuepress-plugin-reading-time");
+
 module.exports = {
   plugins: [
-    [
-      "@renovamen/vuepress-plugin-reading-time"
-    ]
+    readingTimePlugin()
   ]
 }
 ```
@@ -76,11 +79,9 @@ Example:
 
 ```js
 plugins: [
-  [
-    "@renovamen/vuepress-plugin-reading-time", {
-      excludes: ["/docs/.*", "/posts/hello-word.html"]
-    }
-  ]
+  readingTimePlugin({
+    excludes: ["/docs/.*", "/posts/hello-word.html"]
+  })
 ]
 ```
 
@@ -97,11 +98,9 @@ Example:
 
 ```js
 plugins: [
-  [
-    "@renovamen/vuepress-plugin-reading-time", {
-      includes: ["/docs/.*"]
-    }
-  ]
+  readingTimePlugin({
+    includes: ["/docs/.*"]
+  })
 ]
 ```
 
@@ -116,11 +115,9 @@ Example:
 
 ```js
 plugins: [
-  [
-    "@renovamen/vuepress-plugin-reading-time", {
-      wordsPerMinuteCN: 500
-    }
-  ]
+  readingTimePlugin({
+    wordsPerMinuteCN: 500
+  })
 ]
 ```
 
@@ -135,11 +132,9 @@ Example:
 
 ```js
 plugins: [
-  [
-    "@renovamen/vuepress-plugin-reading-time", {
-      wordsPerMinuteEN: 200
-    }
-  ]
+  readingTimePlugin({
+    wordsPerMinuteEN: 200
+  })
 ]
 ```
 
@@ -154,11 +149,9 @@ Example:
 
 ```js
 plugins: [
-  [
-    "@renovamen/vuepress-plugin-reading-time", {
-      excludeCodeBlock: true
-    }
-  ]
+  readingTimePlugin({
+    excludeCodeBlock: true
+  })
 ]
 ```
 
@@ -173,11 +166,9 @@ Example:
 
 ```js
 plugins: [
-  [
-    "@renovamen/vuepress-plugin-reading-time", {
-      excludeTexBlock: true
-    }
-  ]
+  readingTimePlugin({
+    excludeTexBlock: true
+  })
 ]
 ```
 

@@ -15,9 +15,21 @@ export const en: SidebarConfig = {
     {
       text: "Advanced",
       children: [
-        "/docs/advanced/features.md",
-        "/docs/advanced/markdown.md",
+        "/docs/advanced/comment.md",
+        "/docs/advanced/analytics.md",
+        "/docs/advanced/reading-time.md",
+        "/docs/advanced/rss.md",
+        "/docs/advanced/hitokoto.md",
         "/docs/advanced/icons.md"
+      ]
+    },
+    {
+      text: "Markdown Enhancements",
+      children: [
+        "/docs/md-enhance/math.md",
+        "/docs/md-enhance/chart.md",
+        "/docs/md-enhance/mermaid.md",
+        "/docs/md-enhance/others.md"
       ]
     },
     {

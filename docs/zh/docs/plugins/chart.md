@@ -20,20 +20,41 @@ date: 2021-12-12
 
 ## 安装
 
+<CodeGroup>
+<CodeGroupItem title="PNPM" active>
+
+```bash
+pnpm install vuepress-plugin-chart@next
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="YARN" active>
+
 ```bash
 yarn add vuepress-plugin-chart@next
-# or
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="NPM">
+
+```bash
 npm install vuepress-plugin-chart@next
 ```
+
+</CodeGroupItem>
+</CodeGroup>
+
 
 然后在 `.vuepress/config.js` 中引入这个插件：
 
 ```js
+const { chartPlugin } = require("vuepress-plugin-chart");
+
 module.exports = {
   plugins: [
-    [
-      "vuepress-plugin-chart"
-    ]
+    chartPlugin()
   ]
 }
 ```

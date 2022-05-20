@@ -20,14 +20,34 @@ Plugin `vuepress-plugin-giscus@next` for adding comment system [Giscus](https://
 
 ## Install
 
+<CodeGroup>
+<CodeGroupItem title="PNPM" active>
+
+```bash
+pnpm install vuepress-plugin-giscus@next
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="YARN" active>
+
 ```bash
 yarn add vuepress-plugin-giscus@next
-# or
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="NPM">
+
+```bash
 npm install vuepress-plugin-giscus@next
 ```
 
+</CodeGroupItem>
+</CodeGroup>
 
-## Usage
+
+## Preparation
 
 First you need to:
 
@@ -35,25 +55,28 @@ First you need to:
 - Install [Giscus app](https://github.com/apps/giscus)
 - Browse [Giscus's website](https://giscus.app/) and generate your repo id, category id and other things on the website
 
-Then add the plugin to your `.vuepress/config.js`:
+
+## Configuration
+
+Add the plugin to your `.vuepress/config.js`:
 
 ```js
+const { giscusPlugin } = require("vuepress-plugin-giscus");
+
 module.exports = {
   plugins: [
-    [
-      "vuepress-plugin-giscus", {
-        repo: "[repo]",  // required, string, format: user_name/repo_name
-        repoId: "[repo id]",  // required, string, generate it on Giscus's website
-        category: "[category name]",  // required, string
-        categoryId: "[category id]",  // required, string, generate it on Giscus's website
-        mapping: "[page <-> discussion mapping]",  // optional, string, default="title"
-        reactionsEnabled: "[enable reactions or not?]",  // optional, boolean, default=true
-        theme: "[theme]",  // optional, string, default="light"
-        lang: "[language]",  // optional, string, default="auto" (follow the site's language, fell to "en" if your site's language is not supported by Giscus)
-        lazyLoad: true,  // optional, boolean, default=false (if true, loading of Giscus will be deferred until the user scrolls near the comments container)
-        crossorigin: "[crossorigin]"  // optional, string, default="anonymous"
-      }
-    ]
+    giscusPlugin({
+      repo: "[repo]",  // required, string, format: user_name/repo_name
+      repoId: "[repo id]",  // required, string, generate it on Giscus's website
+      category: "[category name]",  // required, string
+      categoryId: "[category id]",  // required, string, generate it on Giscus's website
+      mapping: "[page <-> discussion mapping]",  // optional, string, default="title"
+      reactionsEnabled: "[enable reactions or not?]",  // optional, boolean, default=true
+      theme: "[theme]",  // optional, string, default="light"
+      lang: "[language]",  // optional, string, default="auto" (follow the site's language, fell to "en" if your site's language is not supported by Giscus)
+      lazyLoad: true,  // optional, boolean, default=false (if true, loading of Giscus will be deferred until the user scrolls near the comments container)
+      crossorigin: "[crossorigin]"  // optional, string, default="anonymous"
+    })
   ]
 }
 ```

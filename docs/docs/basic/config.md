@@ -36,13 +36,13 @@ module.exports = {
     ...
   */
 
-  themeConfig: {
+  theme: gungnirTheme({
     /*
       other theme configurations
       ...
     */
     navbarTitle: "Gungnir"  // optional, default: "$ cd /home/"
-  }
+  })
 }
 ```
 
@@ -52,7 +52,7 @@ It can also be used in the [`locales`](https://v2.vuepress.vuejs.org/reference/d
 // .vuepress/config.js
 
 module.exports = {
-  themeConfig: {
+  theme: gungnirTheme({
     locales: {
       "/": {
         navbarTitle: "Gungnir"
@@ -61,7 +61,7 @@ module.exports = {
         navbarTitle: "冈格尼尔"
       }
     }
-  }
+  })
 }
 ```
 
@@ -72,7 +72,7 @@ module.exports = {
 // .vuepress/config.js
 
 module.exports = {
-  themeConfig: {
+  theme: gungnirTheme({
     personalInfo: {
       // required: nickname, will be showed on home page, mobile sidebar and author info of articles
       name: "Cool Dragon",
@@ -101,7 +101,7 @@ module.exports = {
         // ...
       }
     }
-  }
+  })
 }
 ```
 
@@ -111,7 +111,7 @@ module.exports = {
 // .vuepress/config.js
 
 module.exports = {
-  themeConfig: {
+  theme: gungnirTheme({
     homeHeaderImages: [
       // image 1
       {
@@ -125,8 +125,8 @@ module.exports = {
       }
       ...
     ],
-    postNumPerPage: 20  // optional: maximum number of posts per page, default: 10
-  }
+    blogNumPerPage: 20  // optional: maximum number of blogs per page, default: 10
+  })
 }
 ```
 
@@ -141,7 +141,7 @@ Check the [home page](/) of this site to see the effect. Click the left and righ
 // .vuepress/config.js
 
 module.exports = {
-  themeConfig: {
+  theme: gungnirTheme({
     pages: {
       // tags page
       tags: {
@@ -167,7 +167,7 @@ module.exports = {
         }
       }
     }
-  }
+  })
 }
 ```
 
@@ -184,14 +184,14 @@ Support HTML. For example, the footer of this site is:
 // .vuepress/config.js
 
 module.exports = {
-  themeConfig: {
+  theme: gungnirTheme({
     footer: `
       &copy; <a href="https://github.com/Renovamen" target="_blank">Renovamen</a> 2018-2022
       <br>
       Powered by <a href="https://v2.vuepress.vuejs.org" target="_blank">VuePress</a> &
       <a href="https://github.com/Renovamen/vuepress-theme-gungnir" target="_blank">Gungnir</a>
     `
-  }
+  })
 }
 ```
 
@@ -204,8 +204,8 @@ Enable or disable **post** catalog for all posts. Can be rewritten in each post'
 // .vuepress/config.js
 
 module.exports = {
-  themeConfig: {
+  theme: gungnirTheme({
     catalog: false  // optional, default: true
-  }
+  })
 }
 ```

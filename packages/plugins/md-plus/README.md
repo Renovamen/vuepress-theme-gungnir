@@ -15,23 +15,42 @@ A plugin for enhancing Markdown in [VuePress 2](https://v2.vuepress.vuejs.org/).
 ## Install
 
 ```bash
+# pnpm
+pnpm install @renovamen/vuepress-plugin-md-plus@next
+# yarn
 yarn add @renovamen/vuepress-plugin-md-plus@next
-# or
+# npm
 npm install @renovamen/vuepress-plugin-md-plus@next
 ```
 
-Then add it to your `.vuepress/config.js`:
+
+&nbsp;
+
+## Configuration
+
+You can enable all features simply by:
+
+```js
+const { mdPlusPlugin } = require("@renovamen/vuepress-plugin-md-plus");
+
+module.exports = {
+  plugins: [
+    mdPlusPlugin({
+      all: true,  // Enable all features or not, this will rewrite all the following options (default: false)
+    })
+  ]
+}
+```
+
+or enable them separately:
 
 ```js
 module.exports = {
   plugins: [
-    [
-      "@renovamen/vuepress-plugin-md-plus", {
-        all: false,  // enable all features or not, this will rewrite all the following options
-        footnote: true,  // enable footnote or not
-        mark: true  // enable mark or not
-      }
-    ]
+    mdPlusPlugin({
+      footnote: true,  // Enable footnote or not (default: false)
+      mark: true  // Enable mark or not (default: false)
+    })
   ]
 }
 ```
@@ -43,13 +62,17 @@ module.exports = {
 
 ### Footnote
 
+```
 Add footnotes for text[^1]
 
 [^1]: Write your footnote here.
+```
 
 ### Mark
 
+```
 Mark important information: "Excuse me. Can you tell me how much the shirt is?" "Yes, it's ==nine fifteen==."
+```
 
 
 &nbsp;

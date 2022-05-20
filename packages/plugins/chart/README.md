@@ -12,19 +12,22 @@ Plugin `vuepress-plugin-chart@next` for adding JavaScript charting library [Char
 ## Install
 
 ```bash
+# pnpm
+pnpm install vuepress-plugin-chart@next
+# yarn
 yarn add vuepress-plugin-chart@next
-# or
+# npm
 npm install vuepress-plugin-chart@next
 ```
 
 Then add it to your `.vuepress/config.js`:
 
 ```js
+const { chartPlugin } = require("vuepress-plugin-chart");
+
 module.exports = {
   plugins: [
-    [
-      "vuepress-plugin-chart"
-    ]
+    chartPlugin()
   ]
 }
 ```
@@ -32,9 +35,22 @@ module.exports = {
 
 &nbsp;
 
+## Options
+
+### token
+
+- Type: `string`
+
+- Default: `"chart"`
+
+- Details: Custom token of the fenced code block.
+
+
+&nbsp;
+
 ## Usage
 
-The token info of the code block should be `chart`, for example:
+The token info of the code block should be `chart` (or `options.token` if you set), for example:
 
 ~~~json
 ```chart

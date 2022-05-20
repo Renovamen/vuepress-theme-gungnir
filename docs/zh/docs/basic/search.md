@@ -29,27 +29,33 @@ date: 2022-03-12
 - 示例：
 
   ```js
-  // 一般配置
+  // .vuepress/config.js
 
-  themeConfig: {
-    searchText: "Search"
+  module.exports = {
+    theme: gungnirTheme({
+      // 一般配置
+      searchText: "Search"
+    })
   }
   ```
 
   or
 
   ```js
-  // locales 配置项
+  // .vuepress/config.js
 
-  themeConfig: {
-    locales: {
-      "/": {
-        searchText: "Search"
-      },
-      "/zh/": {
-        searchText: "搜索"
+  module.exports = {
+    theme: gungnirTheme({
+      // locales 配置项
+      locales: {
+        "/": {
+          searchText: "Search"
+        },
+        "/zh/": {
+          searchText: "搜索"
+        }
       }
-    }
+    })
   }
   ```
 
@@ -65,8 +71,12 @@ date: 2022-03-12
 - 示例：
 
   ```js
-  themeConfig: {
-    searchIicon: "bi-search"
+  // .vuepress/config.js
+
+  module.exports = {
+    theme: gungnirTheme({
+      searchIicon: "bi-search"
+    })
   }
   ```
 
@@ -86,19 +96,23 @@ date: 2022-03-12
 - 示例：
 
   ```js
-  themeConfig: {
-    themePlugins: {
-      search: {
-        locales: {
-          "/": {
-            placeholder: "Search"
-          },
-          "/zh/": {
-            placeholder: "搜索"
-          },
+  // .vuepress/config.js
+
+  module.exports = {
+    theme: gungnirTheme({
+      themePlugins: {
+        search: {
+          locales: {
+            "/": {
+              placeholder: "Search"
+            },
+            "/zh/": {
+              placeholder: "搜索"
+            }
+          }
         }
       }
-    }
+    })
   }
   ```
 
@@ -143,13 +157,17 @@ date: 2022-03-12
 - 示例：
 
   ```js
-  themeConfig: {
-    themePlugins: {
-      search: {
-        // 排除特定博客文章
-        isSearchable: (page) => page.path !== "/posts/2021-12-25-hello.html"
+  // .vuepress/config.js
+  
+  module.exports = {
+    theme: gungnirTheme({
+      themePlugins: {
+        search: {
+          // exclude a specified post
+          isSearchable: (page) => page.path !== "/posts/2021-12-25-hello.html"
+        }
       }
-    }
+    })
   }
   ```
 
@@ -168,13 +186,17 @@ date: 2022-03-12
 - 示例：
 
   ```js
-  themeConfig: {
-    themePlugins: {
-      search: {
-        // 允许搜索 Frontmatter 中的 `tags`
-        getExtraFields: (page) => page.frontmatter.tags ?? []
+  // .vuepress/config.js
+  
+  module.exports = {
+    theme: gungnirTheme({
+      themePlugins: {
+        search: {
+          // allow searching the `tags` frontmatter
+          getExtraFields: (page) => page.frontmatter.tags ?? []
+        }
       }
-    }
+    })
   }
   ```
 
@@ -201,11 +223,13 @@ date: 2022-03-12
 
 ```js
 // .vuepress/config.js
-
-themeConfig: {
-  themePlugins: {
-    search: false
-  }
+  
+module.exports = {
+  theme: gungnirTheme({
+    themePlugins: {
+      search: false
+    }
+  })
 }
 ```
 
@@ -219,13 +243,13 @@ themeConfig: {
 ```js
 // .vuepress/config.js
 
+const { searchPlugin } = require("@vuepress/plugin-search");
+
 module.exports = {
   plugins: [
-    [
-      "@vuepress/plugin-search", {
-        isSearchable: (page) => !["Tags", "Links", "HomePage"].includes(page.frontmatter.layout)
-      }
-    ]
+    searchPlugin({
+      isSearchable: (page) => !["Tags", "Links", "HomePage"].includes(page.frontmatter.layout)
+    })
   ]
 }
 ```

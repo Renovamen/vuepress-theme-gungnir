@@ -10,13 +10,21 @@ mkdir blog && cd blog
 yarn init  # or: npm init
 ```
 
-安装 VuePress 和主题 Gungnir。目前主题还无法兼容 VuePress >= 2.0.0-beta.40，请暂时锁定 2.0.0-beta.39 版本：
+安装 VuePress 和主题 Gungnir：
 
 <CodeGroup>
+<CodeGroupItem title="PNPM" active>
+
+```bash
+pnpm install -D vuepress vuepress-theme-gungnir@next
+```
+
+</CodeGroupItem>
+
 <CodeGroupItem title="YARN" active>
 
 ```bash
-yarn add -D vuepress@2.0.0-beta.39 vuepress-theme-gungnir@next
+yarn add -D vuepress vuepress-theme-gungnir@next
 ```
 
 </CodeGroupItem>
@@ -24,11 +32,13 @@ yarn add -D vuepress@2.0.0-beta.39 vuepress-theme-gungnir@next
 <CodeGroupItem title="NPM">
 
 ```bash
-npm install -D vuepress@2.0.0-beta.39 vuepress-theme-gungnir@next
+npm install -D vuepress vuepress-theme-gungnir@next
 ```
 
 </CodeGroupItem>
 </CodeGroup>
+
+请确保你使用的是最新版本的 VuePress（2.0.0-beta.45）和主题。
 
 参考 [VuePress 文档](https://v2.vuepress.vuejs.org/guide/)搭建目录结构。建议在 `package.json` 的 `dev` 和 `build` script 里添加 `--clean-cache`，即：
 
@@ -46,10 +56,16 @@ npm install -D vuepress@2.0.0-beta.39 vuepress-theme-gungnir@next
 <CodeGroup>
 <CodeGroupItem title="JS" active>
 
-```js{3}
+```js{7}
+// .vuepress/config.js
+
+const { gungnirTheme } = require("vuepress-theme-gungnir");
+
 module.exports = {
   ...
-  theme: "gungnir"
+  theme: gungnirTheme({
+    // 你的主题配置
+  })
 }
 ```
 
@@ -57,13 +73,17 @@ module.exports = {
 
 <CodeGroupItem title="TS">
 
-```ts{6}
-import { defineUserConfig } from "vuepress";
-import type { GungnirThemeOptions } from "vuepress-theme-gungnir";
+```ts{8}
+// .vuepress/config.ts
 
-export default defineUserConfig<GungnirThemeOptions>({
+import { defineUserConfig } from "vuepress";
+import { gungnirTheme } from "vuepress-theme-gungnir";
+
+export default defineUserConfig({
   ...
-  theme: "gungnir"
+  theme: gungnirTheme({
+    // 你的主题配置
+  })
 });
 ```
 

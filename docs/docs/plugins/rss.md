@@ -24,11 +24,31 @@ This plugin is only guaranted to work on VuePress theme Gungnir. It may not work
 
 ## Install
 
+<CodeGroup>
+<CodeGroupItem title="PNPM" active>
+
+```bash
+pnpm install @renovamen/vuepress-plugin-rss@next
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="YARN" active>
+
 ```bash
 yarn add @renovamen/vuepress-plugin-rss@next
-# or
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="NPM">
+
+```bash
 npm install @renovamen/vuepress-plugin-rss@next
 ```
+
+</CodeGroupItem>
+</CodeGroup>
 
 
 ## Configuration
@@ -36,18 +56,18 @@ npm install @renovamen/vuepress-plugin-rss@next
 Configurate it in your `.vuepress/config.js`:
 
 ```js
+const { rssPlugin } = require("@renovamen/vuepress-plugin-rss");
+
 module.exports = {
   plugins: [
-    [
-      "@renovamen/vuepress-plugin-rss", {
-        siteURL: "https://zxh.io",  // site URL (required)
-        title: "Renovamen's blog",  // site title (optional, default: `themeConfig.title`)
-        description: "A blog powered by VuePress and Gungnir",  // site description (optional, default: "")
-        copyright: "Renovamen 2018-2022",  // site copyright (optional, default: "")
-        count: 20,  // number of posts to be generated (optional, default: 20)
-        filter: (page) => true  // filter function to choose which posts to be generated (optional, default: (page) => true)
-      }
-    ]
+    rssPlugin({
+      siteURL: "https://zxh.io",  // site URL (required)
+      title: "Renovamen's blog",  // site title (optional, default: `themeConfig.title`)
+      description: "A blog powered by VuePress and Gungnir",  // site description (optional, default: "")
+      copyright: "Renovamen 2018-2022",  // site copyright (optional, default: "")
+      count: 20,  // number of posts to be generated (optional, default: 20)
+      filter: (page) => true  // filter function to choose which posts to be generated (optional, default: (page) => true)
+    })
   ]
 }
 ```

@@ -20,20 +20,41 @@ date: 2021-12-12
 
 ## 安装
 
+<CodeGroup>
+<CodeGroupItem title="PNPM" active>
+
+```bash
+pnpm install @renovamen/vuepress-plugin-mermaid@next
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="YARN" active>
+
 ```bash
 yarn add @renovamen/vuepress-plugin-mermaid@next
-# or
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="NPM">
+
+```bash
 npm install @renovamen/vuepress-plugin-mermaid@next
 ```
+
+</CodeGroupItem>
+</CodeGroup>
+
 
 然后在 `.vuepress/config.js` 中引入这个插件：
 
 ```js
+const { mermaidPlugin } = require("@renovamen/vuepress-plugin-mermaid");
+
 module.exports = {
   plugins: [
-    [
-      "@renovamen/vuepress-plugin-mermaid"
-    ]
+    mermaidPlugin()
   ]
 }
 ```

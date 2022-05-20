@@ -23,24 +23,58 @@ A plugin for enhancing Markdown in [VuePress 2](https://v2.vuepress.vuejs.org/).
 
 ## Install
 
+<CodeGroup>
+<CodeGroupItem title="PNPM" active>
+
+```bash
+pnpm install @renovamen/vuepress-plugin-md-plus@next
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="YARN" active>
+
 ```bash
 yarn add @renovamen/vuepress-plugin-md-plus@next
-# or
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="NPM">
+
+```bash
 npm install @renovamen/vuepress-plugin-md-plus@next
 ```
 
-Then add it to your `.vuepress/config.js`:
+</CodeGroupItem>
+</CodeGroup>
+
+
+## Configuration
+
+You can enable all features simply by:
+
+```js
+const { mdPlusPlugin } = require("@renovamen/vuepress-plugin-md-plus");
+
+module.exports = {
+  plugins: [
+    mdPlusPlugin({
+      all: true,  // Enable all features or not, this will rewrite all the following options (default: false)
+    })
+  ]
+}
+```
+
+or enable them separately:
 
 ```js
 module.exports = {
   plugins: [
-    [
-      "@renovamen/vuepress-plugin-md-plus", {
-        all: false,  // enable all features or not, this will rewrite all the following options
-        footnote: true,  // enable footnote or not
-        mark: true  // enable mark or not
-      }
-    ]
+    mdPlusPlugin({
+      footnote: true,  // Enable footnote or not (default: false)
+      mark: true  // Enable mark or not (default: false)
+    })
   ]
 }
 ```

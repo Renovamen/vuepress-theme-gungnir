@@ -22,20 +22,41 @@ KaTeX 是一种比 MathJax 更快的公式渲染引擎（速度比较可以参�
 
 ## 安装
 
+<CodeGroup>
+<CodeGroupItem title="PNPM" active>
+
+```bash
+pnpm install @renovamen/vuepress-plugin-katex@next
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="YARN" active>
+
 ```bash
 yarn add @renovamen/vuepress-plugin-katex@next
-# or
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="NPM">
+
+```bash
 npm install @renovamen/vuepress-plugin-katex@next
 ```
+
+</CodeGroupItem>
+</CodeGroup>
+
 
 然后在 `.vuepress/config.js` 中引入这个插件：
 
 ```js
+const { katexPlugin } = require("@renovamen/vuepress-plugin-katex");
+
 module.exports = {
   plugins: [
-    [
-      "@renovamen/vuepress-plugin-katex"
-    ]
+    katexPlugin()
   ]
 }
 ```
@@ -43,14 +64,14 @@ module.exports = {
 也可以传入一些 KaTeX 的[配置项](https://katex.org/docs/options.html)，如：
 
 ```js
+const { katexPlugin } = require("@renovamen/vuepress-plugin-katex");
+
 module.exports = {
   plugins: [
-    [
-      "@renovamen/vuepress-plugin-katex", {
-        "throwOnError": false,
-        "errorColor": "#cc0000"
-      }
-    ]
+    katexPlugin({
+      "throwOnError": false,
+      "errorColor": "#cc0000"
+    })
   ]
 }
 ```

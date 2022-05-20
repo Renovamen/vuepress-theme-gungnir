@@ -24,11 +24,31 @@ date: 2020-03-26
 
 ## 安装
 
+<CodeGroup>
+<CodeGroupItem title="PNPM" active>
+
+```bash
+pnpm install @renovamen/vuepress-plugin-rss@next
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="YARN" active>
+
 ```bash
 yarn add @renovamen/vuepress-plugin-rss@next
-# or
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="NPM">
+
+```bash
 npm install @renovamen/vuepress-plugin-rss@next
 ```
+
+</CodeGroupItem>
+</CodeGroup>
 
 
 ## 配置
@@ -36,18 +56,18 @@ npm install @renovamen/vuepress-plugin-rss@next
 在 `.vuepress/config.js` 中配置插件：
 
 ```js
+const { rssPlugin } = require("@renovamen/vuepress-plugin-rss");
+
 module.exports = {
   plugins: [
-    [
-      "@renovamen/vuepress-plugin-rss", {
-        siteURL: "https://zxh.io",  // 网站链接 （必须）
-        title: "西伯利亚大恶龙的博客",  // 网站标题（可选，默认：`themeConfig.title`）
-        description: "一个由 VuePress 和 Gungnir 强力驱动的博客",  // 网站描述（可选，默认：""）
-        copyright: "Renovamen 2018-2021",  // 版权信息（可选，默认：""）
-        count: 20,  // 需要在生成的 RSS 文件上显示多少篇文章（可选，默认：20）
-        filter: (page) => true  // 文章筛选函数（可选，默认：(page) => true）
-      }
-    ]
+    rssPlugin({
+      siteURL: "https://zxh.io",  // 网站链接 （必须）
+      title: "西伯利亚大恶龙的博客",  // 网站标题（可选，默认：`themeConfig.title`）
+      description: "一个由 VuePress 和 Gungnir 强力驱动的博客",  // 网站描述（可选，默认：""）
+      copyright: "Renovamen 2018-2021",  // 版权信息（可选，默认：""）
+      count: 20,  // 需要在生成的 RSS 文件上显示多少篇文章（可选，默认：20）
+      filter: (page) => true  // 文章筛选函数（可选，默认：(page) => true）
+    })
   ]
 }
 ```

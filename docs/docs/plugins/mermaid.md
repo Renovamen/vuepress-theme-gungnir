@@ -20,20 +20,41 @@ Plugin `@renovamen/vuepress-plugin-mermaid@next` for adding [Mermaid](https://me
 
 ## Install
 
+<CodeGroup>
+<CodeGroupItem title="PNPM" active>
+
+```bash
+pnpm install @renovamen/vuepress-plugin-mermaid@next
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="YARN" active>
+
 ```bash
 yarn add @renovamen/vuepress-plugin-mermaid@next
-# or
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="NPM">
+
+```bash
 npm install @renovamen/vuepress-plugin-mermaid@next
 ```
+
+</CodeGroupItem>
+</CodeGroup>
+
 
 Then add it to your `.vuepress/config.js`:
 
 ```js
+const { mermaidPlugin } = require("@renovamen/vuepress-plugin-mermaid");
+
 module.exports = {
   plugins: [
-    [
-      "@renovamen/vuepress-plugin-mermaid"
-    ]
+    mermaidPlugin()
   ]
 }
 ```

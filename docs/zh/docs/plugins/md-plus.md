@@ -23,22 +23,45 @@ date: 2021-12-27
 
 ## 安装
 
+<CodeGroup>
+<CodeGroupItem title="PNPM" active>
+
+```bash
+pnpm install @renovamen/vuepress-plugin-md-plus@next
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="YARN" active>
+
 ```bash
 yarn add @renovamen/vuepress-plugin-md-plus@next
-# or
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="NPM">
+
+```bash
 npm install @renovamen/vuepress-plugin-md-plus@next
 ```
+
+</CodeGroupItem>
+</CodeGroup>
+
+
+## 配置
 
 你可以在 `.vuepress/config.js` 中一键启用所有功能：
 
 ```js
+const { mdPlusPlugin } = require("@renovamen/vuepress-plugin-md-plus");
+
 module.exports = {
   plugins: [
-    [
-      "@renovamen/vuepress-plugin-md-plus", {
-        all: false // 全部启用
-      }
-    ]
+    mdPlusPlugin({
+      all: true // 全部启用，优先级高于其他配置项（默认：false）
+    })
   ]
 }
 ```
@@ -48,12 +71,10 @@ module.exports = {
 ```js
 module.exports = {
   plugins: [
-    [
-      "@renovamen/vuepress-plugin-md-plus", {
-        footnote: true,  // 脚注
-        mark: true  // 高亮标记
-      }
-    ]
+    mdPlusPlugin({
+      footnote: true,  // 脚注（默认：false）
+      mark: true  // 高亮标记（默认：false）
+    })
   ]
 }
 ```

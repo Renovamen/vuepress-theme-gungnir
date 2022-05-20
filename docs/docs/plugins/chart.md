@@ -20,20 +20,41 @@ Plugin `vuepress-plugin-chart@next` for adding JavaScript charting library [Char
 
 ## Install
 
+<CodeGroup>
+<CodeGroupItem title="PNPM" active>
+
+```bash
+pnpm install vuepress-plugin-chart@next
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="YARN" active>
+
 ```bash
 yarn add vuepress-plugin-chart@next
-# or
+```
+
+</CodeGroupItem>
+
+<CodeGroupItem title="NPM">
+
+```bash
 npm install vuepress-plugin-chart@next
 ```
+
+</CodeGroupItem>
+</CodeGroup>
+
 
 Then add it to your `.vuepress/config.js`:
 
 ```js
+const { chartPlugin } = require("vuepress-plugin-chart");
+
 module.exports = {
   plugins: [
-    [
-      "vuepress-plugin-chart"
-    ]
+    chartPlugin()
   ]
 }
 ```
