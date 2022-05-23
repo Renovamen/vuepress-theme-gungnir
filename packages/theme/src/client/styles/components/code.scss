@@ -155,13 +155,13 @@ div[class*="language-"] {
   .fullscreen-code-button {
     position: absolute;
     top: 16px;
-    left: 18px;
+    left: 54px;
     content: "";
     width: 11px;
     height: 11px;
     border-radius: 50%;
-    background-color: #ff5f56;
-    box-shadow: 18px 0 0 0 #ffbd2e, 36px 0 0 0 #27c93f;
+    background-color: #27c93f;
+    box-shadow: -18px 0 0 0 #ffbd2e, -36px 0 0 0 #ff5f56;
     z-index: 3;
     cursor: pointer;
   }
