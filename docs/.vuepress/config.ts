@@ -193,9 +193,6 @@ export default defineUserConfig({
   markdown: {
     extractHeaders: {
       level: [2, 3, 4, 5]
-    },
-    code: {
-      lineNumbers: false
     }
   },
 

@@ -4,8 +4,8 @@
       <img :src="withBase(item.info.headerImage)" />
     </div>
     <div class="else">
-      <p v-if="item.info.date" class="post-item__date">
-        {{ formateDateString(item.info.date) }}
+      <p class="post-item__date">
+        {{ item.info.date ? formateDateString(item.info.date) : "" }}
       </p>
       <RouterLink :to="item.path" class="post-item__title">
         <h2>

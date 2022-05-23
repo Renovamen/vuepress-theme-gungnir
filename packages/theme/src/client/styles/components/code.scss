@@ -233,6 +233,7 @@ div[class*="language-"] {
       color: var(--code-ln-color);
       padding-top: 3rem;
       line-height: 1.4;
+      counter-reset: line-number;
 
       .line-number {
         position: relative;
