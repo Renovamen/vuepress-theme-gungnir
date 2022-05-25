@@ -19,7 +19,8 @@ date: 2021-12-27
 
 - 脚注（基于 [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)）
 - 高亮标记（基于 [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)）
-
+- 下标 (基于 [markdown-it-sub](https://github.com/markdown-it/markdown-it-sub))
+- 上标 (基于 [markdown-it-sup](https://github.com/markdown-it/markdown-it-sup))
 
 ## 安装
 
@@ -49,7 +50,6 @@ npm install @renovamen/vuepress-plugin-md-plus@next
 </CodeGroupItem>
 </CodeGroup>
 
-
 ## 配置
 
 你可以在 `.vuepress/config.js` 中一键启用所有功能：
@@ -63,7 +63,7 @@ module.exports = {
       all: true // 全部启用，优先级高于其他配置项（默认：false）
     })
   ]
-}
+};
 ```
 
 也可以分别启用：
@@ -72,13 +72,14 @@ module.exports = {
 module.exports = {
   plugins: [
     mdPlusPlugin({
-      footnote: true,  // 脚注（默认：false）
-      mark: true  // 高亮标记（默认：false）
+      footnote: true, // 脚注（默认：false）
+      mark: true, // 高亮标记（默认：false）
+      sub: true, // 下标（默认：false）
+      sup: true // 上标（默认：false）
     })
   ]
-}
+};
 ```
-
 
 ## 使用
 
@@ -87,11 +88,13 @@ module.exports = {
 给文字加上脚注[^1]
 
 ::: details 语法
+
 ```
 给文字加上脚注[^1]
 
 [^1]: 脚注内容
 ```
+
 :::
 
 ### 高亮标记
@@ -99,9 +102,35 @@ module.exports = {
 高亮标记重要的内容：衬衫的价格是 ==九磅十五便士==
 
 ::: details 语法
+
 ```
 衬衫的价格是 ==九磅十五便士==
 ```
+
+:::
+
+## 下标
+
+H~2~O
+
+::: details 语法
+
+```markdown
+H~2~O
+```
+
+:::
+
+## 上标
+
+29^th^
+
+::: details 语法
+
+```
+29^th^
+```
+
 :::
 
 ---

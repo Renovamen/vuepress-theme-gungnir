@@ -19,7 +19,8 @@ A plugin for enhancing Markdown in [VuePress 2](https://v2.vuepress.vuejs.org/).
 
 - footnote (supported by [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote))
 - mark (supported by [markdown-it-footnote](https://github.com/markdown-it/markdown-it-mark))
-
+- Subscript (supported by [markdown-it-sub](https://github.com/markdown-it/markdown-it-sub))
+- Superscript (supported by [markdown-it-sup](https://github.com/markdown-it/markdown-it-sup))
 
 ## Install
 
@@ -49,7 +50,6 @@ npm install @renovamen/vuepress-plugin-md-plus@next
 </CodeGroupItem>
 </CodeGroup>
 
-
 ## Configuration
 
 You can enable all features simply by:
@@ -60,10 +60,10 @@ const { mdPlusPlugin } = require("@renovamen/vuepress-plugin-md-plus");
 module.exports = {
   plugins: [
     mdPlusPlugin({
-      all: true,  // Enable all features or not, this will rewrite all the following options (default: false)
+      all: true // Enable all features or not, this will rewrite all the following options (default: false)
     })
   ]
-}
+};
 ```
 
 or enable them separately:
@@ -72,13 +72,12 @@ or enable them separately:
 module.exports = {
   plugins: [
     mdPlusPlugin({
-      footnote: true,  // Enable footnote or not (default: false)
-      mark: true  // Enable mark or not (default: false)
+      footnote: true, // Enable footnote or not (default: false)
+      mark: true // Enable mark or not (default: false)
     })
   ]
-}
+};
 ```
-
 
 ## Usage
 
@@ -87,11 +86,13 @@ module.exports = {
 Add footnotes for text[^1]
 
 ::: details Syntax
+
 ```
 Add footnotes for text[^1]
 
 [^1]: Write your footnote here.
 ```
+
 :::
 
 ### Mark
@@ -99,9 +100,35 @@ Add footnotes for text[^1]
 Mark important information: "Excuse me. Can you tell me how much the shirt is?" "Yes, it's ==nine fifteen==."
 
 ::: details Syntax
+
 ```
 Mark important information: "Excuse me. Can you tell me how much the shirt is?" "Yes, it's ==nine fifteen==."
 ```
+
+:::
+
+## Subscript
+
+H~2~O
+
+::: details Syntax
+
+```markdown
+H~2~O
+```
+
+:::
+
+## Superscript
+
+29^th^
+
+::: details Syntax
+
+```
+29^th^
+```
+
 :::
 
 ---
