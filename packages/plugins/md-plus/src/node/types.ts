@@ -19,4 +19,16 @@ export interface MdPlusOptions {
    * @default false
    */
   mark?: boolean;
+  /**
+   * Enable Superscript or not.
+   *
+   * @default false
+   */
+  sup?: boolean;
+  /**
+   * Enable Subscript or not.
+   *
+   * @default false
+   */
+  sub?: boolean;
 }

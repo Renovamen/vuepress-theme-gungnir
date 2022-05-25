@@ -157,12 +157,17 @@ importers:
       markdown-it: ^13.0.1
       markdown-it-footnote: ^3.0.3
       markdown-it-mark: ^3.0.1
+      markdown-it-sub: ^1.0.0
+      markdown-it-sup: ^1.0.0
     dependencies:
       '@types/markdown-it': 12.2.3
       '@vuepress/core': 2.0.0-beta.45
       markdown-it: 13.0.1
       markdown-it-footnote: 3.0.3
       markdown-it-mark: 3.0.1
+    devDependencies:
+      markdown-it-sub: 1.0.0
+      markdown-it-sup: 1.0.0
 
   packages/plugins/mermaid:
     specifiers:
@@ -699,6 +704,8 @@ packages:
     resolution: {integrity: sha512-n2Q6i+fnJqzOaq2VkdXxy2TCPCWQZHiCo0XqmrCvDWcZQKRyZzYi4Z0yxlBuN0w+r2ZHmre+Q087DSrw3pbJDQ==}
     engines: {node: '>=6.0.0'}
     hasBin: true
+    dependencies:
+      '@babel/types': 7.17.10
 
   /@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression/7.16.7_@babel+core@7.17.10:
     resolution: {integrity: sha512-anv/DObl7waiGEnC24O9zqL0pSuI9hljihqiDuFHC8d7/bjr/4RLGPWuc8rYOff/QPzbEPSkzG8wGG9aDuhHRg==}
@@ -1532,7 +1539,6 @@ packages:
     dependencies:
       '@babel/helper-validator-identifier': 7.16.7
       to-fast-properties: 2.0.0
-    dev: false
 
   /@braintree/sanitize-url/6.0.0:
     resolution: {integrity: sha512-mgmE7XBYY/21erpzhexk4Cj1cyTQ9LzvnTxtzM17BJ7ERMNE6W72mQRo0I1Ud8eFJ+RVVIcBNhLFZ3GX4XFz5w==}
@@ -6963,6 +6969,14 @@ packages:
     resolution: {integrity: sha512-HyxjAu6BRsdt6Xcv6TKVQnkz/E70TdGXEFHRYBGLncRE9lBFwDNLVtFojKxjJWgJ+5XxUwLaHXy+2sGBbDn+4A==}
     dev: false
 
+  /markdown-it-sub/1.0.0:
+    resolution: {integrity: sha1-N1/WAm6ufdywEkl/ZBEZXqHjr+g=}
+    dev: true
+
+  /markdown-it-sup/1.0.0:
+    resolution: {integrity: sha1-y5yf+RpSVawI8/09YyhuFd8KH8M=}
+    dev: true
+
   /markdown-it/13.0.1:
     resolution: {integrity: sha512-lTlxriVoy2criHP0JKRhO2VDG9c2ypWCsT237eDiLqi09rmbKoUetyGHq2uOIRoRS//kfoJckS0eUzzkDR+k2Q==}
     hasBin: true
@@ -8784,7 +8798,6 @@ packages:
   /to-fast-properties/2.0.0:
     resolution: {integrity: sha1-3F5pjL0HkmW8c+A3doGk5Og/YW4=}
     engines: {node: '>=4'}
-    dev: false
 
   /to-object-path/0.3.0:
     resolution: {integrity: sha1-KXWIt7Dn4KwI4E5nL4XB9JmeF68=}
