@@ -74,6 +74,8 @@ module.exports = {
     mdPlusPlugin({
       footnote: true, // Enable footnote or not (default: false)
       mark: true // Enable mark or not (default: false)
+      sub: true // Enable Subscript or not (default: false)
+      sup: true // Enable Superscript or not (default: false)
     })
   ]
 };
@@ -107,7 +109,7 @@ Mark important information: "Excuse me. Can you tell me how much the shirt is?" 
 
 :::
 
-## Subscript
+### Subscript
 
 H~2~O
 
@@ -119,7 +121,7 @@ H~2~O
 
 :::
 
-## Superscript
+### Superscript
 
 29^th^
 

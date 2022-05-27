@@ -38,8 +38,8 @@ theme: gungnirTheme({
     mdPlus: {
       footnote: true, // Footnote (default: false)
       mark: true, // Mark (default: false)
-      sub: true, // Mark (default: false)
-      sup: true // Mark (default: false)
+      sub: true, // Subscript (default: false)
+      sup: true // Superscript (default: false)
     }
   }
 });
