@@ -29,7 +29,7 @@ If you want to customize the token of the fenced code block (which is `mermaidjs
 ```js{4}
 theme: gungnirTheme({
   themePlugins: {
-    chartjs: {
+    mermaid: {
       token: "mermaid"
     }
   }
