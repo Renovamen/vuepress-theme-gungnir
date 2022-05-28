@@ -15,6 +15,8 @@ date: 2022-03-12
 
 - 脚注
 - 高亮标记
+- 下标
+- 上标
 
 你可以一键启用所有功能：
 
@@ -22,10 +24,10 @@ date: 2022-03-12
 theme: gungnirTheme({
   themePlugins: {
     mdPlus: {
-      all: true,  // 全部启用（默认：false）
+      all: true // 全部启用（默认：false）
     }
   }
-})
+});
 ```
 
 也可以分别启用：
@@ -34,11 +36,13 @@ theme: gungnirTheme({
 theme: gungnirTheme({
   themePlugins: {
     mdPlus: {
-      footnote: true,  // 脚注（默认：false）
-      mark: true  // 高亮标记（默认：false）
+      footnote: true, // 脚注（默认：false）
+      mark: true, // 高亮标记（默认：false）
+      sub: true, // 下标（默认：false）
+      sup: true // 上标（默认：false）
     }
   }
-})
+});
 ```
 
 ## 脚注
@@ -46,11 +50,13 @@ theme: gungnirTheme({
 给文字加上脚注[^1]
 
 ::: details 语法
+
 ```
 给文字加上脚注[^1]
 
 [^1]: 脚注内容
 ```
+
 :::
 
 ## 高亮标记
@@ -58,9 +64,35 @@ theme: gungnirTheme({
 高亮标记重要的内容：衬衫的价格是 ==九磅十五便士==
 
 ::: details 语法
+
 ```
 衬衫的价格是 ==九磅十五便士==
 ```
+
+:::
+
+## 下标
+
+H~2~O
+
+::: details 语法
+
+```markdown
+H~2~O
+```
+
+:::
+
+## 上标
+
+29^th^
+
+::: details 语法
+
+```
+29^th^
+```
+
 :::
 
 ---
