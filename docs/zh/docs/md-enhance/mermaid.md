@@ -29,7 +29,7 @@ theme: gungnirTheme({
 ```js{4}
 theme: gungnirTheme({
   themePlugins: {
-    chartjs: {
+    mermaid: {
       token: "mermaid"
     }
   }
