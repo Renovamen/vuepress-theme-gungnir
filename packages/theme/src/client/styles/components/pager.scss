@@ -1,8 +1,7 @@
-@import "../_wrapper";
+@import "../_mixins";
 
 .pager {
-  @extend %wrapper;
-
+  @include content_wrapper;
   list-style: none;
   display: grid;
   gap: 1rem;

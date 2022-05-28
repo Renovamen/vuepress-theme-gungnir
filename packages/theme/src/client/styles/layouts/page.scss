@@ -1,13 +1,18 @@
-@import '../_variables';
-@import '../_wrapper';
+@import "../_variables";
+@import "../_mixins";
 
 .page {
   padding-bottom: 2rem;
   display: block;
+
+  .theme-gungnir-content {
+    @include content_wrapper;
+    padding-top: 0;
+  }
 }
 
 .page-meta {
-  @extend %wrapper;
+  @include content_wrapper;
   padding-top: 1rem;
   padding-bottom: 1rem;
   overflow: auto;
@@ -58,7 +63,7 @@
 }
 
 .page-nav {
-  @extend %wrapper;
+  @include content_wrapper;
   padding-top: 1rem;
   padding-bottom: 0;
 
@@ -73,7 +78,7 @@
 
   .prev {
     a:before {
-      content: '←';
+      content: "←";
     }
   }
 
@@ -81,7 +86,7 @@
     float: right;
 
     a:after {
-      content: '→';
+      content: "→";
     }
   }
 }

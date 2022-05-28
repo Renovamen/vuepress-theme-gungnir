@@ -28,10 +28,7 @@ import {
 } from "oh-vue-icons/icons";
 import { h } from "vue";
 import type { DefineComponent } from "vue";
-import Badge from "./components/global/Badge.vue";
-import CodeGroup from "./components/global/CodeGroup";
-import CodeGroupItem from "./components/global/CodeGroupItem.vue";
-import LinkCard from "./components/global/LinkCard.vue";
+import { Badge, CodeGroup, CodeGroupItem, LinkCard } from "./components/global";
 import {
   setupBlogPages,
   setupDarkMode,

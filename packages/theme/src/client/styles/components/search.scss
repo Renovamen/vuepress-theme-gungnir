@@ -1,9 +1,9 @@
-@import '../_variables';
-@import '../_mixins';
+@import "../_variables";
+@import "../_mixins";
 
 // @renovamen/plugin-search
 .search-page {
-  @include transition(transform .25s);
+  @include transition(transform 0.25s);
   @include transform(translateY(100%));
 }
 
@@ -12,7 +12,7 @@
     @include placeholdeTextColor(var(--c-text-sub));
   }
   .suggestions {
-    @include hideScrollbar();
+    @include hideScrollbar;
   }
 }
 

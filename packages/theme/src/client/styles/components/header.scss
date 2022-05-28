@@ -1,5 +1,5 @@
-@import '../_variables';
-@import '../_wrapper';
+@import "../_variables";
+@import "../_mixins";
 
 .article-header.use-image {
   max-width: 100%;
@@ -44,7 +44,7 @@
 }
 
 .article-header-content {
-  @extend %wrapper;
+  @include content_wrapper;
   position: relative;
   z-index: 2;
 
@@ -75,7 +75,8 @@
       line-height: 24px;
       padding: 0 10px;
 
-      &.active, &:hover {
+      &.active,
+      &:hover {
         background-color: rgba(0, 0, 0, 0.05) !important;
       }
     }
@@ -83,7 +84,7 @@
 }
 
 .post-header .article-header-content {
-  @extend %post-header-wrapper;
+  @include post_header_wrapper;
 
   h1.article-title {
     font-size: 50px;
@@ -113,7 +114,9 @@
 
   .show-catalog .article-header-content {
     max-width: 100%;
-    $sideWidth: calc((100% - var(--content-width) - var(--catalog-width) - 1rem) / 2);
+    $sideWidth: calc(
+      (100% - var(--content-width) - var(--catalog-width) - 1rem) / 2
+    );
     padding-left: max($sideWidth, 2.5rem);
   }
 }
@@ -139,7 +142,8 @@
   position: relative;
   padding: 55px 0 0;
 
-  .title, .subtitle {
+  .title,
+  .subtitle {
     position: relative;
     text-align: center;
     z-index: 2;
@@ -181,7 +185,8 @@
     z-index: 1;
   }
 
-  .title, .subtitle {
+  .title,
+  .subtitle {
     color: #fff;
   }
   .title {

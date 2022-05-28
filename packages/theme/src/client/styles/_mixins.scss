@@ -1,4 +1,4 @@
-@import '_variables';
+@import "_variables";
 
 @mixin content_wrapper {
   max-width: var(--content-width);
@@ -11,6 +11,20 @@
 
   @media (max-width: $MQMobileNarrow) {
     padding: 1.5rem;
+  }
+}
+
+@mixin post_header_wrapper {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 8rem 2.5rem 2rem;
+
+  @media (max-width: $MQNarrow) {
+    padding: 8rem 2rem 0;
+  }
+
+  @media (max-width: $MQMobileNarrow) {
+    padding: 6rem 1rem 0;
   }
 }
 
@@ -35,7 +49,7 @@
   -ms-transform: $value;
 }
 
-@mixin hideScrollbar() {
+@mixin hideScrollbar {
   // Chrome, Safari
   &::-webkit-scrollbar {
     width: 0;

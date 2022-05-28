@@ -1,6 +1,5 @@
-@import '../_variables';
-@import '../_mixins';
-@import '../_wrapper';
+@import "../_variables";
+@import "../_mixins";
 
 .page {
   padding-top: var(--navbar-height);
@@ -55,7 +54,7 @@
   width: 100vw;
   height: 100vh;
   display: none;
-  background-color: rgba(0, 0, 0, .55);
+  background-color: rgba(0, 0, 0, 0.55);
 }
 
 .footer {
@@ -67,7 +66,7 @@
 
   a {
     color: var(--c-text-sub);
-    @include transition(color .2s ease);
+    @include transition(color 0.2s ease);
 
     &:hover {
       color: var(--c-text-accent);
@@ -95,14 +94,16 @@
   }
 
   &.no-navbar {
-    .theme-gungnir-content:not(.custom) > h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      margin-top: 1.5rem;
-      padding-top: 0;
+    .theme-gungnir-content {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin-top: 1.5rem;
+        padding-top: 0;
+      }
     }
 
     .page {
@@ -127,13 +128,32 @@
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  .theme-gungnir-content:not(.custom) > & {
+.theme-gungnir-content {
+  a:hover {
+    text-decoration: underline;
+  }
+
+  p {
+    margin: 25px 0;
+  }
+
+  li p {
+    margin: 5px 0;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    display: block;
+    margin: 1.5em auto 1.6em auto;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin-top: calc(0.5rem - var(--navbar-height));
     padding-top: calc(1rem + var(--navbar-height));
     margin-bottom: 0;
@@ -147,39 +167,6 @@ h6 {
         margin-top: 2rem;
       }
     }
-  }
-}
-
-.theme-gungnir-content:not(.custom) {
-  @extend %wrapper;
-
-  padding-top: 0;
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  p {
-    margin: 25px 0;
-  }
-
-  li p {
-    margin: 5px 0;
-  }
-
-  img, video {
-    max-width: 100%;
-    display: block;
-    margin: 1.5em auto 1.6em auto;
-  }
-}
-
-.theme-gungnir-content.custom {
-  padding: 0;
-  margin: 0;
-
-  img, video {
-    max-width: 100%;
   }
 }
 
