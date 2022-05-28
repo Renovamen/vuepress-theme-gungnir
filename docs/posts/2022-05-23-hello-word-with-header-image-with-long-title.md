@@ -1,15 +1,12 @@
 ---
 layout: Post
-title: Hello Word 2
-subtitle: A Test Post with a Header Image
+title: Hello Word with a long title, it should require two lines to display
+subtitle: A Test Post with a Long Title
 author: Renovamen
-date: 2021-12-25
-useHeaderImage: true
-headerImage: /img/in-post/2021-12-25/header.jpg
-headerMask: rgba(40, 57, 101, .4)
+date: 2022-05-23
+headerImage: /img/in-post/2021-12-24/header.jpg
 tags:
   - test
-  - 中文标签
 ---
 
 Welcome to VuePress theme Gungnir.

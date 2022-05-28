@@ -7,7 +7,7 @@ date: 2022-03-12
 
 主题内置的搜索组件修改自 [@vuepress/plugin-search](https://v2.vuepress.vuejs.org/zh/reference/plugin/search.html)，它只支持搜索**博客文章**（即不支持文档文章）。它在本地生成你的博客文章的搜索索引，然后在用户访问站点时加载搜索索引文件，即它不会进行任何外部请求。
 
-效果可以参考[这里](https://zxh.io)（点击导航栏的 Search）。
+效果可以参考[这里](https://blog.zxh.io)（点击导航栏的 Search）。
 
 
 ### 导航栏配置项

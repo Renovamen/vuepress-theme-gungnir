@@ -7,7 +7,7 @@ date: 2022-03-12
 
 The built-in search component of this theme is adapted from [@vuepress/plugin-search](https://v2.vuepress.vuejs.org/reference/plugin/search.html), it only supports searching for **blog article** contents, which means searching for documentation article contents is not avaliable. It generates search index from your pages locally and loads the search index file when users enter your site, which means it doesn't require any external requests.
 
-See [here](https://zxh.io) for a demo (click the "Search" button in navbar).
+See [here](https://blog.zxh.io) for a demo (click the "Search" button in navbar).
 
 
 ### Navbar Options

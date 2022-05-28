@@ -25,7 +25,7 @@ date: 2021-12-12
 ## Live Demos
 
 - [v2-vuepress-theme-gungnir.vercel.app](https://v2-vuepress-theme-gungnir.vercel.app)
-- [My blog](https://zxh.io)
+- [My blog](https://blog.zxh.io)
 
 
 ## Inspirations

@@ -1,7 +1,7 @@
 ---
 layout: Post
 title: Hello Word 1
-subtitle: A Test Post without The Header Image
+subtitle: A Test Post without the Header Image
 author: Renovamen
 date: 2021-12-24
 headerImage: /img/in-post/2021-12-24/header.jpg
@@ -193,7 +193,7 @@ $$
 A blog theme for VuePress 2.
 :::
 
-::: link {/img/links/me.png} [My Blog](https://zxh.io)
+::: link {/img/links/me.png} [My Blog](https://blog.zxh.io)
 My blog 🧐, powered by VuePress 2, themed by Gungnir.
 :::
 

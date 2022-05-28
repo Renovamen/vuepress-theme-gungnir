@@ -54,7 +54,7 @@ pnpm install -D vuepress vuepress-theme-gungnir@next
 ## Documentation & Live Demos
 
 - Documentation: [v2-vuepress-theme-gungnir.vercel.app](https://v2-vuepress-theme-gungnir.vercel.app)
-- My blog: [zxh.io](https://zxh.io/)
+- My blog: [blog.zxh.io](https://blog.zxh.io)
 
 
 &nbsp;

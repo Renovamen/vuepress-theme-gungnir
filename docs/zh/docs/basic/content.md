@@ -116,7 +116,7 @@ vuepress-theme-gungnir Introduction
 A blog theme for VuePress 2.
 :::
 
-::: link {/img/links/me.png} [My Blog](https://zxh.io)
+::: link {/img/links/me.png} [My Blog](https://blog.zxh.io)
 My blog 🧐, powered by VuePress 2, themed by Gungnir.
 :::
 
@@ -129,7 +129,7 @@ vuepress-theme-gungnir Introduction
 A blog theme for VuePress 2.
 :::
 
-::: link {/img/links/me.png} [My Blog](https://zxh.io)
+::: link {/img/links/me.png} [My Blog](https://blog.zxh.io)
 My blog 🧐, powered by VuePress 2, themed by Gungnir.
 :::
 ```
