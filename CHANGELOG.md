@@ -1,3 +1,20 @@
+# [2.0.0-alpha.24](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.23...v2.0.0-alpha.24) (2022-05-29)
+
+
+### Bug Fixes
+
+* code block line number, close [#65](https://github.com/Renovamen/vuepress-theme-gungnir/issues/65) ([d98067f](https://github.com/Renovamen/vuepress-theme-gungnir/commit/d98067f4856b4a78b1427145adbd68c30d552e18))
+* compatible with vuepress v2.0.0-beta.46 [#69](https://github.com/Renovamen/vuepress-theme-gungnir/issues/69) [#68](https://github.com/Renovamen/vuepress-theme-gungnir/issues/68) [#61](https://github.com/Renovamen/vuepress-theme-gungnir/issues/61) ([f28e131](https://github.com/Renovamen/vuepress-theme-gungnir/commit/f28e131a4ca73d12eafe274df8d61da01c2ccd51))
+
+
+### Features
+
+* change fullscreen button display ([#66](https://github.com/Renovamen/vuepress-theme-gungnir/issues/66)) ([1c0b2d7](https://github.com/Renovamen/vuepress-theme-gungnir/commit/1c0b2d777d84e6f2f054c2a0de1e068a2bd30575))
+* improve pager style & add sub&sup syntax suppor ([#67](https://github.com/Renovamen/vuepress-theme-gungnir/issues/67)) ([c152796](https://github.com/Renovamen/vuepress-theme-gungnir/commit/c152796655f7dc2be015141bfc1beb2615401d8d))
+* support disabling Giscus of a certain page ([d874e5a](https://github.com/Renovamen/vuepress-theme-gungnir/commit/d874e5a0f1659f2d764427ab0f987b8a87156771))
+
+
+
 # [2.0.0-alpha.23](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.22...v2.0.0-alpha.23) (2022-05-20)
 
 

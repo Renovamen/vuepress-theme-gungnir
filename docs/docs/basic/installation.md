@@ -38,7 +38,7 @@ npm install -D vuepress@2.0.0-beta.39 vuepress-theme-gungnir@next
 </CodeGroupItem>
 </CodeGroup>
 
-Please make sure you are using the latest version of VuePress (2.0.0-beta.45) and theme Gungnir.
+Please make sure you are using the latest version of VuePress (2.0.0-beta.46) and theme Gungnir.
 
 Build your directory structure follow the guide of [VuePress's official documentation](https://v2.vuepress.vuejs.org/guide/getting-started.html) and specify this theme in `.vuepress/config.js` or `.vuepress/config.ts` (if you are using TypeScript):
 
