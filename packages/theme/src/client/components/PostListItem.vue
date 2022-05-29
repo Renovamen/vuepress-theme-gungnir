@@ -38,7 +38,7 @@ defineProps({
 
 const getExcerpt = (excerpt: string) => {
   return excerpt
-    .replaceAll("<RouterLink to", "<a href")
-    .replaceAll("</RouterLink>", "</a>");
+    .replace(/<RouterLink to/g, "<a href")
+    .replace(/<\/RouterLink>/g, "</a>");
 };
 </script>
