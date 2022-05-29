@@ -40,10 +40,9 @@ import ArticleHeader from "@theme/ArticleHeader.vue";
 import Common from "@theme/Common.vue";
 import Page from "@theme/Page.vue";
 import Pager from "@theme/Pager.vue";
-import { usePageData, usePageFrontmatter } from "@vuepress/client";
+import { usePageData } from "@vuepress/client";
 import { computed, onBeforeUnmount, onMounted, reactive } from "vue";
 import { useRouter } from "vue-router";
-import type { GungnirThemePostFrontmatter } from "../../shared";
 import { Catalog } from "../components/Catalog";
 import {
   useBlog,
@@ -53,7 +52,6 @@ import {
 } from "../composables";
 
 const page = usePageData();
-const frontmatter = usePageFrontmatter<GungnirThemePostFrontmatter>();
 const themeLocale = useThemeLocaleData();
 const router = useRouter();
 

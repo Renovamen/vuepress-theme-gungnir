@@ -16,17 +16,20 @@
 
     <slot name="bottom" />
 
-    <GungnirGiscus :theme="giscusTheme" />
+    <GungnirGiscus v-if="frontmatter.giscus !== false" :theme="giscusTheme" />
   </main>
 </template>
 
 <script setup lang="ts">
 import PageMeta from "@theme/PageMeta.vue";
 import PageNav from "@theme/PageNav.vue";
+import { usePageFrontmatter } from "@vuepress/client";
 import { computed } from "vue";
+import type { GungnirThemeNormalPageFrontmatter } from "../../shared";
 import { useDarkMode, useThemeLocaleData } from "../composables";
 
 const themeLocale = useThemeLocaleData();
+const frontmatter = usePageFrontmatter<GungnirThemeNormalPageFrontmatter>();
 const { isDarkMode } = useDarkMode();
 
 const giscusTheme = computed(() =>

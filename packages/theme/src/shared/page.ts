@@ -24,6 +24,7 @@ export interface GungnirThemeNormalPageFrontmatter
   sidebarDepth?: number;
   prev?: string | NavLink;
   next?: string | NavLink;
+  giscus?: boolean;
 }
 
 export interface GungnirThemePostFrontmatter

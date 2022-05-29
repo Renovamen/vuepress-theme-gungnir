@@ -1,10 +1,11 @@
 ---
 layout: Post
 title: Hello Word with a long title, it should require two lines to display
-subtitle: A Test Post with a Long Title
+subtitle: A Test Post with Comment Disabled
 author: Renovamen
 date: 2022-05-23
 headerImage: /img/in-post/2021-12-24/header.jpg
+giscus: false
 tags:
   - test
 ---

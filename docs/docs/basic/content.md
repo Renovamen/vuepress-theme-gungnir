@@ -21,7 +21,8 @@ headerImage: /img/test.jpg  # path to the header image (required, even if `useHe
 headerMask: rgba(40, 57, 101, .4)  # mask of the header image (optional)
 headerImageCredit: Jeremy Fenske  # source of the header image, like name of the author or website (optional, only works when "useHeaderImage: true")
 headerImageCreditLink: https://www.artstation.com/artwork/nLY0K  # link to the source of the header image (optional, only works when "useHeaderImage: true")
-catalog: false  # enable catalog or not, can rewrite `themeConfig.catalog` (optional, default: true)
+catalog: false  # enable/disable catalog of the current page, can rewrite `themeConfig.catalog` (optional, default: true)
+giscus: false  # enable/disable Giscus of the current page (optional, default: true)
 hide: true  # hide this blog in the blog list of home page and tags page or not (optional, default: false)
 tags:  # post tags (optional)
   - space
@@ -75,6 +76,7 @@ An example front matter for a documentation page looks likes:
 title: A Brief History of Time  # title (required)
 date: 2020-03-31  # publish date (optional)
 author: Stephen Hawking  # author (optional, will use `themeConfig.personalInfo.name` as default if it is not specified)
+giscus: false  # enable/disable Giscus of the current page (optional, default: true)
 ---
 ```
 
