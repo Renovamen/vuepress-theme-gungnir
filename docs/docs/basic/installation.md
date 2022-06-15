@@ -51,7 +51,7 @@ Build your directory structure follow the guide of [VuePress's official document
 const { gungnirTheme } = require("vuepress-theme-gungnir");
 
 module.exports = {
-  ...
+  // ...
   theme: gungnirTheme({
     // you theme configs
   })
@@ -69,7 +69,7 @@ import { defineUserConfig } from "vuepress";
 import { gungnirTheme } from "vuepress-theme-gungnir";
 
 export default defineUserConfig({
-  ...
+  // ...
   theme: gungnirTheme({
     // you theme configs
   })
