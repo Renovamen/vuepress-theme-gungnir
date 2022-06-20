@@ -34,13 +34,18 @@
   }
 
   .edit-link {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     margin-right: 0.25rem;
     color: var(--c-text-accent);
 
+    svg.ov-icon {
+      width: 0.85em;
+    }
+
     a {
       color: var(--c-text-accent) !important;
-      margin-left: 2px;
+      margin-left: 3px;
       &:hover {
         text-decoration: underline;
       }

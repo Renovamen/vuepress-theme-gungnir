@@ -30,7 +30,7 @@
         />
 
         <div class="menu-btn-child" @click="scrollToBottom">
-          <VIcon name="fa-chevron-down" scale="1.5" />
+          <VIcon name="fa-chevron-down" />
         </div>
 
         <div class="menu-btn-child" @click="scrollToTop">
