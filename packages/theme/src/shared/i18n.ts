@@ -105,9 +105,9 @@ export interface GungnirThemeI18n {
   openInNewWindow?: string;
 
   /**
-   * A11y text for dark mode toggle button
+   * A11y text for color mode toggle button
    */
-  toggleDarkMode?: string;
+  toggleColorMode?: string;
 
   /**
    * A11y text for sidebar toggle button

@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="toggle-dark-button"
-    :title="themeLocale.toggleDarkMode"
-    @click="toggleDarkMode"
-  >
+  <div :title="themeLocale.toggleColorMode" @click="toggleColorMode">
     <VIcon v-show="currentMode === 'light'" name="fa-sun" />
     <VIcon v-show="currentMode === 'dark'" name="fa-moon" />
     <VIcon v-show="currentMode === 'auto'" name="fa-magic" />
@@ -18,7 +14,7 @@ const modeOptions = ["light", "dark", "auto"];
 const themeLocale = useThemeLocaleData();
 const { currentMode } = useDarkMode();
 
-const toggleDarkMode = (): void => {
+const toggleColorMode = (): void => {
   const currentIndex = modeOptions.indexOf(currentMode.value);
   const nextIndex = (currentIndex + 1) % modeOptions.length;
   currentMode.value = modeOptions[nextIndex];

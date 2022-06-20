@@ -34,7 +34,7 @@ const en: GungnirThemeI18n = {
 
   // a11y
   openInNewWindow: "open in new window",
-  toggleDarkMode: "toggle dark mode",
+  toggleColorMode: "toggle color mode",
   toggleSidebar: "toggle sidebar",
 
   // other pages

@@ -12,13 +12,18 @@ const deleteSelectLanguageName = (options: GungnirThemeI18n) => {
 };
 
 export const DEFAULT_LOCALE_OPTIONS: GungnirThemeLocaleOptions = {
+  // home page
+  blogNumPerPage: 10,
   hitokoto: false,
   personalInfo: null,
   homeHeaderImages: null,
+
   pages: null,
   catalog: true,
 
-  blogNumPerPage: 10,
+  // color mode
+  colorMode: "auto",
+  colorModeSwitch: true,
 
   // search
   searchIcon: "ri-search-2-line",
@@ -28,13 +33,13 @@ export const DEFAULT_LOCALE_OPTIONS: GungnirThemeLocaleOptions = {
 
   // navbar
   navbar: [],
-  repo: null,
 
   // sidebar
   sidebar: "auto",
   sidebarDepth: 2,
 
   // page meta
+  repo: null,
   editLink: true,
   lastUpdated: true,
   contributors: false,

@@ -39,6 +39,20 @@ export interface GungnirThemeLocaleData extends LocaleData, GungnirThemeI18n {
   catalog?: boolean;
 
   /**
+   * Default color mode
+   *
+   * @default "auto"
+   */
+  colorMode?: "auto" | "dark" | "light";
+
+  /**
+   * Enable color mode switching and display a button in menu or not
+   *
+   * @default true
+   */
+  colorModeSwitch?: boolean;
+
+  /**
    * Footer, support HTML
    */
   footer?: string;

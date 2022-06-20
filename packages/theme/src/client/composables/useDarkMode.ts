@@ -9,6 +9,7 @@ import {
   watch
 } from "vue";
 import type { InjectionKey, Ref, WritableComputedRef } from "vue";
+import { useThemeLocaleData } from ".";
 
 export type CurrentModeRef = WritableComputedRef<string>;
 export type IsDarkModeRef = Ref<boolean>;
@@ -32,7 +33,6 @@ export const useDarkMode = (): {
   if (!mode) {
     throw new Error("useDarkMode() is called without provider.");
   }
-
   return mode;
 };
 
@@ -40,15 +40,23 @@ export const useDarkMode = (): {
  * Create dark mode ref and provide as global computed in setup
  */
 export const setupDarkMode = (): void => {
-  const modeStorage = useStorage("vuepress-color-scheme", "auto");
+  const themeLocale = useThemeLocaleData();
+  const darkStorage = useStorage(
+    "vuepress-color-scheme",
+    themeLocale.value.colorMode
+  );
 
-  const currentMode = computed<string>({
+  const currentMode = computed<"auto" | "dark" | "light">({
     get() {
+      // disable color mode switching
+      if (!themeLocale.value.colorModeSwitch) {
+        return themeLocale.value.colorMode || "auto";
+      }
       // storage value
-      return modeStorage.value;
+      return darkStorage.value || "auto";
     },
     set(val) {
-      modeStorage.value = val;
+      darkStorage.value = val;
     }
   });
 
