@@ -27,7 +27,7 @@
 
 <script setup lang="ts">
 import NavbarItems from "@theme/NavbarItems.vue";
-import { usePageFrontmatter, useRouteLocale } from "@vuepress/client";
+import { usePageFrontmatter } from "@vuepress/client";
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import type {
@@ -45,7 +45,6 @@ defineProps({
 
 defineEmits(["toggle-search"]);
 
-const routeLocale = useRouteLocale();
 const themeLocale = useThemeLocaleData();
 const frontmatter = usePageFrontmatter<
   GungnirThemeNormalPageFrontmatter | GungnirThemePostFrontmatter

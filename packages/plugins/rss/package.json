@@ -29,8 +29,8 @@
     "clean": "rimraf lib *.tsbuildinfo"
   },
   "dependencies": {
-    "@vuepress/core": "2.0.0-beta.46",
-    "@vuepress/utils": "2.0.0-beta.46",
+    "@vuepress/core": "2.0.0-beta.48",
+    "@vuepress/utils": "2.0.0-beta.48",
     "rss": "^1.2.2"
   }
 }

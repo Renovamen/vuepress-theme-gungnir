@@ -26,11 +26,22 @@ export type GungnirThemeData = ThemeData<GungnirThemeLocaleData>;
 
 export interface GungnirThemeLocaleData extends LocaleData, GungnirThemeI18n {
   /**
-   * Home path of current locale
+   * Maximum number of blogs per page.
    *
-   * Used as the link of back-to-home
+   * Default: 10
    */
-  home?: string;
+  blogNumPerPage?: number;
+
+  /**
+   * Display catalog for all posts or not. Catalog can also be configured
+   * in page frontmatter.
+   */
+  catalog?: boolean;
+
+  /**
+   * Footer, support HTML
+   */
+  footer?: string;
 
   /**
    * Enable hitokoto or not?
@@ -38,11 +49,16 @@ export interface GungnirThemeLocaleData extends LocaleData, GungnirThemeI18n {
   hitokoto?: boolean | string;
 
   /**
-   * Icon for search button (should be registered first). "false" for no icon.
+   * Home path of current locale
    *
-   * @default "ri-search-2-line"
+   * Used as the link of back-to-home
    */
-  searchIcon?: string | boolean;
+  home?: string;
+
+  /**
+   * Header images on home page
+   */
+  homeHeaderImages?: null | Array<ImageItem>;
 
   /**
    * Icon for language seletor (should be registered first). "false" for no icon.
@@ -52,14 +68,11 @@ export interface GungnirThemeLocaleData extends LocaleData, GungnirThemeI18n {
   langIcon?: string | boolean;
 
   /**
-   * Personal information
+   * Navbar config
+   *
+   * Set to `false` to disable navbar in current locale
    */
-  personalInfo?: null | PersonalConfig;
-
-  /**
-   * Header images on home page
-   */
-  homeHeaderImages?: null | Array<ImageItem>;
+  navbar?: false | NavbarConfig;
 
   /**
    * Other pages
@@ -67,24 +80,23 @@ export interface GungnirThemeLocaleData extends LocaleData, GungnirThemeI18n {
   pages?: null | GungnirThemePagesOptions;
 
   /**
-   * Display catalog for all posts or not. Catalog can also be configured
-   * in page frontmatter.
+   * Personal information
    */
-  catalog?: boolean;
+  personalInfo?: null | PersonalConfig;
 
   /**
-   * Maximum number of blogs per page.
+   * Navbar repository config
    *
-   * Default: 10
+   * Used for the repository link of "edit this page" link
    */
-  blogNumPerPage?: number;
+  repo?: null | string;
 
   /**
-   * Navbar config
+   * Icon for search button (should be registered first). "false" for no icon.
    *
-   * Set to `false` to disable navbar in current locale
+   * @default "ri-search-2-line"
    */
-  navbar?: false | NavbarConfig;
+  searchIcon?: string | boolean;
 
   /**
    * Sidebar config
@@ -163,7 +175,9 @@ export interface GungnirThemeLocaleData extends LocaleData, GungnirThemeI18n {
   contributors?: boolean;
 
   /**
-   * Footer, support HTML
+   * Shouldn't be accessed via theme config
    */
-  footer?: string;
+  search?: boolean;
+  giscusDarkTheme?: string;
+  giscusLightTheme?: string;
 }

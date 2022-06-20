@@ -12,10 +12,8 @@
 
 <script setup lang="ts">
 import Common from "@theme/Common.vue";
-import { useRouteLocale } from "@vuepress/client";
 import { useThemeLocaleData } from "../composables";
 
-const routeLocale = useRouteLocale();
 const themeLocale = useThemeLocaleData();
 
 const messages = themeLocale.value.notFound ?? ["Not Found"];
