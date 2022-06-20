@@ -42,7 +42,7 @@ TODO:
 
 ## Installation
 
-Please make sure you are using the latest version of VuePress (2.0.0-beta.46) and theme Gungnir.
+Please make sure you are using the latest version of VuePress (2.0.0-beta.48) and theme Gungnir.
 
 ```bash
 pnpm install -D vuepress vuepress-theme-gungnir@next

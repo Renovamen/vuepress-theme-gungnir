@@ -1,3 +1,17 @@
+# [2.0.0-alpha.25](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.24...v2.0.0-alpha.25) (2022-06-20)
+
+
+### Bug Fixes
+
+* replaceAll -> replace, to support Node 14 [#69](https://github.com/Renovamen/vuepress-theme-gungnir/issues/69) ([766a0e5](https://github.com/Renovamen/vuepress-theme-gungnir/commit/766a0e56919b1bfcf0d7b46c28f0003704f951ba))
+
+
+### Features
+
+* support `colorMode` and `colorModeSwitch` options ([901d635](https://github.com/Renovamen/vuepress-theme-gungnir/commit/901d6355efd3126e7567bd27efd25803a2826cf4))
+
+
+
 # [2.0.0-alpha.24](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.23...v2.0.0-alpha.24) (2022-05-29)
 
 
