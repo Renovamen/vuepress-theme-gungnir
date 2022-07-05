@@ -31,6 +31,19 @@ pre[class*="language-"] {
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
+
+  &::-webkit-scrollbar {
+    height: 0.6rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--code-scroll-bar-color);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--c-brand);
+  }
 }
 
 :not(pre) > code[class*="language-"],
