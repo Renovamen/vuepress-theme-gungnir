@@ -1,4 +1,4 @@
-@import '../_variables';
+@import "../_variables";
 
 :root {
   // brand colors
@@ -44,6 +44,7 @@
   --code-bg-color: #282c34;
   --code-hl-bg-color: rgba(0, 0, 0, 0.66);
   --code-ln-color: #9e9e9e;
+  --code-scroll-bar-color: #64748b;
   --code-ln-wrapper-width: 3rem;
   --inline-code-color: #{$inlineCodeText};
   --inline-code-bg-color: #{$inlineCodeBg};
@@ -57,9 +58,9 @@
   --box-shadow-inset: #{$boxShadowInset};
 
   // font vars
-  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  --font-family-code: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-code: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 
   // layout vars
   --navbar-height: 3.6rem;
