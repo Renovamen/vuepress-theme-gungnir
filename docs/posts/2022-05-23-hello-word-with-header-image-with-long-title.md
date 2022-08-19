@@ -44,7 +44,7 @@ Most people would find the picture of our universe as an infinite **tower of tor
 
 ### Code Blocks
 
-Click the red button on the upper-right corner to make the code block full screen.
+Click the green button on the upper-left corner to make the code block full screen.
 
 ```python{8}
 import food
