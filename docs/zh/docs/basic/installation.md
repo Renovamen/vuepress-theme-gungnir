@@ -38,7 +38,7 @@ npm install -D vuepress vuepress-theme-gungnir@next
 </CodeGroupItem>
 </CodeGroup>
 
-请确保你使用的是最新版本的 VuePress（2.0.0-beta.48）和主题。
+请确保你使用的是最新版本的 VuePress（2.0.0-beta.49）和主题。
 
 参考 [VuePress 文档](https://v2.vuepress.vuejs.org/guide/)搭建目录结构。建议在 `package.json` 的 `dev` 和 `build` script 里添加 `--clean-cache`，即：
 

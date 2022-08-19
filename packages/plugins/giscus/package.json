@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-giscus",
-  "version": "2.0.0-alpha.25",
+  "version": "2.0.0-alpha.26",
   "description": "A plugin for adding comment system Giscus in VuePress 2.",
   "keywords": [
     "vue",

@@ -1,3 +1,18 @@
+# [2.0.0-alpha.26](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.25...v2.0.0-alpha.26) (2022-08-19)
+
+
+### Bug Fixes
+
+* home page pager arrows ([9343d7e](https://github.com/Renovamen/vuepress-theme-gungnir/commit/9343d7e6a3ddbdba0b9fe033add8a8dc070544bd))
+* scrollbar style in code blocks [#77](https://github.com/Renovamen/vuepress-theme-gungnir/issues/77) ([#81](https://github.com/Renovamen/vuepress-theme-gungnir/issues/81)) ([1125d08](https://github.com/Renovamen/vuepress-theme-gungnir/commit/1125d089bbdd199636ed9d4ba832b0300ec49fff))
+
+
+### Performance Improvements
+
+* replace span element with a element to optimize SEO ([#78](https://github.com/Renovamen/vuepress-theme-gungnir/issues/78)) ([ebf8638](https://github.com/Renovamen/vuepress-theme-gungnir/commit/ebf8638a4f309fd2558eb0c652be943d9ccc27ca))
+
+
+
 # [2.0.0-alpha.25](https://github.com/Renovamen/vuepress-theme-gungnir/compare/v2.0.0-alpha.24...v2.0.0-alpha.25) (2022-06-20)
 
 
