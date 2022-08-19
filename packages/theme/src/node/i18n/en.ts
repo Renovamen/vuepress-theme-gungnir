@@ -51,8 +51,8 @@ const en: GungnirThemeI18n = {
   postPrev: "Previous",
 
   // home page pager
-  homeNext: "← Newer Posts",
-  homePrev: "Older Posts →",
+  homeNext: "Newer Posts",
+  homePrev: "Older Posts",
 
   // PWA-popup
   pwaPopupMessage: "New content is available.",

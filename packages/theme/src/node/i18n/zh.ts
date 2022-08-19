@@ -51,8 +51,8 @@ const zh: GungnirThemeI18n = {
   postPrev: "上一篇",
 
   // home page pager
-  homeNext: "← 较新的文章",
-  homePrev: "较旧的文章 →",
+  homeNext: "较新的文章",
+  homePrev: "较旧的文章",
 
   // PWA-popup
   pwaPopupMessage: "发现有新内容更新",

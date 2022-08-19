@@ -54,7 +54,15 @@
   max-width: var(--homepage-width);
 
   a {
-    width: 180px;
+    max-width: 180px;
+  }
+
+  a.prev:before {
+    content: "← ";
+  }
+
+  a.next:after {
+    content: " →";
   }
 }
 
