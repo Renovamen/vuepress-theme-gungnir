@@ -1,7 +1,7 @@
-import { htmlEscape } from "@vuepress/shared";
 import { hash } from "@vuepress/utils";
 import type * as MarkdownIt from "markdown-it";
 import type * as Token from "markdown-it/lib/token";
+import { htmlEscape } from "./utils";
 
 const MarkdownItChart = (blockToken = "chart") => {
   const chart = (md: MarkdownIt): void => {

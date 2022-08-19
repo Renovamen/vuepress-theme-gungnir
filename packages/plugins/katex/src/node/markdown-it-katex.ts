@@ -1,10 +1,10 @@
-import { htmlEscape } from "@vuepress/shared";
 import * as Katex from "katex";
 import type { KatexOptions } from "katex";
 import type * as MarkdownIt from "markdown-it";
 import type * as StateBlock from "markdown-it/lib/rules_block/state_block";
 import type * as StateInline from "markdown-it/lib/rules_inline/state_inline";
 import type * as Token from "markdown-it/lib/token";
+import { htmlEscape } from "./utils";
 
 const isValidDelim = (
   state: StateInline,

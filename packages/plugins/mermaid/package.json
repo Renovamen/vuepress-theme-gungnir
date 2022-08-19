@@ -31,12 +31,12 @@
   },
   "dependencies": {
     "@types/markdown-it": "^12.2.3",
-    "@vuepress/client": "2.0.0-beta.48",
-    "@vuepress/core": "2.0.0-beta.48",
-    "@vuepress/shared": "2.0.0-beta.48",
-    "@vuepress/utils": "2.0.0-beta.48",
+    "@vuepress/client": "2.0.0-beta.49",
+    "@vuepress/core": "2.0.0-beta.49",
+    "@vuepress/shared": "2.0.0-beta.49",
+    "@vuepress/utils": "2.0.0-beta.49",
     "markdown-it": "^13.0.1",
-    "mermaid": "^9.1.2",
+    "mermaid": "^9.1.6",
     "vue": "^3.2.36"
   }
 }

@@ -32,7 +32,8 @@
 <script setup lang="ts">
 import AutoLink from "@theme/AutoLink.vue";
 import DropdownTransition from "@theme/DropdownTransition.vue";
-import { computed, ref, toRefs } from "vue";
+import { useToggle } from "@vueuse/core";
+import { computed, nextTick, onBeforeUnmount, toRefs } from "vue";
 import type { PropType } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import type { ResolvedSidebarItem } from "../../shared";
@@ -62,19 +63,27 @@ const itemClass = computed(() => ({
   collapsible: item.value.collapsible
 }));
 
-const isOpen = ref(true);
-const onClick = ref<(() => void) | undefined>(undefined);
+const isOpenDefault = computed(() =>
+  item.value.collapsible ? isActive.value : true
+);
+const [isOpen, toggleIsOpen] = useToggle(isOpenDefault.value);
 
-if (item.value.collapsible) {
-  // active item is open by default
-  isOpen.value = isActive.value;
-  // toggle open status on click
-  onClick.value = () => {
-    isOpen.value = !isOpen.value;
-  };
-  // reset open status after navigation
-  router.afterEach(() => {
-    isOpen.value = isActive.value;
+const onClick = (e: Event): void => {
+  if (item.value.collapsible) {
+    e.preventDefault();
+    // toggle open status on click
+    toggleIsOpen();
+  }
+};
+
+// reset open status after navigation
+const unregisterRouterHook = router.afterEach((to) => {
+  nextTick(() => {
+    isOpen.value = isOpenDefault.value;
   });
-}
+});
+
+onBeforeUnmount(() => {
+  unregisterRouterHook();
+});
 </script>

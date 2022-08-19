@@ -7,7 +7,7 @@ pre[class*="language-"] {
 }
 
 pre[class*="language-"]::-webkit-scrollbar {
-  height: .5rem;
+  height: .4rem;
 }
 
 pre[class*="language-"]::-webkit-scrollbar-thumb {
