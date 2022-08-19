@@ -1,5 +1,5 @@
-@import '../_variables';
-@import '../_mixins';
+@import "../_variables";
+@import "../_mixins";
 
 .postlist-wrapper {
   margin: 20px auto 0;
@@ -7,10 +7,10 @@
 }
 
 .post-item {
-  margin: 80px auto 100px;
   position: relative;
+  margin: 80px auto 100px;
   padding: 0 40px;
-  display: block;
+
   &__img {
     display: inline-block;
     width: 600px;
@@ -20,13 +20,14 @@
     z-index: 1;
     cursor: pointer;
     border-radius: 5px;
+
     img {
-      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      @include transition(all .6s);
+      @include transition(all 0.6s);
     }
+
     &::after {
       content: "";
       width: 100%;
@@ -36,22 +37,28 @@
       position: absolute;
       background: var(--image-mask-color);
     }
+
     &:hover img {
       @include transform(scale(1.1));
     }
   }
+
   &:nth-child(odd) {
     text-align: left;
+
     .else {
       left: 620px;
     }
   }
+
   &:nth-child(even) {
-    text-align: right ;
+    text-align: right;
+
     .else {
       right: 620px;
     }
   }
+
   .else {
     position: absolute;
     text-align: left;
@@ -62,23 +69,29 @@
     border-radius: 5px;
     overflow-y: hidden;
   }
+
   &__date {
     color: var(--c-text-sub);
     font-size: 12px;
     margin: 80px 0 0 80px;
   }
+
   &__title {
     color: var(--c-text);
-    &:hover, &:focus {
+
+    &:hover,
+    &:focus {
       text-decoration: none;
       color: var(--c-text-accent);
     }
+
     h2 {
       font-size: 30px;
       font-weight: normal;
       line-height: 1.1;
       margin: 10px 100px 0 80px;
     }
+
     h3 {
       font-size: 16px;
       font-weight: normal;
@@ -86,6 +99,7 @@
       line-height: 1.8;
     }
   }
+
   &__content p {
     line-height: 1.8;
     font-size: 14px;
@@ -99,30 +113,37 @@
       width: 480px;
       height: 280px;
     }
+
     &:nth-child(odd) .else {
       left: 500px;
     }
+
     &:nth-child(even) .else {
       right: 500px;
     }
+
     .else {
       top: 10px;
       width: 420px;
       height: 290px;
     }
+
     &__date {
       font-size: 12px;
       margin: 50px 0 0 60px;
     }
+
     &__title {
       h2 {
         font-size: 24px;
         margin: 10px 60px 0 60px;
       }
+
       h3 {
         margin: 10px 60px 0 60px;
       }
     }
+
     &__content p {
       margin: 10px 60px 0 60px;
     }
@@ -131,22 +152,22 @@
 
 @media (max-width: $MQIpad) {
   .postlist-wrapper {
-    padding: 0 13px;
+    padding: 0 13px 20px;
   }
 
   .post-item {
-    padding: 0;
-    margin-top: 80px;
-    padding-bottom: 30px;
+    margin: 50px auto 70px;
+    padding: 0 0 30px;
     border-bottom: 1px solid var(--c-border);
+
     &__img {
       display: block;
       margin: 0 auto;
-      margin-top: -30px;
       width: 570px;
       height: 320px;
       border-radius: 10px;
     }
+
     .else {
       height: auto;
       position: static;
@@ -155,14 +176,18 @@
       background: transparent;
       border: none;
     }
+
     &__date {
       margin: 30px 0 0 20px;
     }
+
     &__title h2 {
       font-size: 24px;
       margin: 10px 20px 0 20px;
     }
-    &__title h3, &__content p {
+
+    &__title h3,
+    &__content p {
       margin: 10px 20px 0 20px;
     }
   }
@@ -170,14 +195,15 @@
 
 @media (max-width: $MQMobile) {
   .post-item {
-    margin-top: 100px;
+    margin: 40px auto 0;
     border-bottom: none;
     max-width: 400px;
+
     &__img {
       width: 100%;
       height: 210px;
-      margin-top: -60px;
     }
+
     &__date,
     &__title h2,
     &__title h3,

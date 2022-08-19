@@ -9,10 +9,10 @@
 
 .gungnir-search-box {
   input {
-    @include placeholdeTextColor(var(--c-text-sub));
+    @include placeholde_text_color(var(--c-text-sub));
   }
   .suggestions {
-    @include hideScrollbar;
+    @include hide_scrollbar;
   }
 }
 

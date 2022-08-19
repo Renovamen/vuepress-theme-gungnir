@@ -71,8 +71,12 @@
     padding: 15px 0;
   }
 
-  .postlist-wrapper .pager a {
-    padding: 20px 0;
+  .postlist-wrapper .pager {
+    margin-top: 50px;
+
+    a {
+      padding: 20px 0;
+    }
   }
 }
 

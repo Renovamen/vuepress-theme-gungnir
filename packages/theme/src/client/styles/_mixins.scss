@@ -49,7 +49,7 @@
   -ms-transform: $value;
 }
 
-@mixin hideScrollbar {
+@mixin hide_scrollbar {
   // Chrome, Safari
   &::-webkit-scrollbar {
     width: 0;
@@ -62,7 +62,7 @@
   scrollbar-width: none;
 }
 
-@mixin placeholdeTextColor($value) {
+@mixin placeholde_text_color($value) {
   &::-webkit-input-placeholder {
     color: $value;
   }

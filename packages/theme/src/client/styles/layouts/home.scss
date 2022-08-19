@@ -1,5 +1,5 @@
-@import '../_variables';
-@import '../_mixins';
+@import "../_variables";
+@import "../_mixins";
 
 .home-blog {
   padding: 0;
@@ -41,11 +41,13 @@
         cursor: auto;
         padding: 5px;
         border-radius: 100%;
-        @include transition(all ease 1s);
         box-shadow: inset 0 0 10px #000;
+        @include transition(all ease 1s);
+
         &:hover {
           @include transform(rotate(360deg));
         }
+
         &:hover + .hero-bubble {
           opacity: 1;
         }
@@ -67,14 +69,15 @@
         -webkit-animation-direction: alternate;
         animation-direction: alternate;
 
-        @include transition(opacity .4s);
+        @include transition(opacity 0.4s);
 
         &__body {
           min-width: 150px;
           max-width: 250px;
           min-height: 80px;
-          background: rgba(0, 0, 0, .5);
+          background: rgba(0, 0, 0, 0.5);
           border-radius: 10px;
+
           p {
             font-size: 15px;
             padding: 10px 20px;
@@ -83,9 +86,10 @@
             line-height: 1.7;
           }
         }
+
         &__tile {
           position: absolute;
-          content: '';
+          content: "";
           margin-left: -23px;
           top: 0;
           margin-top: 60px;
@@ -95,28 +99,32 @@
           border-style: solid;
           border-top-width: 20px;
           border-radius: 56px 0 0 0;
-          color: rgba(0, 0, 0, .5);
+          color: rgba(0, 0, 0, 0.5);
         }
       }
+
       @keyframes bubbleFloat {
         0% {
           @include transform(translateY(0));
         }
+
         100% {
           @include transform(translateY(10px));
         }
       }
+
       @-webkit-keyframes bubbleFloat {
         0% {
           @include transform(translateY(0));
         }
+
         100% {
           @include transform(translateY(10px));
         }
       }
 
       .hero-info {
-        background: rgba(0, 0, 0, .5);
+        background: rgba(0, 0, 0, 0.5);
         width: 100%;
         padding: 17px;
         letter-spacing: 0;
@@ -144,7 +152,8 @@
         margin-top: 10px;
       }
 
-      .hero-img-prev, .hero-img-next {
+      .hero-img-prev,
+      .hero-img-next {
         cursor: pointer;
         position: absolute;
         top: 50%;
@@ -152,11 +161,11 @@
         width: auto;
         padding: 15px 6px;
         color: rgba(255, 255, 255, 0.6);
-        background-color: rgba(0, 0, 0, .3);
+        background-color: rgba(0, 0, 0, 0.3);
         border: none;
         outline: none;
 
-        @include transition(.6s ease);
+        @include transition(0.6s ease);
 
         svg.ov-icon {
           width: 20px;
@@ -164,13 +173,15 @@
 
         &:hover {
           color: white;
-          background-color: rgba(0, 0, 0, .6);
+          background-color: rgba(0, 0, 0, 0.6);
         }
       }
+
       .hero-img-prev {
         left: 0;
         border-radius: 0 3px 3px 0;
       }
+
       .hero-img-next {
         right: 0;
         border-radius: 3px 0 0 3px;
@@ -187,9 +198,10 @@
           color: white;
           height: 30px;
           width: 30px;
-          @include transition(.4s ease);
+          @include transition(0.4s ease);
 
-          &:active, &:hover {
+          &:active,
+          &:hover {
             color: #a7a7a7;
           }
         }
@@ -211,30 +223,32 @@
     .hide-on-mobile {
       display: none;
     }
+
     .hero {
       height: auto !important;
       padding: 150px 0;
+
       .hero-info {
         background: transparent !important;
         width: auto !important;
         position: relative !important;
+
         &__text h1 {
           font-size: 80px !important;
         }
       }
     }
+
     .home-blog-wrapper {
-      padding: 0 13px 0 14px;
+      padding: 0 13px;
     }
   }
 }
 
 @media (max-width: $MQMobile) {
   .home-blog .hero {
-    padding: 80px 0 60px;
-    .hero-mask {
-      height: calc(100% + 1.2rem);
-    }
+    padding: 70px 0;
+
     .hero-info__text h1 {
       font-size: 50px !important;
     }
