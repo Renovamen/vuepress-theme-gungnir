@@ -12,15 +12,15 @@
 
     <div class="article-header-content">
       <div v-if="frontmatter.tags" class="article-tags">
-        <span
+        <RouterLink
           v-for="(item, index) in frontmatter.tags"
           :key="index"
           class="article-tag"
           :class="{ active: currentTag == item }"
-          @click.stop="goTagPage(item)"
+          :to="getPathByTag(item)"
         >
           {{ item }}
-        </span>
+        </RouterLink>
       </div>
 
       <h1 class="article-title">
@@ -71,7 +71,6 @@
 
 <script setup lang="ts">
 import { usePageData, usePageFrontmatter, withBase } from "@vuepress/client";
-import { useRouter } from "vue-router";
 import type {
   GungnirThemePageData,
   GungnirThemePostFrontmatter,
@@ -87,16 +86,13 @@ defineProps({
   }
 });
 
-const router = useRouter();
 const themeLocale = useThemeLocaleData();
 const frontmatter = usePageFrontmatter<GungnirThemePostFrontmatter>();
 const page = usePageData<GungnirThemePageData>();
 const tagMap = useTagMap();
 
-const goTagPage = (tag: string) => {
-  if (router.currentRoute.value.path !== tagMap.value.map[tag].path) {
-    router.push({ path: tagMap.value.map[tag].path });
-  }
+const getPathByTag = (tag: string) => {
+  return tagMap.value.map[tag].path;
 };
 
 // post header style
