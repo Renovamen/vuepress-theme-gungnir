@@ -32,6 +32,7 @@ import { Badge, CodeGroup, CodeGroupItem, LinkCard } from "./components/global";
 import {
   setupBlogPages,
   setupDarkMode,
+  setupDynamicStyle,
   setupSidebarItems,
   setupTagMap,
   useScrollPromise
@@ -109,6 +110,7 @@ export default defineClientConfig({
   },
 
   setup() {
+    setupDynamicStyle();
     setupDarkMode();
     setupSidebarItems();
     setupBlogPages();

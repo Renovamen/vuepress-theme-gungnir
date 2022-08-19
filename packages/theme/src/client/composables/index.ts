@@ -7,3 +7,4 @@ export * from "./useThemeData";
 export * from "./useBlog";
 export * from "./useTags";
 export * from "./useCatalog";
+export * from "./useDynamicStyles";
