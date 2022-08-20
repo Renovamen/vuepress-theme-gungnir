@@ -91,9 +91,7 @@ const frontmatter = usePageFrontmatter<GungnirThemePostFrontmatter>();
 const page = usePageData<GungnirThemePageData>();
 const tagMap = useTagMap();
 
-const getPathByTag = (tag: string) => {
-  return tagMap.value.map[tag].path;
-};
+const getPathByTag = (tag: string) => tagMap.value.map[tag]?.path || "/";
 
 // post header style
 const headerStyle = () => {
