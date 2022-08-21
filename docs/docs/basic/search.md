@@ -75,7 +75,7 @@ See [here](https://blog.zxh.io) for a demo (click the "Search" button in navbar)
 
   module.exports = {
     theme: gungnirTheme({
-      searchIicon: "bi-search"
+      searchIcon: "bi-search"
     })
   }
   ```
