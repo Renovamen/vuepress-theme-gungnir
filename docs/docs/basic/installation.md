@@ -16,7 +16,7 @@ Install VuePress and theme Gungnir:
 <CodeGroupItem title="PNPM" active>
 
 ```bash
-pnpm install -D vuepress vuepress-theme-gungnir@next
+pnpm install -D vuepress@next vue @vuepress/client@next vuepress-theme-gungnir@next
 ```
 
 </CodeGroupItem>
@@ -24,7 +24,7 @@ pnpm install -D vuepress vuepress-theme-gungnir@next
 <CodeGroupItem title="YARN" active>
 
 ```bash
-yarn add -D vuepress vuepress-theme-gungnir@next
+yarn add -D vuepress@next vuepress-theme-gungnir@next
 ```
 
 </CodeGroupItem>
@@ -32,7 +32,7 @@ yarn add -D vuepress vuepress-theme-gungnir@next
 <CodeGroupItem title="NPM">
 
 ```bash
-npm install -D vuepress@2.0.0-beta.39 vuepress-theme-gungnir@next
+npm install -D vuepress@next vuepress-theme-gungnir@next
 ```
 
 </CodeGroupItem>
