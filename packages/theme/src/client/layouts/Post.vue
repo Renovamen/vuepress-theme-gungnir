@@ -41,7 +41,8 @@ import Common from "@theme/Common.vue";
 import Page from "@theme/Page.vue";
 import Pager from "@theme/Pager.vue";
 import { usePageData } from "@vuepress/client";
-import { computed, onBeforeUnmount, onMounted, reactive } from "vue";
+import { useScroll } from "@vueuse/core";
+import { computed, onBeforeUnmount, onMounted, reactive, watch } from "vue";
 import { useRouter } from "vue-router";
 import { Catalog } from "../components/Catalog";
 import {
@@ -74,9 +75,9 @@ const flattenHeaders = (item: any) => {
 const headers = computed(() =>
   [].concat(...pageHeaders.value.map(flattenHeaders))
 );
+
 const state = reactive({
   headerHeight: 0,
-  screenWidth: 0,
   catalogTop: 0,
   activeLink: "",
   isFixed: false
@@ -85,33 +86,9 @@ const state = reactive({
 const catalogTopAbsolute = 40;
 const catalogTopFixed = 80;
 
-const handleScroll = () => {
-  // active link
-  for (let i = headers.value.length - 1; i >= 0; i--) {
-    const slug = (headers.value[i] as any).slug;
-    const slugElement = document.querySelector<HTMLElement>(`#${slug}`);
-    const headerTop = slugElement ? slugElement.getBoundingClientRect().top : 0;
-    if (headerTop <= 100) {
-      state.activeLink = slug;
-      break;
-    }
-  }
-
-  // catalog position
-  const currentTop = window.pageYOffset;
-  if (currentTop > state.headerHeight + catalogTopAbsolute - catalogTopFixed) {
-    state.isFixed = true;
-    state.catalogTop = catalogTopFixed;
-  } else {
-    state.isFixed = false;
-    state.catalogTop = state.headerHeight + catalogTopAbsolute;
-  }
-};
-
 const resetCatalogPosition = () => {
-  const postHeader = document.querySelector<HTMLElement>(".post-header");
-  state.headerHeight = postHeader ? postHeader.offsetHeight : 0;
-  state.screenWidth = document.body.clientWidth;
+  const header = document.querySelector<HTMLElement>(".post-header");
+  state.headerHeight = header?.offsetHeight || 0;
   state.catalogTop = state.headerHeight + catalogTopAbsolute;
 };
 
@@ -119,23 +96,44 @@ const resetCatalogPosition = () => {
 let unregisterRouterHook;
 
 onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
+  const { y } = useScroll(document);
 
-  resetCatalogPosition();
-  window.onresize = () => {
-    return (() => {
-      resetCatalogPosition();
-      handleScroll();
-    })();
+  const handleScroll = () => {
+    // active link
+    for (let i = headers.value.length - 1; i >= 0; i--) {
+      const slug = (headers.value[i] as any).slug;
+      const slugElement = document.querySelector<HTMLElement>(`#${slug}`);
+      const headerTop = slugElement
+        ? slugElement.getBoundingClientRect().top
+        : 0;
+      if (headerTop <= 100) {
+        state.activeLink = slug;
+        break;
+      }
+    }
+
+    // catalog position
+    if (y.value > state.headerHeight + catalogTopAbsolute - catalogTopFixed) {
+      state.isFixed = true;
+      state.catalogTop = catalogTopFixed;
+    } else {
+      state.isFixed = false;
+      state.catalogTop = state.headerHeight + catalogTopAbsolute;
+    }
   };
 
-  unregisterRouterHook = router.afterEach(() => {
+  watch(y, handleScroll);
+
+  resetCatalogPosition();
+  unregisterRouterHook = router.afterEach(resetCatalogPosition);
+
+  window.onresize = () => {
     resetCatalogPosition();
-  });
+    handleScroll();
+  };
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener("scroll", handleScroll);
   unregisterRouterHook();
 });
 

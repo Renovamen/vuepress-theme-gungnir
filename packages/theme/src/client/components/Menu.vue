@@ -57,7 +57,8 @@
 <script setup lang="ts">
 import ToggleColorModeButton from "@theme/ToggleColorModeButton.vue";
 import ToggleSidebarButton from "@theme/ToggleSidebarButton.vue";
-import { onBeforeUnmount, onMounted, reactive } from "vue";
+import { useScroll, useWindowSize } from "@vueuse/core";
+import { onMounted, reactive, watch } from "vue";
 import { useCatalog, useThemeLocaleData } from "../composables";
 
 defineEmits(["toggle-sidebar", "toggle-catalog"]);
@@ -73,39 +74,36 @@ const state = reactive({
 });
 
 onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
+  const { y } = useScroll(document);
+  const windowH = useWindowSize().height;
+
+  const handleScroll = () => {
+    const siteH = getSiteHeight();
+
+    let percent = (y.value / (siteH - windowH.value)) * 100;
+    if (percent > 100) percent = 100;
+
+    if (isNaN(percent) || Math.round(percent) <= 0) {
+      percent = 0;
+      state.isTextVisible = false;
+      state.isBtnIconVisible = true;
+    } else {
+      state.isTextVisible = true;
+      state.menuText = Math.round(percent) + "%";
+      state.isBtnIconVisible = false;
+    }
+
+    state.borderLen = 3.1415926 * (percent || 0) + "% 314.15926%";
+  };
+
+  watch(y, handleScroll);
 });
 
-onBeforeUnmount(() => {
-  window.removeEventListener("scroll", handleScroll);
-});
-
-const handleScroll = () => {
-  const currentTop = window.pageYOffset;
-  const siteHeight = getSiteHeight();
-  const windowHeight = document.documentElement.clientHeight;
-
-  let percent = (currentTop / (siteHeight - windowHeight)) * 100;
-  if (percent > 100) percent = 100;
-
-  if (isNaN(percent) || Math.round(percent) <= 0) {
-    percent = 0;
-    state.isTextVisible = false;
-    state.isBtnIconVisible = true;
-  } else {
-    state.isTextVisible = true;
-    state.menuText = Math.round(percent) + "%";
-    state.isBtnIconVisible = false;
-  }
-
-  state.borderLen = 3.1415926 * (percent || 0) + "% 314.15926%";
-};
-
-const toggleMenu = (): void => {
+const toggleMenu = () => {
   state.isMenuOpen = !state.isMenuOpen;
 };
 
-const scrollToTop = (): void => {
+const scrollToTop = () => {
   window.scrollTo({
     top: 0,
     behavior: "smooth"
@@ -120,8 +118,8 @@ const scrollToBottom = () => {
 };
 
 const getSiteHeight = () => {
-  const container = document.querySelector<HTMLElement>(".theme-container");
-  return container ? container.offsetHeight : 0;
+  const site = document.querySelector<HTMLElement>(".theme-container");
+  return site?.offsetHeight || 0;
 };
 
 const isShowTocButton = useCatalog();

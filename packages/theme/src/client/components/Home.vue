@@ -68,7 +68,7 @@ const headerOpacity = ref(1);
 
 const scrollToPost = () => {
   window.scrollTo({
-    top: (document.querySelector(".hero") as HTMLElement).clientHeight,
+    top: document.querySelector(".hero")?.clientHeight,
     behavior: "smooth"
   });
 };

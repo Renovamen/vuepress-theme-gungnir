@@ -28,7 +28,8 @@
 <script setup lang="ts">
 import NavbarItems from "@theme/NavbarItems.vue";
 import { usePageFrontmatter } from "@vuepress/client";
-import { computed, onBeforeUnmount, onMounted, ref } from "vue";
+import { useScroll } from "@vueuse/core";
+import { computed, onBeforeUnmount, onMounted, ref, watch } from "vue";
 import { useRouter } from "vue-router";
 import type {
   GungnirThemeNormalPageFrontmatter,
@@ -65,29 +66,9 @@ const linksWrapperStyle = computed(() => {
   };
 });
 
-const previousTop = ref(0);
 const isFixed = ref(false);
 const isVisible = ref(false);
 const isInvert = ref(true);
-
-const handleScroll = () => {
-  const currentTop = window.pageYOffset;
-
-  if (currentTop < previousTop.value) {
-    // Scrolling up
-    if (currentTop > 0 && isFixed.value) isVisible.value = true;
-    else {
-      isVisible.value = false;
-      isFixed.value = false;
-    }
-  } else {
-    // Scrolling down
-    isVisible.value = false;
-    if (navbar.value && currentTop > navbar.value!.offsetHeight)
-      isFixed.value = true;
-  }
-  previousTop.value = currentTop;
-};
 
 const handleInvert = () => {
   let invert = false;
@@ -126,8 +107,8 @@ const handleInvert = () => {
 // handle navbar color invert after navigation
 let unregisterRouterHook;
 
-// avoid overlapping of long title and long navbar links
 onMounted(() => {
+  // avoid overlapping of long title and long navbar links
   // TODO: migrate to css var
   // refer to _variables.scss
   const MOBILE_DESKTOP_BREAKPOINT = 719;
@@ -148,16 +129,32 @@ onMounted(() => {
   window.addEventListener("resize", handleLinksWrapWidth, false);
   window.addEventListener("orientationchange", handleLinksWrapWidth, false);
 
-  handleInvert();
-  unregisterRouterHook = router.afterEach(() => {
-    handleInvert();
-  });
+  // handle navbar styles while scrolling
+  const { y, directions } = useScroll(document);
 
-  window.addEventListener("scroll", handleScroll);
+  const handleScroll = () => {
+    if (directions.top) {
+      // scrolling up
+      if (y.value > 0 && isFixed.value) isVisible.value = true;
+      else {
+        isVisible.value = false;
+        isFixed.value = false;
+      }
+    } else if (directions.bottom) {
+      // scrolling down
+      isVisible.value = false;
+      if (navbar.value && y.value > navbar.value!.offsetHeight)
+        isFixed.value = true;
+    }
+  };
+
+  watch(y, handleScroll);
+
+  handleInvert();
+  unregisterRouterHook = router.afterEach(handleInvert);
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener("scroll", handleScroll);
   unregisterRouterHook();
 });
 
