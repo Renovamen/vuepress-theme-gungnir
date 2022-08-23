@@ -75,7 +75,7 @@ date: 2022-03-12
 
   module.exports = {
     theme: gungnirTheme({
-      searchIicon: "bi-search"
+      searchIcon: "bi-search"
     })
   }
   ```
