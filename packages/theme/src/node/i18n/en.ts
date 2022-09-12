@@ -40,7 +40,8 @@ const en: GungnirThemeI18n = {
   // other pages
   pageText: {
     tags: "Tags",
-    links: "Links"
+    links: "Links",
+    timelines: "Timelines"
   },
 
   // "show all tags" button

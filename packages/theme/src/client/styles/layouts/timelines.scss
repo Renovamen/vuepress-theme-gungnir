@@ -1,0 +1,111 @@
+@import "../_variables";
+
+.timeline-wrapper {
+  padding: 10px 0 50px;
+
+  .timeline-section {
+    width: 60%;
+    max-width: 745px;
+    margin: 0 auto;
+
+    .timeline-content {
+      box-sizing: border-box;
+      position: relative;
+      padding-left: 1.2em;
+      list-style: none;
+
+      &::after {
+        content: " ";
+        position: absolute;
+        top: 14px;
+        left: 0;
+        margin-left: -2px;
+        width: 4px;
+        height: 100%;
+        background: var(--c-text-accent);
+      }
+
+      .timeline-title,
+      .year {
+        position: relative;
+        font-size: 16px;
+        color: var(--c-text);
+
+        &::before {
+          content: " ";
+          position: absolute;
+          z-index: 2;
+          left: -20px;
+          top: 50%;
+          margin-left: -4px;
+          margin-top: -4px;
+          width: 8px;
+          height: 8px;
+          background: var(--c-text-accent);
+          border: 1px solid var(--c-text-accent);
+          border-radius: 50%;
+        }
+      }
+
+      .year {
+        margin: 80px 0 0;
+        color: var(--text-color);
+        font-weight: 700;
+        font-size: 26px;
+      }
+
+      .year-wrapper {
+        padding-left: 0 !important;
+
+        .item {
+          display: flex;
+          padding: 30px 0 10px;
+          list-style: none;
+          border-bottom: 1px dashed #ddd;
+          position: relative;
+
+          &:hover {
+            .date {
+              color: white;
+
+              &::before {
+                background: #3eaf7c;
+              }
+            }
+
+            .title {
+              color: white;
+            }
+          }
+
+          .date {
+            width: 50px;
+            line-height: 30px;
+            color: var(--c-text-sub);
+            font-size: 14px;
+
+            &::before {
+              content: " ";
+              position: absolute;
+              left: -18px;
+              top: 41px;
+              width: 6px;
+              height: 6px;
+              margin-left: -4px;
+              background: var(--c-text-accent);
+              border-radius: 50%;
+              z-index: 2;
+            }
+          }
+
+          .title {
+            line-height: 30px;
+            color: var(--text-color);
+            font-size: 18px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

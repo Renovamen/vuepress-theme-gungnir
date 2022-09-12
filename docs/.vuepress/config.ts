@@ -126,6 +126,12 @@ export default defineUserConfig({
           path: "/img/pages/links.jpg",
           mask: "rgba(64, 118, 190, 0.5)"
         }
+      },
+      timelines: {
+        subtitle: "To the time to life, rather than to life in time.",
+        bgImage: {
+          path: "/img/pages/timelines.jpeg"
+        }
       }
     },
 

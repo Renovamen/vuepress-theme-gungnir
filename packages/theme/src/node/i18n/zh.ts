@@ -40,7 +40,8 @@ const zh: GungnirThemeI18n = {
   // other pages
   pageText: {
     tags: "标签",
-    links: "链接"
+    links: "链接",
+    timelines: "时光轴"
   },
 
   // "show all tags" button

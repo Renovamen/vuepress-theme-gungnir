@@ -18,6 +18,11 @@ export const zh: NavbarConfig = [
     icon: "fa-satellite-dish"
   },
   {
+    text: "时光轴",
+    link: "/timelines/",
+    icon: "ri-timer-line"
+  },
+  {
     text: "文档",
     link: "/zh/docs/basic/intro.md",
     icon: "ri-book-2-fill"

@@ -18,6 +18,11 @@ export const en: NavbarConfig = [
     icon: "fa-satellite-dish"
   },
   {
+    text: "Timelines",
+    link: "/timelines/",
+    icon: "ri-timer-line"
+  },
+  {
     text: "Docs",
     link: "/docs/basic/intro.md",
     icon: "ri-book-2-fill"
