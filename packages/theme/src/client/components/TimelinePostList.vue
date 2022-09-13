@@ -4,7 +4,7 @@
       <li class="timeline-title">时光轴</li>
       <li v-for="(item, index) in data" :key="index">
         <h2 class="year">{{ item.year }}</h2>
-        <ul class="year-wrapper">
+        <ul class="item-wrapper">
           <li
             v-for="(subItem, subIndex) in item.data"
             :key="subIndex"
@@ -14,7 +14,6 @@
             <RouterLink :to="subItem.path">
               <span class="title"> {{ subItem.info.title }} </span>
             </RouterLink>
-            <hr />
           </li>
         </ul>
       </li>
