@@ -136,6 +136,7 @@ export interface GungnirThemeI18n {
   pageText?: {
     tags: string;
     links: string;
+    testPage: string;
   };
 
   /**

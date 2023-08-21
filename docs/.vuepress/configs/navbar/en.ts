@@ -8,6 +8,11 @@ export const en: NavbarConfig = [
     icon: "fa-fort-awesome"
   },
   {
+    text: "Tes Page",
+    link: "/testpage/",
+    icon: "fa-tag"
+  },
+  {
     text: "Tags",
     link: "/tags/",
     icon: "fa-tag"

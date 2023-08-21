@@ -126,6 +126,13 @@ export default defineUserConfig({
           path: "/img/pages/links.jpg",
           mask: "rgba(64, 118, 190, 0.5)"
         }
+      },
+      testPage: {
+        subtitle: "Test Page",
+        bgImage: {
+          path: "/img/pages/links.jpg",
+          mask: "rgba(64, 118, 190, 1)"
+        }
       }
     },
 

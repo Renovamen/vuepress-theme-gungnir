@@ -8,6 +8,11 @@ export const zh: NavbarConfig = [
     icon: "fa-fort-awesome"
   },
   {
+    text: "测试页",
+    link: "/testpage/",
+    icon: "fa-tag"
+  },
+  {
     text: "标签",
     link: "/tags/",
     icon: "fa-tag"
