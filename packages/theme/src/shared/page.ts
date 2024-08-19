@@ -65,6 +65,9 @@ interface Memory {
   desc?:string 
   img?:[] //配图
   time?:string //时刻
+  video?:[]//视频
+  music?:[]//音乐
+  audio?:[]//音乐
   title?:string
   tem?:string //气温
   avatar?:string //头像
